@@ -3,7 +3,10 @@
 \usepackage{stmaryrd}
 \usepackage{graphicx}
 \usepackage{todonotes}
+
 \usepackage{tensor}
+
+\newcommand{\hoj}[1]{\todo[inline,color=blue!20]{#1}}
 \newcommand{\pder}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
 \newcommand{\so}{\ensuremath{\mathfrak{so}}}
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
@@ -22,8 +25,8 @@
 \DeclareMathOperator{\iso}{iso}
 \DeclareMathOperator{\kernel}{kernel}
 
-\title[Symplectic aspects]{Symplectic aspects of a 
-  computational particle method for ideal fluid flow.}
+\title[A meshless method for ideal fluid flow derived from s.g.]{A meshless method for
+ ideal fluid flow derived from symplectic geometry}
 
 \author{Ronan}
 
@@ -35,7 +38,8 @@
 \end{abstract}
 
 \section{Introduction}
-blah blah blah
+\hoj{Quickly describe the derivation of point-vortex solutions and peakons via Clebsh variables.
+	Then describe out method.}
 
 \subsection{Main contributions}
 This article concerns a hierarchy of particle methods for
@@ -484,7 +488,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   Moreover, due to this symmetry, one can write the evolution equations
   on a lower-dimensional space.
   The very fact that that the Hamiltonian is written in terms of $\Pi$
-  suggests that the equations of motion can be written in terms of $\Pi$ along.
+  suggests that the equations of motion can be written in terms of $\Pi$ alone.
   Indeed this is the case,
   \begin{align}
     \dot{\Pi} = \Pi \times (\mathbb{I}^{-1} \Pi ). \label{eq:rigid_body}
