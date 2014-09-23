@@ -42,22 +42,14 @@
 	Then describe out method.}
 
 \subsection{Main contributions}
-This article concerns a hierarchy of particle methods for
-ideal incompressible fluids, which we have dubbed jetlet methods.
-The zeroth order jetlet method was first discovered in \cite{MumfordMichor2013}
-where error bounds in comparison with solutions of Euler's equations were
-calculated.
-Later, the higher-order jetlet methods were developed
-by equipping the particles with internal group variables \cite{CotterHolmJacobsMeier2014}.
-In both \cite{MumfordMichor2013} and \cite{CotterHolmJacobsMeier2014}, the
-equations of motion were viewed as Euler-Lagrange equations
-obtained from variational principles.
-In particular, the insights one could glean from 
-the Hamiltonian perspectively were left unturned.
-In this paper we seek to change this.
+In this article we propose a heirarchy of particle methods
+for a regularized model of ideal fluids.
+These models will be derive via techniques from 
+symplectic geometry and Hamiltonian mechanics.
 The main contributions are:
 \begin{enumerate}
-  \item We determine dual-pairs which induce these jetlet methods.
+  \item We determine Poisson morphism which constitute 
+    dual-pairs that induce these methods.
   \item We relate the ``right-leg'' of the dual paris to Kelvin's circulation theorem.
   \item We explore the collision behavior discovered in \cite{CotterHolmJacobsMeier2014}.
 \end{enumerate}
@@ -65,6 +57,24 @@ As a ``softer'' contribution, we explain this method entirely in the Hamiltonian
 formalism to provide an alternative perspective to previous works written in the Lagrangian formalism.
 
 \subsection{Previous work}
+This article concerns a hierarchy of particle methods for
+ideal incompressible fluids, which we have dubbed \emph{jetlet methods}.
+The zeroth order jetlet method was first discovered in \cite{MumfordMichor2013}
+where error bounds in comparison with solutions of Euler's equations were
+calculated.
+Simultaneously, foundational work for particle methods carrying Taylor series
+data was developed in \cite{DesbrunJacobsRatiu2013}.
+Based upon the foundational work of \cite{DesbrunJacobsRatiu2013},
+an implementation using the fluid model of \cite{MumfordMichor2013} was created \cite{CotterHolmJacobsMeier2014}.
+A primary finding of \cite{CotterHolmJacobsMeier2014} was that particle collisions at one level of the heirarchy can exhibit ``infinite time mergers'' into particles at higher-levels in the heirarchy. 
+In both \cite{MumfordMichor2013} and \cite{CotterHolmJacobsMeier2014}, the
+equations of motion were viewed as Euler-Lagrange equations
+obtained from variational principles.
+In particular, the insights one could glean from 
+the Hamiltonian perspectively were left unturned.
+
+In this article we will use Poisson maps to determin solutions of regularized
+fluid equations by solving finite dimensional Hamiltonian equations.
 The notions of momentum maps and dual pairs are typically
 regarded as notions of symplectic geometry \cite{FOM,Weinstein1983}.
 However, many of the statements on momentum maps and
@@ -84,8 +94,8 @@ control vector fields forms a subalgebra of the space of all
  	\item \cite{MarsdenWeinstein1983,Weinstein1983} for dual pairs.
  	\item \cite{Chorin1973} for vortex method.
 	\item \cite{Sommer2013,CotterHolmJacobsMeier2014} for jet particles
-	\item \cite{HolmTronci2012} for particles carrying diffeomorphisms as advocated quantity in a turbulence model.
- 	\item \cite{JacobsRatiuDesbrun2013} for particle methods via Lagrange-Poincar\'e.
+	\item \cite{HolmTronci2012} for particles carrying diffeomorphisms as advected quantity in a turbulence model.
+ 	\item \cite{DesbrunJacobsRatiu2013} for particle methods via Lagrange-Poincar\'e.
 	\item \cite{FoiasHolmTiti2001} for convergence of NS-$\alpha$ to NS.
 	\item \cite{Arnold1966} for Euler fluid as Euler-Poincar\'e on $\SDiff(\R^n)$.
 	\item \cite{TrouveYounes2005} for analysis of particle methods for EP.
@@ -151,7 +161,8 @@ We begin with the definition.
 \begin{defn}
   Let $S$ be a manifold
   and let $\omega$ be a closed two-form on $S$ such that the map
-  ``$v \in TS \mapsto \omega( v , \cdot ) \in T^*S$'' is invertible.
+  ``$v \in TS \mapsto \omega( v , \cdot ) \in T^*S$'' is weakly nondegenerate.\footnote{
+    A linear map $L:V \to V^*$ is \emph{weakly nondegenerate} if $L$ is injective.  If $V$ is finite dimensional, this simply means that $L$ is invertible.}
   We call $\omega$ a \emph{symplectic form}.
   We call the pair $(S,\omega)$ a \emph{symplectic manifold}.
 \end{defn}
@@ -191,7 +202,8 @@ An important aspect of study in Hamiltonian mechanics is that of symmetry.
 This yields the following notions
 
 \begin{defn}
-  A Lie group $G$ \emph{acts symplectically} or \emph{canonically} on a symplectic manifold $(S,\omega)$ if $G$ acts on $S$ and
+  Let $G$ be a Lie group, and denote the action of left/right multiplication by $g \in G$ by the maps $L_g$ and $R_g$ respectively.
+  The group $G$ is said to \emph{act symplectically} on a symplectic manifold $(S,\omega)$ if $G$ acts on $S$ and
   \begin{align*}
     \omega( g \cdot v , g \cdot w) = \omega(v,w)
   \end{align*}
@@ -205,10 +217,11 @@ This yields the following notions
 \end{defn}
 
 Alternatively, we can characterize a momentum map $J: S \to \mathfrak{g}^*$, as the unique map such that $X_{\langle J , \xi \rangle} = \xi_S$ for any $\xi \in \mathfrak{g}$.
-In the special case where $S = T^*Q$, an action of $G$ on $Q$ can be lifted to a symplectic action on $T^*Q$ given (locally) by
+In the special case where $S = T^*Q$, an action of $G$ on $Q$ can be lifted to a symplectic action on $T^*Q$ given by
 \begin{align*}
-  (q,p) \in T^*Q \mapsto (g^{-1} \cdot q , Dg^* p) \in T^*Q.
+  (q,p) \in T^*Q \mapsto (g^{-1} \cdot q , g^* p) \in T^*Q.
 \end{align*}
+where $g^*p$ is the unique covector such that $\langle g^*p , v \rangle = \langle p , Tg \cdot v \rangle$.
 In this case the momentum map is characterized by the condition
 \begin{align}
   \langle J(q,p) , \xi \rangle = \langle p , \xi \cdot q \rangle.
@@ -216,10 +229,10 @@ In this case the momentum map is characterized by the condition
 \end{align}
 This is contained in Theorem 12.1.4 of \cite{MandS}.
 
-Finally, given to functions $F,G \in C^{\infty}(S)$ we can consider the function $\{ F,G\} = \omega( X_F, X_G)$.
-In Darboux coordinates $\{ F , G \} = \pder{F}{q^i} \pder{G}{p_i} - \pder{F}{p_i} \pder{G}{q^i}$.
-Hamilton's equations can then be written as $\dot{q}^i = \{ q^i , H \},
-\dot{p}_i = \{ p_i , H \}$.
+Finally, given to functions $f,h \in C^{\infty}(S)$ we can consider the function $\{ f,h\} = \omega( X_f, X_h)$.
+In Darboux coordinates $\{ f , h \} = \pder{f}{q^i} \pder{h}{p_i} - \pder{f}{p_i} \pder{h}{q^i}$.
+Hamilton's equations can then be written as $\dot{q}^i = \{ q^i , h \},
+\dot{p}_i = \{ p_i , h \}$.
 We call $\{ \cdot , \cdot \}$ a Poisson bracket, and it is the subject of
 the next subsection.
 
@@ -231,37 +244,41 @@ We begin with the definition.
   Let $P$ be a manifold, and $\{ \cdot , \cdot \}$ be a bilinear
   operation on $C^{\infty}(P)$ such that 
   $( C^{\infty}(P) , \{ \cdot , \cdot \} )$ is a Lie algebra
-  and $\{ \cdot , H \}$ has the derivation property for any $H \in C^{\infty}(P)$.
+  and $\{ \cdot , h \}$ has the derivation property for any $h \in C^{\infty}(P)$.
   That is to say
   \begin{align*}
-    \{ GF , H \} = \{ F , H \} \cdot G + \{ G , H \} \cdot F,
+    \{ gf , h \} = \{ f , h \} \cdot g + \{ g , h \} \cdot f,
   \end{align*}
-  for any $F,G,H \in C^{\infty}(P)$.
+  for any $f,g,h \in C^{\infty}(P)$.
   We call $\{ \cdot , \cdot \}$ a \emph{Poisson bracket},
   and we call the pair $(P, \{ \cdot , \cdot \})$ a Poisson manifold.
 \end{defn}
 
 The first most important example of a Poisson bracket is
 that of a Poisson bracket on a symplectic manifold $(S,\omega)$.
-Here the Poisson bracket is $\{ F , G \} = \omega( X_F , X_G )$.
+Here the Poisson bracket is $\{ f , g \} = \omega( X_f , X_g )$.
 When $S$ is a cotangent bundle, and $\omega$ is the canonical
 symplectic form, we call this bracket the \emph{canonical Poisson
 bracket}.
 
 The second most important example of a Poisson bracket,
 after the canonical Poisson bracket,
-is a Lie-Poisson bracket.  Let $\mathfrak{g}$ be a Lie algebra
+is the Lie-Poisson bracket.  Let $\mathfrak{g}$ be a Lie algebra
 and let $\mathfrak{g}^*$ denote it's dual.
 The \emph{Lie-Poisson bracket} on $\mathfrak{g}^*$ is given 
 by
 \begin{align}
-  \{ F , G \}_{\mathfrak{g}^*}( x ) = 
-  \left \langle x , \left[ \pder{F}{x} , \pder{G}{x} \right] \right \rangle
+  \{ f , g \}_{\mathfrak{g}^*}( x ) = \pm
+  \left \langle x , \left[ \pder{f}{x} , \pder{g}{x} \right] \right \rangle
   \label{eq:Lie-Poisson}
 \end{align}
 where $\langle \cdot , \cdot \rangle$ is the canonical pairing between
 dual-vectors and vectors, and $[ \cdot , \cdot ]$ is the Lie bracket
 on $\mathfrak{g}$.
+The ``$+$'' Poisson bracket is nothing but the canonical Poisson bracket on $T^*G$,
+mapped to the space $\mathfrak{g}^*$ via the map $\lambda: (g,p) \in T^*G \mapsto (L_g)^*p \in \mathfrak{g}^*$.
+The ``$-$'' bracket is obtained through the map
+$\rho:(g,p) \in T^*G \mapsto (R_g)^*p \in \mathfrak{g}^*$.
 In the next sections we will derive this Poisson structure for the 
 Lie algebras $\so(3)$ and $\mathfrak{X}(\mathbb{R}^n)$.
 
@@ -320,27 +337,22 @@ sloppiness is usually harmless.
   Let $(S,\omega)$ be a symplectic manifold.
   Given a distribution $V \subset TS$, denote the fiber over 
   $x \in S$ by $V_x \subset T_x S$.
-  the anihillator of $V$, denoted $V^\perp \subset T^*S$, is the
-  codistribution whos fiber over $x \in S$ is
-  \begin{align*}
-    V_x^\perp = \{ \alpha_x \in T_x^*S : \langle \alpha , v \rangle = 0 \forall v \in V_x  \}.
-  \end{align*}
   The \emph{symplectic orthogonal} to $V$ is the disibtution
   \begin{align*}
-    V^\omega = \{ v \in TS \mid \omega( v , \cdot ) \in V^\perp \}.
+    V^\omega = \{ w \in TS \mid \omega( w , v ) = 0, \forall v \in V \}.
   \end{align*}
-  Let $\psi:S \to P$ be a Poisson map.
+  Let $\psi:S \to P_1$ be a Poisson map.
   The kernel of $\psi$ is the distribution
   \begin{align*}
-    \kernel(\psi) = \{ v \in TS \mid D\psi \cdot v  = 0 \}.
+    \kernel(\psi) = \{ v \in TS \mid T\psi \cdot v  = 0 \}.
   \end{align*}
-  If $J:S \to \tilde{P}$ is a Poisson map as well, and
+  If $J:S \to P_2$ is a Poisson map as well, and
   \begin{align*}
     \kernel(J) =  [\kernel(\psi) ]^\omega
   \end{align*}
   we call the diagram
   \begin{align*}
-    P \stackrel{\psi}{\mapsfrom} S \stackrel{J}{\mapsto} \tilde{P}
+    P_1 \stackrel{\psi}{\mapsfrom} S \stackrel{J}{\mapsto} P_2
   \end{align*}
   a \emph{dual pair}.
   In the case that $S$ is cotangent bundle we call $\psi$ or $J$
@@ -385,8 +397,8 @@ sloppiness is usually harmless.
   
   \begin{thm}[example 2.2 of \cite{Gay-BalmazVizman2011}] \label{thm:commuting_actions}
     Let $G_1,G_2$ act symplectically on $(S,\omega)$
-    by commuting left/right group actions.
-    \footnote{This means 
+    by commuting left/right group actions.\footnote{
+      This means 
       $g_1 \cdot (x \cdot g_2) = (g_1 \cdot x) \cdot g_2$
       for any $g_1 \in G_1, g_2 \in G_2$ and $x \in S$.}
     Moreover, assume $G_1$ acts transitively on $G_2$ orbits.
@@ -404,13 +416,16 @@ sloppiness is usually harmless.
     Recall that $J_1$ is defined by the condition
     $d \langle J_1 , \xi_1 \rangle = i_{\rho(\xi_1)} \omega$
     where $\rho(\xi_1)$ is the infinitesimal generator of
-    $\xi_1 \in \mathfrak{g}_1$.
+    $\xi_1 \in \mathfrak{g}_1$.\hoj{Need to define infinitesimal generator.
+    We also use two notations here $\rho(\xi_1)$ and $(\xi_1)_S$.}
     Let $v \in (\mathfrak{g}_1 \cdot S)^\omega$.
     We observe that 
     $d \langle J_1 , \xi_1 \rangle (v) = \omega( \xi_1 \cdot x , v ) = 0$.
     However $d\langle J_1 , \xi_1 \rangle (v) = \langle TJ_1(v) , \xi_1 \rangle$.
     Thus $v \in \kernel(J_1)$.
-    The converse follows imediately as well and we find
+    The previous steps may be reversed, and
+    the converse follows imediately.
+    We find
     $\kernel(J_1) = (\mathfrak{g}_1 \cdot S)^\omega$.
     Of course the same argument applies to $J_2$ as well.
 
@@ -452,10 +467,10 @@ The equations of motion are given by Hamilton's equations
 on the cotangent bundle $T^{\ast}\SO(3)$.
 There are canonical coordinates on $\SO(3)$ given by $(R,P)$
 where $P$ is such that $P R^T$ is a $3 \times 3$ anti-symmetric matrix.
-The angular momentum is the
+The angular momentum in the body frame is the
 unique vector $\Pi \in \mathbb{R}^3 \equiv \so(3)^*$ such that
 \begin{align*}
-  PR^T = \begin{bmatrix}
+  J_R(R,P) := PR^T = \begin{bmatrix}
     0 & -\Pi_3 & \Pi_2 \\
     \Pi_3 & 0 & -\Pi_1 \\
     -\Pi_2 & \Pi_1 & 0 
@@ -500,10 +515,11 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   \end{align}
   known as the \emph{Nambu bracket}.
   This is no coincedence.
+  \hoj{The hat map needs to be introduced}
   \begin{prop}[see \S 2.5 \cite{HolmBook2}] \label{prop:Nambu}
     The Nambu bracket on $\mathbb{R}^3$
-    is identical to the Lie-Poisson bracket on $\so(3)^*$ 
-    through  the hat map
+    is identified to the Lie-Poisson bracket on $\so(3)^*$ 
+    through the hat map
     \begin{align*}
       \hat{ \bf x } =
       \begin{bmatrix}
@@ -512,32 +528,32 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
         -y & x & 0 
       \end{bmatrix}
     \end{align*}
-    in the sense that $\{ F,G\}_{\rm Nambu}( x) = \{ \hat{F} , \hat{G} \}_{\rm LP}( \hat{x})$
-    where $F,G \in C^1(\mathbb{R}^3)$ and 
-    $\hat{F},\hat{G} \in C^1(\so(3)^*)$ are defined by 
-    $\hat{F}( \hat{x} ) = F(x), \hat{G}( \hat{x} ) = G(x)$.
+    in the sense that $\{ f,g\}_{\rm Nambu}( x) = \{ \hat{f} , \hat{g} \}_{\rm LP}( \hat{x})$
+    where $f,g \in C^1(\mathbb{R}^3)$ and 
+    $\hat{f},\hat{g} \in C^1(\so(3)^*)$ are defined by 
+    $\hat{f}( \hat{x} ) = f(x), \hat{g}( \hat{x} ) = g(x)$.
   \end{prop}
   \begin{proof}
     The Lie-Poisson bracket on $\so(3)^*$ is
     \begin{align*}
-      \{ \hat{F} , \hat{G} \}_{\rm LP} (\hat{\Pi}) =
-      \left \langle \hat{\Pi} , \left[ d\hat{F}(\hat{\Pi}) , d\hat{G}(\hat{\Pi}) \right]
+      \{ \hat{f} , \hat{g} \}_{\rm LP} (\hat{\Pi}) =
+      \left \langle \hat{\Pi} , \left[ d\hat{f}(\hat{\Pi}) , d\hat{g}(\hat{\Pi}) \right]
         \right \rangle,
     \end{align*}
-    for arbitrary functions $\hat{F},\hat{G} \in C^1(\so(3)^*)$.
-    There exists functions $F,G \in C^1(\mathbb{R}^3)$ related to $\hat{F},\hat{G}$ through the hat-map.
-    One can directly observe that $d\hat{F}(\hat{\Pi}) \in \so(3)$ is 
-    related to $\nabla F(\Pi)$ through the relation $\widehat{ \nabla F(\Pi)} = d\hat{F}( \hat{\Pi})$.
+    for arbitrary functions $\hat{f},\hat{g} \in C^1(\so(3)^*)$.
+    There exists functions $f,g \in C^1(\mathbb{R}^3)$ related to $\hat{F},\hat{G}$ through the hat-map.
+    One can directly observe that $d\hat{f}(\hat{\Pi}) \in \so(3)$ is 
+    related to $\nabla f(\Pi)$ through the relation $\widehat{ \nabla f(\Pi)} = d\hat{f}( \hat{\Pi})$.
     We see that the commutator bracket satisfies
     \begin{align*}
       [\hat{x},\hat{y} ] := \hat{x} \hat{y} - \hat{y} \hat{x} = \widehat{x \times y }.
     \end{align*}
     Therefore the Lie-Poisson bracket can be written as
     \begin{align*}
-    \{ \hat{F} , \hat{G} \}_{\rm LP}(\hat{\Pi})
-    &= \langle \hat{\Pi} , \widehat{ \nabla F \times \nabla G }(\Pi) \rangle \\
-    &= \Pi \cdot  \left( \nabla F \times \nabla G \right)(\Pi) \\
-    &= \{ F , G \}_{\rm Nambu}(\Pi).
+    \{ \hat{f} , \hat{g} \}_{\rm LP}(\hat{\Pi})
+    &= \langle \hat{\Pi} , \widehat{ \nabla f \times \nabla g }(\Pi) \rangle \\
+    &= \Pi \cdot  \left( \nabla f \times \nabla g \right)(\Pi) \\
+    &= \{ f , g \}_{\rm Nambu}(\Pi).
     \end{align*}
   \end{proof}
 
@@ -570,10 +586,10 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     Both $J_L$ and $J_R$ are Poisson maps.
     Explicitly, this means
     \begin{align*}
-      \{ F \circ J_L , G \circ J_L \}_{\rm can} = \{ F , G \}_{\rm Nambu} \circ J_L \\
-      - \{ F \circ J_R , G \circ J_R \}_{\rm can} = \{ F , G \}_{\rm Nambu} \circ J_R \\
+      \{ f \circ J_L , g \circ J_L \}_{\rm can} = \{ f , g \}_{\rm Nambu} \circ J_L \\
+      - \{ f \circ J_R , g \circ J_R \}_{\rm can} = \{ f , g \}_{\rm Nambu} \circ J_R \\
     \end{align*}
-    for any $F,G \in C^2( \mathbb{R}^3)$.
+    for any $f,g \in C^2( \mathbb{R}^3)$.
   \end{prop}
   \begin{proof}
     Let $(R,P) \in T^{\ast}\SO(3)$ and set $\Pi = J_R(R,P)$.
