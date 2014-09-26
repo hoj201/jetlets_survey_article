@@ -18,6 +18,7 @@
 \newtheorem{defn}[thm]{Definition}
 
 \DeclareMathOperator{\SDiff}{SDiff}
+\DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Jet}{Jet}
 \DeclareMathOperator{\SO}{SO}
 \DeclareMathOperator{\SL}{SL}
@@ -73,7 +74,7 @@ obtained from variational principles.
 In particular, the insights one could glean from 
 the Hamiltonian perspectively were left unturned.
 
-In this article we will use Poisson maps to determin solutions of regularized
+In this article we will use Poisson maps to determine solutions of regularized
 fluid equations by solving finite dimensional Hamiltonian equations.
 The notions of momentum maps and dual pairs are typically
 regarded as notions of symplectic geometry \cite{FOM,Weinstein1983}.
@@ -110,7 +111,8 @@ control vector fields forms a subalgebra of the space of all
 \subsection{Notation}
 tangent bundle, cotangent bundle, vector field, contraction, Lie derivative,
 smooth, continuous functions, group actions, infinitesimal generators,
-dual spaces.
+dual spaces.  A group $G$, left multiplication $L_g$, right multi $R_g$, 
+action $\rho(g)$, infinitesimal generator $T\rho(\xi)$.
 \todo[inline]{Finish this section}
 
 \section{Hamiltonian mechanics}
@@ -144,7 +146,7 @@ object known as a \emph{Poisson bracket} which will be introduced in
 As a warning, symplectic geometry has developed greatly
 since its origins in mechanics, and
 has branched into an independent subfield of pure mathematics.
-Many notions were revised and optimized in the $70$s and $80$s for
+Many notions were revised and optimized in the $1970$'s and $1980$'s for
 the purpose of proving theorems.
 Occasionally these revisions entailed a sacrifice
 in clarity, from the perspective of ``outsiders''.
@@ -202,10 +204,10 @@ An important aspect of study in Hamiltonian mechanics is that of symmetry.
 This yields the following notions
 
 \begin{defn}
-  Let $G$ be a Lie group, and denote the action of left/right multiplication by $g \in G$ by the maps $L_g$ and $R_g$ respectively.
-  The group $G$ is said to \emph{act symplectically} on a symplectic manifold $(S,\omega)$ if $G$ acts on $S$ and
+  Let $G$ be a Lie group and let $\rho:G \to \Diff(S)$ be a group action on a symplectic manifold $(S,\omega)$.
+  The group $G$ is said to \emph{act symplectically}
   \begin{align*}
-    \omega( g \cdot v , g \cdot w) = \omega(v,w)
+    \omega( \rho( g ) \cdot v , \rho(g) \cdot w) = \omega(v,w)
   \end{align*}
   for any $g \in G, v,w \in T_xS$ and $x \in S$.
   If $\mathfrak{g}$ is the Lie algebra of such a group,
@@ -217,7 +219,7 @@ This yields the following notions
 \end{defn}
 
 Alternatively, we can characterize a momentum map $J: S \to \mathfrak{g}^*$, as the unique map such that $X_{\langle J , \xi \rangle} = \xi_S$ for any $\xi \in \mathfrak{g}$.
-In the special case where $S = T^*Q$, an action of $G$ on $Q$ can be lifted to a symplectic action on $T^*Q$ given by
+In the special case where $S = T^*Q$, a left/right action of $G$ on $Q$ can be lifted to a right/left symplectic action on $T^*Q$ given by
 \begin{align*}
   (q,p) \in T^*Q \mapsto (g^{-1} \cdot q , g^* p) \in T^*Q.
 \end{align*}
