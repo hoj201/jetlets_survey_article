@@ -29,6 +29,7 @@
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\iso}{iso}
 \DeclareMathOperator{\kernel}{kernel}
+\DeclareMathOperator{\lie}{\mathcal{L}}
 
 \title[A meshless method for ideal fluid flow derived from s.g.]{A meshless method for
  ideal fluid flow derived from symplectic geometry}
@@ -47,7 +48,7 @@
 	Then describe out method.}
 
 \subsection{Main contributions}
-In this article we propose a heirarchy of particle methods
+In this article we propose a hierarchy of particle methods
 for a regularized model of ideal fluids.
 These models will be derive via techniques from 
 symplectic geometry and Hamiltonian mechanics.
@@ -71,9 +72,9 @@ Simultaneously, foundational work for particle methods carrying Taylor series
 data was developed in \cite{JacobsRatiuDesbrun2013}.
 Based upon the foundational work of \cite{JacobsRatiuDesbrun2013},
 an implementation using the fluid model of \cite{MumfordMichor2013} was created \cite{CotterHolmJacobsMeier2014}.
-A primary finding of \cite{CotterHolmJacobsMeier2014} was that particle collisions at one level of the heirarchy can exhibit ``infinite time mergers'' into particles at higher-levels in the heirarchy. 
+A primary finding of \cite{CotterHolmJacobsMeier2014} was that particle collisions at one level of the hierarchy can exhibit ``infinite time mergers'' into particles at higher-levels in the hierarchy. 
 In both \cite{MumfordMichor2013} and \cite{CotterHolmJacobsMeier2014}, the
-equations of motion were viewed as Euler-Lagrange equations
+equations of motion were viewed as Euler--Lagrange equations
 obtained from variational principles.
 In particular, the insights one could glean from 
 the Hamiltonian perspectively were left unturned.
@@ -85,13 +86,13 @@ regarded as notions of symplectic geometry \cite{FOM,Weinstein1983}.
 However, many of the statements on momentum maps and
 dual pairs in this article
 have analogs in the Lagrangian perspective.
-In particular, the dual pairs of the Camassa-Holm equation
+In particular, the dual pairs of the Camassa--Holm equation
 first appeared in \cite{HolmMarsden2005}, where the Clebsh
 variational principle was used to derive equations of motion.
 Moreover, the Clebsh variational principle was used in
 \cite{CotterHolm2009} in the context of optimal control.
 Momentum maps were found to naturally arise when the
-control vector fields forms a subalgebra of the space of all
+control vector fields form a subalgebra of the space of all
  vector fields.
  
  Here are other articles we should cite:
@@ -100,9 +101,9 @@ control vector fields forms a subalgebra of the space of all
  	\item \cite{Chorin1973} for vortex method.
 	\item \cite{Sommer2013,CotterHolmJacobsMeier2014} for jet particles
 	\item \cite{HolmTronci2012} for particles carrying diffeomorphisms as advected quantity in a turbulence model.
- 	\item \cite{JacobsRatiuDesbrun2013} for particle methods via Lagrange-Poincar\'e.
+ 	\item \cite{JacobsRatiuDesbrun2013} for particle methods via Lagrange--Poincar\'e.
 	\item \cite{FoiasHolmTiti2001} for convergence of NS-$\alpha$ to NS.
-	\item \cite{Arnold1966} for Euler fluid as Euler-Poincar\'e on $\SDiff(\R^n)$.
+	\item \cite{Arnold1966} for Euler fluid as Euler--Poincar\'e on $\SDiff(\R^n)$.
 	\item \cite{TrouveYounes2005} for analysis of particle methods for EP.
 	\item Euler-$\alpha$ papers.
 	\item One``Beg-algorithm" paper, such as \cite{Beg2005}.
@@ -123,7 +124,7 @@ left/right action $\rho(g,x)$ or $\rho(x,g)$, infinitesimal generator $\rho(\xi,
 \label{sec:Hamiltonian}
 The goal of this section is to prove theorems \ref{thm:dual_pairs}
 and \ref{thm:commuting_actions} (see pages \pageref{thm:dual_pairs} and \pageref{thm:commuting_actions}).
-Those whom understand and accept these theorem's on a first reading
+Those who understand and accept these theorems on a first reading
 should be able to skip this section without any consequence.
 Most of this section will be a crash course in Poisson geometry
 and Hamiltonian mechanics as described in \cite{FOM,MandS,Weinstein1983}.
@@ -137,7 +138,7 @@ If we consider the two-form $dp \wedge dq$, then Hamilton's equations
 can be written as $(\dot{q},\dot{p}) \lrcorner (dp \wedge dq) = dH(q,p)$.
 This is the starting point for symplectic geometry, which
 will be discussed in \S \ref{sec:Symplectic}.
-Alternatively, these equations can be alternatively written using the bilinear map $\{ \cdot , \cdot \}_{\rm can} : C^1( T^*Q) \times C^1(T^*Q) \to C^0(T^*Q)$
+Alternatively, these equations can be written using the bilinear map $\{ \cdot , \cdot \}_{\rm can} : C^1( T^*Q) \times C^1(T^*Q) \to C^0(T^*Q)$
 given by
 \begin{align*}
   \{ F , G \}_{\rm can} = \pder{F}{q}\pder{G}{p} - \pder{G}{q} \pder{G}{p}.
@@ -156,7 +157,7 @@ Occasionally these revisions entailed a sacrifice
 in clarity, from the perspective of ``outsiders''.
 This paper is intended to allow ``outsiders''
 (such as ourselves) to reap the benefits of Poisson geometry.
-Therefore, we will cut as much abstraction as possible in this introductory
+Therefore, we will cut away as much abstraction as possible in this introductory
 section.
 Nonetheless, a minimal amount of abstraction is needed in order to
 maintain mathematical rigour and stand firmly upon the shoulders of giants.
@@ -172,6 +173,8 @@ We begin with the definition.
   We call $\omega$ a \emph{symplectic form}.
   We call the pair $(S,\omega)$ a \emph{symplectic manifold}.
 \end{defn}
+\je{Does this include infinite dimensional manifolds? Any
+  notes/references on technical details?}
 As a first example, consider the manifold $\R^2$
 with coordinates $(q,p)$.
 The two-form $dq \wedge dp$ is a symplectic form.
@@ -269,9 +272,9 @@ bracket}.
 
 The second most important example of a Poisson bracket,
 after the canonical Poisson bracket,
-is the Lie-Poisson bracket.  Let $\mathfrak{g}$ be a Lie algebra
+is the Lie--Poisson bracket.  Let $\mathfrak{g}$ be a Lie algebra
 and let $\mathfrak{g}^*$ denote it's dual.
-The \emph{Lie-Poisson bracket} on $\mathfrak{g}^*$ is given 
+The \emph{Lie--Poisson bracket} on $\mathfrak{g}^*$ is given 
 by
 \begin{align}
   \{ f , g \}_{\mathfrak{g}^*}( x ) = \pm
@@ -290,10 +293,10 @@ Lie algebras $\so(3)$ and $\mathfrak{X}(\mathbb{R}^n)$.
 
 
 On a Poisson manifold $(P,\{ \cdot , \cdot \})$
-the derivation property implies that functional operator
+the derivation property implies that the functional operator
 $\{ \cdot , h \}$ is equivalent
 to the Lie derivative operator of a unique vector field $X_h:P \to TP$.
-That is to say, $X_h$ is the unique vector field, such that $\pounds_{X_h}[f] = \{ f , h \}$ for any $f \in C^1(P)$.
+That is to say, $X_h$ is the unique vector field such that $\lie_{X_h}[f] = \{ f , h \}$ for any $f \in C^1(P)$.
 We call $X_h$ the \emph{Hamiltonian vector field} and the ODE $\dot{x} = X_h(x)$ is called a \emph{Hamiltonian equation}.
 It is standard to write this ODE as ``$\dot{x} = \{ x , H\}$'',
 despite the fact that one typically intends for ``$x$'' to represent
@@ -332,10 +335,10 @@ sloppiness is usually harmless.
   to Hamilton's equations with respect to $h_2$.
 \end{prop}
 
-  When the dimension of $P_2$ is larger that that of $P_1$
+  When the dimension of $P_2$ is larger than that of $P_1$,
   Proposition \ref{prop:Poisson_dynamics} allows one to find solutions of
   Hamiltonian equations on $P_2$
-  by solving lower dimesional Hamiltonian equations
+  by solving lower dimensional Hamiltonian equations
   on $P_1$.
   \subsection{Dual pairs}
   In this section we review the notion of dual pairs
@@ -343,7 +346,7 @@ sloppiness is usually harmless.
   Let $(S,\omega)$ be a symplectic manifold.
   Given a distribution $V \subset TS$, denote the fiber over 
   $x \in S$ by $V_x \subset T_x S$.
-  The \emph{symplectic orthogonal} to $V$ is the disibtution
+  The \emph{symplectic orthogonal} to $V$ is the distribution
   \begin{align*}
     V^\omega = \{ w \in TS \mid \omega( w , v ) = 0, \forall v \in V \}.
   \end{align*}
@@ -354,7 +357,7 @@ sloppiness is usually harmless.
   \end{align*}
   If $J:S \to P_2$ is a Poisson map as well, and
   \begin{align*}
-    \kernel(J) =  [\kernel(\psi) ]^\omega
+    \kernel(J) = \kernel(\psi)^\omega
   \end{align*}
   we call the diagram
   \begin{align*}
@@ -432,27 +435,26 @@ sloppiness is usually harmless.
     the converse follows imediately.
     We find
     $\kernel(J_1) = \rho_1(\mathfrak{g}_1,S)^\omega$.
-    Of course the same argument applies to $J_2$ as well.
+    Of course the same argument applies to $J_2$.
 
     We now show that $\kernel(J_2) = \rho_1(\mathfrak{g}_1,S)$.
     Let $\xi_1 \in \mathfrak{g}_1, \xi_2 \in \mathfrak{g}_2$.
-    First note that $\rho_1(\xi_1) = X_{ \langle J_1 , \xi_1 \rangle}$
-    , and the same calculation applies to $\xi_2$.
-    Thus we observe
+    First note that $\rho_1(\xi_1) = X_{ \langle J_1 , \xi_1 \rangle}$,
+    and the same calculation applies to $\xi_2$.
+    Thus we observe by using Corollary~\ref{cor:Lie_hom} that
     \begin{align*}
-      X_{ \omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) } 
-      \stackrel{ \text{cor \ref{cor:Lie_hom} } }{=}
-        - [X_{ \langle J_1,\xi_1\rangle} , X_{\langle J_2,\xi_2\rangle} ] \\
-     = - [\rho_1(\xi_1) , \rho_2(\xi_2)] = 0.
+      X_{ \omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) }
+      = - [X_{ \langle J_1,\xi_1\rangle} , X_{\langle J_2,\xi_2\rangle} ] \\
+      = - [\rho_1(\xi_1) , \rho_2(\xi_2)] = 0.
     \end{align*}
-    Where the final equality
+    The final equality
     derives from the fact that the actions of $G_1$ and $G_2$ commute.
     We have proven that $\rho_1(\mathfrak{g}_1 , S)$ and $\rho_2(S,\mathfrak{g}_2)$ are
     symplectically orthogonal.
     Now note that
     $TJ_2 ( \xi_1 \cdot x) \cdot \xi_2 = \omega( \rho_1(\xi_1, x) ,\rho_2(x, \xi_2 )) = 0$.
-    Thus $\rho_1(\xi_1 , x) \in \kernel( J_2)$.
-    We see that $\rho_1(\mathfrak{g}_1 ,S)^\omega \subset \kernel(J_2)$.
+    Thus $\rho_1(\xi_1 , x) \in \kernel( J_2)$, hence
+    $\rho_1(\mathfrak{g}_1 ,S)^\omega \subset \kernel(J_2)$.
     As $G_1$ acts transitively on $G_2$ orbits, we see
     that $(\mathfrak{g}_1 \cdot S)^\omega \supset \kernel( J_2)$.
   \end{proof}
@@ -507,7 +509,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   \end{align*}
   Moreover, due to this symmetry, one can write the evolution equations
   on a lower-dimensional space.
-  The very fact that that the Hamiltonian is written in terms of $\Pi$
+  The very fact that the Hamiltonian is written in terms of $\Pi$
   suggests that the equations of motion can be written in terms of $\Pi$ alone.
   Indeed this is the case,
   \begin{align}
@@ -523,8 +525,8 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   \hoj{The hat map needs to be introduced}
   \begin{prop}[see \S 2.5 \cite{HolmBook2}] \label{prop:Nambu}
     The Nambu bracket on $\mathbb{R}^3$
-    is identified to the Lie-Poisson bracket on $\so(3)^*$ 
-    through the hat map
+    is identified to the Lie--Poisson bracket on $\so(3)^*$
+    through the isomorphism of Lie algebras given by the hat map
     \begin{align*}
       \hat{ \bf x } =
       \begin{bmatrix}
@@ -539,7 +541,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     $\hat{f}( \hat{x} ) = f(x), \hat{g}( \hat{x} ) = g(x)$.
   \end{prop}
   \begin{proof}
-    The Lie-Poisson bracket on $\so(3)^*$ is
+    The Lie--Poisson bracket on $\so(3)^*$ is
     \begin{align*}
       \{ \hat{f} , \hat{g} \}_{\rm LP} (\hat{\Pi}) =
       \left \langle \hat{\Pi} , \left[ d\hat{f}(\hat{\Pi}) , d\hat{g}(\hat{\Pi}) \right]
@@ -553,7 +555,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     \begin{align*}
       [\hat{x},\hat{y} ] := \hat{x} \hat{y} - \hat{y} \hat{x} = \widehat{x \times y }.
     \end{align*}
-    Therefore the Lie-Poisson bracket can be written as
+    Therefore the Lie--Poisson bracket can be written as
     \begin{align*}
     \{ \hat{f} , \hat{g} \}_{\rm LP}(\hat{\Pi})
     &= \langle \hat{\Pi} , \widehat{ \nabla f \times \nabla g }(\Pi) \rangle \\
@@ -563,7 +565,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   \end{proof}
 
   The kernel of $J_L$ is symplectically orthogonal
-  to the kernel of $J_R$, and vise-versa.
+  to the kernel of $J_R$, and vice versa.
   As a result the diagram
   \begin{align*}
     \so(3)^* \stackrel{J_L}{\longleftarrow}
@@ -573,16 +575,17 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     (R,P)
     \stackrel{J_R}{\longmapsto} P R^T
   \end{align*}
+  \je{Is it clear that the kernels are $\omega$-orthogonal?}
   is a dual pair and the maps $J_L$ and $J_R$ are Clebsh variables.
   By theorem \ref{thm:dual_pairs}, this dual pair expresses rigid
   body dynamics and conserved quantities.
   Specifically, the right leg yields the reduced phase space where 
   the system evolves in time.
-  The left leg yields the conserved quantites of the rigid body
+  The left leg yields the conserved quantities of the rigid body
   associated to the left action of $\SO(3)$ on itself.
   The most important aspect of these maps is that they are both Poisson
   maps, i.e. they carry the canonical Poisson bracket on $T^{\ast}\SO(3)$
-  to the Nambu bracket on $\so(3)^* \cong \mathbb{R}^3$.
+  to the Nambu bracket on $\so(3)^* \cong (\mathbb{R}^3,\times)$.
 
   \begin{prop}[remark 2.5.11 \cite{HolmBook2}] \label{prop:SO3_to_Nambu}
     Let $\{ \cdot , \cdot \}_{\rm can}$ denote the canonical Poisson bracket
@@ -610,7 +613,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     Cotangent lifts of group actions are always equivariant
     and thus yield Poisson maps (Theorem 12.4.1 \cite{MandS}).
     Thus $J_R$ carries the canonical
-    Poisson bracket on $T^{\ast}\SO(3)$, to the Lie-Poisson
+    Poisson bracket on $T^{\ast}\SO(3)$, to the Lie--Poisson
     bracket on $\so(3)^*$.
     By proposition \ref{prop:Nambu}, this is nothing but the
     Nambu bracket upon identifying $\so(3)$ with $\mathbb{R}^3$.
@@ -626,7 +629,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   paired with the observation that $J_R$ is a Poisson map via
   Proposition \ref{prop:SO3_to_Nambu}.
   \todo[inline]{Check for sign errors in this section. Especially with respect to left/right
-  	Lie-Poisson structure and Nambu bracket.}
+  	Lie--Poisson structure and Nambu bracket.}
 
 \section{Regularized fluids}
   The equations of motion for fluids can be seen as
@@ -635,7 +638,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   Consider the Lie-algebra of vector fields on $\mathbb{R}^n$, 
   denoted by $\mathfrak{X}(\mathbb{R}^n)$.
   Formally, the dual space to $\mathfrak{X}(\mathbb{R}^n)$ is a Poisson
-  manifold when equipped with the Lie-Poisson bracket.
+  manifold when equipped with the Lie--Poisson bracket.
   We may consider the map
   $\psi: T^*R^d \to ( \mathfrak{X}(\mathbb{R}^d))^*$
   given implicitly by
@@ -644,19 +647,19 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     \forall u \in \mathfrak{X}(\mathbb{R}^d), (q,p) \in T^*\mathbb{R}^d.
   \end{align*}
   Explicitly we may write $\psi$ using the Dirac-delta
-  functional as $\psi(q,p) = p \otimes \delta( \cdot - q)$.
+  functional as $\psi(q,p) = p \otimes \delta_q$.
   It is shown in \cite{HolmMarsden2005} that this map is Poisson.
-  Furthermore, as the $n$-dimensional Cammassa-Holm equation is a
-  Hamiltonian equation on $(\mathfrak{X}(\mathbb{R}^n))^*$,
+  Furthermore, as the $n$-dimensional Camassa--Holm equation is a
+  Hamiltonian equation on $\mathfrak{X}(\mathbb{R}^n)^*$,
   Proposition \ref{prop:Poisson_dynamics} promises to express a 
   certain subset
-  of solutions by solving for Hamiltonian equations on a finite number
+  of solutions by solving Hamiltonian equations for a finite number
   of particles.
   In particular, $\psi$ yields the Peakon solutions of the $n$-dimensional
-  Camassa-Holm equation.
+  Camassa--Holm equation.
   In this section we explore analogous constructions for
   an incompressible and regularized version of the
-  Camassa-Holm equation discovered in \cite{MumfordMichor2013}.
+  Camassa--Holm equation discovered in \cite{MumfordMichor2013}.
 
 %  \subsection{The group of $H^\infty$-diffeomorphisms}
 %  Let $H^k( \R^n ; \R^n)$ denote the space of
@@ -696,30 +699,37 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
 %  
   \begin{prop}[\cite{Arnold1966}] \label{prop:LPDiff}
   Let $h \in C^{\infty}( \mathfrak{X}_{\rm div}(\R^n) )$.
-  Recall that $\mathfrak{X}_{\rm div}(\R^n)^*$ is a Lie-Poisson manifold when equipped with the Lie-Poisson bracket,
+  Recall that $\mathfrak{X}_{\rm div}(\R^n)^*$ is a Lie--Poisson manifold when equipped with the Lie--Poisson bracket,
   and given a function $h$, the Fr\'echet derivative, $dh(m)$, is an element of $\mathfrak{X}_{\rm div}(\R^n)^{**}$.
   In the event that $dh(m) \in \mathfrak{X}_{\rm div}(\R^n)$,
-  Hamilton's equations with respect to the Lie-Poisson
+  Hamilton's equations with respect to the Lie--Poisson
   bracket can be written as
   \begin{align}
-    \dot{m} + \pounds_u [m] = 0 \quad , \quad u = dh(m) \label{eq:LP}.
+    \dot{m} + \lie_u [m] = 0 \quad , \quad u = dh(m) \label{eq:LP}.
   \end{align}
 \end{prop}
 \begin{proof}
   To each $v \in \mathfrak{X}_{\rm div}(\R^n)$
-  we can define a linear function on $\mathfrak{X}_{\rm div}(\R^n)^*$
+  we can associate a linear function on $\mathfrak{X}_{\rm div}(\R^n)^*$
   given by $m \in \mathfrak{X}_{\rm div}(\R^n)^* \mapsto \langle m , v \rangle \in \R$.
   Let us denote this function by $f_v$.
   Let $m(t)$ satisfy Hamilton's equations.
-  By the definition of the Lie-Poisson bracket we observe
+  By the definition of the Lie--Poisson bracket we observe
   \begin{align*}
     \frac{d}{dt} f_v(m) &= \{ f_v , h \}(m) = \langle m , [ df_v(m) , dh(m) ] \rangle \\
-    &= \langle m , \pounds_{dh(m)}[ df_v(m) ] \rangle = - \langle \pounds_{dh(m)}[m] , df_v \rangle.
+    &= \langle m , \lie_{dh(m)}[ df_v(m) ] \rangle = - \langle \lie_{dh(m)}[m] , df_v \rangle.
   \end{align*}
+  \je{In the second line you switch from a Lie derivative on the space
+    $T^* \SDiff$ to one where $v \in \mathfrak{X}_{\rm div}(\R^n)$ is
+    the argument, hence a Lie derivative on $\R^n$, acting here on the
+    (distributional) one-form $m$ on $\R^n$. Is there a subtle
+    argument for why this switch makes sense? Maybe since
+    $\mathfrak{X}_{\rm div}(\R^n)$ is a vector space, and therefore
+    its elements can be viewed as operators by the shift action?}
   However $df_v = v$ and 
   $\frac{d}{dt} f_v(m) = \langle \dot{m} , v \rangle$, so we find
   \begin{align*}
-    \langle \dot{m} + \pounds_{dh(m)} [m] , v \rangle = 0.  
+    \langle \dot{m} + \lie_{dh(m)} [m] , v \rangle = 0.  
   \end{align*}
   As $v$ is arbitrary, this uniquely characterizes $\dot{m}$.\footnote{This is \emph{not} a ``weak'' characterization.  The entity $\dot{m}$ is
   contained in the dual space to $\mathfrak{X}_{\rm div}(\R^n)$ and it is
@@ -729,7 +739,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
 In the case where $h(m) = \frac{1}{2} \| m \|^2_{L^2}$ is the standard fluid kinetic
 energy, \eqref{eq:LP} takes the form 
 \begin{align}
-	\partial_t m+ \pounds_u [ m] = 0 \quad , \quad u^i = \delta^{ij} m_j. \label{eq:ideal_fluid}
+	\partial_t m+ \lie_u [ m] = 0 \quad , \quad u^i = \delta^{ij} m_j. \label{eq:ideal_fluid}
 \end{align}
 The primary finding of \cite{Arnold1966} was that \eqref{eq:ideal_fluid} is equivalent to the
 inviscid fluid equation
@@ -737,7 +747,7 @@ inviscid fluid equation
 	\partial_t u + u \cdot \nabla u = - \nabla p \quad , \quad  \nabla \cdot u = 0.
 \end{align*}
 
-\subsection{The Mumford-Michor model}
+\subsection{The Mumford--Michor model}
 \label{sec:MME}
 In \cite{MumfordMichor2013} David Mumford and Peter Michor
 considered the Hamiltonian
@@ -747,17 +757,18 @@ considered the Hamiltonian
 where $K_{k,\sigma}:\R^n \to \mathbb{R}^{n \times n}$ is the matrix
 valued Green's kernel defined by the property
 \begin{align*}
- \left(1 - \frac{1}{k \sigma^2} \Delta \right) \cdot \int_{\R^n} K_{k,\sigma}^{ij}(x - y) m_j(y) dx = \delta^{ij} m_j(x).
+ \left(1 - \frac{1}{k \sigma^2} \Delta \right) \cdot \int_{\R^n} K_{k,\sigma}^{ij}(x - y) m_j(y) dy = \delta^{ij} m_j(x).
 \end{align*}
+\je{The Laplacian should be raised to the power $k$, right?}
 In this case Hamilton's equations take the form
 \begin{align}
-	\partial_t m+ \pounds_u [ m] = 0 \quad , \quad u^i  = K^{ij}_{k,\sigma} * m_j. \label{eq:MMDiff}
+	\partial_t m+ \lie_u [ m] = 0 \quad , \quad u^i  = K^{ij}_{k,\sigma} * m_j. \label{eq:MMDiff}
 \end{align}
 Solutions to \eqref{eq:MMDiff} exhibit existence and uniqueness over finite times.\todo{Did I get this correct?  Do we have infinite-time existence?}
-\footnote{In actuality, \cite{MumfordMichor2013} worked on the space of all
-vector fields and included a third parameter, ``$\epsilon$'', which
-penalized compressibility.  For $\epsilon > 0$ existence an uniqueness could be state for all time.
-Compressibility was banished when $\epsilon \to 0$, but the global existence result becomes a local one
+\footnote{In actuality, \cite{MumfordMichor2013} works on the space of all
+vector fields and includes a third parameter, ``$\epsilon$'', which
+penalizes compressibility.  For $\epsilon > 0$ existence and uniqueness is found for all time.
+Compressibility is banished when $\epsilon \to 0$, but the global existence result becomes a local one
 when $\epsilon = 0$.}
 
 Lastly, as $\sigma \to 0$, $h_{k,\sigma} \to h$ and one can speculate that \eqref{eq:MMDiff}
@@ -768,10 +779,10 @@ in the $H^k$-norm.
 Thus Hamilton's equations with respect to $h_{k,\sigma}$ were proposed
 as a model for ideal fluids.
 
-We now discuss a relevent dual pair for this system.
+We now discuss a relevant dual pair for this system.
 The group $\SDiff(\R^n)$ acts on itself on the left and on the right.
 These actions can be lifted to $T^{\ast}\SDiff(\R^n)$, and yield
-momentum maps $J_L,J_R : T^{\ast}\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$. In partcular these maps form the dual pair
+momentum maps $J_L,J_R : T^{\ast}\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$. In particular these maps form the dual pair
 \begin{align*}
   \mathfrak{X}_{\rm div}(\R^n)^*
   \stackrel{J_L}{\longmapsfrom}
@@ -780,20 +791,20 @@ momentum maps $J_L,J_R : T^{\ast}\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*
   \mathfrak{X}_{\rm div}(\R^n)^*.
 \end{align*}
 
-By theorem \ref{thm:dual_pairs}, we can derive dynamical properties of Hamiltonian equation defined on $\mathfrak{X}_{\rm div}(\R^n)^*$.
+By theorem \ref{thm:dual_pairs}, we can derive dynamical properties of Hamiltonian equations defined on $\mathfrak{X}_{\rm div}(\R^n)^*$.
 The Hamiltonian for a fluid is written on the left instance of $\mathfrak{X}_{\rm div}(\R^n)^*$.
-One can (in principal) solve Hamilton's equations on $T^*\SDiff(\R^n)$
+One can (in principle) solve Hamilton's equations on $T^*\SDiff(\R^n)$
 with respect to the hamiltonian $H = h \circ J_L$.
 This yields the \emph{material} or \emph{Lagrangian} coordinate perspective
-of fluid mechanics one encounters in their first course on continuum
+of fluid mechanics one encounters in a first course on continuum
 mechanics.
 The right leg yields conserved quantities associated to the particle relabeling symmetry of the fluid.
-It was found in \cite{Arnold1966} that this conserved momenta is identical
+It was found in \cite{Arnold1966} that these conserved momenta are identical
 to the law of conservation of circulation, a.k.a. \emph{Kelvin's circulation theorem}.
 
 Unfortunately, this dual pair does not help us in solving \eqref{eq:MMDiff}
 since solving Hamilton's equations on $T^*\SDiff(\R^n)$ is no less difficult
-that solving Hamilton's equations on $\mathfrak{X}_{\rm div}(\R^n)^*$.
+than solving Hamilton's equations on $\mathfrak{X}_{\rm div}(\R^n)^*$.
 In the next section we will derive a dual pair wherein the symplectic
 manifold is more reasonable.
 This will yield the particle-like solutions described in \cite{MumfordMichor2013}.
@@ -814,16 +825,19 @@ The tangent lift is defined in the obvious way by sending
 \begin{align*}
   (q,v) \in T\R^n \equiv \R^n \times \R^n
   \stackrel{ \varphi \in \SDiff(\R^n) }{\longmapsto}
-  (\varphi(q) , \partial_j\varphi^i(q) v^j ) \in T_{\varphi(q)} Q.
+  (\varphi(q) , \partial_j\varphi^i(q) v^j ) \in T_{\varphi(q)} \R^n.
 \end{align*}
 The cotangent lift is defined by taking the dual
 of the the tangent lifted action.
 That is to say,
 \begin{align*}
-  (\varphi(q) , p ) \in T^*\R^n \equiv \R^n \times \R^n
+  (q, p) \in T^*\R^n \equiv \R^n \times \R^n
   \stackrel{ \varphi \in \SDiff(\R^n) }{\longmapsto}
-  ( q , \partial_i\varphi^j(q) p_j ).
+  (\varphi^{-1}(q) , \partial_i\varphi^j(q) p_j ).
 \end{align*}
+\je{I moved $\varphi$ acting on $q$ to the other side to make the
+  definition more explict. Henry please revert or remove this comment
+  if OK.}
 On a cotangent bundle, the momentum map,
 $J_L^{(0)} : T^*\R^n \to (\mathfrak{X}_{\rm div}(\R^n) )^*$
 associated to this left action is naively defined by the
@@ -834,46 +848,52 @@ condition
 for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$.
 On $\R^n$ we may identify the dual space of $\mathfrak{X}_{\rm div}(\R^n)$
 with the space of closed $H^\infty$ one-forms by using the Euclidean volume form.
-That is to say, any covector field, $m \in \mathfrak{X}^*_{\rm div}(\R^n)$, it can be paired with a vector field $v \in \mathfrak{X}_{\rm div}(\R^n)$ to produce the real-valued function $\langle m , v \rangle$ which can then be integrated with respect the Euclidean volume form to produce a real number.
+That is to say, any covector field, $m \in \mathfrak{X}^*_{\rm
+  div}(\R^n)$, it can be paired with a vector field $v \in
+\mathfrak{X}_{\rm div}(\R^n)$ to produce the real-valued function
+$\langle m , v \rangle$\je{Careful: you're also using this as the
+  canonical pairing that produces a real number.}
+which can then be integrated with respect the Euclidean volume form to produce a real number.
 This characterization allows us to explicitly write $J_L^{(0)}$ as
 \begin{align*}
   J_L^{(0)}( q , p ) = p \otimes \delta_q
 \end{align*}
 where $\delta_q$ is the Dirac-delta functional on $\R^n$ centered at $q$.
 As the cotangent lifted action of $\SDiff(\R^n)$ is equivariant,
-we observe that $J_L^{(0)}$ is Poisson (again, Theorem 12.4.9 \cite{MandS}).
+we observe that $J_L^{(0)}$ is Poisson, again by \cite[Thm~12.4.9]{MandS}.
 
-We may define the manifold for particles
+We may define the manifold for particles,
 \begin{align*}
-  Q_N^{(0)} = \left\{ (q_1,\dots,q_N) \in \R^n \times \dots\times \R^n \mid q_i \neq q_j \text{ when } i \neq j \right\}.
+  Q_N^{(0)} = \left\{ (q_1,\dots,q_N) \in \R^n \times \dots\times \R^n
+                 \mid q_\alpha \neq q_\beta \text{ when } \alpha \neq \beta \right\}.
 \end{align*}
 We will index the particles with greek indices $\alpha,\beta,\gamma,\dots$, and we will index cartesian coordinates in $\R^n$ with roman indices $i,j,k,\dots$.
-Thus each $q \in Q_N^{(0)}$ can be decomposed into $N$ particles as $(q^1,\dots,q^N)$, and the $i^{\rm th}$ coordinate of $\alpha^{\rm th}$ particle is denoted by $q^{\alpha,i}$.
+Thus each $q \in Q_N^{(0)}$ can be decomposed into $N$ particles as $(q_1,\dots,q_N)$, and the $i^{\rm th}$ coordinate of $\alpha^{\rm th}$ particle is denoted by $q_\alpha^i$.
 
 The group $\SDiff(\R^n)$ acts on $Q$ by the diagonal action.
 Through the same manipulations applied previously we obtain the
 momentum-map for $N$-particles given by
 \begin{align*}
-  J_L^{(0)}(q,p) = p_{\alpha} \otimes \delta_{q^\alpha}
+  J_L^{(0)}(q,p) = p_{\alpha} \otimes \delta_{q_\alpha}
 \end{align*}
 where the sum over $\alpha = 1,\dots,N$ is implied under
 the Einstein summation convention.
 
-By Proposition \ref{prop:Poisson_dynamics} and \ref{prop:LPDiff},
-we may obtain solutions to Hamilton's equations
+By Propositions~\ref{prop:Poisson_dynamics} and~\ref{prop:LPDiff},
+we obtain solutions to Hamilton's equations
 on $\mathfrak{X}^*_{\rm div}(\R^n)$, by solving
 Hamilton's equations on $T^*\R^n$ if $dh( J_L^{(0)}(q,p) )$ is
-a vector field.  If $h = h_{k,\sigma}$, the we calculate
+a vector field.  If $h = h_{k,\sigma}$, then we calculate
 \begin{align*}
 	dh( p_\alpha \otimes \delta_{q^\alpha} )  (x) = K_{k,\sigma}^{ij}(x - q^\alpha) p_j \pder{}{x^i}
 \end{align*}
 which is indeed a $C^?$-vector field\todo{Find the regularity of this.}.
-A depiction of this vector field for large $k$ is shown in figure \ref{fig:zero_jetlet}.
+A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_jetlet}.
 
 \begin{figure}
 	\centering
 	\includegraphics[width = 0.6\textwidth]{./images/zero_jet}
-	\caption{a $0$-jetlet with momenta $m(x) = (1,0) \otimes \delta_{\bf 0}(x)$}
+	\caption{A $0$-jetlet with momentum $m(x) = (1,0) \otimes \delta_{\bf 0}(x)$}
 	\label{fig:zero_jetlet}
 \end{figure}
 
@@ -886,22 +906,24 @@ A depiction of this vector field for large $k$ is shown in figure \ref{fig:zero_
   is the full tangent bundle $T(T^*Q)$.
   Moreover, the kernel of $J_R^{(0)}$ is $T(T^*Q)$ and so it's symplectic
   orthogonal is trivial.
-  As a result of these observations the diagram
+  From these observations it follows that the diagram
   \begin{align*}
     \mathfrak{X}^*_{\rm div}(\R^n) \stackrel{J_L^{(0)} }{\longleftarrow}
     T^{\ast}Q
     \stackrel{J_R^{(0)} }{\longrightarrow} \mathfrak{X}^*_{\rm div}(\R^n) \\
-    p_\alpha \otimes \delta_{q^\alpha} \stackrel{J_L^{(0)}}{\longmapsfrom}
+    p_\alpha \otimes \delta_{q_\alpha} \stackrel{J_L^{(0)}}{\longmapsfrom}
     (q,p)
     \stackrel{J_R^{(0)} }{\longmapsto} 0
   \end{align*}
+  \je{Is $Q = Q^{(0)}_N$ here?}
   is a dual pair.
   Again, this dual pair allows us to express conservation
   laws and dynamics as a result of theorem \ref{thm:dual_pairs}.
-  The left leg represents the space where particle like
+  The left leg represents the space in which particle-like
   solutions to \eqref{eq:MMDiff} evolve,
-  while the right leg represents the conserved quantites
-  associated to the a trivial symmetry.
+  while the right leg represents the conserved quantities
+  associated to the trivial symmetry.\je{does this mod out the
+    redundancy in the $\SDiff$ action?}
   Specifically, $J_R^{(0)}$ expresses the trivial (perhaps silly)
   conservation law that $0$ is constant in time.
   In summary we find:
@@ -917,6 +939,7 @@ A depiction of this vector field for large $k$ is shown in figure \ref{fig:zero_
 \end{prop}
 \begin{proof}
 	Note that $H = h_{k,\sigma} \circ J_L$ and apply theorem \ref{thm:commuting_actions}.
+  \je{Modulo analytic details I suppose?}
 \end{proof}
 
 \subsection{$1^{\rm st}$-order particle-like solutions}
@@ -928,7 +951,7 @@ A depiction of this vector field for large $k$ is shown in figure \ref{fig:zero_
   \begin{align}
     \varphi \cdot q = (\varphi(q_{(0)} ) , D\varphi(q_{(0)} ) \cdot q_{(1)} ). \label{eq:first_order_action}
   \end{align}
-  Where $D\varphi(q_{(0)} ) \cdot q_{(1)}j$ is the result of matrix multiplying
+  Where $D\varphi(q_{(0)} ) \cdot q_{(1)}$ is the result of multiplying
   the Jacobian matrix $D\varphi(q_{(0)} )$ with $q_{(1)}$.
   \begin{prop}
     The action of $\SDiff(M)$ on $\R \times \SL(n)$ in \eqref{eq:first_order_action} is a group action.
@@ -1017,8 +1040,8 @@ A depiction of this vector field for large $k$ is shown in figure \ref{fig:zero_
 
   \subsection{Higher-order particles}
   \label{sec:higher_order}
-  In this section we will introduce a heirarchy of particle methods
-  where the $k^{\rm th}$ level of the heirarchy includes the $(k-1)^{\rm th}$
+  In this section we will introduce a hierarchy of particle methods
+  where the $k^{\rm th}$ level of the hierarchy includes the $(k-1)^{\rm th}$
   level.
   The $0^{\rm th}$-level in the hierarchy is the standard particle like solutions,
   while the $1^{\rm st}$ level describes particles with internal $\SL(n)$ variables
@@ -1083,7 +1106,7 @@ A depiction of this vector field for large $k$ is shown in figure \ref{fig:zero_
   \begin{proof}
     Let $\varphi_1,\varphi_2 \in \SDiff(\R^n)$.
     The partial derivatives of $(\varphi_1 \circ \varphi_2)$
-    are given by a formula known as the Faa-di-Bruno formula
+    are given by a formula known as the Fa\`a di Bruno formula
     (see appendix \ref{app:FaadiBruno}).
     One can read directly from the expression that
     a $k^{\rm th}$ order derivative only depends on lower order
@@ -1095,7 +1118,7 @@ A depiction of this vector field for large $k$ is shown in figure \ref{fig:zero_
     the setting $\varphi \cdot q = \Jet_z^{(k)}( \varphi \circ \psi)$
     for any $\psi$ such that $\Jet^{(k)}_z(\psi)$.
     That this is independent of the choice of $\psi$ follows
-    from observing that the Faa-di-Bruno formula
+    from observing that the Fa\`a di Bruno formula
     only uses data in $q = \Jet^{(k)}(\psi)$ and nothing more.
     By the same construction, a left $\iso(z)$ action is induced
     on $Q_1^{(k)}$ by setting $q \cdot \phi = \Jet^{(k)}_z ( \psi \circ \phi)$ for any $\psi$ such that $\Jet_z^{(k)}(\psi) = q$.
@@ -1150,9 +1173,9 @@ Discuss mergers to higher-order, time to collision, near misses.
 \appendix
 \section{Convergence and error bounds}
 \label{sec:Convergence}
-He we prove that the particle method converges to a solution of the Mumford-Michor model for an arbitrary initial condition in $H^k_{\sigma^2}$.
+He we prove that the particle method converges to a solution of the Mumford--Michor model for an arbitrary initial condition in $H^k_{\sigma^2}$.
 
-We cite error bounds to Euler from Mumford-Michor.
+We cite error bounds to Euler from Mumford--Michor.
 
 \todo[inline]{Not really sure if this section is worth writing.  It follows almost directly from \cite{TrouveYounes2005}.}
 
