@@ -6,7 +6,11 @@
 
 \usepackage{tensor}
 
-\newcommand{\hoj}[1]{\todo[inline,color=blue!20]{#1}}
+\newcommand{\hoj}[1]{\todo[inline,color=blue!20]{HOJ: #1}}
+\newcommand{\cjc}[1]{\todo[inline,color=red!20]{CJC:  #1}}
+\newcommand{\je}[1]{\todo[inline,color=green!20]{JE:  #1}}
+
+
 \newcommand{\pder}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
 \newcommand{\so}{\ensuremath{\mathfrak{so}}}
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
@@ -51,11 +55,11 @@ The main contributions are:
 \begin{enumerate}
   \item We determine Poisson morphism which constitute 
     dual-pairs that induce these methods.
-  \item We relate the ``right-leg'' of the dual paris to Kelvin's circulation theorem.
+  \item We relate the ``right-leg'' of the dual pairs to Kelvin's circulation theorem.
   \item We explore the collision behavior discovered in \cite{CotterHolmJacobsMeier2014}.
 \end{enumerate}
 As a ``softer'' contribution, we explain this method entirely in the Hamiltonian
-formalism to provide an alternative perspective to previous works written in the Lagrangian formalism.
+formalism to provide an alternative perspective to previous works written in the Lagrangian formalism.\cjc{remove apology, move this contribution to front.}
 
 \subsection{Previous work}
 This article concerns a hierarchy of particle methods for
@@ -354,7 +358,7 @@ sloppiness is usually harmless.
   \end{align*}
   we call the diagram
   \begin{align*}
-    P_1 \stackrel{\psi}{\mapsfrom} S \stackrel{J}{\mapsto} P_2
+    P_1 \stackrel{\psi}{\leftarrow} S \stackrel{J}{\to} P_2
   \end{align*}
   a \emph{dual pair}.
   In the case that $S$ is cotangent bundle we call $\psi$ or $J$
@@ -578,9 +582,9 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   associated to the left action of $\SO(3)$ on itself.
   The most important aspect of these maps is that they are both Poisson
   maps, i.e. they carry the canonical Poisson bracket on $T^{\ast}\SO(3)$
-  to the Nambu bracket on $\so(3)^* \approx \mathbb{R}^3$.
+  to the Nambu bracket on $\so(3)^* \cong \mathbb{R}^3$.
 
-  \begin{prop}[see remark 2.5.11 \cite{HolmBook2}] \label{prop:SO3_to_Nambu}
+  \begin{prop}[remark 2.5.11 \cite{HolmBook2}] \label{prop:SO3_to_Nambu}
     Let $\{ \cdot , \cdot \}_{\rm can}$ denote the canonical Poisson bracket
     on the cotangent bundle $T^{\ast}\SO(3)$.
     Let $\{ \cdot , \cdot \}_{\rm Nambu}$ denote the Nambu bracket on $\mathbb{R}^3$.
@@ -777,13 +781,13 @@ momentum maps $J_L,J_R : T^{\ast}\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*
 \end{align*}
 
 By theorem \ref{thm:dual_pairs}, we can derive dynamical properties of Hamiltonian equation defined on $\mathfrak{X}_{\rm div}(\R^n)^*$.
-The hamiltonian for a fluid is written on the left instance of $\mathfrak{X}_{\rm div}(\R^n)^*$.
+The Hamiltonian for a fluid is written on the left instance of $\mathfrak{X}_{\rm div}(\R^n)^*$.
 One can (in principal) solve Hamilton's equations on $T^*\SDiff(\R^n)$
 with respect to the hamiltonian $H = h \circ J_L$.
 This yields the \emph{material} or \emph{Lagrangian} coordinate perspective
 of fluid mechanics one encounters in their first course on continuum
 mechanics.
-The right leg yields conserved quantites associated to the particle relabling symmetry of the fluid.
+The right leg yields conserved quantities associated to the particle relabeling symmetry of the fluid.
 It was found in \cite{Arnold1966} that this conserved momenta is identical
 to the law of conservation of circulation, a.k.a. \emph{Kelvin's circulation theorem}.
 
@@ -1127,9 +1131,6 @@ A depiction of this vector field for large $k$ is shown in figure \ref{fig:zero_
   \todo[inline]{Darryl, would you like to write this section?  To correspond with [Desbrun Jacobs Ratiu 2013]
   	see Theorem 5.5 of that article.  The quantity ``$J_\omega$'' in that paper is equivalent to our $J_R$.}
 
-\section{Numerical expirements}
-\label{sec:Numerical expirements}
-
 
 \section{Collisions}
 \label{sec:collisions}
@@ -1137,6 +1138,14 @@ Analytic analysis of collisions with $j=0$.
 Discuss mergers to higher-order, time to collision, near misses.
 
 \todo[inline]{Jaap can write this}
+
+\section{Numerical expirements}
+\label{sec:Numerical expirements}
+
+\cjc{Consider two particles, far apart.  Each has it's``own conserved momenta".  They get close, exchange stuff, but the ``actual" momentum is conserved}
+
+\cjc{Collide some $k$-jets.  Make correspondence with total momentum.}
+
 
 \appendix
 \section{Convergence and error bounds}
