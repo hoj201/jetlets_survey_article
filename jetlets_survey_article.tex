@@ -44,7 +44,7 @@
 \end{abstract}
 
 \section{Introduction}
-\hoj{Quickly describe the derivation of point-vortex solutions and peakons via Clebsh variables.
+\hoj{Quickly describe the derivation of point-vortex solutions and peakons via Clebsch variables.
 	Then describe out method.}
 
 \subsection{Main contributions}
@@ -77,7 +77,7 @@ In both \cite{MumfordMichor2013} and \cite{CotterHolmJacobsMeier2014}, the
 equations of motion were viewed as Euler--Lagrange equations
 obtained from variational principles.
 In particular, the insights one could glean from 
-the Hamiltonian perspectively were left unturned.
+the Hamiltonian perspective were left untouched.
 
 In this article we will use Poisson maps to determine solutions of regularized
 fluid equations by solving finite dimensional Hamiltonian equations.
@@ -87,9 +87,9 @@ However, many of the statements on momentum maps and
 dual pairs in this article
 have analogs in the Lagrangian perspective.
 In particular, the dual pairs of the Camassa--Holm equation
-first appeared in \cite{HolmMarsden2005}, where the Clebsh
+first appeared in \cite{HolmMarsden2005}, where the Clebsch
 variational principle was used to derive equations of motion.
-Moreover, the Clebsh variational principle was used in
+Moreover, the Clebsch variational principle was used in
 \cite{CotterHolm2009} in the context of optimal control.
 Momentum maps were found to naturally arise when the
 control vector fields form a subalgebra of the space of all
@@ -365,7 +365,7 @@ sloppiness is usually harmless.
   \end{align*}
   a \emph{dual pair}.
   In the case that $S$ is cotangent bundle we call $\psi$ or $J$
-  \emph{Clebsh variables} \cite{MarsdenWeinstein1983}.
+  \emph{Clebsch variables} \cite{MarsdenWeinstein1983}.
 
   \begin{thm} \label{thm:dual_pairs}
     Let $J_1,J_2:S \to P_1,P_2$ form a dual pair.
@@ -432,7 +432,7 @@ sloppiness is usually harmless.
     However $d\langle J_1 , \xi_1 \rangle (v) = \langle TJ_1(v) , \xi_1 \rangle$.
     Thus $v \in \kernel(J_1)$.
     The previous steps may be reversed, and
-    the converse follows imediately.
+    the converse follows immediately.
     We find
     $\kernel(J_1) = \rho_1(\mathfrak{g}_1,S)^\omega$.
     Of course the same argument applies to $J_2$.
@@ -521,7 +521,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     \{ F , G \}_{\rm Nambu}(x)  = x \cdot (\nabla F \times \nabla G) \label{eq:Nambu}
   \end{align}
   known as the \emph{Nambu bracket}.
-  This is no coincedence.
+  This is no coincidence.
   \hoj{The hat map needs to be introduced}
   \begin{prop}[see \S 2.5 \cite{HolmBook2}] \label{prop:Nambu}
     The Nambu bracket on $\mathbb{R}^3$
@@ -576,7 +576,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     \stackrel{J_R}{\longmapsto} P R^T
   \end{align*}
   \je{Is it clear that the kernels are $\omega$-orthogonal?}
-  is a dual pair and the maps $J_L$ and $J_R$ are Clebsh variables.
+  is a dual pair and the maps $J_L$ and $J_R$ are Clebsch variables.
   By theorem \ref{thm:dual_pairs}, this dual pair expresses rigid
   body dynamics and conserved quantities.
   Specifically, the right leg yields the reduced phase space where 
@@ -584,7 +584,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   The left leg yields the conserved quantities of the rigid body
   associated to the left action of $\SO(3)$ on itself.
   The most important aspect of these maps is that they are both Poisson
-  maps, i.e. they carry the canonical Poisson bracket on $T^{\ast}\SO(3)$
+  maps, i.e.\ they carry the canonical Poisson bracket on $T^{\ast}\SO(3)$
   to the Nambu bracket on $\so(3)^* \cong (\mathbb{R}^3,\times)$.
 
   \begin{prop}[remark 2.5.11 \cite{HolmBook2}] \label{prop:SO3_to_Nambu}
@@ -794,7 +794,7 @@ momentum maps $J_L,J_R : T^{\ast}\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*
 By theorem \ref{thm:dual_pairs}, we can derive dynamical properties of Hamiltonian equations defined on $\mathfrak{X}_{\rm div}(\R^n)^*$.
 The Hamiltonian for a fluid is written on the left instance of $\mathfrak{X}_{\rm div}(\R^n)^*$.
 One can (in principle) solve Hamilton's equations on $T^*\SDiff(\R^n)$
-with respect to the hamiltonian $H = h \circ J_L$.
+with respect to the Hamiltonian $H = h \circ J_L$.
 This yields the \emph{material} or \emph{Lagrangian} coordinate perspective
 of fluid mechanics one encounters in a first course on continuum
 mechanics.
@@ -836,7 +836,7 @@ That is to say,
   (\varphi^{-1}(q) , \partial_i\varphi^j(q) p_j ).
 \end{align*}
 \je{I moved $\varphi$ acting on $q$ to the other side to make the
-  definition more explict. Henry please revert or remove this comment
+  definition more explicit. Henry please revert or remove this comment
   if OK.}
 On a cotangent bundle, the momentum map,
 $J_L^{(0)} : T^*\R^n \to (\mathfrak{X}_{\rm div}(\R^n) )^*$
@@ -867,7 +867,7 @@ We may define the manifold for particles,
   Q_N^{(0)} = \left\{ (q_1,\dots,q_N) \in \R^n \times \dots\times \R^n
                  \mid q_\alpha \neq q_\beta \text{ when } \alpha \neq \beta \right\}.
 \end{align*}
-We will index the particles with greek indices $\alpha,\beta,\gamma,\dots$, and we will index cartesian coordinates in $\R^n$ with roman indices $i,j,k,\dots$.
+We will index the particles with Greek indices $\alpha,\beta,\gamma,\dots$, and we will index Cartesian coordinates in $\R^n$ with roman indices $i,j,k,\dots$.
 Thus each $q \in Q_N^{(0)}$ can be decomposed into $N$ particles as $(q_1,\dots,q_N)$, and the $i^{\rm th}$ coordinate of $\alpha^{\rm th}$ particle is denoted by $q_\alpha^i$.
 
 The group $\SDiff(\R^n)$ acts on $Q$ by the diagonal action.
@@ -988,11 +988,11 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
       \end{array} \right\}. 
   \end{align*}
 
-  Moreover, there is (non-trivial) right group action by $\iso(z)$ on $Q^{(1)}_N$ given by
+  Moreover, there is a (non-trivial) right group action by $\iso(z)$ on $Q^{(1)}_N$ given by
   \begin{align*}
     (q_{(0)} , q_{(1)} ) \cdot \psi = (q_{(0)} , q_{(1)} \cdot D\psi|_z).
   \end{align*}
-  This action yields the contangent lift momentum-map
+  This action yields the cotangent lift momentum-map
   \begin{align*}
     J_R^{(1)}( q,p) = ....
   \end{align*}
@@ -1071,13 +1071,13 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   symmetric in the lower indices.
   We call the space of such tensors $S^1_2$,
   and we see that the space of second-order jets is $\R^n \times \SL(n) \times S^1_2$.
-  Finaly, for $k \geq 2$ the space of $k^{\rm th}$ order jets is
+  Finally, for $k \geq 2$ the space of $k^{\rm th}$ order jets is
   \begin{align*}
     Q_1^{(k)} = \R^n \times \SL(n) \times S^1_2 \times S^1_3 \times \cdots\times S^1_k
   \end{align*}
   where $S^1_j$ is the vector space of $(1,j)$-tensors which
   have been symmetrized in the covariant indices.
-  The space $Q_1^{(k)}$ is a equipped with the fiber bundle
+  The space $Q_1^{(k)}$ is equipped with the fiber bundle
   projection $\pi^{(k)} : Q_1^{(k)} \to \R^n$,
   which simply projects the $\R^n$ component.
   We define the space for $N$-jetlets by taking a product
@@ -1086,13 +1086,13 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
     \mid i \neq j \implies \pi^{(k)}( q^i) \neq \pi^{(k)}( q^j) \}.
   \end{align*}
   We coordinatize $Q^{(k)}_N$ as follows.
-  We will use $i,j,k,\dots$ to index particles and greek indices to indices to represent
+  We will use $i,j,k,\dots$ to index particles and Greek indices to indices to represent
   multi-indices on $\R^n$.  A typical coordinate on $Q^{(k)}_N$ will therefore look
   like $q\indices{^{i,\alpha}_{\beta}}$ where $i \in \{1,\dots,N\}$, $\alpha \in \{ 1 , \dots, d \}$
   and $\beta$ is a multi-index on $\R^n$.\todo{Should we elaborate further on multi-indices?
   I'm leaving the multi-index convention to David since he is the one who has to work with it the most.}
   This coordinate is used to model the partial derivative of the $\alpha^{\rm th}$ coordinate
-  of a diffeomorphism at some point $z_i$, i.e. $\partial_\beta \varphi^\alpha(z_i)$.
+  of a diffeomorphism at some point $z_i$, i.e.\ $\partial_\beta \varphi^\alpha(z_i)$.
   This is the primary motivation for this notational convention.
   We will let $q \indices{^{i,\alpha}_{(k)}}$ denote the collection of $q\indices{^{i,\alpha}_\beta}$
   where $| \beta | = k$.
@@ -1122,7 +1122,7 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
     only uses data in $q = \Jet^{(k)}(\psi)$ and nothing more.
     By the same construction, a left $\iso(z)$ action is induced
     on $Q_1^{(k)}$ by setting $q \cdot \phi = \Jet^{(k)}_z ( \psi \circ \phi)$ for any $\psi$ such that $\Jet_z^{(k)}(\psi) = q$.
-    We can choose disntinct points $z_1,\dots,z_N \in \R^n$
+    We can choose distinct points $z_1,\dots,z_N \in \R^n$
     and easily apply the same process to $Q_N^{(k)}$.
   \end{proof}
   
@@ -1162,8 +1162,8 @@ Discuss mergers to higher-order, time to collision, near misses.
 
 \todo[inline]{Jaap can write this}
 
-\section{Numerical expirements}
-\label{sec:Numerical expirements}
+\section{Numerical experiments}
+\label{sec:Numerical experiments}
 
 \cjc{Consider two particles, far apart.  Each has it's``own conserved momenta".  They get close, exchange stuff, but the ``actual" momentum is conserved}
 
