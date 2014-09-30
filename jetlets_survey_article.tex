@@ -757,9 +757,8 @@ considered the Hamiltonian
 where $K_{k,\sigma}:\R^n \to \mathbb{R}^{n \times n}$ is the matrix
 valued Green's kernel defined by the property
 \begin{align*}
- \left(1 - \frac{1}{k \sigma^2} \Delta \right) \cdot \int_{\R^n} K_{k,\sigma}^{ij}(x - y) m_j(y) dy = \delta^{ij} m_j(x).
+ \Big(1 - \frac{1}{k \sigma^2} \Delta \Big)^k \cdot \int_{\R^n} K_{k,\sigma}^{ij}(x - y) m_j(y) dy = \delta^{ij} m_j(x).
 \end{align*}
-\je{The Laplacian should be raised to the power $k$, right?}
 In this case Hamilton's equations take the form
 \begin{align}
 	\partial_t m+ \lie_u [ m] = 0 \quad , \quad u^i  = K^{ij}_{k,\sigma} * m_j. \label{eq:MMDiff}
