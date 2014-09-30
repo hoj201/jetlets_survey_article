@@ -834,9 +834,6 @@ That is to say,
   \stackrel{ \varphi \in \SDiff(\R^n) }{\longmapsto}
   (\varphi^{-1}(q) , \partial_i\varphi^j(q) p_j ).
 \end{align*}
-\je{I moved $\varphi$ acting on $q$ to the other side to make the
-  definition more explicit. Henry please revert or remove this comment
-  if OK.}
 On a cotangent bundle, the momentum map,
 $J_L^{(0)} : T^*\R^n \to \mathfrak{X}_{\rm div}(\R^n)^*$
 associated to this left action is naively defined by the
@@ -869,7 +866,7 @@ We may define the manifold for particles,
 We will index the particles with Greek indices $\alpha,\beta,\gamma,\dots$, and we will index Cartesian coordinates in $\R^n$ with roman indices $i,j,k,\dots$.
 Thus each $q \in Q_N^{(0)}$ can be decomposed into $N$ particles as $(q_1,\dots,q_N)$, and the $i^{\rm th}$ coordinate of $\alpha^{\rm th}$ particle is denoted by $q_\alpha^i$.
 
-The group $\SDiff(\R^n)$ acts on $Q$ by the diagonal action.
+The group $\SDiff(\R^n)$ acts on $Q_N^{(0)}$ by the diagonal action.
 Through the same manipulations applied previously we obtain the
 momentum-map for $N$-particles given by
 \begin{align*}
@@ -902,19 +899,18 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   This yields the momentum map $J_R^{(0)}(q,p) = 0$.
   We see that $J_L^{(0)}$ is injective, and thus has a trivial kernel.
   As a result, the symplectic orthogonal to the kernel of $J_L^{(0)}$
-  is the full tangent bundle $T(T^*Q)$.
-  Moreover, the kernel of $J_R^{(0)}$ is $T(T^*Q)$ and so it's symplectic
-  orthogonal is trivial.
+  is the full tangent bundle $T(T^*Q_N^{(0)})$.
+  Moreover, the kernel of $J_R^{(0)}$ is $T(T^*Q_N^{(0)})$ and so its
+  symplectic orthogonal is trivial.
   From these observations it follows that the diagram
   \begin{align*}
     \mathfrak{X}_{\rm div}(\R^n)^* \stackrel{J_L^{(0)} }{\longleftarrow}
-    T^* Q
+    T^* Q_N^{(0)}
     \stackrel{J_R^{(0)} }{\longrightarrow} \mathfrak{X}_{\rm div}(\R^n)^* \\
     p_\alpha \otimes \delta_{q_\alpha} \stackrel{J_L^{(0)}}{\longmapsfrom}
     (q,p)
     \stackrel{J_R^{(0)} }{\longmapsto} 0
   \end{align*}
-  \je{Is $Q = Q^{(0)}_N$ here?}
   is a dual pair.
   Again, this dual pair allows us to express conservation
   laws and dynamics as a result of theorem \ref{thm:dual_pairs}.
@@ -928,7 +924,7 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   In summary we find:
   \begin{prop}[\S7 of \cite{MumfordMichor2013}] \label{prop:0-solutions}
   Let $k \geq \frac{n}{2} +1$ and $\sigma > 0$.
-  Let $H:T^*Q \to \R$ be the function
+  Let $H:T^*Q_N^{(0)} \to \R$ be the function
   \begin{align*}
     H(q,p) =\frac{1}{2} K_{k,\sigma}^{ij}(q^\alpha - q^\beta) p_{\alpha,i} p_{\beta,j}.
   \end{align*}
@@ -938,7 +934,6 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
 \end{prop}
 \begin{proof}
 	Note that $H = h_{k,\sigma} \circ J_L$ and apply theorem \ref{thm:commuting_actions}.
-  \je{Modulo analytic details I suppose?}
 \end{proof}
 
 \subsection{$1^{\rm st}$-order particle-like solutions}
@@ -1000,8 +995,8 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
     The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
   \end{prop}
   \begin{proof}
-    The actions of $\SL(n)$ and $\SDiff(\R^n)$ on $Q$ clearly commute
-    and lift to symplectic actions on $T^*Q$.
+    The actions of $\SL(n)$ and $\SDiff(\R^n)$ on $Q_N^{(1)}$ clearly commute
+    and lift to symplectic actions on $T^*Q_N^{(1)}$.
     Moreover, the action of $\SDiff(\R^n)$ is transitive on $\SL(n)$ orbits
     by inspection.
     By theorem \ref{thm:commuting_actions}, $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
