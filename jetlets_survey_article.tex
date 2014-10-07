@@ -864,18 +864,21 @@ we observe that $J_L^{(0)}$ is Poisson, again by \cite[Thm~12.4.9]{MandS}.
 We may define the manifold for particles,
 \begin{align*}
   Q_N^{(0)} = \left\{ (q_1,\dots,q_N) \in \R^n \times \dots\times \R^n
-                 \mid q_\alpha \neq q_\beta \text{ when } \alpha \neq \beta \right\}.
+                 \mid q_a \neq q_b \text{ when } a \neq b \right\}.
 \end{align*}
-We will index the particles with Greek indices $\alpha,\beta,\gamma,\dots$, and we will index Cartesian coordinates in $\R^n$ with roman indices $i,j,k,\dots$.
-Thus each $q \in Q_N^{(0)}$ can be decomposed into $N$ particles as $(q_1,\dots,q_N)$, and the $i^{\rm th}$ coordinate of $\alpha^{\rm th}$ particle is denoted by $q_\alpha^i$.
+We will index the particles with roman indices $a,b,c,\dots$ from the
+start of the alphabet, and Cartesian coordinates in $\R^n$ with roman
+indices $i,j,k,\dots$ Thus each $q \in Q_N^{(0)}$ can be decomposed
+into $N$ particles as $(q_1,\dots,q_N)$, and the $i^{\rm th}$
+coordinate of the $a^{\rm th}$ particle is denoted by $q_a^i$.
 
 The group $\SDiff(\R^n)$ acts on $Q_N^{(0)}$ by the diagonal action.
 Through the same manipulations applied previously we obtain the
 momentum-map for $N$ particles given by
 \begin{align*}
-  J_L^{(0)}(q,p) = p_{\alpha} \otimes \delta_{q_\alpha}
+  J_L^{(0)}(q,p) = p_a \otimes \delta_{q_a}
 \end{align*}
-where the sum over $\alpha = 1,\dots,N$ is implied under
+where the sum over $a = 1,\dots,N$ is implied under
 the Einstein summation convention.
 
 By Propositions~\ref{prop:Poisson_dynamics} and~\ref{prop:LPDiff},
@@ -884,7 +887,7 @@ on $\mathfrak{X}_{\rm div}(\R^n)^*$, by solving
 Hamilton's equations on $T^*\R^n$ if $dh( J_L^{(0)}(q,p) )$ is
 a vector field.  If $h = h_{k,\sigma}$, then we calculate
 \begin{align*}
-	dh( p_\alpha \otimes \delta_{q^\alpha} )  (x) = K_{k,\sigma}^{ij}(x - q^\alpha) p_j \pder{}{x^i}
+	dh( p_a \otimes \delta_{q_a} )  (x) = K_{k,\sigma}^{ij}(x - q_a) p_{a\,j} \pder{}{x^i}
 \end{align*}
 which is indeed a $C^?$-vector field\todo{Find the regularity of this.}.
 A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_jetlet}.
@@ -910,7 +913,7 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
     \mathfrak{X}_{\rm div}(\R^n)^* \stackrel{J_L^{(0)} }{\longleftarrow}&
     \,T^* Q_N^{(0)}
     &&\stackrel{J_R^{(0)} }{\longrightarrow} \mathfrak{X}_{\rm div}(\R^n)^* \\
-    p_\alpha \otimes \delta_{q_\alpha} \stackrel{J_L^{(0)}}{\longmapsfrom}&
+    p_a \otimes \delta_{q_a} \stackrel{J_L^{(0)}}{\longmapsfrom}&
     \;\;(q,p)
     &&\stackrel{J_R^{(0)} }{\longmapsto} 0
   \end{alignat*}
@@ -929,10 +932,10 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   Let $k \geq \frac{n}{2} +1$ and $\sigma > 0$.
   Let $H:T^*Q_N^{(0)} \to \R$ be the function
   \begin{align*}
-    H(q,p) =\frac{1}{2} K_{k,\sigma}^{ij}(q^\alpha - q^\beta) p_{\alpha,i} p_{\beta,j}.
+    H(q,p) =\frac{1}{2} K_{k,\sigma}^{ij}(q_a - q_b)\, p_{a\,i}\, p_{b\,j}.
   \end{align*}
   If $(q,p)(t)$ is a solution to Hamilton's equations, then
-  $m(t) = p_\alpha(t) \otimes \delta_{q^\alpha(t)}$
+  $m(t) = p_a(t) \otimes \delta_{q_a(t)}$
   is a solution to \eqref{eq:MMDiff}.
 \end{prop}
 \begin{proof}
@@ -943,23 +946,25 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
 \label{sec:first_order}
   Let $\SL(n)$ denote the Lie group of $n\times n$ matrices
   with unit determinant.
-  Let $q = (q_{(0)}, q_{(1)}) \in \R^n \times \SL(n)$ and consider the left
+  Let $q = (q^{(0)}, q^{(1)}) \in \R^n \times \SL(n)$ and consider the left
   $\SDiff(\R^n)$ action on $\R^n \times \SL(n)$ given by
   \begin{align}
-    \varphi \cdot q = (\varphi(q_{(0)} ) , D\varphi(q_{(0)} ) \cdot q_{(1)} ). \label{eq:first_order_action}
+    \varphi \cdot q = (\varphi(q^{(0)} ) , D\varphi(q^{(0)} ) \cdot q^{(1)} ). \label{eq:first_order_action}
   \end{align}
-  Where $D\varphi(q_{(0)} ) \cdot q_{(1)}$ is the result of multiplying
-  the Jacobian matrix $D\varphi(q_{(0)} )$ with $q_{(1)}$.
+  Where $D\varphi(q^{(0)} ) \cdot q^{(1)}$ is the result of multiplying
+  the Jacobian matrix $D\varphi(q^{(0)} )$ with $q^{(1)}$.
   \begin{prop}
     The action of $\SDiff(M)$ on $\R \times \SL(n)$ in \eqref{eq:first_order_action} is a group action.
   \end{prop}
   \begin{proof}
-    As $\varphi \in \SDiff(\R^n)$, it follows that $D\varphi |_{q_{(0)}} \in \SL(n)$.    Therefore $D\varphi |_{q_{(0)}} \cdot q_{(1)} \in \SL(n)$.
+    As $\varphi \in \SDiff(\R^n)$, it follows that $D\varphi |_{q^{(0)}} \in \SL(n)$.
+    Therefore $D\varphi |_{q^{(0)}} \cdot q^{(1)} \in \SL(n)$.
     Secondly, if $\varphi_1,\varphi_2 \in \SDiff(\R^n)$ we observe that
     \begin{align*}
-      \varphi_2 \cdot (\varphi_1 \cdot q) &= \varphi_2 \cdot (\varphi_1(q_{(0)} ) , D\varphi_1 |_{q_{(0)}} \cdot q_{(1)} ) \\
-      &= (\varphi_2(\varphi_1(q_{(0)} )) , \left. D\varphi_2 \right|_{\varphi_1( q_{(0)} )} \cdot D\varphi_1 |_{ q_{(0)} } \cdot q_{(1)} ) \\
-      &= ( (\varphi_2 \circ \varphi_1)(q_{(0)} ) , D( \varphi_2 \circ \varphi_1)|_{q_{(0)} } \cdot q_{(1)} ) \\
+      \varphi_2 \cdot (\varphi_1 \cdot q)
+      &= \varphi_2 \cdot \big(\varphi_1(q^{(0)} ) , D\varphi_1 |_{q^{(0)}} \cdot q^{(1)} \big) \\
+      &= \big(\varphi_2(\varphi_1(q^{(0)} )) , \left. D\varphi_2 \right|_{\varphi_1( q^{(0)} )} \cdot D\varphi_1 |_{ q^{(0)} } \cdot q^{(1)} \big) \\
+      &= \big( (\varphi_2 \circ \varphi_1)(q^{(0)} ) , D( \varphi_2 \circ \varphi_1)|_{q^{(0)} } \cdot q^{(1)} \big) \\
       &= (\varphi_2 \circ \varphi_1) \cdot q,
     \end{align*}
     where the second and third line is an application of the chain rule.
@@ -967,27 +972,28 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   As before, this action can be lifted to the cotangent bundle $T^*(\R^n \times \SL(n))$.  In particular, 
   the action is
   \begin{align*}
-    &T^*\varphi \cdot ( q_{(0)} , q_{(1)}  , p_{(0)} , p_{(1)} ) \\
-    &\quad = ( \varphi^{-1}(q_{(0)})  , [D\varphi|_{q_{(0)}}]^{-1} \cdot q_{(1)} , D\varphi|_{q_{(0)}}^* \cdot p_{(0)} , D\varphi|_{q_{(0)}}^* \cdot p_{(1)} ).
+    &T^*\varphi \cdot ( q^{(0)} , q^{(1)}  , p^{(0)} , p^{(1)} ) \\
+    &\quad = \big( \varphi^{-1}(q^{(0)})  , [D\varphi|_{q^{(0)}}]^{-1} \cdot q^{(1)} , D\varphi|_{q^{(0)}}^* \cdot p^{(0)} , D\varphi|_{q^{(0)}}^* \cdot p^{(1)} \big).
   \end{align*}
   The resulting momentum map is
   \begin{align*}
-    J_L^{(1)}( (q, j ),(p, p_j) ) = p_\alpha \delta_{q^{\alpha}} + \dots
+    J_L^{(1)}\big( (q^{(0)}, q^{(1)} ),(p^{(0)}, p^{(1)}) \big)
+    = p_a^{(0)} \otimes \delta_{q_a^{(0)}} + \dots
   \end{align*}
   \todo[inline]{A David calculation goes in place of ``...''}
   As before, we can generalize this construction to the space of
   $N$ particles by considering the space
   \begin{align*}
-    Q^{(1)}_N = \left\{  ( q^1 , \dots, q^N ) \mid 
+    Q^{(1)}_N = \left\{  ( q_1 , \dots, q_N ) \mid
       \begin{array}{c}
-        q^\alpha = (q\indices{^\alpha_{(0)} } ,q\indices{^\alpha_{(1)} } ) \in \R^n \times \SL(n) \\
-        q\indices{^\alpha_{(0)}} \neq q\indices{^\beta_{(0)}} \text{ when } \alpha \neq \beta
-      \end{array} \right\}. 
+        q_a = (q^{(0)}_a, q^{(1)}_a) \in \R^n \times \SL(n) \\
+        q^{(0)}_a \neq q^{(0)}_b \text{ when } a \neq b
+      \end{array} \right\}.
   \end{align*}
 
   Moreover, there is a (non-trivial) right group action by $\iso(z)$ on $Q^{(1)}_N$ given by
   \begin{align*}
-    (q_{(0)} , q_{(1)} ) \cdot \psi = (q_{(0)} , q_{(1)} \cdot D\psi|_z).
+    (q^{(0)} , q^{(1)} ) \cdot \psi = (q^{(0)} , q^{(1)} \cdot D\psi|_z).
   \end{align*}
   This action yields the cotangent lift momentum-map
   \begin{align*}
@@ -1013,12 +1019,12 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   \begin{prop} \label{prop:1-solutions}
   	If $K_{k,\sigma}$ is $C^{\frac{n}{2} + 2}$ then $H = h_{k,\sigma} \circ J_L$
 	is $C^1$ and given by the expression
-	\begin{align*}
-		H^{(1)}(q,p) = \frac{1}{2} p_{\alpha,i} K^{ij}_{k,\sigma}(q^\alpha - q^\beta) p_{\beta,j}
-			+ p_{\beta,j} p \indices{_{\alpha,i}^r} q \indices{^{\alpha,k}_r} \partial_k K^{ij}_{k,\sigma}( q^\alpha - q^\beta) \\
-			- p\indices{_{\alpha,i}^r} q\indices{^{\alpha,n}_r} p\indices{_{\beta,j}^s} q\indices{^{\beta,s}_k} \partial_{nk} K^{ij}(q^\alpha - q^\beta).
-	\end{align*}
-	If $(q,p)(t) \in T^*Q_N^{(1)}$ is a solution to Hamilton's equations with respect to 
+	\begin{multline*}
+		H^{(1)}(q,p) = \frac{1}{2} p_{a\,i} K^{ij}(q_a - q_b) p_{b\,j}
+			+ p_{a\,i}^l\, q^k_{a\,l} (\partial_k K^{ij})(q_a - q_b) p_{b\,j} \\
+			- p_{a\,i}^n\, q^l_{a\,n} (\partial_l \partial_k K^{ij})(q_a - q_b) q_{b\,m}^k\, p_{b\,j}^m.
+  \end{multline*}
+  If $(q,p)(t) \in T^*Q_N^{(1)}$ is a solution to Hamilton's equations with respect to
 	$H^{(1)}$, then $J_L^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)^*$ is
 	a solution of \eqref{eq:MMDiff} and $J_R^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)$ is
 	constant in time. 
@@ -1079,19 +1085,19 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   which simply projects onto the $\R^n$ component.
   We define the space for an $N$-tuple of $k$-jetlets by taking a product
   \begin{align*}
-    Q^{(k)}_N = \{ (q^1,\dots, q^N) \in Q_1^{(k)} \times \dots Q_1^{(k)}
-    \mid i \neq j \implies \pi^{(k)}( q^i) \neq \pi^{(k)}( q^j) \}.
+    Q^{(k)}_N = \{ (q_1,\dots, q_N) \in Q_1^{(k)} \times \dots \times Q_1^{(k)}
+    \mid a \neq b \implies \pi^{(k)}(q_a) \neq \pi^{(k)}(q_b) \}.
   \end{align*}
   We coordinatize $Q^{(k)}_N$ as follows.
-  We will use $i,j,k,\dots$ to index particles and Greek indices to indices to represent
+  We will use Greek indices to represent spatial
   multi-indices on $\R^n$.  A typical coordinate on $Q^{(k)}_N$ will therefore look
-  like $q\indices{^{i,\alpha}_{\beta}}$ where $i \in \{1,\dots,N\}$, $\alpha \in \{ 1 , \dots, n \}$
+  like $q^i_{a\,\beta}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
   and $\beta$ is a multi-index on $\R^n$.\todo{Should we elaborate further on multi-indices?
   I'm leaving the multi-index convention to David since he is the one who has to work with it the most.}
-  This coordinate is used to model the partial derivative of the $\alpha^{\rm th}$ coordinate
-  of a diffeomorphism at some point $z_i$, i.e.\ $\partial_\beta \varphi^\alpha(z_i)$.
+  This coordinate is used to model the partial derivative of the $i^{\rm th}$ coordinate
+  of a diffeomorphism at some point $z_a$, i.e.\ $\partial_\beta \varphi^i(z_a)$.
   This is the primary motivation for this notational convention.
-  We will let $q \indices{^{i,\alpha}_{(k)}}$ denote the collection of $q\indices{^{i,\alpha}_\beta}$
+  We will let $q^{(k)\,i}_a$ denote the collection of $q^i_{a\,\beta}$
   where $| \beta | = k$.
 
   \begin{prop}
