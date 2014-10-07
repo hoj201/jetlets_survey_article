@@ -643,11 +643,11 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   Formally, the dual space to $\mathfrak{X}(\mathbb{R}^n)$ is a Poisson
   manifold when equipped with the Lie--Poisson bracket.
   We may consider the map
-  $\psi: T^*R^d \to \mathfrak{X}(\mathbb{R}^d)^*$
+  $\psi: T^*R^n \to \mathfrak{X}(\mathbb{R}^n)^*$
   given implicitly by
   \begin{align*}
     \langle \psi(q,p) , u \rangle = p \cdot u(q) \quad
-    \forall u \in \mathfrak{X}(\mathbb{R}^d), (q,p) \in T^*\mathbb{R}^d.
+    \forall u \in \mathfrak{X}(\mathbb{R}^n), (q,p) \in T^*\mathbb{R}^n.
   \end{align*}
   Explicitly we may write $\psi$ using the Dirac-delta
   functional as $\psi(q,p) = p \otimes \delta_q$.
@@ -1011,7 +1011,7 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   to obtain solutions.
   
   \begin{prop} \label{prop:1-solutions}
-  	If $K_{k,\sigma}$ is $C^{\frac{d}{2} + 2}$ then $H = h_{k,\sigma} \circ J_L$
+  	If $K_{k,\sigma}$ is $C^{\frac{n}{2} + 2}$ then $H = h_{k,\sigma} \circ J_L$
 	is $C^1$ and given by the expression
 	\begin{align*}
 		H^{(1)}(q,p) = \frac{1}{2} p_{\alpha,i} K^{ij}_{k,\sigma}(q^\alpha - q^\beta) p_{\beta,j}
@@ -1085,7 +1085,7 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   We coordinatize $Q^{(k)}_N$ as follows.
   We will use $i,j,k,\dots$ to index particles and Greek indices to indices to represent
   multi-indices on $\R^n$.  A typical coordinate on $Q^{(k)}_N$ will therefore look
-  like $q\indices{^{i,\alpha}_{\beta}}$ where $i \in \{1,\dots,N\}$, $\alpha \in \{ 1 , \dots, d \}$
+  like $q\indices{^{i,\alpha}_{\beta}}$ where $i \in \{1,\dots,N\}$, $\alpha \in \{ 1 , \dots, n \}$
   and $\beta$ is a multi-index on $\R^n$.\todo{Should we elaborate further on multi-indices?
   I'm leaving the multi-index convention to David since he is the one who has to work with it the most.}
   This coordinate is used to model the partial derivative of the $\alpha^{\rm th}$ coordinate
@@ -1136,7 +1136,7 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   Lastly, this gives us the final result on jetlet parametrized solutions.
   The proof is identical to that given in the proposition \ref{prop:0-solutions}.
   \begin{prop}
-  	If $K_{k,\sigma}$ is $C^{\frac{d}{2} + 2k}$ then $H^{(k)} = h_{k,\sigma} \circ J_L^{(k)}$
+  	If $K_{k,\sigma}$ is $C^{\frac{n}{2} + 2k}$ then $H^{(k)} = h_{k,\sigma} \circ J_L^{(k)}$
 	is $C^1$.
         Let $(q,p)(t)$ be a solution to Hamilton's equations on 
         $T^*Q^{(k)}_N$, then $J_L^{(k)}( (q,p)(t))$ is a solution to Hamilton's
