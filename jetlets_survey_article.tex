@@ -838,13 +838,15 @@ That is to say,
   (\varphi^{-1}(q) , \partial_i\varphi^j(q) p_j ).
 \end{align*}
 On a cotangent bundle, the momentum map,
-$J_L^{(0)} : T^*\R^n \to \mathfrak{X}_{\rm div}(\R^n)^*$
+$J_L : T^*\R^n \to \mathfrak{X}_{\rm div}(\R^n)^*$
 associated to this left action is naively defined by the
 condition
 \begin{align*}
   \langle J_L^{(0)}( q , p) , u \rangle := \langle p , u(q) \rangle,
 \end{align*}
 for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$.
+We shall now write $J_L^{(0)} = J_L$ in anticipation of the
+introduction of higher-order particles in section~\ref{sec:higher_order}.
 On $\R^n$ we may identify the dual space of $\mathfrak{X}_{\rm div}(\R^n)$
 with the space of closed $H^\infty$ one-forms by using the Euclidean volume form.
 That is to say, any covector field\todo{JE: distribution?} $m \in \mathfrak{X}_{\rm div}(\R^n)^*$
@@ -939,7 +941,7 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   is a solution to \eqref{eq:MMDiff}.
 \end{prop}
 \begin{proof}
-	Note that $H = h_{k,\sigma} \circ J_L$ and apply theorem \ref{thm:commuting_actions}.
+	Note that $H = h_{k,\sigma} \circ J_L^{(0)}$ and apply theorem \ref{thm:commuting_actions}.
 \end{proof}
 
 \subsection{$1^{\rm st}$-order particle-like solutions}
