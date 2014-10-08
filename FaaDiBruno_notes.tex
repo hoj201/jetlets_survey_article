@@ -1,0 +1,148 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\geometry{a4paper} % or letter or a5paper or ... etc
+% \geometry{landscape} % rotated page geometry
+
+%  POSSIBLY USEFULE PACKAGES
+%\usepackage{graphicx}
+%\usepackage{tensor}
+%\usepackage{todonotes}
+
+%  NEW COMMANDS
+\newcommand{\pder}[2]{\ensuremath{\frac{ \partial #1}{\partial #2}}}
+\newcommand{\ppder}[3]{\ensuremath{\frac{\partial^2 #1}{\partial
+      #2 \partial #3} } }
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+%  NEW THEOREM ENVIRONMENTS
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{defn}[thm]{Definition}
+
+
+%  MATH OPERATORS
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+%  TITLE, AUTHOR, DATE
+\title{The Faa Di Bruno Formula in multi-index notation}
+\author{Henry O. Jacobs}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\subsection{Multi-index conventions}
+Those irritating combinatorial coefficients in the Faa-di-Bruno formula
+come from the fact that the standard multi-indices don't quite model
+partial derivative operators, and so one must be careful not to double 
+count things.
+Rather than using the standard multi-indices as elemenst of $\mathbb{N}^n$ or
+$\{1,\dots,d\}^n$,
+it seems easier to put all of the combinatorics into the indices themselves (i.e. summing over a smaller set of slightly more sophisticated indices to avoid double counting).
+Here are the conventions I'm going to use regarding multi-indices on $\R^d$.  Let $S_n$
+  denote the permutation group on $n$ elements.
+  Clearly $S_n$ acts on $\{ 1,\dots, d\}^n$ in the obvious way.
+  A multi-index of degree $n$ is an element $\alpha \in \{1,\dots,d\}^n / S_n  =: \mathbb{I}^n$.
+Given $\alpha \in \mathbb{I}^n$ and $\beta \in \mathbb{I}^m$ we let $[\alpha,\beta]$ denote the corresponding element of $\mathbb{I}^{n +m}$
+obtained by taking two representatives $\hat{\alpha} \in \alpha$ and $\hat{\beta} \in \beta$ and then quotienting the element $(\hat{\alpha},\hat{\beta})$.
+The degree of a multi-index $\alpha \in \mathbb{I}^n$ is $n$ and denoted $|\alpha|$.
+
+This indexing convetion is slightly more complicated than the standard
+one, but it makes the formulas regarding partial derivative operators much more simple by equating $\partial_{xxy}$ with $\partial_{xyx}$ with $\partial_{yxx}$.
+
+The Faa-di-Bruno formula with respect to this indexing convention is
+\begin{align*}
+  \partial_\alpha( \varphi \circ \psi)(x) = \sum_{n=1}^{|\alpha|} \left(
+  \sum_{ 
+    \substack{
+      \beta = [\beta_1,\dots,\beta_n] \in \mathbb{I}^n \\
+      [\gamma_1,\dots,\gamma_n] = \alpha 
+      }
+    }
+    \partial_\beta \varphi(\psi(x)) \partial_{\gamma_1} \psi^{\beta_1}(x) \cdots \partial_{\gamma_n} \psi^{\beta_n}(x)
+  \right) 
+\end{align*}
+
+\begin{proof}
+  We prove it inductively.  It holds trivially at order $0$,
+  and by inspection at order $1$.
+  Assume it holds for $\alpha \in \mathbb{I}^n$
+  and let $\alpha_0 \in \{ 1,\dots,d\}$.
+  By the product formula and chain rule we find
+  \begin{align*}
+    &\partial_{\alpha_0}\partial_\alpha( \varphi \circ \psi)(x) = 
+    \partial_{[\alpha_0,\alpha]}( \varphi \circ \psi)(x) \\
+    &\quad =\sum_{n=1}^{|\alpha|}
+    \sum_{ 
+      \substack{
+        \beta = [\beta_1,\dots,\beta_n] \in \mathbb{I}^n \\
+        [\gamma_1,\dots,\gamma_n] = \alpha 
+        }
+      }
+      \left( \sum_{\beta_0=1}^d
+        \partial_{[\beta_0,\beta]} \varphi(\psi(x))
+        \partial_{\alpha_0} \psi^{\beta_0}(x)
+        \partial_{\gamma_1} \psi^{\beta_1}(x) \cdots
+        \partial_{\gamma_n} \psi^{\beta_n}(x)
+      \right)\\
+      &\qquad + \partial_{\beta} \varphi(\psi(x))
+      \partial_{[\alpha_0,\gamma_1]} \psi^{\beta_1}(x) \cdots
+      \partial_{\gamma_n} \psi^{\beta_n}(x) \\
+      &\qquad + \partial_{\beta} \varphi(\psi(x))
+      \partial_{\gamma_1} \psi^{\beta_1}(x) 
+      \partial_{[\alpha_0,\gamma_2]} \psi^{\beta_2}(x)  \cdots
+      \partial_{\gamma_n} \psi^{\beta_n}(x) \\
+      &\qquad \vdots \\
+      &\qquad + \partial_{\beta} \varphi(\psi(x))
+      \partial_{\gamma_1} \psi^{\beta_1}(x) \cdots
+      \partial_{[\alpha_0,\gamma_n]} \psi^{\beta_n}(x) . 
+  \end{align*}
+We now which to collect terms involving $\beta$'s of a single order.
+To do that, collect all coefficients of of $\partial_{[\beta_0,\dots,\beta_n]} \varphi(\psi(x))$.
+We observe the coefficient is
+\begin{align*}
+&   \left( \sum_{ [\gamma_1,\dots,\gamma_n] = \alpha}
+   \partial_{\alpha_0}\psi^{\beta_0}(x) \partial_{\gamma_1} \psi^{\beta_1}(x) \cdots \partial_{\gamma_n}\psi^{\beta_n}(x) \right) \\
+& +
+ \left( \sum_{k=1}^{n} \sum_{ (\gamma_0, \dots,\gamma_n) = \alpha}
+  \partial_{\gamma_0}\psi^{\beta_0} \cdots \partial_{[\alpha_0,\gamma_k]} \psi^{\beta_k} \cdots \partial_{\gamma_n} \psi^{\beta_n}\right)
+\end{align*}
+which you could write more succinctly as
+\begin{align*}
+  \sum_{[\gamma_0,\dots,\gamma_n] = [\alpha_0,\alpha]}
+  \partial_{\gamma_0}\psi^{\beta_0}(x)
+  \cdots
+  \partial_{\gamma_n}\psi^{\beta_n}(x)
+\end{align*}
+To drive the point home, we now substitute the coefficent of
+$\partial_{\beta} \varphi(\psi(x))$, written in this form,
+into our original formula to find
+\begin{align*}
+  \partial_{[\alpha_0,\alpha]}( \varphi \circ \psi)(x) &= \sum_{n=0}^{|\alpha |} \sum_{
+    \substack{
+      \beta = (\beta_0,\dots,\beta_n) \in \mathbb{I}^{n+1}\\
+      [\gamma_0,\dots,\gamma_n] = [\alpha_0,\alpha]      
+      }
+    }\partial_{\beta}\varphi(\psi(x)) \partial_{\gamma_0}\psi^{\beta_0}(x) \cdots \partial_{\gamma_n}\psi^{\beta_n}(x) \\
+  &=\sum_{n=1}^{|[\alpha_0,\alpha] |} \sum_{
+    \substack{
+      \beta = (\beta_1,\dots,\beta_n) \in \mathbb{I}^{n}\\
+      [\gamma_1,\dots,\gamma_n] = [\alpha_0,\alpha]      
+      }
+    }\partial_{\beta}\varphi(\psi(x)) \partial_{\gamma_0}\psi^{\beta_0}(x) \cdots \partial_{\gamma_n}\psi^{\beta_n}(x).
+\end{align*}
+
+\end{proof}
+
+\bibliographystyle{amsalpha}
+\bibliography{/Users/hoj201/Dropbox/hoj_2014.bib}
+\end{document}
