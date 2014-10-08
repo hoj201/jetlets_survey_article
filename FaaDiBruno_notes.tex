@@ -40,7 +40,6 @@
 
 \maketitle
 
-\subsection{Multi-index conventions}
 Those irritating combinatorial coefficients in the Faa-di-Bruno formula
 come from the fact that the standard multi-indices don't quite model
 partial derivative operators, and so one must be careful not to double 
@@ -48,17 +47,23 @@ count things.
 Rather than using the standard multi-indices as elemenst of $\mathbb{N}^n$ or
 $\{1,\dots,d\}^n$,
 it seems easier to put all of the combinatorics into the indices themselves (i.e. summing over a smaller set of slightly more sophisticated indices to avoid double counting).
-Here are the conventions I'm going to use regarding multi-indices on $\R^d$.  Let $S_n$
+This desire inspired the following multi-index conventions on $\R^d$.  Let $S_n$
   denote the permutation group on $n$ elements.
-  Clearly $S_n$ acts on $\{ 1,\dots, d\}^n$ in the obvious way.
-  A multi-index of degree $n$ is an element $\alpha \in \{1,\dots,d\}^n / S_n  =: \mathbb{I}^n$.
+  Clearly $S_n$ acts on $\{ 1,\dots, d\}^n$ by sending
+  \begin{align*}
+    (i_1,\dots,i_n) \stackrel{\sigma \in S_n}{\mapsto} ( i_{\sigma_1} ,\dots,i_{\sigma_n}).
+  \end{align*}
+
+  A multi-index of degree $n$ is an element $\alpha$ of the quotient $\mathbb{I}^n := \{1,\dots,d\}^n / S_n$.
 Given $\alpha \in \mathbb{I}^n$ and $\beta \in \mathbb{I}^m$ we let $[\alpha,\beta]$ denote the corresponding element of $\mathbb{I}^{n +m}$
-obtained by taking two representatives $\hat{\alpha} \in \alpha$ and $\hat{\beta} \in \beta$ and then quotienting the element $(\hat{\alpha},\hat{\beta})$.
-The degree of a multi-index $\alpha \in \mathbb{I}^n$ is $n$ and denoted $|\alpha|$.
+obtained by taking two representatives $\hat{\alpha} \in \alpha$ and $\hat{\beta} \in \beta$ and then setting $[\alpha,\beta] = \pi_{S_{n+m}}(\hat{\alpha},\hat{\beta})$.
+The degree of a multi-index $\alpha \in \mathbb{I}^n$ is $n$ and denoted $|\alpha|$.  Note that a multi-index of degree $1$ is merely an element of $\{1,\dots,d\}$, and that there is no such thing as a multi-index of degree $0$.
 
-This indexing convetion is slightly more complicated than the standard
-one, but it makes the formulas regarding partial derivative operators much more simple by equating $\partial_{xxy}$ with $\partial_{xyx}$ with $\partial_{yxx}$.
+This indexing convention is slightly more complicated than the standard
+one, but it makes the formulas regarding partial derivative operators much more simple by equating $\partial_{xxy}=\partial_{xyx}=\partial_{yxx} = \partial_x \partial_{xy} = \partial_{xy} \partial_x$, etc.  In particiular $\partial_{\alpha} \partial_{\beta} = \partial_{\beta} \partial_{\alpha} = \partial_{[\alpha,\beta]}$ for any two multi-indices $\alpha \in \mathbb{I}^n$ and $\beta \in \mathbb{I}^m$.
 
+
+\begin{thm}
 The Faa-di-Bruno formula with respect to this indexing convention is
 \begin{align*}
   \partial_\alpha( \varphi \circ \psi)(x) = \sum_{n=1}^{|\alpha|} \left(
@@ -71,7 +76,7 @@ The Faa-di-Bruno formula with respect to this indexing convention is
     \partial_\beta \varphi(\psi(x)) \partial_{\gamma_1} \psi^{\beta_1}(x) \cdots \partial_{\gamma_n} \psi^{\beta_n}(x)
   \right) 
 \end{align*}
-
+\end{thm}
 \begin{proof}
   We prove it inductively.  It holds trivially at order $0$,
   and by inspection at order $1$.
@@ -106,9 +111,9 @@ The Faa-di-Bruno formula with respect to this indexing convention is
       \partial_{\gamma_1} \psi^{\beta_1}(x) \cdots
       \partial_{[\alpha_0,\gamma_n]} \psi^{\beta_n}(x) . 
   \end{align*}
-We now which to collect terms involving $\beta$'s of a single order.
+We now collect terms involving $\beta$'s of a single order.
 To do that, collect all coefficients of of $\partial_{[\beta_0,\dots,\beta_n]} \varphi(\psi(x))$.
-We observe the coefficient is
+We observe this coefficient is
 \begin{align*}
 &   \left( \sum_{ [\gamma_1,\dots,\gamma_n] = \alpha}
    \partial_{\alpha_0}\psi^{\beta_0}(x) \partial_{\gamma_1} \psi^{\beta_1}(x) \cdots \partial_{\gamma_n}\psi^{\beta_n}(x) \right) \\
