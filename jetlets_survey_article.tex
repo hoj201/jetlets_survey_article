@@ -849,11 +849,10 @@ We shall now write $J_L^{(0)} = J_L$ in anticipation of the
 introduction of higher-order particles in section~\ref{sec:higher_order}.
 On $\R^n$ we may identify the dual space of $\mathfrak{X}_{\rm div}(\R^n)$
 with the space of closed $H^\infty$ one-forms by using the Euclidean volume form.
-That is to say, any covector field\todo{JE: distribution?} $m \in \mathfrak{X}_{\rm div}(\R^n)^*$
-can be paired with a vector field $v \in \mathfrak{X}_{\rm div}(\R^n)$
+That is to say, any covector field \todo{JE: distribution?} $m = m_i dx^i \in \mathfrak{X}_{\rm div}(\R^n)^*$
+can be paired with a vector field $v = v^i \frac{\partial}{\partial x^i} \in \mathfrak{X}_{\rm div}(\R^n)$
 to produce the real-valued function
-$\langle m , v \rangle$\je{Careful: you're also using this as the
-  canonical pairing that produces a real number.}
+$ m_i(x) v^i(x)$
 which can then be integrated with respect the Euclidean volume form to produce a real number.
 This characterization allows us to explicitly write $J_L^{(0)}$ as
 \begin{align*}
@@ -1113,7 +1112,20 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
     Let $\varphi_1,\varphi_2 \in \SDiff(\R^n)$.
     The partial derivatives of $(\varphi_1 \circ \varphi_2)$
     are given by a formula known as the Fa\`a di Bruno formula
-    (see appendix \ref{app:FaadiBruno}).
+    \begin{align*}
+      \partial_\alpha( \varphi_1 \circ \varphi_2) = \sum_{n=1}^{|\alpha|}
+      \left(
+        \sum_{
+        \substack{
+          \beta = [\beta_1,\dots,\beta_n] \in \mathbb{I}^n \\
+          [\gamma_1,\dots,\gamma_n] = \alpha
+          }
+          }
+          \partial_\beta \varphi_1(\varphi_2(x)) 
+          \partial_{\gamma_1} \varphi_2^{\beta_1} \cdots
+          \partial_{\gamma_n} \varphi_2^{\beta_n}
+        \right).
+    \end{align*}
     One can read directly from the expression that
     a $k^{\rm th}$ order derivative only depends on $k^{\rm th}$ and lower order
     partial derivatives of $\varphi_1$ and $\varphi_2$.
@@ -1135,10 +1147,9 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   Just as in the previous sections, the actions of $\SDiff(\R^n)$ and $\iso(z)$ lift to commuting actions on $T^*Q_N^{(k)}$.
   The associated momentum maps are
   \begin{align*}
-    J_L^{(k)} = blah \\
+    J_L^{(k)} = p \indices{_{ia}^{\beta}} q\indices{^{i\gamma_1}_{\beta_1}} \cdots q\indices{^{i\gamma_n}_{\beta_n}} (-1)^{|\gamma|} \partial_{\gamma} \delta_{q^{(0)}} \\
     J_R^{(k)} = blah
   \end{align*}
-  \todo[inline]{Another David calculation}
   The action of $\SDiff(\R^n)$ is transitive on $Q_N^{(k)}$,
   and it is therefore transitive on orbits of the right action of $iso(z)$.
   By theorem \ref{thm:commuting_actions}, $J_L^{(k)}$ and $J_R^{(k)}$ form a dual pair.
