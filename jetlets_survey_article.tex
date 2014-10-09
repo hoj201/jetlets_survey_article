@@ -1092,10 +1092,9 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   \end{align*}
   We coordinatize $Q^{(k)}_N$ as follows.
   We will use Greek indices to represent spatial
-  multi-indices on $\R^n$.  A typical coordinate on $Q^{(k)}_N$ will therefore look
+  multi-indices on $\R^n$ (see Appendix \ref{app:multi} for details).  A typical coordinate on $Q^{(k)}_N$ will therefore look
   like $q^i_{a\,\beta}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
-  and $\beta$ is a multi-index on $\R^n$.\todo{Should we elaborate further on multi-indices?
-  I'm leaving the multi-index convention to David since he is the one who has to work with it the most.}
+  and $\beta$ is a multi-index on $\R^n$.
   This coordinate is used to model the partial derivative of the $i^{\rm th}$ coordinate
   of a diffeomorphism at some point $z_a$, i.e.\ $\partial_\beta \varphi^i(z_a)$.
   This is the primary motivation for this notational convention.
@@ -1207,13 +1206,20 @@ Discuss mergers to higher-order, time to collision, near misses.
 
 
 \appendix
-\section{Convergence and error bounds}
-\label{sec:Convergence}
-He we prove that the particle method converges to a solution of the Mumford--Michor model for an arbitrary initial condition in $H^k_{\sigma^2}$.
 
-We cite error bounds to Euler from Mumford--Michor.
+\section{Multi-indices}
+\label{app:multi}
+Multi-indices are merely a means of indexing all the partial derivative
+operators on $\R^d$.
+In this paper, a multi-index on $\R^d$ is an unordered tuple of elements in $\{1,\dots,d\}$.
+More specifically, if we $\mathbb{d}$ denote the finite set $\{ 1,\dots,d\}$ and we let $S_n$ denote the permutation group, then $S_n$ clearly acts
+on $\mathbb{d}^n$.
+A multi-index of degree $n$ is merely an element of $\mathbb{I}^n := \mathbb{d}^n / S_n$.
+Heuristically, a multi-index is just a ``bag of marbles'' each of which comes in $d$ ``colors''.
+Given two multi-indices $\alpha \in \mathbb{I}^n$ and $\beta \in \mathbb{I}^m$ one can create the multi-index $[\alpha,\beta] \in \mathbb{I}^{n+m}$ 
+by considering a $\hat{\alpha} \in \alpha$ and $\hat{\beta} \in \beta$ and taking the equivalence class of $(\hat{\alpha},\hat{\beta}) \in \mathbb{d}^{n+m}$.
+  Heuristically, this is the unique ``bag of marbles'' obtained by collecting the marbles of $\alpha$ and $\beta$ into a single bag.
 
-\todo[inline]{Not really sure if this section is worth writing.  It follows almost directly from \cite{TrouveYounes2005}.}
 
 \section{Computations with the Fa\`a di Bruno formula}
 \label{app:FaadiBruno}
