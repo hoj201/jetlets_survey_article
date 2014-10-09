@@ -1146,7 +1146,7 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   Just as in the previous sections, the actions of $\SDiff(\R^n)$ and $\iso(z)$ lift to commuting actions on $T^*Q_N^{(k)}$.
   The associated momentum maps are
   \begin{align*}
-    J_L^{(k)} &= p \indices{_{ia}^{\alpha}} {\bf e}^a \otimes
+    J_L^{(k)}(q,p) &= p \indices{_{ia}^{\alpha}} {\bf e}^a \otimes
     \sum_{n=1}^{|\alpha|} (-1)^{n}
     \left(
       \sum_{\substack{
@@ -1155,8 +1155,8 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
           }
         }
       q\indices{^{i\beta_1}_{\gamma_1}} \cdots q\indices{^{i\beta_n}_{\gamma_n}}
-      \partial_{\beta} \delta_{q^{(0)i}} \right)\\
-    J_R^{(k)} &= p\indices{_{ia}^\alpha} \sum_{n=1}^{|\alpha|}
+      \partial_{\beta} \delta(\cdot - q^{(0)i}) \right)\\
+    J_R^{(k)}(q,p) &= p\indices{_{ia}^\alpha} \sum_{n=1}^{|\alpha|}
     \left( \sum_{\substack{
           \beta = [\beta_1,\dots,\beta_n] \in \mathbb{I}^n \\
           [\gamma_1,\dots,\gamma_n] = \alpha
