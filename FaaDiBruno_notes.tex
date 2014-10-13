@@ -16,7 +16,7 @@
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
 
 %  NEW THEOREM ENVIRONMENTS
-\newtheorem{thm}{Theorem}[section]
+\newtheorem{thm}{Theorem}
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{cor}[thm]{Corollary}
 \newtheorem{lem}[thm]{Lemma}
@@ -31,7 +31,9 @@
 \DeclareMathOperator{\Ad}{Ad}
 
 %  TITLE, AUTHOR, DATE
-\title{The Faa Di Bruno Formula in multi-index notation}
+\title[Fa\`a di Bruno, without losing your marbles]
+{How to stare at the $n$-dimensional Fa\`a di Bruno formula
+without losing your marbles}
 \author{Henry O. Jacobs}
 \date{\today}
 
@@ -40,113 +42,233 @@
 
 \maketitle
 
-Those irritating combinatorial coefficients in the Faa-di-Bruno formula
-come from the fact that the standard multi-indices don't quite model
-partial derivative operators, and so one must be careful not to double 
-count things.
-Rather than using the standard multi-indices as elemenst of $\mathbb{N}^n$ or
-$\{1,\dots,d\}^n$,
-it seems easier to put all of the combinatorics into the indices themselves (i.e. summing over a smaller set of slightly more sophisticated indices to avoid double counting).
-This desire inspired the following multi-index conventions on $\R^d$.  Let $S_n$
-  denote the permutation group on $n$ elements.
-  Clearly $S_n$ acts on $\{ 1,\dots, d\}^n$ by sending
+Let $f,g: \R \to \R$.
+The formula for the $k$th derivative of $f\circ g$ is
+\begin{align}
+  \begin{split}
+  &\frac{d^m}{dx^m} (f \circ g)(x) = \\
+  &\quad
+  \sum_{k=1}^{n}
+  \left(
+    \sum_{
+      \substack{
+        b_1 + \cdots + b_m = k \\
+        b_1 + 2 b_2 + \cdots + m b_m = m
+      }
+    }
+      \frac{m!}{b_1! \cdots b_m !} g^{(k)}(f(x)) 
+      \left( \frac{f^{(1)}(x)}{1!} \right)^{b_1}
+      \cdots
+      \left( \frac{f^{(m)}(x)}{m!} \right)^{b_n}
+  \right)
+  \end{split}\label{eq:Faa1}
+\end{align}
+A typical reaction to a first encounter with \eqref{eq:Faa1}
+is described in the first page of \cite{Flanders2001} wherein
+the author was asked to provide a proof:
+
+\begin{quotation}
+  This excercise is hardly routine calculus!  [...]
+  All those factorials in the denominators, raised to powers yet!
+  My four years of Chicago high school mathematics: Algebra, Advanced Algebra, [...], calculus hardly prepared me for Fa\`a's formula.
+\end{quotation}
+Fortunately, \cite{Flanders2001} manages to make sense of the formula; by
+justifying the restrictions on the $b$'s and all those factorials.
+In fact, over the past two centuries \eqref{eq:Faa1} has been
+viewed from a variety of perspectives; such as Bell polynomials, set partitions, determinant formulas, and so on \cite{Johnson2002}.
+
+However, there is very little written on the multi-dimensional 
+generalization of \eqref{eq:Faa1}.
+To provide perspective on the issue, 
+we can state the multi-dimensional
+Faa-di-Bruno formula at orders $1,2$, and $3$.
+Let $\partial_{i}$ denote the partial differentiation operator
+along the $i$th coordinate direction,
+and let $\partial_{ij} = (\partial_i \circ \partial_j), \partial_{ijk} = (\partial_i \circ \partial_j \circ \partial_k)$.
+If $g = (g^1,\dots,g^d) : \R^c \to \R^d$ and $f:\R^d \to \R$, then
+\begin{align*}
+  \partial_i (f \circ g)(x) &= \sum_{j=1}^{d}\partial_jf(g(x)) 
+  (\partial_i g^j(x)) \\
+  \partial_{ij}(f \circ g)(x) &= \sum_{k,\ell = 1}^{d} \partial_{k\ell}f(g(x))
+  (\partial_i g^k(x) ) (\partial_j g^{\ell}(x))
+  + \sum_{k=1}^{d}\partial_k f(g(x)) \partial_{ij} g^k(x)
+\end{align*}
+and finally,
+\begin{align*}
+  &\partial_{ijk} (f \circ g)(x) = 
+  \sum_{\ell,m,n=1}^{d} \partial_{\ell m n} f(g(x)) 
+  (\partial_i g^\ell(x))  (\partial_j g^m(x))
+  (\partial_k g^n(x)) \\
+  &\quad + \sum_{mn=1}^{d} \partial_{mn}f(g(x))
+  ( \partial_j g^m(x) )
+  (\partial_{ik} g^n(x)) \\
+  &\quad + \sum_{mn=1}^{d} \partial_{mn}f(g(x))
+  ( \partial_k g^m(x) )
+  (\partial_{ij} g^n(x)) \\
+  &\quad + \sum_{mn=1}^{d} \partial_{mn}f(g(x))
+  ( \partial_i g^m(x) )
+  (\partial_{jk} g^n(x)) \\
+  &\quad + \sum_{\ell=1}^{d} \partial_\ell f(g(x)) \partial_{ijk}g^\ell(x).
+\end{align*}
+where $i,j,k = 1,\dots,c$.
+
+It is natural to ask for a generic formula for
+$\partial_{i_1 \cdots i_n} (f \circ g)(x)$.
+One must consider set partitions
+along each dimension,
+and account for equivalences such as
+``$\partial_{ij} \equiv \partial_{ji}$''.
+Simply printing the formula in multi-index
+notation is a formidable task
+and we are not able to present the multi-indexed formula here.
+Instead, we refer the reader to the statement and proof in
+ \cite{ConstantineSavits1996},
+where one can see the difficulties of the multi-indexed Fa\`a di-Bruno.
+The statement and proof of \cite{ConstantineSavits1996}
+consists of three full pages, covered almost entirely in 
+combinatorial coefficients.
+This is in spite of good notation and an efficient proof!
+
+In this paper, we will introduce a version of the multi-dimensional Fa\`a di-Bruno
+formula, in which all of the coefficients are equal to $1$ and the proof is
+ four lines long.
+The main idea is to index partial derivatives by multi-sets
+instead of multi-indices.
+
+
+\section{Unordered multi-indices and bags of marbles}
+Rather than using multi-indices, perhaps we could place (hide?) the
+combinatoric considerations in the indexing convention itself.
+This entails summing over a smaller set of slightly more sophisticated indices.
+
+Let $S_n$ denote the permutation group on $n$ elements.
+  Clearly, $S_n$ acts on $\{ 1,2,\dots, d\}^n$ by sending
   \begin{align*}
     (i_1,\dots,i_n) \stackrel{\sigma \in S_n}{\mapsto} ( i_{\sigma_1} ,\dots,i_{\sigma_n}).
   \end{align*}
+  An unordered multi-index of degree $n$ is an element of the quotient $\mathbb{I}_d^n := \{1,\dots,d\}^n / S_n$.
+  Alternatively, one can define an unordered multi-index as a multiset, or ``bag'', whose underlying set is $\{1,\dots,d\}$.
+  Heuristically, an unordered multi-index is nothing but a bag of
+  $n$ marbles, which come in colors $1$ through $d$  \cite{Blizard1989}.
 
-  A multi-index of degree $n$ is an element $\alpha$ of the quotient $\mathbb{I}^n := \{1,\dots,d\}^n / S_n$.
-Given $\alpha \in \mathbb{I}^n$ and $\beta \in \mathbb{I}^m$ we let $[\alpha,\beta]$ denote the corresponding element of $\mathbb{I}^{n +m}$
-obtained by taking two representatives $\hat{\alpha} \in \alpha$ and $\hat{\beta} \in \beta$ and then setting $[\alpha,\beta] = \pi_{S_{n+m}}(\hat{\alpha},\hat{\beta})$.
-The degree of a multi-index $\alpha \in \mathbb{I}^n$ is $n$ and denoted $|\alpha|$.  Note that a multi-index of degree $1$ is merely an element of $\{1,\dots,d\}$, and that there is no such thing as a multi-index of degree $0$.
+Given $(a_1,\dots,a_n) \in \{ 1,\dots,d\}^n$, we let $[a_1 ,\dots, a_n] \in \mathbb{I}_d^n$ denote its $S_n$-orbit.
+Given two unordered multi-indices, $\alpha \in \mathbb{I}^n$ and $\beta \in \mathbb{I}_d^m$, we let $[\alpha,\beta]$ denote the corresponding element of $\mathbb{I}_d^{n +m}$,
+obtained by taking two representatives $\hat{\alpha} \in \alpha$ and $\hat{\beta} \in \beta$ and then setting
+\begin{align*}
+  [\alpha,\beta] := \{ \sigma \cdot (\hat{\alpha},\hat{\beta}) \mid \sigma \in S_{n+m}\} \in \mathbb{I}_d^{n+m}.
+\end{align*}
+Hueristically, $[\alpha,\beta]$ is the bag of $n+m$ marbles obtained
+by combing the bags $\alpha$ and $\beta$.
+The degree of an unordered multi-index $\alpha \in \mathbb{I}_d^n$ is $n$ and denoted $|\alpha|$.
+Note that an unordered multi-index of degree $1$ is an element of $\{1,\dots,d\}$, and that the only unordered multi-index of degree $0$ is the empty set.
 
+  Given an $\alpha \in \mathbb{I}^n$, we let $\partial_{\alpha}$ denote
+the partial differential operator $\partial_{a_1 \cdots a_n}$ obtained from an arbitrary element $(a_1,\dots,a_n) \in \alpha$.  Note that the representative element of $\alpha$ is immaterial due to the equivalence of mixed partials.
+Given this convention we observe $\partial_{\alpha} \partial_{\beta} = \partial_{\beta} \partial_{\alpha} = \partial_{[\alpha ,\beta]}$ for any two unordered multi-indices $\alpha \in \mathbb{I}_d^n$ and $\beta \in \mathbb{I}_d^m$.
 This indexing convention is slightly more complicated than the standard
-one, but it makes the formulas regarding partial derivative operators much more simple by equating $\partial_{xxy}=\partial_{xyx}=\partial_{yxx} = \partial_x \partial_{xy} = \partial_{xy} \partial_x$, etc.  In particiular $\partial_{\alpha} \partial_{\beta} = \partial_{\beta} \partial_{\alpha} = \partial_{[\alpha,\beta]}$ for any two multi-indices $\alpha \in \mathbb{I}^n$ and $\beta \in \mathbb{I}^m$.
-
+one, but it makes the formulas regarding partial derivative operators simpler by equating $\partial_{xy} = \partial_{yx}, \partial_{xxy}=\partial_{xyx}=\partial_{yxx} = \partial_x \partial_{xy} = \partial_{xy} \partial_x$, etc.
 
 \begin{thm}
-The Faa-di-Bruno formula with respect to this indexing convention is
+Let $f:\R^c \to \R$ and $g:\R^d \to \R^c$.  Then
 \begin{align*}
-  \partial_\alpha( \varphi \circ \psi)(x) = \sum_{n=1}^{|\alpha|} \left(
+  \partial_\alpha( f \circ g)(x) = \sum_{n=1}^{|\alpha|} \left(
   \sum_{ 
     \substack{
-      \beta = [\beta_1,\dots,\beta_n] \in \mathbb{I}^n \\
-      [\gamma_1,\dots,\gamma_n] = \alpha 
+      \beta = [b_1,\dots,b_n] \in \mathbb{I}^n_c \\
+      [\gamma_1 ,\dots, \gamma_n ] = \alpha 
       }
     }
-    \partial_\beta \varphi(\psi(x)) \partial_{\gamma_1} \psi^{\beta_1}(x) \cdots \partial_{\gamma_n} \psi^{\beta_n}(x)
-  \right) 
+    \partial_\beta f(g(x)) \partial_{\gamma_1} g^{b_1}(x) \cdots \partial_{\gamma_n} g^{b_n}(x)
+  \right),
 \end{align*}
+  for any unorderd multi-index $\alpha \in \mathbb{I}^{m}_d$.
 \end{thm}
 \begin{proof}
   We prove it inductively.  It holds trivially at order $0$,
   and by inspection at order $1$.
-  Assume it holds for $\alpha \in \mathbb{I}^n$
-  and let $\alpha_0 \in \{ 1,\dots,d\}$.
-  By the product formula and chain rule we find
+  Assume it holds for $\alpha \in \mathbb{I}^n_d$
+  and let $a_0 \in \{ 1,\dots,d\} \equiv \mathbb{I}_d^1$.
+  By the product formula and chain rule, we find
   \begin{align*}
-    &\partial_{\alpha_0}\partial_\alpha( \varphi \circ \psi)(x) = 
-    \partial_{[\alpha_0,\alpha]}( \varphi \circ \psi)(x) \\
+    &\partial_{a_0}\partial_\alpha( f \circ g)(x) = 
+    \partial_{[a_0,\alpha]}( f \circ g)(x) \\
     &\quad =\sum_{n=1}^{|\alpha|}
     \sum_{ 
       \substack{
-        \beta = [\beta_1,\dots,\beta_n] \in \mathbb{I}^n \\
+        \beta = [b_1,\dots,b_n] \in \mathbb{I}_c^n \\
         [\gamma_1,\dots,\gamma_n] = \alpha 
         }
       }
-      \left( \sum_{\beta_0=1}^d
-        \partial_{[\beta_0,\beta]} \varphi(\psi(x))
-        \partial_{\alpha_0} \psi^{\beta_0}(x)
-        \partial_{\gamma_1} \psi^{\beta_1}(x) \cdots
-        \partial_{\gamma_n} \psi^{\beta_n}(x)
+      \left( \sum_{b_0=1}^d
+        \partial_{[b_0,\beta]} f(g(x))
+        \partial_{a_0} g^{b_0}(x)
+        \partial_{\gamma_1} g^{b_1}(x) \cdots
+        \partial_{\gamma_n} g^{b_n}(x)
       \right)\\
-      &\qquad + \partial_{\beta} \varphi(\psi(x))
-      \partial_{[\alpha_0,\gamma_1]} \psi^{\beta_1}(x) \cdots
-      \partial_{\gamma_n} \psi^{\beta_n}(x) \\
-      &\qquad + \partial_{\beta} \varphi(\psi(x))
-      \partial_{\gamma_1} \psi^{\beta_1}(x) 
-      \partial_{[\alpha_0,\gamma_2]} \psi^{\beta_2}(x)  \cdots
-      \partial_{\gamma_n} \psi^{\beta_n}(x) \\
+      &\qquad + \partial_{\beta} f(g(x))
+      \partial_{[a_0,\gamma_1]} g^{b_1}(x) \cdots
+      \partial_{\gamma_n} g^{b_n}(x) \\
+      &\qquad + \partial_{\beta} f(g(x))
+      \partial_{\gamma_1} g^{b_1}(x) 
+      \partial_{[a_0,\gamma_2]} g^{\beta_2}(x)  \cdots
+      \partial_{\gamma_n} g^{b_n}(x) \\
       &\qquad \vdots \\
-      &\qquad + \partial_{\beta} \varphi(\psi(x))
-      \partial_{\gamma_1} \psi^{\beta_1}(x) \cdots
-      \partial_{[\alpha_0,\gamma_n]} \psi^{\beta_n}(x) . 
+      &\qquad + \partial_{\beta} f(g(x))
+      \partial_{\gamma_1} g^{b_1}(x) \cdots
+      \partial_{[a_0,\gamma_n]} g^{b_n}(x) . 
   \end{align*}
 We now collect terms involving $\beta$'s of a single order.
-To do that, collect all coefficients of of $\partial_{[\beta_0,\dots,\beta_n]} \varphi(\psi(x))$.
-We observe this coefficient is
+To do so, collect all coefficients of of $\partial_{[b_0,\dots,b_n]} f(g(x))$.
+We observe that this coefficient is
 \begin{align*}
 &   \left( \sum_{ [\gamma_1,\dots,\gamma_n] = \alpha}
-   \partial_{\alpha_0}\psi^{\beta_0}(x) \partial_{\gamma_1} \psi^{\beta_1}(x) \cdots \partial_{\gamma_n}\psi^{\beta_n}(x) \right) \\
+   \partial_{a_0}g^{b_0}(x) \partial_{\gamma_1} g^{b_1}(x) \cdots \partial_{\gamma_n}g^{b_n}(x) \right) \\
 & +
- \left( \sum_{k=1}^{n} \sum_{ (\gamma_0, \dots,\gamma_n) = \alpha}
-  \partial_{\gamma_0}\psi^{\beta_0} \cdots \partial_{[\alpha_0,\gamma_k]} \psi^{\beta_k} \cdots \partial_{\gamma_n} \psi^{\beta_n}\right)
+ \left( \sum_{k=1}^{n} \sum_{ [\gamma_0, \dots,\gamma_n] = \alpha}
+  \partial_{\gamma_0}g^{b_0} \cdots \partial_{[a_0,\gamma_k]} g^{\beta_k} \cdots \partial_{\gamma_n} g^{b_n}\right),
 \end{align*}
-which you could write more succinctly as
+which one could write more succinctly as
 \begin{align*}
-  \sum_{[\gamma_0,\dots,\gamma_n] = [\alpha_0,\alpha]}
-  \partial_{\gamma_0}\psi^{\beta_0}(x)
+  \sum_{[\gamma_0,\dots,\gamma_n] = [a_0,\alpha]}
+  \partial_{\gamma_0}g^{b_0}(x)
   \cdots
-  \partial_{\gamma_n}\psi^{\beta_n}(x)
+  \partial_{\gamma_n}g^{b_n}(x).
 \end{align*}
-To drive the point home, we now substitute the coefficent of
-$\partial_{\beta} \varphi(\psi(x))$, written in this form,
-into our original formula to find
+We substitute the coefficent of
+$\partial_{\beta} f(g(x))$ into our original formula to arrive at
 \begin{align*}
-  \partial_{[\alpha_0,\alpha]}( \varphi \circ \psi)(x) &= \sum_{n=0}^{|\alpha |} \sum_{
+  \partial_{[a_0,\alpha]}( f \circ g)(x) &= \sum_{n=0}^{|\alpha |} \sum_{
     \substack{
-      \beta = (\beta_0,\dots,\beta_n) \in \mathbb{I}^{n+1}\\
-      [\gamma_0,\dots,\gamma_n] = [\alpha_0,\alpha]      
+      \beta = [b_0,\dots,b_n] \in \mathbb{I}_c^{n+1}\\
+      [\gamma_0,\dots,\gamma_n] = [a_0,\alpha]      
       }
-    }\partial_{\beta}\varphi(\psi(x)) \partial_{\gamma_0}\psi^{\beta_0}(x) \cdots \partial_{\gamma_n}\psi^{\beta_n}(x) \\
-  &=\sum_{n=1}^{|[\alpha_0,\alpha] |} \sum_{
+    }\partial_{\beta}f(g(x)) \partial_{\gamma_0}g^{b_0}(x) \cdots \partial_{\gamma_n}g^{b_n}(x) \\
+  &=\sum_{n=1}^{|[a_0,\alpha] |} \sum_{
     \substack{
-      \beta = (\beta_1,\dots,\beta_n) \in \mathbb{I}^{n}\\
-      [\gamma_1,\dots,\gamma_n] = [\alpha_0,\alpha]      
+      \beta = [b_1,\dots,b_n] \in \mathbb{I}_c^{n}\\
+      [\gamma_1,\dots,\gamma_n] = [a_0,\alpha]      
       }
-    }\partial_{\beta}\varphi(\psi(x)) \partial_{\gamma_0}\psi^{\beta_0}(x) \cdots \partial_{\gamma_n}\psi^{\beta_n}(x).
+    }\partial_{\beta}f(g(x)) \partial_{\gamma_1}g^{b_1}(x) \cdots \partial_{\gamma_n}g^{b_n}(x).
 \end{align*}
-
 \end{proof}
+
+
+\section{Conclusion}
+While the $n$-dimensional Fa\`a di Bruno formula may be difficult
+to tackle when using multi-indices, it appears
+relatively simple when using unordered multi-indices.
+This is not to say that unordered multi-indices are neccessarily
+superior.
+The summation constraint
+``$[\gamma_1,\dots,\gamma_n] = \alpha$''
+can be difficult to enforce in an algorithm.
+It is quite conceivable that one would prefer to 
+enumerate all the multi-indices and then divide by the 
+number of repeated terms.
+However, the combinatorial coefficients can be unweildly,
+so it is useful to have an alternative which disposes of them.
+This is particularly useful outside of computing,
+when one must invoke the formula in a proof.
 
 \bibliographystyle{amsalpha}
 \bibliography{/Users/hoj201/Dropbox/hoj_2014.bib}
