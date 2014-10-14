@@ -139,6 +139,14 @@ More specifically, we will accomplish the following:
  describes the heigher levesl in the heirarchy  in the context of a 
  compressible fluid PDE designed for image registration algorithsm.
 
+\subsection{Notation}
+tangent bundle, cotangent bundle, vector field, contraction, Lie derivative,
+smooth, continuous functions, group actions, infinitesimal generators,
+dual spaces.  A group $G$, left multiplication $L_g$, right multi $R_g$, 
+left/right action $\rho(g,x)$ or $\rho(x,g)$, infinitesimal generator $\rho(\xi,x)$ or $\rho(x,\xi)$.
+\todo[inline]{Finish this section}
+
+
 
 \section{Main approach}
 \label{sec:approach}
@@ -443,6 +451,9 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     argument for why this switch makes sense? Maybe since
     $\mathfrak{X}_{\rm div}(\R^n)$ is a vector space, and therefore
     its elements can be viewed as operators by the shift action?}
+  \hoj{Given any representation, $\rho$, of Lie-algebra on a vector-space, $V$, the action on $V^*$
+	 is \emph{defined} by the equation $\langle m , \rho(\xi) \cdot v \rangle + \langle \rho(\xi) \cdot m , v \rangle = 0$
+	 for all $v \in V$ and $m \in V^*$.  This is the special case where we consider the adjoint action of a Lie algebra on itself.}
   However $df_v = v$ and 
   $\frac{d}{dt} f_v(m) = \langle \dot{m} , v \rangle$, so we find
   \begin{align*}
@@ -555,20 +566,21 @@ condition
   \langle J_L^{(0)}( q , p) , u \rangle := \langle p , u(q) \rangle,
 \end{align*}
 for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$.
-We shall now write $J_L^{(0)} = J_L$ in anticipation of the
-introduction of higher-order particles in section~\ref{sec:higher_order}.
-On $\R^n$ we may identify the dual space of $\mathfrak{X}_{\rm div}(\R^n)$
-with the space of closed $H^\infty$ one-forms by using the Euclidean volume form.
-That is to say, any covector field \todo{JE: distribution?} $m = m_i dx^i \in \mathfrak{X}_{\rm div}(\R^n)^*$
-can be paired with a vector field $v = v^i \frac{\partial}{\partial x^i} \in \mathfrak{X}_{\rm div}(\R^n)$
-to produce the real-valued function
-$ m_i(x) v^i(x)$
-which can then be integrated with respect the Euclidean volume form to produce a real number.
-This characterization allows us to explicitly write $J_L^{(0)}$ as
+%We shall now write $J_L^{(0)} = J_L$ in anticipation of the
+%introduction of higher-order particles in section~\ref{sec:higher_order}.
+%On $\R^n$ we may identify the dual space of $\mathfrak{X}_{\rm div}(\R^n)$
+%with the space of closed $H^\infty$ one-forms by using the Euclidean volume form.
+%That is to say, any covector field \todo{JE: distribution?} $m = m_i dx^i \in \mathfrak{X}_{\rm div}(\R^n)^*$
+%can be paired with a vector field $v = v^i \frac{\partial}{\partial x^i} \in \mathfrak{X}_{\rm div}(\R^n)$
+%to produce the real-valued function
+%$ m_i(x) v^i(x)$
+%which can then be integrated with respect the Euclidean volume form to produce a real number.
+We see that $J_L^{(0)}(q,p)$ is an evaluation operator, and we can write it 
+more explicitly in terms of the Dirac-delta distribution as
 \begin{align*}
   J_L^{(0)}( q , p ) = p \otimes \delta_q
 \end{align*}
-where $\delta_q$ is the Dirac-delta functional on $\R^n$ centered at $q$.
+where $\delta_q$ is the Dirac-delta distribution on $\R^n$ centered at $q$.
 As the cotangent lifted action of $\SDiff(\R^n)$ is equivariant,
 we observe that $J_L^{(0)}$ is Poisson, again by \cite[Thm~12.4.9]{MandS}.
 
@@ -637,6 +649,7 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   while the right leg represents the conserved quantities
   associated to the trivial symmetry.\je{does this mod out the
     redundancy in the $\SDiff$ action?}
+    \hoj{If by $\SDiff$ you mean the isotropy group I often call $G_0$, then yes.}
   Specifically, $J_R^{(0)}$ expresses the trivial (perhaps silly)
   conservation law that $0$ is constant in time.
   In summary we find:
@@ -687,12 +700,12 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
     &(T\varphi)^* \cdot ( q^{(0)} , q^{(1)}  , p^{(0)} , p^{(1)} ) \\
     &\quad = \big( \varphi^{-1}(q^{(0)})  , [D\varphi|_{q^{(0)}}]^{-1} \cdot q^{(1)} , D\varphi|_{q^{(0)}}^* \cdot p^{(0)} , D\varphi|_{q^{(0)}}^* \cdot p^{(1)} \big).
   \end{align*}
-  The resulting momentum map is
+  If we let $q_i$ denote the $i$th particle in $q^{(0)}$, and let $q\indices{^{ib}_c}$ denote the $(b,c)$ entry of the $i$th matrix in $q^{(1)}$
+  then the resulting momentum map is
   \begin{align*}
     J_L^{(1)}\big( (q^{(0)}, q^{(1)} ),(p^{(0)}, p^{(1)}) \big)
-    = p_a^{(0)} \otimes \delta_{q_a^{(0)}} + \dots
+    = p_i \otimes \delta_{q_i} - p\indices{_{ia}^c} q\indices{^{ib}_c} dx^b \otimes \partial_b \delta_{q_i}
   \end{align*}
-  \todo[inline]{A David calculation goes in place of ``...''}
   As before, we can generalize this construction to the space of
   $N$ particles by considering the space
   \begin{align*}
@@ -709,9 +722,8 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   \end{align*}
   This action yields the cotangent lift momentum-map
   \begin{align*}
-    J_R^{(1)}( q,p) = ....
+    J_R^{(1)}( q,p) = - p\indices{_{ia}^c} q\indices{^{ia}_b}  dx^b \otimes \partial_c \delta_{q^i}
   \end{align*}
-  \todo[inline]{Another one of David's calculations goes above.}
   \begin{prop}
     The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
   \end{prop}
@@ -856,7 +868,7 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   Just as in the previous sections, the actions of $\SDiff(\R^n)$ and $\iso(z)$ lift to commuting actions on $T^*Q_N^{(k)}$.
   The associated momentum maps are
   \begin{align*}
-    J_L^{(k)}(q,p) &= p \indices{_{ia}^{\alpha}} {\bf e}^a \otimes
+    &J_L^{(k)}(q,p) = p \indices{_{ia}^{\alpha}} {\bf e}^a \otimes
     \sum_{n=1}^{|\alpha|} (-1)^{n}
     \left(
       \sum_{\substack{
@@ -866,17 +878,18 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
         }
       q\indices{^{i\beta_1}_{\gamma_1}} \cdots q\indices{^{i\beta_n}_{\gamma_n}}
       \partial_{\beta} \delta(\cdot - q^{(0)i}) \right)\\
-    J_R^{(k)}(q,p) &= p\indices{_{ia}^\alpha} \sum_{n=1}^{|\alpha|}
-    \left( \sum_{\substack{
-          \beta = [\beta_1,\dots,\beta_n] \in \mathbb{I}^n \\
+    &J_R^{(k)}(q,p) = p\indices{_{ia}^\alpha} \sum_{n=1}^{|\alpha|}
+    \Bigg( \sum_{\substack{
+          (\beta_1,\dots,\beta_n) \in \{1,\dots,d\}^n \\
           [\gamma_1,\dots,\gamma_n] = \alpha
           }}
-        \left[
+        \\
+     &\quad \left[
           \sum_{k=1}^{n} (-1)^{|\gamma_k|} q \indices{^{ia}_\beta}
           \delta_{\gamma_1}^{\beta_1} \cdots \delta_{\gamma_{k-1}}^{\beta_{k-1}}
           \delta_{\gamma_{k+1}}^{\beta_{k+1}} \cdots \delta_{\gamma_n}^{\beta_n}
           {\bf e}^{\beta_k} \otimes \partial_{\gamma_k} \delta( \cdot - q^{(0)i})  \right]
-     \right)
+     \Bigg)
   \end{align*}
   The action of $\SDiff(\R^n)$ is transitive on $Q_N^{(k)}$,
   and it is therefore transitive on orbits of the right action of $iso(z)$.
@@ -914,15 +927,10 @@ Discuss mergers to higher-order, time to collision, near misses.
 
 \cjc{Collide some $k$-jets.  Make correspondence with total momentum.}
 
+\hoj{These experiments actually don't make sense for the conserved momentum $J_R$ because this momenta is not exchanged among the particles in any way.}
 
 \appendix
 
-\subsection{Notation}
-tangent bundle, cotangent bundle, vector field, contraction, Lie derivative,
-smooth, continuous functions, group actions, infinitesimal generators,
-dual spaces.  A group $G$, left multiplication $L_g$, right multi $R_g$, 
-left/right action $\rho(g,x)$ or $\rho(x,g)$, infinitesimal generator $\rho(\xi,x)$ or $\rho(x,\xi)$.
-\todo[inline]{Finish this section}
 
 \section{Hamiltonian mechanics}
 \label{sec:Hamiltonian}
