@@ -31,8 +31,7 @@
 \DeclareMathOperator{\kernel}{kernel}
 \DeclareMathOperator{\lie}{\mathcal{L}}
 
-\title[A meshless method for ideal fluid flow derived from s.g.]{A meshless method for
- ideal fluid flow derived from symplectic geometry}
+\title{A ``whirls within whirls'' particle model of ideal fluids}
 
 \author{Ronan}
 
@@ -45,468 +44,140 @@
 
 \section{Introduction}
 The self similarity of ideal fluids
-yields the notorious ``cascade to smaller scales'', providing a raison d'etre
+yields the notorious ``cascade to smaller scales'',
+providing a raison d'etre
 for multiscale fluid modelling.
 Moreover, self similarity is widely regarded as the cause
 behind the great difficulties in proving well-posedness of 
 the Navier-Stokes equations \cite{KatzPavlovic2005}.
+This picture is summarized in the famous poem by Lewis Fry Richardson:
+\begin{quote}
+  Big whirls have little whirls,\\
+  That feed on their velocity;\\
+  And little whirls have lesser whirls,\\
+  And so on to viscosity.
+\end{quote}
 It is generally regarded as difficult to make these 
 notions of self-similarity and  cascade mathematically precise.
-Therefore, it would be useful to have a toy model of self-similarity and cascade,
-both from the standpoint of understanding the structures involved,
-and from the standpoint of creating more accurate CFD code.
+Therefore, it would be useful to have a toy model of self-similarity and cascade to obtain a better understanding the structures involved.
 
-One cause of the self-similarity of  fluids 
-is the self-similarity of the configuration space
-itself, the diffeomorphism group $\Diff(M)$.
-In a nutshell, a fluid contains ``little'' fluids.
-However, Lagrangian methods in CFD, such as \emph{smooth particle hydrodynamics} and
-\emph{vortex methods}, do not exhibit structures to express any notion of self-similarity.
- One means of doing this was presented in \cite{JacobsRatiuDesbrun2013}
- where an infinite-dimensional reduction by symmetry was executed,
- to produce a finite dimensional system from an infinite dimensional
- regularized fluid model.
- The finite dimensional system was an ODE for particles which carry models of the diffeomorphism group, known as jet groups.
- Thus obtaining a Lagrangian analog of ``whirls within whirls''.
- However, the specifics of the regularized fluid model were not determined,
- and the analysis of \cite{JacobsRatiuDesbrun2013} was thus purely theoretical.
- 
- Later, a regularized model of ideal fluids was presented by \cite{MumfordMichor2013}.  This new model was subject to the analysis presented in 
- \cite{JacobsRatiuDesbrun2013}, and gave a specific and easily
- implementable manifestation of the particle methods described.
- We subsequently simulated solutions and observed cascade phenomena as an emergent behavior.
- Each of these particles exists in a hierarchy, and the cascade phenomena observed consisted
- of particle at the $k$th level in the hierarchy colliding and merging into a particle in the $k+1$th level.
- As a result we obtained the first orderly characterization of the
- cascade to fine scales in a Lagrangian model
- \cite{CotterHolmJacobsMeier2014}.
-  Such a ``toy'' model is crucial to the understanding of fluids,
+\subsection{Main contributions}
+In this article we derive a hierarchy of particle-like
+solutions to a regularized model of ideal fluids.
+Each method in the heirachy consists of particles
+with internal group variables, parametrized by
+a finite dimensional model of a diffeomorphism group,
+known as a jet group.
+As the configuration manifold of a fluid is the space of
+volume preserving diffeomorphisms, these particle-like solutions
+paint a picture of a large diffeomorphism, which carries particles,
+each of which carries a ``small'' diffeomorphism.
+Therefore, we propose these particle-like solutions as toy models
+of diffeomorphism self-similarity.
+
+  Toy models, such as this, are crucial to our understanding of fluids,
   both from a numerical perspective, and from the perspective
   of ``pure'' mathematics.
   Without models which rigorously mimic aspects of self-similarity 
-  and cascade (at arbitrary resolutions!),
+  and cascade,
   one is forced to stare at self-similarity in the face directly.
-  Our research presents the first such model to fill this gap.
+  Our research presents the one of the first Lagrangian models to
+  which reflect aspects of the self-similarity of ideal fluids.
 
-\hoj{Quickly describe the derivation of point-vortex solutions and peakons via Clebsch variables.
-	Then describe out method.}
-
-\subsection{Main contributions}
-In this article we propose a hierarchy of particle methods
-for a regularized model of ideal fluids.
-These models will be derive via techniques from 
-symplectic geometry and Hamiltonian mechanics.
-The main contributions are:
+More specifically, we will accomplish the following:
 \begin{enumerate}
-  \item We determine Poisson morphism which constitute 
-    dual-pairs that induce these methods.
-  \item We relate the ``right-leg'' of the dual pairs to Kelvin's circulation theorem.
-  \item We explore the collision behavior discovered in \cite{CotterHolmJacobsMeier2014}.
+  \item We will (re)derive the heirarchy of particle methods discovered in \cite{JacobsRatiuDesbrun2013,MumfordMichor2013,CotterHolmJacobsMeier2014} in a Hamiltonian form.
+  \item We will compute a nested sequence of conserved quantities at 
+    each level in the heirarchy.
+    Each of these conserved quantites will be related to the conservation
+    of circulation.
+  \item We will numerically compute some particle-like solutions at the the zeroth, first, and second level in the heirarchy.  We will observe a form of cascade in which solutions at the $k$-level asympotitcally approach
+    solutions at the $k+1$th level.
 \end{enumerate}
-As a ``softer'' contribution, we explain this method entirely in the Hamiltonian
-formalism to provide an alternative perspective to previous works written in the Lagrangian formalism.\cjc{remove apology, move this contribution to front.}
+
 
 \subsection{Previous work}
-This article concerns a hierarchy of particle methods for
-ideal incompressible fluids, which we have dubbed \emph{jetlet methods}.
-The zeroth order jetlet method was first discovered in \cite{MumfordMichor2013}
-where error bounds in comparison with solutions of Euler's equations were
-calculated.
-Simultaneously, foundational work for particle methods carrying Taylor series
-data was developed in \cite{JacobsRatiuDesbrun2013}.
-Based upon the foundational work of \cite{JacobsRatiuDesbrun2013},
-an implementation using the fluid model of \cite{MumfordMichor2013} was created \cite{CotterHolmJacobsMeier2014}.
-A primary finding of \cite{CotterHolmJacobsMeier2014} was that particle collisions at one level of the hierarchy can exhibit ``infinite time mergers'' into particles at higher-levels in the hierarchy. 
-In both \cite{MumfordMichor2013} and \cite{CotterHolmJacobsMeier2014}, the
-equations of motion were viewed as Euler--Lagrange equations
-obtained from variational principles.
-In particular, the insights one could glean from 
-the Hamiltonian perspective were left untouched.
-
-In this article we will use Poisson maps to determine solutions of regularized
-fluid equations by solving finite dimensional Hamiltonian equations.
-The notions of momentum maps and dual pairs are typically
-regarded as notions of symplectic geometry \cite{FOM,Weinstein1983}.
-However, many of the statements on momentum maps and
-dual pairs in this article
-have analogs in the Lagrangian perspective.
-In particular, the dual pairs of the Camassa--Holm equation
-first appeared in \cite{HolmMarsden2005}, where the Clebsch
-variational principle was used to derive equations of motion.
-Moreover, the Clebsch variational principle was used in
-\cite{CotterHolm2009} in the context of optimal control.
-Momentum maps were found to naturally arise when the
-control vector fields form a subalgebra of the space of all
- vector fields.
+  Lagrangian models of ideal fluids such as \emph{smooth particle hydrodynamics} \cite{Monaghan1977,Lucy1977} and
+\emph{vortex methods} \cite{Chorin1973}, do not exhibit structures which express the nested structure of the diffeomorphism group.
+ One means of obtaining a Lagrangian model with a nested structure
+ was presented in \cite{JacobsRatiuDesbrun2013}
+ where an sequence of infinite-dimensional reductions by symmetry were
+ executed, to produce a heirarchy of finite dimensional systems from a
+ regularized fluid model.
+ The finite dimensional systems were particle-like solutions
+ where each particle carries a model of the diffeomorphism group,
+ known as jet groups.
+ Thus \cite{JacobsRatiuDesbrun2013} derived a Lagrangian analog of 
+ ``whirls within whirls'', similar to the Eulerian models proposed
+ in \cite{HolmTronci2012}.
+ However, the specifices of the regularized fluid model were not determined,
+ and the analysis of \cite{JacobsRatiuDesbrun2013} was thus purely
+ theoretical.
  
- Here are other articles we should cite:
- \begin{enumerate}
- 	\item \cite{MarsdenWeinstein1983,Weinstein1983} for dual pairs.
- 	\item \cite{Chorin1973} for vortex method.
-	\item \cite{Sommer2013,CotterHolmJacobsMeier2014} for jet particles
-	\item \cite{HolmTronci2012} for particles carrying diffeomorphisms as advected quantity in a turbulence model.
- 	\item \cite{JacobsRatiuDesbrun2013} for particle methods via Lagrange--Poincar\'e.
-	\item \cite{FoiasHolmTiti2001} for convergence of NS-$\alpha$ to NS.
-	\item \cite{Arnold1966} for Euler fluid as Euler--Poincar\'e on $\SDiff(\R^n)$.
-	\item \cite{TrouveYounes2005} for analysis of particle methods for EP.
-	\item Euler-$\alpha$ papers.
-	\item One``Beg-algorithm" paper, such as \cite{Beg2005}.
-	\item \cite{JoshiMiller2000} for particle methods for Beg algorithm.
-	\item \cite{HoldenRaynaud2006} for particle method for CH via peakons.
-	\item \cite{ChertockDuToitMarsden2012} for particle method for $n$-dimensional CH via peakons.
- \end{enumerate}
-\todo[inline]{Finish this section.}
+ Later, a regularized model of ideal fluids was presented by
+ \cite{MumfordMichor2013}.
+ This new model was subject to the theory presented in 
+ \cite{JacobsRatiuDesbrun2013}, and gave a specific and easily
+ implementable manifestation of the hierarchy of particle models
+ described there.
+ In \cite{CotterHolmJacobsMeier2014} we numerically computed some
+ of these particle-like solutions and observed cascade phenomena as
+ an emergent behavior at the $0$th level in the heirarchy.
 
-\subsection{Notation}
-tangent bundle, cotangent bundle, vector field, contraction, Lie derivative,
-smooth, continuous functions, group actions, infinitesimal generators,
-dual spaces.  A group $G$, left multiplication $L_g$, right multi $R_g$, 
-left/right action $\rho(g,x)$ or $\rho(x,g)$, infinitesimal generator $\rho(\xi,x)$ or $\rho(x,\xi)$.
-\todo[inline]{Finish this section}
-
-\section{Hamiltonian mechanics}
-\label{sec:Hamiltonian}
-The goal of this section is to prove theorems \ref{thm:dual_pairs}
-and \ref{thm:commuting_actions} (see pages \pageref{thm:dual_pairs} and \pageref{thm:commuting_actions}).
-Those who understand and accept these theorems on a first reading
-should be able to skip this section without any consequence.
-Most of this section will be a crash course in Poisson geometry
-and Hamiltonian mechanics as described in \cite{FOM,MandS,Weinstein1983}.
-
-A typical introduction to Poisson structures in mechanics
-begins by considering Hamilton's equations
-\begin{align*}
-  \dot{q} = \pder{H}{p} \quad, \quad  \dot{p} = - \pder{H}{q}.
-\end{align*}
-If we consider the two-form $dp \wedge dq$, then Hamilton's equations
-can be written as $(\dot{q},\dot{p}) \lrcorner (dp \wedge dq) = dH(q,p)$.
-This is the starting point for symplectic geometry, which
-will be discussed in \S \ref{sec:Symplectic}.
-Alternatively, these equations can be written using the bilinear map $\{ \cdot , \cdot \}_{\rm can} : C^1( T^*Q) \times C^1(T^*Q) \to C^0(T^*Q)$
-given by
-\begin{align*}
-  \{ F , G \}_{\rm can} = \pder{F}{q}\pder{G}{p} - \pder{G}{q} \pder{G}{p}.
-\end{align*}
-In particular, we may write $\dot{q} = \{ q , H \}_{\rm can}$ and $\dot{p} = \{ p , H\}_{\rm can}$.
-The object $\{ \cdot , \cdot \}_{\rm can}$ is a special case of more general
-object known as a \emph{Poisson bracket} which will be introduced in
-\S \ref{sec:Poisson}.
-
-As a warning, symplectic geometry has developed greatly
-since its origins in mechanics, and
-has branched into an independent subfield of pure mathematics.
-Many notions were revised and optimized in the $1970$'s and $1980$'s for
-the purpose of proving theorems.
-Occasionally these revisions entailed a sacrifice
-in clarity, from the perspective of ``outsiders''.
-This paper is intended to allow ``outsiders''
-(such as ourselves) to reap the benefits of Poisson geometry.
-Therefore, we will cut away as much abstraction as possible in this introductory
-section.
-Nonetheless, a minimal amount of abstraction is needed in order to
-maintain mathematical rigour and stand firmly upon the shoulders of giants.
-
-\subsection{Symplectic manifolds}
-\label{sec:Symplectic}
-We begin with the definition.
-\begin{defn}
-  Let $S$ be a manifold
-  and let $\omega$ be a closed two-form on $S$ such that the map
-  ``$v \in TS \mapsto \omega( v , \cdot ) \in T^*S$'' is weakly nondegenerate.\footnote{
-    A linear map $L:V \to V^*$ is \emph{weakly nondegenerate} if $L$ is injective.  If $V$ is finite dimensional, this simply means that $L$ is invertible.}
-  We call $\omega$ a \emph{symplectic form}.
-  We call the pair $(S,\omega)$ a \emph{symplectic manifold}.
-\end{defn}
-\je{Does this include infinite dimensional manifolds? Any
-  notes/references on technical details?}
-As a first example, consider the manifold $\R^2$
-with coordinates $(q,p)$.
-The two-form $dq \wedge dp$ is a symplectic form.
-Given a manifold $Q$,
-the cotangent bundle $T^*Q$ has local fiber bundle coordinates
-given by $(q^1,\dots, q^n,p_1,\dots,p_n)$ and there is a unique symplectic form
-which is locally expressed by $dp^i \wedge dq_i$, where
-a sum on repeated indices is assumed.
-This local expression corresponds to a global symplectic
-form on $T^*Q$, known as the \emph{canonical symplectic form}
-and denoted $\omega_{\rm can}$ \cite[Theorem 3.2.10]{FOM}.
-In fact, given any symplectic manifold $(S,\omega)$, the dimension of $S$
-is even, and there exist local coordinates $(q^1,\dots,q^n,p_1,\dots,p_n)$
-such that $\omega \stackrel{locally}{=} dp_i \wedge dq^i$.
-This is known as \emph{Darboux's theorem} and we call these type of
-coordinates \emph{Darboux coordinates}\cite[Theorem 3.2.2]{FOM}.
-
-Given a function $H:S \to \mathbb{R}$,
-the exterior derivative is the one-form $dH:S \to T^*S$
-expressed in local coordinates by $dH(x) = \pder{H}{x^i} dx^i$.
-The Hamiltonian vector field $X_H:S \to TS$ is the unique vector
-field defined by the condition
-$
-  X_H \lrcorner \omega = dH.
-$
-The symbol ``$\lrcorner$'' is the operation of contraction between
-the contravariant indices of $X_H$ and the first set of covariant
-indices of $\omega$.
-In Darboux coordinates, the Hamiltonian vector field induces the
-equations of motion $\dot{q}^i = \pder{H}{p_i}$, $\dot{p}_i = \pder{H}{q^i}$.
+ It is notable that the $0$th level of the heirarchy has been studied
+ for a long time in the context the of PDEs with hydrodynamic background.
+ In particular, \cite{HoldenRaynaud2006} provide the first convergence proof of such a method in the context of the Camassa-Holm equation.
+ This same idea was implemented for the $n$-dimensional Camassa-Holm
+ equation in \cite{ChertockDuToitMarsden2012}.
+ In the context of image-regristration algorithms, the need to obtain 
+ small compressible diffeomorphisms motivated the use of particle methods
+ in a similar framework \cite{JoshiMiller2000}.
+ These methods, designed for a wide array of PDE's are studied analytically
+ in \cite{TrouveYounes2005} which also contains a proof of well-posedness
+ for a range of PDE's.
+ Finally, \cite{Sommer2013} implements the first level, and
+ describes the heigher levesl in the heirarchy  in the context of a 
+ compressible fluid PDE designed for image registration algorithsm.
 
 
-An important aspect of study in Hamiltonian mechanics is that of symmetry.
-This yields the following notions
+\section{Main approach}
+\label{sec:approach}
+In this section we describe our strategy for obtaining
+particle-like solutions to regularized fluid equations.
+Our main framework is that of Hamiltonian mechanics
+and symplectic geometry.
+In particular, our main hammer is Theorem \ref{thm:dual_pairs} (see page 
+\pageref{thm:dual_pairs} in the Appendix), which we repeate
+here for convenience.
 
-\begin{defn}
-  Let $G$ be a Lie group and let $\rho:G \to \Diff(S)$ be a group action on a symplectic manifold $(S,\omega)$.
-  The group $G$ is said to \emph{act symplectically}
-  \begin{align*}
-    \omega( \rho( g ) \cdot v , \rho(g) \cdot w) = \omega(v,w)
-  \end{align*}
-  for any $g \in G, v,w \in T_xS$ and $x \in S$.
-  If $\mathfrak{g}$ is the Lie algebra of such a group,
-  the \emph{momentum map}, $J:S \to \mathfrak{g}^*$,
-  is defined by the property
-  \begin{align*}
-    d \langle J , \xi \rangle = \xi_S \lrcorner \omega.
-  \end{align*}
-\end{defn}
-
-Alternatively, we can characterize a momentum map $J: S \to \mathfrak{g}^*$, as the unique map such that $X_{\langle J , \xi \rangle} = \xi_S$ for any $\xi \in \mathfrak{g}$.
-In the special case where $S = T^*Q$, a left/right action of $G$ on $Q$ can be lifted to a right/left symplectic action on $T^*Q$ given by
-\begin{align*}
-  (q,p) \in T^*Q \mapsto (g^{-1} \cdot q , g^* p) \in T^*Q.
-\end{align*}
-where $g^*p$ is the unique covector such that $\langle g^*p , v \rangle = \langle p , Tg \cdot v \rangle$.
-In this case the momentum map is characterized by the condition
-\begin{align}
-  \langle J(q,p) , \xi \rangle = \langle p , \xi \cdot q \rangle.
-  \label{eq:cotangent_momap}
-\end{align}
-This is contained in Theorem 12.1.4 of \cite{MandS}.
-
-Finally, given two functions $f,h \in C^{\infty}(S)$ we can consider the function $\{ f,h\} = \omega( X_f, X_h)$.
-In Darboux coordinates $\{ f , h \} = \pder{f}{q^i} \pder{h}{p_i} - \pder{f}{p_i} \pder{h}{q^i}$.
-Hamilton's equations can then be written as $\dot{q}^i = \{ q^i , h \}$,
-$\dot{p}_i = \{ p_i , h \}$.
-We call $\{ \cdot , \cdot \}$ a Poisson bracket, and it is the subject of
-the next subsection.
-
-\subsection{Poisson manifolds}
-\label{sec:Poisson}
-We begin with the definition.
-
-\begin{defn} \label{defn:Poisson}
-  Let $P$ be a manifold, and $\{ \cdot , \cdot \}$ be a bilinear
-  operation on $C^{\infty}(P)$ such that 
-  $( C^{\infty}(P) , \{ \cdot , \cdot \} )$ is a Lie algebra
-  and $\{ \cdot , h \}$ has the derivation property for any $h \in C^{\infty}(P)$.
-  That is to say
-  \begin{align*}
-    \{ gf , h \} = \{ f , h \} \cdot g + \{ g , h \} \cdot f,
-  \end{align*}
-  for any $f,g,h \in C^{\infty}(P)$.
-  We call $\{ \cdot , \cdot \}$ a \emph{Poisson bracket},
-  and we call the pair $(P, \{ \cdot , \cdot \})$ a Poisson manifold.
-\end{defn}
-
-The first most important example of a Poisson bracket is
-that of a Poisson bracket on a symplectic manifold $(S,\omega)$.
-Here the Poisson bracket is $\{ f , g \} = \omega( X_f , X_g )$.
-When $S$ is a cotangent bundle, and $\omega$ is the canonical
-symplectic form, we call this bracket the \emph{canonical Poisson
-bracket}.
-
-The second most important example of a Poisson bracket,
-after the canonical Poisson bracket,
-is the Lie--Poisson bracket.  Let $\mathfrak{g}$ be a Lie algebra
-and let $\mathfrak{g}^*$ denote it's dual.
-The \emph{Lie--Poisson bracket} on $\mathfrak{g}^*$ is given 
-by
-\begin{align}
-  \{ f , g \}_{\mathfrak{g}^*}( x ) = \pm
-  \left \langle x , \left[ \pder{f}{x} , \pder{g}{x} \right] \right \rangle
-  \label{eq:Lie-Poisson}
-\end{align}
-where $\langle \cdot , \cdot \rangle$ is the canonical pairing between
-dual-vectors and vectors, and $[ \cdot , \cdot ]$ is the Lie bracket
-on $\mathfrak{g}$.
-The ``$+$'' Poisson bracket is nothing but the canonical Poisson bracket on $T^*G$,
-mapped to the space $\mathfrak{g}^*$ via the left trivialization map $\lambda: (g,p) \in T^*G \mapsto (L_g)^*p \in \mathfrak{g}^*$.
-The ``$-$'' bracket is obtained through the right trivialization map
-$\rho:(g,p) \in T^*G \mapsto (R_g)^*p \in \mathfrak{g}^*$.
-In the next sections we will derive this Poisson structure for the 
-Lie algebras $\so(3)$ and $\mathfrak{X}(\mathbb{R}^n)$.
-
-
-On a Poisson manifold $(P,\{ \cdot , \cdot \})$
-the derivation property implies that the functional operator
-$\{ \cdot , h \}$ is equivalent
-to the Lie derivative operator of a unique vector field $X_h:P \to TP$.
-That is to say, $X_h$ is the unique vector field such that $\lie_{X_h}[f] = \{ f , h \}$ for any $f \in C^1(P)$.
-We call $X_h$ the \emph{Hamiltonian vector field} and the ODE $\dot{x} = X_h(x)$ is called a \emph{Hamiltonian equation}.
-It is standard to write this ODE as ``$\dot{x} = \{ x , H\}$'',
-despite the fact that one typically intends for ``$x$'' to represent
-a point in $P$, and not a function.
-Since one can take ``$x$'' to be a place-holder for a set of
-local coordinate functions which determine $x$ uniquely, this
-sloppiness is usually harmless.
-
-\begin{prop}[Proposition 10.2.2 \cite{MandS}] \label{prop:Lie_hom}
-  Let $(P,\{ \cdot , \cdot \})$ be a Poisson manifold.
-  Then $X_{ \{ h ,f \} } = - [X_h , X_f ]$.
-\end{prop}
-
-\begin{cor} \label{cor:Lie_hom}
-  Let $(S,\omega)$ be a symplectic manifold
-  and let $h,f \in C^{\infty}(S)$.
-  Then $[X_h , X_f] = -X_{\omega(X_h,X_f) }$.
-\end{cor}
-\begin{proof}
-  $X_{\omega(X_h,X_f)} = X_{ \{h,f\} } = -[X_h , X_f]$.
-\end{proof}
-
-\begin{defn}
-  Let $(P_1, \{ \cdot , \cdot \}_1)$ and $(P_2, \{ \cdot , \cdot \}_2)$
-  be Poisson manifolds.
-  A map $\psi:P_1 \to P_2$ is called a
-  \emph{Poisson map} if $\{ f \circ \psi , g \circ \psi \}_1 = \{ f , g \}_2$  for any $f,g \in C^{\infty}(P_2)$.
-\end{defn}
-
-
-\begin{prop}[Lemma 1.2 of \cite{Weinstein1983} or Proposition 10.3.2 of \cite{MandS}] \label{prop:Poisson_dynamics}
-  Let $\psi:P_1 \to P_2$ be a Poisson map.
-  Let $h_2 \in C^2(P_2)$.
-  If $x(t) \in P_1$ is a solution to Hamilton's equations with respect
-  to $h_1 = h_2 \circ \psi \in C^2(P_1)$, then $y(t) = \psi(x(t)) \in P_2$ is a solution
-  to Hamilton's equations with respect to $h_2$.
-\end{prop}
-
-  When the dimension of $P_2$ is larger than that of $P_1$,
-  Proposition \ref{prop:Poisson_dynamics} allows one to find solutions of
-  Hamiltonian equations on $P_2$
-  by solving lower dimensional Hamiltonian equations
-  on $P_1$.
-  \subsection{Dual pairs}
-  In this section we review the notion of dual pairs
-  \cite{MarsdenWeinstein1983,Weinstein1983,Gay-BalmazVizman2011}.
-  Let $(S,\omega)$ be a symplectic manifold.
-  Given a distribution $V \subset TS$, denote the fiber over 
-  $x \in S$ by $V_x \subset T_x S$.
-  The \emph{symplectic orthogonal} to $V$ is the distribution
-  \begin{align*}
-    V^\omega = \{ w \in TS \mid \omega( w , v ) = 0, \forall v \in V \}.
-  \end{align*}
-  Let $\psi:S \to P_1$ be a Poisson map.
-  The kernel of $\psi$ is the distribution
-  \begin{align*}
-    \kernel(\psi) = \{ v \in TS \mid T\psi \cdot v  = 0 \}.
-  \end{align*}
-  If $J:S \to P_2$ is a Poisson map as well, and
-  \begin{align*}
-    \kernel(J) = \kernel(\psi)^\omega
-  \end{align*}
-  we call the diagram
-  \begin{align*}
-    P_1 \stackrel{\psi}{\leftarrow} S \stackrel{J}{\to} P_2
-  \end{align*}
-  a \emph{dual pair}.
-  In the case that $S$ is a cotangent bundle we call $\psi$ or $J$
-  \emph{Clebsch variables} \cite{MarsdenWeinstein1983}.
-
-  \begin{thm} \label{thm:dual_pairs}
-    Let $J_1,J_2:S \to P_1,P_2$ form a dual pair.
+  \begin{quote}
+    {\bf Theorem \ref{thm:dual_pairs}}
+    Let $J_1,J_2:S \to P_1,P_2$ form a dual pair 
+    (see definition on page \pageref{thm:dual_pairs}).
     Let $h \in C^2(P_1)$.
     Let $(q,p)(t) \in S$ be a solution to Hamilton's equations
     with respect to the Hamiltonian $H = h \circ J_1$.
     Then $J_1\left( (q,p)(t) \right) \in P_1$ is a solution
     to Hamilton's equations on $P_1$ with respect to $h$,
     and $J_2( (q,p)(t))$ is constant in time.
-  \end{thm}
-  \begin{proof}
-    Use proposition \ref{prop:Poisson_dynamics} to show that
-    $x(t) = J_1 ((q,p)(t))$ is a solution to Hamilton's equations
-    with respect to $h$.
-    To verify that $J_2( (q,p)(t) )$ is constant,
-    Let $v \in \kernel(J_1)$ be a vector over $(q,p)(0) \in S$.
-    This means that $v$ is tangent to the level set of $J_1$ at $(q,p)(0)$.
-    Moreover, $H = h \circ J_1$ is constant on such level sets.
-    Thus we observe
-    \begin{align*}
-      0 = \langle dH((q,p)(0)) , v \rangle =
-      \omega \left( (\dot{q},\dot{p}) , v \right).
-    \end{align*}
-    As $v$ was an arbitrary element of $\kernel(J_1)$ over $(q,p)(0)$
-    we see that $(\dot{q},\dot{p}) \in TS$ is contained
-    in the symplectic orthogonal to $\kernel(J_1)$.
-    Since $J_1$ and $J_2$ form a dual pair,
-    this observation implies $(\dot{q},\dot{p}) \in \kernel(J_2)$.
-    We may apply this argument at each time $t$ and observe
-    \begin{align*}
-      \frac{d}{dt} J_2( (q,p)(t)) = TJ_2 \cdot (\dot{q},\dot{p})(t)  
-      = 0 \quad \forall t.
-    \end{align*}
-  \end{proof}
-  
-  The next theorem will be used later for the purpose of identifying
-  dual pairs.
-  
-  \begin{thm}[example 2.2 of \cite{Gay-BalmazVizman2011}] \label{thm:commuting_actions}
-    Let $G_1,G_2$ act symplectically on $(S,\omega)$
-    by commuting group actions,
-    $\rho_1$ and $\rho_2$.\footnote{
-      This means 
-      $\rho_1(g_1 , \rho_2 (x , g_2)) = \rho_2(\rho_1(g_1 , x) ,g_2)$
-      for any $g_1 \in G_1, g_2 \in G_2$ and $x \in S$.}
-    Moreover, assume $G_1$ acts transitively on $G_2$ orbits.
-    Then the momentum maps form the dual pair
-    $
-      \mathfrak{g}^*_1
-      \stackrel{J_1}{\longmapsfrom}
-      S
-      \stackrel{J_2}{\longmapsto}
-      \mathfrak{g}_2^*.
-    $
-  \end{thm}
-  \begin{proof}
-    Let us first show that $\kernel(J_1) = \rho_1(\mathfrak{g}_1 , S )^\omega$.
-    Recall that $J_1$ is defined by the condition
-    $d \langle J_1 , \xi_1 \rangle = i_{\rho_1(\xi_1)} \omega$
-    where $\rho_1(\xi_1)$ is the infinitesimal generator of
-    $\xi_1 \in \mathfrak{g}_1$.
-    Let $v \in \rho_1(\mathfrak{g}_1,S)^\omega$.
-    We observe that 
-    $d \langle J_1 , \xi_1 \rangle (v) = \omega( \rho_1(\xi_1, x ), v ) = 0$.
-    However $d\langle J_1 , \xi_1 \rangle (v) = \langle TJ_1(v) , \xi_1 \rangle$.
-    Thus $v \in \kernel(J_1)$.
-    The previous steps may be reversed, and
-    the converse follows immediately.
-    We find
-    $\kernel(J_1) = \rho_1(\mathfrak{g}_1,S)^\omega$.
-    Of course the same argument applies to $J_2$.
+  \end{quote}
 
-    We now show that $\kernel(J_2) = \rho_1(\mathfrak{g}_1,S)$.
-    Let $\xi_1 \in \mathfrak{g}_1, \xi_2 \in \mathfrak{g}_2$.
-    First note that $\rho_1(\xi_1) = X_{ \langle J_1 , \xi_1 \rangle}$,
-    and the same calculation applies to $\xi_2$.
-    Thus we observe by using Corollary~\ref{cor:Lie_hom} that
-    \begin{align*}
-      X_{ \omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) }
-      &= - [X_{ \langle J_1,\xi_1\rangle} , X_{\langle J_2,\xi_2\rangle} ] \\
-      &= - [\rho_1(\xi_1) , \rho_2(\xi_2)] = 0.
-    \end{align*}
-    The final equality
-    derives from the fact that the actions of $G_1$ and $G_2$ commute.
-    We have proven that $\rho_1(\mathfrak{g}_1 , S)$ and $\rho_2(S,\mathfrak{g}_2)$ are
-    symplectically orthogonal.
-    Now note that
-    $TJ_2 ( \xi_1 \cdot x) \cdot \xi_2 = \omega( \rho_1(\xi_1, x) ,\rho_2(x, \xi_2 )) = 0$.
-    Thus $\rho_1(\xi_1 , x) \in \kernel( J_2)$, hence
-    $\rho_1(\mathfrak{g}_1 ,S)^\omega \subset \kernel(J_2)$.
-    As $G_1$ acts transitively on $G_2$ orbits, we see
-    that $(\mathfrak{g}_1 \cdot S)^\omega \supset \kernel( J_2)$.
-  \end{proof}
-  With these foundations established, we proceed
-  to discuss a simple example of Poisson mechanics
-  before moving to the more sophisticated case
-  of fluids.
+We will leverage this theorem in the following way.
+We will find a dual pair, $J_1,J_2: S \to \mathfrak{g}^*$, where
+\begin{enumerate}
+\item $S$ is the space of particle locations (and internal group variables perhaps)
+\item $\mathfrak{g}$ is the space of vector-fields.
+\item and $h$ is the Hamiltonian of an ideal fluid (i.e. the kinetic energy).
+\end{enumerate}
+By applying Theorem \ref{thm:dual_pairs} we obtained particle like solutions to the equations of motion of an ideal fluid, as well as conserved quantities.
+Due to analytical concerns which will become clear later
+we will instead consider a hamiltonian $h_\epsilon$
+with a regularization paramenter $\epsilon > 0$.
+So we obtain particle-like solutions of a regularized model of ideal fluids
+presented in \cite{MumfordMichor2013}.
+
+Before applying this fairly complex theorem to fluids,
+we will consider a more familar example.
 
 \section{Example: the rigid body}
 \label{sec:rigid_body}
@@ -1246,6 +917,359 @@ Discuss mergers to higher-order, time to collision, near misses.
 
 \appendix
 
+\subsection{Notation}
+tangent bundle, cotangent bundle, vector field, contraction, Lie derivative,
+smooth, continuous functions, group actions, infinitesimal generators,
+dual spaces.  A group $G$, left multiplication $L_g$, right multi $R_g$, 
+left/right action $\rho(g,x)$ or $\rho(x,g)$, infinitesimal generator $\rho(\xi,x)$ or $\rho(x,\xi)$.
+\todo[inline]{Finish this section}
+
+\section{Hamiltonian mechanics}
+\label{sec:Hamiltonian}
+The goal of this section is to prove theorems \ref{thm:dual_pairs}
+and \ref{thm:commuting_actions} (see pages \pageref{thm:dual_pairs} and \pageref{thm:commuting_actions}).
+Those who understand and accept these theorems on a first reading
+should be able to skip this section without any consequence.
+Most of this section will be a crash course in Poisson geometry
+and Hamiltonian mechanics as described in \cite{FOM,MandS,Weinstein1983}.
+
+A typical introduction to Poisson structures in mechanics
+begins by considering Hamilton's equations
+\begin{align*}
+  \dot{q} = \pder{H}{p} \quad, \quad  \dot{p} = - \pder{H}{q}.
+\end{align*}
+If we consider the two-form $dp \wedge dq$, then Hamilton's equations
+can be written as $(\dot{q},\dot{p}) \lrcorner (dp \wedge dq) = dH(q,p)$.
+This is the starting point for symplectic geometry, which
+will be discussed in \S \ref{sec:Symplectic}.
+Alternatively, these equations can be written using the bilinear map $\{ \cdot , \cdot \}_{\rm can} : C^1( T^*Q) \times C^1(T^*Q) \to C^0(T^*Q)$
+given by
+\begin{align*}
+  \{ F , G \}_{\rm can} = \pder{F}{q}\pder{G}{p} - \pder{G}{q} \pder{G}{p}.
+\end{align*}
+In particular, we may write $\dot{q} = \{ q , H \}_{\rm can}$ and $\dot{p} = \{ p , H\}_{\rm can}$.
+The object $\{ \cdot , \cdot \}_{\rm can}$ is a special case of more general
+object known as a \emph{Poisson bracket} which will be introduced in
+\S \ref{sec:Poisson}.
+
+As a warning, symplectic geometry has developed greatly
+since its origins in mechanics, and
+has branched into an independent subfield of pure mathematics.
+Many notions were revised and optimized in the $1970$'s and $1980$'s for
+the purpose of proving theorems.
+Occasionally these revisions entailed a sacrifice
+in clarity, from the perspective of ``outsiders''.
+This paper is intended to allow ``outsiders''
+(such as ourselves) to reap the benefits of Poisson geometry.
+Therefore, we will cut away as much abstraction as possible in this introductory
+section.
+Nonetheless, a minimal amount of abstraction is needed in order to
+maintain mathematical rigour and stand firmly upon the shoulders of giants.
+
+\subsection{Symplectic manifolds}
+\label{sec:Symplectic}
+We begin with the definition.
+\begin{defn}
+  Let $S$ be a manifold
+  and let $\omega$ be a closed two-form on $S$ such that the map
+  ``$v \in TS \mapsto \omega( v , \cdot ) \in T^*S$'' is weakly nondegenerate.\footnote{
+    A linear map $L:V \to V^*$ is \emph{weakly nondegenerate} if $L$ is injective.  If $V$ is finite dimensional, this simply means that $L$ is invertible.}
+  We call $\omega$ a \emph{symplectic form}.
+  We call the pair $(S,\omega)$ a \emph{symplectic manifold}.
+\end{defn}
+\je{Does this include infinite dimensional manifolds? Any
+  notes/references on technical details?}
+As a first example, consider the manifold $\R^2$
+with coordinates $(q,p)$.
+The two-form $dq \wedge dp$ is a symplectic form.
+Given a manifold $Q$,
+the cotangent bundle $T^*Q$ has local fiber bundle coordinates
+given by $(q^1,\dots, q^n,p_1,\dots,p_n)$ and there is a unique symplectic form
+which is locally expressed by $dp^i \wedge dq_i$, where
+a sum on repeated indices is assumed.
+This local expression corresponds to a global symplectic
+form on $T^*Q$, known as the \emph{canonical symplectic form}
+and denoted $\omega_{\rm can}$ \cite[Theorem 3.2.10]{FOM}.
+In fact, given any symplectic manifold $(S,\omega)$, the dimension of $S$
+is even, and there exist local coordinates $(q^1,\dots,q^n,p_1,\dots,p_n)$
+such that $\omega \stackrel{locally}{=} dp_i \wedge dq^i$.
+This is known as \emph{Darboux's theorem} and we call these type of
+coordinates \emph{Darboux coordinates}\cite[Theorem 3.2.2]{FOM}.
+
+Given a function $H:S \to \mathbb{R}$,
+the exterior derivative is the one-form $dH:S \to T^*S$
+expressed in local coordinates by $dH(x) = \pder{H}{x^i} dx^i$.
+The Hamiltonian vector field $X_H:S \to TS$ is the unique vector
+field defined by the condition
+$
+  X_H \lrcorner \omega = dH.
+$
+The symbol ``$\lrcorner$'' is the operation of contraction between
+the contravariant indices of $X_H$ and the first set of covariant
+indices of $\omega$.
+In Darboux coordinates, the Hamiltonian vector field induces the
+equations of motion $\dot{q}^i = \pder{H}{p_i}$, $\dot{p}_i = \pder{H}{q^i}$.
+
+
+An important aspect of study in Hamiltonian mechanics is that of symmetry.
+This yields the following notions
+
+\begin{defn}
+  Let $G$ be a Lie group and let $\rho:G \to \Diff(S)$ be a group action on a symplectic manifold $(S,\omega)$.
+  The group $G$ is said to \emph{act symplectically}
+  \begin{align*}
+    \omega( \rho( g ) \cdot v , \rho(g) \cdot w) = \omega(v,w)
+  \end{align*}
+  for any $g \in G, v,w \in T_xS$ and $x \in S$.
+  If $\mathfrak{g}$ is the Lie algebra of such a group,
+  the \emph{momentum map}, $J:S \to \mathfrak{g}^*$,
+  is defined by the property
+  \begin{align*}
+    d \langle J , \xi \rangle = \xi_S \lrcorner \omega.
+  \end{align*}
+\end{defn}
+
+Alternatively, we can characterize a momentum map $J: S \to \mathfrak{g}^*$, as the unique map such that $X_{\langle J , \xi \rangle} = \xi_S$ for any $\xi \in \mathfrak{g}$.
+In the special case where $S = T^*Q$, a left/right action of $G$ on $Q$ can be lifted to a right/left symplectic action on $T^*Q$ given by
+\begin{align*}
+  (q,p) \in T^*Q \mapsto (g^{-1} \cdot q , g^* p) \in T^*Q.
+\end{align*}
+where $g^*p$ is the unique covector such that $\langle g^*p , v \rangle = \langle p , Tg \cdot v \rangle$.
+In this case the momentum map is characterized by the condition
+\begin{align}
+  \langle J(q,p) , \xi \rangle = \langle p , \xi \cdot q \rangle.
+  \label{eq:cotangent_momap}
+\end{align}
+This is contained in Theorem 12.1.4 of \cite{MandS}.
+
+Finally, given two functions $f,h \in C^{\infty}(S)$ we can consider the function $\{ f,h\} = \omega( X_f, X_h)$.
+In Darboux coordinates $\{ f , h \} = \pder{f}{q^i} \pder{h}{p_i} - \pder{f}{p_i} \pder{h}{q^i}$.
+Hamilton's equations can then be written as $\dot{q}^i = \{ q^i , h \}$,
+$\dot{p}_i = \{ p_i , h \}$.
+We call $\{ \cdot , \cdot \}$ a Poisson bracket, and it is the subject of
+the next subsection.
+
+\subsection{Poisson manifolds}
+\label{sec:Poisson}
+We begin with the definition.
+
+\begin{defn} \label{defn:Poisson}
+  Let $P$ be a manifold, and $\{ \cdot , \cdot \}$ be a bilinear
+  operation on $C^{\infty}(P)$ such that 
+  $( C^{\infty}(P) , \{ \cdot , \cdot \} )$ is a Lie algebra
+  and $\{ \cdot , h \}$ has the derivation property for any $h \in C^{\infty}(P)$.
+  That is to say
+  \begin{align*}
+    \{ gf , h \} = \{ f , h \} \cdot g + \{ g , h \} \cdot f,
+  \end{align*}
+  for any $f,g,h \in C^{\infty}(P)$.
+  We call $\{ \cdot , \cdot \}$ a \emph{Poisson bracket},
+  and we call the pair $(P, \{ \cdot , \cdot \})$ a Poisson manifold.
+\end{defn}
+
+The first most important example of a Poisson bracket is
+that of a Poisson bracket on a symplectic manifold $(S,\omega)$.
+Here the Poisson bracket is $\{ f , g \} = \omega( X_f , X_g )$.
+When $S$ is a cotangent bundle, and $\omega$ is the canonical
+symplectic form, we call this bracket the \emph{canonical Poisson
+bracket}.
+
+The second most important example of a Poisson bracket,
+after the canonical Poisson bracket,
+is the Lie--Poisson bracket.  Let $\mathfrak{g}$ be a Lie algebra
+and let $\mathfrak{g}^*$ denote it's dual.
+The \emph{Lie--Poisson bracket} on $\mathfrak{g}^*$ is given 
+by
+\begin{align}
+  \{ f , g \}_{\mathfrak{g}^*}( x ) = \pm
+  \left \langle x , \left[ \pder{f}{x} , \pder{g}{x} \right] \right \rangle
+  \label{eq:Lie-Poisson}
+\end{align}
+where $\langle \cdot , \cdot \rangle$ is the canonical pairing between
+dual-vectors and vectors, and $[ \cdot , \cdot ]$ is the Lie bracket
+on $\mathfrak{g}$.
+The ``$+$'' Poisson bracket is nothing but the canonical Poisson bracket on $T^*G$,
+mapped to the space $\mathfrak{g}^*$ via the left trivialization map $\lambda: (g,p) \in T^*G \mapsto (L_g)^*p \in \mathfrak{g}^*$.
+The ``$-$'' bracket is obtained through the right trivialization map
+$\rho:(g,p) \in T^*G \mapsto (R_g)^*p \in \mathfrak{g}^*$.
+In the next sections we will derive this Poisson structure for the 
+Lie algebras $\so(3)$ and $\mathfrak{X}(\mathbb{R}^n)$.
+
+
+On a Poisson manifold $(P,\{ \cdot , \cdot \})$
+the derivation property implies that the functional operator
+$\{ \cdot , h \}$ is equivalent
+to the Lie derivative operator of a unique vector field $X_h:P \to TP$.
+That is to say, $X_h$ is the unique vector field such that $\lie_{X_h}[f] = \{ f , h \}$ for any $f \in C^1(P)$.
+We call $X_h$ the \emph{Hamiltonian vector field} and the ODE $\dot{x} = X_h(x)$ is called a \emph{Hamiltonian equation}.
+It is standard to write this ODE as ``$\dot{x} = \{ x , H\}$'',
+despite the fact that one typically intends for ``$x$'' to represent
+a point in $P$, and not a function.
+Since one can take ``$x$'' to be a place-holder for a set of
+local coordinate functions which determine $x$ uniquely, this
+sloppiness is usually harmless.
+
+\begin{prop}[Proposition 10.2.2 \cite{MandS}] \label{prop:Lie_hom}
+  Let $(P,\{ \cdot , \cdot \})$ be a Poisson manifold.
+  Then $X_{ \{ h ,f \} } = - [X_h , X_f ]$.
+\end{prop}
+
+\begin{cor} \label{cor:Lie_hom}
+  Let $(S,\omega)$ be a symplectic manifold
+  and let $h,f \in C^{\infty}(S)$.
+  Then $[X_h , X_f] = -X_{\omega(X_h,X_f) }$.
+\end{cor}
+\begin{proof}
+  $X_{\omega(X_h,X_f)} = X_{ \{h,f\} } = -[X_h , X_f]$.
+\end{proof}
+
+\begin{defn}
+  Let $(P_1, \{ \cdot , \cdot \}_1)$ and $(P_2, \{ \cdot , \cdot \}_2)$
+  be Poisson manifolds.
+  A map $\psi:P_1 \to P_2$ is called a
+  \emph{Poisson map} if $\{ f \circ \psi , g \circ \psi \}_1 = \{ f , g \}_2$  for any $f,g \in C^{\infty}(P_2)$.
+\end{defn}
+
+
+\begin{prop}[Lemma 1.2 of \cite{Weinstein1983} or Proposition 10.3.2 of \cite{MandS}] \label{prop:Poisson_dynamics}
+  Let $\psi:P_1 \to P_2$ be a Poisson map.
+  Let $h_2 \in C^2(P_2)$.
+  If $x(t) \in P_1$ is a solution to Hamilton's equations with respect
+  to $h_1 = h_2 \circ \psi \in C^2(P_1)$, then $y(t) = \psi(x(t)) \in P_2$ is a solution
+  to Hamilton's equations with respect to $h_2$.
+\end{prop}
+
+  When the dimension of $P_2$ is larger than that of $P_1$,
+  Proposition \ref{prop:Poisson_dynamics} allows one to find solutions of
+  Hamiltonian equations on $P_2$
+  by solving lower dimensional Hamiltonian equations
+  on $P_1$.
+  \subsection{Dual pairs}
+  In this section we review the notion of dual pairs
+  \cite{MarsdenWeinstein1983,Weinstein1983,Gay-BalmazVizman2011}.
+  Let $(S,\omega)$ be a symplectic manifold.
+  Given a distribution $V \subset TS$, denote the fiber over 
+  $x \in S$ by $V_x \subset T_x S$.
+  The \emph{symplectic orthogonal} to $V$ is the distribution
+  \begin{align*}
+    V^\omega = \{ w \in TS \mid \omega( w , v ) = 0, \forall v \in V \}.
+  \end{align*}
+  Let $\psi:S \to P_1$ be a Poisson map.
+  The kernel of $\psi$ is the distribution
+  \begin{align*}
+    \kernel(\psi) = \{ v \in TS \mid T\psi \cdot v  = 0 \}.
+  \end{align*}
+  If $J:S \to P_2$ is a Poisson map as well, and
+  \begin{align*}
+    \kernel(J) = \kernel(\psi)^\omega
+  \end{align*}
+  we call the diagram
+  \begin{align*}
+    P_1 \stackrel{\psi}{\leftarrow} S \stackrel{J}{\to} P_2
+  \end{align*}
+  a \emph{dual pair}.
+  In the case that $S$ is a cotangent bundle we call $\psi$ or $J$
+  \emph{Clebsch variables} \cite{MarsdenWeinstein1983}.
+
+  \begin{thm} \label{thm:dual_pairs}
+    Let $J_1,J_2:S \to P_1,P_2$ form a dual pair.
+    Let $h \in C^2(P_1)$.
+    Let $(q,p)(t) \in S$ be a solution to Hamilton's equations
+    with respect to the Hamiltonian $H = h \circ J_1$.
+    Then $J_1\left( (q,p)(t) \right) \in P_1$ is a solution
+    to Hamilton's equations on $P_1$ with respect to $h$,
+    and $J_2( (q,p)(t))$ is constant in time.
+  \end{thm}
+  \begin{proof}
+    Use proposition \ref{prop:Poisson_dynamics} to show that
+    $x(t) = J_1 ((q,p)(t))$ is a solution to Hamilton's equations
+    with respect to $h$.
+    To verify that $J_2( (q,p)(t) )$ is constant,
+    Let $v \in \kernel(J_1)$ be a vector over $(q,p)(0) \in S$.
+    This means that $v$ is tangent to the level set of $J_1$ at $(q,p)(0)$.
+    Moreover, $H = h \circ J_1$ is constant on such level sets.
+    Thus we observe
+    \begin{align*}
+      0 = \langle dH((q,p)(0)) , v \rangle =
+      \omega \left( (\dot{q},\dot{p}) , v \right).
+    \end{align*}
+    As $v$ was an arbitrary element of $\kernel(J_1)$ over $(q,p)(0)$
+    we see that $(\dot{q},\dot{p}) \in TS$ is contained
+    in the symplectic orthogonal to $\kernel(J_1)$.
+    Since $J_1$ and $J_2$ form a dual pair,
+    this observation implies $(\dot{q},\dot{p}) \in \kernel(J_2)$.
+    We may apply this argument at each time $t$ and observe
+    \begin{align*}
+      \frac{d}{dt} J_2( (q,p)(t)) = TJ_2 \cdot (\dot{q},\dot{p})(t)  
+      = 0 \quad \forall t.
+    \end{align*}
+  \end{proof}
+  
+  The next theorem will be used later for the purpose of identifying
+  dual pairs.
+  
+  \begin{thm}[example 2.2 of \cite{Gay-BalmazVizman2011}] \label{thm:commuting_actions}
+    Let $G_1,G_2$ act symplectically on $(S,\omega)$
+    by commuting group actions,
+    $\rho_1$ and $\rho_2$.\footnote{
+      This means 
+      $\rho_1(g_1 , \rho_2 (x , g_2)) = \rho_2(\rho_1(g_1 , x) ,g_2)$
+      for any $g_1 \in G_1, g_2 \in G_2$ and $x \in S$.}
+    Moreover, assume $G_1$ acts transitively on $G_2$ orbits.
+    Then the momentum maps form the dual pair
+    $
+      \mathfrak{g}^*_1
+      \stackrel{J_1}{\longmapsfrom}
+      S
+      \stackrel{J_2}{\longmapsto}
+      \mathfrak{g}_2^*.
+    $
+  \end{thm}
+  \begin{proof}
+    Let us first show that $\kernel(J_1) = \rho_1(\mathfrak{g}_1 , S )^\omega$.
+    Recall that $J_1$ is defined by the condition
+    $d \langle J_1 , \xi_1 \rangle = i_{\rho_1(\xi_1)} \omega$
+    where $\rho_1(\xi_1)$ is the infinitesimal generator of
+    $\xi_1 \in \mathfrak{g}_1$.
+    Let $v \in \rho_1(\mathfrak{g}_1,S)^\omega$.
+    We observe that 
+    $d \langle J_1 , \xi_1 \rangle (v) = \omega( \rho_1(\xi_1, x ), v ) = 0$.
+    However $d\langle J_1 , \xi_1 \rangle (v) = \langle TJ_1(v) , \xi_1 \rangle$.
+    Thus $v \in \kernel(J_1)$.
+    The previous steps may be reversed, and
+    the converse follows immediately.
+    We find
+    $\kernel(J_1) = \rho_1(\mathfrak{g}_1,S)^\omega$.
+    Of course the same argument applies to $J_2$.
+
+    We now show that $\kernel(J_2) = \rho_1(\mathfrak{g}_1,S)$.
+    Let $\xi_1 \in \mathfrak{g}_1, \xi_2 \in \mathfrak{g}_2$.
+    First note that $\rho_1(\xi_1) = X_{ \langle J_1 , \xi_1 \rangle}$,
+    and the same calculation applies to $\xi_2$.
+    Thus we observe by using Corollary~\ref{cor:Lie_hom} that
+    \begin{align*}
+      X_{ \omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) }
+      &= - [X_{ \langle J_1,\xi_1\rangle} , X_{\langle J_2,\xi_2\rangle} ] \\
+      &= - [\rho_1(\xi_1) , \rho_2(\xi_2)] = 0.
+    \end{align*}
+    The final equality
+    derives from the fact that the actions of $G_1$ and $G_2$ commute.
+    We have proven that $\rho_1(\mathfrak{g}_1 , S)$ and $\rho_2(S,\mathfrak{g}_2)$ are
+    symplectically orthogonal.
+    Now note that
+    $TJ_2 ( \xi_1 \cdot x) \cdot \xi_2 = \omega( \rho_1(\xi_1, x) ,\rho_2(x, \xi_2 )) = 0$.
+    Thus $\rho_1(\xi_1 , x) \in \kernel( J_2)$, hence
+    $\rho_1(\mathfrak{g}_1 ,S)^\omega \subset \kernel(J_2)$.
+    As $G_1$ acts transitively on $G_2$ orbits, we see
+    that $(\mathfrak{g}_1 \cdot S)^\omega \supset \kernel( J_2)$.
+  \end{proof}
+  With these foundations established, we proceed
+  to discuss a simple example of Poisson mechanics
+  before moving to the more sophisticated case
+  of fluids.
+
+
+
 \section{Multi-indices}
 \label{app:multi}
 Multi-indices are merely a means of indexing all the partial derivative
@@ -1260,10 +1284,6 @@ by considering a $\hat{\alpha} \in \alpha$ and $\hat{\beta} \in \beta$ and takin
   Heuristically, this is the unique ``bag of marbles'' obtained by collecting the marbles of $\alpha$ and $\beta$ into a single bag.
 
 
-\section{Computations with the Fa\`a di Bruno formula}
-\label{app:FaadiBruno}
-
-\todo[inline]{A space for David's computations}
 
 \bibliographystyle{amsalpha}
 \bibliography{hoj_2014}
