@@ -44,10 +44,49 @@
 \end{abstract}
 
 \section{Introduction}
+The self similarity of ideal fluids
+yields the notorious ``cascade to smaller scales'', providing a raison d'etre
+for multiscale fluid modelling.
+Moreover, self similarity is widely regarded as the cause
+behind the great difficulties in proving well-posedness of 
+the Navier-Stokes equations \cite{KatzPavlovic2005}.
+It is generally regarded as difficult to make these 
+notions of self-similarity and  cascade mathematically precise.
+Therefore, it would be useful to have a toy model of self-similarity and cascade,
+both from the standpoint of understanding the structures involved,
+and from the standpoint of creating more accurate CFD code.
 
-\hoj{Consider describing the self-similarity of Diff and $L^2$.  Richardson
-  whirls.
-  This is the first Lagrangian representation of Diff self-similarity.}
+One cause of the self-similarity of  fluids 
+is the self-similarity of the configuration space
+itself, the diffeomorphism group $\Diff(M)$.
+In a nutshell, a fluid contains ``little'' fluids.
+However, Lagrangian methods in CFD, such as \emph{smooth particle hydrodynamics} and
+\emph{vortex methods}, do not exhibit structures to express any notion of self-similarity.
+ One means of doing this was presented in \cite{JacobsRatiuDesbrun2013}
+ where an infinite-dimensional reduction by symmetry was executed,
+ to produce a finite dimensional system from an infinite dimensional
+ regularized fluid model.
+ The finite dimensional system was an ODE for particles which carry models of the diffeomorphism group, known as jet groups.
+ Thus obtaining a Lagrangian analog of ``whirls within whirls''.
+ However, the specifics of the regularized fluid model were not determined,
+ and the analysis of \cite{JacobsRatiuDesbrun2013} was thus purely theoretical.
+ 
+ Later, a regularized model of ideal fluids was presented by \cite{MumfordMichor2013}.  This new model was subject to the analysis presented in 
+ \cite{JacobsRatiuDesbrun2013}, and gave a specific and easily
+ implementable manifestation of the particle methods described.
+ We subsequently simulated solutions and observed cascade phenomena as an emergent behavior.
+ Each of these particles exists in a hierarchy, and the cascade phenomena observed consisted
+ of particle at the $k$th level in the hierarchy colliding and merging into a particle in the $k+1$th level.
+ As a result we obtained the first orderly characterization of the
+ cascade to fine scales in a Lagrangian model
+ \cite{CotterHolmJacobsMeier2014}.
+  Such a ``toy'' model is crucial to the understanding of fluids,
+  both from a numerical perspective, and from the perspective
+  of ``pure'' mathematics.
+  Without models which rigorously mimic aspects of self-similarity 
+  and cascade (at arbitrary resolutions!),
+  one is forced to stare at self-similarity in the face directly.
+  Our research presents the first such model to fill this gap.
 
 \hoj{Quickly describe the derivation of point-vortex solutions and peakons via Clebsch variables.
 	Then describe out method.}
