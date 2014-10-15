@@ -184,9 +184,6 @@ with a regularization paramenter $\epsilon > 0$.
 So we obtain particle-like solutions of a regularized model of ideal fluids
 presented in \cite{MumfordMichor2013}.
 
-Before applying this fairly complex theorem to fluids,
-we will consider a more familar example.
-
 \section{Example: the rigid body}
 \label{sec:rigid_body}
   In this section we review basic notions from classical mechanics
@@ -356,14 +353,22 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   \todo[inline]{Check for sign errors in this section. Especially with respect to left/right
   	Lie--Poisson structure and Nambu bracket.}
 
+\hoj{
+May we consider removing the stuff on the 
+rigid body?  It's nice for us to read,
+but I don't know if the most people will like it
+or care.}
+
+
 \section{Regularized fluids}
   The equations of motion for fluids can be seen as
   Hamiltonian equations on the (dual) space of divergence
-  free vector fields.
+  free vector fields \cite{Arnold1966}.
   Consider the Lie-algebra of vector fields on $\mathbb{R}^n$, 
   denoted by $\mathfrak{X}(\mathbb{R}^n)$.
   Formally, the dual space to $\mathfrak{X}(\mathbb{R}^n)$ is a Poisson
-  manifold when equipped with the Lie--Poisson bracket.
+  manifold when equipped with the Lie-Poisson bracket
+  (see \eqref{eq:Lie-Poisson} in Appendix \ref{sec:Poisson}).
   We may consider the map
   $\psi: T^*R^n \to \mathfrak{X}(\mathbb{R}^n)^*$
   given implicitly by
@@ -422,13 +427,26 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
 %  \cite{MichorMumford2013}.
 %  \todo[inline]{Not sure if I can just add this incompressibility constraint.  Consider cutting this subsection}
 %  
+
+In the case where $h_{\rm Euler}(m) = \frac{1}{2} \| m \|^2_{L^2}$ is the standard fluid kinetic energy, we may consider the evolutionary PDE
+\begin{align}
+	\partial_t m+ \lie_u [ m] = 0 \quad , \quad u^i = \delta^{ij} m_j. \label{eq:ideal_fluid}
+\end{align}
+The primary finding of \cite{Arnold1966} was that \eqref{eq:ideal_fluid} is equivalent to the
+inviscid fluid equation
+\begin{align*}
+	\partial_t u + u \cdot \nabla u = - \nabla p \quad , \quad  \nabla \cdot u = 0.
+\end{align*}
+In fact \eqref{eq:ideal_fluid} is a Hamiltonian equation.
+In the following proposition we will show this for a general hamiltonian.
+
   \begin{prop}[\cite{Arnold1966}] \label{prop:LPDiff}
   Let $h \in C^{\infty}( \mathfrak{X}_{\rm div}(\R^n) )$.
-  Recall that $\mathfrak{X}_{\rm div}(\R^n)^*$ is a Lie--Poisson manifold when equipped with the Lie--Poisson bracket,
-  and given a function $h$, the Fr\'echet derivative, $dh(m)$, is an element of $\mathfrak{X}_{\rm div}(\R^n)^{**}$.
+  Recall that $\mathfrak{X}_{\rm div}(\R^n)^*$ is a Poisson manifold
+  when equipped with the Lie--Poisson bracket,
+  and given a function $h$, the Fr\'echet derivative, $dh(m)$, is an element  of $\mathfrak{X}_{\rm div}(\R^n)^{**}$.
   In the event that $dh(m) \in \mathfrak{X}_{\rm div}(\R^n)$,
-  Hamilton's equations with respect to the Lie--Poisson
-  bracket can be written as
+  Hamilton's equations are given by
   \begin{align}
     \dot{m} + \lie_u [m] = 0 \quad , \quad u = dh(m) \label{eq:LP}.
   \end{align}
@@ -439,7 +457,9 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   given by $m \in \mathfrak{X}_{\rm div}(\R^n)^* \mapsto \langle m , v \rangle \in \R$.
   Let us denote this function by $f_v$.
   Let $m(t)$ satisfy Hamilton's equations.
-  By the definition of the Lie--Poisson bracket we observe
+  By the definition of the Lie--Poisson bracket
+  (see \eqref{eq:Lie-Poisson} in Appendix \ref{sec:Poisson})
+  we observe
   \begin{align*}
     \frac{d}{dt} f_v(m) &= \{ f_v , h \}(m) = \langle m , [ df_v(m) , dh(m) ] \rangle \\
     &= \langle m , \lie_{dh(m)}[ df_v(m) ] \rangle = - \langle \lie_{dh(m)}[m] , df_v \rangle.
@@ -464,21 +484,10 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   therefore \emph{defined uniquely} by how it acts on $\mathfrak{X}_{\rm div}(\R^n)$.}
   The result follows.
 \end{proof}
-In the case where $h(m) = \frac{1}{2} \| m \|^2_{L^2}$ is the standard fluid kinetic
-energy, \eqref{eq:LP} takes the form 
-\begin{align}
-	\partial_t m+ \lie_u [ m] = 0 \quad , \quad u^i = \delta^{ij} m_j. \label{eq:ideal_fluid}
-\end{align}
-The primary finding of \cite{Arnold1966} was that \eqref{eq:ideal_fluid} is equivalent to the
-inviscid fluid equation
-\begin{align*}
-	\partial_t u + u \cdot \nabla u = - \nabla p \quad , \quad  \nabla \cdot u = 0.
-\end{align*}
 
 \subsection{The Mumford--Michor model}
 \label{sec:MME}
-In \cite{MumfordMichor2013} David Mumford and Peter Michor
-considered the Hamiltonian
+Consider the Hamiltonian
 \begin{align*}
   h_{k,\sigma}(m) = \frac{1}{2} \langle m , K_{k,\sigma} * m \rangle_{L^2} 
 \end{align*}
@@ -491,14 +500,14 @@ In this case Hamilton's equations take the form
 \begin{align}
 	\partial_t m+ \lie_u [ m] = 0 \quad , \quad u^i  = K^{ij}_{k,\sigma} * m_j. \label{eq:MMDiff}
 \end{align}
-Solutions to \eqref{eq:MMDiff} exhibit existence and uniqueness for all time \cite[Thm 2]{MumfordMichor2013}.
-Lastly, as $\sigma \to 0$, $h_{k,\sigma} \to h$ and one can speculate that \eqref{eq:MMDiff}
+Solutions to \eqref{eq:MMDiff} exhibit existence and uniqueness for all time.
+Lastly, as $\sigma \to 0$, $h_{k,\sigma} \to h_{\rm Euler}$ and one can speculate that \eqref{eq:MMDiff}
 approaches the ideal fluid equation \eqref{eq:ideal_fluid}.
-In fact, this is the case, and for $\sigma > 0$ solutions of \eqref{eq:MMDiff}
+In fact, this is the case over short times, and for $\sigma > 0$ solutions of \eqref{eq:MMDiff}
 differ from those of \eqref{eq:ideal_fluid} by an amount $\sigma t$
 in the $H^k$-norm.
 Thus Hamilton's equations with respect to $h_{k,\sigma}$ were proposed
-as a model for ideal fluids. From now on we shall often suppress the
+as a model for ideal fluids \cite[Theorems 2 and 3]{MumfordMichor2013}. From now on we shall often suppress the
 parameters $k,\sigma$ and shorten $K = K_{k,\sigma}$ to prevent index
 clutter.
 
@@ -535,7 +544,7 @@ This will yield the particle-like solutions described in \cite{MumfordMichor2013
 \subsection{Particle-like solutions}
 \label{sec:Momentum maps}
 There is a natural left group and algebra action of $\SDiff(\R^n)$
-and $\mathfrak{X}_{\rm div}(\R^n)$, respectively, on $R^n$ given by
+and $\mathfrak{X}_{\rm div}(\R^n)$, respectively, on $\R^n$ given by
 \begin{align*}
   q \in \R^n
   &\stackrel{ \varphi \in \SDiff(\R^n) }{\longmapsto}
@@ -586,35 +595,34 @@ we observe that $J_L^{(0)}$ is Poisson, again by \cite[Thm~12.4.9]{MandS}.
 
 We may define the manifold for particles,
 \begin{align*}
-  Q_N^{(0)} = \left\{ (q_1,\dots,q_N) \in \R^n \times \dots\times \R^n
-                 \mid q_a \neq q_b \text{ when } a \neq b \right\}.
+  Q_N^{(0)} = \left\{ (q^1,\dots,q^N) \in \R^n \times \dots\times \R^n
+                 \mid q_i \neq q_j \text{ when } i \neq j \right\}.
 \end{align*}
-We will index the particles with roman indices $a,b,c,\dots$ from the
-start of the alphabet, and Cartesian coordinates in $\R^n$ with roman
-indices $i,j,k,\dots$ Thus each $q \in Q_N^{(0)}$ can be decomposed
-into $N$ particles as $(q_1,\dots,q_N)$, and the $i^{\rm th}$
-coordinate of the $a^{\rm th}$ particle is denoted by $q_a^i$.
+We will index the particles with $i,j,k,\dots$ and Cartesian coordinate
+directions in $\R^n$ with indices $a,b,c,\dots$
+Thus each $q \in Q_N^{(0)}$ can be decomposed
+into $N$ particles as $(q^1,\dots,q^N)$, where each $q^i \in \R^n$
+and the $a^{\rm th}$ coordinate of the $i^{\rm th}$ particle
+is denoted by $q^{ia}$.
 
 The group $\SDiff(\R^n)$ acts on $Q_N^{(0)}$ by the diagonal action.
 Through the same manipulations applied previously we obtain the
 momentum-map for $N$ particles given by
 \begin{align*}
-  J_L^{(0)}(q,p) = p_a \otimes \delta_{q_a}
+  J_L^{(0)}(q,p) = p_i \otimes \delta_{q^i}
 \end{align*}
-where the sum over $a = 1,\dots,N$ is implied under
-the Einstein summation convention.
+where a sum over repeated indices is implied.
 
 By Propositions~\ref{prop:Poisson_dynamics} and~\ref{prop:LPDiff},
 we obtain solutions to Hamilton's equations
 on $\mathfrak{X}_{\rm div}(\R^n)^*$, by solving
 Hamilton's equations on $T^*\R^n$ if $dh( J_L^{(0)}(q,p) )$ is
-a vector field.  If $h = h_{k,\sigma}$, then we calculate
+a vector field.  If $h = h_{k,\sigma}$, then we calculate $dh$
+evaluated on the $J_L^{(0)}(p,q)$ is the vector field
 \begin{align*}
-	dh( p_a \otimes \delta_{q_a} )  (x) = K_{k,\sigma}^{ij}(x - q_a) p_{a\,j} \pder{}{x^i}
+	dh( p_a \otimes \delta_{q_a} )  (x) = K^{ab}(x - q^i) p_{ib} \pder{}{x^a}.
 \end{align*}
-which is indeed a $C^?$-vector field\todo{Find the regularity of this.}.
-A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_jetlet}.
-\je{Isn't this $k = \infty$? And same in reference to Figure~\ref{fig:zoo}?}
+This approaches a smooth vector field when $k$ goes to infinity.
 
 \begin{figure}
 	\centering
@@ -664,7 +672,7 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   is a solution to \eqref{eq:MMDiff}.
 \end{prop}
 \begin{proof}
-	Note that $H = h_{k,\sigma} \circ J_L^{(0)}$ and apply theorem \ref{thm:commuting_actions}.
+	Note that $H = h_{k,\sigma} \circ J_L^{(0)}$ and apply theorems \ref{thm:commuting_actions} and \ref{thm:dual_pairs}.
 \end{proof}
 
 \subsection{$1^{\rm st}$-order particle-like solutions}
@@ -700,22 +708,24 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
     &(T\varphi)^* \cdot ( q^{(0)} , q^{(1)}  , p^{(0)} , p^{(1)} ) \\
     &\quad = \big( \varphi^{-1}(q^{(0)})  , [D\varphi|_{q^{(0)}}]^{-1} \cdot q^{(1)} , D\varphi|_{q^{(0)}}^* \cdot p^{(0)} , D\varphi|_{q^{(0)}}^* \cdot p^{(1)} \big).
   \end{align*}
-  If we let $q_i$ denote the $i$th particle in $q^{(0)}$, and let $q\indices{^{ib}_c}$ denote the $(b,c)$ entry of the $i$th matrix in $q^{(1)}$
-  then the resulting momentum map is
+  Also as before, we can generalize this construction to the space of
+  $N > 1$ particles by considering the space
   \begin{align*}
-    J_L^{(1)}\big( (q^{(0)}, q^{(1)} ),(p^{(0)}, p^{(1)}) \big)
-    = p_i \otimes \delta_{q_i} - p\indices{_{ia}^c} q\indices{^{ib}_c} dx^b \otimes \partial_b \delta_{q_i}
-  \end{align*}
-  As before, we can generalize this construction to the space of
-  $N$ particles by considering the space
-  \begin{align*}
-    Q^{(1)}_N = \left\{  ( q_1 , \dots, q_N ) \mid
+    Q^{(1)}_N = \left\{  ( q^1 , \dots, q^N ) \mid
       \begin{array}{c}
-        q_a = (q^{(0)}_a, q^{(1)}_a) \in \R^n \times \SL(n) \\
-        q^{(0)}_a \neq q^{(0)}_b \text{ when } a \neq b
+        q^i = (q^{(0),i},q^{(1),i}) \in \R^n \times \SL(n) \\
+        q^{(0),i} \neq q^{(0),j} \text{ when } i \neq j
       \end{array} \right\}.
   \end{align*}
-
+  For convenience it is nice to choose coordinates at this point.
+  If we let $q^i$ denote the position of the $i$th particle,
+  $q^{ia}$ denote the $a^{\rm th}$ component of this position,
+  and let $q\indices{^{ib}_c}$ denote the $(b,c)$ entry of the $i$th
+  matrix then the resulting momentum map is
+  \begin{align*}
+    J_L^{(1)}\big( (q^{(0)}, q^{(1)} ),(p^{(0)}, p^{(1)}) \big)
+    = p_{ia}dx^a \otimes \delta_{q_i} - p\indices{_{ia}^c} q\indices{^{ib}_c} dx^a \otimes \partial_b \delta_{q_i}
+  \end{align*}
   Moreover, there is a (non-trivial) right group action by $\iso(z)$ on $Q^{(1)}_N$ given by
   \begin{align*}
     (q^{(0)} , q^{(1)} ) \cdot \psi = (q^{(0)} , q^{(1)} \cdot D\psi|_z).
@@ -728,7 +738,8 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
     The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
   \end{prop}
   \begin{proof}
-    The actions of $\SL(n)$\todo{JE: shouldn't this be $\iso(z)$?} and $\SDiff(\R^n)$ on $Q_N^{(1)}$ clearly commute
+    The actions of $\iso(z)$ and $\SDiff(\R^n)$ on $Q_N^{(1)}$
+    clearly commute
     and lift to symplectic actions on $T^*Q_N^{(1)}$.
     Moreover, the action of $\SDiff(\R^n)$ is transitive on $\SL(n)$ orbits
     by inspection.
@@ -741,13 +752,14 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   to obtain solutions.
   
   \begin{prop} \label{prop:1-solutions}
-  	If $K = K_{k,\sigma}$ is $C^{\frac{n}{2} + 2}$ then $H = h_{k,\sigma} \circ J_L$
+  	If $K = K_{k,\sigma}$ is $C^{\frac{n}{2} + 2}$ then
+        $H = h_{k,\sigma} \circ J_L$
 	is $C^1$ and given by the expression
-	\begin{multline*}
-		H^{(1)}(q,p) = \frac{1}{2} p_{a\,i} K^{ij}(q_a - q_b) p_{b\,j}
-			+ p_{a\,i}^l\, q^k_{a\,l} (\partial_k K^{ij})(q_a - q_b) p_{b\,j} \\
-			- p_{a\,i}^n\, q^l_{a\,n} (\partial_l \partial_k K^{ij})(q_a - q_b) q_{b\,m}^k\, p_{b\,j}^m.
-  \end{multline*}
+	\begin{align*}
+		H^{(1)}(q,p) &= \frac{1}{2} p_{ia} K^{ab}(q^i - q^j) p_{jb}\\
+			&\quad + p\indices{_{ia}^\ell} q\indices{^{ik}_\ell} (\partial_k K^{ab})(q^i - q^j) p_{jb} \\
+			&\quad - p\indices{_{ia}^n} q\indices{^{i\ell}_n} (\partial_l \partial_k K^{ab})(q^i - q^j) q\indices{^{jk}_m}  p\indices{_{jb}^m}.
+  \end{align*}
   If $(q,p)(t) \in T^*Q_N^{(1)}$ is a solution to Hamilton's equations with respect to
 	$H^{(1)}$, then $J_L^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)^*$ is
 	a solution of \eqref{eq:MMDiff} and $J_R^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)$ is
@@ -756,7 +768,8 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   The proof of the above proposition is identical to that of proposition \ref{prop:0-solutions}.
   
   Various vector fields for large $k$
-  are depicted in figure \ref{fig:zoo}.
+  are depicted in figure \ref{fig:zoo}
+  with respect to the traceless matrix $\mu\indices{_a^k} = p\indices{_a^\ell} q\indices{^k_\ell}$.
   
   \begin{figure}
   	\centering
@@ -814,7 +827,8 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   \end{align*}
   We coordinatize $Q^{(k)}_N$ as follows.
   We will use Greek indices to represent spatial
-  multi-indices on $\R^n$ (see Appendix \ref{app:multi} for details).  A typical coordinate on $Q^{(k)}_N$ will therefore look
+  multi-indices on $\R^n$ (see Appendix \ref{app:multi} for our multi-index convention).
+  A typical coordinate on $Q^{(k)}_N$ will therefore look
   like $q^i_{a\,\beta}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
   and $\beta$ is a multi-index on $\R^n$.
   This coordinate is used to model the partial derivative of the $i^{\rm th}$ coordinate
@@ -832,27 +846,28 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   \begin{proof}
     Let $\varphi_1,\varphi_2 \in \SDiff(\R^n)$.
     The partial derivatives of $(\varphi_1 \circ \varphi_2)$
-    are given by a formula known as the Fa\`a di Bruno formula
+    are given by the Fa\`a di Bruno formula
     \begin{align*}
-      \partial_\alpha( \varphi_1 \circ \varphi_2) = \sum_{n=1}^{|\alpha|}
+      \partial_\alpha( \varphi_1 \circ \varphi_2) = \sum_{k=1}^{|\alpha|}
       \left(
         \sum_{
         \substack{
-          \beta = [\beta_1,\dots,\beta_n] \in \mathbb{I}^n \\
-          [\gamma_1,\dots,\gamma_n] = \alpha
+          \beta_1,\dots,\beta_k \in \{1,\dots,n\} \\
+          [\gamma_1,\dots,\gamma_k] = \alpha
           }
           }
-          \partial_\beta \varphi_1(\varphi_2(x)) 
+          \partial_{\beta_1 \cdots \beta_k} \varphi_1(\varphi_2(x)) 
           \partial_{\gamma_1} \varphi_2^{\beta_1} \cdots
-          \partial_{\gamma_n} \varphi_2^{\beta_n}
+          \partial_{\gamma_n} \varphi_2^{\beta_k}
         \right).
     \end{align*}
     One can read directly from the expression that
-    a $k^{\rm th}$ order derivative only depends on $k^{\rm th}$ and lower order
+    a $k^{\rm th}$ order derivative only depends on $k^{\rm th}$
+    and lower order
     partial derivatives of $\varphi_1$ and $\varphi_2$.
     Let $\Jet^k_z: \SDiff(\R^n) \to Q_1^{(k)}$ denote
-    the function which evaluates the $k^{\rm th}$-order
-    jet of a diffeomorphism at the point $z \in \R^n$.
+    the function which evaluates the spatial derivatives
+    of a diffeomorphism up to order $k$ at the point $z \in \R^n$.
     A left $\SDiff(\R^n)$ action is induced on $Q_1^{(k)}$ by
     setting $\varphi \cdot q = \Jet^k_z( \varphi \circ \psi)$
     for any $\psi$ such that $\Jet^k_z(\psi) = q$.
@@ -868,31 +883,31 @@ A depiction of this vector field for large $k$ is shown in Figure~\ref{fig:zero_
   Just as in the previous sections, the actions of $\SDiff(\R^n)$ and $\iso(z)$ lift to commuting actions on $T^*Q_N^{(k)}$.
   The associated momentum maps are
   \begin{align*}
-    &J_L^{(k)}(q,p) = p \indices{_{ia}^{\alpha}} {\bf e}^a \otimes
-    \sum_{n=1}^{|\alpha|} (-1)^{n}
+    &J_L^{(k)}(q,p) = p \indices{_{ia}^{\alpha}} dx^a \otimes
+    \sum_{k=1}^{|\alpha|} (-1)^{k}
     \left(
       \sum_{\substack{
-          \beta = [\beta_1,\dots,\beta_n] \in \mathbb{I}^n \\
+          \beta_1,\dots,\beta_n \in \{1,\dots,n\} \\
           [\gamma_1,\dots,\gamma_n] = \alpha
           }
         }
-      q\indices{^{i\beta_1}_{\gamma_1}} \cdots q\indices{^{i\beta_n}_{\gamma_n}}
-      \partial_{\beta} \delta(\cdot - q^{(0)i}) \right)\\
-    &J_R^{(k)}(q,p) = p\indices{_{ia}^\alpha} \sum_{n=1}^{|\alpha|}
+      q\indices{^{i\beta_1}_{\gamma_1}} \cdots q\indices{^{i\beta_k}_{\gamma_k}}
+      \partial_{\beta_1 \cdots \beta_k} \delta(\cdot - q^{(0)i}) \right)\\
+    &J_R^{(k)}(q,p) = p\indices{_{ia}^\alpha} \sum_{k=1}^{|\alpha|}
     \Bigg( \sum_{\substack{
-          (\beta_1,\dots,\beta_n) \in \{1,\dots,d\}^n \\
-          [\gamma_1,\dots,\gamma_n] = \alpha
+          \beta_1,\dots,\beta_k \in \{1,\dots,n\} \\
+          [\gamma_1,\dots,\gamma_k] = \alpha
           }}
         \\
      &\quad \left[
-          \sum_{k=1}^{n} (-1)^{|\gamma_k|} q \indices{^{ia}_\beta}
-          \delta_{\gamma_1}^{\beta_1} \cdots \delta_{\gamma_{k-1}}^{\beta_{k-1}}
-          \delta_{\gamma_{k+1}}^{\beta_{k+1}} \cdots \delta_{\gamma_n}^{\beta_n}
-          {\bf e}^{\beta_k} \otimes \partial_{\gamma_k} \delta( \cdot - q^{(0)i})  \right]
+          \sum_{j=1}^{k} (-1)^{|\gamma_j|} q \indices{^{ia}_{\beta_1 \cdots \beta_k}}
+          \delta_{\gamma_1}^{\beta_1} \cdots \delta_{\gamma_{k-1}}^{\beta_{j-1}}
+          \delta_{\gamma_{j+1}}^{\beta_{j+1}} \cdots \delta_{\gamma_n}^{\beta_k}
+          dx^{\beta_k} \otimes \partial_{\gamma_k} \delta( \cdot - q^{(0)i})  \right]
      \Bigg)
   \end{align*}
   The action of $\SDiff(\R^n)$ is transitive on $Q_N^{(k)}$,
-  and it is therefore transitive on orbits of the right action of $iso(z)$.
+  and it is therefore transitive on orbits of the right action of $\iso(z)$.
   By theorem \ref{thm:commuting_actions}, $J_L^{(k)}$ and $J_R^{(k)}$ form a dual pair.
   Lastly, this gives us the final result on jetlet parametrized solutions.
   The proof is identical to that given in the proposition \ref{prop:0-solutions}.
