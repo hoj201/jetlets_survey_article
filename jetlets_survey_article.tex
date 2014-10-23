@@ -721,7 +721,11 @@ This approaches a smooth vector field when $k$ goes to infinity.
   If we let $q^i$ denote the position of the $i$th particle,
   $q^{ia}$ denote the $a^{\rm th}$ component of this position,
   and let $q\indices{^{ib}_c}$ denote the $(b,c)$ entry of the $i$th
-  matrix then the resulting momentum map is
+  matrix then the resulting momentum map is defined by the condition
+  \begin{align*}
+    \langle J_L^{(1)}(q,p) , u \rangle = p\indices{_{ia}} u^a(q^{(0)i}) + p \indices{_{ia}^{b}} \partial_c u^a(q^{(0)i}) q\indices{^{(1)c}_b}
+  \end{align*}
+  In terms of the Dirac-delta functional, we can write $J_L^{(1)}$ as
   \begin{align*}
     J_L^{(1)}\big( (q^{(0)}, q^{(1)} ),(p^{(0)}, p^{(1)}) \big)
     = p_{ia}dx^a \otimes \delta_{q_i} - p\indices{_{ia}^c} q\indices{^{ib}_c} dx^a \otimes \partial_b \delta_{q_i}
@@ -883,7 +887,8 @@ This approaches a smooth vector field when $k$ goes to infinity.
   Just as in the previous sections, the actions of $\SDiff(\R^n)$ and $\iso(z)$ lift to commuting actions on $T^*Q_N^{(k)}$.
   The associated momentum maps are
   \begin{align*}
-    &J_L^{(k)}(q,p) = p \indices{_{ia}^{\alpha}} dx^a \otimes
+    &J_L^{(k)}(q,p) \\
+    &= p \indices{_{ia}^{\alpha}} dx^a \otimes
     \sum_{k=1}^{|\alpha|} (-1)^{k}
     \left(
       \sum_{\substack{
