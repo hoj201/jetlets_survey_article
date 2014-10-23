@@ -725,7 +725,8 @@ This approaches a smooth vector field when $k$ goes to infinity.
   \begin{align*}
     \langle J_L^{(1)}(q,p) , u \rangle = p\indices{_{ia}} u^a(q^{(0)i}) + p \indices{_{ia}^{b}} \partial_c u^a(q^{(0)i}) q\indices{^{(1)c}_b}
   \end{align*}
-  In terms of the Dirac-delta functional, we can write $J_L^{(1)}$ as
+  For an arbitrary $u \in \mathfrak{X}_{\rm div}(\R^d)$.
+  In terms of the Dirac-delta functional, we can write $J_L^{(1)}$ as the measure valued momentum map
   \begin{align*}
     J_L^{(1)}\big( (q^{(0)}, q^{(1)} ),(p^{(0)}, p^{(1)}) \big)
     = p_{ia}dx^a \otimes \delta_{q_i} - p\indices{_{ia}^c} q\indices{^{ib}_c} dx^a \otimes \partial_b \delta_{q_i}
@@ -734,9 +735,13 @@ This approaches a smooth vector field when $k$ goes to infinity.
   \begin{align*}
     (q^{(0)} , q^{(1)} ) \cdot \psi = (q^{(0)} , q^{(1)} \cdot D\psi|_z).
   \end{align*}
-  This action yields the cotangent lift momentum-map
+  This action yields the cotangent lift momentum-map defined by the condition
   \begin{align*}
-    J_R^{(1)}( q,p) = - p\indices{_{ia}^c} q\indices{^{ia}_b}  dx^b \otimes \partial_c \delta_{q^i}
+  	\langle J_R^{(1)}(q,p) , u \rangle = p \indices{_{ia}^b} q\indices{^{ia}_c} \partial_b u^c(z^i)
+  \end{align*}
+  In terms of the Dirac delta functional we may write this as the measure valued momentum map
+  \begin{align*}
+    J_R^{(1)}( q,p) = - p\indices{_{ia}^b} q\indices{^{ia}_c}  dx^c \otimes \partial_b \delta_{q^i}
   \end{align*}
   \begin{prop}
     The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
