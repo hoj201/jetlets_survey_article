@@ -569,12 +569,12 @@ That is to say,
 \end{align*}
 On a cotangent bundle, the momentum map,
 $J_L : T^*\R^n \to \mathfrak{X}_{\rm div}(\R^n)^*$
-associated to this left action is naively defined by the
+associated to this left action is defined by the
 condition
 \begin{align*}
   \langle J_L^{(0)}( q , p) , u \rangle := \langle p , u(q) \rangle,
 \end{align*}
-for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$.
+for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$ (see \eqref{eq:cotangent_momap} in Appendix \ref{sec:Symplectic}).
 %We shall now write $J_L^{(0)} = J_L$ in anticipation of the
 %introduction of higher-order particles in section~\ref{sec:higher_order}.
 %On $\R^n$ we may identify the dual space of $\mathfrak{X}_{\rm div}(\R^n)$
@@ -585,11 +585,14 @@ for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$.
 %$ m_i(x) v^i(x)$
 %which can then be integrated with respect the Euclidean volume form to produce a real number.
 We see that $J_L^{(0)}(q,p)$ is an evaluation operator, and we can write it 
-more explicitly in terms of the Dirac-delta distribution as
+more explicitly as a measure-valued momentum map in terms of the Dirac-delta distribution as
 \begin{align*}
   J_L^{(0)}( q , p ) = p \otimes \delta_q
 \end{align*}
 where $\delta_q$ is the Dirac-delta distribution on $\R^n$ centered at $q$.
+This identification holds modulo $dC^1(\R^d) \otimes d{\bf x}$ where $dC^1(\R^d)$
+is the space of $C^0$-exact one-forms and $d{\bf x}$ is the canonical volume from on $\R^d$
+(see Appendix \ref{sec:measure_valued_momap}).
 As the cotangent lifted action of $\SDiff(\R^n)$ is equivariant,
 we observe that $J_L^{(0)}$ is Poisson, again by \cite[Thm~12.4.9]{MandS}.
 
@@ -1316,7 +1319,39 @@ Given two multi-indices $\alpha \in \mathbb{I}^n$ and $\beta \in \mathbb{I}^m$ o
 by considering a $\hat{\alpha} \in \alpha$ and $\hat{\beta} \in \beta$ and taking the equivalence class of $(\hat{\alpha},\hat{\beta}) \in \mathbb{d}^{n+m}$.
   Heuristically, this is the unique ``bag of marbles'' obtained by collecting the marbles of $\alpha$ and $\beta$ into a single bag.
 
-
+\section{The dual space of $\mathfrak{X}_{\rm div}(\R^d)$}
+\label{sec:measure_valued_momap}
+In this section we will provide a terse and incomplete
+characterizations of the dual space of divergence free 
+vector fields.  First let us characterize the dual space of the space of all vector fields (with ``proper'' decay).
+Let $\mathfrak{X}(\R^d)$ be the space of vector fields which decay at infinity
+in such a way that $\mathfrak{X}(\R^d)$ is Fr\'echet.
+Viewing $\mathfrak{X}(\R^d)$ as a subspace of functions from $\R^d$ to $\R^d$
+we can view it's dual as a space of distributions.
+That is to say, given any $m \in \mathfrak{X}(\R^d)^*$ we may write $m$ as a tensor
+product $p \otimes \mu$ where $\mu$ is a distribution (perhaps a measure)
+on $\R^d$ and $p$ is a covector field (i.e. a one-form).
+Conversely, given any $p \in \Omega^1(\R^d)$ and distribution $\mu \in \mathcal{D}(\R^d)$
+we may form the tensor product $p \otimes \mu$.
+The object $p\otimes \mu$ is identified as an element of $\mathfrak{X}(\R^d)^*$ through
+the pairing
+\begin{align*}
+	\langle p \otimes \mu , u \rangle :=  \int_{\R^d} \langle p(x) , u(x) \rangle \mu.
+\end{align*}
+where $\langle p(x),u(x) \rangle$ is the function on $\R^d$ obtained by pairing the covector $p(x) \in T_x^*\R^d$ with the vector $u(x) \in T_x\R^d$.
+If we restrict ourselves to the case of divergence free vector-fields, we need to quotient
+the dual space appropriately.  In particular, we see that the annihilator of $\mathfrak{X}_{\rm div}(\R^d)$
+as a subspace of $\mathfrak{X}(\R^d)$ is
+\begin{align*}
+	(\mathfrak{X}_{\rm div}(\R^d) )^\circ := \{ m \in \mathfrak{X}(\R^d)^* \mid \langle m , u \rangle = 0 , \forall u \in \mathfrak{X}_{\rm div}(\R^d) \}\\
+		:= {\rm closure}\{ p \otimes d{\bf x} \in \mathfrak{X}(\R^d) \mid p \text{is a closed one-form} \}.
+\end{align*}
+where $d{\bf x}$ is the canonical volume form on $\R^d$ and
+we have use the fact that the gradient fields and the Harmonic vector fields are $L^2$-orthogonal to the divergence free vector fields.
+The dual space $\mathfrak{X}_{\rm div}(\R^d)^*$ is identical to the quotient space $\mathfrak{X}(\R^d) / (\mathfrak{X}_{\rm div}(\R^d))^\circ$.
+In other words, we may view a $m \in \mathfrak{X}_{\rm div}(\R^d)^*$ as an object of the form $p \otimes \mu$ modulo $\mathfrak{X}_{\rm div}(\R^d)^\circ$.
+In the text we will typically not mention $\mathfrak{X}_{\rm div}(\R^d)^\circ$ explicitly, and simply identify $m$ with $p \otimes \mu$.
+This is a harmless identification as long as we don't pair it with a non-divergence free vector-field.
 
 \bibliographystyle{amsalpha}
 \bibliography{hoj_2014}
