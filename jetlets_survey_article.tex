@@ -110,8 +110,8 @@ More specifically, we will accomplish the following:
  Thus \cite{JacobsRatiuDesbrun2013} derived a Lagrangian analog of 
  ``whirls within whirls'', similar to the Eulerian models proposed
  in \cite{HolmTronci2012}.
- However, the specifices of the regularized fluid model were not determined,
- and the analysis of \cite{JacobsRatiuDesbrun2013} was thus purely
+ However, the specifics of the regularized fluid model were not determined,
+ and the analysis of \cite{JacobsRatiuDesbrun2013} was purely
  theoretical.
  
  Later, a regularized model of ideal fluids was presented by
@@ -155,7 +155,7 @@ particle-like solutions to regularized fluid equations.
 Our main framework is that of Hamiltonian mechanics
 and symplectic geometry.
 In particular, our main hammer is Theorem \ref{thm:dual_pairs} (see page 
-\pageref{thm:dual_pairs} in the Appendix), which we repeate
+\pageref{thm:dual_pairs} in the Appendix), which we repeat
 here for convenience.
 
   \begin{quote}
@@ -843,11 +843,10 @@ This approaches a smooth vector field when $k$ goes to infinity.
   A typical coordinate on $Q^{(k)}_N$ will therefore look
   like $q^i_{a\,\beta}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
   and $\beta$ is a multi-index on $\R^n$.
-  This coordinate is used to model the partial derivative of the $i^{\rm th}$ coordinate
-  of a diffeomorphism at some point $z_a$, i.e.\ $\partial_\beta \varphi^i(z_a)$.
+  This coordinate is used to model the partial derivative of the $a^{\rm th}$ coordinate
+  of a diffeomorphism at some point $z_i$, i.e.\ $\partial_\beta \varphi^a(z_i)$.
   This is the primary motivation for this notational convention.
-  We will let $q^{(k)\,i}_a$ denote the collection of $q^i_{a\,\beta}$
-  where $| \beta | = k$.
+  We will let $q^{(0)i}$ denote the position of the $i$th particle.
 
   \begin{prop}
     The group $\SDiff(\R^n)$ acts on $Q_N^{(k)}$ by a left Lie group
@@ -895,7 +894,35 @@ This approaches a smooth vector field when $k$ goes to infinity.
   \end{proof}
   
   Just as in the previous sections, the actions of $\SDiff(\R^n)$ and $\iso(z)$ lift to commuting actions on $T^*Q_N^{(k)}$.
-  The associated momentum maps are
+  The associated momentum maps are given implicitly by how they act on the respective Lie algebras.
+  In particular, the left action of $\SDiff(\R^n)$ yields the momentum map
+  \begin{align*}
+  	\langle J_L^{(k)}(q,p) , u \rangle = \sum_{|\alpha| < k } \sum_{j = 1}^{|\alpha|}
+		\sum_{
+			\substack{
+				b_1,\dots,b_j \in \{1,\dots,n\} \\
+				[\gamma_1,\dots,\gamma_j] \in \Pi(\alpha,j)
+				}
+			}
+			p \indices{_{ia}^{\alpha}} \partial_{b_1 \cdots b_j}u^a ( q^{(0)i})  q\indices{^{b_1}_{\gamma_1}} \cdots q\indices{^{b_j}_{\gamma_j}}
+  \end{align*}
+  for arbitrary divergence free vector fields $u \in \mathfrak{X}_{\rm div}(\R^n)$.
+  The right action of $\iso(z)$ yields the momentum map $J_R^{(k)}$ defined implicitly by the relation
+  \begin{align*}
+  &\langle J_R^{(k)}(q,p) , w \rangle = \\
+  &\quad \sum_{ | \alpha | < k } \sum_{j=1}^{|\alpha|}
+		\sum_{
+			\substack{
+				b_1,\dots,b_j \in \{1,\dots,n\} \\
+				[\gamma_1,\dots,\gamma_j] \in \Pi(\alpha,j)
+				}
+			}
+			p\indices{_{ia}^\alpha} q\indices{^{ia}_{[b_1 \cdots b_j]}}   \sum_{m}  \partial_{\gamma_m} w^{b_m}(z_i) \left( \prod_{\ell \neq m }  \delta \indices{_{\gamma_\ell}^{b_\ell}} \right)
+  \end{align*}
+  where $w \in \mathfrak{X}_{\rm div}(\R^n)$ is such that $w(z) = 0$ (this describes the Lie algebra of $\iso(z)$),
+  and $\delta\indices{_{\gamma}^{b}}$ equals $1$ if the multi-index $\gamma$ is equal to the integer $b$
+  and equals $0$ otherwise.
+  We can write these momentum maps explicitly, using the Dirac delta distribution, as
   \begin{align*}
     &J_L^{(k)}(q,p) \\
     &= p \indices{_{ia}^{\alpha}} dx^a \otimes
@@ -907,19 +934,19 @@ This approaches a smooth vector field when $k$ goes to infinity.
           }
         }
       q\indices{^{i\beta_1}_{\gamma_1}} \cdots q\indices{^{i\beta_k}_{\gamma_k}}
-      \partial_{b_1 \cdots b_k} \delta(\cdot - q^{(0)i}) \right)\\
-    &J_R^{(k)}(q,p) = p\indices{_{ia}^\alpha} \sum_{k=1}^{|\alpha|}
-    \Bigg( \sum_{\substack{
-          b_1,\dots,b_k \in \{1,\dots,n\} \\
-          [\gamma_1,\dots,\gamma_k] \in \Pi( \alpha,k)
-          }}
-        \\
-     &\quad \left[
-          \sum_{j=1}^{k} (-1)^{|\gamma_j|} q \indices{^{ia}_{\beta_1 \cdots \beta_k}}
-          \delta_{\gamma_1}^{\beta_1} \cdots \delta_{\gamma_{k-1}}^{\beta_{j-1}}
-          \delta_{\gamma_{j+1}}^{\beta_{j+1}} \cdots \delta_{\gamma_n}^{\beta_k}
-          dx^{\beta_k} \otimes \partial_{\gamma_k} \delta( \cdot - q^{(0)i})  \right]
-     \Bigg)
+      \partial_{b_1 \cdots b_k} \delta(\cdot - q^{(0)i}) \right)
+    \end{align*}
+    and
+  \begin{align*}
+  & J_R^{(k)}(q,p) = \\
+  &\quad \sum_{ | \alpha | < k } \sum_{j=1}^{|\alpha|}
+		\sum_{
+			\substack{
+				b_1,\dots,b_j \in \{1,\dots,n\} \\
+				[\gamma_1,\dots,\gamma_j] \in \Pi(\alpha,j)
+				}
+			}
+			p\indices{_{ia}^\alpha} q\indices{^{ia}_{[b_1 \cdots b_j]}}   \sum_{m}  (-1)^{|\gamma_m|}\left( \prod_{\ell \neq m }  \delta \indices{_{\gamma_\ell}^{b_\ell}} \right) \otimes \partial_{\gamma_m}( \cdot - z_i)
   \end{align*}
   The action of $\SDiff(\R^n)$ is transitive on $Q_N^{(k)}$,
   and it is therefore transitive on orbits of the right action of $\iso(z)$.
