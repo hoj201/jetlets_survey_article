@@ -44,6 +44,7 @@
 \end{abstract}
 
 \section{Introduction}
+\hoj{Make sure audience does not get the impression that we are making a new CFD method}
 The self similarity of ideal fluids
 yields the notorious ``cascade to smaller scales'',
 providing a raison d'etre
@@ -754,7 +755,7 @@ This approaches a smooth vector field when $k$ goes to infinity.
     The actions of $\iso(z)$ and $\SDiff(\R^n)$ on $Q_N^{(1)}$
     clearly commute
     and lift to symplectic actions on $T^*Q_N^{(1)}$.
-    Moreover, the action of $\SDiff(\R^n)$ is transitive on $\SL(n)$ orbits
+    Moreover, the action of $\SDiff(\R^n)$ is transitive on $\iso(z)$ orbits
     by inspection.
     By theorem \ref{thm:commuting_actions}, $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
   \end{proof}
@@ -911,7 +912,7 @@ This approaches a smooth vector field when $k$ goes to infinity.
   The right action of $\iso(z)$ yields the momentum map $J_R^{(k)}$ defined implicitly by the relation
   \begin{align*}
   &\langle J_R^{(k)}(q,p) , w \rangle = \\
-  &\quad \sum_{ | \alpha | < k } \sum_{j=1}^{|\alpha|}
+  &\quad \sum_{ | \alpha | \leq k } \sum_{j=1}^{|\alpha|}
 		\sum_{
 			\substack{
 				b_1,\dots,b_j \in \{1,\dots,n\} \\
@@ -927,7 +928,7 @@ This approaches a smooth vector field when $k$ goes to infinity.
   \begin{align*}
     &J_L^{(k)}(q,p) \\
     &= p \indices{_{ia}^{\alpha}} dx^a \otimes
-    \sum_{k=1}^{|\alpha|} (-1)^{k}
+    \sum_{|\alpha| \leq k } \sum_{k=1}^{|\alpha|} (-1)^{k}
     \left(
       \sum_{\substack{
           b_1,\dots,b_k \in \{1,\dots,n\} \\
@@ -940,7 +941,7 @@ This approaches a smooth vector field when $k$ goes to infinity.
     and
   \begin{align*}
   & J_R^{(k)}(q,p) = \\
-  &\quad \sum_{ | \alpha | < k } \sum_{j=1}^{|\alpha|}
+  &\quad \sum_{ | \alpha | \leq k } \sum_{j=1}^{|\alpha|}
 		\sum_{
 			\substack{
 				b_1,\dots,b_j \in \{1,\dots,n\} \\
@@ -983,7 +984,8 @@ Discuss mergers to higher-order, time to collision, near misses.
 
 \cjc{Collide some $k$-jets.  Make correspondence with total momentum.}
 
-\hoj{These experiments actually don't make sense for the conserved momentum $J_R$ because this momenta is not exchanged among the particles.}
+\hoj{These experiments actually don't make sense for the conserved momentum $J_R$ because this momenta is not exchanged.}
+\hoj{Perhaps we can just repeat the cascade of the previous article at order $0$ and $1$.  Additionally, we can refine the cascade argument.}
 
 \appendix
 
