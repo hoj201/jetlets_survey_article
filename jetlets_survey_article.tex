@@ -29,6 +29,7 @@
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\iso}{iso}
 \DeclareMathOperator{\kernel}{kernel}
+\DeclareMathOperator{\bag}{bag}
 \DeclareMathOperator{\lie}{\mathcal{L}}
 
 \title{A ``whirls within whirls'' particle model of ideal fluids}
@@ -1040,8 +1041,8 @@ We begin with the definition.
   We call $\omega$ a \emph{symplectic form}.
   We call the pair $(S,\omega)$ a \emph{symplectic manifold}.
 \end{defn}
-\je{Does this include infinite dimensional manifolds? Any
-  notes/references on technical details?}
+All of the expressions derived in this article will be formal, and we refer to \cite{Gay-BalmazVizman2011}
+for the functional analytic details of infinite dimensional symplectic manifolds.
 As a first example, consider the manifold $\R^2$
 with coordinates $(q,p)$.
 The two-form $dq \wedge dp$ is a symplectic form.
@@ -1335,16 +1336,31 @@ sloppiness is usually harmless.
 
 \section{Multi-indices}
 \label{app:multi}
-Multi-indices are merely a means of indexing all the partial derivative
-operators on $\R^d$.
-In this paper, a multi-index on $\R^d$ is an unordered tuple of elements in $\{1,\dots,d\}$.
-More specifically, if we $\mathbb{d}$ denote the finite set $\{ 1,\dots,d\}$ and we let $S_n$ denote the permutation group, then $S_n$ clearly acts
-on $\mathbb{d}^n$.
-A multi-index of degree $n$ is merely an element of $\mathbb{I}^n := \mathbb{d}^n / S_n$.
-Heuristically, a multi-index is just a ``bag of marbles'' each of which comes in $d$ ``colors''.
-Given two multi-indices $\alpha \in \mathbb{I}^n$ and $\beta \in \mathbb{I}^m$ one can create the multi-index $[\alpha,\beta] \in \mathbb{I}^{n+m}$ 
-by considering a $\hat{\alpha} \in \alpha$ and $\hat{\beta} \in \beta$ and taking the equivalence class of $(\hat{\alpha},\hat{\beta}) \in \mathbb{d}^{n+m}$.
-  Heuristically, this is the unique ``bag of marbles'' obtained by collecting the marbles of $\alpha$ and $\beta$ into a single bag.
+A multi-set is nothing but a set with some notion of multiplicity \cite{Blizard1989}.
+In this paper, a multi-index on $\R^n$ is a multiset of elements derived from the generating set $\{1,\dots,n\}$.
+Heuristically, a multi-index is just a ``bag of marbles'' each of which comes in $n$ ``colors''.
+Given two multi-indices $\alpha \in \bag^i(n)$ and $\beta \in \bag^j(n)$ one can create the
+multi-set union $\alpha \cup \beta \in \bag^{i+j}(d)$ by collecting the marbles of $\alpha$ and $\beta$ into a single bag.
+Given integers $b_1,\dots,b_j \in \R^n$, we can define the unique multi-index $\beta = [b_1,\dots,b_j] \in \bag^j(n)$
+obtained by collecting $b_1,\dots,b_j$ into a bag.
+Given these conventions, we can denote the partial differential operator $\partial_{b_1 \cdots b_n }$ by $\partial_\beta$.
+Moreover, the notion of equivalence of mixed partials is expressed by the equivalence 
+$\partial_\alpha \partial_\beta = \partial_{\alpha \cup \beta} = \partial_\beta \partial_\alpha$.
+The cardinality of the multi-index $\beta$ is denoted $|\beta|$ and is given by the number of marbles in the bag.
+Thus the order of the partial differential operator $\partial_{\beta}$ is $|\beta|$.
+We denote the space of $k$th order partitions of a multi-index by $\Pi(\alpha,k)$.
+Rather than define all this formally, we will compute an example and refer to \cite{Jacobs2014b} for the formal definitions.
+
+We can consider the integers $1$ $2$ and $1$, and the partial differential operator $\partial_{121}$.
+The associated multi-index is just $[1,2,1]$.  This multi-index is equivalent to the multi-index $[1,1,2]$ and $[2,1,1]$.
+We say that it contains the elements $1$ and $2$.
+Because it contains `$1$' two times, we say that the multiplicity of $1$ is $2$.
+The multiset of $2$-fold partitions is $\Pi( [1,2,1],2)$, and consists of three multiset-partitions
+\begin{align*}
+	[ [1] , [2,1] ] , [[1,1] , [2] ] , [ [1, 2] , [1] ].
+\end{align*}
+Note that the first and the third partition correspond to the same multiset.
+The cardinality of $\Pi( [1,2,1],2)$ is $3$, although it only has two distinct elements (one with a multiplicity of $1$, and another with a multiplicity of $2$).
 
 \section{The dual space of $\mathfrak{X}_{\rm div}(\R^d)$}
 \label{sec:measure_valued_momap}
