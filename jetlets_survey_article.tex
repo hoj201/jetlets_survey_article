@@ -864,15 +864,17 @@ This approaches a smooth vector field when $k$ goes to infinity.
       \left(
         \sum_{
         \substack{
-          \beta_1,\dots,\beta_k \in \{1,\dots,n\} \\
-          [\gamma_1,\dots,\gamma_k] = \alpha
+          b_1,\dots,b_k \in \{1,\dots,d\} \\
+          [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
           }
           }
-          \partial_{\beta_1 \cdots \beta_k} \varphi_1(\varphi_2(x)) 
-          \partial_{\gamma_1} \varphi_2^{\beta_1} \cdots
-          \partial_{\gamma_n} \varphi_2^{\beta_k}
+          \partial_{b_1 \cdots b_k} \varphi_1(\varphi_2(x)) 
+          \partial_{\gamma_1} \varphi_2^{b_1} \cdots
+          \partial_{\gamma_n} \varphi_2^{b_k}
         \right).
     \end{align*}
+    See \cite{ConstantineSavits1996,Jacobs2014b} for a
+    precise description of the multivariate Fa\`a di Bruno formula.
     One can read directly from the expression that
     a $k^{\rm th}$ order derivative only depends on $k^{\rm th}$
     and lower order
@@ -900,16 +902,16 @@ This approaches a smooth vector field when $k$ goes to infinity.
     \sum_{k=1}^{|\alpha|} (-1)^{k}
     \left(
       \sum_{\substack{
-          \beta_1,\dots,\beta_n \in \{1,\dots,n\} \\
-          [\gamma_1,\dots,\gamma_n] = \alpha
+          b_1,\dots,b_k \in \{1,\dots,n\} \\
+          [\gamma_1,\dots,\gamma_k] \in \Pi( \alpha,k)
           }
         }
       q\indices{^{i\beta_1}_{\gamma_1}} \cdots q\indices{^{i\beta_k}_{\gamma_k}}
-      \partial_{\beta_1 \cdots \beta_k} \delta(\cdot - q^{(0)i}) \right)\\
+      \partial_{b_1 \cdots b_k} \delta(\cdot - q^{(0)i}) \right)\\
     &J_R^{(k)}(q,p) = p\indices{_{ia}^\alpha} \sum_{k=1}^{|\alpha|}
     \Bigg( \sum_{\substack{
-          \beta_1,\dots,\beta_k \in \{1,\dots,n\} \\
-          [\gamma_1,\dots,\gamma_k] = \alpha
+          b_1,\dots,b_k \in \{1,\dots,n\} \\
+          [\gamma_1,\dots,\gamma_k] \in \Pi( \alpha,k)
           }}
         \\
      &\quad \left[
@@ -937,8 +939,6 @@ This approaches a smooth vector field when $k$ goes to infinity.
   \label{sec:Kelvin}
   In this section we relate the conserved quantities associated
   to $J_R^{(k)}$ to Kelvin's circulation theorem.
-  \todo[inline]{Darryl, would you like to write this section?  To correspond with [Desbrun Jacobs Ratiu 2013]
-  	see Theorem 5.5 of that article.  The quantity ``$J_\omega$'' in that paper is equivalent to our $J_R$.}
 
 
 \section{Collisions}
@@ -955,7 +955,7 @@ Discuss mergers to higher-order, time to collision, near misses.
 
 \cjc{Collide some $k$-jets.  Make correspondence with total momentum.}
 
-\hoj{These experiments actually don't make sense for the conserved momentum $J_R$ because this momenta is not exchanged among the particles in any way.}
+\hoj{These experiments actually don't make sense for the conserved momentum $J_R$ because this momenta is not exchanged among the particles.}
 
 \appendix
 
