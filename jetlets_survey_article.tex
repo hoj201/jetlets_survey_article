@@ -48,7 +48,7 @@
 This is because we have chosen not to pursue a convergence proof.  Do you think I succeeded in emphasizing this point?}
 The self similarity of ideal fluids
 yields the notorious ``cascade to smaller scales'',
-providing a raison d'etre
+providing a raison d'\^{e}tre
 for multiscale fluid modelling.
 Moreover, self similarity is widely regarded as the cause
 behind the great difficulties in proving well-posedness of 
@@ -61,63 +61,64 @@ This picture is summarized in the famous poem by Lewis Fry Richardson:
   And so on to viscosity.
 \end{quote}
 Therefore, it would be useful to have a model of self-similarity
-and cascade to obtain a better understanding the structures involved.
-In particular we would like to emphasize the word \emph{model}.
-It is unlikely that we can improve our understanding of self-similarity with more
-accurate computational fluid dynamics (CFD) code, because many years have been spent
-improving code in the direction of higher accuracy, and experimentalist provide the ultimate 
-say on ``truth''.
-Instead, we will propose a low dimensional toy model of self-similarity and cascade phenomena.
+and cascade to obtain a better understanding of the structures involved.
+In particular we would like to emphasize here the word \emph{model}.
+Many years have been devoted to improving the numerical accuracy of computational fluid
+schemes.
+In this paper we will pursue a different target, that of ``structural'' accuracy.
+In particular, we will propose a low dimensional toy model of self-similarity and cascade phenomena.
 It is possible this model serves as an accurate numerical scheme for ideal fluids as certain parameters 
-approach zero and infinity, but no attempt will be made to demonstrate this.
+approach zero and infinity, but no attempt will be made in the present paper to rigorously examine this 
+possibility.
 It is a ``model'' in the sense that it pushes towards greater understanding as a primary goal,
 and accuracy as a secondary goal.
 
 \subsection{Main contributions}
 In this article we derive a hierarchy of particle-like
 solutions to a regularized model of ideal fluids.
-Each method in the heirachy consists of particles
+Each method in the heirarchy consists of particles
 with internal group variables, parametrized by
 a finite dimensional model of a diffeomorphism group,
 known as a jet group.
 As the configuration manifold of a fluid is the space of
 volume preserving diffeomorphisms, these particle-like solutions
-paint a picture of a large diffeomorphism, which carries particles,
+paint an intuitive picture of a ``large'' diffeomorphism that advect particles,
 each of which carries a ``small'' diffeomorphism.
 Therefore, we propose these particle-like solutions as toy models
 of diffeomorphism self-similarity.
 
-  Toy models, such as this, are crucial to our understanding of fluids,
+  Toy models such as this are crucial to our understanding of fluids,
   both from a numerical perspective, and from the perspective
   of ``pure'' mathematics.
   Without models which rigorously mimic aspects of self-similarity 
   and cascade,
-  one is forced to stare at self-similarity in the face directly.
-  Our research presents the one of the first Lagrangian models to
-  which reflect aspects of the self-similarity of ideal fluids.
+  one is forced to stare self-similarity in the face directly.
+  Here we present one of the first Lagrangian models that reflects aspects
+  of the self-similarity of ideal fluids.
 
 More specifically, we will accomplish the following:
 \begin{enumerate}
-  \item We will (re)derive the heirarchy of particle methods discovered in \cite{JacobsRatiuDesbrun2013,MumfordMichor2013,CotterHolmJacobsMeier2014} in a Hamiltonian form.
+  \item We provide the first explicit Hamiltonian description of the full hierarchy of particle-like solutions discovered in 
+  	\cite{JacobsRatiuDesbrun2013,CotterHolmJacobsMeier2014}.
   \item We will compute a nested sequence of conserved quantities at 
-    each level in the heirarchy.
-    Each of these conserved quantites will be related to the conservation
+    each level in the hierarchy.
+    Each of these conserved quantities will be related to the conservation
     of circulation.
-  \item We will numerically compute some particle-like solutions at the the zeroth, first, and second level in the heirarchy.  We will observe a form of cascade in which solutions at the $k$-level asympotitcally approach
-    solutions at the $k+1$th level.
+  \item We will numerically compute some particle-like solutions at the the zeroth, first, and second levels in the hierarchy.  We will observe a form of cascade in which solutions at the $k^{\rm th}$ level asymptotically approach
+    solutions at the $(k+1)^{\rm th}$ level.
 \end{enumerate}
 
 
 \subsection{Previous work}
   Lagrangian models of ideal fluids such as \emph{smooth particle hydrodynamics} \cite{Monaghan1977,Lucy1977} and
-\emph{vortex methods} \cite{Chorin1973}, do not exhibit structures which express the nested structure of the diffeomorphism group.
+\emph{vortex methods} \cite{Chorin1973}, do not exhibit structures which express the nested character of the diffeomorphism group.
  One means of obtaining a Lagrangian model with a nested structure
- was presented in \cite{JacobsRatiuDesbrun2013}
- where an sequence of infinite-dimensional reductions by symmetry were
- executed, to produce a heirarchy of finite dimensional systems from a
+ was recently presented in \cite{JacobsRatiuDesbrun2013}
+ where a sequence of infinite-dimensional reductions by symmetry were
+ executed, to produce a hierarchy of finite dimensional systems from a
  regularized fluid model.
  The finite dimensional systems were particle-like solutions
- where each particle carries a model of the diffeomorphism group,
+ in which each particle carries a model of the diffeomorphism group,
  known as jet groups.
  Thus \cite{JacobsRatiuDesbrun2013} derived a Lagrangian analog of 
  ``whirls within whirls'', similar to the Eulerian models proposed
@@ -126,30 +127,30 @@ More specifically, we will accomplish the following:
  and the analysis of \cite{JacobsRatiuDesbrun2013} was purely
  theoretical.
  
- Later, a regularized model of ideal fluids was presented by
+ Later, a regularized version of the ideal fluid equations was presented by
  \cite{MumfordMichor2013}.
- This new model was subject to the theory presented in 
+ This new partial differential equation was amenable to the theory presented in 
  \cite{JacobsRatiuDesbrun2013}, and gave a specific and easily
  implementable manifestation of the hierarchy of particle models
  described there.
  In \cite{CotterHolmJacobsMeier2014} we numerically computed some
  of these particle-like solutions and observed cascade phenomena as
- an emergent behavior at the $0$th level in the heirarchy.
+ an emergent behavior at the $0$th level in the hierarchy.
 
- It is notable that the $0$th level of the heirarchy has been studied
- for a long time in the context the of PDEs with hydrodynamic background.
+ It is notable that the $0$th level of the hierarchy has been studied
+ for a long time in the context of partial differential equations with hydrodynamic background.
  In particular, \cite{HoldenRaynaud2006} provide the first convergence proof of such a method in the context of the Camassa-Holm equation.
  This same idea was implemented for the $n$-dimensional Camassa-Holm
  equation in \cite{ChertockDuToitMarsden2012}.
- In the context of image-regristration algorithms, the need to obtain 
- small compressible diffeomorphisms motivated the use of particle methods
+ In the context of image-registration algorithms, the need to obtain 
+ compressible diffeomorphisms motivated the use of particle methods
  in a similar framework \cite{JoshiMiller2000}.
  These methods, designed for a wide array of PDE's are studied analytically
  in \cite{TrouveYounes2005} which also contains a proof of well-posedness
  for a range of PDE's.
- Finally, \cite{Sommer2013} implements the first level, and
- describes the heigher levesl in the heirarchy  in the context of a 
- compressible fluid PDE designed for image registration algorithsm.
+ Finally, in the context of image registration, \cite{Sommer2013} 
+ discovered a compressible fluid version of the hierarchy derived in \cite{JacobsRatiuDesbrun2013},
+ and numerically integrates solutions in the first level of the hierarchy.
 
 \subsection{Notation}
 tangent bundle, cotangent bundle, vector field, contraction, Lie derivative,
@@ -176,7 +177,7 @@ here for convenience.
     a symplectic manifold.  Let $J_1,J_2:S \to P_1,P_2$ form a dual pair 
     (see definition on page \pageref{thm:dual_pairs}).
     Let $h \in C^2(P_1)$.
-    If $(q,p)(t) \in S$ be a solution to Hamilton's equations
+    If $(q,p)(t) \in S$ is a solution to Hamilton's equations
     with respect to the Hamiltonian $H = h \circ J_1$,
     then $J_1\left( (q,p)(t) \right) \in P_1$ is a solution
     to Hamilton's equations on $P_1$ with respect to $h$,
@@ -186,15 +187,13 @@ here for convenience.
 We will leverage this theorem in the following way.
 We will find a dual pair, $J_1,J_2: S \to \mathfrak{g}^*$, where
 \begin{enumerate}
-\item $S$ is the space of particle locations (and internal group variables perhaps)
+\item $S$ is the space of particle locations and momenta (and, for the higher orders of the hierarchy, internal group variables).
 \item $\mathfrak{g}$ is the space of vector-fields.
 \item and $h$ is the Hamiltonian of a regularized model of ideal fluid (i.e. a kinetic energy).
 \end{enumerate}
-By applying Theorem \ref{thm:dual_pairs} we obtained particle like solutions to the equations of motion
-of a regularized model of ideal fluids, as well as conserved quantities.
-Due to analytical concerns which will become clear later
-we will instead consider a hamiltonian $h_\epsilon$
-with a regularization parameter $\epsilon > 0$ taken from \cite{MumfordMichor2013}.
+ Theorem \ref{thm:dual_pairs} , applied to the dual pair $J_1,J_2$ 
+ then yields particle-like solutions and conserved quantities to the equations of motion
+of a regularized model of an ideal incompressible fluid.
 
 \section{Example: the rigid body}
 \label{sec:rigid_body}
@@ -206,11 +205,11 @@ rotation matrix $R \in \SO(3)$.
 The equations of motion are given by Hamilton's equations
 on the cotangent bundle $T^*\SO(3)$.
 There are canonical coordinates on $\SO(3)$ given by $(R,P)$
-where $P$ is such that $P R^T$ is a $3 \times 3$ anti-symmetric matrix.
+where $P$ is such that $R^TP $ is a $3 \times 3$ anti-symmetric matrix.
 The angular momentum in the body frame is the
 unique vector $\Pi \in \mathbb{R}^3 \equiv \so(3)^*$ such that
 \begin{align*}
-  J_R(R,P) := PR^T = \begin{bmatrix}
+  J_R(R,P) := R^TP = \begin{bmatrix}
     0 & -\Pi_3 & \Pi_2 \\
     \Pi_3 & 0 & -\Pi_1 \\
     -\Pi_2 & \Pi_1 & 0 
@@ -230,15 +229,16 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   This action can be lifted to an action on $T^*\SO(3)$ given by
   \begin{align*}
     (R,P) \in T^* \SO(3) \stackrel{g \in \SO(3) }{\mapsto}
-    (g R , P g^T ) \in T^* \SO(3).
+    (g R , gP ) \in T^* \SO(3).
   \end{align*}
-  It is notable that $\Pi$ is unaltered by this transformation,
-  and thus the Hamiltonian is invariant under this action of $\SO(3)$.
+  It is notable that $\Pi = R^T P = R^T g^T g P = (gR)^T (gP)$
+  is unaltered by this transformation.
+  Therefore the Hamiltonian, $h(\Pi)$, is invariant under this action of $\SO(3)$.
   By Noether's theorem there is a conserved quantity associated to 
   this symmetry.
   The conserved quantity is manifested by the \emph{momentum map}
   \begin{align*}
-    J_L(R,P) = R^T P .
+    J_L(R,P) = PR^T .
   \end{align*}
   Moreover, due to this symmetry, one can write the evolution equations
   on a lower-dimensional space.
@@ -305,9 +305,9 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     \so(3)^* \stackrel{J_L}{\longleftarrow}&
     \,T^* \SO(3)
     &&\stackrel{J_R}{\longrightarrow} \so(3)^* \\
-    R^T P \stackrel{J_L}{\longmapsfrom}&
+     PR^T \stackrel{J_L}{\longmapsfrom}&
     \;\; (R,P)
-    &&\stackrel{J_R}{\longmapsto} P R^T
+    &&\stackrel{J_R}{\longmapsto} R^TP
   \end{alignat*}
   \je{Is it clear that the kernels are $\omega$-orthogonal?}
   is a dual pair and the maps $J_L$ and $J_R$ are Clebsch variables.
@@ -364,12 +364,6 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   Proposition \ref{prop:SO3_to_Nambu}.
   \todo[inline]{Check for sign errors in this section. Especially with respect to left/right
   	Lie--Poisson structure and Nambu bracket.}
-
-\hoj{
-May we consider removing the stuff on the 
-rigid body?  It's nice for us to read,
-but I don't know if the most people will like it
-or care.}
 
 
 \section{Regularized fluids}
@@ -558,7 +552,7 @@ In the next section we will derive a dual pair wherein the symplectic
 manifold is more reasonable.
 This will yield the particle-like solutions described in \cite{MumfordMichor2013}.
 
-\subsection{Particle-like solutions}
+\subsection{particle-like solutions}
 \label{sec:Momentum maps}
 There is a natural left group and algebra action of $\SDiff(\R^n)$
 and $\mathfrak{X}_{\rm div}(\R^n)$, respectively, on $\R^n$ given by
