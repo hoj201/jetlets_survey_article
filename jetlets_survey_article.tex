@@ -200,7 +200,9 @@ of a regularized model of an ideal incompressible fluid.
   In this section we review basic notions from classical mechanics
 by studying the motion of a rigid body whose center of mass rests
 at the origin.
-The configuration of such a rigid body is described by a
+We will see a first application of Theorem \ref{thm:dual_pairs}
+in this context.
+The configuration of a rigid body is described by a
 rotation matrix $R \in \SO(3)$.
 The equations of motion are given by Hamilton's equations
 on the cotangent bundle $T^*\SO(3)$.
@@ -251,7 +253,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   This equation can be seen as a Hamiltonian equation on $\mathbb{R}^3$
   with respect to the non-canonical Poisson bracket
   \begin{align}
-    \{ F , G \}_{\rm Nambu}(x)  = x \cdot (\nabla F \times \nabla G) \label{eq:Nambu}
+    \{ F , G \}_{\rm Nambu}(x)  = - x \cdot (\nabla F \times \nabla G) \label{eq:Nambu}
   \end{align}
   known as the \emph{Nambu bracket}.
   This is no coincidence. Let us first introduce the isomorphism of
@@ -298,9 +300,10 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     \end{align*}
   \end{proof}
 
-  The kernel of $J_L$ is symplectically orthogonal
-  to the kernel of $J_R$, and vice versa.
-  As a result the diagram
+  Recall that $T^*\SO(3)$ is a symplectic manifold.
+  By Theorem \ref{thm:commuting_actions}
+  we can observe that $J_L$ and $J_R$ have symplectically
+  orthogonal kernels and the diagram
   \begin{alignat*}{2}
     \so(3)^* \stackrel{J_L}{\longleftarrow}&
     \,T^* \SO(3)
@@ -309,9 +312,11 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     \;\; (R,P)
     &&\stackrel{J_R}{\longmapsto} R^TP
   \end{alignat*}
-  \je{Is it clear that the kernels are $\omega$-orthogonal?}
-  is a dual pair and the maps $J_L$ and $J_R$ are Clebsch variables.
-  By theorem \ref{thm:dual_pairs}, this dual pair expresses rigid
+  is a dual pair
+  (see page \pageref{thm:dual_pairs} for details).
+  The maps $J_L$ and $J_R$ are known as \emph{Clebsch variables}. 
+
+  By Theorem \ref{thm:dual_pairs}, this dual pair expresses rigid
   body dynamics and conserved quantities.
   Specifically, the right leg yields the reduced phase space where 
   the system evolves in time.
@@ -319,7 +324,8 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   associated to the left action of $\SO(3)$ on itself.
   The most important aspect of these maps is that they are both Poisson
   maps, i.e.\ they carry the canonical Poisson bracket on $T^* \SO(3)$
-  to the Nambu bracket on $\so(3)^* \equiv (\mathbb{R}^3,\times)$.
+  to the Nambu bracket on $\so(3)^* \equiv (\mathbb{R}^3,\times)$,
+  as the following Proposition shows.
 
   \begin{prop}[remark 2.5.11 \cite{HolmBook2}] \label{prop:SO3_to_Nambu}
     Let $\{ \cdot , \cdot \}_{\rm can}$ denote the canonical Poisson bracket
@@ -328,8 +334,8 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     Both $J_L$ and $J_R$ are Poisson maps.
     Explicitly, this means
     \begin{align*}
-      \{ f \circ J_L , g \circ J_L \}_{\rm can} = \{ f , g \}_{\rm Nambu} \circ J_L \\
-      - \{ f \circ J_R , g \circ J_R \}_{\rm can} = \{ f , g \}_{\rm Nambu} \circ J_R \\
+      -\{ f \circ J_L , g \circ J_L \}_{\rm can} = \{ f , g \}_{\rm Nambu} \circ J_L \\
+      \{ f \circ J_R , g \circ J_R \}_{\rm can} = \{ f , g \}_{\rm Nambu} \circ J_R \\
     \end{align*}
     for any $f,g \in C^2( \mathbb{R}^3)$.
   \end{prop}
@@ -337,9 +343,9 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     Let $(R,P) \in T^* \SO(3)$ and set $\Pi = J_R(R,P)$.
     We observe that
     \begin{align*}
-      \langle \Pi , \Omega \rangle &= \tr( \hat{\Pi}^T \hat{\Omega} )
-      = \tr( \hat{\Pi}^T \hat{\Omega} ) \\
-      &= \tr( P^T R \hat{\Omega} ) 
+      \langle \Pi , \Omega \rangle
+      = \tr( \hat{\Pi}^T \hat{\Omega} ) 
+      = \tr( P^T R \hat{\Omega} ) 
       = \langle P , R \cdot \hat{\Omega} \rangle.
     \end{align*}
     This tells us that $J_R$ is the momentum-map associated
@@ -357,13 +363,11 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   One can obtain solutions to \eqref{eq:rigid_body}
   by solving canonical Hamiltonian equations with respect to $H(R,P)$.
   In particular, if $(R,P)(t)$ is a solution to Hamilton's equation,
-  then $\Pi(t) = J_R( (R,P)(t))$ is a solution Hamilton's equation
+  then $\Pi(t) = J_R( (R,P)(t))$ is a solution to Hamilton's equation
   with respect to the Nambu-bracket.
   This is a result of Proposition \ref{prop:Poisson_dynamics}
   paired with the observation that $J_R$ is a Poisson map via
   Proposition \ref{prop:SO3_to_Nambu}.
-  \todo[inline]{Check for sign errors in this section. Especially with respect to left/right
-  	Lie--Poisson structure and Nambu bracket.}
 
 
 \section{Regularized fluids}
