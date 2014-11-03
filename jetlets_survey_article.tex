@@ -31,6 +31,7 @@
 \DeclareMathOperator{\kernel}{kernel}
 \DeclareMathOperator{\bag}{bag}
 \DeclareMathOperator{\lie}{\mathcal{L}}
+\DeclareMathOperator{\ad}{ad}
 
 \title{A ``whirls within whirls'' particle model of ideal fluids}
 
@@ -1411,6 +1412,129 @@ The dual space $\mathfrak{X}_{\rm div}(\R^d)^*$ is identical to the quotient spa
 In other words, we may view a $m \in \mathfrak{X}_{\rm div}(\R^d)^*$ as an object of the form $p \otimes \mu$ modulo $\mathfrak{X}_{\rm div}(\R^d)^\circ$.
 In the text we will typically not mention $\mathfrak{X}_{\rm div}(\R^d)^\circ$ explicitly, and simply identify $m$ with $p \otimes \mu$.
 This is a harmless identification as long as we don't pair it with a non-divergence free vector-field.
+
+\section{Equations of motion for 2-jets}
+\label{sec:eom}
+The equations of motion are expressible as Hamiltonian
+equations with respect to a non-canonical Poisson bracket.
+If we denote $q^{(0)}$ simply by $q$ and $p^{(0)}$ simply
+by $p$ then the Hamiltonian is
+\begin{align*}
+  H(q,p,\mu^{(1)},\mu^{(2)}) =& \frac{1}{2} p_{i \alpha} p_{j \beta}
+  K^{\alpha \beta}(q_i - q_j) - p_{i \alpha} [\mu^{(1)}_j]
+  \indices{_{\beta}^{\gamma}} \partial_\gamma K^{\alpha \beta}( q_i -
+  q_j) \\
+  &+ p_{i \alpha} [\mu^{(2)}_j] \indices{_\beta^{\gamma
+      \delta}} \partial_{\delta \gamma}K^{\alpha \beta}( q_i - q_j) -
+  \frac{1}{2} [\mu_i^{(1)}] \indices{_{\alpha}^\delta} [\mu_j^{(1)} ]
+  \indices{_\beta^\gamma} \partial_{\delta \gamma} K^{\alpha
+    \beta}(q_i -q_j) \\
+  &+ [\mu_i^{(1)}]\indices{_\alpha^\epsilon} [\mu_j^{(2)}]
+  \indices{_\beta^{\gamma \delta}} \partial_{\epsilon \gamma \delta}
+  K^{\alpha \beta}( q_i - q_j) \\
+  &+ \frac{1}{2}
+  [\mu_i^{(2)}]\indices{_\alpha^{\epsilon \phi}} [\mu_j^{(2)}]
+  \indices{_\beta^{\gamma \delta} } \partial_{\gamma \delta \epsilon
+    \phi} K^{\alpha \beta}( q_i - q_j )
+\end{align*}
+Where $K^{\alpha \beta}(x) = \delta^{\alpha \beta} e^{- \| x \|^2 / 2 \sigma^2}$.
+Hamiton's equations are then given in short by
+\begin{align}
+  \dot{q} &= \frac{ \partial H}{\partial p} \label{eq:dHdp} \\
+  \dot{p} &= - \frac{ \partial H}{\partial q} \label{eq:dHdq} \\
+  \xi &= \frac{\partial H}{\partial \mu} \label{eq:dHdmu} \\
+  \dot{\mu} &= - \ad^*_{ \xi } ( \mu ) . \label{eq:LiePoisson} 
+\end{align}
+More explicitly, equation \eqref{eq:dHdp} is given by
+\begin{align*}
+  \dot{q}_i^\alpha = p_{j \beta} K^{\alpha \beta}( q_i - q_j) -
+  [\mu^{(1)}_j] \indices{_\beta^\gamma} \partial_\gamma K^{\alpha
+    \beta}(q_i - q_j) + [\mu^{(2)}_j] \indices{_\beta^{\gamma
+      \delta}} \partial_{\gamma \delta} K^{\alpha \beta}(q_i - q_j)
+\end{align*}
+equation \eqref{eq:dHdq} is given by the sum
+\begin{align*}
+  \dot{p}_{i\alpha} = T^{00}_{i\alpha} + T^{01}_{i\alpha} +
+  T^{02}_{i\alpha} + T^{12}_{i\alpha} + T^{11}_{i\alpha} + T^{22}_{i\alpha}
+\end{align*}
+
+Where we define the six terms in this sum as
+\begin{align*}
+  T^{00}_{i\alpha} =& -p_{i\gamma}
+  p_{j\beta} \partial_{\alpha}K^{\gamma\beta}(q_i - q_j) \\
+  T^{01}_{i\alpha} =& (p_{i\delta} [\mu_j^{(1)}]\indices{_\beta^\gamma} -
+  p_{j\delta}[\mu_i^{(1)}]\indices{_\beta^\gamma}) \partial_{\gamma\alpha}K^{\delta\beta}(q_i
+  - q_j) \\
+  T^{02}_{i\alpha} =& - (p_{i\epsilon}
+  [\mu_j^{(2)}]\indices{_\beta^{\gamma\delta}} + p_{j\epsilon}
+  [\mu_i^{(2)}] \indices{_\beta^{\gamma\delta}}
+  ) \partial_{\gamma\delta\alpha}K^{\epsilon\beta}(q_i - q_j) \\
+  T^{12}_{i\alpha} =& -([\mu_i^{(1)}] \indices{_\phi^\epsilon}
+  [\mu_j^{(2)}]\indices{_\beta^{\gamma\delta}} -
+  [\mu_j^{(1)}]\indices{_\phi^\epsilon} [\mu_i^{(2)}]
+  \indices{_\beta^{\gamma\delta}}) \partial_{\epsilon\gamma\delta\alpha}K^{\phi\beta}(q_i
+  - q_j) \\
+  T^{11}_{i\alpha} =& [\mu_i^{(1)}] \indices{_\epsilon^\delta}
+  [\mu_j^{(1)}]\indices{_\beta^\gamma} \partial_{\delta\gamma\alpha}
+  K^{\epsilon\beta}(q_i - q_j) \\
+  T^{22}_{i\alpha} =& -[\mu_i^{(2)}]\indices{_\zeta^{\epsilon\phi}}
+  [\mu_j^{(2)}]\indices{_\beta^{\gamma\delta}} \partial_{\epsilon\delta\gamma\phi\alpha}
+  K^{\zeta\beta}(q_i - q_j)
+\end{align*}
+
+Next, we calculate the quantities $\xi^{(i)} = \partial H / \partial \mu^{(i)}$
+for $i=1,2$ of equation \eqref{eq:dHdmu} to be
+\begin{align*}
+  [\xi_i^{(1)} ]\indices{^\alpha_\beta} =&
+  p_{j,\gamma} \partial_\beta K^{\alpha \gamma}(q_i - q_j) -
+  [\mu_j^{(1)}]\indices{_{\delta}^{\gamma}} \partial_{\beta \gamma}
+  K^{\alpha \delta}( q_i - q_j) +
+  [\mu_j^{(2)}]\indices{_{\epsilon}^{\gamma \delta} }\partial_{\beta
+    \gamma \delta} K^{\alpha
+    \epsilon}(q_i - q_j) \\
+  [\xi_i^{(2)}]\indices{^\alpha_{\beta \gamma}} =& p_{j
+    \delta} \partial_{\beta \gamma}K^{\alpha \delta}(q_i - q_j) -
+  [\mu_j^{(1)}]
+  \indices{_\delta^\epsilon} \partial_{\epsilon\beta\gamma}K^{\alpha\delta}(q_i
+  -q_j) + [\mu_j^{(2)}]\indices{_\epsilon^{\phi\delta}}\partial_{\beta\gamma\phi\delta}K^{\alpha\epsilon}(q_i-q_j)
+\end{align*}
+which allows us to compute $\dot{\mu}^{(i)}$ in equation \eqref{eq:LiePoisson} as
+\begin{align*}
+ [\dot{\mu}^{(1)}_i ]\indices{_\alpha^\beta} =&
+ [\mu_i^{(1)}]\indices{_\alpha^\gamma}
+ [\xi_i^{(1)}]\indices{^\beta_\gamma} -
+ [\mu_i^{(1)}]\indices{_\gamma^\beta}
+ [\xi_i^{(1)}]\indices{^\gamma_\alpha} \\
+& + [\mu_i^{(2)}]\indices{_\alpha^{\delta \gamma}}
+  [\xi_i^{(2)}]\indices{^\beta_{\delta \gamma}} 
+- [\mu_i^{(2)}]\indices{_\delta^{\beta \gamma}}
+  [\xi_i^{(2)}]\indices{^\delta_{\alpha \gamma}} 
+- [\mu_i^{(2)}]\indices{_\delta^{\gamma \beta}}
+  [\xi_i^{(2)}]\indices{^\delta_{\gamma \alpha}} \\
+ [\dot{\mu_i}^{(2)}]\indices{_\alpha^{\beta \gamma}} =&
+[\mu_i^{(2)}]\indices{_\alpha^{\delta \gamma}}
+[\xi_i^{(1)}]\indices{^\beta_\delta} +
+[\mu_i^{(2)}]\indices{_\alpha^{\beta \delta}}
+[\xi_i^{(1)}]\indices{^\gamma_\delta} - [\mu_i^{(2)}]\indices{_\delta^{\beta \gamma}} [\xi_i^{(1)}]\indices{^\delta_\alpha}
+\end{align*}
+
+
+\subsection{Computing $\dot{q}$ as a function of $\xi$}
+\label{sec:computing-dotq-as}
+
+The action of $\xi$ on $q$ is given by $\xi \cdot q$.  We set $\dot{q}
+= \xi \cdot q$. We've already calculated $\dot{q}^{(0)}$.
+We need only calculate $\dot{q}^{(1)}$ and $\dot{q}^{(2)}$.
+Componentwise we calculate these to be
+\begin{align*}
+  [\dot{q}^{(1)}]\indices{^\alpha_\beta} =&
+  [\xi^{(1)}]\indices{^\alpha_\gamma} [q^{(1)}]\indices{^\gamma_\beta} \\
+  [\dot{q}^{(2)}]\indices{^\alpha_{\beta \gamma} } =&
+  [\xi^{(2)}]\indices{^\alpha_{\delta \epsilon}} \cdot 
+  [q^{(1)}]\indices{^\delta_\beta} \cdot [q^{(1)}]\indices{^\epsilon_\gamma} + 
+ [\xi^{(1)}]\indices{^\alpha_\delta} \cdot [q^{(2)}] \indices{^\delta_{\beta
+     \gamma} }
+\end{align*}
 
 \bibliographystyle{amsalpha}
 \bibliography{hoj_2014}
