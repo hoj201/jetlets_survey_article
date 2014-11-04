@@ -10,7 +10,7 @@
 \newcommand{\hoj}[1]{\todo[inline,color=blue!20]{HOJ: #1}}
 \newcommand{\cjc}[1]{\todo[inline,color=red!20]{CJC:  #1}}
 \newcommand{\je}[1]{\todo[inline,color=green!20]{JE:  #1}}
-
+\newcommand{\dm}[1]{\todo[inline,color=yellow!20]{DM:  #1}}
 
 \newcommand{\pder}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
 \newcommand{\so}{\ensuremath{\mathfrak{so}}}
@@ -350,7 +350,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
       = \tr( P^T R \hat{\Omega} ) 
       = \langle P , R \cdot \hat{\Omega} \rangle.
     \end{align*}
-    This tells us that $J_R$ is the momentum-map associated
+    This tells us that $J_R$ is the momentum map associated
     to the cotangent lift of the right action of $\SO(3)$ on itself.
     Cotangent lifts of group actions are always equivariant
     and thus yield Poisson maps (Theorem 12.4.1 \cite{MandS}).
@@ -373,7 +373,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
 
 
 \section{Regularized fluids}
-  The equations of motion for fluids can be seen as
+  The equations of motion for incompressible fluids can be seen as
   Hamiltonian equations on the (dual) space of divergence
   free vector fields \cite{Arnold1966}.
   Consider the Lie-algebra of vector fields on $\mathbb{R}^n$, 
@@ -391,13 +391,13 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   Explicitly we may write $\psi$ using the Dirac-delta
   functional as $\psi(q,p) = p \otimes \delta_q$.
   It is shown in \cite{HolmMarsden2005} that this map is Poisson.
-  Furthermore, as the $n$-dimensional Camassa--Holm equation is a
+  Furthermore, as the $n$-dimensional Camassa--Holm equation \cite{CaHo1993} is a
   Hamiltonian equation on $\mathfrak{X}(\mathbb{R}^n)^*$,
   Proposition \ref{prop:Poisson_dynamics} promises to express a 
   certain subset
   of solutions by solving Hamiltonian equations for a finite number
   of particles.
-  In particular, $\psi$ yields the peakon solutions of the $n$-dimensional
+  Specifically, $\psi$ yields the peakon solutions of the $n$-dimensional
   Camassa--Holm equation.
   In this section we explore analogous constructions for
   an incompressible and regularized version of the
@@ -441,7 +441,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
 %  
 
 In the case where $h_{\rm Euler}(m) = \frac{1}{2} \| m \|^2_{L^2}$ is the standard fluid kinetic energy on the
-dual vector space to the incompressible vector field, $\mathfrak{X}_{\rm div}(\mathbb{R}^n)^*$, 
+dual vector space to the incompressible vector fields, $\mathfrak{X}_{\rm div}(\mathbb{R}^n)^*$, 
 Hamilton's equations are written as
 \begin{align}
 	\partial_t m+ \lie_u [ m] = 0 \quad , \quad u^i = \delta^{ij} m_j. \label{eq:ideal_fluid}
@@ -452,15 +452,16 @@ inviscid fluid equation
 \begin{align*}
 	\partial_t u + u \cdot \nabla u = - \nabla p \quad , \quad  \nabla \cdot u = 0.
 \end{align*}
-That \eqref{eq:ideal_fluid} is a Hamiltonian equation, may not be obvious because
-we have not clarified the Poisson structures of the system.
-In the following proposition we will show this for a general Hamiltonian on $\mathfrak{X}_{\rm div}(\R^n)^*$.
+Since we have not yet clarified the Poisson structures of the system, it may not be obvious that \eqref{eq:ideal_fluid} is a Hamiltonian equation. The following proposition shows this for a general Hamiltonian  on $\mathfrak{X}_{\rm div}(\R^n)^*$.
+% That \eqref{eq:ideal_fluid} is a Hamiltonian equation, may not be obvious because
+% we have not clarified the Poisson structures of the system.
+% In the following proposition we will show this for a general Hamiltonian on $\mathfrak{X}_{\rm div}(\R^n)^*$.
 
   \begin{prop}[\cite{Arnold1966}] \label{prop:LPDiff}
   Let $h \in C^{\infty}( \mathfrak{X}_{\rm div}(\R^n) )$.
   Recall that $\mathfrak{X}_{\rm div}(\R^n)^*$ is a Poisson manifold
   when equipped with the Lie--Poisson bracket,
-  and given a function $h$, the Fr\'echet derivative, $dh(m)$, is an element  of $\mathfrak{X}_{\rm div}(\R^n)^{**}$.
+  and given a function $h$, the Fr\'echet derivative $dh(m)$ is an element  of $\mathfrak{X}_{\rm div}(\R^n)^{**}$.
   In the event that $dh(m) \in \mathfrak{X}_{\rm div}(\R^n)$,
   Hamilton's equations are given by
   \begin{align}
@@ -511,7 +512,7 @@ Consider the Hamiltonian
 where $K_{k,\sigma}:\R^n \to \mathbb{R}^{n \times n}$ is the matrix
 valued Green's kernel defined by the property
 \begin{align*}
- \Big(1 - \frac{1}{k \sigma^2} \Delta \Big)^k \cdot \int_{\R^n} K_{k,\sigma}^{ij}(x - y) m_j(y) dy = \delta^{ij} m_j(x).
+ \Big(1 - \frac{\sigma^2}{k } \Delta \Big)^k \cdot \int_{\R^n} K_{k,\sigma}^{ij}(x - y) m_j(y) dy = \delta^{ij} m_j(x).
 \end{align*}
 In this case Hamilton's equations take the form
 \begin{align}
@@ -523,13 +524,13 @@ approaches the ideal fluid equation \eqref{eq:ideal_fluid}.
 In fact, this is the case over short times, and for $\sigma > 0$ solutions of \eqref{eq:MMDiff}
 differ from those of \eqref{eq:ideal_fluid} by an amount $\sigma t$
 in the $H^k$-norm.
-Thus Hamilton's equations with respect to $h_{k,\sigma}$ were proposed
+Thus Hamilton's equations with respect to $h_{k,\sigma}$ have been proposed
 as a model for ideal fluids \cite[Theorems 2 and 3]{MumfordMichor2013}. From now on we shall often suppress the
 parameters $k,\sigma$ and shorten $K = K_{k,\sigma}$ to prevent index
 clutter.
 
-We now discuss a relevant dual pair for this system.
-The group $\SDiff(\R^n)$ acts on itself on the left and on the right.
+Next, we discuss a dual pair for this system.
+The group $\SDiff(\R^n)$ acts on itself from the left and from the right.
 These actions can be lifted to $T^* \SDiff(\R^n)$, and yield
 momentum maps $J_L,J_R : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$. In particular these maps form the dual pair
 \begin{align*}
@@ -539,8 +540,9 @@ momentum maps $J_L,J_R : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$. In
   \stackrel{J_R}{\longmapsto}
   \mathfrak{X}_{\rm div}(\R^n)^*.
 \end{align*}
+For a mathematically rigorous treatment of this dual pair we refer to \cite{Gay-BalmazVizman2011}.
 
-By theorem \ref{thm:dual_pairs}, we can derive dynamical properties of Hamiltonian equations defined on $\mathfrak{X}_{\rm div}(\R^n)^*$.
+By theorem \ref{thm:dual_pairs}, we can use this dual pair to derive dynamical properties of Hamiltonian equations defined on $\mathfrak{X}_{\rm div}(\R^n)^*$.
 The Hamiltonian for a fluid is written on the left instance of $\mathfrak{X}_{\rm div}(\R^n)^*$.
 One can (in principle) solve Hamilton's equations on $T^*\SDiff(\R^n)$
 with respect to the Hamiltonian $H = h \circ J_L$.
@@ -556,9 +558,9 @@ since solving Hamilton's equations on $T^*\SDiff(\R^n)$ is no less difficult
 than solving Hamilton's equations on $\mathfrak{X}_{\rm div}(\R^n)^*$.
 In the next section we will derive a dual pair wherein the symplectic
 manifold is more reasonable.
-This will yield the particle-like solutions described in \cite{MumfordMichor2013}.
+This will yield the particle-like solutions described in \cite{MumfordMichor2013}. In the later parts of the paper we will generalize the treatment to obtain a  dual pair for each level in the hierarchy of particle-like solutions.
 
-\subsection{particle-like solutions}
+\subsection{Particle-like solutions}
 \label{sec:Momentum maps}
 There is a natural left group and algebra action of $\SDiff(\R^n)$
 and $\mathfrak{X}_{\rm div}(\R^n)$, respectively, on $\R^n$ given by
@@ -570,28 +572,28 @@ and $\mathfrak{X}_{\rm div}(\R^n)$, respectively, on $\R^n$ given by
   &\stackrel{ u \in \mathfrak{X}_{\rm div}(\R^n) }{\longmapsto}
   u(q) \in T_q\R^n.
 \end{align*}
-The tangent lift is defined in the obvious way by sending
+The tangent lift of the former is defined in the obvious way by sending
 \begin{align*}
   (q,v) \in T\R^n \equiv \R^n \times \R^n
   \stackrel{ \varphi \in \SDiff(\R^n) }{\longmapsto}
   (\varphi(q) , \partial_j\varphi^i(q) v^j ) \in T_{\varphi(q)} \R^n.
 \end{align*}
 The cotangent lift is defined by taking the dual
-of the the tangent lifted action.
+of  the tangent lifted action.
 That is to say,
 \begin{align*}
   (q, p) \in T^*\R^n \equiv \R^n \times \R^n
   \stackrel{ \varphi \in \SDiff(\R^n) }{\longmapsto}
-  (\varphi^{-1}(q) , \partial_i\varphi^j(q) p_j ).
+  (\varphi(q) , \partial_i\varphi^j(q) p_j ).
 \end{align*}
-On a cotangent bundle, the momentum map,
-$J_L : T^*\R^n \to \mathfrak{X}_{\rm div}(\R^n)^*$
+The momentum map 
+$J^{(0)}_L : T^*\R^n \to \mathfrak{X}_{\rm div}(\R^n)^*$
 associated to this left action is defined by the
 condition
 \begin{align*}
   \langle J_L^{(0)}( q , p) , u \rangle := \langle p , u(q) \rangle,
 \end{align*}
-for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$ (see \eqref{eq:cotangent_momap} in Appendix \ref{sec:Symplectic}).
+for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$ (see \eqref{eq:cotangent_momap} in Appendix \ref{sec:Symplectic}); the superscript in $J_L^{(0)}$ serves as a reminder that we are considering the zeroth level in the hierarchy of particle-like solutions.
 %We shall now write $J_L^{(0)} = J_L$ in anticipation of the
 %introduction of higher-order particles in section~\ref{sec:higher_order}.
 %On $\R^n$ we may identify the dual space of $\mathfrak{X}_{\rm div}(\R^n)$
@@ -610,10 +612,12 @@ where $\delta_q$ is the Dirac-delta distribution on $\R^n$ centered at $q$.
 This identification holds modulo $dC^1(\R^d) \otimes d{\bf x}$ where $dC^1(\R^d)$
 is the space of $C^0$-exact one-forms and $d{\bf x}$ is the canonical volume from on $\R^d$
 (see Appendix \ref{sec:measure_valued_momap}).
-As the cotangent lifted action of $\SDiff(\R^n)$ is equivariant,
-we observe that $J_L^{(0)}$ is Poisson, again by \cite[Thm~12.4.9]{MandS}.
+Since $J_L^{(0)}$ is a cotangent-lift momentum map, it is equivariant and therefore Poisson, again by \cite[Thm~12.4.9]{MandS}.
+% As the cotangent lifted action of $\SDiff(\R^n)$ is equivariant,
+% we observe that $J_L^{(0)}$ is Poisson, again by 
 
-We may define the manifold for particles,
+
+We define the manifold for particles,
 \begin{align*}
   Q_N^{(0)} = \left\{ (q^1,\dots,q^N) \in \R^n \times \dots\times \R^n
                  \mid q_i \neq q_j \text{ when } i \neq j \right\}.
@@ -626,10 +630,10 @@ and the $a^{\rm th}$ coordinate of the $i^{\rm th}$ particle
 is denoted by $q^{ia}$.
 
 The group $\SDiff(\R^n)$ acts on $Q_N^{(0)}$ by the diagonal action.
-Through the same manipulations applied previously we obtain the
-momentum-map for $N$ particles given by
+Through the same manipulations as we applied previously we obtain the
+momentum map for $N$ particles given by
 \begin{align*}
-  J_L^{(0)}(q,p) = p_i \otimes \delta_{q^i}
+  J_L^{(0)}(q,p) = p_i \otimes \delta_{q^i}, 
 \end{align*}
 where a sum over repeated indices is implied.
 
@@ -637,11 +641,12 @@ By Propositions~\ref{prop:Poisson_dynamics} and~\ref{prop:LPDiff},
 we obtain solutions to Hamilton's equations
 on $\mathfrak{X}_{\rm div}(\R^n)^*$, by solving
 Hamilton's equations on $T^*\R^n$ if $dh( J_L^{(0)}(q,p) )$ is
-a vector field.  If $h = h_{k,\sigma}$, then we calculate $dh$
+a vector field.  If $h = h_{k,\sigma}$, then we calculate that $dh$
 evaluated on the $J_L^{(0)}(p,q)$ is the vector field
 \begin{align*}
 	dh( p_a \otimes \delta_{q_a} )  (x) = K^{ab}(x - q^i) p_{ib} \pder{}{x^a}.
 \end{align*}
+\dm{Henry, can you check the indices above? I think it probably should be $i$ on the left hand side?}
 This is a vector field whose differentiability is determined completely by that of
 the kernel, $K$.
 
@@ -652,10 +657,11 @@ the kernel, $K$.
 	\label{fig:zero_jetlet}
 \end{figure}
 
-  Let $z \in Q_N^{(0)}$.
+  Let $z \in Q_N^{(0)}$. \dm{ It isn't clear what the point $z$ is here. Maybe we should say that $z$ is the particle location in the reference configuration, or the particle location at time $t=0$?}
   We can consider the isotropy group $\iso(z) = \{ \varphi \in \SDiff(\R^n) \mid \varphi(z) = z \}$.  The group $\iso(z)$ acts on $Q_N^{(0)}$
   by the trivial right action $q \cdot \varphi = q$.
   This yields the momentum map $J_R^{(0)}(q,p) = 0$.
+\dm{Here, instead, we could just say: Introduce the (trivial) momentum map $J_R^{(0)} := 0$ to formally construct a dual pair. Then we would not have to introduce the somewhat pointless group action above.}
   We see that $J_L^{(0)}$ is injective, and thus has a trivial kernel.
   As a result, the symplectic orthogonal to the kernel of $J_L^{(0)}$
   is the full tangent bundle $T(T^*Q_N^{(0)})$.
@@ -679,7 +685,8 @@ the kernel, $K$.
   associated to the trivial symmetry.\je{does this mod out the
     redundancy in the $\SDiff$ action?}
     \hoj{If by $\SDiff$ you mean the isotropy group I often call $G_0$, then yes.}
-  Specifically, $J_R^{(0)}$ expresses the trivial (perhaps silly)
+\dm{If we change the above and just introduce the momentum map directly, we should probably remove the following sentence.}
+  Specifically, $J_R^{(0)}$ expresses the trivial  
   conservation law that $0$ is constant in time.
   In summary we find:
   \begin{prop}[\S7 of \cite{MumfordMichor2013}] \label{prop:0-solutions}
@@ -693,11 +700,12 @@ the kernel, $K$.
   is a solution to \eqref{eq:MMDiff}.
 \end{prop}
 \begin{proof}
-	Note that $H = h_{k,\sigma} \circ J_L^{(0)}$ and apply theorems \ref{thm:commuting_actions} and \ref{thm:dual_pairs}.
+	Note that $H = h_{k,\sigma} \circ J_L^{(0)}$ and apply theorems \ref{thm:dual_pairs} and  \ref{thm:commuting_actions}.
 \end{proof}
 
 \subsection{$1^{\rm st}$-order particle-like solutions}
 \label{sec:first_order}
+In this section we revisit the $1^{\rm st}$-order particle-like solutions of \cite{CotterHolmJacobsMeier2014} and discuss its dual pair, before extending the treatment to the higher levels of the hierarchy in the subsequent section. 
   Let $\SL(n)$ denote the Lie group of $n\times n$ matrices
   with unit determinant.
   Let $q = (q^{(0)}, q^{(1)}) \in \R^n \times \SL(n)$ and consider the left
@@ -721,12 +729,12 @@ the kernel, $K$.
       &= \big( (\varphi_2 \circ \varphi_1)(q^{(0)} ) , D( \varphi_2 \circ \varphi_1)|_{q^{(0)} } \cdot q^{(1)} \big) \\
       &= (\varphi_2 \circ \varphi_1) \cdot q,
     \end{align*}
-    where the second and third line is an application of the chain rule.
+    where the second and third lines are applications of the chain rule.
   \end{proof}
-  As before, this action can be lifted to the cotangent bundle $T^*(\R^n \times \SL(n))$.  In particular, 
-  the action is
+  As before, this action can be lifted to the cotangent bundle $T^*(\R^n \times \SL(n))$.  Specifically, 
+  the action of the diffeomorphism $\varphi^{-1}$ is given by
   \begin{align*}
-    &(T\varphi)^* \cdot ( q^{(0)} , q^{(1)}  , p^{(0)} , p^{(1)} ) \\
+    & (T\varphi)^* \cdot ( q^{(0)} , q^{(1)}  , p^{(0)} , p^{(1)} ) \\
     &\quad = \big( \varphi^{-1}(q^{(0)})  , [D\varphi|_{q^{(0)}}]^{-1} \cdot q^{(1)} , D\varphi|_{q^{(0)}}^* \cdot p^{(0)} , D\varphi|_{q^{(0)}}^* \cdot p^{(1)} \big).
   \end{align*}
   Also as before, we can generalize this construction to the space of
@@ -734,7 +742,7 @@ the kernel, $K$.
   \begin{align*}
     Q^{(1)}_N = \left\{  ( q^1 , \dots, q^N ) \mid
       \begin{array}{c}
-        q^i = (q^{(0),i},q^{(1),i}) \in \R^n \times \SL(n) \\
+        q^i = (q^{(0),i},q^{(1),i}) \in \R^n \times \L(n) \\
         q^{(0),i} \neq q^{(0),j} \text{ when } i \neq j
       \end{array} \right\}.
   \end{align*}
@@ -746,21 +754,21 @@ the kernel, $K$.
   \begin{align*}
     \langle J_L^{(1)}(q,p) , u \rangle = p\indices{_{ia}} u^a(q^{(0)i}) + p \indices{_{ia}^{b}} \partial_c u^a(q^{(0)i}) q\indices{^{(1)c}_b}
   \end{align*}
-  For an arbitrary $u \in \mathfrak{X}_{\rm div}(\R^d)$.
-  In terms of the Dirac-delta functional, we can write $J_L^{(1)}$ as the measure valued momentum map
+  for an arbitrary $u \in \mathfrak{X}_{\rm div}(\R^d)$.
+  In terms of the Dirac-delta functional, we can write $J_L^{(1)}$ as the measure-valued momentum map
   \begin{align*}
-    J_L^{(1)}\big( (q^{(0)}, q^{(1)} ),(p^{(0)}, p^{(1)}) \big)
+    J_L^{(1)}(q, p)
     = p_{ia}dx^a \otimes \delta_{q_i} - p\indices{_{ia}^c} q\indices{^{ib}_c} dx^a \otimes \partial_b \delta_{q_i}
   \end{align*}
-  Moreover, there is a (non-trivial) right group action by $\iso(z)$ on $Q^{(1)}_N$ given by
+  Moreover, there is a (non-trivial) right group action by $\iso(z)$ \dm{Reminder, $\iso(z)$ needs to be clarified; something like $\iso(z)$ is the subgroup of $\SDiff$ that leaves invariant all particle locations in the reference configuration.} on $Q^{(1)}_N$ given by
   \begin{align*}
     (q^{(0)} , q^{(1)} ) \cdot \psi = (q^{(0)} , q^{(1)} \cdot D\psi|_z).
   \end{align*}
-  This action yields the cotangent lift momentum-map defined by the condition
+  This action yields the cotangent-lift momentum map defined by the condition
   \begin{align*}
   	\langle J_R^{(1)}(q,p) , u \rangle = p \indices{_{ia}^b} q\indices{^{ia}_c} \partial_b u^c(z^i)
   \end{align*}
-  In terms of the Dirac delta functional we may write this as the measure valued momentum map
+  In terms of the Dirac delta functional we may write this as the measure-valued momentum map
   \begin{align*}
     J_R^{(1)}( q,p) = - p\indices{_{ia}^b} q\indices{^{ia}_c}  dx^c \otimes \partial_b \delta_{q^i}
   \end{align*}
@@ -771,8 +779,7 @@ the kernel, $K$.
     The actions of $\iso(z)$ and $\SDiff(\R^n)$ on $Q_N^{(1)}$
     clearly commute
     and lift to symplectic actions on $T^*Q_N^{(1)}$.
-    Moreover, the action of $\SDiff(\R^n)$ is transitive on $\iso(z)$ orbits
-    by inspection.
+    Moreover, the action of $\SDiff(\R^n)$ is clearly transitive on the level sets of $J_R^{(1)}$, since it is transitive overall.
     By theorem \ref{thm:commuting_actions}, $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
   \end{proof}
 
@@ -781,6 +788,7 @@ the kernel, $K$.
   $H^{(1)} = h_{k,\sigma} \circ J_L^{(1)}$ is $C^1$ we may evolve Hamilton's equations
   to obtain solutions.
   
+\dm{We need to clarify the differentiability in the Proposition just below. Henry, do you have a reference where you picked this up when you wrote it? Or can you briefly explain your initial thoughts on this? -- Jaap, can you have a look at this as well, please?}
   \begin{prop} \label{prop:1-solutions}
   	If $K = K_{k,\sigma}$ is $C^{\frac{n}{2} + 2}$ then
         $H = h_{k,\sigma} \circ J_L$
@@ -799,23 +807,24 @@ the kernel, $K$.
   
   Various vector fields for large $k$
   are depicted in figure \ref{fig:zoo}
-  with respect to the traceless matrix $\mu\indices{_a^k} = p\indices{_a^\ell} q\indices{^k_\ell}$.
+  for different initial values of the traceless matrix $\mu\indices{_i^j} = p\indices{_i^\ell} q\indices{^j_\ell}$.
   
   \begin{figure}
   	\centering
-	\includegraphics[width=0.5\textwidth]{./images/zoo}
-	\caption{a zoo of $1^{\rm st}$-order jet lets}
-	\label{fig:zoo}
+        \includegraphics[width=0.5\textwidth]{./images/zoo}
+        \caption{a zoo of $1^{\rm st}$-order jet lets}
+        \label{fig:zoo}
   \end{figure}
 
   \subsection{Higher-order particles}
   \label{sec:higher_order}
-  In this section we will introduce a hierarchy of particle methods
-  where the $k^{\rm th}$ level of the hierarchy includes the $(k-1)^{\rm th}$
-  level.
+  In this section we will introduce a hierarchy of particle solutions.
+\dm{Have commented out:...,  where the $k^{\rm th}$ level of the hierarchy includes the $(k-1)^{\rm th}$ level. -- I didn't understand that.}
+  % where the $k^{\rm th}$ level of the hierarchy includes the $(k-1)^{\rm th}$
+  % level.
   The $0^{\rm th}$-level in the hierarchy are the standard particle-like solutions,
-  while the $1^{\rm st}$ level describes particles with internal $\SL(n)$ variables
-  mentioned in the previous section.
+  while the $1^{\rm st}$ level describes the particles with internal $\SL(n)$ variables
+  discussed in the previous section.
   The particles in the $k^{\rm th}$-level carry the coefficients of
   $k^{\rm th}$-order Taylor expansions of diffeomorphisms,
   or \emph{jets}.
@@ -862,8 +871,8 @@ the kernel, $K$.
   like $q^i_{a\,\beta}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
   and $\beta$ is a multi-index on $\R^n$.
   This coordinate is used to model the partial derivative of the $a^{\rm th}$ coordinate
-  of a diffeomorphism at some point $z_i$, i.e.\ $\partial_\beta \varphi^a(z_i)$.
-  This is the primary motivation for this notational convention.
+  of a diffeomorphism at some point $z_i$, \dm{Reminder: $z_i$ has to be clarified} i.e.\ $\partial_\beta \varphi^a(z_i)$.
+  % This is the primary motivation for this notational convention.
   We will let $q^{(0)i}$ denote the position of the $i$th particle.
 
   \begin{prop}
@@ -888,11 +897,11 @@ the kernel, $K$.
           \partial_{b_1 \cdots b_k} \varphi_1(\varphi_2(x)) 
           \partial_{\gamma_1} \varphi_2^{b_1} \cdots
           \partial_{\gamma_n} \varphi_2^{b_k}
-        \right).
+        \right),
     \end{align*}
-    See \cite{ConstantineSavits1996,Jacobs2014b} for a
+where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of a multi-index $\alpha$. We refer to \ref{app:multi} for the details of our index conventions and to \cite{ConstantineSavits1996,Jacobs2014b} for a
     precise description of the multivariate Fa\`a di Bruno formula.
-    One can read directly from the expression that
+    One can read off  directly from the expression that
     a $k^{\rm th}$ order derivative only depends on $k^{\rm th}$
     and lower order
     partial derivatives of $\varphi_1$ and $\varphi_2$.
@@ -939,7 +948,7 @@ the kernel, $K$.
   \end{align*}
   where $w \in \mathfrak{X}_{\rm div}(\R^n)$ is such that $w(z) = 0$ (this describes the Lie algebra of $\iso(z)$),
   and $\delta\indices{_{\gamma}^{b}}$ equals $1$ if the multi-index $\gamma$ is equal to the integer $b$
-  and equals $0$ otherwise.
+  and equals $0$ otherwise. \dm{I dont' understand this. How can a multi-index by equal to an integer?}
   We can write these momentum maps explicitly, using the Dirac delta distribution, as
   \begin{align*}
     &J_L^{(k)}(q,p) \\
@@ -966,11 +975,12 @@ the kernel, $K$.
 			}
 			p\indices{_{ia}^\alpha} q\indices{^{ia}_{[b_1 \cdots b_j]}}   \sum_{m}  (-1)^{|\gamma_m|}\left( \prod_{\ell \neq m }  \delta \indices{_{\gamma_\ell}^{b_\ell}} \right) \otimes \partial_{\gamma_m}( \cdot - z_i)
   \end{align*}
-  The action of $\SDiff(\R^n)$ is transitive on $Q_N^{(k)}$,
-  and it is therefore transitive on orbits of the right action of $\iso(z)$.
+  The action of $\SDiff(\R^n)$ is transitive on $Q_N^{(k)}$ 
+   therefore transitive on the level sets of the momentum map $J_R^{(1)}$.
   By theorem \ref{thm:commuting_actions}, $J_L^{(k)}$ and $J_R^{(k)}$ form a dual pair.
-  Lastly, this gives us the final result on jetlet parametrized solutions.
+  This gives us the final result on jetlet parametrized solutions.
   The proof is identical to that given in the proposition \ref{prop:0-solutions}.
+\dm{See earlier remarks about regularity in the Prop. below.}
   \begin{prop}
   	If $K_{k,\sigma}$ is $C^{\frac{n}{2} + 2k}$ then $H^{(k)} = h_{k,\sigma} \circ J_L^{(k)}$
 	is $C^1$.
@@ -1267,7 +1277,7 @@ sloppiness is usually harmless.
     $x(t) = J_1 ((q,p)(t))$ is a solution to Hamilton's equations
     with respect to $h$.
     To verify that $J_2( (q,p)(t) )$ is constant,
-    Let $v \in \kernel(J_1)$ be a vector over $(q,p)(0) \in S$.
+    let $v \in \kernel(J_1)$ be a vector over $(q,p)(0) \in S$.
     This means that $v$ is tangent to the level set of $J_1$ at $(q,p)(0)$.
     Moreover, $H = h \circ J_1$ is constant on such level sets.
     Thus we observe
@@ -1297,7 +1307,7 @@ sloppiness is usually harmless.
       This means 
       $\rho_1(g_1 , \rho_2 (x , g_2)) = \rho_2(\rho_1(g_1 , x) ,g_2)$
       for any $g_1 \in G_1, g_2 \in G_2$ and $x \in S$.}
-    Moreover, assume $G_1$ acts transitively on $G_2$ orbits.
+    Moreover, assume $G_1$ acts transitively on the level sets of the momentum map $J_2$ associated with the  $G_2$-action.
     Then the momentum maps form the dual pair
     $
       \mathfrak{g}^*_1
@@ -1341,14 +1351,14 @@ sloppiness is usually harmless.
     Now note that
     $TJ_2 ( \xi_1 \cdot x) \cdot \xi_2 = \omega( \rho_1(\xi_1, x) ,\rho_2(x, \xi_2 )) = 0$.
     Thus $\rho_1(\xi_1 , x) \in \kernel( J_2)$, hence
-    $\rho_1(\mathfrak{g}_1 ,S)^\omega \subset \kernel(J_2)$.
-    As $G_1$ acts transitively on $G_2$ orbits, we see
-    that $(\mathfrak{g}_1 \cdot S)^\omega \supset \kernel( J_2)$.
+    $\rho_1(\mathfrak{g}_1 ,S) \subset \kernel(J_2)$.
+    But since $G_1$ acts transitively on the level sets of $J_2$, we see
+    that $\rho_1(\mathfrak{g}_1, S) = \kernel( J_2)$.
   \end{proof}
-  With these foundations established, we proceed
-  to discuss a simple example of Poisson mechanics
-  before moving to the more sophisticated case
-  of fluids.
+  % With these foundations established, we proceed
+  % to discuss a simple example of Poisson mechanics
+  % before moving to the more sophisticated case
+  % of fluids.
 
 
 
@@ -1405,10 +1415,10 @@ the dual space appropriately.  In particular, we see that the annihilator of $\m
 as a subspace of $\mathfrak{X}(\R^d)$ is
 \begin{align*}
 	(\mathfrak{X}_{\rm div}(\R^d) )^\circ := \{ m \in \mathfrak{X}(\R^d)^* \mid \langle m , u \rangle = 0 , \forall u \in \mathfrak{X}_{\rm div}(\R^d) \}\\
-		:= {\rm closure}\{ p \otimes d{\bf x} \in \mathfrak{X}(\R^d) \mid p \text{is a closed one-form} \}.
+		:= {\rm closure}\{ p \otimes d{\bf x} \in \mathfrak{X}(\R^d) \mid p \text{ is a closed one-form} \}.
 \end{align*}
 where $d{\bf x}$ is the canonical volume form on $\R^d$ and
-we have use the fact that the gradient fields and the Harmonic vector fields are $L^2$-orthogonal to the divergence free vector fields.
+we have used the fact that the gradient fields and the harmonic vector fields are $L^2$-orthogonal to the divergence free vector fields.
 The dual space $\mathfrak{X}_{\rm div}(\R^d)^*$ is identical to the quotient space $\mathfrak{X}(\R^d) / (\mathfrak{X}_{\rm div}(\R^d))^\circ$.
 In other words, we may view a $m \in \mathfrak{X}_{\rm div}(\R^d)^*$ as an object of the form $p \otimes \mu$ modulo $\mathfrak{X}_{\rm div}(\R^d)^\circ$.
 In the text we will typically not mention $\mathfrak{X}_{\rm div}(\R^d)^\circ$ explicitly, and simply identify $m$ with $p \otimes \mu$.
@@ -1537,6 +1547,7 @@ Componentwise we calculate these to be
      \gamma} }
 \end{align*}
 
+\dm{At some point we'll need to make references uniform. (Currently journal names are sometimes written out, sometimes abbreviated; same for the first names of authors.}
 \bibliographystyle{amsalpha}
 \bibliography{hoj_2014}
 
