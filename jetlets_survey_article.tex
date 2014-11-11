@@ -208,8 +208,11 @@ The configuration of a rigid body is described by a
 rotation matrix $R \in \SO(3)$.
 The equations of motion are given by Hamilton's equations
 on the cotangent bundle $T^*\SO(3)$.
-There are canonical coordinates on $\SO(3)$ given by $(R,P)$
-where $P$ is such that $R^TP $ is a $3 \times 3$ anti-symmetric matrix.
+There are canonical coordinates on $T^*\SO(3)$ given by $(R,P)$
+where $P$ is such that $R^TP $ is a $3 \times 3$ anti-symmetric
+matrix\footnote{%
+  We use the pairing $\langle P, v \rangle = \tr(P^T v)$ for
+  $P \in T^*_R SO(3)$ and $v \in T_R SO(3)$.}.
 The angular momentum in the body frame is the
 unique vector $\Pi \in \mathbb{R}^3 \equiv \so(3)^*$ such that
 \begin{align*}
