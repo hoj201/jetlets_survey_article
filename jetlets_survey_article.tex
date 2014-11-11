@@ -482,7 +482,8 @@ Since we have not yet clarified the Poisson structures of the system, it may not
   we observe
   \begin{align*}
     \frac{d}{dt} f_v(m) &= \{ f_v , h \}(m) = \langle m , [ df_v(m) , dh(m) ] \rangle \\
-    &= \langle m , \lie_{dh(m)}[ df_v(m) ] \rangle = - \langle \lie_{dh(m)}[m] , df_v \rangle.
+    &= \langle m , \lie_{dh(m)}[ df_v(m) ] \rangle
+     =-\langle \lie_{dh(m)}[m] , v \rangle.
   \end{align*}
   \je{In the second line you switch from a Lie derivative on the space
     $T^* \SDiff$ to one where $v \in \mathfrak{X}_{\rm div}(\R^n)$ is
@@ -494,7 +495,16 @@ Since we have not yet clarified the Poisson structures of the system, it may not
   \hoj{Well, $T^*\SDiff$ does not make any appearance here from what I can see.
   	As a side note, given any representation, $\rho$, of Lie-algebra on a vector-space, $V$, the action on $V^*$
 	 is \emph{defined} by the equation $\langle m , \rho(\xi) \cdot v \rangle + \langle \rho(\xi) \cdot m , v \rangle = 0$
-	 for all $v \in V$ and $m \in V^*$.  This is the special case where we consider the adjoint action of a Lie algebra on itself.}
+	 for all $v \in V$ and $m \in V^*$.  This is the special case where
+   we consider the adjoint action of a Lie algebra on itself.}
+  \je{Ok, I think I can make sense of this now when I think of the Lie
+    derivative simply as the (co)adjoint action of the inf.dim.\ algebra
+    on itself. I've replaced $df_v$ by $v$ (to be interpreted
+    as element of $\mathfrak{X}_{\rm div}(\R^n)^{**}$) in the last
+    step, since $df_v \in C^\infty(\mathfrak{X}_{\rm
+      div}(\R^n)^*;\mathfrak{X}_{\rm div}(\R^n)^{**})$ lives in
+    a different space.\\
+    Henry, please remove all these comments if you're fine with it. }
   However $df_v = v$ and so
   $\frac{d}{dt} f_v(m) = \langle \dot{m} , v \rangle$.  Therefore we find
   \begin{align*}
