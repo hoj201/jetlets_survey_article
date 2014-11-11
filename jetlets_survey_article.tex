@@ -189,12 +189,12 @@ here for convenience.
 We will leverage this theorem in the following way.
 We will find a dual pair, $J_1,J_2: S \to \mathfrak{g}^*$, where
 \begin{enumerate}
-\item $S$ is the space of particle locations and momenta (and, for the higher orders of the hierarchy, internal group variables).
-\item $\mathfrak{g}$ is the space of vector-fields.
-\item and $h$ is the Hamiltonian of a regularized model of ideal fluid (i.e. a kinetic energy).
+\item $S$ is the space of particle locations and momenta (and, for the higher orders of the hierarchy, internal group variables),
+\item $\mathfrak{g}$ is the space of vector-fields,
+\item and $h$ is the Hamiltonian of a regularized model of ideal fluid (i.e.\ a kinetic energy).
 \end{enumerate}
- Theorem \ref{thm:dual_pairs} , applied to the dual pair $J_1,J_2$ 
- then yields particle-like solutions and conserved quantities to the equations of motion
+Theorem~\ref{thm:dual_pairs} applied to the dual pair $J_1,J_2$
+then yields particle-like solutions and conserved quantities to the equations of motion
 of a regularized model of an ideal incompressible fluid.
 
 \section{Example: the rigid body}
@@ -376,7 +376,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
 
 
 \section{Regularized fluids}
-  The equations of motion for incompressible fluids can be seen as
+  Euler's equations of motion for incompressible fluids can be seen as
   Hamiltonian equations on the (dual) space of divergence
   free vector fields \cite{Arnold1966}.
   Consider the Lie-algebra of vector fields on $\mathbb{R}^n$, 
@@ -532,8 +532,9 @@ In this case Hamilton's equations take the form
 	\partial_t m+ \lie_u [ m] = 0 \quad , \quad u^i  = K^{ij}_{k,\sigma} * m_j. \label{eq:MMDiff}
 \end{align}
 Solutions to \eqref{eq:MMDiff} exhibit existence and uniqueness for all time.
-Lastly, as $\sigma \to 0$, $h_{k,\sigma} \to h_{\rm Euler}$ and one can speculate that \eqref{eq:MMDiff}
-approaches the ideal fluid equation \eqref{eq:ideal_fluid}.
+Lastly, as $\sigma \to 0$, $h_{k,\sigma} \to h_{\rm Euler}$ and one
+can speculate that solutions to~\eqref{eq:MMDiff}
+approach solutions to the ideal fluid equation~\eqref{eq:ideal_fluid}.
 In fact, this is the case over short times, and for $\sigma > 0$ solutions of \eqref{eq:MMDiff}
 differ from those of \eqref{eq:ideal_fluid} by an amount $\sigma t$
 in the $H^k$-norm.
@@ -597,7 +598,7 @@ That is to say,
 \begin{align*}
   (q, p) \in T^*\R^n \equiv \R^n \times \R^n
   \stackrel{ \varphi \in \SDiff(\R^n) }{\longmapsto}
-  (\varphi(q) , \partial_i\varphi^j(q) p_j ).
+  (\varphi^{-1}(q) , \partial_i\varphi^j(q) p_j ).
 \end{align*}
 The momentum map 
 $J^{(0)}_L : T^*\R^n \to \mathfrak{X}_{\rm div}(\R^n)^*$
