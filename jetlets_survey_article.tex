@@ -3,6 +3,10 @@
 \usepackage{amssymb}
 \usepackage{stmaryrd}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\usetikzlibrary{cd}
 \usepackage{todonotes}
 
 \usepackage{tensor}
@@ -1018,7 +1022,57 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   \label{sec:Kelvin}
   In this section we relate the conserved quantities associated
   to $J_R^{(k)}$ to Kelvin's circulation theorem.
+Let $\varphi_t \in \SDiff(\R^n)$ denote the flow-map
+produced by a solution to Euler's equation.
+Let $x(s,t) = \varphi_t(x_0(s))$ for some loop $x_0(s)$.
+Kelvin's circulation theorem states that the circulation
+\begin{align*}
+  \Gamma(t) = \oint u( x(s,t) )  \cdot \partial_s x(s,t) ds
+\end{align*}
+is constant in time.
+It was shown in \cite{Arnold1966} that this conservation law
+is merely an instance of Noether's theorem.
+In particular, circulation is one of the conserved momenta
+associated to the particle relabeling symmetry of fluids.
+More specifically,
+recall that $h_0$ is the Hamiltonian for Euler's equations,
+and this Hamiltonian is $\SDiff(\R^d)$ invariant.
+In this instance we have a dual pair $\lambda, \rho : T^*\SDiff(\R^d) \to \mathfrak{X}_{\rm div}(\R^d)$ induces by
+the left and right action of $\SDiff(\R^d)$ on itself.
+The dynamics on $T^*\SDiff(\R^d)$ exhibit the constant of motion
+\begin{align}
+  \langle \rho(\varphi,p_\varphi) , w \rangle = \langle p_\varphi , T\varphi \cdot w \rangle \label{eq:circulation}
+\end{align}
+for all $w \in \mathfrak{X}_{\rm div}(\R^d)$.
+A ``regularized'' version of this conservation law holds in our regularized model.
+Our model's are obtained by using the deformed Hamiltonian
+$h_\epsilon$ in place of $h_0$.
+These regularized Hamiltonians are also $\SDiff(\R^d)$ invariant, and
+therefore \eqref{eq:circulation} is also conserved in the regularized models.
 
+Lastly, these conserved quantities are inherited by the finite dimensional jet-particle solutions.
+To see this it is useful to assemble the $k$-th order isotropy group,
+$\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^d) \mid J^{(k)}_z( \psi) = id_z \}$.
+Then we see that $Q^{(k)} := \SDiff(\R^d) / \iso^{(k)}(z)$.
+The space $T^*Q^{(k)}$ then naturally embeds into $(T^*\SDiff(\R^d)) / (\iso^{(k)}(z))$.
+The commutativity of the following diagram uniquely defines the jet-particle solutions.
+\begin{equation}
+ \begin{tikzcd}
+   \mathfrak{X}_{\rm div}(\R^d)^* & \ar[l,"\lambda"] T^*\SDiff(\R^d) \ar[r,"\rho"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
+   & (T^*\SDiff(\R^d)) / \iso^{(k)}(z) & \\
+   & T^*Q^{(k)} \uar{i} \ar[uur,"J_R",bend right = 30] \ar[uul,"J_L",bend left = 30] &
+ \end{tikzcd}
+\end{equation}
+Again, the right-let of both dual pairs yields the conserved quantities.
+From this commutative diagram, it is immediately clear that the conservation law exhibited in
+out particle models is a shadow of the conservation of \eqref{eq:circulation}.
+The conservation of circulation of the full regularized model is given by $\rho$,
+while that of the jet-particle solutions is given by $J_R$.
+In other words, conservation of $J_R$ in the jet-particle solutions is a shadow
+of the conservation of $\rho$, which is equivalent to conservation of \eqref{eq:circulation}.
+As \eqref{eq:circulation} contains Kelvin's circulation theorem,
+we see that our particle models contain an model of Kelvin's circulation theorem within them.
+This is proven rigorously in \cite[Theorem 5.5]{JacobsRatiuDesbrun2013}.
 
 \section{Collisions}
 \label{sec:collisions}
