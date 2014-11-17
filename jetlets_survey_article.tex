@@ -536,27 +536,27 @@ Since we have not yet clarified the Poisson structures of the system, it may not
 \label{sec:MME}
 Consider the Hamiltonian
 \begin{align*}
-  h_{k,\sigma}(m) = \frac{1}{2} \langle m , K_{k,\sigma} * m \rangle_{L^2} 
+  h_{p,\sigma}(m) = \frac{1}{2} \langle m , K_{p,\sigma} * m \rangle_{L^2}
 \end{align*}
-where $K_{k,\sigma}:\R^n \to \mathbb{R}^{n \times n}$ is the matrix
+where $K_{p,\sigma}:\R^n \to \mathbb{R}^{n \times n}$ is the matrix
 valued Green's kernel defined by the property
 \begin{align*}
- \Big(1 - \frac{\sigma^2}{k } \Delta \Big)^k \cdot \int_{\R^n} K_{k,\sigma}^{ij}(x - y) m_j(y) dy = \delta^{ij} m_j(x).
+ \Big(1 - \frac{\sigma^2}{p} \Delta \Big)^p \cdot \int_{\R^n} K_{p,\sigma}^{ij}(x - y) m_j(y) dy = \delta^{ij} m_j(x).
 \end{align*}
 In this case Hamilton's equations take the form
 \begin{align}
-	\partial_t m+ \lie_u [ m] = 0 \quad , \quad u^i  = K^{ij}_{k,\sigma} * m_j. \label{eq:MMDiff}
+	\partial_t m+ \lie_u [ m] = 0 \quad , \quad u^i  = K^{ij}_{p,\sigma} * m_j. \label{eq:MMDiff}
 \end{align}
 Solutions to \eqref{eq:MMDiff} exhibit existence and uniqueness for all time.
-Lastly, as $\sigma \to 0$, $h_{k,\sigma} \to h_{\rm Euler}$ and one
+Lastly, as $\sigma \to 0$, $h_{p,\sigma} \to h_{\rm Euler}$ and one
 can speculate that solutions to~\eqref{eq:MMDiff}
 approach solutions to the ideal fluid equation~\eqref{eq:ideal_fluid}.
 In fact, this is the case over short times, and for $\sigma > 0$ solutions of \eqref{eq:MMDiff}
 differ from those of \eqref{eq:ideal_fluid} by an amount $\sigma t$
 in the $H^k$-norm.
-Thus Hamilton's equations with respect to $h_{k,\sigma}$ have been proposed
+Thus Hamilton's equations with respect to $h_{p,\sigma}$ have been proposed
 as a model for ideal fluids \cite[Theorems 2 and 3]{MumfordMichor2013}. From now on we shall often suppress the
-parameters $k,\sigma$ and shorten $K = K_{k,\sigma}$ to prevent index
+parameters $p,\sigma$ and shorten $K = K_{p,\sigma}$ to prevent index
 clutter.
 
 Next, we discuss a dual pair for this system.
@@ -671,7 +671,7 @@ By Propositions~\ref{prop:Poisson_dynamics} and~\ref{prop:LPDiff},
 we obtain solutions to Hamilton's equations
 on $\mathfrak{X}_{\rm div}(\R^n)^*$, by solving
 Hamilton's equations on $T^*\R^n$ if $dh( J_L^{(0)}(q,p) )$ is
-a vector field.  If $h = h_{k,\sigma}$, then we calculate that $dh$
+a vector field.  If $h = h_{p,\sigma}$, then we calculate that $dh$
 evaluated on the $J_L^{(0)}(p,q)$ is the vector field
 \begin{align*}
 	dh( p_a \otimes \delta_{q_a} )  (x) = K^{ab}(x - q^i) p_{ib} \pder{}{x^a}.
@@ -718,17 +718,17 @@ the kernel, $K$.
   conservation law that $0$ is constant in time.
   In summary we find:
   \begin{prop}[\S7 of \cite{MumfordMichor2013}] \label{prop:0-solutions}
-  Let $k \geq \frac{n}{2} +1$ and $\sigma > 0$.
+  Let $p \geq \frac{n}{2} +1$ and $\sigma > 0$.
   Let $H:T^*Q_N^{(0)} \to \R$ be the function
   \begin{align*}
-    H(q,p) =\frac{1}{2} K_{k,\sigma}^{ij}(q_a - q_b)\, p_{a\,i}\, p_{b\,j}.
+    H(q,p) =\frac{1}{2} K_{p,\sigma}^{ij}(q_a - q_b)\, p_{a\,i}\, p_{b\,j}.
   \end{align*}
   If $(q,p)(t)$ is a solution to Hamilton's equations, then
   $m(t) = p_a(t) \otimes \delta_{q_a(t)}$
   is a solution to \eqref{eq:MMDiff}.
 \end{prop}
 \begin{proof}
-	Note that $H = h_{k,\sigma} \circ J_L^{(0)}$ and apply theorems \ref{thm:dual_pairs} and  \ref{thm:commuting_actions}.
+	Note that $H = h_{p,\sigma} \circ J_L^{(0)}$ and apply theorems \ref{thm:dual_pairs} and  \ref{thm:commuting_actions}.
 \end{proof}
 
 \subsection{$1^{\rm st}$-order particle-like solutions}
@@ -812,15 +812,14 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
   \end{proof}
 
   As before, the quantity $dh( J_L^{(1)}(q,p))$ is a legitimate vector field
-  if $K_{k,\sigma}$ is sufficiently smooth.  Moreover, when the Hamiltonian
-  $H^{(1)} = h_{k,\sigma} \circ J_L^{(1)}$ is $C^1$ we may evolve Hamilton's equations
+  if $K_{p,\sigma}$ is sufficiently smooth.  Moreover, when the Hamiltonian
+  $H^{(1)} = h_{p,\sigma} \circ J_L^{(1)}$ is $C^1$ we may evolve Hamilton's equations
   to obtain solutions.
   
 \dm{We need to clarify the differentiability in the Proposition just below. Henry, do you have a reference where you picked this up when you wrote it? Or can you briefly explain your initial thoughts on this? -- Jaap, can you have a look at this as well, please?}
   \begin{prop} \label{prop:1-solutions}
-  	If $K = K_{k,\sigma}$ is $C^{\frac{n}{2} + 2}$ then
-        $H = h_{k,\sigma} \circ J_L$
-	is $C^1$ and given by the expression
+    Let $p \ge \frac{n}{2} + 2$ and $\sigma > 0$.
+    Then $H^{(1)} = h_{p,\sigma} \circ J_L^{(1)}$ is $C^1$ and given by the expression
 	\begin{align*}
 		H^{(1)}(q,p) &= \frac{1}{2} p_{ia} K^{ab}(q^i - q^j) p_{jb}\\
 			&\quad + p\indices{_{ia}^\ell} q\indices{^{ik}_\ell} (\partial_k K^{ab})(q^i - q^j) p_{jb} \\
@@ -831,9 +830,16 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
 	a solution of \eqref{eq:MMDiff} and $J_R^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)$ is
 	constant in time. 
   \end{prop}
-  The proof of the above proposition is identical to that of proposition \ref{prop:0-solutions}.
-  
-  Various vector fields for large $k$
+  The proof of the above proposition is identical to that of
+  proposition~\ref{prop:0-solutions}. Note that $K_{p,\sigma}$ has
+  smoothness $C^{2p-n}$ by considering that the Fourier
+  representations of its derivatives are integrable, while we need
+  $K_{p,\sigma} \in C^{2k+1}$ to allow composition with $k$th
+  derivatives of delta distributions on each side and still obtain a
+  $C^1$ Hamiltonian. See also the more general condition on $p$ in
+  Proposition~\ref{prop:k-solutions}.
+
+  Various vector fields for large kernel smoothness $p$
   are depicted in figure \ref{fig:zoo}
   for different initial values of the traceless matrix $\mu\indices{_i^j} = p\indices{_i^\ell} q\indices{^j_\ell}$.
   
@@ -1007,11 +1013,10 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
    therefore transitive on the level sets of the momentum map $J_R^{(1)}$.
   By theorem \ref{thm:commuting_actions}, $J_L^{(k)}$ and $J_R^{(k)}$ form a dual pair.
   This gives us the final result on jetlet parametrized solutions.
-  The proof is identical to that given in the proposition \ref{prop:0-solutions}.
-\dm{See earlier remarks about regularity in the Prop. below.}
-  \begin{prop}
-  	If $K_{k,\sigma}$ is $C^{\frac{n}{2} + 2k}$ then $H^{(k)} = h_{k,\sigma} \circ J_L^{(k)}$
-	is $C^1$.
+  The proof is identical to that given in Proposition~\ref{prop:0-solutions}.
+  \begin{prop}\label{prop:k-solutions}
+    Let $p \ge \frac{n}{2} + k + 1$ and $\sigma > 0$.
+    Then $H^{(k)} = h_{p,\sigma} \circ J_L^{(k)}$ is $C^1$.
         Let $(q,p)(t)$ be a solution to Hamilton's equations on 
         $T^*Q^{(k)}_N$, then $J_L^{(k)}( (q,p)(t))$ is a solution to Hamilton's
         equations on $\mathfrak{X}_{\rm div}(\R^n)^*$
