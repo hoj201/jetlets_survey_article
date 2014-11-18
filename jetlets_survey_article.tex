@@ -1127,43 +1127,43 @@ When the total momentum is zero, i.e.~$\bar{p} = 0$, we can perform
 another symplectic reduction by rotational symmetry. We switch to
 polar coordinates
 \begin{equation}\label{eq:polar-coords}
-  \tilde{q} = \big(r\cos(\phi),r\sin(\phi)\big)
+  \tilde{q} = \big(r\cos(\varphi),r\sin(\varphi)\big)
 \end{equation}
 with canonically associated momenta
 \begin{equation*}
   \tilde{p} =
   \begin{pmatrix}
-    \cos(\phi) & -\frac{\sin(\phi)}{r} \\
-    \sin(\phi) &  \frac{\cos(\phi)}{r}
+    \cos(\varphi) & -\frac{\sin(\varphi)}{r} \\
+    \sin(\varphi) &  \frac{\cos(\varphi)}{r}
   \end{pmatrix} \cdot
   \begin{pmatrix}
     p_r \\
-    p_\phi
+    p_\varphi
   \end{pmatrix}
-  = R_\phi \cdot
+  = R_\varphi \cdot
   \begin{pmatrix}
     p_r \\
-    \frac{p_\phi}{r}
+    \frac{p_\varphi}{r}
   \end{pmatrix},
 \end{equation*}
-where $R_\phi$ is a rotation matrix. In these coordinates the
+where $R_\varphi$ is a rotation matrix. In these coordinates the
 Hamiltonian is given by
 \begin{equation*}
   \begin{aligned}
   H &= \frac{1}{4} \tilde{p}_i \big[ K^{ij}(0) - K^{ij}(2\tilde{q}) \big] \tilde{p}_j
-     = \frac{1}{4} \begin{pmatrix} p_r \\ p_\phi \end{pmatrix}^T R_\phi^T
-       \big[ K(0) - K(R_\phi\cdot(2r,0)) \big] R_\phi
-       \begin{pmatrix} p_r \\ p_\phi \end{pmatrix}\\
-    &= \frac{1}{4} \begin{pmatrix} p_r \\ p_\phi \end{pmatrix}^T
-       \big[ K(0) - K(2r,0) \big] \begin{pmatrix} p_r \\ p_\phi \end{pmatrix},
+     = \frac{1}{4} \begin{pmatrix} p_r \\ p_\varphi \end{pmatrix}^T R_\varphi^T
+       \big[ K(0) - K(R_\varphi\cdot(2r,0)) \big] R_\varphi
+       \begin{pmatrix} p_r \\ p_\varphi \end{pmatrix}\\
+    &= \frac{1}{4} \begin{pmatrix} p_r \\ p_\varphi \end{pmatrix}^T
+       \big[ K(0) - K(2r,0) \big] \begin{pmatrix} p_r \\ p_\varphi \end{pmatrix},
   \end{aligned}
 \end{equation*}
 where in the last step we used that $K$ as a tensor is invariant under
-rotations. Since $\phi$ is a cyclic variable, we find that its
+rotations. Since $\varphi$ is a cyclic variable, we find that its
 associated momentum
 \begin{equation*}
-  p_\phi = -r \sin(\phi) \tilde{p}_1 + r \cos(\phi) \tilde{p}_2
-         = \tilde{q} \times \tilde{p}
+  p_\varphi = -r \sin(\varphi) \tilde{p}_1 + r \cos(\varphi) \tilde{p}_2
+            = \tilde{q} \times \tilde{p}
 \end{equation*}
 is conserved. Remark that this relative angular momentum is not
 exactly the total angular momentum when $\bar{p} \neq 0$.
