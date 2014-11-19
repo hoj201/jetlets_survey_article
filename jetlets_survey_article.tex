@@ -1151,11 +1151,11 @@ Hamiltonian is given by
 \begin{equation*}
   \begin{aligned}
   H &= \frac{1}{4} \tilde{p}_i \big[ K^{ij}(0) - K^{ij}(2\tilde{q}) \big] \tilde{p}_j
-     = \frac{1}{4} \begin{pmatrix} p_r \\ p_\varphi \end{pmatrix}^T R_\varphi^T
+     = \frac{1}{4} \begin{pmatrix} p_r \\ \frac{p_\varphi}{r} \end{pmatrix}^T R_\varphi^T
        \big[ K(0) - K(R_\varphi\cdot(2r,0)) \big] R_\varphi
-       \begin{pmatrix} p_r \\ p_\varphi \end{pmatrix}\\
-    &= \frac{1}{4} \begin{pmatrix} p_r \\ p_\varphi \end{pmatrix}^T
-       \big[ K(0) - K(2r,0) \big] \begin{pmatrix} p_r \\ p_\varphi \end{pmatrix},
+       \begin{pmatrix} p_r \\ \frac{p_\varphi}{r} \end{pmatrix}\\
+    &= \frac{1}{4} \begin{pmatrix} p_r \\ \frac{p_\varphi}{r} \end{pmatrix}^T
+       \big[ K(0) - K(2r,0) \big] \begin{pmatrix} p_r \\ \frac{p_\varphi}{r} \end{pmatrix},
   \end{aligned}
 \end{equation*}
 where in the last step we used that $K$ as a tensor is invariant under
