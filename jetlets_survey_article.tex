@@ -957,7 +957,9 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   The associated momentum maps are given implicitly by how they act on the respective Lie algebras.
   In particular, the left action of $\SDiff(\R^n)$ yields the momentum map
   \begin{align*}
-  	\langle J_L^{(k)}(q,p) , u \rangle = \sum_{|\alpha| < k } \sum_{j = 1}^{|\alpha|}
+  	\langle J_L^{(k)}(q,p) , u \rangle =
+	\sum_{i=1}^N p_i \otimes \delta_{q^{(0)i}} +
+	 \sum_{|\alpha| < k } \sum_{j = 1}^{|\alpha|}
 		\sum_{
 			\substack{
 				b_1,\dots,b_j \in \{1,\dots,n\} \\
