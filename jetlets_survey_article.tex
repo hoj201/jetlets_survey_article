@@ -8,6 +8,8 @@
 \usetikzlibrary{matrix}
 \usetikzlibrary{cd}
 \usepackage{todonotes}
+\usepackage{hyperref}
+\usepackage{url}
 
 \usepackage{tensor}
 
@@ -1226,6 +1228,33 @@ approximation for the asymptotic curve.
 
 \section{Numerical experiments}
 \label{sec:Numerical experiments}
+
+We have performed a number of numerical simulations\footnote{%
+  The simulation was written using Python and Numpy, the source code
+  and generated videos can be found at:
+  \url{https://github.com/hoj201/incompressible_jet_particles}%
+} of these jetlet particles. These confirm that the conserved
+quantities are indeed conserved and that two $0$-jetlet particles
+merge as shown by the analysis in section~\ref{sec:collisions}.
+Moreover, the merging behavior shows to be stable under perturbations.
+
+As basic experiment we take two $0$-jetlet particles with initial
+states
+\begin{equation}\label{eq:exp1-initial}
+  \begin{alignedat}{2}
+    q_1 &= (-3, 0), &\qquad& p_1 = ( 1.5,-d), \\
+    q_2 &= ( 3, 0), &      & p_2 = (-1.5, d),
+  \end{alignedat}
+\end{equation}
+aimed at each other with offset parameter $d$. Furthermore, we use
+$\sigma = 1$ throughout our experiments. The experiments show that for
+$d = 0.27$ the two particles merge while spinning around each other,
+while for $d = 0.288$ they get close, but then emerge from their close
+spinning state and `fly off' in opposite directions. This confirms the
+analytical value of $d = \sqrt{3/40} \approx 0.2739$ within reasonable
+precision.
+
+
 
 \cjc{Consider two particles, far apart.  Each has it's``own conserved momenta".  They get close, exchange stuff, but the ``actual" momentum is conserved}
 
