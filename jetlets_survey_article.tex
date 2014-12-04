@@ -884,18 +884,27 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
   like $q \indices{^{ia}_{\beta}}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
   and $\beta$ is a multi-index on $\R^n$.
   This coordinate is used to model the partial derivative of the $i^{\rm th}$ coordinate
-  of a diffeomorphism at some point $z_a$, \dm{Reminder: $z_a$ has to be clarified} i.e.\ $\partial_\beta \varphi^a(z_a)$.
+  of a diffeomorphism at some point $z^a \in \R^n$, \dm{Reminder: $z_a$ has to be clarified} i.e.\ $\partial_\beta \varphi^a(z_a)$.
   % This is the primary motivation for this notational convention.
   We will let $q^{a}_\emptyset$ denote the position of the $a^{\rm th}$ particle.
   \hoj{I've made a change in notation.  We are letting $q^a_\emptyset$ denote
   the position of the $a^{\rm th}$ particle.  The old notation was something like $q^{(0),a}$.
   This new notation is less clunky and more consistent with our multi-index convention
   in that the zero-jets have the empty set as a lower index.}
+  \hoj{A note fore David:
+  In terms of the paper with Tudor, we are using the fact
+  that $Q_N^{(k)} = \SDiff(\R^n) / \iso^{(k)}(z)$
+  Where $\iso^{(k)}(z)$ is the subgroup which matches the identity 
+  diffeomorphism to $k$th order.
+  We found that $Q_N^{(k)}$
+  is the space of Taylor series of elements of $\SDiff(M)$
+  evaluated at the points $z^1,\dots,z^N$.  We can think of $z$'s as points in the reference configuration.  If you deform the reference configuration
+  the Taylor series transforms accordingly.}
 
   \begin{prop}
     The group $\SDiff(\R^n)$ acts on $Q_N^{(k)}$ by a left Lie group
-    action.  If $z_1 ,\dots,z_N \in \R^n$ are distinct points,
-    then the isotropy group $\iso(z_1,\dots,z_N) \subset \SDiff(\R^n)$
+    action.  If $z^1 ,\dots,z^N \in \R^n$ are distinct points,
+    then the isotropy group $\iso(z^1,\dots,z^N) \subset \SDiff(\R^n)$
     acts on $Q_N^{(k)}$ by a right Lie group action.
   \end{prop}
   \begin{proof}
@@ -991,11 +1000,11 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   &\quad \sum_{ | \alpha | \leq k } \sum_{j=1}^{|\alpha|}
 		\sum_{
 			\substack{
-				b_1,\dots,b_j \in \{1,\dots,n\} \\
+				i_1,\dots,i_j \in \{1,\dots,n\} \\
 				[\gamma_1,\dots,\gamma_j] \in \Pi(\alpha,j)
 				}
 			}
-			p\indices{_{ia}^\alpha} q\indices{^{ia}_{[b_1 \cdots b_j]}}   \sum_{m}  \partial_{\gamma_m} w^{b_m}(z_i) \left( \prod_{\ell \neq m }  \delta \indices{_{\gamma_\ell}^{b_\ell}} \right)
+			p\indices{_{ai}^\alpha} q\indices{^{ai}_{[i_1 \cdots i_j]}}   \sum_{m=1}^j  \partial_{\gamma_m} w^{i_m}(z_i) \left( \prod_{\ell \neq m }  \delta \indices{_{\gamma_\ell}^{i_\ell}} \right)
   \end{align*}
   where $w \in \mathfrak{X}_{\rm div}(\R^n)$ is such that $w(z) = 0$ (this describes the Lie algebra of $\iso(z)$),
   and $\delta\indices{_{\gamma}^{b}}$ equals $1$ if the multi-index $\gamma$ is equal to the integer $b$
