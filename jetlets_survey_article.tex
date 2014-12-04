@@ -881,12 +881,16 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
   We will use Greek indices to represent spatial
   multi-indices on $\R^n$ (see Appendix \ref{app:multi} for our multi-index convention).
   A typical coordinate on $Q^{(k)}_N$ will therefore look
-  like $q^i_{a\,\beta}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
+  like $q \indices{^{ia}_{\beta}}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
   and $\beta$ is a multi-index on $\R^n$.
-  This coordinate is used to model the partial derivative of the $a^{\rm th}$ coordinate
-  of a diffeomorphism at some point $z_i$, \dm{Reminder: $z_i$ has to be clarified} i.e.\ $\partial_\beta \varphi^a(z_i)$.
+  This coordinate is used to model the partial derivative of the $i^{\rm th}$ coordinate
+  of a diffeomorphism at some point $z_a$, \dm{Reminder: $z_a$ has to be clarified} i.e.\ $\partial_\beta \varphi^a(z_a)$.
   % This is the primary motivation for this notational convention.
-  We will let $q^{(0)i}$ denote the position of the $i$th particle.
+  We will let $q^{a}_\emptyset$ denote the position of the $a^{\rm th}$ particle.
+  \hoj{I've made a change in notation.  We are letting $q^a_\emptyset$ denote
+  the position of the $a^{\rm th}$ particle.  The old notation was something like $q^{(0),a}$.
+  This new notation is less clunky and more consistent with our multi-index convention
+  in that the zero-jets have the empty set as a lower index.}
 
   \begin{prop}
     The group $\SDiff(\R^n)$ acts on $Q_N^{(k)}$ by a left Lie group
@@ -977,7 +981,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
 				[\gamma_1,\dots,\gamma_j] \in \Pi(\alpha,j)
 				}
 			}
-			p \indices{_{ia}^{\alpha}} \partial_{b_1 \cdots b_j}u^a ( q^{(0)i})  q\indices{^{b_1}_{\gamma_1}} \cdots q\indices{^{b_j}_{\gamma_j}}
+			p \indices{_{ia}^{\alpha}} \partial_{b_1 \cdots b_j}u^a ( q^{i}_\emptyset)  q\indices{^{b_1}_{\gamma_1}} \cdots q\indices{^{b_j}_{\gamma_j}}
   \end{align*}
   for arbitrary divergence free vector fields $u \in \mathfrak{X}_{\rm div}(\R^n)$.
   The right action of $\iso(z)$ yields the momentum map $J_R^{(k)}$ defined implicitly by the relation
