@@ -907,11 +907,11 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
       \left(
         \sum_{
         \substack{
-          b_1,\dots,b_k \in \{1,\dots,d\} \\
+          i_1,\dots,i_k \in \{1,\dots,d\} \\
           [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
           }
           }
-          \partial_{b_1 \cdots b_k} \varphi_1(\varphi_2(x)) 
+          \partial_{i_1 \cdots i_k} \varphi_1(\varphi_2(x)) 
           \partial_{\gamma_1} \varphi_2^{b_1} \cdots
           \partial_{\gamma_k} \varphi_2^{b_k}
         \right),
@@ -933,37 +933,37 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
     only uses data in $q = \Jet^k_z(\psi)$ and nothing more.
     In local coordinates, this action takes the form
     \begin{align*}
-    (\varphi \cdot q)\indices{^{ia}_\alpha} = 
+    (\varphi \cdot q)\indices{^{ai}_\alpha} = 
      \sum_{k=1}^{|\alpha|}
       \left(
         \sum_{
         \substack{
-          b_1,\dots,b_k \in \{1,\dots,d\} \\
+          i_1,\dots,i_k \in \{1,\dots,d\} \\
           [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
           }
           }
-          \partial_{b_1 \cdots b_k} \varphi^a(q \indices{^{i}_\emptyset} ) 
-          q \indices{^{b_1}_{\gamma_1}} \cdots
-          q \indices{^{b_k}_{\gamma_k}}
+          \partial_{i_1 \cdots i_k} \varphi^i(q \indices{^{a}_\emptyset} ) 
+          q \indices{^{i_1}_{\gamma_1}} \cdots
+          q \indices{^{i_k}_{\gamma_k}}
         \right),
     \end{align*}
-    except for the component where $|\alpha | = 0$ in which case we observe $(\varphi \cdot q) \indices{^{ia}_\emptyset} = \varphi(q_\emptyset)$.
+    except for the component where $|\alpha | = 0$ in which case we observe $(\varphi \cdot q)^{ai}_\emptyset = \varphi(q^a_\emptyset)$.
     By the same construction, a left $\iso(z)$ action is induced
     on $Q_1^{(k)}$ by setting $q \cdot \phi = \Jet^k_z ( \psi \circ \phi)$ for any $\psi$ such that $\Jet^k_z(\psi) = q$.
     We can choose distinct points $z_1,\dots,z_N \in \R^n$
     and easily apply the same process to $Q_N^{(k)}$.  In this case we observe the action to be
       \begin{align*}
-      (q \cdot \psi)\indices{^{ia}_\alpha} = \sum_{k=1}^{|\alpha|}
+      (q \cdot \psi)\indices{^{ai}_\alpha} = \sum_{k=1}^{|\alpha|}
       \left(
         \sum_{
         \substack{
-          b_1,\dots,b_k \in \{1,\dots,d\} \\
+          i_1,\dots,i_k \in \{1,\dots,d\} \\
           [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
           }
           }
-          q\indices{^{ia}_{[b_1,\dots,b_k]} } 
-          \partial_{\gamma_1} \psi^{b_1}(z^i) \cdots
-          \partial_{\gamma_k} \psi^{b_k}(z^i)
+          q\indices{^{ai}_{[i_1,\dots,i_k]} } 
+          \partial_{\gamma_1} \psi^{b_1}(z^a) \cdots
+          \partial_{\gamma_k} \psi^{b_k}(z^a)
         \right).
     \end{align*}
   \end{proof}
@@ -973,15 +973,16 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   In particular, the left action of $\SDiff(\R^n)$ yields the momentum map
   \begin{align*}
   	\langle J_L^{(k)}(q,p) , u \rangle =
-	\sum_{i=1}^N p_i \otimes \delta_{q^{(0)i}} +
+	\sum_{a=1}^N \left( p_a \otimes \delta_{q^{a}_\emptyset} +
 	 \sum_{|\alpha| < k } \sum_{j = 1}^{|\alpha|}
 		\sum_{
 			\substack{
-				b_1,\dots,b_j \in \{1,\dots,n\} \\
+				i_1,\dots,i_j \in \{1,\dots,n\} \\
 				[\gamma_1,\dots,\gamma_j] \in \Pi(\alpha,j)
 				}
 			}
-			p \indices{_{ia}^{\alpha}} \partial_{b_1 \cdots b_j}u^a ( q^{i}_\emptyset)  q\indices{^{b_1}_{\gamma_1}} \cdots q\indices{^{b_j}_{\gamma_j}}
+			p \indices{_{ai}^{\alpha}} \partial_{i_1 \cdots i_j}u^a ( q^{i}_\emptyset)  q\indices{^{i_1}_{\gamma_1}} \cdots q\indices{^{i_j}_{\gamma_j}}
+			\right)
   \end{align*}
   for arbitrary divergence free vector fields $u \in \mathfrak{X}_{\rm div}(\R^n)$.
   The right action of $\iso(z)$ yields the momentum map $J_R^{(k)}$ defined implicitly by the relation
