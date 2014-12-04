@@ -909,7 +909,7 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
           }
           \partial_{b_1 \cdots b_k} \varphi_1(\varphi_2(x)) 
           \partial_{\gamma_1} \varphi_2^{b_1} \cdots
-          \partial_{\gamma_n} \varphi_2^{b_k}
+          \partial_{\gamma_k} \varphi_2^{b_k}
         \right),
     \end{align*}
 where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of a multi-index $\alpha$. We refer to \ref{app:multi} for the details of our index conventions and to \cite{ConstantineSavits1996,Jacobs2014b} for a
@@ -927,10 +927,41 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
     That this is independent of the choice of $\psi$ follows
     from observing that the Fa\`a di Bruno formula
     only uses data in $q = \Jet^k_z(\psi)$ and nothing more.
+    In local coordinates, this action takes the form
+    \begin{align*}
+    (\varphi \cdot q)\indices{^{ia}_\alpha} = 
+     \sum_{k=1}^{|\alpha|}
+      \left(
+        \sum_{
+        \substack{
+          b_1,\dots,b_k \in \{1,\dots,d\} \\
+          [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
+          }
+          }
+          \partial_{b_1 \cdots b_k} \varphi^a(q \indices{^{i}_\emptyset} ) 
+          q \indices{^{b_1}_{\gamma_1}} \cdots
+          q \indices{^{b_k}_{\gamma_k}}
+        \right),
+    \end{align*}
+    except for the component where $|\alpha | = 0$ in which case we observe $(\varphi \cdot q) \indices{^{ia}_\emptyset} = \varphi(q_\emptyset)$.
     By the same construction, a left $\iso(z)$ action is induced
     on $Q_1^{(k)}$ by setting $q \cdot \phi = \Jet^k_z ( \psi \circ \phi)$ for any $\psi$ such that $\Jet^k_z(\psi) = q$.
     We can choose distinct points $z_1,\dots,z_N \in \R^n$
-    and easily apply the same process to $Q_N^{(k)}$.
+    and easily apply the same process to $Q_N^{(k)}$.  In this case we observe the action to be
+      \begin{align*}
+      (q \cdot \psi)\indices{^{ia}_\alpha} = \sum_{k=1}^{|\alpha|}
+      \left(
+        \sum_{
+        \substack{
+          b_1,\dots,b_k \in \{1,\dots,d\} \\
+          [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
+          }
+          }
+          q\indices{^{ia}_{[b_1,\dots,b_k]} } 
+          \partial_{\gamma_1} \psi^{b_1}(z^i) \cdots
+          \partial_{\gamma_k} \psi^{b_k}(z^i)
+        \right).
+    \end{align*}
   \end{proof}
   
   Just as in the previous sections, the actions of $\SDiff(\R^n)$ and $\iso(z)$ lift to commuting actions on $T^*Q_N^{(k)}$.
