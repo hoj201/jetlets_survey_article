@@ -619,8 +619,8 @@ more explicitly as a measure-valued momentum map in terms of the Dirac-delta dis
   J_L^{(0)}( q , p ) = p \otimes \delta_q
 \end{align*}
 where $\delta_q$ is the Dirac-delta distribution on $\R^n$ centered at $q$.
-This identification holds modulo $dC^1(\R^d) \otimes d{\bf x}$ where $dC^1(\R^d)$
-is the space of $C^0$-exact one-forms and $d{\bf x}$ is the canonical volume from on $\R^d$
+This identification holds modulo $dC^1(\R^n) \otimes d{\bf x}$ where $dC^1(\R^n)$
+is the space of $C^0$-exact one-forms and $d{\bf x}$ is the canonical volume from on $\R^n$
 (see Appendix \ref{sec:measure_valued_momap}).
 Since $J_L^{(0)}$ is a cotangent-lift momentum map, it is equivariant and therefore Poisson, again by \cite[Thm~12.4.9]{MandS}.
 % As the cotangent lifted action of $\SDiff(\R^n)$ is equivariant,
@@ -916,7 +916,7 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
       \left(
         \sum_{
         \substack{
-          i_1,\dots,i_k \in \{1,\dots,d\} \\
+          i_1,\dots,i_k \in \{1,\dots,n\} \\
           [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
           }
           }
@@ -947,7 +947,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
       \left(
         \sum_{
         \substack{
-          i_1,\dots,i_k \in \{1,\dots,d\} \\
+          i_1,\dots,i_k \in \{1,\dots,n\} \\
           [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
           }
           }
@@ -966,7 +966,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
       \left(
         \sum_{
         \substack{
-          i_1,\dots,i_k \in \{1,\dots,d\} \\
+          i_1,\dots,i_k \in \{1,\dots,n\} \\
           [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
           }
           }
@@ -1067,30 +1067,30 @@ In particular, circulation is one of the conserved momenta
 associated to the particle relabeling symmetry of fluids.
 More specifically,
 recall that $h_0$ is the Hamiltonian for Euler's equations,
-and this Hamiltonian is $\SDiff(\R^d)$ invariant.
-In this instance we have a dual pair $\lambda, \rho : T^*\SDiff(\R^d) \to \mathfrak{X}_{\rm div}(\R^d)$ induces by
-the left and right action of $\SDiff(\R^d)$ on itself.
-The dynamics on $T^*\SDiff(\R^d)$ exhibit the constant of motion
+and this Hamiltonian is $\SDiff(\R^n)$ invariant.
+In this instance we have a dual pair $\lambda, \rho : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)$ induces by
+the left and right action of $\SDiff(\R^n)$ on itself.
+The dynamics on $T^*\SDiff(\R^n)$ exhibit the constant of motion
 \begin{align}
   \langle \rho(\varphi,p_\varphi) , w \rangle = \langle p_\varphi , T\varphi \cdot w \rangle \label{eq:circulation}
 \end{align}
-for all $w \in \mathfrak{X}_{\rm div}(\R^d)$.
+for all $w \in \mathfrak{X}_{\rm div}(\R^n)$.
 A ``regularized'' version of this conservation law holds in our regularized model.
 Our models are obtained by using the deformed Hamiltonian
 $h_\epsilon$ in place of $h_0$.
-These regularized Hamiltonians are also $\SDiff(\R^d)$ invariant, and
+These regularized Hamiltonians are also $\SDiff(\R^n)$ invariant, and
 therefore \eqref{eq:circulation} is also conserved in the regularized models.
 
 Lastly, these conserved quantities are inherited by the finite dimensional jet-particle solutions.
 To see this it is useful to assemble the $k$-th order isotropy group,
-$\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^d) \mid J^{(k)}_z( \psi) = id_z \}$.
-Then we see that $Q^{(k)} := \SDiff(\R^d) / \iso^{(k)}(z)$.
-The space $T^*Q^{(k)}$ then naturally embeds into $(T^*\SDiff(\R^d)) / (\iso^{(k)}(z))$.
+$\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid J^{(k)}_z( \psi) = id_z \}$.
+Then we see that $Q^{(k)} := \SDiff(\R^n) / \iso^{(k)}(z)$.
+The space $T^*Q^{(k)}$ then naturally embeds into $(T^*\SDiff(\R^n)) / (\iso^{(k)}(z))$.
 The commutativity of the following diagram uniquely defines the jet-particle solutions.
 \begin{equation}
  \begin{tikzcd}
-   \mathfrak{X}_{\rm div}(\R^d)^* & \ar[l,"\lambda"] T^*\SDiff(\R^d) \ar[r,"\rho"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
-   & (T^*\SDiff(\R^d)) / \iso^{(k)}(z) & \\
+   \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l,"\lambda"] T^*\SDiff(\R^n) \ar[r,"\rho"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
+   & (T^*\SDiff(\R^n)) / \iso^{(k)}(z) & \\
    & T^*Q^{(k)} \uar{i} \ar[uur,"J_R",bend right = 30] \ar[uul,"J_L",bend left = 30] &
  \end{tikzcd}
 \end{equation}
@@ -1705,7 +1705,7 @@ A multi-set is nothing but a set with some notion of multiplicity \cite{Blizard1
 In this paper, a multi-index on $\R^n$ is a multiset of elements derived from the generating set $\{1,\dots,n\}$.
 Heuristically, a multi-index is just a ``bag of marbles'' each of which comes in $n$ ``colors''.
 Given two multi-indices $\alpha \in \bag^i(n)$ and $\beta \in \bag^j(n)$ one can create the
-multi-set union $\alpha \cup \beta \in \bag^{i+j}(d)$ by collecting the marbles of $\alpha$ and $\beta$ into a single bag.
+multi-set union $\alpha \cup \beta \in \bag^{i+j}(n)$ by collecting the marbles of $\alpha$ and $\beta$ into a single bag.
 Given integers $b_1,\dots,b_j \in \R^n$, we can define the unique multi-index $\beta = [b_1,\dots,b_j] \in \bag^j(n)$
 obtained by collecting $b_1,\dots,b_j$ into a bag.
 Given these conventions, we can denote the partial differential operator $\partial_{b_1 \cdots b_n }$ by $\partial_\beta$.
@@ -1727,38 +1727,38 @@ The multiset of $2$-fold partitions is $\Pi( [1,2,1],2)$, and consists of three 
 Note that the first and the third partition correspond to the same multiset.
 The cardinality of $\Pi( [1,2,1],2)$ is $3$, although it only has two distinct elements (one with a multiplicity of $1$, and another with a multiplicity of $2$).
 
-\section{The dual space of $\mathfrak{X}_{\rm div}(\R^d)$}
+\section{The dual space of $\mathfrak{X}_{\rm div}(\R^n)$}
 \label{sec:measure_valued_momap}
 In this section we will provide a terse and incomplete
 characterizations of the dual space of divergence free 
 vector fields.  First let us characterize the dual space of the space of all vector fields (with ``proper'' decay).
-Let $\mathfrak{X}(\R^d)$ be the space of vector fields which decay at infinity
-in such a way that $\mathfrak{X}(\R^d)$ is Fr\'echet.
-Viewing $\mathfrak{X}(\R^d)$ as a subspace of functions from $\R^d$ to $\R^d$
+Let $\mathfrak{X}(\R^n)$ be the space of vector fields which decay at infinity
+in such a way that $\mathfrak{X}(\R^n)$ is Fr\'echet.
+Viewing $\mathfrak{X}(\R^n)$ as a subspace of functions from $\R^n$ to $\R^n$
 we can view it's dual as a space of distributions.
-That is to say, given any $m \in \mathfrak{X}(\R^d)^*$ we may write $m$ as a tensor
+That is to say, given any $m \in \mathfrak{X}(\R^n)^*$ we may write $m$ as a tensor
 product $p \otimes \mu$ where $\mu$ is a distribution (perhaps a measure)
-on $\R^d$ and $p$ is a covector field (i.e. a one-form).
-Conversely, given any $p \in \Omega^1(\R^d)$ and distribution $\mu \in \mathcal{D}(\R^d)$
+on $\R^n$ and $p$ is a covector field (i.e. a one-form).
+Conversely, given any $p \in \Omega^1(\R^n)$ and distribution $\mu \in \mathcal{D}(\R^n)$
 we may form the tensor product $p \otimes \mu$.
-The object $p\otimes \mu$ is identified as an element of $\mathfrak{X}(\R^d)^*$ through
+The object $p\otimes \mu$ is identified as an element of $\mathfrak{X}(\R^n)^*$ through
 the pairing
 \begin{align*}
-	\langle p \otimes \mu , u \rangle :=  \int_{\R^d} \langle p(x) , u(x) \rangle \mu.
+	\langle p \otimes \mu , u \rangle :=  \int_{\R^n} \langle p(x) , u(x) \rangle \mu.
 \end{align*}
-where $\langle p(x),u(x) \rangle$ is the function on $\R^d$ obtained by pairing the covector $p(x) \in T_x^*\R^d$ with the vector $u(x) \in T_x\R^d$.
+where $\langle p(x),u(x) \rangle$ is the function on $\R^n$ obtained by pairing the covector $p(x) \in T_x^*\R^n$ with the vector $u(x) \in T_x\R^n$.
 If we restrict ourselves to the case of divergence free vector-fields, we need to quotient
-the dual space appropriately.  In particular, we see that the annihilator of $\mathfrak{X}_{\rm div}(\R^d)$
-as a subspace of $\mathfrak{X}(\R^d)$ is
+the dual space appropriately.  In particular, we see that the annihilator of $\mathfrak{X}_{\rm div}(\R^n)$
+as a subspace of $\mathfrak{X}(\R^n)$ is
 \begin{align*}
-	(\mathfrak{X}_{\rm div}(\R^d) )^\circ := \{ m \in \mathfrak{X}(\R^d)^* \mid \langle m , u \rangle = 0 , \forall u \in \mathfrak{X}_{\rm div}(\R^d) \}\\
-		:= {\rm closure}\{ p \otimes d{\bf x} \in \mathfrak{X}(\R^d) \mid p \text{ is a closed one-form} \}.
+	(\mathfrak{X}_{\rm div}(\R^n) )^\circ := \{ m \in \mathfrak{X}(\R^n)^* \mid \langle m , u \rangle = 0 , \forall u \in \mathfrak{X}_{\rm div}(\R^n) \}\\
+		:= {\rm closure}\{ p \otimes d{\bf x} \in \mathfrak{X}(\R^n) \mid p \text{ is a closed one-form} \}.
 \end{align*}
-where $d{\bf x}$ is the canonical volume form on $\R^d$ and
+where $d{\bf x}$ is the canonical volume form on $\R^n$ and
 we have used the fact that the gradient fields and the harmonic vector fields are $L^2$-orthogonal to the divergence free vector fields.
-The dual space $\mathfrak{X}_{\rm div}(\R^d)^*$ is identical to the quotient space $\mathfrak{X}(\R^d) / (\mathfrak{X}_{\rm div}(\R^d))^\circ$.
-In other words, we may view a $m \in \mathfrak{X}_{\rm div}(\R^d)^*$ as an object of the form $p \otimes \mu$ modulo $\mathfrak{X}_{\rm div}(\R^d)^\circ$.
-In the text we will typically not mention $\mathfrak{X}_{\rm div}(\R^d)^\circ$ explicitly, and simply identify $m$ with $p \otimes \mu$.
+The dual space $\mathfrak{X}_{\rm div}(\R^n)^*$ is identical to the quotient space $\mathfrak{X}(\R^n) / (\mathfrak{X}_{\rm div}(\R^n))^\circ$.
+In other words, we may view a $m \in \mathfrak{X}_{\rm div}(\R^n)^*$ as an object of the form $p \otimes \mu$ modulo $\mathfrak{X}_{\rm div}(\R^n)^\circ$.
+In the text we will typically not mention $\mathfrak{X}_{\rm div}(\R^n)^\circ$ explicitly, and simply identify $m$ with $p \otimes \mu$.
 This is a harmless identification as long as we don't pair it with a non-divergence free vector-field.
 
 \section{Equations of motion for 2-jets}
