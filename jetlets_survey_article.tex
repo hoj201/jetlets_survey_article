@@ -586,7 +586,7 @@ The tangent lift of the former is defined in the obvious way by sending
 \begin{align*}
   (q,v) \in T\R^n \equiv \R^n \times \R^n
   \stackrel{ \varphi \in \SDiff(\R^n) }{\longmapsto}
-  (\varphi(q) , \partial_j\varphi^i(q) v^j ) \in T_{\varphi(q)} \R^n.
+  \big(\varphi(q) , (\partial_j\varphi^i(q) v^j) \partial_i \big) \in T_{\varphi(q)} \R^n.
 \end{align*}
 The cotangent lift is defined by taking the dual
 of  the tangent lifted action.
@@ -594,9 +594,10 @@ That is to say,
 \begin{align*}
   (q, p) \in T^*\R^n \equiv \R^n \times \R^n
   \stackrel{ \varphi \in \SDiff(\R^n) }{\longmapsto}
-  (\varphi^{-1}(q) , \partial_i\varphi^j(q) p_j ).
+  \big(\varphi^{-1}(q) , (\partial_i\varphi^j(q) p_j) e^i \big)
 \end{align*}
-The momentum map 
+where $\{e^i\}$ forms the dual basis to $\{\partial_i\}$ at $\varphi^{-1}(q)$.
+The momentum map
 $J^{(0)}_L : T^*\R^n \to \mathfrak{X}_{\rm div}(\R^n)^*$
 associated to this left action is defined by the
 condition
