@@ -826,7 +826,7 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
   \begin{figure}
   	\centering
         \includegraphics[width=0.5\textwidth]{./images/zoo}
-        \caption{a zoo of $1^{\rm st}$-order jet lets}
+        \caption{a zoo of $1^{\rm st}$-order jetlets}
         \label{fig:zoo}
   \end{figure}
 
@@ -876,7 +876,7 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
   We define the space for an $N$-tuple of $k$-jetlets by taking a product
   \begin{align*}
     Q^{(k)}_N = \{ (q_1,\dots, q_N) \in Q_1^{(k)} \times \dots \times Q_1^{(k)}
-    \mid a \neq b \implies \pi^{(k)}(q_a) \neq \pi^{(k)}(q_b) \}.
+    \mid \pi^{(k)}(q_a) \neq \pi^{(k)}(q_b) \text{ when } a \neq b \}.
   \end{align*}
   We coordinatize $Q^{(k)}_N$ as follows.
   We will use Greek indices to represent spatial
@@ -1071,28 +1071,28 @@ recall that $h_0$ is the Hamiltonian for Euler's equations,
 and this Hamiltonian is $\SDiff(\R^n)$ invariant.
 In this instance we have a dual pair $\lambda, \rho : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)$ induces by
 the left and right action of $\SDiff(\R^n)$ on itself.
-The dynamics on $T^*\SDiff(\R^n)$ exhibit the constant of motion
+The dynamics on $T^*\SDiff(\R^n)$ exhibits the constant of motion
 \begin{align}
   \langle \rho(\varphi,p_\varphi) , w \rangle = \langle p_\varphi , T\varphi \cdot w \rangle \label{eq:circulation}
 \end{align}
 for all $w \in \mathfrak{X}_{\rm div}(\R^n)$.
-A ``regularized'' version of this conservation law holds in our regularized model.
+A ``regularized'' version of this conservation law holds in our regularized models.
 Our models are obtained by using the deformed Hamiltonian
 $h_\epsilon$ in place of $h_0$.
 These regularized Hamiltonians are also $\SDiff(\R^n)$ invariant, and
 therefore \eqref{eq:circulation} is also conserved in the regularized models.
 
 Lastly, these conserved quantities are inherited by the finite dimensional jet-particle solutions.
-To see this it is useful to assemble the $k$-th order isotropy group,
+To see this, it is useful to assemble the $k$-th order isotropy group,
 $\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid J^{(k)}_z( \psi) = id_z \}$.
-Then we see that $Q^{(k)} := \SDiff(\R^n) / \iso^{(k)}(z)$.
-The space $T^*Q^{(k)}$ then naturally embeds into $(T^*\SDiff(\R^n)) / (\iso^{(k)}(z))$.
+Then we see that $Q^{(k)}_1 := \SDiff(\R^n) / \iso^{(k)}(z)$.
+The space $T^*Q^{(k)}$ then naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$.
 The commutativity of the following diagram uniquely defines the jet-particle solutions.
 \begin{equation}
  \begin{tikzcd}
-   \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l,"\lambda"] T^*\SDiff(\R^n) \ar[r,"\rho"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
-   & (T^*\SDiff(\R^n)) / \iso^{(k)}(z) & \\
-   & T^*Q^{(k)} \uar{i} \ar[uur,"J_R",bend right = 30] \ar[uul,"J_L",bend left = 30] &
+   \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l,"\lambda"'] T^*\SDiff(\R^n) \ar[r,"\rho"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
+   & T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
+   & T^*Q^{(k)} \uar{i} \ar[uur,"J_R"',bend right = 30] \ar[uul,"J_L",bend left = 30] &
  \end{tikzcd}
 \end{equation}
 Again, the right-let of both dual pairs yields the conserved quantities.
