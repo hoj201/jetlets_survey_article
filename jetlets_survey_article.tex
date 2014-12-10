@@ -1273,9 +1273,73 @@ aimed at each other with an offset parameter $d$. Furthermore, we use
 $\sigma = 1$ throughout our experiments. The experiments show that for
 $d = 0.27$ the two particles merge while spinning around each other,
 while for $d = 0.288$ they get close, but then emerge from their close
-spinning state and `fly off' in opposite directions. This confirms the
+spinning state and scatter in opposite directions. This confirms the
 analytical value of $d = \sqrt{3/40} \approx 0.2739$ within reasonable
-precision.
+precision, noting that this is the asymptotic value for particles
+starting close to each other.
+
+Secondly, we performed a number of more complex simulations, all of
+those being small perturbations of the basic experiment described
+above. First, we added a small angular momentum `spin' component to
+both particles, turning both into $1$-jetlets, one level higher in the
+hierarchy. Then we added a third particle (both a $0$-jetlet and
+$1$-jetlet) at such a distance and momentum that it exhibits medium
+range interaction with the first two particles. Finally, we added a
+small hyperbolic-like `stretching' momentum to the first particle
+only. These configurations cannot be studied analytically anymore, but
+the simulations show that the behavior observed in the basic
+experiment persists. We can find parameter values of $d$ close to the
+original one where the system shows a transition between the two
+particles merging or scattering.
+
+Finally, these experiments confirm the preservation of the conserved
+quantities present in the system. Table~\ref{tab:conservation-errors}
+shows the absolute errors in various conserved quantities for the
+various simulations described above over a time of $60$ seconds. The
+value of the energy in all cases is between $1$ and $2$. The linear
+and angular momenta together form the value of $J_L^{(1)}$. The error
+in $J_R^{(1)}$ is shown indivually for both jetlet particles, since
+this momentum is not exchanged betwee particles (in contrast with
+$J_L^{(1)}$); note that a zero here indicates that no difference was
+found up to floating point precision.
+
+\begin{table}[tb]
+\centering
+\begin{tabular}{|l|rrrrr|}
+  \hline
+  experiment $\backslash$
+             conserved quant.       & energy  & lin.~mom. & ang.~mom. & $J_R^{(1)}$ part.~1
+                                                                                & $J_R^{(1)}$ part.~2 \\
+  \hline
+  \hline
+  0-jetlets merging                 & 9.9E-05 & 6.6E-10   & 5.9E-05   & 3.5E-05 & 1.4E-04 \\
+  \hline
+  0-jetlets scattering              & 3.6E-05 & 1.8E-14   & 3.0E-05   & 0       & 0 \\
+  \hline
+  1-jetlets merging                 & 1.7E-04 & 5.5E-11   & 4.1E-07   & 3.0E-04 & 3.6E-04 \\
+  \hline
+  1-jetlets scattering              & 1.8E-05 & 7.1E-16   & 1.7E-07   & 3.5E-07 & 3.5E-06 \\
+  \hline
+  \parbox{4cm}{0-jetlets merging,\\
+  third 0-jetlet present}           & 2.1E-04 & 3.8E-12   & 6.1E-05   & 0       & 0 \\
+  \hline
+  \parbox{4cm}{0-jetlets scattering,\\
+  third 0-jetlet present}           & 3.1E-06 & 8.6E-14   & 1.0E-05   & 0       & 0 \\
+  \hline
+  \parbox{4cm}{0-jetlets merging,\\
+  third 1-jetlet present}           & 2.3E-04 & 1.0E-12   & 5.2E-05   & 0       & 0 \\
+  \hline
+  \parbox{4cm}{0-jetlets scattering,\\
+  third 1-jetlet present}           & 1.3E-05 & 4.6E-14   & 2.1E-05   & 0       & 0 \\
+  \hline
+  `stretching' 1-jetlets merging    & 1.4E-04 & 3.4E-13   & 1.9E-07   & 2.9E-04 & 0 \\
+  \hline
+  `stretching' 1-jetlets scattering & 1.5E-04 & 4.6E-15   & 2.0E-07   & 3.5E-05 & 0 \\
+  \hline
+\end{tabular}
+\caption{Absolute errors in the conserved quantities for a number of numerical simulations.}
+\label{tab:conservation-errors}
+\end{table}
 
 
 
