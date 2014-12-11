@@ -630,21 +630,21 @@ Since $J_L^{(0)}$ is a cotangent-lift momentum map, it is equivariant and theref
 
 We define the manifold for particles,
 \begin{align*}
-  Q_N^{(0)} = \left\{ (q^1,\dots,q^N) \in \R^n \times \dots\times \R^n
-                 \mid q_i \neq q_j \text{ when } i \neq j \right\}.
+  Q_N^{(0)} = \left\{ (q_1,\dots,q_N) \in \R^n \times \dots\times \R^n
+                 \mid q_a \neq q_b \text{ when } a \neq b \right\}.
 \end{align*}
-We will index the particles with $i,j,k,\dots$ and Cartesian coordinate
-directions in $\R^n$ with indices $a,b,c,\dots$
+We will index the particles with $a,b,c,\dots$ and Cartesian coordinate
+directions in $\R^n$ with indices $i,j,k,\dots$
 Thus each $q \in Q_N^{(0)}$ can be decomposed
-into $N$ particles as $(q^1,\dots,q^N)$, where each $q^i \in \R^n$
-and the $a^{\rm th}$ coordinate of the $i^{\rm th}$ particle
-is denoted by $q^{ia}$.
+into $N$ particles as $(q_1,\dots,q_N)$, where each $q_a \in \R^n$
+and the $i^{\rm th}$ coordinate of the $a^{\rm th}$ particle
+is denoted by $q\indices{_a^i}$.
 
 The group $\SDiff(\R^n)$ acts on $Q_N^{(0)}$ by the diagonal action.
 Through the same manipulations as we applied previously we obtain the
 momentum map for $N$ particles given by
 \begin{align*}
-  J_L^{(0)}(q,p) = p_i \otimes \delta_{q^i}, 
+  J_L^{(0)}(q,p) = p_a \otimes \delta_{q_a},
 \end{align*}
 where a sum over repeated indices is implied.
 
@@ -655,9 +655,8 @@ Hamilton's equations on $T^*\R^n$ if $dh( J_L^{(0)}(q,p) )$ is
 a vector field.  If $h = h_{p,\sigma}$, then we calculate that $dh$
 evaluated on the $J_L^{(0)}(p,q)$ is the vector field
 \begin{align*}
-	dh( p_a \otimes \delta_{q_a} )  (x) = K^{ab}(x - q^i) p_{ib} \pder{}{x^a}.
+	dh( p_a \otimes \delta_{q_a} )  (x) = K^{ij}(x - q_a) p_{a\,j} \pder{}{x^i}.
 \end{align*}
-\dm{Henry, can you check the indices above? I think it probably should be $i$ on the left hand side?}
 This is a vector field whose differentiability is determined completely by that of
 the kernel, $K$.
 
@@ -749,25 +748,27 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
   Also as before, we can generalize this construction to the space of
   $N > 1$ particles by considering the space
   \begin{align*}
-    Q^{(1)}_N = \left\{  ( q^1 , \dots, q^N ) \mid
+    Q^{(1)}_N = \left\{  ( q_1 , \dots, q_N ) \mid
       \begin{array}{c}
-        q^i = (q^{(0),i},q^{(1),i}) \in \R^n \times \SL(n) \\
-        q^{(0),i} \neq q^{(0),j} \text{ when } i \neq j
+        q_a = (q^{(0)}_a,q^{(1)}_a) \in \R^n \times \SL(n) \\
+        q^{(0)}_a \neq q^{(0)}_b \text{ when } a \neq b
       \end{array} \right\}.
   \end{align*}
   For convenience it is nice to choose coordinates at this point.
-  If we let $q^i$ denote the position of the $i$th particle,
-  $q^{ia}$ denote the $a^{\rm th}$ component of this position,
-  and let $q\indices{^{ib}_c}$ denote the $(b,c)$ entry of the $i$th
+  If we let $q_a$ denote the position of the $a^{\rm th}$ particle,
+  $q\indices{_a^i}$ denote the $i^{\rm th}$ component of this position,
+  and let $q\indices{_a^i_j}$ denote the $(i,j)$ entry of the $a^{\rm th}$
   matrix then the resulting momentum map is defined by the condition
   \begin{align*}
-    \langle J_L^{(1)}(q,p) , u \rangle = p\indices{_{ia}} u^a(q^{(0)i}) + p \indices{_{ia}^{b}} \partial_c u^a(q^{(0)i}) q\indices{^{(1)c}_b}
+    \langle J_L^{(1)}(q,p) , u \rangle
+    = p\indices{_a_i} u^i(q^{(0)}_a) + p\indices{_a_i^j} \partial_k u^i(q^{(0)}_a) q\indices{_a^k_j}
   \end{align*}
-  for an arbitrary $u \in \mathfrak{X}_{\rm div}(\R^d)$.
+  for an arbitrary $u \in \mathfrak{X}_{\rm div}(\R^n)$.
   In terms of the Dirac-delta functional, we can write $J_L^{(1)}$ as the measure-valued momentum map
   \begin{align*}
     J_L^{(1)}(q, p)
-    = p_{ia}dx^a \otimes \delta_{q_i} - p\indices{_{ia}^c} q\indices{^{ib}_c} dx^a \otimes \partial_b \delta_{q_i}
+    = p\indices{_a_i} dx^i \otimes \delta_{q_a}
+     -p\indices{_a_i^k} q\indices{_a^j_k} dx^i \otimes \partial_j \delta_{q_a}
   \end{align*}
   Moreover, there is a (non-trivial) right group action by $\iso(z)$ \dm{Reminder, $\iso(z)$ needs to be clarified; something like $\iso(z)$ is the subgroup of $\SDiff$ that leaves invariant all particle locations in the reference configuration.} on $Q^{(1)}_N$ given by
   \begin{align*}
@@ -775,12 +776,13 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
   \end{align*}
   This action yields the cotangent-lift momentum map defined by the condition
   \begin{align*}
-  	\langle J_R^{(1)}(q,p) , u \rangle = p \indices{_{ia}^b} q\indices{^{ia}_c} \partial_b u^c(z^i)
+    \langle J_R^{(1)}(q,p) , u \rangle = p\indices{_a_i^j} q\indices{_a^i_k} \partial_j u^k(z_a)
   \end{align*}
   In terms of the Dirac delta functional we may write this as the measure-valued momentum map
   \begin{align*}
-    J_R^{(1)}( q,p) = - p\indices{_{ia}^b} q\indices{^{ia}_c}  dx^c \otimes \partial_b \delta_{q^i}
+    J_R^{(1)}(q,p) = - p\indices{_a_i^j} q\indices{_a^i_k} dx^k \otimes \partial_j \delta_{q_a}
   \end{align*}
+  \je{Shouldn't $\delta_{q_a}$ be $\delta_{z_a}$ here? Or change the formula above?}
   \begin{prop}
     The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
   \end{prop}
@@ -801,10 +803,18 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
     Let $p \ge \frac{n}{2} + 2$ and $\sigma > 0$.
     Then $H^{(1)} = h_{p,\sigma} \circ J_L^{(1)}$ is $C^1$ and given by the expression
 	\begin{align*}
-		H^{(1)}(q,p) &= \frac{1}{2} p_{ia} K^{ab}(q^i - q^j) p_{jb}\\
-			&\quad + p\indices{_{ia}^\ell} q\indices{^{ik}_\ell} (\partial_k K^{ab})(q^i - q^j) p_{jb} \\
-			&\quad - p\indices{_{ia}^n} q\indices{^{i\ell}_n} (\partial_l \partial_k K^{ab})(q^i - q^j) q\indices{^{jk}_m}  p\indices{_{jb}^m}.
+		H^{(1)}(q,p) &= \frac{1}{2} p\indices{_a_i} K^{ij}(q_a - q_b) p\indices{_b_j}\\
+			&\quad + p\indices{_a_i^l} q\indices{_a^k_l} (\partial_k K^{ij})(q_a - q_b) p\indices{_b_j} \\
+			&\quad - p\indices{_a_i^n} q\indices{_a^l_n} (\partial_l \partial_k K^{ij})(q_a - q_b) q\indices{_b^k_m} p\indices{_b_j^m}.
   \end{align*}
+  \je{This was an index mess. I think these are ok now, but I don't
+    trust the signs and coefficients: I did a quick recalculation and
+    think there should be a factor $+\frac{1}{2}$ in front of the last
+    term, and the middle term should cancel out because of
+    anti-symmetry of $\partial_k K^{ij}(q_a - q_b)$ under $a
+    \leftrightarrow b$. Both the current term and my suggested change
+    are different again from the code, where the energy seems fairly
+    well preserved\ldots}
   If $(q,p)(t) \in T^*Q_N^{(1)}$ is a solution to Hamilton's equations with respect to
 	$H^{(1)}$, then $J_L^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)^*$ is
 	a solution of \eqref{eq:MMDiff} and $J_R^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)$ is
@@ -821,8 +831,9 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
 
   Various vector fields for large kernel smoothness $p$
   are depicted in figure \ref{fig:zoo}
-  for different initial values of the traceless matrix $\mu\indices{_i^j} = p\indices{_i^\ell} q\indices{^j_\ell}$.
-  
+  for different initial values of the traceless matrix
+  $\mu\indices{_i^j} = p\indices{_i^l} q\indices{^j_l}$.
+
   \begin{figure}
   	\centering
         \includegraphics[width=0.5\textwidth]{./images/zoo}
@@ -882,12 +893,12 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
   We will use Greek indices to represent spatial
   multi-indices on $\R^n$ (see Appendix \ref{app:multi} for our multi-index convention).
   A typical coordinate on $Q^{(k)}_N$ will therefore look
-  like $q \indices{^{ia}_{\beta}}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
+  like $q\indices{_a^i_\beta}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
   and $\beta$ is a multi-index on $\R^n$.
   This coordinate is used to model the partial derivative of the $i^{\rm th}$ coordinate
-  of a diffeomorphism at some point $z^a \in \R^n$, \dm{Reminder: $z_a$ has to be clarified} i.e.\ $\partial_\beta \varphi^a(z_a)$.
+  of a diffeomorphism at some point $z_a \in \R^n$, \dm{Reminder: $z_a$ has to be clarified} i.e.\ $\partial_\beta \varphi^i(z_a)$.
   % This is the primary motivation for this notational convention.
-  We will let $q^{a}_\emptyset$ denote the position of the $a^{\rm th}$ particle.
+  We will let $q\indices{_a_\emptyset}$ denote the position of the $a^{\rm th}$ particle.
   \hoj{I've made a change in notation.  We are letting $q^a_\emptyset$ denote
   the position of the $a^{\rm th}$ particle.  The old notation was something like $q^{(0),a}$.
   This new notation is less clunky and more consistent with our multi-index convention
@@ -899,13 +910,16 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
   diffeomorphism to $k$th order.
   We found that $Q_N^{(k)}$
   is the space of Taylor series of elements of $\SDiff(M)$
-  evaluated at the points $z^1,\dots,z^N$.  We can think of $z$'s as points in the reference configuration.  If you deform the reference configuration
+  evaluated at the points $z_1,\dots,z_N$.  We can think of $z$'s as points in the reference configuration.  If you deform the reference configuration
   the Taylor series transforms accordingly.}
+
+\je{I've changed the index conventions in the text below and I've
+  tried to check that I did it right, but I'm not 100\% sure.}
 
   \begin{prop}
     The group $\SDiff(\R^n)$ acts on $Q_N^{(k)}$ by a left Lie group
-    action.  If $z^1 ,\dots,z^N \in \R^n$ are distinct points,
-    then the isotropy group $\iso(z^1,\dots,z^N) \subset \SDiff(\R^n)$
+    action.  If $z_1,\dots,z_N \in \R^n$ are distinct points,
+    then the isotropy group $\iso(z_1,\dots,z_N) \subset \SDiff(\R^n)$
     acts on $Q_N^{(k)}$ by a right Lie group action.
   \end{prop}
   \begin{proof}
@@ -917,13 +931,13 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
       \left(
         \sum_{
         \substack{
-          i_1,\dots,i_k \in \{1,\dots,n\} \\
+          j_1,\dots,j_k \in \{1,\dots,n\} \\
           [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
           }
           }
-          \partial_{i_1 \cdots i_k} \varphi_1(\varphi_2(x)) 
-          \partial_{\gamma_1} \varphi_2^{b_1} \cdots
-          \partial_{\gamma_k} \varphi_2^{b_k}
+          \partial_{j_1 \cdots j_k} \varphi_1(\varphi_2(x))
+          \partial_{\gamma_1} \varphi_2^{j_1} \cdots
+          \partial_{\gamma_k} \varphi_2^{j_k}
         \right),
     \end{align*}
 where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of a multi-index $\alpha$. We refer to Appendix~\ref{app:multi} for the details of our index conventions and to \cite{ConstantineSavits1996,Jacobs2014b} for a
@@ -943,37 +957,37 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
     only uses data in $q = \Jet^k_z(\psi)$ and nothing more.
     In local coordinates, this action takes the form
     \begin{align*}
-    (\varphi \cdot q)\indices{^{ai}_\alpha} = 
+    (\varphi \cdot q)^i_\alpha =
      \sum_{k=1}^{|\alpha|}
       \left(
         \sum_{
         \substack{
-          i_1,\dots,i_k \in \{1,\dots,n\} \\
+          j_1,\dots,j_k \in \{1,\dots,n\} \\
           [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
           }
           }
-          \partial_{i_1 \cdots i_k} \varphi^i(q \indices{^{a}_\emptyset} ) 
-          q \indices{^{i_1}_{\gamma_1}} \cdots
-          q \indices{^{i_k}_{\gamma_k}}
+          \partial_{j_1 \cdots j_k} \varphi^i(q_\emptyset)
+          q^{j_1}_{\gamma_1} \cdots
+          q^{j_k}_{\gamma_k}
         \right),
     \end{align*}
-    except for the component where $|\alpha | = 0$ in which case we observe $(\varphi \cdot q)^{ai}_\emptyset = \varphi(q^a_\emptyset)$.
-    By the same construction, a left $\iso(z)$ action is induced
+    except for the component where $|\alpha | = 0$ in which case we observe $(\varphi \cdot q)^i_\emptyset = \varphi^i(q_\emptyset)$.
+    By the same construction, a right $\iso(z)$ action is induced
     on $Q_1^{(k)}$ by setting $q \cdot \phi = \Jet^k_z ( \psi \circ \phi)$ for any $\psi$ such that $\Jet^k_z(\psi) = q$.
     We can choose distinct points $z_1,\dots,z_N \in \R^n$
     and easily apply the same process to $Q_N^{(k)}$.  In this case we observe the action to be
-      \begin{align*}
-      (q \cdot \psi)\indices{^{ai}_\alpha} = \sum_{k=1}^{|\alpha|}
+    \begin{align*}
+      (q \cdot \psi)\indices{_a^i_\alpha} = \sum_{k=1}^{|\alpha|}
       \left(
         \sum_{
         \substack{
-          i_1,\dots,i_k \in \{1,\dots,n\} \\
+          j_1,\dots,j_k \in \{1,\dots,n\} \\
           [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
           }
           }
-          q\indices{^{ai}_{[i_1,\dots,i_k]} } 
-          \partial_{\gamma_1} \psi^{b_1}(z^a) \cdots
-          \partial_{\gamma_k} \psi^{b_k}(z^a)
+          q\indices{_a^i_{[j_1,\dots,j_k]}}
+          \partial_{\gamma_1} \psi^{j_1}(z_a) \cdots
+          \partial_{\gamma_k} \psi^{j_k}(z_a)
         \right).
     \end{align*}
   \end{proof}
@@ -981,61 +995,68 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   Just as in the previous sections, the actions of $\SDiff(\R^n)$ and $\iso(z)$ lift to commuting actions on $T^*Q_N^{(k)}$.
   The associated momentum maps are given implicitly by how they act on the respective Lie algebras.
   In particular, the left action of $\SDiff(\R^n)$ yields the momentum map
-  \begin{align*}
+  \begin{equation*}
   	\langle J_L^{(k)}(q,p) , u \rangle =
-	\sum_{a=1}^N \left( p_a \otimes \delta_{q^{a}_\emptyset} +
-	 \sum_{|\alpha| < k } \sum_{j = 1}^{|\alpha|}
+	\sum_{a=1}^N \left( p_a \otimes \delta_{q\indices{_a_\emptyset}} +
+	 \sum_{|\alpha| < k } \sum_{l = 1}^{|\alpha|}
 		\sum_{
 			\substack{
-				i_1,\dots,i_j \in \{1,\dots,n\} \\
-				[\gamma_1,\dots,\gamma_j] \in \Pi(\alpha,j)
+				j_1,\dots,j_l \in \{1,\dots,n\} \\
+				[\gamma_1,\dots,\gamma_l] \in \Pi(\alpha,l)
 				}
 			}
-			p \indices{_{ai}^{\alpha}} \partial_{i_1 \cdots i_j}u^a ( q^{i}_\emptyset)  q\indices{^{i_1}_{\gamma_1}} \cdots q\indices{^{i_j}_{\gamma_j}}
+			p\indices{_a_m^\alpha} \partial_{j_1 \cdots j_l}u^m (q\indices{_a_\emptyset})
+      q\indices{_a^{j_1}_{\gamma_1}} \cdots
+      q\indices{_a^{j_l}_{\gamma_l}}
 			\right)
-  \end{align*}
+  \end{equation*}
   for arbitrary divergence free vector fields $u \in \mathfrak{X}_{\rm div}(\R^n)$.
   The right action of $\iso(z)$ yields the momentum map $J_R^{(k)}$ defined implicitly by the relation
-  \begin{align*}
-  &\langle J_R^{(k)}(q,p) , w \rangle = \\
-  &\quad \sum_{ | \alpha | \leq k } \sum_{j=1}^{|\alpha|}
+  \begin{equation*}
+    \langle J_R^{(k)}(q,p) , w \rangle =
+    \sum_{ | \alpha | \leq k } \sum_{l=1}^{|\alpha|}
 		\sum_{
 			\substack{
-				i_1,\dots,i_j \in \{1,\dots,n\} \\
-				[\gamma_1,\dots,\gamma_j] \in \Pi(\alpha,j)
+				j_1,\dots,j_l \in \{1,\dots,n\} \\
+				[\gamma_1,\dots,\gamma_l] \in \Pi(\alpha,l)
 				}
 			}
-			p\indices{_{ai}^\alpha} q\indices{^{ai}_{[i_1 \cdots i_j]}}   \sum_{m=1}^j  \partial_{\gamma_m} w^{i_m}(z_i) \left( \prod_{\ell \neq m }  \delta \indices{_{\gamma_\ell}^{i_\ell}} \right)
-  \end{align*}
+			p\indices{_a_i^\alpha} q\indices{_a^i_{[j_1 \cdots j_l]}}
+      \sum_{m=1}^l  \partial_{\gamma_m} w^{j_m}(z_a) \left( \prod_{n \neq m}  \delta_{\gamma_n}^{[j_n]} \right)
+  \end{equation*}
+  \je{I think the sum over $m$ should be replaced by a (tensor)
+    product, also in the formula two below.}
   where $w \in \mathfrak{X}_{\rm div}(\R^n)$ is such that $w(z) = 0$ (this describes the Lie algebra of $\iso(z)$),
-  and $\delta\indices{_{\gamma}^{b}}$ equals $1$ if the multi-index $\gamma$ is equal to the integer $b$
-  and equals $0$ otherwise. \dm{I dont' understand this. How can a multi-index by equal to an integer?}
+  and $\delta_\alpha^\beta$ is a generalization of the Kronecker-delta symbol to multi-indices.
+  \dm{I dont' understand this. How can a multi-index by equal to an integer?}
+  \je{I hope you agree that saying that we generalize the Kronecker symbol to multi-indices is brief and clear.}
   We can write these momentum maps explicitly, using the Dirac delta distribution, as
-  \begin{align*}
-    &J_L^{(k)}(q,p) \\
-    &= p \indices{_{ia}^{\alpha}} dx^a \otimes
+  \begin{equation*}
+    J_L^{(k)}(q,p) =
+    p\indices{_a_i^\alpha} dx^i \otimes
     \sum_{|\alpha| \leq k } \sum_{k=1}^{|\alpha|} (-1)^{k}
     \left(
       \sum_{\substack{
-          b_1,\dots,b_k \in \{1,\dots,n\} \\
+          j_1,\dots,j_k \in \{1,\dots,n\} \\
           [\gamma_1,\dots,\gamma_k] \in \Pi( \alpha,k)
           }
         }
-      q\indices{^{i\beta_1}_{\gamma_1}} \cdots q\indices{^{i\beta_k}_{\gamma_k}}
-      \partial_{b_1 \cdots b_k} \delta(\cdot - q^{(0)i}) \right)
-    \end{align*}
-    and
-  \begin{align*}
-  & J_R^{(k)}(q,p) = \\
-  &\quad \sum_{ | \alpha | \leq k } \sum_{j=1}^{|\alpha|}
+      q\indices{_a^{j_1}_{\gamma_1}} \cdots q\indices{_a^{j_k}_{\gamma_k}}
+      \partial_{j_1 \cdots j_k} \delta(\cdot - q^{(0)}_a) \right)
+  \end{equation*}
+  and
+  \begin{equation*}
+    J_R^{(k)}(q,p) =
+    \sum_{ | \alpha | \leq k } \sum_{l=1}^{|\alpha|}
 		\sum_{
 			\substack{
-				b_1,\dots,b_j \in \{1,\dots,n\} \\
-				[\gamma_1,\dots,\gamma_j] \in \Pi(\alpha,j)
+				j_1,\dots,j_l \in \{1,\dots,n\} \\
+				[\gamma_1,\dots,\gamma_l] \in \Pi(\alpha,l)
 				}
 			}
-			p\indices{_{ia}^\alpha} q\indices{^{ia}_{[b_1 \cdots b_j]}}   \sum_{m}  (-1)^{|\gamma_m|}\left( \prod_{\ell \neq m }  \delta \indices{_{\gamma_\ell}^{b_\ell}} \right) \otimes \partial_{\gamma_m}( \cdot - z_i)
-  \end{align*}
+			p\indices{_a_i^\alpha} q\indices{_a^i_{[j_1 \cdots j_l]}}
+      \sum_{m} (-1)^{|\gamma_m|}\left( \prod_{n \neq m}  \delta_{\gamma_n}^{[b_n]} \right) \otimes \partial_{\gamma_m}\delta(\cdot - z_a)
+  \end{equation*}
   The action of $\SDiff(\R^n)$ is transitive on $Q_N^{(k)}$, and
   therefore transitive on the level sets of the momentum map $J_R^{(1)}$.
   By theorem \ref{thm:commuting_actions}, $J_L^{(k)}$ and $J_R^{(k)}$ form a dual pair.
@@ -1125,7 +1146,7 @@ momentum. We identify the limiting merged state as a $1$-jetlet.
 
 We start with the Hamiltonian $H^{(0)}$ for two $0$-jetlet particles,
 \begin{equation}\label{eq:H-two-0jetlets}
-  H = \frac{1}{2} \sum_{a,b=1}^2 p_{a\,i} K^{ij}(q_a - q_b) p_{b\,j}
+  H = \frac{1}{2} \sum_{a,b=1}^2 p\indices{_a_i} K^{ij}(q_a - q_b) p\indices{_b_j}
 \end{equation}
 on $T^* \R^{2n}$ with the canonical Poisson brackets.
 Translation symmetry allows us perform symplectic reduction. We switch
@@ -1764,6 +1785,9 @@ This is a harmless identification as long as we don't pair it with a non-diverge
 
 \section{Equations of motion for 2-jets}
 \label{sec:eom}
+
+\je{I haven't applied our index conventions here yet.}
+
 The equations of motion are expressible as Hamiltonian
 equations with respect to a non-canonical Poisson bracket.
 If we denote $q^{(0)}$ simply by $q$ and $p^{(0)}$ simply
