@@ -45,6 +45,7 @@
 \author{Ronan}
 
 \begin{document}
+
 \maketitle
 
 \begin{abstract}
@@ -627,7 +628,6 @@ Since $J_L^{(0)}$ is a cotangent-lift momentum map, it is equivariant and theref
 % As the cotangent lifted action of $\SDiff(\R^n)$ is equivariant,
 % we observe that $J_L^{(0)}$ is Poisson, again by 
 
-
 We define the manifold for particles,
 \begin{align*}
   Q_N^{(0)} = \left\{ (q_1,\dots,q_N) \in \R^n \times \dots\times \R^n
@@ -659,26 +659,17 @@ evaluated on the $J_L^{(0)}(p,q)$ is the vector field
 \end{align*}
 This is a vector field whose differentiability is determined completely by that of
 the kernel, $K$.
-
 \begin{figure}
 	\centering
 	\includegraphics[width = 0.6\textwidth]{./images/zero_jet}
 	\caption{A $0$-jetlet with momentum $m = (1,0)^T \otimes \delta_0$.}
 	\label{fig:zero_jetlet}
 \end{figure}
-
-  Let $z \in Q_N^{(0)}$. \dm{ It isn't clear what the point $z$ is here. Maybe we should say that $z$ is the particle location in the reference configuration, or the particle location at time $t=0$?}
-  We can consider the isotropy group $\iso(z) = \{ \varphi \in \SDiff(\R^n) \mid \varphi(z) = z \}$.  The group $\iso(z)$ acts on $Q_N^{(0)}$
-  by the trivial right action $q \cdot \varphi = q$.
-  This yields the momentum map $J_R^{(0)}(q,p) = 0$.
-\dm{Here, instead, we could just say: Introduce the (trivial) momentum map $J_R^{(0)} := 0$ to formally construct a dual pair. Then we would not have to introduce the somewhat pointless group action above.}
-  We see that $J_L^{(0)}$ is injective, and thus has a trivial kernel.
-  As a result, the symplectic orthogonal to the kernel of $J_L^{(0)}$
-  is the full tangent bundle $T(T^*Q_N^{(0)})$.
-  Moreover, the kernel of $J_R^{(0)}$ is $T(T^*Q_N^{(0)})$ and so its
-  symplectic orthogonal is trivial.
-  From these observations it follows that the diagram
-  \begin{alignat*}{2}
+Once one has found a solution $(q(t), p(t))$ to Hamilton's equations on $T^*\mathbb{R}^n$ and thus also a solution to Hamilton's equations on $\mathfrak{X}_{\rm div}(\mathbb{R}^n)$, one can proceed to integrate the corresponding time-dependent vector field to obtain the fluid motion $\varphi_t$ in $\rm{SDiff}(\mathbb{R}^n)$. It is natural (but not mandatory) to choose the initial map $\varphi_0$ to be the identity or at least to be a diffeomorphism that satisfies $\varphi_0(q_a(0))= q_a(0)$, all $a$. 
+  If this choice is made, one can interpret the curve $q(t) = (q_1(t), \ldots, q_N(t))$ in $Q_N^{(0)}$ as the locations of particles as they are swept along by the fluid flow, that is, $q_a(t) = \varphi_t(q_a(0))$ for all $a = 1, \ldots, N$. 
+  
+  We see that $J_L^{(0)}$ is injective, and thus has a trivial kernel. As a result, the symplectic orthogonal to the kernel of $J_L^{(0)}$  is the full tangent bundle $T(T^*Q_N^{(0)})$. Hence, if we define the (trivial) map $J_R^{(0)}: T^*Q^{(0)}_N \to \mathfrak{X}_{\rm div}(\mathbb{R}^n)$ by $J_R^{(0)} \equiv 0$, it follows that the diagram
+ \begin{alignat*}{2}
     \mathfrak{X}_{\rm div}(\R^n)^* \stackrel{J_L^{(0)} }{\longleftarrow}&
     \,T^* Q_N^{(0)}
     &&\stackrel{J_R^{(0)} }{\longrightarrow} \mathfrak{X}_{\rm div}(\R^n)^* \\
@@ -686,16 +677,19 @@ the kernel, $K$.
     \;\;(q,p)
     &&\stackrel{J_R^{(0)} }{\longmapsto} 0
   \end{alignat*}
-  is a dual pair.
-  Again, this dual pair allows us to express conservation
+  is a dual pair. 
+  This dual pair allows us to express conservation
   laws and dynamics as a result of theorem \ref{thm:dual_pairs}.
-  The left leg represents the space in which particle-like
+   Namely, the left leg represents the space in which particle-like
   solutions to \eqref{eq:MMDiff} evolve,
-  while the right leg represents the conserved quantities
-  associated to the trivial symmetry.
-\dm{If we change the above and just introduce the momentum map directly, we should probably remove the following sentence.}
-  Specifically, $J_R^{(0)}$ expresses the trivial  
-  conservation law that $0$ is constant in time.
+  while the right leg represents a (trivial) conserved quantity. 
+    
+  In order to make contact with the later parts of the paper, it is useful to remark that $J_R^{(0)}$ can formally be understood as the cotangent lift momentum map associated with a certain (trivial) group action. To that end, we fix a designated point $z = (z_1, \ldots, z_N) \in Q_N^{(0)}$ and take an arbitrary element $ q= (q_1, \ldots, q_N) \in Q_N^{(0)}$ to represent the set of all $\varphi \in {\rm SDiff}(\mathbb{R}^n)$ that satisfy $\varphi \cdot q  = q$. That is,  $\varphi(z_a) = q_a$, all $a$.  This means in particular that the specification of $(q_1, \ldots, q_N)$ fixes the $0^{\rm th}$ order Taylor expansion (at the locations $z_a$) of the corresponding set of diffeomorphisms. With this in mind, let us define the isotropy group
+   \begin{align}
+{\rm iso}(z)  = \{ \psi \in {\rm SDiff}(\mathbb{R}^n) | \psi(z_a) = z_a, \mbox{ all } a\} \label{isotropy_group}
+\end{align} 
+and a (trivial) right action on $Q_N^{(0)}$ where $\psi \in {\rm iso}(z)$ maps an element $(\varphi(z_1), \ldots, \varphi(z_N))$ to $( \varphi \circ \psi (z_1), \ldots, \varphi \circ \psi(z_N))$. Similar constructions will be crucial in later sections, when constructing the right leg of a dual pair for the higher levels in the hierarchy of particle-like solutions. 
+
   In summary we find:
   \begin{prop}[\S7 of \cite{MumfordMichor2013}] \label{prop:0-solutions}
   Let $p \geq \frac{n}{2} +1$ and $\sigma > 0$.
@@ -770,19 +764,24 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
     = p\indices{_a_i} dx^i \otimes \delta_{q_a}
      -p\indices{_a_i^k} q\indices{_a^j_k} dx^i \otimes \partial_j \delta_{q_a}
   \end{align*}
-  Moreover, there is a (non-trivial) right group action by $\iso(z)$ \dm{Reminder, $\iso(z)$ needs to be clarified; something like $\iso(z)$ is the subgroup of $\SDiff$ that leaves invariant all particle locations in the reference configuration.} on $Q^{(1)}_N$ given by
-  \begin{align*}
-    (q^{(0)} , q^{(1)} ) \cdot \psi = (q^{(0)} , q^{(1)} \cdot D\psi|_z).
-  \end{align*}
-  This action yields the cotangent-lift momentum map defined by the condition
+  Next, we construct a dual momentum map associated with a right action on $Q_N^{(1)}$. Analogous to the previous section  it is useful at this stage to write elements of $Q_N^{(1)}$ in the form $ \varphi \cdot z = (\varphi (z_1, {\mathbf{1}}), \ldots, \varphi \cdot (z_N , \mathbf{1}))$, $\varphi \in {\rm SDiff}(\mathbb{R}^n)$, for some designated element $ z=( (z_1, \mathbf{1}), \ldots, (z_N, \mathbf{1}))$. Clearly, every element of $Q_N^{(1)}$ can be written in this form for some  $\varphi \in {\rm SDiff}(\mathbb{R}^n)$. Indeed, with this convention the specification of an element in $Q_N^{(1)}$ fixes the $1^{\rm st}$ order Taylor expansion of $\varphi$ at the locations $z_a$, $a = 1, \ldots, N$. With this in mind, let us recall the isotropy group ${\rm iso}(z)$ defined earlier in \eqref{isotropy_group}, which leaves these locations invariant, and define a right action on  $Q_N^{(1)}$ given by 
+\begin{align}
+	 (\varphi \cdot z) \cdot \psi  = (\varphi \circ \psi) \cdot z. \notag
+	 \end{align}
+	 That is, 
+ \begin{align}
+	 (q^{(0)}, q^{(1)}) \cdot \psi = \left( \left(q_1^{(0)}, q_1^{(1)} \cdot D\psi|_{z_1}\right), \ldots, \left(q_N^{(0)}, q_N^{(1)} \cdot D\psi|_{z_N}\right)\right). \label{1-rightaction}
+\end{align}
+In Proposition \ref{HL_action_prop} we will generalize this construction to define a right action for the higher levels in the hierarchy of particle-like solutions.
+  The action \eqref{1-rightaction} yields the cotangent-lift momentum map defined by the condition
   \begin{align*}
     \langle J_R^{(1)}(q,p) , u \rangle = p\indices{_a_i^j} q\indices{_a^i_k} \partial_j u^k(z_a)
   \end{align*}
   In terms of the Dirac delta functional we may write this as the measure-valued momentum map
   \begin{align*}
-    J_R^{(1)}(q,p) = - p\indices{_a_i^j} q\indices{_a^i_k} dx^k \otimes \partial_j \delta_{q_a}
+    J_R^{(1)}(q,p) = - p\indices{_a_i^j} q\indices{_a^i_k} dx^k \otimes \partial_j \delta_{z_a}
   \end{align*}
-  \je{Shouldn't $\delta_{q_a}$ be $\delta_{z_a}$ here? Or change the formula above?}
+%  \je{Shouldn't $\delta_{q_a}$ be $\delta_{z_a}$ here? Or change the formula above? -- DM: I agree. I have changed it and removed the box.}
   \begin{prop}
     The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
   \end{prop}
@@ -815,6 +814,7 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
     \leftrightarrow b$. Both the current term and my suggested change
     are different again from the code, where the energy seems fairly
     well preserved\ldots}
+    \dm{If I compare it with our previous jetlet article I'm inclined to say that there should be a factor of 2 in front of the middle factor, but that the formula is correct otherwise...?}
   If $(q,p)(t) \in T^*Q_N^{(1)}$ is a solution to Hamilton's equations with respect to
 	$H^{(1)}$, then $J_L^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)^*$ is
 	a solution of \eqref{eq:MMDiff} and $J_R^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)$ is
@@ -826,8 +826,9 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
   representations of its derivatives are integrable, while we need
   $K_{p,\sigma} \in C^{2k+1}$ to allow composition with $k$th
   derivatives of delta distributions on each side and still obtain a
-  $C^1$ Hamiltonian. See also the more general condition on $p$ in
-  Proposition~\ref{prop:k-solutions}.
+  $C^1$ Hamiltonian. (See also the more general condition on $p$ in
+  proposition~\ref{prop:k-solutions} below.)
+  As before, it is useful to interpret the trajectory $q(t)$ of the previous proposition in terms of the curve $\varphi_t \in  {\rm SDiff}(\mathbb{R}^n)$ obtained by integrating the time-dependent vector field $dh_{p, \sigma} J_L^{(1)}((q, p)(t)) = K_{p, \sigma} * J_L^{(1)}((q, p)(t))$. If one chooses $\varphi_0$ to be the identity or  any other element of ${\rm SDiff}(\mathbb{R}^n)$ that satisfies $\varphi_0 \cdot (q(0)) = q(0)$, then  $q(t) = \varphi_t \cdot  q(0)$. This implies in particular that the $q_a^{(0)}(t)$ are the trajectories of the particles as they are swept along by the fluid flow.
 
   Various vector fields for large kernel smoothness $p$
   are depicted in figure \ref{fig:zoo}
@@ -837,16 +838,13 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
   \begin{figure}
   	\centering
         \includegraphics[width=0.5\textwidth]{./images/zoo}
-        \caption{a zoo of $1^{\rm st}$-order jetlets}
+        \caption{A zoo of $1^{\rm st}$-order jetlets}
         \label{fig:zoo}
   \end{figure}
 
   \subsection{Higher-order particles}
   \label{sec:higher_order}
-  In this section we will introduce a hierarchy of particle solutions.
-\dm{Have commented out:...,  where the $k^{\rm th}$ level of the hierarchy includes the $(k-1)^{\rm th}$ level. -- I didn't understand that.}
-  % where the $k^{\rm th}$ level of the hierarchy includes the $(k-1)^{\rm th}$
-  % level.
+  In this section we will introduce a hierarchy of particle solutions whose $k^{\rm th}$ level includes the solutions at the $(k-1)^{\rm th}$ level.
   The $0^{\rm th}$-level in the hierarchy are the standard particle-like solutions,
   while the $1^{\rm st}$ level describes the particles with internal $\SL(n)$ variables
   discussed in the previous section.
@@ -896,7 +894,7 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
   like $q\indices{_a^i_\beta}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
   and $\beta$ is a multi-index on $\R^n$.
   This coordinate is used to model the partial derivative of the $i^{\rm th}$ coordinate
-  of a diffeomorphism at some point $z_a \in \R^n$, \dm{Reminder: $z_a$ has to be clarified} i.e.\ $\partial_\beta \varphi^i(z_a)$.
+  of a diffeomorphism at some point $z_a \in \R^n$, i.e.\ $\partial_\beta \varphi^i(z_a)$.
   % This is the primary motivation for this notational convention.
   We will let $q\indices{_a_\emptyset}$ denote the position of the $a^{\rm th}$ particle.
   \hoj{I've made a change in notation.  We are letting $q^a_\emptyset$ denote
@@ -920,7 +918,7 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
     The group $\SDiff(\R^n)$ acts on $Q_N^{(k)}$ by a left Lie group
     action.  If $z_1,\dots,z_N \in \R^n$ are distinct points,
     then the isotropy group $\iso(z_1,\dots,z_N) \subset \SDiff(\R^n)$
-    acts on $Q_N^{(k)}$ by a right Lie group action.
+    acts on $Q_N^{(k)}$ by a right Lie group action. \label{HL_action_prop}
   \end{prop}
   \begin{proof}
     Let $\varphi_1,\varphi_2 \in \SDiff(\R^n)$.
@@ -1026,10 +1024,11 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   \end{equation*}
   \je{I think the sum over $m$ should be replaced by a (tensor)
     product, also in the formula two below.}
+    \dm{I can't really comment. I'm still struggling to read this formula. In my own derivation I think I was able to get rid of some of the interior sums (this step probably corresponds to contracting out the Kronecker deltas), so it looks a bit different. I don't really understand what you mean anyway though...?}
   where $w \in \mathfrak{X}_{\rm div}(\R^n)$ is such that $w(z) = 0$ (this describes the Lie algebra of $\iso(z)$),
-  and $\delta_\alpha^\beta$ is a generalization of the Kronecker-delta symbol to multi-indices.
-  \dm{I dont' understand this. How can a multi-index by equal to an integer?}
-  \je{I hope you agree that saying that we generalize the Kronecker symbol to multi-indices is brief and clear.}
+  and $\delta_\alpha^\beta$ is the natural generalization of the Kronecker-delta symbol to multi-indices.
+%  \dm{I dont' understand this. How can a multi-index by equal to an integer?}
+%  \je{I hope you agree that saying that we generalize the Kronecker symbol to multi-indices is brief and clear.}
   We can write these momentum maps explicitly, using the Dirac delta distribution, as
   \begin{equation*}
     J_L^{(k)}(q,p) =
@@ -1074,7 +1073,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   \subsection{Kelvin's circulation theorem}
   \label{sec:Kelvin}
   In this section we relate the conserved quantities associated
-  to $J_R^{(k)}$ to Kelvin's circulation theorem.
+  to $J_R^{(k)}$ with Kelvin's circulation theorem.
 Let $\varphi_t \in \SDiff(\R^n)$ denote the flow-map
 produced by a solution to Euler's equation.
 Let $x(s,t) = \varphi_t(x_0(s))$ for some loop $x_0(s)$.
@@ -1083,6 +1082,7 @@ Kelvin's circulation theorem states that the circulation
   \Gamma(t) = \oint u( x(s,t) )  \cdot \partial_s x(s,t) ds
 \end{align*}
 is constant in time.
+\dm{In the interest of time I will not add an additional remark here for now. Maybe later, when we revise the paper.}
 It was shown in \cite{Arnold1966} that this conservation law
 is merely an instance of Noether's theorem.
 In particular, circulation is one of the conserved momenta
@@ -1090,7 +1090,7 @@ associated to the particle relabeling symmetry of fluids.
 More specifically,
 recall that $h_0$ is the Hamiltonian for Euler's equations,
 and this Hamiltonian is $\SDiff(\R^n)$ invariant.
-In this instance we have a dual pair $\lambda, \rho : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)$ induces by
+In this instance we have a dual pair $\lambda, \rho : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)$ induced by
 the left and right action of $\SDiff(\R^n)$ on itself.
 The dynamics on $T^*\SDiff(\R^n)$ exhibits the constant of motion
 \begin{align}
@@ -1103,10 +1103,10 @@ $h_\epsilon$ in place of $h_0$.
 These regularized Hamiltonians are also $\SDiff(\R^n)$ invariant, and
 therefore \eqref{eq:circulation} is also conserved in the regularized models.
 
-Lastly, these conserved quantities are inherited by the finite dimensional jet-particle solutions.
-To see this, it is useful to assemble the $k$-th order isotropy group,
+Moreover, these conserved quantities are inherited by the finite dimensional jet-particle solutions.
+To see this, it is useful to define the $k$-th order isotropy group,
 $\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid J^{(k)}_z( \psi) = id_z \}$.
-Then we see that $Q^{(k)}_1 := \SDiff(\R^n) / \iso^{(k)}(z)$.
+Then we see that $Q^{(k)}_1 = \SDiff(\R^n) / \iso^{(k)}(z)$.
 The space $T^*Q^{(k)}$ then naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$.
 The commutativity of the following diagram uniquely defines the jet-particle solutions.
 \begin{equation}
@@ -1116,7 +1116,7 @@ The commutativity of the following diagram uniquely defines the jet-particle sol
    & T^*Q^{(k)} \uar{i} \ar[uur,"J_R"',bend right = 30] \ar[uul,"J_L",bend left = 30] &
  \end{tikzcd}
 \end{equation}
-Again, the right-let of both dual pairs yields the conserved quantities.
+Again, the right leg of both dual pairs yields the conserved quantities.
 From this commutative diagram, it is immediately clear that the conservation law exhibited in
 out particle models is a shadow of the conservation of \eqref{eq:circulation}.
 The conservation of circulation of the full regularized model is given by $\rho$,
@@ -1126,6 +1126,10 @@ of the conservation of $\rho$, which is equivalent to conservation of \eqref{eq:
 As \eqref{eq:circulation} contains Kelvin's circulation theorem,
 we see that our particle models contain a model of Kelvin's circulation theorem within them.
 This is proven rigorously in \cite[Theorem 5.5]{JacobsRatiuDesbrun2013}.
+\dm{Looking at this diagram it occurs to me that the derivation of the momentum map $J_R$ could have perhaps been derived more easily. (Although I haven't tried to do it explicitly). Namely, it should be easy to compute the element $p_\varphi \in T^*{\rm SDiff}(\mathbb{R}^n)$ for a jetlet solution since (assuming we know the $J_L$) we know reduced version $m = \lambda(p_\varphi)= TR_{\varphi}^* p_\varphi = J_L( (q, p, Q, P,...))$. Then one only has to apply $\rho$ to it, which should be considerably easier than calculating $J_R$ directly...?? Any opinions/comments?}
+%
+
+
 
 \section{Particle mergers}
 \label{sec:collisions}
