@@ -1,5 +1,5 @@
+*.aux
+*.log
+*.blg
 jetlets_survey_article.pdf
-jetlets_survey_article.aux
-jetlets_survey_article.log
-jetlets_survey_article.blg
 jetlets_survey_article.bbl
