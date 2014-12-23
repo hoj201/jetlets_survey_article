@@ -804,7 +804,7 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
 	\begin{align*}
 		H^{(1)}(q,p) &= \frac{1}{2} p\indices{_a_i} K^{ij}(q_a - q_b) p\indices{_b_j}\\
 			&\quad + p\indices{_a_i^l} q\indices{_a^k_l} (\partial_k K^{ij})(q_a - q_b) p\indices{_b_j} \\
-			&\quad - p\indices{_a_i^n} q\indices{_a^l_n} (\partial_l \partial_k K^{ij})(q_a - q_b) q\indices{_b^k_m} p\indices{_b_j^m}.
+			&\quad -  \frac{1}{2} p\indices{_a_i^n} q\indices{_a^l_n} (\partial_l \partial_k K^{ij})(q_a - q_b) q\indices{_b^k_m} p\indices{_b_j^m}.
   \end{align*}
   \je{This was an index mess. I think these are ok now, but I don't
     trust the signs and coefficients: I did a quick recalculation and
@@ -815,6 +815,7 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
     are different again from the code, where the energy seems fairly
     well preserved\ldots}
     \dm{If I compare it with our previous jetlet article I'm inclined to say that there should be a factor of 2 in front of the middle factor, but that the formula is correct otherwise...?}
+    \hoj{I think I agree with David up to a factor of 2 of the entire expression.  I changed it to match the derivation in the notes (see the notes folder in this repo)}
   If $(q,p)(t) \in T^*Q_N^{(1)}$ is a solution to Hamilton's equations with respect to
 	$H^{(1)}$, then $J_L^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)^*$ is
 	a solution of \eqref{eq:MMDiff} and $J_R^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)$ is
@@ -1025,6 +1026,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   \je{I think the sum over $m$ should be replaced by a (tensor)
     product, also in the formula two below.}
     \dm{I can't really comment. I'm still struggling to read this formula. In my own derivation I think I was able to get rid of some of the interior sums (this step probably corresponds to contracting out the Kronecker deltas), so it looks a bit different. I don't really understand what you mean anyway though...?}
+    \hoj{I also don't understand this comment.  $J_R$ and $J_L$ are currently written as tensor products below.  Perhaps the change was already made and these todo boxes can be deleted.}
   where $w \in \mathfrak{X}_{\rm div}(\R^n)$ is such that $w(z) = 0$ (this describes the Lie algebra of $\iso(z)$),
   and $\delta_\alpha^\beta$ is the natural generalization of the Kronecker-delta symbol to multi-indices.
 %  \dm{I dont' understand this. How can a multi-index by equal to an integer?}
@@ -1127,16 +1129,17 @@ As \eqref{eq:circulation} contains Kelvin's circulation theorem,
 we see that our particle models contain a model of Kelvin's circulation theorem within them.
 This is proven rigorously in \cite[Theorem 5.5]{JacobsRatiuDesbrun2013}.
 \dm{Looking at this diagram it occurs to me that the derivation of the momentum map $J_R$ could have perhaps been derived more easily. (Although I haven't tried to do it explicitly). Namely, it should be easy to compute the element $p_\varphi \in T^*{\rm SDiff}(\mathbb{R}^n)$ for a jetlet solution since (assuming we know the $J_L$) we know reduced version $m = \lambda(p_\varphi)= TR_{\varphi}^* p_\varphi = J_L( (q, p, Q, P,...))$. Then one only has to apply $\rho$ to it, which should be considerably easier than calculating $J_R$ directly...?? Any opinions/comments?}
+\hoj{The current form of the paper is fairly unified, so I would hesitate to discard any existing proofs.
+However, I also suspect you are correct, for the same reasons.  If it turns out to be easy, what do you think about adding the proof
+as an alternative derivation?  We can justify having two proofs because this latter proof also tells us how things relate to Kelvin's circulation theorem,
+and would smooth the transition into this section (i.e. section \ref{sec:Kelvin}) }
+
 %
 
 
 
 \section{Particle mergers}
 \label{sec:collisions}
-Analytic analysis of collisions with $j=0$.
-Discuss mergers to higher-order, time to collision, near misses.
-
-\todo[inline]{Jaap can write this}
 
 In this section we discuss some explicit dynamical behaviour of the
 particle model, in particular we study `collisions' of jetlets. For
@@ -1367,14 +1370,11 @@ found up to floating point precision.
 \label{tab:conservation-errors}
 \end{table}
 
-
-
-\cjc{Consider two particles, far apart.  Each has it's``own conserved momenta".  They get close, exchange stuff, but the ``actual" momentum is conserved}
-
-\cjc{Collide some $k$-jets.  Make correspondence with total momentum.}
-
-\hoj{These experiments actually don't make sense for the conserved momentum $J_R$ because this momenta is not exchanged.}
-\hoj{Perhaps we can just repeat the cascade of the previous article at order $0$ and $1$.  Additionally, we can refine the cascade argument.}
+\hoj{Some comments on the table:  I'm not sure we can use this table by itself. 
+Conservation of $J_R, E,$ etc was verified through formal proof, 
+so this table, by itself seems to be a test
+of the numerical accuracy of scipy's ode integration method.  We will need to include some plots of momenta exchanges.
+One thing we could do is plot $\mu$ vs $J_R$, since those are the same units.}
 
 \appendix
 
