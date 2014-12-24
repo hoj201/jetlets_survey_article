@@ -1128,7 +1128,13 @@ of the conservation of $\rho$, which is equivalent to conservation of \eqref{eq:
 As \eqref{eq:circulation} contains Kelvin's circulation theorem,
 we see that our particle models contain a model of Kelvin's circulation theorem within them.
 This is proven rigorously in \cite[Theorem 5.5]{JacobsRatiuDesbrun2013}.
-\dm{Looking at this diagram it occurs to me that the derivation of the momentum map $J_R$ could have perhaps been derived more easily. (Although I haven't tried to do it explicitly). Namely, it should be easy to compute the element $p_\varphi \in T^*{\rm SDiff}(\mathbb{R}^n)$ for a jetlet solution since (assuming we know the $J_L$) we know reduced version $m = \lambda(p_\varphi)= TR_{\varphi}^* p_\varphi = J_L( (q, p, Q, P,...))$. Then one only has to apply $\rho$ to it, which should be considerably easier than calculating $J_R$ directly...?? Any opinions/comments?}
+\dm{
+Henry, I'm not sure I fully understand Theorem 5.5 in that paper, but I'm not convinced the commutativity is shown there...? If I'm reading right, there is only one momentum map mentioned there, which is called $J_\omega$ and I guess is equal to our $J_R$. But the momentum map $\rho$ does not seem to be mentioned there. Still, I agree the diagram does commute...}
+ As a side remark we mention that the commutativity of the above diagram implies 
+\begin{align}
+	\left<J_R ((q, p)), w\right> = \left<J_L((q, p)), T \varphi (w \circ \varphi^{-1})\right>, \label{eq:alternative}
+\end{align}
+for all $w \in \mathfrak{X}_{\rm div}(\mathbb{R}^n)$, where $\varphi$ is any diffeomorphism that is mapped to $q$ by the quotient map $ \SDiff(\R^n) \to Q^{(k)}_1$. Recall that in the previous section we computed both $J_L$ and $J_R$ using the coordinate expressions, presented in the proof of proposition \eqref{HL_action_prop},  for the respective actions on $Q^{(k)}_1$. Evidently, equation \eqref{eq:alternative} provides an alternative route to derive one momentum map once one has found the other.
 \hoj{The current form of the paper is fairly unified, so I would hesitate to discard any existing proofs.
 However, I also suspect you are correct, for the same reasons.  If it turns out to be easy, what do you think about adding the proof
 as an alternative derivation?  We can justify having two proofs because this latter proof also tells us how things relate to Kelvin's circulation theorem,
