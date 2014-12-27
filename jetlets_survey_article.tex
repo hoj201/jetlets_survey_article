@@ -973,10 +973,10 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
     except for the component where $|\alpha | = 0$ in which case we observe $(\varphi \cdot q)^i_\emptyset = \varphi^i(q_\emptyset)$.
     By the same construction, a right $\iso(z)$ action is induced
     on $Q_1^{(k)}$ by setting $q \cdot \phi = \Jet^k_z ( \psi \circ \phi)$ for any $\psi$ such that $\Jet^k_z(\psi) = q$.
-    We can choose distinct points $z_1,\dots,z_N \in \R^n$
+    We can choose distinct points $z^1,\dots,z^N \in \R^n$
     and easily apply the same process to $Q_N^{(k)}$.  In this case we observe the action to be
     \begin{align*}
-      (q \cdot \psi)\indices{_a^i_\alpha} = \sum_{k=1}^{|\alpha|}
+      (q \cdot \psi)\indices{^{ai}_\alpha} = \sum_{k=1}^{|\alpha|}
       \left(
         \sum_{
         \substack{
@@ -984,9 +984,9 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
           [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
           }
           }
-          q\indices{_a^i_{[j_1,\dots,j_k]}}
-          \partial_{\gamma_1} \psi^{j_1}(z_a) \cdots
-          \partial_{\gamma_k} \psi^{j_k}(z_a)
+          q\indices{^{ai}_{[j_1,\dots,j_k]}}
+          \partial_{\gamma_1} \psi^{j_1}(z^a) \cdots
+          \partial_{\gamma_k} \psi^{j_k}(z^a)
         \right).
     \end{align*}
   \end{proof}
@@ -996,32 +996,32 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   In particular, the left action of $\SDiff(\R^n)$ yields the momentum map
   \begin{equation*}
   	\langle J_L^{(k)}(q,p) , u \rangle =
-	\sum_{a=1}^N \left( p_a \otimes \delta_{q\indices{_a_\emptyset}} +
-	 \sum_{|\alpha| < k } \sum_{l = 1}^{|\alpha|}
+	\sum_{a=1}^N \left( p_a \otimes \delta_{q^a_\emptyset} +
+	 \sum_{|\alpha| < k } \sum_{\ell = 1}^{|\alpha|}
 		\sum_{
 			\substack{
-				j_1,\dots,j_l \in \{1,\dots,n\} \\
-				[\gamma_1,\dots,\gamma_l] \in \Pi(\alpha,l)
+				j_1,\dots,j_\ell \in \{1,\dots,n\} \\
+				[\gamma_1,\dots,\gamma_l] \in \Pi(\alpha,\ell)
 				}
 			}
-			p\indices{_a_m^\alpha} \partial_{j_1 \cdots j_l}u^m (q\indices{_a_\emptyset})
-      q\indices{_a^{j_1}_{\gamma_1}} \cdots
-      q\indices{_a^{j_l}_{\gamma_l}}
+			p\indices{_a_m^\alpha} \partial_{j_1 \cdots j_\ell}u^m (q\indices{^a_\emptyset})
+      q\indices{^{a j_1}_{\gamma_1}} \cdots
+      q\indices{^{a j_\ell}_{\gamma_\ell}}
 			\right)
   \end{equation*}
   for arbitrary divergence free vector fields $u \in \mathfrak{X}_{\rm div}(\R^n)$.
   The right action of $\iso(z)$ yields the momentum map $J_R^{(k)}$ defined implicitly by the relation
   \begin{equation*}
-    \langle J_R^{(k)}(q,p) , w \rangle =
-    \sum_{ | \alpha | \leq k } \sum_{l=1}^{|\alpha|}
+    \langle J_R^{(k)}(q,p) , w \rangle = \sum_{a=1}^N
+    \sum_{ | \alpha | \leq k } \sum_{\ell=1}^{|\alpha|}
 		\sum_{
 			\substack{
-				j_1,\dots,j_l \in \{1,\dots,n\} \\
-				[\gamma_1,\dots,\gamma_l] \in \Pi(\alpha,l)
+				j_1,\dots,j_\ell \in \{1,\dots,n\} \\
+				[\gamma_1,\dots,\gamma_\ell] \in \Pi(\alpha,\ell)
 				}
 			}
-			p\indices{_a_i^\alpha} q\indices{_a^i_{[j_1 \cdots j_l]}}
-      \sum_{m=1}^l  \partial_{\gamma_m} w^{j_m}(z_a) \left( \prod_{n \neq m}  \delta_{\gamma_n}^{[j_n]} \right)
+			p\indices{_a_i^\alpha} q\indices{^{ai}_{[j_1 \cdots j_\ell]}}
+      \sum_{m=1}^\ell  \partial_{\gamma_m} w^{j_m}(z_a) \left( \prod_{n \neq m}  \delta_{\gamma_n}^{[j_n]} \right)
   \end{equation*}
   \je{I think the sum over $m$ should be replaced by a (tensor)
     product, also in the formula two below.}
@@ -1047,16 +1047,16 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   \end{equation*}
   and
   \begin{equation*}
-    J_R^{(k)}(q,p) =
-    \sum_{ | \alpha | \leq k } \sum_{l=1}^{|\alpha|}
+    J_R^{(k)}(q,p) = \sum_{a=1}^{N}
+    \sum_{ | \alpha | \leq k } \sum_{\ell=1}^{|\alpha|}
 		\sum_{
 			\substack{
-				j_1,\dots,j_l \in \{1,\dots,n\} \\
-				[\gamma_1,\dots,\gamma_l] \in \Pi(\alpha,l)
+				j_1,\dots,j_\ell \in \{1,\dots,n\} \\
+				[\gamma_1,\dots,\gamma_\ell] \in \Pi(\alpha,\ell)
 				}
 			}
-			p\indices{_a_i^\alpha} q\indices{_a^i_{[j_1 \cdots j_l]}}
-      \sum_{m} (-1)^{|\gamma_m|}\left( \prod_{n \neq m}  \delta_{\gamma_n}^{[b_n]} \right) \otimes \partial_{\gamma_m}\delta(\cdot - z_a)
+			p\indices{_a_i^\alpha} q\indices{_a^i_{[j_1 \cdots j_\ell]}}
+      \sum_{m=1}^\ell (-1)^{|\gamma_m|}\left( \prod_{n \neq m}  \delta_{\gamma_n}^{[b_n]} \right) \otimes \partial_{\gamma_m}\delta(\cdot - z_a)
   \end{equation*}
   The action of $\SDiff(\R^n)$ is transitive on $Q_N^{(k)}$, and
   therefore transitive on the level sets of the momentum map $J_R^{(1)}$.
