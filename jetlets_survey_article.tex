@@ -1110,6 +1110,7 @@ To see this, it is useful to define the $k$-th order isotropy group,
 $\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid J^{(k)}_z( \psi) = id_z \}$.
 Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and we denote the corresponding quotient map by $\Pi: \SDiff(\R^n) \to Q^{(k)}_N$. Note that in order to specify $\Pi$ one has to fix some point $q_0 \in Q^{(k)}_N$, with respect to which $\Pi$ can then be defined as $\Pi (\varphi) = \varphi \cdot q_0$. 
 \hoj{If $\Pi$ is the quotient map for $\SDiff(\R^n)$ mod $\iso^{(k)}(z)$, then $\Pi = \Jet^{(k)}_z$, the map which sends $\SDiff(\R^n)$ to it's $k$-jet about $z$.  This is another way of stating the definition of a jet about $z$.  I see no flexibility on this matter since it is a definition.  If you don't believe me, test it on the identity diffeo for $k=0$.  You will find that $\Pi(id) = z$.  Under these conventions, with the introduction of the variable $q_0$, it must be the case that $q_0 = z$.  Since $q_0$ is redundant perhaps we should remove the use of $q_0$ in this section, and replace $\Pi$ with $\Jet_z^{(k)}$.}
+\dm{I actually disagree with this, Henry. The point is that one still has to define a diffeomorphism from the quotient space to $Q^{(k)}_N$. That is, strictly speaking the equality $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$ is really meant in the sense that there exists a diffeomorphism between the spaces on the left hand side and the right hand side. Choosing a different anchor point $q_0$ simply changes that diffeomorphism a little, but it doesn't change anything beyond that. Aside of this detail, of course it is particularly natural to choose the anchor point given by $z$ and I'm happy to default to that. I'll make the changes soon.}
  The space $T^*Q^{(k)}$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$.  The commutativity of the following diagram uniquely defines the jetlet solutions:
   \begin{equation}
  \begin{tikzcd}
@@ -1124,7 +1125,7 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and we denote the c
   \end{align}
   which shows commutativity of the left-hand part of the diagram. As for the right-hand part, we again use the special form of $p_\varphi$ to conclude that, for all $ w \in \mathfrak{X}_{\rm div}(\R^n)$,
  \begin{align}
- 	\left<\rho(p_\varphi), w\right> = \left<p_\varphi, T\varphi  w \right> = \left<J_L(p_q),  T\varphi (w \circ \varphi^{-1}) \right>. \label{compare_1}
+ 	\left<\rho(p_\varphi), w\right> = \left<p_\varphi, T\varphi  (w) \right> = \left<J_L(p_q),  T\varphi (w \circ \varphi^{-1}) \right>. \label{compare_1}
  \end{align}
  On the other hand, if we write $\phi_\varphi: Q^{(k)}_N \to Q^{(k)}_N$ for the left action $\phi_\varphi (q) = \varphi \cdot q$, we have 
  \begin{align}
