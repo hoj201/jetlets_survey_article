@@ -1291,9 +1291,10 @@ We have performed a number of numerical simulations\footnote{%
   and generated videos can be found at:
   \url{https://github.com/hoj201/incompressible_jet_particles}%
 } of these jetlet particles. These confirm that the conserved
-quantities are indeed conserved and that two $0$-jetlet particles
+quantities are indeed preserved and that two $0$-jetlet particles
 merge as shown by the analysis in section~\ref{sec:collisions}.
-Moreover, the merging behavior shows to be stable under perturbations.
+Moreover, the merging behavior shows to be stable under perturbations
+of initial conditions.
 
 As basic experiment we take two $0$-jetlet particles with initial
 states
@@ -1327,53 +1328,30 @@ original one where the system shows a transition between the two
 particles merging or scattering.
 
 Finally, these experiments confirm the preservation of the conserved
-quantities present in the system. Table~\ref{tab:conservation-errors}
-shows the absolute errors in various conserved quantities for the
-various simulations described above over a time of $60$ seconds. The
-value of the energy in all cases is between $1$ and $2$. The linear
-and angular momenta together form the value of $J_L^{(1)}$. The error
-in $J_R^{(1)}$ is shown indivually for both jetlet particles, since
-this momentum is not exchanged betwee particles (in contrast with
-$J_L^{(1)}$); note that a zero here indicates that no difference was
-found up to floating point precision.
+quantities present in the system. For all experiments described above
+we observed that the energy, total linear and angular momentum,
+i.e.~$J_L$, as well as $J_R$ individually for each particle were
+preserved with absolute errors less than $4 \cdot 10^{-4}$ over a time
+of $60$ seconds, while the energy was of the order one. Unlike $J_R$
+which is conserved for each particle, the $J_L$ momentum can be
+exchanged between particles. Figure~\ref{fig:angmom-1jetlets} shows
+the angular momentum of two scattering $1$-jetlets and
+Figure~\ref{fig:angmom-3rd-jetlet} of two scattering $0$-jetlets
+interacting weakly with a third jetlet particle.
 
-\begin{table}[tb]
-\centering
-\begin{tabular}{|l|rrrrr|}
-  \hline
-  experiment $\backslash$
-             conserved quant.       & energy  & lin.~mom. & ang.~mom. & $J_R^{(1)}$ part.~1
-                                                                                & $J_R^{(1)}$ part.~2 \\
-  \hline
-  \hline
-  0-jetlets merging                 & 9.9E-05 & 6.6E-10   & 5.9E-05   & 3.5E-05 & 1.4E-04 \\
-  \hline
-  0-jetlets scattering              & 3.6E-05 & 1.8E-14   & 3.0E-05   & 0       & 0 \\
-  \hline
-  1-jetlets merging                 & 1.7E-04 & 5.5E-11   & 4.1E-07   & 3.0E-04 & 3.6E-04 \\
-  \hline
-  1-jetlets scattering              & 1.8E-05 & 7.1E-16   & 1.7E-07   & 3.5E-07 & 3.5E-06 \\
-  \hline
-  \parbox{4cm}{0-jetlets merging,\\
-  third 0-jetlet present}           & 2.1E-04 & 3.8E-12   & 6.1E-05   & 0       & 0 \\
-  \hline
-  \parbox{4cm}{0-jetlets scattering,\\
-  third 0-jetlet present}           & 3.1E-06 & 8.6E-14   & 1.0E-05   & 0       & 0 \\
-  \hline
-  \parbox{4cm}{0-jetlets merging,\\
-  third 1-jetlet present}           & 2.3E-04 & 1.0E-12   & 5.2E-05   & 0       & 0 \\
-  \hline
-  \parbox{4cm}{0-jetlets scattering,\\
-  third 1-jetlet present}           & 1.3E-05 & 4.6E-14   & 2.1E-05   & 0       & 0 \\
-  \hline
-  `stretching' 1-jetlets merging    & 1.4E-04 & 3.4E-13   & 1.9E-07   & 2.9E-04 & 0 \\
-  \hline
-  `stretching' 1-jetlets scattering & 1.5E-04 & 4.6E-15   & 2.0E-07   & 3.5E-05 & 0 \\
-  \hline
-\end{tabular}
-\caption{Absolute errors in the conserved quantities for a number of numerical simulations.}
-\label{tab:conservation-errors}
-\end{table}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[height=7cm]{angmom-1jetlets}
+  \caption{Angular momentum exchange between two scattering $1$-jetlets.}
+  \label{fig:angmom-1jetlets}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[height=7cm]{angmom-3rd-jetlet}
+  \caption{Angular momentum exchange between three jetlets.}
+  \label{fig:angmom-3rd-jetlet}
+\end{figure}
 
 \hoj{Some comments on the table:  I'm not sure we can use this table by itself. 
 Conservation of $J_R, E,$ etc was verified through formal proof, 
