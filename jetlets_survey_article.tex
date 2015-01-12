@@ -477,7 +477,7 @@ Since we have not yet clarified the Poisson structures of the system, it may not
 % In the following proposition we will show this for a general Hamiltonian on $\mathfrak{X}_{\rm div}(\R^n)^*$.
 
   \begin{prop}[\cite{Arnold1966}] \label{prop:LPDiff}
-  Let $h \in C^{\infty}( \mathfrak{X}_{\rm div}(\R^n) )$.
+  Let $h \in C^{\infty}( \mathfrak{X}_{\rm div}(\R^n)^* )$.
   Recall that $\mathfrak{X}_{\rm div}(\R^n)^*$ is a Poisson manifold
   when equipped with the Lie--Poisson bracket,
   and given a function $h$, the Fr\'echet derivative $dh(m)$ is an element  of $\mathfrak{X}_{\rm div}(\R^n)^{**}$.
@@ -665,10 +665,10 @@ the kernel, $K$.
 	\caption{A $0$-jetlet with momentum $m = (1,0)^T \otimes \delta_0$.}
 	\label{fig:zero_jetlet}
 \end{figure}
-Once one has found a solution $(q(t), p(t))$ to Hamilton's equations on $T^*\mathbb{R}^n$ and thus also a solution to Hamilton's equations on $\mathfrak{X}_{\rm div}(\mathbb{R}^n)$, one can proceed to integrate the corresponding time-dependent vector field to obtain the fluid motion $\varphi_t$ in $\rm{SDiff}(\mathbb{R}^n)$. It is natural (but not mandatory) to choose the initial map $\varphi_0$ to be the identity or at least to be a diffeomorphism that satisfies $\varphi_0(q_a(0))= q_a(0)$, all $a$. 
+Once one has found a solution $(q(t), p(t))$ to Hamilton's equations on $T^*\mathbb{R}^n$ and thus also a solution to Hamilton's equations on $\mathfrak{X}_{\rm div}(\mathbb{R}^n)^*$, one can proceed to integrate the corresponding time-dependent vector field to obtain the fluid motion $\varphi_t$ in $\rm{SDiff}(\mathbb{R}^n)$. It is natural (but not mandatory) to choose the initial map $\varphi_0$ to be the identity or at least to be a diffeomorphism that satisfies $\varphi_0(q_a(0))= q_a(0)$, all $a$. 
   If this choice is made, one can interpret the curve $q(t) = (q_1(t), \ldots, q_N(t))$ in $Q_N^{(0)}$ as the locations of particles as they are swept along by the fluid flow, that is, $q_a(t) = \varphi_t(q_a(0))$ for all $a = 1, \ldots, N$. 
   
-  We see that $J_L^{(0)}$ is injective, and thus has a trivial kernel. As a result, the symplectic orthogonal to the kernel of $J_L^{(0)}$  is the full tangent bundle $T(T^*Q_N^{(0)})$. Hence, if we define the (trivial) map $J_R^{(0)}: T^*Q^{(0)}_N \to \mathfrak{X}_{\rm div}(\mathbb{R}^n)$ by $J_R^{(0)} \equiv 0$, it follows that the diagram
+  We see that $J_L^{(0)}$ is injective, and thus has a trivial kernel. As a result, the symplectic orthogonal to the kernel of $J_L^{(0)}$  is the full tangent bundle $T(T^*Q_N^{(0)})$. Hence, if we define the (trivial) map $J_R^{(0)}: T^*Q^{(0)}_N \to \mathfrak{X}_{\rm div}(\mathbb{R}^n)^*$ by $J_R^{(0)} \equiv 0$, it follows that the diagram
  \begin{alignat*}{2}
     \mathfrak{X}_{\rm div}(\R^n)^* \stackrel{J_L^{(0)} }{\longleftarrow}&
     \,T^* Q_N^{(0)}
@@ -812,7 +812,7 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
   \end{align*}
   If $(q,p)(t) \in T^*Q_N^{(1)}$ is a solution to Hamilton's equations with respect to
 	$H^{(1)}$, then $J_L^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)^*$ is
-	a solution of \eqref{eq:MMDiff} and $J_R^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)$ is
+	a solution of \eqref{eq:MMDiff} and $J_R^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)^*$ is
 	constant in time. 
   \end{prop}
   The proof of the above proposition is identical to that of
@@ -1085,7 +1085,7 @@ associated to the particle relabeling symmetry of fluids.
 More specifically,
 recall that $h_0$ is the Hamiltonian for Euler's equations,
 and this Hamiltonian is $\SDiff(\R^n)$ invariant.
-In this instance we have a dual pair $\lambda, \rho : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)$ induced by
+In this instance we have a dual pair $\lambda, \rho : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$ induced by
 the left and right action of $\SDiff(\R^n)$ on itself.
 The dynamics on $T^*\SDiff(\R^n)$ exhibits the constant of motion
 \begin{align}
