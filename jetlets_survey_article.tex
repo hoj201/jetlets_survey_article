@@ -991,12 +991,12 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   In particular, the left action of $\SDiff(\R^n)$ yields the momentum map
   \begin{equation*}
   	\langle J_L^{(k)}(q,p) , u \rangle =
-	\sum_{a=1}^N \left( p_a \otimes \delta_{q^a_\emptyset} +
-	 \sum_{|\alpha| < k } \sum_{\ell = 1}^{|\alpha|}
+	\sum_{a=1}^N \left( p_{am} u^m(q^{(0)a})  +
+	 \sum_{|\alpha| \leq k } \sum_{\ell = 1}^{|\alpha|}
 		\sum_{
 			\substack{
 				j_1,\dots,j_\ell \in \{1,\dots,n\} \\
-				[\gamma_1,\dots,\gamma_l] \in \Pi(\alpha,\ell)
+				[\gamma_1,\dots,\gamma_\ell] \in \Pi(\alpha,\ell)
 				}
 			}
 			p\indices{_a_m^\alpha} \partial_{j_1 \cdots j_\ell}u^m (q\indices{^a_\emptyset})
@@ -1018,28 +1018,33 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
 			p\indices{_a_i^\alpha} q\indices{^{ai}_{[j_1 \cdots j_\ell]}}
       \sum_{m=1}^\ell  \partial_{\gamma_m} w^{j_m}(z_a) \left( \prod_{n \neq m}  \delta_{\gamma_n}^{[j_n]} \right)
   \end{equation*}
-  \je{I think the sum over $m$ should be replaced by a (tensor)
-    product, also in the formula two below.}
-    \dm{I can't really comment. I'm still struggling to read this formula. In my own derivation I think I was able to get rid of some of the interior sums (this step probably corresponds to contracting out the Kronecker deltas), so it looks a bit different. I don't really understand what you mean anyway though...?}
-    \hoj{I also don't understand this comment.  $J_R$ and $J_L$ are currently written as tensor products below.  Perhaps the change was already made and these todo boxes can be deleted.}
   where $w \in \mathfrak{X}_{\rm div}(\R^n)$ is such that $w(z) = 0$ (this describes the Lie algebra of $\iso(z)$),
   and $\delta_\alpha^\beta$ is the natural generalization of the Kronecker-delta symbol to multi-indices.
 %  \dm{I dont' understand this. How can a multi-index by equal to an integer?}
 %  \je{I hope you agree that saying that we generalize the Kronecker symbol to multi-indices is brief and clear.}
   We can write these momentum maps explicitly, using the Dirac delta distribution, as
-  \begin{equation*}
-    J_L^{(k)}(q,p) =
-    p\indices{_a_i^\alpha} dx^i \otimes
-    \sum_{|\alpha| \leq k } \sum_{k=1}^{|\alpha|} (-1)^{k}
-    \left(
+  \begin{align*}
+    J_L^{(k)}(q,p) &=
+    \sum_{a=1}^{N}
+    \sum_{m=1}^{n} \Bigg(
+	p_{am} dx^m \otimes \delta( \cdot - q^{(0)a} )
+	\\
+    &\quad+
+    \sum_{
+    	\substack{
+		|\alpha| \leq k \\
+		0<\ell \leq |\alpha|} 
+	}
+		(-1)^{\ell}  p\indices{_{am}^\alpha} dx^m \otimes
       \sum_{\substack{
-          j_1,\dots,j_k \in \{1,\dots,n\} \\
-          [\gamma_1,\dots,\gamma_k] \in \Pi( \alpha,k)
+          j_1,\dots,j_\ell \in \{1,\dots,n\} \\
+          [\gamma_1,\dots,\gamma_\ell] \in \Pi( \alpha,\ell)
           }
         }
-      q\indices{_a^{j_1}_{\gamma_1}} \cdots q\indices{_a^{j_k}_{\gamma_k}}
-      \partial_{j_1 \cdots j_k} \delta(\cdot - q^{(0)}_a) \right)
-  \end{equation*}
+      q\indices{_a^{j_1}_{\gamma_1}} \cdots q\indices{_a^{j_k}_{\gamma_\ell}}
+      \partial_{j_1 \cdots j_\ell} \delta(\cdot - q^{(0)}_a)
+      \Bigg)
+  \end{align*}
   and
   \begin{equation*}
     J_R^{(k)}(q,p) = \sum_{a=1}^{N}
@@ -1053,6 +1058,9 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
 			p\indices{_a_i^\alpha} q\indices{_a^i_{[j_1 \cdots j_\ell]}}
       \sum_{m=1}^\ell (-1)^{|\gamma_m|}\left( \prod_{n \neq m}  \delta_{\gamma_n}^{[b_n]} \right) \otimes \partial_{\gamma_m}\delta(\cdot - z_a)
   \end{equation*}
+  \hoj{I actually found a lot of errors in these momentum maps.  I'm more confident in the first two expression (i.e. the $<J(q,p),u>$ terms)
+  	so if you want to check my work, it would be best to check that the second expressions (i.e. the one-form densities) are consistent with the $<J , u>$ expressions.
+	and to check the $<J,u>$ via independent derivation.  \emph{However, I'd caution against editing the $<J(q,p) , u>$ terms to make them consistent with the one-form density versions of $J_L$ and $J_R$}.}
   The action of $\SDiff(\R^n)$ is transitive on $Q_N^{(k)}$, and
   therefore transitive on the level sets of the momentum map $J_R^{(1)}$.
   By theorem \ref{thm:commuting_actions}, $J_L^{(k)}$ and $J_R^{(k)}$ form a dual pair.
