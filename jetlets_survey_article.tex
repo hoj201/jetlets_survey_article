@@ -893,13 +893,10 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
   This coordinate is used to model the partial derivative of the $i^{\rm th}$ coordinate
   of a diffeomorphism at some point $z_a \in \R^n$, i.e.\ $\partial_\beta \varphi^i(z_a)$.
   % This is the primary motivation for this notational convention.
- For notational ease  we will in the following let $q\indices{_a_\emptyset}$ denote the position of the $a^{\rm th}$ particle. For the statement of the next proposition, recall that the definition  of ${\rm iso}(z)$ was given earlier in \eqref{isotropy_group}. Note also that we write $\Jet^k_x: \SDiff(\R^n) \to Q_1^{(k)}$ for 
+  For the statement of the next proposition, recall that the definition  of ${\rm iso}(z)$ was given earlier in \eqref{isotropy_group}. Note also that we write $\Jet^k_x: \SDiff(\R^n) \to Q_1^{(k)}$ for
     the function which evaluates the spatial derivatives
     of a diffeomorphism up to order $k$ at the location $x \in \R^n$. In the subsequent sections we will also use the obvious generalisation to multiple locations $z_1, \ldots, z_N \in \R^n$, which we will denote by $\Jet^k_z : \SDiff(\R^n) \to Q_N^{(k)}$.  
-    \dm{I have moved the definition of $\Jet$ here in front of the proposition statement (otherwise it's buried in the proof). I have also changed it slightly and added the generalization to multiple locations. } \hoj{I've made a change in notation.  We are letting $q^a_\emptyset$ denote
-  the position of the $a^{\rm th}$ particle.  The old notation was something like $q^{(0),a}$.
-  This new notation is less clunky and more consistent with our multi-index convention
-  in that the zero-jets have the empty set as a lower index.}
+    \dm{I have moved the definition of $\Jet$ here in front of the proposition statement (otherwise it's buried in the proof). I have also changed it slightly and added the generalization to multiple locations. }
 %  \hoj{A note fore David:
 %  In terms of the paper with Tudor, we are using the fact
 %  that $Q_N^{(k)} = \SDiff(\R^n) / \iso^{(k)}(z)$
@@ -960,12 +957,12 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
           [\gamma_1,\dots,\gamma_k] \in \Pi(\alpha , k)
           }
           }
-          \partial_{j_1 \cdots j_k} \varphi^i(q_\emptyset)
+          \partial_{j_1 \cdots j_k} \varphi^i(q^{(0)})
           q^{j_1}_{\gamma_1} \cdots
           q^{j_k}_{\gamma_k}
         \right),
     \end{align*}
-    except for the component where $|\alpha | = 0$ in which case we observe $(\varphi \cdot q)^i_\emptyset = \varphi^i(q_\emptyset)$.
+    except for the component where $|\alpha | = 0$ in which case we observe $(\varphi \cdot q)^i = \varphi^i(q^{(0)})$.
     By the same construction, a right $\iso(z)$ action is induced
     on $Q_1^{(k)}$ by setting $q \cdot \phi = \Jet^k_z ( \psi \circ \phi)$ for any $\psi$ such that $\Jet^k_z(\psi) = q$.
     We can choose distinct points $z^1,\dots,z^N \in \R^n$
@@ -999,7 +996,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
 				[\gamma_1,\dots,\gamma_\ell] \in \Pi(\alpha,\ell)
 				}
 			}
-			p\indices{_a_m^\alpha} \partial_{j_1 \cdots j_\ell}u^m (q\indices{^a_\emptyset})
+			p\indices{_a_m^\alpha} \partial_{j_1 \cdots j_\ell}u^m (q\indices{^{(0)}_a})
       q\indices{^{a j_1}_{\gamma_1}} \cdots
       q\indices{^{a j_\ell}_{\gamma_\ell}}
 			\right)
