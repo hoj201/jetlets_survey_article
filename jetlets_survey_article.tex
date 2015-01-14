@@ -1080,11 +1080,15 @@ associated to the particle relabeling symmetry of fluids.
 More specifically,
 recall that $h_0$ is the Hamiltonian for Euler's equations,
 and this Hamiltonian is $\SDiff(\R^n)$ invariant.
-In this instance we have a dual pair $J_L , J_R : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$ induced by
-the left and right action of $\SDiff(\R^n)$ on itself.
+In this instance we have a dual pair
+$J_\text{spatial}: T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$
+and $J_\text{conv}: T^*\SDiff(\R^n) \to \mathfrak{iso}(z)^*$ of
+spatial and convective momentum maps induced by
+the left action of $\SDiff(\R^n)$ and the right action of
+$\iso(z) \subset \SDiff(\R^n)$ on $\SDiff(\R^n)$ itself.
 The dynamics on $T^*\SDiff(\R^n)$ exhibits the constant of motion
 \begin{align}
-  \langle J_R(\varphi,p_\varphi) , w \rangle = \langle p_\varphi , T\varphi \cdot w \rangle \label{eq:circulation}
+  \langle J_\text{conv}(\varphi,p_\varphi) , w \rangle = \langle p_\varphi , T\varphi \cdot w \rangle \label{eq:circulation}
 \end{align}
 for all $w \in \mathfrak{X}_{\rm div}(\R^n)$.\footnote{The pairing $\langle \cdot , \cdot \rangle$ will always refer to the natural pairing between a vector-space and its dual in this paper.}
 This instance of Noether's theorem applies to regularized models as well as to the non-regularized case of Euler's.
@@ -1101,23 +1105,23 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
  The space $T^*Q^{(k)}$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$.  The commutativity of the following diagram uniquely defines the jetlet solutions:
   \begin{equation}
  \begin{tikzcd}
-   \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l,"J_L"'] T^*\SDiff(\R^n) \ar[r,"J_R"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
+   \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l,"J_\text{spatial}"'] T^*\SDiff(\R^n) \ar[r,"J_\text{conv}"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
    & T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
    & T^*Q^{(k)}_N \uar{i} \ar[uur,"J_R^{(k)}"',bend right = 30] \ar[uul,"J_L^{(k)}",bend left = 30] &
  \end{tikzcd}
 \end{equation}
   Namely, for the left-hand part of the diagram recall that we have shown in the previous section that a jetlet solution has a velocity vector in $T \SDiff(\R^n)$ of the form \begin{align} v_{\varphi} = (K * J_L^{(k)}(p_q)) \circ \varphi \notag \end{align} for some $p_q \in T^*_q Q^{(k)}_N$, where $q = \Jet^k_z(\varphi)$. From this it follows immediately that the corresponding Legendre momentum $p_\varphi$ satisfies, for all $ w \in \mathfrak{X}_{\rm div}(\R^n)$,
   \begin{align}
-  \left< J_L(p_\varphi), w\right> = \left< p_\varphi, w \circ \varphi \right> = \left< J_L^{(k)}(p_q), w \right>, \notag
+  \left< J_\text{spatial}(p_\varphi), w\right> = \left< p_\varphi, w \circ \varphi \right> = \left< J_L^{(k)}(p_q), w \right>, \notag
   \end{align}
   which shows commutativity of the left-hand part of the diagram. As for the right-hand part, we again use the special form of $p_\varphi$ to conclude that, for all $ w \in \mathfrak{iso}(z) \subset \mathfrak{X}_{\rm div}(\R^n)$,
  \begin{align}
- 	\left<J_R(p_\varphi), w\right> = \left<p_\varphi, T\varphi  (w) \right> = \left<J_L^{(k)}(p_q),  T\varphi (w \circ \varphi^{-1}) \right>. \label{compare_1}
+ 	\left<J_\text{conv}(p_\varphi), w\right> = \left<p_\varphi, T\varphi  (w) \right> = \left<J_L^{(k)}(p_q),  T\varphi (w \circ \varphi^{-1}) \right>. \label{compare_1}
  \end{align}
  On the other hand, if we write $\phi_\varphi: Q^{(k)}_N \to Q^{(k)}_N$ for the left action $\phi_\varphi (q) = \varphi \cdot q$, we have 
  \begin{align}
- 	\left<J_R(p_q), w\right> = \left< p_q, T_{\phi_\varphi} (w_{Q^{(k)}_N} (q_0))   \right> =  \left<p_q, (T\varphi (w \circ \varphi^{-1}) )_{Q^{(k)}_N} (q) \right>, \notag \end{align}
- where we denoted the infinitesimal left action of $w$ on $Q^{(k)}_N$ by $w_{Q^{(k)}_N}$. The velocity corresponding (via the inverse of the Legendre transform) to $p_q$ can be written as $ T\Jet_z^k( (K * J_L(p_q)) \circ \varphi)$,
+ 	\left<J_R^{(k)}(p_q), w\right> = \left< p_q, T_{\phi_\varphi} (w_{Q^{(k)}_N} (q_0))   \right> =  \left<p_q, (T\varphi (w \circ \varphi^{-1}) )_{Q^{(k)}_N} (q) \right>, \notag \end{align}
+ where we denoted the infinitesimal left action of $w$ on $Q^{(k)}_N$ by $w_{Q^{(k)}_N}$. The velocity corresponding (via the inverse of the Legendre transform) to $p_q$ can be written as $ T\Jet_z^k( (K * J_L^{(k)}(p_q)) \circ \varphi)$,
  and therefore one concludes that 
  \begin{align}
  	\left<J_R^{(k)}(p_q), w\right> = \left< J_L^{(k)}(p_q), T \varphi (w \circ \varphi^{-1}) \right>. \label{compare_2}
@@ -1125,18 +1129,15 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
  This shows the commutativity of the right-hand part of the  diagram above (compare \eqref{compare_1} and \eqref{compare_2}).
   
   Again, the right legs of both dual pairs yield the conserved quantities.
-From the diagram it is immediately clear that the conservation law exhibited in
-our particle models is a shadow of the conservation of \eqref{eq:circulation}.
-The conservation of circulation of the full regularized model is given by $J_R$,
-while that of the jetlet solutions is given by $J_R^{(k)}$.
-In other words, conservation of $J_R^{(k)}$ in the jetlet solutions is a shadow
-of the conservation of $J_R$, which is equivalent to conservation of \eqref{eq:circulation}.
-As \eqref{eq:circulation} contains Kelvin's circulation theorem,
-we see that our particle models contain a model of Kelvin's circulation theorem within them (cf. also \cite[Theorem 5.5]{JacobsRatiuDesbrun2013}).
+From the diagram it is immediately clear that the conservation of $J_R^{(k)}$ exhibited in
+our particle models is a shadow of the conservation of $J_\text{conv}$ in~\eqref{eq:circulation}.
+Since $J_\text{conv}$ corresponds by Noether's theorem to the (large)
+subgroup $\iso(z)$ of the right symmetry $\SDiff(\R^n)$ that generates
+conservation of circulation, we see that conservation of $J_R^{(k)}$ in the jetlet solutions is a shadow
+of the conservation of circulation.
+In other words, our particle models contain a model of Kelvin's circulation theorem within them (cf.~\cite[Theorem 5.5]{JacobsRatiuDesbrun2013}).
 
- As a side remark we mention that \eqref{compare_2} offers an alternative route to derive one momentum map once one has found the other. In contrast,  in the previous section we computed both $J_L$ and $J_R$ using the coordinate expressions, presented in the proof of proposition \ref{HL_action_prop},  for the respective actions on $Q^{(k)}_N$. 
-%
-
+As a side remark we mention that \eqref{compare_2} offers an alternative route to derive one momentum map once one has found the other. In contrast,  in the previous section we computed both $J_L^{(k)}$ and $J_R^{(k)}$ using the coordinate expressions, presented in the proof of proposition \ref{HL_action_prop},  for the respective actions on $Q^{(k)}_N$.
 
 
 \section{Particle mergers}
