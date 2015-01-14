@@ -945,14 +945,14 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
           }
           }
           \partial_{j_1 \cdots j_k} \varphi^i(q^{(0)})
-          q^{j_1}_{\gamma_1} \cdots
-          q^{j_k}_{\gamma_k}
+          q\indices{^{j_1}_{\gamma_1}} \cdots
+          q\indices{^{j_k}_{\gamma_k}}
         \right),
     \end{align*}
     except for the component where $|\alpha | = 0$ in which case we observe $(\varphi \cdot q)^i = \varphi^i(q^{(0)})$.
     By the same construction, a right $\iso(z)$ action is induced
     on $Q_1^{(k)}$ by setting $q \cdot \varphi = \Jet^k_z(\psi \circ \varphi)$ for any $\psi$ such that $\Jet^k_z(\psi) = q$.
-    We can choose distinct points $z^1,\dots,z^N \in \R^n$
+    We can choose distinct points $z_1,\dots,z_N \in \R^n$
     and easily apply the same process to $Q_N^{(k)}$.  In this case we observe the action to be
     \begin{align*}
       (q \cdot \varphi)\indices{^{ai}_\alpha} = \sum_{k=1}^{|\alpha|}
@@ -964,8 +964,8 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
           }
           }
           q\indices{^{ai}_{[j_1,\dots,j_k]}}
-          \partial_{\gamma_1} \varphi^{j_1}(z^a) \cdots
-          \partial_{\gamma_k} \varphi^{j_k}(z^a)
+          \partial_{\gamma_1} \varphi^{j_1}(z_a) \cdots
+          \partial_{\gamma_k} \varphi^{j_k}(z_a)
         \right).
     \end{align*}
   \end{proof}
@@ -983,9 +983,9 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
 				[\gamma_1,\dots,\gamma_\ell] \in \Pi(\alpha,\ell)
 				}
 			}
-			p\indices{_a_m^\alpha} \partial_{j_1 \cdots j_\ell}u^m (q\indices{^{(0)}_a})
-      q\indices{^{a j_1}_{\gamma_1}} \cdots
-      q\indices{^{a j_\ell}_{\gamma_\ell}}
+			p\indices{_a_m^\alpha} \partial_{j_1 \cdots j_\ell}u^m (q^{(0)}_a)
+      q\indices{_a^{j_1}_{\gamma_1}} \cdots
+      q\indices{_a^{j_\ell}_{\gamma_\ell}}
 			\right)
   \end{equation*}
   for arbitrary divergence free vector fields $u \in \mathfrak{X}_{\rm div}(\R^n)$.
@@ -999,7 +999,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
 				[\gamma_1,\dots,\gamma_\ell] \in \Pi(\alpha,\ell)
 				}
 			}
-			p\indices{_a_i^\alpha} q\indices{^{ai}_{[j_1 \cdots j_\ell]}}
+			p\indices{_a_i^\alpha} q\indices{_a^{i}_{[j_1 \cdots j_\ell]}}
       \sum_{m=1}^\ell  \partial_{\gamma_m} w^{j_m}(z_a) \left( \prod_{n \neq m}  \delta_{\gamma_n}^{[j_n]} \right)
   \end{equation*}
   where $w \in \mathfrak{X}_{\rm div}(\R^n)$ is such that $w(z) = 0$ (this describes the Lie algebra of $\iso(z)$),
