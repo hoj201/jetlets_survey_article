@@ -1074,11 +1074,11 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   to $J_R^{(k)}$ with Kelvin's circulation theorem.
 Let $\varphi_t \in \SDiff(\R^n)$ denote the flow-map
 produced by a solution to Euler's equation.
-Let $x(s,t) = \varphi_t(x_0(s))$ for some loop $x_0(s)$.
+Let $\gamma(s,t) = \varphi_t(\gamma_0(s))$ for some loop $\gamma_0(s)$.
 Kelvin's circulation theorem states that the circulation
-\begin{align*}
-  \Gamma(t) = \oint u( x(s,t) )  \cdot \partial_s x(s,t) ds
-\end{align*}
+\begin{equation}\label{eq:Kelvin-circulation}
+  \Gamma(t) = \oint u( \gamma(s,t) )  \cdot \partial_s \gamma(s,t) ds
+\end{equation}
 is constant in time.
 %\dm{In the interest of time I will not add an additional remark here for now. Maybe later, when we revise the paper.}
 It was shown in \cite{Arnold1966} that this conservation law
@@ -1095,16 +1095,42 @@ spatial and convective momentum maps induced by
 the left action of $\SDiff(\R^n)$ and the right action of
 $\iso(z) \subset \SDiff(\R^n)$ on $\SDiff(\R^n)$ itself.
 The dynamics on $T^*\SDiff(\R^n)$ exhibits the constant of motion
-\begin{align}
-  \langle J_\text{conv}(\varphi,p_\varphi) , w \rangle = \langle p_\varphi , T\varphi \cdot w \rangle \label{eq:circulation}
-\end{align}
+\begin{equation}\label{eq:abstract-circulation}
+  \langle J_\text{conv}(\varphi,p_\varphi) , w \rangle
+  = \langle p_\varphi , T\varphi \cdot w \rangle
+\end{equation}
 for all $w \in \mathfrak{X}_{\rm div}(\R^n)$.\footnote{The pairing $\langle \cdot , \cdot \rangle$ will always refer to the natural pairing between a vector-space and its dual in this paper.}
 This instance of Noether's theorem applies to regularized models as well as to the non-regularized case of Euler's.
-In the case of Euler's fluid equations, the above conservation law implies Kelvin's circulation theorem \cite[Ch 1, \S 9]{ArnoldKhesin1998}.
+In the case of Euler's fluid equations, the above conservation law
+implies Kelvin's circulation theorem, by the following heuristic
+argument~\cite[Ch~1, Thm~5.5]{ArnoldKhesin1998}:
+Consider a given closed curve $\gamma_0\colon S^1 \to \R^n$ and a family
+of vector fields $w_\varepsilon$ limiting to
+\begin{equation*}
+  w(x) = \begin{cases}
+    \gamma'(s) & \text{if $x = \gamma_0(s)$,}\\
+    0          & \text{else.}
+  \end{cases}
+\end{equation*}
+Assuming the limit $w_\varepsilon \to w$ can be made rigorous, and writing
+$p_\varphi = \langle \dot{\varphi} , \,\cdot\, \rangle_{L^2}$, we find
+\begin{align*}
+  \langle J_\text{conv}(\varphi,p_\varphi) , w \rangle
+  &= \langle \dot{\varphi} , T\varphi \cdot w \rangle_{L^2}\\
+  &= \int_{\gamma_0(S^1)} \langle \dot{\varphi}(x) , \textrm{D}\varphi(x)\cdot w(x) \rangle \,\textrm{d} x \\
+  &= \oint \langle \dot{\varphi}(\gamma_0(s) , \textrm{D}\varphi(\gamma_0(s))\cdot \gamma_0'(s) \rangle \,\textrm{d} s \\
+  &= \oint \langle u(\gamma(s,t)) , \partial_s \gamma(s,t) \rangle \,\textrm{d} s,
+\end{align*}
+where $u = \dot{\varphi}\circ\varphi^{-1}$ is the usual Euler
+representation of the fluid flow.
+
 Our models are obtained by using the deformed Hamiltonian
 $h_\epsilon$ in place of $h_0$.
 These regularized Hamiltonians are also $\SDiff(\R^n)$ invariant, and
-therefore \eqref{eq:circulation} is also conserved in the regularized models.
+therefore~\eqref{eq:abstract-circulation} is also conserved in the
+regularized models, although this does not lead to Kelvin's
+circulation law~\eqref{eq:Kelvin-circulation} anymore because of the
+changed inner product.
 
 Moreover, these conserved quantities are inherited by the finite dimensional jet-particle solutions.
 To see this, it is useful to define the $k$-th order isotropy group,
