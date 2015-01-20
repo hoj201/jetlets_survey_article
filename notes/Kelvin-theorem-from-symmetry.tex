@@ -1,0 +1,89 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[margin=2.5cm]{geometry}
+
+\usepackage{amsmath,amssymb}
+
+\title{Deriving Kelvin's circulation theorem from right symmetry}
+\author{Jaap Eldering}
+
+\renewcommand{\d}{\ensuremath{\,\textrm{d}}}
+
+\begin{document}
+
+\maketitle
+
+The Lagrangian for an Euler fluid is given by
+\begin{equation}\label{eq:Euler-lagrangian}
+  L(\phi,\dot{\phi})
+  = \int_D \frac{1}{2} \| \dot{\phi}(x) \|^2 \d x
+  = \int_D \frac{1}{2} \| \dot{\phi}\circ\phi^{-1}(y) \|^2 \d y
+  = \frac{1}{2} \| u \|_{L^2}^2,
+\end{equation}
+where we assume for simplicity that $D$ is an open subset of
+$\mathbb{R}^n$, we ignore its boundary, $\phi \in \textrm{SDiff}(D)$,
+and $u = \dot{\phi}\circ\phi^{-1}$ is the usual velocity field in the
+right-reduced, spatial representation where we find the equations
+\begin{equation*}
+  \frac{D}{\d t} u = \dot{u} + (u \cdot \nabla)u = - \nabla p, \qquad \nabla u = 0.
+\end{equation*}
+Note that $p$ is simply a Lagrange multiplier to enforce the
+constraint $u \in \mathfrak{X}_\text{div}(D) = \textrm{T}_e \textrm{SDiff}(D)$.
+
+This system is invariant under the symmetry given by right
+multiplication action of $\textrm{SDiff}(D)$ on itself:
+\begin{equation*}
+  \rho(\eta,\phi) = \phi \circ \eta.
+\end{equation*}
+Its infinitesimal action is
+\begin{equation*}
+  \rho(w,\phi) = \textrm{T}\phi \cdot w, \qquad w \in \mathfrak{X}_\text{div}(D).
+\end{equation*}
+The associated conserved momentum map (in the Lagrangian setting) is
+\begin{equation}\label{eq:momentum-map}
+  J\colon \textrm{T}\,\textrm{SDiff}(D) \to \mathfrak{X}_\text{div}(D)^*, \quad
+  \langle J(\phi,\dot{\phi}) , \rho(w,\phi) \rangle
+  = \Big\langle \frac{\partial L}{\partial \dot{\phi}}(\phi,\dot{\phi}) , \textrm{T}\phi \cdot w \Big\rangle.
+\end{equation}
+We calculate
+\begin{align*}
+  \Big\langle \frac{\partial L}{\partial \dot{\phi}}(\phi,\dot{\phi}) , \textrm{T}\phi \cdot w \Big\rangle
+  &= \frac{\d}{\d \epsilon} L(\phi,\dot{\phi} + \epsilon \textrm{T}\phi \cdot w) \Big|_{\epsilon=0}\\
+  &= \int_D \langle \dot{\phi}(x) , \textrm{D}\phi(x) \cdot w(x) \rangle \d x
+   = \langle u , \textrm{Ad}_\phi(w) \rangle_{L^2}.
+\end{align*}
+Since this is invariant for all $w \in \mathfrak{X}_\text{div}(D)$, we
+can choose a smooth closed curve $\gamma\colon S^1 \to D$ without
+self-intersections and set\footnote{%
+  This $w$ is actually a distributional object, and we have to prove
+  that we can obtain it as a limit of a smooth family $w_\epsilon$ as
+  $\epsilon \to 0$. To this end, we could construct a tubular
+  neighborhood of $\gamma$ and set $w_\epsilon$ to fall off within a
+  radius $\epsilon$ of $\gamma$. We can use the Helmholtz
+  decomposition to project $w_\epsilon$ onto the divergence-free
+  vector fields, but need to check that $w_\epsilon \to w$ is then
+  still satisfied, when acting e.g.\ on continuous $u$'s.}
+\begin{equation*}
+  w(x) = \begin{cases}
+    \gamma'(s) & \text{if $x = \gamma(s)$ for some unique $s$,}\\
+    0          & \text{else.}
+  \end{cases}
+\end{equation*}
+If we now define the flowout $\gamma_t(s) = \phi^t(\gamma(s))$ of the
+curve $\gamma$, then for this $w$, the conserved
+momentum~\eqref{eq:momentum-map} reduces to
+\begin{align*}
+  \langle J(\phi,\dot{\phi}) , \rho(w,\phi) \rangle
+  &= \int_{\gamma(S^1)} \langle \dot{\phi}(x) , \textrm{D}\phi(x)\cdot w(x) \rangle \d x \\
+  &= \int_{S^1} \langle \dot{\phi}(\gamma(s) , \textrm{D}\phi(\gamma(s))\cdot \gamma'(s) \rangle \d s \\
+  &= \int_{S^1} \langle u(\gamma_t(s)) , \gamma_t'(s) \rangle \d s,
+\end{align*}
+that is, Kelvin's circulation theorem.
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
