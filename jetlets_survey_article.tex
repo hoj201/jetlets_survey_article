@@ -2,6 +2,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amssymb}
 \usepackage{stmaryrd}
+\usepackage{mathrsfs}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{arrows}
@@ -1101,38 +1102,86 @@ The dynamics on $T^*\SDiff(\R^n)$ exhibits the constant of motion
 \end{equation}
 for all $w \in \mathfrak{X}_{\rm div}(\R^n)$.\footnote{The pairing $\langle \cdot , \cdot \rangle$ will always refer to the natural pairing between a vector-space and its dual in this paper.}
 This instance of Noether's theorem applies to regularized models as well as to the non-regularized case of Euler's.
-In the case of Euler's fluid equations, the above conservation law
-implies Kelvin's circulation theorem, by the following heuristic
-argument~\cite[Ch~1, Thm~5.5]{ArnoldKhesin1998}:
-Consider a given closed curve $\gamma_0\colon S^1 \to \R^n$ and a family
-of vector fields $w_\varepsilon$ limiting to
-\begin{equation*}
-  w(x) = \begin{cases}
-    \gamma'(s) & \text{if $x = \gamma_0(s)$,}\\
-    0          & \text{else.}
-  \end{cases}
-\end{equation*}
-Assuming the limit $w_\varepsilon \to w$ can be made rigorous, and writing
-$p_\varphi = \langle \dot{\varphi} , \,\cdot\, \rangle_{L^2}$, we find
+In the case of Euler's fluid equations, the equivalence between the above conservation law
+and Kelvin's circulation theorem is demonstrated by a heuristic
+argument~\cite[Ch~1, Thm~5.5]{ArnoldKhesin1998}.
+\hoj{I removed the details of this argument.  It admits to being non-rigorous, 
+and there is no reason we should ask to be punished by the reviewers.}
+A more rigorous correspondence is developed in \cite{HolmMarsdenRatiu1998}
+which we follow here.
+Any $m \in \mathfrak{X}_{\rm div}(\R^d)^*$ can be written as a one-form density $\tilde{m} \otimes \mu$
+where $\mu$ is the volume form on $\R^d$.
+For any smooth curve $\gamma:S^1 \to \R^d$ we may consider the quantity
+$\mathscr{K}(\gamma) \in \mathfrak{X}_{\rm div}(\R^d)^{**}$ defined by
 \begin{align*}
-  \langle J_\text{conv}(\varphi,p_\varphi) , w \rangle
-  &= \langle \dot{\varphi} , T\varphi \cdot w \rangle_{L^2}\\
-  &= \int_{\gamma_0(S^1)} \langle \dot{\varphi}(x) , \textrm{D}\varphi(x)\cdot w(x) \rangle \,\textrm{d} x \\
-  &= \oint \langle \dot{\varphi}(\gamma_0(s) , \textrm{D}\varphi(\gamma_0(s))\cdot \gamma_0'(s) \rangle \,\textrm{d} s \\
-  &= \oint \langle u(\gamma(s,t)) , \partial_s \gamma(s,t) \rangle \,\textrm{d} s,
+	\langle \mathscr{K}(\gamma) , \alpha \rangle = \int_{\gamma} \alpha
 \end{align*}
-where $u = \dot{\varphi}\circ\varphi^{-1}$ is the usual Euler
-representation of the fluid flow.
+By Theorem 6.2 of \cite{HolmMarsdenRatiu1998}, if $\gamma_t(s) = \varphi_t(\gamma_0(s))$ and $m = \tilde{m} \otimes \mu$ satisfies
+the ideal incompressible fluid equation (perhaps regularized), then the circulation
+\begin{align*}
+	\Gamma(t) = \langle \mathscr{K}(\gamma_t) , \tilde{m}(t) \rangle
+\end{align*}
+is constant in time.
+It is in this sense that the Kelvin's circulation theorem follows from the particle
+relabeling symmetry for any $\SDiff(\R^d)$ invariant Lagrangian.
 
-Our models are obtained by using the deformed Hamiltonian
-$h_\epsilon$ in place of $h_0$.
-These regularized Hamiltonians are also $\SDiff(\R^n)$ invariant, and
-therefore~\eqref{eq:abstract-circulation} is also conserved in the
-regularized models, although this does not lead to Kelvin's
-circulation law~\eqref{eq:Kelvin-circulation} anymore because of the
-changed inner product.
+%Consider a given closed curve $\gamma_0\colon S^1 \to \R^n$ and a family
+%of vector fields $w_\varepsilon$ such that $w_\varepsilon(\gamma(s)) = \gamma'(s)$
+%and such that the limit as $\epsilon$ vanishes is the discontinuous map
+%\begin{equation*}
+%  w(x) = \begin{cases}
+%    \gamma'(s) & \text{if $x = \gamma_0(s)$, for some $s$}\\
+%    0          & \text{else.}
+%  \end{cases}
+%\end{equation*}
+%Assuming the limit $w_\varepsilon \to w$ can be made rigorous, and writing
+%$p_\varphi = \langle \dot{\varphi} , \,\cdot\, \rangle_{L^2}$, we find
+%\begin{align*}
+%  \langle J_\text{conv}(\varphi,p_\varphi) , w \rangle
+%  &= \langle \dot{\varphi} , T\varphi \cdot w \rangle_{L^2}\\
+%  &= \int_{\gamma_0(S^1)} \langle \dot{\varphi}(x) , \textrm{D}\varphi(x)\cdot w_\epsilon(x) \rangle \,\textrm{d} x \\
+%  &= \oint \langle \dot{\varphi}(\gamma_0(s) , \textrm{D}\varphi(\gamma_0(s))\cdot \gamma_0'(s) \rangle \,\textrm{d} s \\
+%  &= \oint \langle u(\gamma(s,t)) , \partial_s \gamma(s,t) \rangle \,\textrm{d} s,
+%\end{align*}
+%where $u = \dot{\varphi}\circ\varphi^{-1}$ is the usual Euler
+%representation of the fluid flow.
 
-Moreover, these conserved quantities are inherited by the finite dimensional jet-particle solutions.
+%In our case we can actually be more explicit that this because the space of vector-fields we are considering is
+%a reproducing kernel Hilbert space (RKHS).
+%Let $\gamma: S^1 \to \R^d$ be a loop and consider the functional
+%$\mathcal{C}_\gamma: \mathfrak{X}_{\rm div}(\R^d) \to \mathbb{R}$
+%given by
+%\begin{align*}
+%	\mathcal{C}_\gamma[u] = \int_{S^1} \gamma'(s) \cdot  u(\gamma(s)) ds
+%\end{align*}
+%
+%\begin{prop}
+%  The functional $\mathcal{C}_\gamma$ is continuous with respect to the RKHS topology
+%\end{prop}
+%\begin{proof}
+%  A defining property of a RKHS is that the evaluation functions, (i.e. the Dirac-delta)
+%  is continuous.  We may rewrite $\Gamma$ as
+%  \begin{align*}
+%  	\mathcal{C}_\gamma[u] = \int_{\R^n} \int_{S^1} \gamma'(s) \cdot u(x) \delta(x - \gamma(s)) ds dx
+%  \end{align*}
+%  Thus $\Gamma$ may be viewed as a composition of continuous maps (namely evaluation at $\gamma(s)$ and integration over $s$).
+%\end{proof}
+%\hoj{Including this proof seems excessive to me.  We should probably just cite something in Federer.}
+%
+%By the Riesz representation theorem, there exists a vector-feild $v_{\gamma} \in \mathfrak{X}_{\rm div}(\R^d)$
+%such that $\langle v_{\gamma} , u \rangle  = \Gamma[u]$.
+%Explicitly,
+%\begin{align*}
+%	v_{\Gamma}(x) = \int_{S^1} K(x-\gamma(s)) \cdot \gamma'(s)  ds.
+%\end{align*}
+%If we replace $w$ in \eqref{eq:abstract-circulation} with $v_\gamma$ we find
+%\begin{align*}
+%  \mathcal{C}_{\gamma} = \langle J_{\rm conv}(\varphi,p_{\varphi}), v_\gamma \rangle = \int_{S^1} u( \gamma(s) )  \cdot \partial_s \gamma(s,t) dt
+%\end{align*}
+%is a constant of motion which we may call the circulation of the curve $\gamma$.
+Thus we will view conservation of \eqref{eq:abstract-circulation} as the more fundamental conservation law.
+What is nice about this perspective with regards to our particle model is that the particle model contains the a shadow of the full particle relabeling symmetry,
+and there are conserved quantities inherited by the finite dimensional jet-particle solutions which are a shadow of \eqref{eq:abstract-circulation}.
 To see this, it is useful to define the $k$-th order isotropy group,
 $\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid \Jet^{k}_z( \psi) = \Jet^k_z (\rm{id})) \}$, where we wrote $\rm{id}$ for the identity mapping and $z$ is shorthand for $z_1, \ldots, z_N \in \mathbb{R}^n$.   \dm{I have changed the foregoing definition slightly. I think this is now clearer. Please check.}
 Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the corresponding quotient map is given by $\Jet_z^k$.  
