@@ -1105,10 +1105,31 @@ This instance of Noether's theorem applies to regularized models as well as to t
 In the case of Euler's fluid equations, the equivalence between the above conservation law
 and Kelvin's circulation theorem is demonstrated by a heuristic
 argument~\cite[Ch~1, Thm~5.5]{ArnoldKhesin1998}.
-\hoj{I removed the details of this argument.  It admits to being non-rigorous, 
-and there is no reason we should ask to be punished by the reviewers.}
+Their heuristic argument goes as follows.
+Consider a given closed curve $\gamma_0\colon S^1 \to \R^n$ and a family
+of vector fields $w_\varepsilon$ such that $w_\varepsilon(\gamma(s)) = \gamma'(s)$
+and such that the limit as $w = \lim_{\varepsilon \to 0} w_\varepsilon$ is the discontinuous map
+\begin{equation*}
+  w(x) = \begin{cases}
+    \gamma'(s) & \text{if $x = \gamma_0(s)$, for some $s$}\\
+    0          & \text{else.}
+  \end{cases}
+\end{equation*}
+Assuming $\epsilon$ is small we find
+$p_\varphi = \langle \dot{\varphi} , \,\cdot\, \rangle_{L^2}$, we find
+\begin{align*}
+  \langle J_\text{conv}(\varphi,p_\varphi) , w_\varepsilon \rangle
+  &= \langle \dot{\varphi} , T\varphi \cdot w_\varepsilon \rangle_{L^2}\\
+  &= \int_{\gamma_0(S^1)} \langle \dot{\varphi}(x) , \textrm{D}\varphi(x)\cdot w_\epsilon(x) \rangle \,\textrm{d} x \\
+  &\approx \oint \langle \dot{\varphi}(\gamma_0(s) , \textrm{D}\varphi(\gamma_0(s))\cdot \gamma_0'(s) \rangle \,\textrm{d} s \\
+  &= \oint \langle u(\gamma(s,t)) , \partial_s \gamma(s,t) \rangle \,\textrm{d} s,
+\end{align*}
+where $u = \dot{\varphi}\circ\varphi^{-1}$ is the usual Euler
+representation of the fluid flow.
+It is in this sense that conservation of circulation follows from the conservation of $J_{\rm conv}$.
+
 A more rigorous correspondence is developed in \cite{HolmMarsdenRatiu1998}
-which we follow here.
+using currents.
 Any $m \in \mathfrak{X}_{\rm div}(\R^n)^*$ can be written as a one-form density $\tilde{m} \otimes \mu$
 where $\mu$ is the volume form on $\R^n$.
 For any smooth curve $\gamma:S^1 \to \R^n$ we may consider the quantity
@@ -1125,26 +1146,7 @@ is constant in time.
 It is in this sense that the Kelvin's circulation theorem follows from the particle
 relabeling symmetry for any $\SDiff(\R^n)$ invariant Lagrangian.
 
-%Consider a given closed curve $\gamma_0\colon S^1 \to \R^n$ and a family
-%of vector fields $w_\varepsilon$ such that $w_\varepsilon(\gamma(s)) = \gamma'(s)$
-%and such that the limit as $\epsilon$ vanishes is the discontinuous map
-%\begin{equation*}
-%  w(x) = \begin{cases}
-%    \gamma'(s) & \text{if $x = \gamma_0(s)$, for some $s$}\\
-%    0          & \text{else.}
-%  \end{cases}
-%\end{equation*}
-%Assuming the limit $w_\varepsilon \to w$ can be made rigorous, and writing
-%$p_\varphi = \langle \dot{\varphi} , \,\cdot\, \rangle_{L^2}$, we find
-%\begin{align*}
-%  \langle J_\text{conv}(\varphi,p_\varphi) , w \rangle
-%  &= \langle \dot{\varphi} , T\varphi \cdot w \rangle_{L^2}\\
-%  &= \int_{\gamma_0(S^1)} \langle \dot{\varphi}(x) , \textrm{D}\varphi(x)\cdot w_\epsilon(x) \rangle \,\textrm{d} x \\
-%  &= \oint \langle \dot{\varphi}(\gamma_0(s) , \textrm{D}\varphi(\gamma_0(s))\cdot \gamma_0'(s) \rangle \,\textrm{d} s \\
-%  &= \oint \langle u(\gamma(s,t)) , \partial_s \gamma(s,t) \rangle \,\textrm{d} s,
-%\end{align*}
-%where $u = \dot{\varphi}\circ\varphi^{-1}$ is the usual Euler
-%representation of the fluid flow.
+
 
 %In our case we can actually be more explicit that this because the space of vector-fields we are considering is
 %a reproducing kernel Hilbert space (RKHS).
@@ -1433,12 +1435,6 @@ interacting weakly with a third jetlet particle.
   \caption{Angular momentum exchange between three jetlets.}
   \label{fig:angmom-3rd-jetlet}
 \end{figure}
-
-\hoj{Some comments on the table:  I'm not sure we can use this table by itself. 
-Conservation of $J_R, E,$ etc was verified through formal proof, 
-so this table, by itself seems to be a test
-of the numerical accuracy of scipy's ode integration method.  We will need to include some plots of momenta exchanges.
-One thing we could do is plot $\mu$ vs $J_R$, since those are the same units.}
 
 \appendix
 
