@@ -98,7 +98,7 @@ of diffeomorphism self-similarity.
   Toy models such as this are crucial to our understanding of fluids,
   both from a numerical perspective, and from the perspective
   of ``pure'' mathematics.
-  Without models which rigorously mimic aspects of self-similarity 
+  Without models which mimic aspects of self-similarity 
   and cascade,
   one is forced to stare self-similarity in the face directly.
   Here we present one of the first Lagrangian models that reflects aspects
@@ -169,7 +169,7 @@ dual spaces.  A group $G$, left multiplication $L_g$, right multi $R_g$,
 left/right action $\rho(g,x)$ or $\rho(x,g)$, infinitesimal generator $\rho(\xi,x)$ or $\rho(x,\xi)$.
 
 Various different types of indices will be used throughout this paper.
-To clearly distinguish between the types, we keep the following
+To distinguish between the types, we keep the following
 conventions:
 \begin{itemize}
 \item indices $a,b,c,\ldots$ label particles and range from $1$ to $N$;
@@ -231,7 +231,7 @@ There are canonical coordinates on $T^*\SO(3)$ given by $(R,P)$
 where $P$ is such that $R^TP $ is a $3 \times 3$ anti-symmetric
 matrix\footnote{%
   We use the pairing $\langle P, v \rangle = \tr(P^T v)$ for
-  $P \in T^*_R SO(3)$ and $v \in T_R SO(3)$.}.
+  $P \in T^*_R SO(3)$ and $v \in T_R SO(3)$. More generally, the pairing $\langle \cdot , \cdot \rangle$ will always refer to the natural pairing between a vector-space and its dual in this paper.}.
 The angular momentum in the body frame is the
 unique vector $\Pi \in \mathbb{R}^3 \equiv \so(3)^*$ such that
 \begin{align*}
@@ -242,7 +242,7 @@ unique vector $\Pi \in \mathbb{R}^3 \equiv \so(3)^*$ such that
     \end{bmatrix}.
 \end{align*}
 Denoting this map from $(R,P)$ to $\Pi$ by $J_R$,
-the Hamiltonian can be written solely as a function
+the Hamiltonian can be written as a function
 of $\Pi$.  In particular, the reduced Hamiltonian is
 \begin{align*}
   h(\Pi) = \frac{1}{2}\Pi \cdot \mathbb{I}^{-1} \cdot \Pi
@@ -309,7 +309,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     \end{align*}
     for arbitrary functions $\hat{f},\hat{g} \in C^1(\so(3)^*)$.
     There exists functions $f,g \in C^1(\mathbb{R}^3)$ related to $\hat{F},\hat{G}$ through the hat map.
-    One can directly observe that $d\hat{f}(\hat{\Pi}) \in \so(3)$ is 
+    One can observe that $d\hat{f}(\hat{\Pi}) \in \so(3)$ is 
     related to $\nabla f(\Pi)$ through the relation $\widehat{ \nabla f(\Pi)} = d\hat{f}( \hat{\Pi})$.
     We see that the commutator bracket satisfies
     \begin{align*}
@@ -532,7 +532,7 @@ In this case Hamilton's equations take the form
 	\partial_t m+ \lie_u [ m] = 0 \quad , \quad u^i  = K^{ij}_{p,\sigma} * m_j. \label{eq:MMDiff}
 \end{align}
 Solutions to \eqref{eq:MMDiff} exhibit existence and uniqueness for all time.
-Lastly, as $\sigma \to 0$, $h_{p,\sigma} \to h_{\rm Euler}$ and one
+Moreover, as $\sigma \to 0$, $h_{p,\sigma} \to h_{\rm Euler}$ and one
 can speculate that solutions to~\eqref{eq:MMDiff}
 approach solutions to the ideal fluid equation~\eqref{eq:ideal_fluid}.
 In fact, this is the case over short times, and for $\sigma > 0$ solutions of \eqref{eq:MMDiff}
@@ -799,7 +799,7 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
     The actions of $\iso(z)$ and $\SDiff(\R^n)$ on $Q_N^{(1)}$
     clearly commute
     and lift to symplectic actions on $T^*Q_N^{(1)}$.
-    Moreover, the action of $\SDiff(\R^n)$ is clearly transitive on the level sets of $J_R^{(1)}$, since it is transitive overall.
+    Moreover, the action of $\SDiff(\R^n)$ is transitive on the level sets of $J_R^{(1)}$, since it is transitive overall.
     By theorem \ref{thm:commuting_actions}, $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
   \end{proof}
 
@@ -862,7 +862,7 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
 
   Let $\varphi \in \SDiff(\R^n)$.
   The zeroth-order Taylor expansion of $\varphi$ about $0$
-  is simply $\varphi(0)$, and the collection of such Taylor
+  is $\varphi(0)$, and the collection of such Taylor
   expansions is all of $\R^n$.
   The $1^{\rm st}$-order Taylor expansion of $\varphi$ about $0$ is
   \begin{align*}
@@ -888,7 +888,7 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
   have been symmetrized in the covariant indices.
   The space $Q_1^{(k)}$ is equipped with the fiber bundle
   projection $\pi^{(k)} : Q_1^{(k)} \to \R^n$,
-  which simply projects onto the $\R^n$ component.
+  which projects onto the $\R^n$ component.
   We define the space for an $N$-tuple of $k$-jetlets by taking a product
   \begin{align*}
     Q^{(k)}_N = \{ (q_1,\dots, q_N) \in Q_1^{(k)} \times \dots \times Q_1^{(k)}
@@ -933,7 +933,7 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
     \end{align*}
 where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of a multi-index $\alpha$. We refer to Appendix~\ref{app:multi} for the details of our index conventions and to \cite{ConstantineSavits1996,Jacobs2014b} for a
     precise description of the multivariate Fa\`a di Bruno formula.
-    One can read off  directly from the expression that
+    One can read off   from the expression that
     a $k^{\rm th}$ order derivative only depends on $k^{\rm th}$
     and lower order
     partial derivatives of $\varphi_1$ and $\varphi_2$.
@@ -963,7 +963,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
     By the same construction, a right $\iso(z)$ action is induced
     on $Q_1^{(k)}$ by setting $q \cdot \varphi = \Jet^k_z(\psi \circ \varphi)$ for any $\psi$ such that $\Jet^k_z(\psi) = q$.
     We can choose distinct points $z_1,\dots,z_N \in \R^n$
-    and easily apply the same process to $Q_N^{(k)}$.  In this case we observe the action to be
+    and apply the same process to $Q_N^{(k)}$.  In this case we observe the action to be
     \begin{align*}
       (q \cdot \varphi)\indices{^{ai}_\alpha} = \sum_{k=1}^{|\alpha|}
       \left(
@@ -1083,50 +1083,48 @@ Kelvin's circulation theorem states that the circulation
 is constant in time.
 %\dm{In the interest of time I will not add an additional remark here for now. Maybe later, when we revise the paper.}
 It was shown in \cite{Arnold1966} that this conservation law
-is merely an instance of Noether's theorem.
+is an instance of Noether's theorem.
 In particular, circulation is one of the conserved momenta
 associated to the particle relabeling symmetry of fluids.
 More specifically,
 recall that $h_0$ is the Hamiltonian for Euler's equations,
-and this Hamiltonian is $\SDiff(\R^n)$ invariant.
-In this instance we have a dual pair
+and this Hamiltonian is $\SDiff(\R^n)$ invariant. Moreover, we have a dual pair
 $J_\text{spatial}: T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$
 and $J_\text{conv}: T^*\SDiff(\R^n) \to \mathfrak{iso}(z)^*$ of
 spatial and convective momentum maps induced by
 the left action of $\SDiff(\R^n)$ and the right action of
 $\iso(z) \subset \SDiff(\R^n)$ on $\SDiff(\R^n)$ itself.
-The dynamics on $T^*\SDiff(\R^n)$ exhibits the constant of motion
+By the general principles discussed earlier, the dynamics on $T^*\SDiff(\R^n)$ exhibit the constant of motion
 \begin{equation}\label{eq:abstract-circulation}
   \langle J_\text{conv}(\varphi,p_\varphi) , w \rangle
   = \langle p_\varphi , T\varphi \cdot w \rangle
 \end{equation}
-for all $w \in \mathfrak{X}_{\rm div}(\R^n)$.\footnote{The pairing $\langle \cdot , \cdot \rangle$ will always refer to the natural pairing between a vector-space and its dual in this paper.}
+for all $w \in \mathfrak{X}_{\rm div}(\R^n)$.  
 This instance of Noether's theorem applies to regularized models as well as to the non-regularized case of Euler's.
 In the case of Euler's fluid equations, the equivalence between the above conservation law
 and Kelvin's circulation theorem is demonstrated by a heuristic
-argument~\cite[Ch~1, Thm~5.5]{ArnoldKhesin1998}.
-Their heuristic argument goes as follows.
+argument~\cite[Ch~1, Thm~5.5]{ArnoldKhesin1998}, which goes as follows. 
 Consider a given closed curve $\gamma_0\colon S^1 \to \R^n$ and a family
 of vector fields $w_\varepsilon$ such that $w_\varepsilon(\gamma(s)) = \gamma'(s)$
-and such that the limit as $w = \lim_{\varepsilon \to 0} w_\varepsilon$ is the discontinuous map
+and such that the limit $w = \lim_{\varepsilon \to 0} w_\varepsilon$ is the discontinuous map
 \begin{equation*}
   w(x) = \begin{cases}
-    \gamma'(s) & \text{if $x = \gamma_0(s)$, for some $s$}\\
+    \gamma'_0(s) & \text{if $x = \gamma_0(s)$, for some $s$}\\
     0          & \text{else.}
   \end{cases}
 \end{equation*}
-Assuming $\epsilon$ is small we find
+Assuming $\epsilon$ is small and writing 
 $p_\varphi = \langle \dot{\varphi} , \,\cdot\, \rangle_{L^2}$, we find
 \begin{align*}
   \langle J_\text{conv}(\varphi,p_\varphi) , w_\varepsilon \rangle
   &= \langle \dot{\varphi} , T\varphi \cdot w_\varepsilon \rangle_{L^2}\\
   &= \int_{\gamma_0(S^1)} \langle \dot{\varphi}(x) , \textrm{D}\varphi(x)\cdot w_\epsilon(x) \rangle \,\textrm{d} x \\
-  &\approx \oint \langle \dot{\varphi}(\gamma_0(s) , \textrm{D}\varphi(\gamma_0(s))\cdot \gamma_0'(s) \rangle \,\textrm{d} s \\
+  &\approx \oint \langle \dot{\varphi}(\gamma_0(s)) , \textrm{D}\varphi(\gamma_0(s))\cdot \gamma_0'(s) \rangle \,\textrm{d} s \\
   &= \oint \langle u(\gamma(s,t)) , \partial_s \gamma(s,t) \rangle \,\textrm{d} s,
 \end{align*}
 where $u = \dot{\varphi}\circ\varphi^{-1}$ is the usual Euler
-representation of the fluid flow.
-It is in this sense that conservation of circulation follows from the conservation of $J_{\rm conv}$.
+representation of the fluid flow. 
+\dm{I have four remarks about this: (i) AK98 Thm 5.5 looks, to me, like a statement of Kelvin's theorem, but it doesn't mention momentum maps etc...? (ii) I believe that in the limit as $\varepsilon$ goes to zero, the vector field $w$ should blow up in strength (ArnoldKhesin talk about unit flux through a transverse section to the curve), and (iii) the integration region in the first integral above should probably be $\mathbb{R}^n$, rather than $\gamma_0$? Finally, (iv), what are the pairings $\langle ., .\rangle$ in these integrals...? They probably aren't dual pairings..?} Therefore, conservation of $J_{\rm conv}$ leads to conservation of circulation. 
 
 A more rigorous correspondence is developed in \cite{HolmMarsdenRatiu1998}.
 Any $m \in \mathfrak{X}_{\rm div}(\R^n)^*$ can be written as a one-form density $\tilde{m} \otimes \mu$
@@ -1142,48 +1140,10 @@ the ideal incompressible fluid equation (perhaps regularized), then the circulat
 	\Gamma(t) = \langle \mathscr{K}(\gamma_t) , m(t) \rangle
 \end{align*}
 is constant in time.
-It is in this sense that the Kelvin's circulation theorem follows from the particle
-relabeling symmetry for any $\SDiff(\R^n)$ invariant Lagrangian.
+It is in this sense that Kelvin's circulation theorem follows from the particle
+relabeling symmetry for any $\SDiff(\R^n)$ invariant Lagrangian. 
 
-
-
-%In our case we can actually be more explicit that this because the space of vector-fields we are considering is
-%a reproducing kernel Hilbert space (RKHS).
-%Let $\gamma: S^1 \to \R^d$ be a loop and consider the functional
-%$\mathcal{C}_\gamma: \mathfrak{X}_{\rm div}(\R^d) \to \mathbb{R}$
-%given by
-%\begin{align*}
-%	\mathcal{C}_\gamma[u] = \int_{S^1} \gamma'(s) \cdot  u(\gamma(s)) ds
-%\end{align*}
-%
-%\begin{prop}
-%  The functional $\mathcal{C}_\gamma$ is continuous with respect to the RKHS topology
-%\end{prop}
-%\begin{proof}
-%  A defining property of a RKHS is that the evaluation functions, (i.e. the Dirac-delta)
-%  is continuous.  We may rewrite $\Gamma$ as
-%  \begin{align*}
-%  	\mathcal{C}_\gamma[u] = \int_{\R^n} \int_{S^1} \gamma'(s) \cdot u(x) \delta(x - \gamma(s)) ds dx
-%  \end{align*}
-%  Thus $\Gamma$ may be viewed as a composition of continuous maps (namely evaluation at $\gamma(s)$ and integration over $s$).
-%\end{proof}
-%\hoj{Including this proof seems excessive to me.  We should probably just cite something in Federer.}
-%
-%By the Riesz representation theorem, there exists a vector-feild $v_{\gamma} \in \mathfrak{X}_{\rm div}(\R^d)$
-%such that $\langle v_{\gamma} , u \rangle  = \Gamma[u]$.
-%Explicitly,
-%\begin{align*}
-%	v_{\Gamma}(x) = \int_{S^1} K(x-\gamma(s)) \cdot \gamma'(s)  ds.
-%\end{align*}
-%If we replace $w$ in \eqref{eq:abstract-circulation} with $v_\gamma$ we find
-%\begin{align*}
-%  \mathcal{C}_{\gamma} = \langle J_{\rm conv}(\varphi,p_{\varphi}), v_\gamma \rangle = \int_{S^1} u( \gamma(s) )  \cdot \partial_s \gamma(s,t) dt
-%\end{align*}
-%is a constant of motion which we may call the circulation of the curve $\gamma$.
-Thus we will view conservation of \eqref{eq:abstract-circulation} as the more fundamental conservation law.
-What is nice about this perspective with regards to our particle model is that the particle model contains the a shadow of the full particle relabeling symmetry,
-and there are conserved quantities inherited by the finite dimensional jet-particle solutions which are a shadow of \eqref{eq:abstract-circulation}.
-To see this, it is useful to define the $k$-th order isotropy group,
+In light of this discussion, it is natural to consider \eqref{eq:abstract-circulation} as the  fundamental conservation law. The main goal in the remainder of this section is to show that the jet-particle solutions satisfy conservation laws that are `shadows' of this fundamental law in the sense that they are associated with a \emph{partial} relabeling symmetry. To see this, it is useful to define the $k$-th order isotropy group,
 $\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid \Jet^{k}_z( \psi) = \Jet^k_z (\rm{id})) \}$, where we wrote $\rm{id}$ for the identity mapping and $z$ is shorthand for $z_1, \ldots, z_N \in \mathbb{R}^n$.
 Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the corresponding quotient map is given by $\Jet_z^k$.  
  The space $T^*Q^{(k)}$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$.  The commutativity of the following diagram uniquely defines the jetlet solutions:
@@ -1194,7 +1154,7 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
    & T^*Q^{(k)}_N \uar{i} \ar[uur,"J_R^{(k)}"',bend right = 30] \ar[uul,"J_L^{(k)}",bend left = 30] &
  \end{tikzcd}
 \end{equation}
-  Namely, for the left-hand part of the diagram recall that we have shown in the previous section that a jetlet solution has a velocity vector in $T \SDiff(\R^n)$ of the form \begin{align} v_{\varphi} = (K * J_L^{(k)}(p_q)) \circ \varphi \notag \end{align} for some $p_q \in T^*_q Q^{(k)}_N$, where $q = \Jet^k_z(\varphi)$. From this it follows immediately that the corresponding Legendre momentum $p_\varphi$ satisfies, for all $ w \in \mathfrak{X}_{\rm div}(\R^n)$,
+  Namely, for the left-hand part of the diagram recall that we have shown in the previous section that a jetlet solution has a velocity vector in $T \SDiff(\R^n)$ of the form \begin{align} v_{\varphi} = (K * J_L^{(k)}(p_q)) \circ \varphi \notag \end{align} for some $p_q \in T^*_q Q^{(k)}_N$, where $q = \Jet^k_z(\varphi)$. From this it follows that the corresponding Legendre momentum $p_\varphi$ satisfies, for all $ w \in \mathfrak{X}_{\rm div}(\R^n)$,
   \begin{align}
   \left< J_\text{spatial}(p_\varphi), w\right> = \left< p_\varphi, w \circ \varphi \right> = \left< J_L^{(k)}(p_q), w \right>, \notag
   \end{align}
@@ -1213,7 +1173,7 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
  This shows the commutativity of the right-hand part of the  diagram above (compare \eqref{compare_1} and \eqref{compare_2}).
   
   Again, the right legs of both dual pairs yield the conserved quantities.
-From the diagram it is immediately clear that the conservation of $J_R^{(k)}$ exhibited in
+From the diagram it is clear that the conservation of $J_R^{(k)}$ exhibited in
 our particle models is a shadow of the conservation of $J_\text{conv}$ in~\eqref{eq:abstract-circulation}.
 Since $J_\text{conv}$ corresponds by Noether's theorem to the (large)
 subgroup $\iso(z)$ of the right symmetry $\SDiff(\R^n)$ that generates
@@ -1853,7 +1813,7 @@ This is a harmless identification as long as we don't pair it with a non-diverge
 
 The equations of motion are expressible as Hamiltonian
 equations with respect to a non-canonical Poisson bracket.
-If we denote $q^{(0)}$ simply by $q$ and $p^{(0)}$ simply
+If we denote $q^{(0)}$ by $q$ and $p^{(0)}$ 
 by $p$ then the Hamiltonian is
 \begin{align*}
   H(q,p,\mu^{(1)},\mu^{(2)}) =& \frac{1}{2} p_{i \alpha} p_{j \beta}
