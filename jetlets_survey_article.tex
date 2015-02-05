@@ -1102,7 +1102,7 @@ and $J_\text{conv}: T^*\SDiff(\R^n) \to \mathfrak{iso}(z)^*$ of
 spatial and convective momentum maps induced by
 the left action of $\SDiff(\R^n)$ and the right action of
 $\iso(z) \subset \SDiff(\R^n)$ on $\SDiff(\R^n)$ itself.
-By the general principles discussed earlier, the dynamics on $T^*\SDiff(\R^n)$ exhibit the constant of motion
+By the general principles discussed earlier, the dynamics on $T^*\SDiff(\R^n)$ exhibits the constant of motion
 \begin{equation}\label{eq:abstract-circulation}
   \langle J_\text{conv}(\varphi,p_\varphi) , w \rangle
   = \langle p_\varphi , T\varphi \cdot w \rangle
@@ -1126,20 +1126,18 @@ $p_\varphi = \langle \dot{\varphi} , \,\cdot\, \rangle_{L^2}$, we find
 \begin{align*}
   \langle J_\text{conv}(\varphi,p_\varphi) , w_\varepsilon \rangle
   &= \langle \dot{\varphi} , T\varphi \cdot w_\varepsilon \rangle_{L^2}\\
-  &= \int_{\gamma_0(S^1)} \langle \dot{\varphi}(x) , \textrm{D}\varphi(x)\cdot w_\epsilon(x) \rangle \,\textrm{d} x \\
-  &\approx \oint \langle \dot{\varphi}(\gamma_0(s)) , \textrm{D}\varphi(\gamma_0(s))\cdot \gamma_0'(s) \rangle \,\textrm{d} s \\
-  &= \oint \langle u(\gamma(s,t)) , \partial_s \gamma(s,t) \rangle \,\textrm{d} s,
+  &= \int_{\mathbb{R}^n} \langle \dot{\varphi}(x) , \textrm{D}\varphi(x)\cdot w_\epsilon(x) \rangle_{\mathbb{R}^n} \,\textrm{d} x \\
+  &\approx \oint \langle \dot{\varphi}(\gamma_0(s)) , \textrm{D}\varphi(\gamma_0(s))\cdot \gamma_0'(s) \rangle_{\mathbb{R}^n} \,\textrm{d} s \\
+  &= \oint \langle u(\gamma(s,t)) , \partial_s \gamma(s,t) \rangle_{\mathbb{R}^n} \,\textrm{d} s,
 \end{align*}
 where $u = \dot{\varphi}\circ\varphi^{-1}$ is the usual Euler
 representation of the fluid flow. 
-\dm{I have four remarks about this: (i) AK98 Thm 5.5 looks, to me, like a statement of Kelvin's theorem, but it doesn't mention momentum maps etc...? (ii) I believe that in the limit as $\varepsilon$ goes to zero, the vector field $w$ should blow up in strength (ArnoldKhesin talk about unit flux through a transverse section to the curve), and (iii) the integration region in the first integral above should probably be $\mathbb{R}^n$, rather than $\gamma_0$? Finally, (iv), what are the pairings $\langle ., .\rangle$ in these integrals...? They probably aren't dual pairings..?} Therefore, conservation of $J_{\rm conv}$ leads to conservation of circulation. 
-
+\dm{I have four remarks about this: (i) AK98 Thm 5.5 looks, to me, like a statement of Kelvin's theorem, but it doesn't mention momentum maps etc...? (ii) I believe that in the limit as $\varepsilon$ goes to zero, the vector field $w$ should blow up in strength (ArnoldKhesin talk about unit flux through a transverse section to the curve).}
 \hoj{
   (i)  I agree with the characterization of Thm5.5.  However, the point of this bit of text is that that the proof in AK98 uses $J_{\rm conv}$ to prove Kelvin's theorem (albeit using words).  The above provides a heuristic argument linking $J_{\rm conv}$ to circulation. Jaap and I thought we should give credit to AK98 for using this heuristic argument in the ``proof'' of Thm 5.5.  We could remove the citation if this seems too generous.
 (ii) I do not agree.  I think this is a counter-example: $w_\epsilon(x) = \int_{S^1} K_\epsilon(x - \gamma(s) ) \gamma'(s) ds$ where $K_\epsilon$ is some incompressible matrix-kernel with length scale $\epsilon$.
-(iii) Yes.  I agree.
-(iv)  They are dot-products on $\R^n$.  We can use ``$\cdot$'' instead of ``$\langle \cdot , \cdot \rangle$'' perhaps?
 }
+Therefore, conservation of $J_{\rm conv}$ leads to conservation of circulation.
 
 A more rigorous correspondence is developed in \cite{HolmMarsdenRatiu1998}.
 Any $m \in \mathfrak{X}_{\rm div}(\R^n)^*$ can be written as a one-form density $\tilde{m} \otimes \mu$
@@ -1164,7 +1162,7 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
  The space $T^*Q^{(k)}$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$.  The commutativity of the following diagram uniquely defines the jetlet solutions:
   \begin{equation}
  \begin{tikzcd}
-   \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l,"J_\text{spatial}"'] T^*\SDiff(\R^n) \ar[r,"J_\text{conv}"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
+   \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l,"J_\text{spatial}"] T^*\SDiff(\R^n) \ar[r,"J_\text{conv}"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
    & T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
    & T^*Q^{(k)}_N \uar{i} \ar[uur,"J_R^{(k)}"',bend right = 30] \ar[uul,"J_L^{(k)}",bend left = 30] &
  \end{tikzcd}
