@@ -1,0 +1,192 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\usetikzlibrary{cd}
+
+\title{Dynamical aspects of jetlet mergers}
+\author{Jaap Eldering}
+
+\renewcommand{\d}{\ensuremath{\,\textrm{d}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+\begin{document}
+
+\maketitle
+
+We redo the symplectic reduction of the two $0$-jetlets. The
+Hamiltonian is
+\begin{equation}\label{eq:H-two-0jetlets}
+  H = \frac{1}{2} \sum_{a,b=1}^2 p_{ai} K^{ij}(q_a - q_b) p_{bj}
+\end{equation}
+on $T^* \R^{2n}$ with the canonical Poisson brackets. We switch to a
+\emph{slightly different} center of mass frame by choosing new
+coordinates
+\begin{equation}\label{eq:CoM-coords}
+  \bar{q} = \frac{1}{2}(q_1 + q_2), \qquad \tilde{q} = q_2 - q_1
+\end{equation}
+with canonically associated momenta
+\begin{equation*}
+  \bar{p} = p_1 + p_2, \qquad \tilde{p} = \frac{1}{2}(p_2 - p_1).
+\end{equation*}
+The Hamiltonian in these cooordinates becomes
+\begin{equation*}
+  H = \frac{1}{4} \bar{p}_i \big( K^{ij}(0) + K^{ij}(\tilde{q}) \big)   \bar{p}_j
+              + \tilde{p}_i \big( K^{ij}(0) - K^{ij}(\tilde{q}) \big) \tilde{p}_j.
+\end{equation*}
+Under the assumption that $\bar{p} = 0$ we reduce further, introducing
+polar coordinates
+\begin{equation}\label{eq:polar-coords}
+  \tilde{q} = r \big(\cos(\varphi),\sin(\varphi)\big)
+\end{equation}
+with canonically associated momenta
+\begin{equation*}
+  \tilde{p} =
+  \begin{pmatrix}
+    \cos(\varphi) & -\frac{\sin(\varphi)}{r} \\
+    \sin(\varphi) &  \frac{\cos(\varphi)}{r}
+  \end{pmatrix} \cdot
+  \begin{pmatrix}
+    p_r \\
+    p_\varphi
+  \end{pmatrix}
+  = R_\varphi \cdot
+  \begin{pmatrix}
+    p_r \\
+    \frac{p_\varphi}{r}
+  \end{pmatrix},
+\end{equation*}
+where $R_\varphi$ is a rotation matrix. In these coordinates the
+Hamiltonian is given by
+\begin{equation*}
+  \begin{aligned}
+  H &= \tilde{p}_i \big[ K^{ij}(0) - K^{ij}(\tilde{q}) \big] \tilde{p}_j
+     = \begin{pmatrix} p_r \\ \frac{p_\varphi}{r} \end{pmatrix}^T R_\varphi^T
+       \big[ K(0) - K(R_\varphi\cdot(r,0)) \big] R_\varphi
+       \begin{pmatrix} p_r \\ \frac{p_\varphi}{r} \end{pmatrix}\\
+    &= \begin{pmatrix} p_r \\ \frac{p_\varphi}{r} \end{pmatrix}^T
+       \big[ K(0) - K(r,0) \big] \begin{pmatrix} p_r \\ \frac{p_\varphi}{r} \end{pmatrix},
+  \end{aligned}
+\end{equation*}
+where in the last step we used that $K$ as a tensor is invariant under
+rotations. Since $\varphi$ is a cyclic variable, we find that its
+associated momentum
+\begin{equation*}
+  p_\varphi = -r \sin(\varphi) \tilde{p}_1 + r \cos(\varphi) \tilde{p}_2
+            = \tilde{q} \wedge \tilde{p}
+\end{equation*}
+is conserved.
+
+Let us now choose the smooth kernel $K = K_{\infty,1}$ given
+(up to a scaling factor) by
+%
+{\newcommand{\e}{e^{-\rho}}
+\begin{equation}\label{eq:smooth-kernel}
+  K^{ij}(x) = \Big(\e - \frac{1}{2\rho}\big(1 - \e\big)\Big)\delta^{ij}
+    + \Big(\frac{1}{\rho}\big(1 - \e\big) - \e\Big)\frac{x^i x^j}{\|x\|^2},
+\end{equation}%
+}%
+where $\rho := \frac{\|x\|^2}{2}$. Note that
+$K^{ij}(0) = \frac{1}{2} \delta^{ij}$ and $\partial_k K^{ij}(0) = 0$.
+Using rotational symmetry we set $\varphi = 0$, and obtain
+\begin{equation}\label{eq:H-rot-reduced}
+  H = \frac{p_r^2      }{2}    \Big(1 - \frac{1}{\rho}\big(1-e^{-\rho}\big)\Big)
+     +\frac{p_\varphi^2}{4\rho}\Big(1 - 2e^{-\rho} + \frac{1}{\rho}\big(1-e^{-\rho}\big)\Big).
+\end{equation}
+To analyse the asymptotic behaviour of the system in the limit that
+$r \to 0$, we make an expansion of $H$ around $\rho = 0$:
+\begin{equation}
+  H = \frac{p_r^2      }{2}\big(\frac{1}{2}\rho - \frac{1}{6}\rho^2\big)
+     +\frac{p_\varphi^2}{2}\big(\frac{3}{4} - \frac{5}{12}\rho + \frac{7}{48}\rho^2\big)
+     +\mathcal{O}(\rho^3).
+\end{equation}
+Since $H$ and $p_\varphi^2$ are preserved, we can solve for $p_r$ in
+terms of $r$, and we find
+\begin{align*}
+  2\rho\,p_r^2 &= (8H - 3 p_\varphi^2) \big(1 + \mathcal{O}(\rho)\big), \\
+\Longleftrightarrow \qquad
+      r\,p_r   &= \sqrt{8H - 3 p_\varphi^2} + \mathcal{O}(r).
+\end{align*}
+We write $\xi := \sqrt{8H - 3 p_\varphi^2}$ and thus obtain
+asymptotically $p_r = \frac{\xi}{r}$. Further, we have dynamics
+\begin{equation}
+  \dot{r} = \frac{\partial H}{\partial p_r} = \frac{1}{4}p_r\,^2 + \mathcal{O}(r^4), \qquad
+  \dot{\varphi} = \frac{\partial H}{\partial p_\varphi}
+                 = \frac{3}{4}p_\varphi + \mathcal{O}(r^2)
+\end{equation}
+and reconstruct
+\begin{alignat*}{2}
+  \bar{q}   &= 0,& \qquad
+  \tilde{q} &= r R_\varphi \cdot\begin{pmatrix} 1 \\ 0 \end{pmatrix},\\
+  \bar{p}   &= 0,& \qquad
+  \tilde{p} &= R_\varphi \cdot
+               \begin{pmatrix} p_r \\ \frac{p_\varphi}{r} \end{pmatrix}
+             = \frac{1}{r} R_\varphi \cdot
+               \begin{pmatrix} \xi \\ p_\varphi \end{pmatrix} + \mathcal{O}(1).
+\end{alignat*}
+Now we consider the image under $J_L$ of the asymptotic solution
+curve:
+\begin{align*}
+  J_L(q_1,p_1,q_2,p_2)
+  &= p_1 \otimes \delta_{q_1} + p_2 \otimes \delta_{q_2} \\
+  &= \bar{p} \otimes \delta_{\bar{q}}
+    +\tilde{p} \otimes \big(\tilde{q} \cdot D\delta_{\bar{q}}\big)
+    +\mathcal{O}\Big(\big(|\bar{p}|+|\tilde{p}|\big)|\tilde{q}|^2\Big) \\
+  &= R_\varphi \cdot \begin{pmatrix} \xi \\ p_\varphi \end{pmatrix} \otimes
+     R_\varphi \cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix} D\delta_{\bar{q}}
+    +\mathcal{O}(r)
+\end{align*}
+with $\varphi(t) = p_\varphi\,t$. The factor in front of $D\delta$
+should correspond to $\mu(t)$ for a $1$-jetlet with position
+$q^{(0)} = 0$ and momentum $p^{(0)} = 0$. For such a setup we have
+equations of motion
+\begin{equation}
+  \dot{\mu}_i^j
+  = \partial_k u^j(0) \mu_i^k + \mu_k^j \partial_i u^k(0)
+  = -\partial_{km} K^{jl}(0) \mu_l^m \mu_i^k
+    -\partial_{im} K^{kl}(0) \mu_l^m \mu_k^j.
+\end{equation}
+
+
+\clearpage
+
+A more abstract way to view these particle mergers, is to think of how
+our hierarchy of reduced spaces $T^*Q_N^{(k)}$ embeds into
+$\mathfrak{X}_{\rm div}(\R^n)^*$ under the momentum map $J_L$.
+Consider a merging pair of $0$-jetlets, described by a curve
+$x_0(t) \in T^*Q_2^{(0)}$. As the particles approach each other,
+$x_0(t)$ approaches the boundary of $T^*Q_2^{(0)}$ given by
+\begin{equation}\label{eq:boundary}
+  \partial T^*Q_2^{(0)}
+  = \{ (q_1,p_1,q_2,p_2) \in T^* \R^n \times T^* \R^n \mid q_1 = q_2 \}.
+\end{equation}
+On the other hand, if we consider the image curve
+$y_0(t) = J_L(x_0(t)) \in \mathfrak{X}_{\rm div}(\R^n)^*$, then this
+can be compared to images under $J_L$ of other space $T^*Q_N^{(k)}$.
+Since $y_0(t)$ consists of two covector-valued delta distributions at
+$q_1,q_2$, in the limit as their distance goes to zero, this can be
+approximated by a momentum valued distribution of a delta and its
+derivative, i.e.~an element in $J_L(T^*Q_1^{(1)})$.
+
+\begin{equation}
+  \begin{tikzcd}
+    T^*Q_N^{(k)} \ar[to=1-2,hook, "J_L"] & \mathfrak{X}_{\rm div}(\R^n)^* \\
+    T^*Q_1^{(1)} \ar[to=1-2,hook,start anchor=north east,end anchor={[yshift=-0.5em]west}]
+                 \ar[u,dotted,no head] &  \\
+    T^*Q_2^{(0)} \ar[to=1-2,hook,start anchor=north east,end anchor={[yshift=-1.0em]west}]
+                 \ar[u,"\partial"] &
+  \end{tikzcd}
+\end{equation}
+
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-PDF-mode: t
+%%% End: 
