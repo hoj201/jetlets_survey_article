@@ -1695,11 +1695,13 @@ sloppiness is usually harmless.
   dual pairs.
   
   \begin{thm}[example 2.2 of \cite{GayBalmazVizman2012}] \label{thm:commuting_actions}
+    Denote the canonical symplectic form on $T^*Q$ by $\omega$.
     Let $G_1,G_2$ act on $Q$
     by commuting group actions.\footnote{i.e. acting first by $G_1$ and second by $G_2$ is identical to acting first by $G_2$ then second by $G_1$}
     Let
-    $\rho_1,\rho_2: G \times T^*Q \to T^*Q$ denote the cotangent lifted actions. 
-    Moreover, assume $G_1$ acts transitively on the level sets of the momentum map $J_2$ associated with the  $G_2$-action.
+    $\rho_1,\rho_2: G \times T^*Q \to T^*Q$ denote the cotangent lifted actions
+    and let $J_1: T^*Q \to \mathfrak{g}_1^*$ and $J_2: T^*Q \to \mathfrak{g}_2^*$ denote the momentum maps given by \eqref{eq:cotangent_momap}. 
+    Moreover, assume $G_1$ acts transitively on the level sets of $J_2$.
     Then the momentum maps form the dual pair
     $
       \mathfrak{g}^*_1
@@ -1710,12 +1712,12 @@ sloppiness is usually harmless.
     $
   \end{thm}
   \begin{proof}
-    Let us first show that $\kernel(J_1) = \rho_1(\mathfrak{g}_1 , S )^\omega$.
-    Recall that $J_1$ is defined by the condition
+    Let us first show that $\kernel(J_1) = [\rho_1(\mathfrak{g}_1 , T^*Q )]^\omega$.
+    Recall that $J_1$ the definition of ``momentum map'' means
     $d \langle J_1 , \xi_1 \rangle = i_{\rho_1(\xi_1)} \omega$
     where $\rho_1(\xi_1)$ is the infinitesimal generator of
     $\xi_1 \in \mathfrak{g}_1$.
-    Let $v \in \rho_1(\mathfrak{g}_1,S)^\omega$.
+    Let $v \in [\rho_1(\mathfrak{g}_1,T^*Q)]^\omega$.
     We observe that 
     $d \langle J_1 , \xi_1 \rangle (v) = \omega( \rho_1(\xi_1, x ), v ) = 0$.
     However $d\langle J_1 , \xi_1 \rangle (v) = \langle TJ_1(v) , \xi_1 \rangle$.
@@ -1723,23 +1725,39 @@ sloppiness is usually harmless.
     The previous steps may be reversed, and
     the converse follows immediately.
     We find
-    $\kernel(J_1) = \rho_1(\mathfrak{g}_1,S)^\omega$.
+    $\kernel(J_1) = [\rho_1(\mathfrak{g}_1,T^*Q)]^\omega$.
     Of course the same argument applies to $J_2$.
 
-    We now show that $\kernel(J_2) = \rho_1(\mathfrak{g}_1,S)$.
-    Let $\xi_1 \in \mathfrak{g}_1, \xi_2 \in \mathfrak{g}_2$.
-    First note that $\rho_1(\xi_1) = X_{ \langle J_1 , \xi_1 \rangle}$,
-    and the same calculation applies to $\xi_2$.
-    Thus we observe by using Corollary~\ref{cor:Lie_hom} that
+    We now show that $\kernel(J_2) = \rho_1(\mathfrak{g}_1,T^*Q)$.
+    Again, let $\xi_1 \in \mathfrak{g}_1, \xi_2 \in \mathfrak{g}_2$.
+    Recall that $\omega = - d \theta$ where $\theta$ is the canonical one-form on $T^*Q$.
+    Moreover, recall that $\theta$ is invariant under cotangent lifted group actions \cite[Theorem 3.2.12]{FOM}.
+    Thus by Cartan's formula \cite[Theorem 2.4.13(iv)]{FOM}we can calculate
     \begin{align*}
-      X_{ \omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) }
-      &= - [X_{ \langle J_1,\xi_1\rangle} , X_{\langle J_2,\xi_2\rangle} ] \\
-      &= - [\rho_1(\xi_1) , \rho_2(\xi_2)] = 0.
+    	0 = \pounds_{\rho_1(\xi_1)} [ \theta] = d \langle \theta_1 , \rho_1(\xi_1) \rangle + i_{\rho_1(\xi_1)}(d\theta) = d \langle \theta_1 , \rho_1(\xi_1) \rangle - i_{\rho_1(\xi_1)} \omega
     \end{align*}
-    The final equality
-    derives from the fact that the actions of $G_1$ and $G_2$ commute.
-    We have proven that $\rho_1(\mathfrak{g}_1 , S)$ and $\rho_2(S,\mathfrak{g}_2)$ are
-    symplectically orthogonal.
+    Where $i_{\rho_1(\xi_1)} \omega$ denotes contraction of a two-form with a vector-field.
+    Finally we calculate
+    \begin{align*}
+    	\omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) &=  -\langle d \langle \theta, \rho_1(\xi_1) \rangle ,  \rho_2(\xi_2) \rangle \\
+		&= -\pounds_{\rho_2(\xi_2) }[ \langle \theta,\rho_1(\xi_1) \rangle] = - \langle \pounds_{\rho_1(\xi_2)}[\theta] , \rho_1(\xi_1) \rangle - \langle \theta , [\rho_2(\xi_2), \rho_1(\xi_1) ] \rangle.
+    \end{align*}
+    The first term in the last line vanishes because $\theta$ is invariant under the flow of $\rho_2(\xi_2)$.
+    The second term in the last line vanishes because the actions of $G_1$ and $G_2$ commute.
+    Thus $\omega(\rho_1(\xi_1) , \rho_2(\xi_2) ) = 0$,
+    and we have proven symplectic orthogonality.
+%    First note that $\rho_1(\xi_1) = X_{ \langle J_1 , \xi_1 \rangle}$,
+%    and the same calculation applies to $\xi_2$.
+%    Thus we observe by using Corollary~\ref{cor:Lie_hom} that
+%    \begin{align*}
+%      X_{ \omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) }
+%      &= - [X_{ \langle J_1,\xi_1\rangle} , X_{\langle J_2,\xi_2\rangle} ] \\
+%      &= - [\rho_1(\xi_1) , \rho_2(\xi_2)] = 0.
+%    \end{align*}
+%    The final equality
+%    derives from the fact that the actions of $G_1$ and $G_2$ commute.
+%    We have proven that $\rho_1(\mathfrak{g}_1 , S)$ and $\rho_2(S,\mathfrak{g}_2)$ are
+%    symplectically orthogonal.
     Now note that
     $TJ_2 ( \xi_1 \cdot x) \cdot \xi_2 = \omega( \rho_1(\xi_1, x) ,\rho_2(x, \xi_2 )) = 0$.
     Thus $\rho_1(\xi_1 , x) \in \kernel( J_2)$, hence
