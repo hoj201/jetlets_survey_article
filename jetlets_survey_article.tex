@@ -1695,18 +1695,16 @@ sloppiness is usually harmless.
   dual pairs.
   
   \begin{thm}[example 2.2 of \cite{GayBalmazVizman2012}] \label{thm:commuting_actions}
-    Let $G_1,G_2$ act symplectically on $(S,\omega)$
-    by commuting group actions,
-    $\rho_1$ and $\rho_2$.\footnote{
-      This means 
-      $\rho_1(g_1 , \rho_2 (x , g_2)) = \rho_2(\rho_1(g_1 , x) ,g_2)$
-      for any $g_1 \in G_1, g_2 \in G_2$ and $x \in S$.}
+    Let $G_1,G_2$ act on $Q$
+    by commuting group actions.\footnote{i.e. acting first by $G_1$ and second by $G_2$ is identical to acting first by $G_2$ then second by $G_1$}
+    Let
+    $\rho_1,\rho_2: G \times T^*Q \to T^*Q$ denote the cotangent lifted actions. 
     Moreover, assume $G_1$ acts transitively on the level sets of the momentum map $J_2$ associated with the  $G_2$-action.
     Then the momentum maps form the dual pair
     $
       \mathfrak{g}^*_1
       \stackrel{J_1}{\longmapsfrom}
-      S
+      T^*Q
       \stackrel{J_2}{\longmapsto}
       \mathfrak{g}_2^*.
     $
