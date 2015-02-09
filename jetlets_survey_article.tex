@@ -1689,7 +1689,7 @@ sloppiness is usually harmless.
   dual pairs.
   
   \begin{thm}[example 2.2 of \cite{GayBalmazVizman2012}] \label{thm:commuting_actions}
-    Denote the canonical symplectic form on $T^*Q$ by $\omega$.
+    Denote by $\omega$ the canonical symplectic form on the cotangent bundle $T^*Q$ of some manifold $Q$.
     Let $G_1,G_2$ act on $Q$
     by commuting group actions.\footnote{i.e. acting first by $G_1$ and second by $G_2$ is identical to acting first by $G_2$ then second by $G_1$}
     Let
@@ -1707,8 +1707,8 @@ sloppiness is usually harmless.
   \end{thm}
   \begin{proof}
     Let us first show that $\kernel(J_1) = [\rho_1(\mathfrak{g}_1 , T^*Q )]^\omega$.
-    Recall that $J_1$ the definition of ``momentum map'' means
-    $d \langle J_1 , \xi_1 \rangle = i_{\rho_1(\xi_1)} \omega$
+    Recall that on account of the definition of momentum maps we have 
+    $d \langle J_1 , \xi_1 \rangle = i_{\rho_1(\xi_1)} \omega$, 
     where $\rho_1(\xi_1)$ is the infinitesimal generator of
     $\xi_1 \in \mathfrak{g}_1$.
     Let $v \in [\rho_1(\mathfrak{g}_1,T^*Q)]^\omega$.
@@ -1728,9 +1728,9 @@ sloppiness is usually harmless.
     Moreover, recall that $\theta$ is invariant under cotangent lifted group actions \cite[Theorem 3.2.12]{FOM}.
     Thus by Cartan's formula \cite[Theorem 2.4.13(iv)]{FOM}we can calculate
     \begin{align*}
-    	0 = \pounds_{\rho_1(\xi_1)} [ \theta] = d \langle \theta_1 , \rho_1(\xi_1) \rangle + i_{\rho_1(\xi_1)}(d\theta) = d \langle \theta_1 , \rho_1(\xi_1) \rangle - i_{\rho_1(\xi_1)} \omega
+    	0 = \pounds_{\rho_1(\xi_1)} [ \theta] = d \langle \theta_1 , \rho_1(\xi_1) \rangle + i_{\rho_1(\xi_1)}(d\theta) = d \langle \theta_1 , \rho_1(\xi_1) \rangle - i_{\rho_1(\xi_1)} \omega, 
     \end{align*}
-    Where $i_{\rho_1(\xi_1)} \omega$ denotes contraction of a two-form with a vector-field.
+    where $i_{\rho_1(\xi_1)} \omega$ denotes contraction of a two-form with a vector-field.
     Finally we calculate
     \begin{align*}
     	\omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) &=  -\langle d \langle \theta, \rho_1(\xi_1) \rangle ,  \rho_2(\xi_2) \rangle \\
@@ -1753,11 +1753,11 @@ sloppiness is usually harmless.
 %    We have proven that $\rho_1(\mathfrak{g}_1 , S)$ and $\rho_2(S,\mathfrak{g}_2)$ are
 %    symplectically orthogonal.
     Now note that
-    $TJ_2 ( \xi_1 \cdot x) \cdot \xi_2 = \omega( \rho_1(\xi_1, x) ,\rho_2(x, \xi_2 )) = 0$.
+    $\langle TJ_2 ( \rho_1(\xi_1, x)), \xi_2 \rangle = \omega( \rho_1(\xi_1, x) ,\rho_2(x, \xi_2 )) = 0$.
     Thus $\rho_1(\xi_1 , x) \in \kernel( J_2)$, hence
-    $\rho_1(\mathfrak{g}_1 ,S) \subset \kernel(J_2)$.
+    $\rho_1(\mathfrak{g}_1 ,T^*Q) \subset \kernel(J_2)$.
     But since $G_1$ acts transitively on the level sets of $J_2$, we see
-    that $\rho_1(\mathfrak{g}_1, S) = \kernel( J_2)$.
+    that $\rho_1(\mathfrak{g}_1, T^*Q) = \kernel( J_2)$.
   \end{proof}
   % With these foundations established, we proceed
   % to discuss a simple example of Poisson mechanics
