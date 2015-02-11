@@ -1398,9 +1398,13 @@ We have performed a number of numerical simulations\footnote{%
   \url{https://github.com/hoj201/incompressible_jet_particles}%
 } of these jetlet particles. These confirm that the conserved
 quantities are indeed preserved and that two $0$-jetlet particles
-merge as shown by the analysis in section~\ref{sec:collisions}.
-Moreover, the merging behavior shows to be stable under perturbations
-of initial conditions.
+merge as shown by the analysis in section~\ref{sec:collisions},
+providing a sanity check for the formulas in the previous section and
+the numerical code. Moreover, the merging behavior shows to be stable
+under perturbations of initial conditions.
+
+The numerical code works for any spatial dimension $n \ge 2$, but for
+the sake of tractability and simplicity we have studied $n = 2$ 
 
 As basic experiment we take two $0$-jetlet particles with initial
 states
@@ -1419,7 +1423,7 @@ analytical value of $d = \sqrt{3/40} \approx 0.2739$ within reasonable
 precision, noting that this is the asymptotic value for particles
 starting close to each other.
 
-Secondly, we performed a number of more complex simulations, all of
+We performed a number of more complex simulations, all of
 those being small perturbations of the basic experiment described
 above. First, we added a small angular momentum `spin' component to
 both particles, turning both into $1$-jetlets, one level higher in the
@@ -1433,7 +1437,7 @@ experiment persists. We can find parameter values of $d$ close to the
 original one where the system shows a transition between the two
 particles merging or scattering.
 
-Finally, these experiments confirm the preservation of the conserved
+These experiments also confirm the preservation of the conserved
 quantities present in the system. For all experiments described above
 we observed that the energy, total linear and angular momentum,
 i.e.~$J_L$, as well as $J_R$ individually for each particle were
