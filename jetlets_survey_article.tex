@@ -39,6 +39,7 @@
 \DeclareMathOperator{\kernel}{kernel}
 \DeclareMathOperator{\bag}{bag}
 \DeclareMathOperator{\lie}{\mathcal{L}}
+\DeclareMathOperator{\Ad}{Ad}
 \DeclareMathOperator{\ad}{ad}
 
 % Where to load the figures from (relative path):
@@ -1244,7 +1245,7 @@ polar coordinates
 \end{equation}
 with canonically associated momenta
 \begin{equation*}
-  \tilde{p} =
+  \tilde{p}^T =
   \begin{pmatrix}
     \cos(\varphi) & -\frac{\sin(\varphi)}{r} \\
     \sin(\varphi) &  \frac{\cos(\varphi)}{r}
@@ -1361,36 +1362,98 @@ and reconstruct
   \bar{q}   &= 0,& \qquad
   \tilde{q} &= r R_\varphi \cdot\begin{pmatrix} 1 \\ 0 \end{pmatrix},\\
   \bar{p}   &= 0,& \qquad
-  \tilde{p} &= R_\varphi \cdot
+\tilde{p}^T &= R_\varphi \cdot
                \begin{pmatrix} p_r \\ \frac{p_\varphi}{r} \end{pmatrix}
              = \frac{1}{r} R_\varphi \cdot
                \begin{pmatrix} \xi \\ p_\varphi \end{pmatrix} + \mathcal{O}(1).
 \end{alignat*}
 Now we consider the image under $J_L$ of the asymptotic solution
 curve:
-\begin{align*}
-  J_L(q_1,p_1,q_2,p_2)
-  &= p_1 \otimes \delta_{q_1} + p_2 \otimes \delta_{q_2} \\
-  &= \bar{p} \otimes \delta_{\bar{q}}
-    +\tilde{p} \otimes \big(-\tilde{q}^i \partial_i\delta_{\bar{q}}\big)
-    +\mathcal{O}\Big(\big(|\bar{p}|+|\tilde{p}|\big)|\tilde{q}|^2\Big) \\
-  &= R_\varphi \cdot \begin{pmatrix} \xi \\ p_\varphi \end{pmatrix} \otimes
-     \Big(R_\varphi \cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix}\Big)^i \partial_i \delta_{\bar{q}}
-    +\mathcal{O}(r)
-\end{align*}
-with $\varphi(t) = p_\varphi\,t$. The factor in front of $\partial_i \delta$
-should correspond to $\mu(t)$ for a $1$-jetlet with position
-$q^{(0)} = 0$ and momentum $p^{(0)} = 0$. For such a setup we have
-equations of motion
-\begin{equation}
-  \dot{\mu}\indices{_i^j}
-  = \partial_k u^j(0) \mu\indices{_i^k} + \mu\indices{_k^j} \partial_i u^k(0)
-  = -\partial_{km} K^{jl}(0) \mu\indices{_l^m} \mu\indices{_i^k}
-    -\partial_{im} K^{kl}(0) \mu\indices{_l^m} \mu\indices{_k^j}.
+\begin{equation}\label{eq:asymptotic-dynamics}
+  \begin{split}
+    J_L(q_1,p_1,q_2,p_2)
+    &= p_1 \otimes \delta_{q_1} + p_2 \otimes \delta_{q_2} \\
+    &= \bar{p} \otimes \delta_{\bar{q}} +\tilde{p} \otimes
+       \big(-\tilde{q}^j \partial_j\delta_{\bar{q}}\big)
+      +\mathcal{O}\Big(\big(|\bar{p}|+|\tilde{p}|\big)|\tilde{q}|^2\Big) \\
+    &= \Big[R_\varphi \cdot \begin{pmatrix} \xi \\ p_\varphi \end{pmatrix}\Big]_i
+       \Big[R_\varphi \cdot \begin{pmatrix} 1   \\ 0         \end{pmatrix}\Big]^j e^i\,\partial_j
+       \delta_{\bar{q}} +\mathcal{O}(r)
+  \end{split}
 \end{equation}
-\je{I still have to write up the details of the calculations here.}
+with $\varphi(t) = \frac{3}{4} p_\varphi\,t$. Our aim is to show that
+the factor in front of $e^i\,\partial_j \delta$, which we shall denote
+by $\tilde{\mu}\indices{_i^j}(t)$, corresponds to
+$\mu\indices{_i^j}(t)$ for a $1$-jetlet with position $q^{(0)} = 0$
+and momentum $p^{(0)} = 0$. For such a setup we have equations of
+motion
+\begin{equation*}
+  \dot{\mu}\indices{_i^j}
+  = \mu\indices{_i^k} \partial_k u^j(0) - \partial_i u^k(0) \mu\indices{_k^j}
+  = -\partial_{km} K^{jl}(0) \mu\indices{_l^m} \mu\indices{_i^k}
+    +\partial_{im} K^{kl}(0) \mu\indices{_l^m} \mu\indices{_k^j},
+\end{equation*}
+or in short, $\dot{\mu} = [\mu,\xi]$ with $\xi = \textrm{D}u(0)^T$. To
+ease calculations, let us choose the basis
+\begin{equation}\label{eq:basis-sl2}
+  \omega = \begin{pmatrix}
+    0 & -1 \\
+    1 & 0
+  \end{pmatrix},\qquad
+  \sigma = \begin{pmatrix}
+    1 & 0 \\
+    0 & -1
+  \end{pmatrix},\qquad
+  \tau = \begin{pmatrix}
+    0 & 1 \\
+    1 & 0
+  \end{pmatrix}
+\end{equation}
+for $\mathfrak{sl}(2)^* \cong \mathfrak{sl}(2)$, where the
+identification is made through the Frobenius inner product, and note
+that these matrices have norm $\sqrt{2}$. We decompose
+$\mu = j\,\omega + s\,\sigma + t\,\tau$ and find that $\xi$ as a
+function of $\mu$ can be written as
+\begin{equation*}
+  \xi = -j\,\omega + \frac{1}{2}(s\,\sigma + t\,\tau).
+\end{equation*}
+Using the commutation relations $[\omega,\sigma] = 2\tau$,
+$[\omega,\tau] = -2\sigma$, $[\sigma,\tau] = -2\omega$, it then
+follows that
+\begin{equation}\label{eq:mu-dynamics}
+  \dot{\mu}
+  = \big[j\,\omega+s\,\sigma+t\,\tau \,,\, -j\,\omega + \frac{1}{2}(s\,\sigma + t\,\tau)\big]
+  = -3j\big(-t\,\sigma + s\,\tau\big)
+  = -\frac{3}{2}j\,[\omega,\mu].
+\end{equation}
+That is, the $(\sigma,\tau)$ components of $\mu$ as a tensor rotate
+with angular velocity $-3j$.
 
+On the other hand, from~\eqref{eq:asymptotic-dynamics} we have for the
+asymptotic dynamics that
+\begin{equation*}
+  \tilde{\mu}(t)
+  = \Big[R_\varphi \cdot \begin{pmatrix} \xi \\ p_\varphi \end{pmatrix}\Big] \otimes
+    \Big[R_\varphi \cdot \begin{pmatrix} 1   \\ 0         \end{pmatrix}\Big]^T
+  = \Ad_{R_\varphi} \begin{pmatrix} \xi & 0 \\ p_\varphi & 0 \end{pmatrix}
+\end{equation*}
+with only $\dot{\varphi} = \frac{3}{4} p_\varphi$ depending on time.
+Note that $\tilde{\mu} \not\in \mathfrak{sl}(2)$ as a matrix, but
+since it is actually a dual element, we can simply project out the
+trace part to obtain $\tilde{\mu} \in \mathfrak{sl}(2)^*$. Also note
+that the $\omega$ component of $\tilde{\mu}(0)$ is
+$j = \frac{1}{2}p_\varphi$. Differentiating to time yields
+\begin{equation*}
+  \dot{\tilde{\mu}}
+  = \dot{\varphi}\,\ad_\omega(\tilde{\mu})
+  = \frac{3}{4} p_\varphi [\omega,\tilde{\mu}]
+  = \frac{3}{2} j [\omega,\tilde{\mu}]
+\end{equation*}
+and comparing to~\eqref{eq:mu-dynamics} we find that the asymptotic
+solution of the two merging $0$-jetlets matches that of a $1$-jetlet
+with the same angular (and linear) momentum.
 
+\je{fix sign error, add more general picture using $J_L$.}
 
 \section{Numerical experiments}
 \label{sec:Numerical experiments}
