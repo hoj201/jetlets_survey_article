@@ -22,6 +22,7 @@
 \newcommand{\pder}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
 \newcommand{\so}{\ensuremath{\mathfrak{so}}}
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\dx}{\ensuremath{\textrm{d}x}}
 
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{prop}[thm]{Proposition}
@@ -626,7 +627,7 @@ for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$ (see \eqref
 %introduction of higher-order particles in section~\ref{sec:higher_order}.
 %On $\R^n$ we may identify the dual space of $\mathfrak{X}_{\rm div}(\R^n)$
 %with the space of closed $H^\infty$ one-forms by using the Euclidean volume form.
-%That is to say, any covector field \todo{JE: distribution?} $m = m_i dx^i \in \mathfrak{X}_{\rm div}(\R^n)^*$
+%That is to say, any covector field \todo{JE: distribution?} $m = m_i \dx^i \in \mathfrak{X}_{\rm div}(\R^n)^*$
 %can be paired with a vector field $v = v^i \frac{\partial}{\partial x^i} \in \mathfrak{X}_{\rm div}(\R^n)$
 %to produce the real-valued function
 %$ m_i(x) v^i(x)$
@@ -785,8 +786,8 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
   In terms of the Dirac-delta functional, we can write $J_L^{(1)}$ as the measure-valued momentum map
   \begin{align*}
     J_L^{(1)}(q, p)
-    = p\indices{_a_i} dx^i \otimes \delta_{q_a}
-     -p\indices{_a_i^j} q\indices{_a^k_j} dx^i \otimes \partial_k \delta_{q_a}
+    = p\indices{_a_i} \dx^i \otimes \delta_{q_a}
+     -p\indices{_a_i^j} q\indices{_a^k_j} \dx^i \otimes \partial_k \delta_{q_a}
   \end{align*}
   Next, we construct a dual momentum map associated with a right action on $Q_N^{(1)}$. Analogous to the previous section  it is useful at this stage to write elements of $Q_N^{(1)}$ in the form $ \varphi \cdot z = (\varphi (z_1, {\mathbf{1}}), \ldots, \varphi \cdot (z_N , \mathbf{1}))$, $\varphi \in {\rm SDiff}(\mathbb{R}^n)$, for some designated element $ z=( (z_1, \mathbf{1}), \ldots, (z_N, \mathbf{1}))$. Clearly, every element of $Q_N^{(1)}$ can be written in this form for some  $\varphi \in {\rm SDiff}(\mathbb{R}^n)$. Indeed, with this convention the specification of an element in $Q_N^{(1)}$ fixes the $1^{\rm st}$ order Taylor expansion of $\varphi$ at the locations $z_a$, $a = 1, \ldots, N$. With this in mind, let us recall the isotropy group ${\rm iso}(z)$ defined earlier in \eqref{isotropy_group}, which leaves these locations invariant, and define a right action on  $Q_N^{(1)}$ given by 
 \begin{align}
@@ -803,7 +804,7 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
   \end{align*}
   In terms of the Dirac delta functional we may write this as the measure-valued momentum map
   \begin{align*}
-    J_R^{(1)}(q,p) = - p\indices{_a_i^j} q\indices{_a^i_k} dx^k \otimes \partial_j \delta_{z_a}
+    J_R^{(1)}(q,p) = - p\indices{_a_i^j} q\indices{_a^i_k} \dx^k \otimes \partial_j \delta_{z_a}
   \end{align*}
   \begin{prop}
     The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
@@ -1028,9 +1029,9 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   \begin{multline*}
     J_L^{(k)}(q,p) =
     \sum_{a=1}^N \Bigg(
-    p_{am} dx^m \otimes \delta_{q^{(0)}_a} \\
+    p_{am} \dx^m \otimes \delta_{q^{(0)}_a} \\
   + \sum_{\substack{ |\alpha| \leq k \\ 1 \leq \ell \leq |\alpha| }}
-    (-1)^\ell p\indices{_{am}^\alpha} dx^m \otimes
+    (-1)^\ell p\indices{_{am}^\alpha} \dx^m \otimes
       \sum_{\substack{
           j_1,\dots,j_\ell \in \{1,\dots,n\} \\
           [\gamma_1,\dots,\gamma_\ell] \in \Pi( \alpha,\ell)
@@ -1603,7 +1604,7 @@ coordinates \emph{Darboux coordinates}\cite[Theorem 3.2.2]{FOM}.
 
 Given a function $H:S \to \mathbb{R}$,
 the exterior derivative is the one-form $dH:S \to T^*S$
-expressed in local coordinates by $dH(x) = \pder{H}{x^i} dx^i$.
+expressed in local coordinates by $dH(x) = \pder{H}{x^i} \dx^i$.
 The Hamiltonian vector field $X_H:S \to TS$ is the unique vector
 field defined by the condition
 $
@@ -1944,9 +1945,9 @@ the dual space appropriately.  In particular, we see that the annihilator of $\m
 as a subspace of $\mathfrak{X}(\R^n)$ is
 \begin{align*}
 	(\mathfrak{X}_{\rm div}(\R^n) )^\circ := \{ m \in \mathfrak{X}(\R^n)^* \mid \langle m , u \rangle = 0 , \forall u \in \mathfrak{X}_{\rm div}(\R^n) \}\\
-		:= {\rm closure}\{ p \otimes d{\bf x} \in \mathfrak{X}(\R^n) \mid p \text{ is a closed one-form} \}.
+		:= {\rm closure}\{ p \otimes \dx \in \mathfrak{X}(\R^n) \mid p \text{ is a closed one-form} \}.
 \end{align*}
-where $d{\bf x}$ is the canonical volume form on $\R^n$ and
+where $\dx$ is the canonical volume form on $\R^n$ and
 we have used the fact that the gradient fields and the harmonic vector fields are $L^2$-orthogonal to the divergence free vector fields.
 The dual space $\mathfrak{X}_{\rm div}(\R^n)^*$ is identical to the quotient space $\mathfrak{X}(\R^n) / (\mathfrak{X}_{\rm div}(\R^n))^\circ$.
 In other words, we may view a $m \in \mathfrak{X}_{\rm div}(\R^n)^*$ as an object of the form $p \otimes \mu$ modulo $\mathfrak{X}_{\rm div}(\R^n)^\circ$.
