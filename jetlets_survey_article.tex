@@ -1454,7 +1454,53 @@ and comparing to~\eqref{eq:mu-dynamics} we find that the asymptotic
 solution of the two merging $0$-jetlets matches that of a $1$-jetlet
 with the same angular (and linear) momentum.
 
-\je{add more general picture using $J_L$.}
+Let us finally suggest a more abstract way to view these particle
+mergers. Our hierarchy of reduced spaces $T^*Q_N^{(k)}$ embeds into
+$\mathfrak{X}_{\rm div}(\R^n)^*$ under the momentum map $J_L$.
+Consider a merging pair of $0$-jetlets, described by a curve
+$x_0(t) \in T^*Q_2^{(0)}$. As the particles approach each other,
+$x_0(t)$ approaches the boundary of $T^*Q_2^{(0)}$ given by
+\begin{equation}\label{eq:boundary}
+  \partial\big( T^*Q_2^{(0)} \big)
+  = \{ (q_1,p_1,q_2,p_2) \in T^* \R^n \times T^* \R^n \mid q_1 = q_2 \}.
+\end{equation}
+On the other hand, the image curve
+$y_0(t) = J_L(x_0(t)) \in \mathfrak{X}_{\rm div}(\R^n)^*$ consists of
+two covector-valued delta distributions at $q_1,q_2$, and in the limit
+as their distance goes to zero, this can be approximated by a momentum
+valued distribution of a delta and its
+derivative~\eqref{eq:asymptotic-dynamics} that is an element
+$y_1(t) = J_L(x_1(t))$, where $x_1(t) \in T^*Q_1^{(1)}$ is a curve in
+the space of single $1$-jetlet particles.
+
+Thus, in the topology induced by $\mathfrak{X}_{\rm div}(\R^n)^*$, we
+can view the boundary of $T^*Q_2^{(0)}$ as (part of) $T^*Q_1^{(1)}$,
+see diagram~\eqref{eq:embedding}.
+This picture naturally generalizes to the whole hierarchy of spaces
+$T^*Q_N^{(k)}$, suggesting that it might be interpreted as a
+CW-complex. In this setting, the question whether the solution curve
+$y_0(t)$ of the merging $0$-jetlets converges to a solution curve
+$y_1(t)$ of a $1$-jetlets, basically\footnote{%
+  We should be a bit careful here: continuity of the vector field will
+  only imply that the asymptotic curve $\tilde{y}_0(t) \in J_L(T^*Q_1^{(1)})$
+  is a pseudo orbit of the $1$-jetlet dynamics. This does not imply
+  existence of a solution curve $y_1(t) \in J_L(T^*Q_1^{(1)})$ that
+  $\tilde{y}_0(t)$ is asymptotic to; that would require the `limit
+  shadowing property', which is closely related to hyperbolic
+  properties of the dynamics~\cite{Ribeiro2014}.%
+} boils down to the question whether the vector field of the dynamics
+on $\mathfrak{X}_{\rm div}(\R^n)^*$ is continuous. We have not
+investigated this.
+
+\begin{equation}\label{eq:embedding}
+  \begin{tikzcd}
+    \hspace{-4em}
+    T^*Q_N^{(k)} \ar[to=1-2,hook, "J_L"] & \mathfrak{X}_{\rm div}(\R^n)^* \\[-1.2em]
+    T^*Q_1^{(1)} \ar[to=1-2,hook,start anchor={[yshift=-0.4em]north east},end anchor={[yshift=-0.5em]west}] \\
+    T^*Q_2^{(0)} \ar[to=1-2,hook,start anchor=north east,end anchor={[yshift=-1.0em]west}]
+                 \ar[u,"\partial"] &
+  \end{tikzcd}
+\end{equation}
 
 \section{Numerical experiments}
 \label{sec:Numerical experiments}
