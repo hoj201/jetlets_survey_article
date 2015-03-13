@@ -1348,8 +1348,8 @@ terms of $r$, and we find
 \Longleftrightarrow \qquad
       r\,p_r   &= \sqrt{8H - 3 p_\varphi^2} + \mathcal{O}(r).
 \end{align*}
-We write $\xi := \sqrt{8H - 3 p_\varphi^2}$ and thus obtain
-asymptotically $p_r = \frac{\xi}{r} + \mathcal{O}(1)$. Further, we
+We write $\zeta := \sqrt{8H - 3 p_\varphi^2}$ and thus obtain
+asymptotically $p_r = \frac{\zeta}{r} + \mathcal{O}(1)$. Further, we
 have dynamics
 \begin{equation}
   \dot{r} = \frac{\partial H}{\partial p_r} = \frac{1}{4}p_r\,^2 + \mathcal{O}(r^4), \qquad
@@ -1364,7 +1364,7 @@ and reconstruct
 \tilde{p}^T &= R_\varphi \cdot
                \begin{pmatrix} p_r \\ \frac{p_\varphi}{r} \end{pmatrix}
              = \frac{1}{r} R_\varphi \cdot
-               \begin{pmatrix} \xi \\ p_\varphi \end{pmatrix} + \mathcal{O}(1).
+               \begin{pmatrix} \zeta \\ p_\varphi \end{pmatrix} + \mathcal{O}(1).
 \end{alignat*}
 Now we consider the image under $J_L$ of the asymptotic solution
 curve. By testing against a vector field in $\mathfrak{X}_{\rm
@@ -1376,7 +1376,7 @@ curve. By testing against a vector field in $\mathfrak{X}_{\rm
      \big({-\tilde{q}^j} \partial_j\delta_{\bar{q}}\big)
     +\mathcal{O}\Big(\big(|\bar{p}|+|\tilde{p}|\big)|\tilde{q}|^2\Big) \notag\\
 \intertext{and inserting our reconstructed solution leads to}
-  &= -\Big[R_\varphi \cdot \begin{pmatrix} \xi \\ p_\varphi \end{pmatrix}\Big]_i
+  &= -\Big[R_\varphi \cdot \begin{pmatrix} \zeta \\ p_\varphi \end{pmatrix}\Big]_i
       \Big[R_\varphi \cdot \begin{pmatrix} 1   \\ 0         \end{pmatrix}\Big]^j \dx^i\,\partial_j
       \delta_{\bar{q}} +\mathcal{O}(r) \label{eq:asymptotic-dynamics}
 \end{align}
@@ -1432,9 +1432,9 @@ On the other hand, from~\eqref{eq:asymptotic-dynamics} we have for the
 asymptotic dynamics that
 \begin{equation*}
   \tilde{\mu}(t)
-  = -\Big[R_\varphi \cdot \begin{pmatrix} \xi \\ p_\varphi \end{pmatrix}\Big] \cdot
+  = -\Big[R_\varphi \cdot \begin{pmatrix} \zeta \\ p_\varphi \end{pmatrix}\Big] \cdot
      \Big[R_\varphi \cdot \begin{pmatrix} 1   \\ 0         \end{pmatrix}\Big]^T
-  = -\Ad_{R_\varphi} \begin{pmatrix} \xi & 0 \\ p_\varphi & 0 \end{pmatrix}
+  = -\Ad_{R_\varphi} \begin{pmatrix} \zeta & 0 \\ p_\varphi & 0 \end{pmatrix}
 \end{equation*}
 with only $\dot{\varphi} = \frac{3}{4} p_\varphi$ depending on time.
 Note that $\tilde{\mu} \not\in \mathfrak{sl}(2)$ as a matrix, but
@@ -1471,8 +1471,9 @@ derivative~\eqref{eq:asymptotic-dynamics} that is an element
 $y_1(t) = J_L(x_1(t))$, where $x_1(t) \in T^*Q_1^{(1)}$ is a curve in
 the space of single $1$-jetlet particles.
 
-Thus, in the topology induced by $\mathfrak{X}_{\rm div}(\R^n)^*$, we
-can view the boundary of $T^*Q_2^{(0)}$ as (part of) $T^*Q_1^{(1)}$,
+We can view the boundary of $T^*Q_2^{(0)}$ as a subset of $T^*Q_1^{(1)}$,
+and consider a topology on $\mathfrak{X}_{\rm div}(\mathbb{R}^n)^*$ in which
+the embedding is continuous,
 see diagram~\eqref{eq:embedding}.
 This picture naturally generalizes to the whole hierarchy of spaces
 $T^*Q_N^{(k)}$, suggesting that it might be interpreted as a
@@ -1487,8 +1488,10 @@ $y_1(t)$ of a $1$-jetlets, basically\footnote{%
   shadowing property', which is closely related to hyperbolic
   properties of the dynamics~\cite{Ribeiro2014}.%
 } boils down to the question whether the vector field of the dynamics
-on $\mathfrak{X}_{\rm div}(\R^n)^*$ is continuous. We have not
-investigated this.
+on $\mathfrak{X}_{\rm div}(\R^n)^*$ is continuous.
+It is not clear to us which topology on $\mathfrak{X}_{\rm div}(\R^n)$ we should
+be considering, and so we have not pursued
+this more abstract characterization in detail.
 
 \begin{equation}\label{eq:embedding}
   \begin{tikzcd}
