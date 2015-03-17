@@ -1392,7 +1392,7 @@ motion
   = -\partial_{km} K^{jl}(0) \mu\indices{_l^m} \mu\indices{_i^k}
     +\partial_{im} K^{kl}(0) \mu\indices{_l^m} \mu\indices{_k^j},
 \end{equation*}
-or in short, $\dot{\mu} = [\mu,\xi]$ with $\xi\indices{^i_j} = \partial_ju^i(0) = \partial_{jk}K^{i\ell}(0) \mu\indices{_\ell^k}$. To
+or in short, $\dot{\mu} = [\mu,\xi]$ with $\xi\indices{^i_j} = \partial_j u^i(0) = \partial_{jk} K^{i l}(0) \mu\indices{_l^k}$. To
 ease calculations, let us choose the basis
 \begin{equation}\label{eq:basis-sl2}
   \omega = \begin{pmatrix}
@@ -1411,8 +1411,15 @@ ease calculations, let us choose the basis
 for $\mathfrak{sl}(2)^* \cong \mathfrak{sl}(2)$, where the
 identification is made through the Frobenius inner product, and note
 that these matrices have norm $\sqrt{2}$. We decompose
-$\mu = j\,\omega + s\,\sigma + t\,\tau$ and find that $\xi$ as a
-function of $\mu$ can be written as
+$\mu = j\,\omega + s\,\sigma + t\,\tau$ and the second derivative of
+the kernel as a tensor product,
+\begin{equation*}
+  \partial_{ij} K^{kl}(0)
+  = \frac{1}{2} \omega_i^k \omega_j^l
+   -\frac{1}{4} \big( \sigma_i^k \sigma_j^l + \tau_i^j \tau_j^l \big).
+\end{equation*}
+With these decompositions we find that $\xi$ as a function of $\mu$
+can be written as
 \begin{equation*}
   \xi = -j\,\omega + \frac{1}{2}(s\,\sigma + t\,\tau).
 \end{equation*}
