@@ -2091,23 +2091,22 @@ In other words, we may view a $m \in \mathfrak{X}_{\rm div}(\R^n)^*$ as an objec
 In the text we will typically not mention $\mathfrak{X}_{\rm div}(\R^n)^\circ$ explicitly, and simply identify $m$ with $p \otimes \mu$.
 This is a harmless identification as long as we do not pair it with a non-divergence free vector-field.
 
-\section{Equations of motion for 2-jets}
+\section{Equations of motion for 1-jetlets}
 \label{sec:eom}
 
 The equations of motion are expressible as Hamiltonian
-equations with respect to a non-canonical Poisson bracket.
-If we denote $q^{(0)}$ by $q$ and $p^{(0)}$
-by $p$ then the Hamiltonian is
+equations on $T^*Q_N^{(1)}$
+in canonical variable $(q^{(0)},p^{(0)},q^{(1)},p^{(1)})$.
+However, it is more efficient to express the equations of 
+motion in the non-canonical variables $(q,p,\mu)$
+where $q_a = q_a^{(0)}$, $p_a = p_a^{(0)}$ and $\mu_a = [q_a^{(1)}]\indices{^\ell_i} [p_a^{(1)}] \indices{_\ell^j}$ for $a = 1,\dots,N$.
+The Hamiltonian in these coordinates is
 \begin{align*}
-  H(q,p,\mu^{(1)},\mu^{(2)}) &=
+  H(q,p,\mu) &=
   \frac{1}{2} p_{a i} p_{b j} K^{i j}(q_a - q_b) - p_{a i}
-  [\mu^{(1)}_b]\indices{_{j}^{k}} \partial_k K^{i j}(q_a - q_b) \\
-&+p_{a i} [\mu^{(2)}_b] \indices{_j^{k l}} \partial_{l k} K^{i j}(q_a - q_b)
- -\frac{1}{2} [\mu_a^{(1)}]\indices{_{i}^l}
-  [\mu_b^{(1)}]\indices{_j^k} \partial_{l k} K^{i j}(q_a - q_b) \\
-&+[\mu_a^{(1)}]\indices{_i^m} [\mu_b^{(2)}]\indices{_j^{k l}} \partial_{m k l} K^{i j}(q_a - q_b) \\
-&+\frac{1}{2} [\mu_a^{(2)}]\indices{_i^{m n}} [\mu_b^{(2)}]\indices{_j^{k l} }
-  \partial_{k l m n} K^{i j}(q_a - q_b)
+  [\mu_b]\indices{_{j}^{k}} \partial_k K^{i j}(q_a - q_b) \\
+& -\frac{1}{2} [\mu_a^{(1)}]\indices{_{i}^l}
+  [\mu_b^{(1)}]\indices{_j^k} \partial_{l k} K^{i j}(q_a - q_b)
 \end{align*}
 where $K^{i j}(x) = \delta^{i j} e^{- \| x \|^2 / 2 \sigma^2}$.
 Hamilton's equations are then given in short by
@@ -2117,72 +2116,43 @@ Hamilton's equations are then given in short by
   \xi     &=  \frac{\partial H}{\partial \mu} \label{eq:dHdmu} \\
   \dot{\mu} &= - \ad^*_{ \xi } ( \mu ) . \label{eq:LiePoisson}
 \end{align}
+Where $\ad^*$ refers to the coadjoint operator on $\SL(n)$.
 More explicitly, equation~\eqref{eq:dHdp} is given by
 \begin{align*}
   \dot{q}_a^i = p_{b j} K^{i j}(q_a - q_b)
  -[\mu^{(1)}_b] \indices{_j^k} \partial_k K^{i j}(q_a - q_b)
- +[\mu^{(2)}_b] \indices{_j^{k l}} \partial_{k l} K^{i j}(q_a - q_b)
 \end{align*}
 equation~\eqref{eq:dHdq} is given by the sum
 \begin{align*}
-  \dot{p}_{a i} = T^{00}_{a i} + T^{01}_{a i} + T^{02}_{a i}
-                + T^{12}_{a i} + T^{11}_{a i} + T^{22}_{a i}
+  \dot{p}_{a i} = T^{00}_{a i} + T^{01}_{a i} + T^{11}_{a i}
 \end{align*}
-where we define the six terms in this sum as
+where we define the three terms in this sum as
 \begin{align*}
   T^{00}_{a i} &= -p_{a k} p_{b j} \partial_{i} K^{k j}(q_a - q_b) \\
   T^{01}_{a i} &= (p_{a l}[\mu_b^{(1)}]\indices{_j^k}
                   -p_{b l}[\mu_a^{(1)}]\indices{_j^k}) \partial_{k i} K^{l j}(q_a - q_b) \\
-  T^{02}_{a i} &= -(p_{a m}[\mu_b^{(2)}]\indices{_j^{k l}}
-                   +p_{b m}[\mu_a^{(2)}] \indices{_j^{k l}}) \partial_{k l i}K^{m j}(q_a - q_b) \\
-  T^{12}_{a i} &= -([\mu_a^{(1)}]\indices{_n^m} [\mu_b^{(2)}]\indices{_j^{k l}}
-                   -[\mu_b^{(1)}]\indices{_n^m} [\mu_a^{(2)}]\indices{_j^{k l}})
-                   \partial_{m k l i}K^{n j}(q_a - q_b) \\
   T^{11}_{a i} &= [\mu_a^{(1)}] \indices{_m^l} [\mu_b^{(1)}]\indices{_j^k}
                   \partial_{l k i} K^{m j}(q_a - q_b) \\
-  T^{22}_{a i} &=-[\mu_a^{(2)}]\indices{_\zeta^{m n}} [\mu_b^{(2)}]\indices{_j^{k l}}
-                  \partial_{m l k n i} K^{\zeta j}(q_a - q_b)
 \end{align*}
-Next, we calculate the quantities $\xi^{(k)} = \partial H / \partial \mu^{(k)}$
+Next, we calculate the quantities $\xi = \partial H / \partial \mu$
 for $k=1,2$ of equation~\eqref{eq:dHdmu} to be
 \begin{align*}
-  [\xi_a^{(1)} ]\indices{^i_j} &=
+  [\xi_a ]\indices{^i_j} &=
   p_{b k} \partial_j K^{i k}(q_a - q_b)
- -[\mu_b^{(1)}]\indices{_{l}^{k}} \partial_{j k} K^{i l}(q_a - q_b)
- +[\mu_b^{(2)}]\indices{_{m}^{k l} }\partial_{j k l} K^{i m}(q_a - q_b) \\
-  [\xi_a^{(2)}]\indices{^i_{j k}} &= p_{b l} \partial_{j k} K^{i l}(q_a - q_b)
- -[\mu_b^{(1)}]\indices{_l^m} \partial_{m j k} K^{i l}(q_a - q_bj)
- +[\mu_b^{(2)}]\indices{_m^{n l}}\partial_{j k n l}K^{i m}(q_a-q_b)
+ -[\mu_b]\indices{_{l}^{k}} \partial_{j k} K^{i l}(q_a - q_b)
 \end{align*}
-which allows us to compute $\dot{\mu}^{(k)}$ in equation~\eqref{eq:LiePoisson} as
+which allows us to compute $\dot{\mu}$ in equation~\eqref{eq:LiePoisson} as
 \begin{align*}
-  [\dot{\mu}^{(1)}_a ]\indices{_i^j} &=
-  [\mu_a^{(1)}]\indices{_i^k} [\xi_a^{(1)}]\indices{^j_k}
- -[\mu_a^{(1)}]\indices{_k^j} [\xi_a^{(1)}]\indices{^k_i} \\
-&+[\mu_a^{(2)}]\indices{_i^{l k}} [\xi_a^{(2)}]\indices{^j_{l k}}
- -[\mu_a^{(2)}]\indices{_l^{j k}} [\xi_a^{(2)}]\indices{^l_{i k}}
- -[\mu_a^{(2)}]\indices{_l^{k j}} [\xi_a^{(2)}]\indices{^l_{k i}} \\
-  [\dot{\mu_a}^{(2)}]\indices{_i^{j k}} &=
-  [\mu_a^{(2)}]\indices{_i^{l k}} [\xi_a^{(1)}]\indices{^j_l}
- +[\mu_a^{(2)}]\indices{_i^{j l}} [\xi_a^{(1)}]\indices{^k_l}
- -[\mu_a^{(2)}]\indices{_l^{j k}} [\xi_a^{(1)}]\indices{^l_i}
+  [\dot{\mu}_a ]\indices{_i^j} &=
+  [\mu_a]\indices{_i^k} [\xi_a^{(1)}]\indices{^j_k}
+ -[\mu_a]\indices{_k^j} [\xi_a^{(1)}]\indices{^k_i}
 \end{align*}
 
-
-\subsection{Computing $\dot{q}$ as a function of $\xi$}
-\label{sec:computing-dotq-as}
-
-The action of $\xi$ on $q$ is given by $\xi \cdot q$.  We set $\dot{q}
-= \xi \cdot q$. We've already calculated $\dot{q}^{(0)}$.
-We need only calculate $\dot{q}^{(1)}$ and $\dot{q}^{(2)}$.
-Componentwise we calculate these to be
-\begin{align*}
+The dynamics in terms of the original variables $(q^{(0)},q^{(1)})$ with $q^{(1)} \in \SL(n)$ are obtained by integrating the reconstruction equation
+$
   [\dot{q}^{(1)}]\indices{^i_j} &=
-  [\xi^{(1)}]\indices{^i_k} [q^{(1)}]\indices{^k_j} \\
-  [\dot{q}^{(2)}]\indices{^i_{j k}} &=
-  [\xi^{(2)}]\indices{^i_{l m}} \cdot [q^{(1)}]\indices{^l_j} \cdot [q^{(1)}]\indices{^m_k}
- +[\xi^{(1)}]\indices{^i_l}     \cdot [q^{(2)}]\indices{^l_{j k}}
-\end{align*}
+  [\xi]\indices{^i_k} [q^{(1)}]\indices{^k_j}
+$.
 
 \bibliographystyle{amsalpha}
 \bibliography{hoj_2014}
