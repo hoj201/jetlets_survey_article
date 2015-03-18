@@ -1643,7 +1643,27 @@ interacting weakly with a third jetlet particle.
 \end{figure}
 
 \section{Conclusion}
-\todo[inline]{We need to write a conclusion}
+  In this paper we derived a hierarchy of dual-pairs
+  which induce pairs of particle-like solutions, called \emph{jetlets}, and conserved quantities
+  that shadowed the conservation of circulation.
+  The jetlets had internal degrees of freedom given by a jet-group.
+  As the jet-group is a finite-dimensional model of the diffeomorphism
+  group, we promoted the use of jetlets as a finite-dimensional model
+  of self-similarity, wherein a ``large'' diffeomorphism advects a ``small''
+  diffeomorphism.
+  We also studied the dynamics of mergers and verified that merging
+  0-jetlets will asymptotically approach 1-jetlets.
+
+Future work includes:
+\begin{enumerate}
+	\item An investigation of the relationship between the presentation here and the theory of point vortices and the vortex blob method.
+	\item An investigation of the numerical implementation.
+		Here the use of parallelization and the fast multipole method would be particularly interesting to consider.
+	\item Finding a way to implement boundary conditions.
+		In such scenarios, the kernel is no longer invariant under rigid transformations
+		and we must consider a general kernel $K:M \times M \to \mathbb{R}^{n \times n}$
+		where $M \subset \mathbb{R}^n$ is an $n$-manifold with boundary.
+\end{enumerate}
 
 \appendix
 
