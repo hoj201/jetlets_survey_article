@@ -71,6 +71,7 @@
   group itself, and so the jetlet particles serve as a finite-dimensional
   model of the self-similarity exhibited by ideal
   incompressible fluids.
+\je{The implication from diffeo/jet groups to self-similarity is not so clear to me.}
   The conservation law associated to jetlet solutions is then
   shown to be a shadow of Kelvin's circulation theorem.
   Finally, we study the dynamics of infinite time particle mergers.
@@ -87,8 +88,11 @@
 \end{abstract}
 
 \section{Introduction}
-Arnold's geometric insight in \cite{Arnold1966}  has changed the way mathematicians look at ideal fluid dynamics, forever.  According to \cite{Arnold1966}, ideal incompressible fluid motion on a volume manifold $M$ is equivalent to geodesic motion on the Lie group of volume preserving diffeomorphisms ${\rm SDiff}(M)$ (i.e., the smooth invertible volume preserving maps of $M$ into itself, with smooth inverses).  The Riemannian metric is simply the fluid kinetic energy, which is the $L^2$-norm of the fluid's velocity field.
+Arnold's geometric insight in \cite{Arnold1966}  has changed the way mathematicians look at ideal fluid dynamics, forever.  According to \cite{Arnold1966}, ideal incompressible fluid motion on a volume manifold $M$ is equivalent to geodesic motion on the Lie group of volume preserving diffeomorphisms ${\rm SDiff}(M)$ (i.e., the smooth invertible volume preserving maps of $M$ into itself, with smooth inverses).
+\je{$M$ must be a Riemannian manifold to define kinetic energy. Maybe better to drop the adjective `volume' than replace it by `Riemannian' to prevent confusion with ${\rm SDiff}(M)$ as Riemmanian manifold.}
+The Riemannian metric is simply the fluid kinetic energy, which is the $L^2$-norm of the fluid's velocity field.
 This characterization of ideal fluid flow allowed Poisson geometers and geometric mechanicians to contribute their own perspective on ideal fluids and other PDEs with hydrodynamics background \cite{EbinMarsden1970,MarsdenWeinstein1983,Zeitlin1991,ArnoldKhesin1998,HolmMarsdenRatiu1998,FoiasHolmTiti2001}.
+\je{I'd suggest to rephrase ``contribute their own perspective'' to something slightly stronger like ``a new perspective''.}
 As will be shown, such a perspective is particularly fruitful for the purpose of reducing the infinite-dimensional fluid system
 to a finite-dimensional ordinary differential equation (e.g.\ point vortex solutions).
 
@@ -117,6 +121,7 @@ Hence, it seems natural to invoke these foundations in the context of fluids, wh
 These particle-like solutions which ``carry'' jet groups paint an intuitive picture of a large scale diffeomorphism that advects particles,
 each of which carries its own local deformation of the fluid in a small region around it.
 At each higher level in the hierarchy, the deformation becomes more localized.
+\je{I think the ``more localized'' may be a bit too strong a statement, replace with ``detailed''?}
 Thus the jets of diffeomorphisms possess a natural sense of the ``self-similarity'' which is present in the diffeomorphism group itself.
  Models such as this are crucial to our understanding of fluids,
   both from a numerical perspective, and from the perspective
@@ -147,6 +152,7 @@ We emphasize that the conservation of $J_R$ here is equivalent to Kelvin's circu
 In Section 4.2 we introduce landmark solutions/zeroth order jetlets, and we discuss their `dual pair'. This is done in parallel with later sections. The left momentum map is the usual one, and the right momentum map is in fact trivial. So the `dual pair' is a little bit unnatural, but it still makes sense to present already the kind of thinking that will be employed in later parts of the paper. 
 %
 The proof of Proposition 4.2 is an example of the efficiency of the approach. (The proof is half a line.)
+\je{This statement seems a bit disingenuous: MM spend a whole paper on the hard analysis, which we gloss over.}
 
 In Section 4.3 we go to 1st order jetlets. Everything here goes in parallel, except that one has to take a bit more care when introducing the relevant right and left actions. Once one has the definitions in place, it is not difficult to recognize that the cotangent lifts for the right and left actions lead to a dual pair of momentum maps. (This is mainly because the group actions commute.) Proposition 4.5 collects the results that follow immediately from the dual pair.
 
@@ -212,13 +218,15 @@ The Appendix is relatively extensive. A quick discussion of symplectic and Poiss
  However, the specifics of the regularized fluid model were not determined,
  and the analysis of \cite{JacobsRatiuDesbrun2013} was purely
  theoretical.
- 
+ \je{Replace ``theoretical'' by ``abstract''?}
+
  Later, a regularized version of the ideal fluid equations was presented by
  \cite{MumfordMichor2013}.
  This new partial differential equation was amenable to the theory presented in 
  \cite{JacobsRatiuDesbrun2013}, and gave a specific and easily
  implementable manifestation of the hierarchy of particle models
  described there.
+ \je{Replace ``and gave a'' by ``and gave rise to a''?}
  In \cite{CotterHolmJacobsMeier2014} we numerically computed some
  of these particle-like solutions and observed cascade phenomena as
  an emergent behavior at the $0$th level in the hierarchy.
@@ -1674,6 +1682,7 @@ Future work includes:
 		and we must consider a general kernel $K:M \times M \to \mathbb{R}^{n \times n}$
 		where $M \subset \mathbb{R}^n$ is an $n$-manifold with boundary.
 \end{enumerate}
+\je{Add: analysis of convergence to Euler equations when $\sigma \to 0$?}
 
 \appendix
 
@@ -2168,3 +2177,9 @@ $.
 \bibliography{hoj_2014}
 
 \end{document}
+
+% Local Variables:
+% mode: latex
+% TeX-master: t
+% TeX-PDF-mode: t
+% End:
