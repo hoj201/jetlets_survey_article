@@ -135,7 +135,7 @@ More specifically, we will accomplish the following:
 \end{enumerate}
 
 \subsection{Outline of the paper}
-After the introduction, in Section 2, we outline our strategy: The goal is to show that jetlet models admit a dual pair at each level in the hierarchy. Once this has been done, Theorem \ref{thm:dual_pairs} (proven in the appendix) does the rest. Namely, the jetlets satisfy canonical Hamiltonian equations, and the right momentum map is conserved by the flow.
+After the introduction, in Section 2, we outline our strategy: The goal is to show that jetlet models admit a dual pair at each level in the hierarchy. Once this has been done, Theorem \ref{thm:dual_pairs} (proven in the appendix) does the rest. Namely, the jetlets satisfy canonical Hamiltonian equations, and the right momentum map, $J_R$, is conserved by the flow.
 
 Section 3 contains a brief discussion of the standard dual pair example for the rigid body (i.e. the cotangent lift momentum maps for right and left actions, respectively)
 
@@ -156,6 +156,10 @@ In Section 4.4 we describe a general level of jetlets. Again, once the relevant 
 In Section 4.5 we discuss in more detail the Kelvin circulation theorem. More precisely, we discuss the relationship between the 'standard' circulation theorem for the fluid and the conserved momentum maps $J_R$  at the various levels of jetlets. The main result is represented schematically and proven in detail (all that is required, basically, is the standard formula for cotangent lift momentum maps). What we show, in essence, is that the conserved jetlet momentum maps are `shadows' of the `full' right-momentum map of the fluid.\\
 
 \todo[inline]{DDH: David says we could put in a bit more detail: The velocity fields corresponding to jetlet solutions are forced to lie in a certain subspace of the Lie algebra of vector fields. This implies that the corresponding elements of $T$Diff also lie in a certain subspace of the tangent bundle, and hence, by Legendre transform, that the momenta lie in a subspace of $T^*$Diff. If one applies the right-momentum map to this subspace, one gets the same as if one applies the jetlet right momentum map to the momentum on $T^*Q^N$ (the cotangent bundle of `Taylor expansions' up to certain order). Analogous statements hold about the left momentum maps.}
+
+\hoj{Darryl suggests that David adds this as a remark in the final section.
+One should be careful to use proper terminology, since the dual to a subspace $W \subset V$
+is a quotient space $V / W^\circ$ (not a subspace).}
 
 
 In section \ref{sec:Numerical experiments} we discuss explicit dynamical behavior of the
@@ -410,7 +414,10 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   \end{alignat*}
   is a dual pair
   (see page \pageref{thm:dual_pairs} for details).
-  The maps $J_L$ and $J_R$ are known as \emph{Clebsch variables}. 
+  The maps $J_L$ and $J_R$ are called \emph{symplectic variables} in \cite{MarsdenWeinstein1983}
+  as they allow one to pull-back calculations on a Poisson manifold to a symplectic manifold.\footnote{
+  	\cite{MarsdenWeinstein1983} also referred to $J_R$ and $J_L$ as \emph{Clebsh variables},
+		however this terminology has changed over the past few decades.}
 
   By Theorem \ref{thm:dual_pairs}, this dual pair expresses rigid
   body dynamics and conserved quantities.
