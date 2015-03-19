@@ -23,7 +23,8 @@
 \newcommand{\so}{\ensuremath{\mathfrak{so}}}
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
 \newcommand{\dx}{\ensuremath{\textrm{d}x}}
-\def\contract{\makebox[1.2em][c]{\mbox{\rule{.6em}{.01truein}\rule{.01truein}{.6em}}}}
+\def\contract{\makebox[1.2em][c]{\mbox{\rule{.6em}
+{.01truein}\rule{.01truein}{.6em}}}}
 
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{prop}[thm]{Proposition}
@@ -1133,10 +1134,10 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   \begin{prop}\label{prop:k-solutions}
     Let $p \ge \frac{n}{2} + k + 1$ and $\sigma > 0$.
     Then $H^{(k)} = h_{p,\sigma} \circ J_L^{(k)}$ is $C^1$.
-    Let $(q,p)(t)$ be a solution to Hamilton's equations on
-    $T^*Q^{(k)}_N$, then $J_L^{(k)}( (q,p)(t))$ is a solution to Hamilton's
+    Let $x(t)$ be a solution to Hamilton's equations on
+    $T^*Q^{(k)}_N$, then $J_L^{(k)}( x(t))$ is a solution to Hamilton's
     equations on $\mathfrak{X}_{\rm div}(\R^n)^*$
-    and $J_R^{(k)}( (q,p)(t))$ is constant in time.
+    and $J_R^{(k)}( x(t))$ is constant in time.
   \end{prop}
   Remark that $K_{p,\sigma}$ has smoothness $C^{2p-n-1}$ by considering
   that the Fourier representations of its derivatives are integrable,
