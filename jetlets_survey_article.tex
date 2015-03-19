@@ -1239,11 +1239,14 @@ relabeling symmetry for any $\SDiff(\R^n)$ invariant Lagrangian.
 In light of this discussion, it is natural to consider \eqref{eq:abstract-circulation} as the  fundamental conservation law. The main goal in the remainder of this section is to show that the jet-particle solutions satisfy conservation laws that are `shadows' of this fundamental law in the sense that they are associated with a \emph{partial} relabeling symmetry. To see this, it is useful to define the $k$-th order isotropy group,
 $\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid \Jet^{k}_z( \psi) = \Jet^k_z (\rm{id})) \}$, where we wrote $\rm{id}$ for the identity mapping and $z$ is shorthand for $z_1, \ldots, z_N \in \mathbb{R}^n$.
 Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the corresponding quotient map is given by $\Jet_z^k$.  
- The space $T^*Q^{(k)}$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$.  The commutativity of the following diagram uniquely defines the jetlet solutions:
+ The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$ in the sense that
+ for any $(p,q) \in T^*Q^{(k)}_N$ and any $v_\varphi \in T\SDiff(\mathbb{R}^n)$ we can
+ consider the element $i(p,q) \in T^*\SDiff(\R^n)$ given by $\langle i(q,p) , v_\varphi \rangle = \langle p , v_\varphi( \varphi^{-1} \cdot q) \rangle$.
+ The commutativity of the following diagram uniquely defines the jetlet solutions:
   \begin{equation}
  \begin{tikzcd}
    \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l,"J_\text{spatial}"] T^*\SDiff(\R^n) \ar[r,"J_\text{conv}"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
-   & T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
+   & \{ T^*\SDiff(\R^n) \} / \iso^{(k)}(z) & \\
    & T^*Q^{(k)}_N \uar{i} \ar[uur,"J_R^{(k)}"',bend right = 30] \ar[uul,"J_L^{(k)}",bend left = 30] &
  \end{tikzcd}
 \end{equation}
