@@ -1218,14 +1218,14 @@ Any $m \in \mathfrak{X}_{\rm div}(\R^n)^*$ can be written as a one-form density 
 where $\mu$ is the volume form on $\R^n$.
 For any smooth curve $\gamma:S^1 \to \R^n$ we may consider the current
 $\mathscr{K}(\gamma) \in \mathfrak{X}_{\rm div}(\R^n)^{**}$ defined by
-\begin{align*}
+\begin{equation*}
 	\langle \mathscr{K}(\gamma) , m \rangle = \int_{\gamma} \tilde{m}
-\end{align*}
+\end{equation*}
 By Theorem 6.2 of \cite{HolmMarsdenRatiu1998}, if $\gamma_t(s) = \varphi_t(\gamma_0(s))$ and $m = \tilde{m} \otimes \mu$ satisfies
 the ideal incompressible fluid equation (perhaps regularized), then the circulation
-\begin{align*}
+\begin{equation*}
 	\Gamma(t) = \langle \mathscr{K}(\gamma_t) , m(t) \rangle
-\end{align*}
+\end{equation*}
 is constant in time.
 It is in this sense that Kelvin's circulation theorem follows from the particle
 relabeling symmetry for any $\SDiff(\R^n)$ invariant Lagrangian. 
@@ -1241,22 +1241,27 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
    & T^*Q^{(k)}_N \uar{i} \ar[uur,"J_R^{(k)}"',bend right = 30] \ar[uul,"J_L^{(k)}",bend left = 30] &
  \end{tikzcd}
 \end{equation}
-  Namely, for the left-hand part of the diagram recall that we have shown in the previous section that a jetlet solution has a velocity vector in $T \SDiff(\R^n)$ of the form \begin{align} v_{\varphi} = (K * J_L^{(k)}(p_q)) \circ \varphi \notag \end{align} for some $p_q \in T^*_q Q^{(k)}_N$, where $q = \Jet^k_z(\varphi)$. From this it follows that the corresponding Legendre momentum $p_\varphi$ satisfies, for all $ w \in \mathfrak{X}_{\rm div}(\R^n)$,
-  \begin{align}
-  \left< J_\text{spatial}(p_\varphi), w\right> = \left< p_\varphi, w \circ \varphi \right> = \left< J_L^{(k)}(p_q), w \right>, \notag
-  \end{align}
+  Namely, for the left-hand part of the diagram recall that we have shown in the previous section that a jetlet solution has a velocity vector in $T \SDiff(\R^n)$ of the form
+  \begin{equation*}
+    v_{\varphi} = (K * J_L^{(k)}(p_q)) \circ \varphi
+  \end{equation*}
+  for some $p_q \in T^*_q Q^{(k)}_N$, where $q = \Jet^k_z(\varphi)$. From this it follows that the corresponding Legendre momentum $p_\varphi$ satisfies, for all $ w \in \mathfrak{X}_{\rm div}(\R^n)$,
+  \begin{equation*}
+  \left< J_\text{spatial}(p_\varphi), w\right> = \left< p_\varphi, w \circ \varphi \right> = \left< J_L^{(k)}(p_q), w \right>,
+  \end{equation*}
   which shows commutativity of the left-hand part of the diagram. As for the right-hand part, we again use the special form of $p_\varphi$ to conclude that, for all $ w \in \mathfrak{iso}(z) \subset \mathfrak{X}_{\rm div}(\R^n)$,
- \begin{align}
+ \begin{equation}
  	\left<J_\text{conv}(p_\varphi), w\right> = \left<p_\varphi, T\varphi  (w) \right> = \left<J_L^{(k)}(p_q),  T\varphi (w \circ \varphi^{-1}) \right>. \label{compare_1}
- \end{align}
+ \end{equation}
  On the other hand, if we write $\phi_\varphi: Q^{(k)}_N \to Q^{(k)}_N$ for the left action $\phi_\varphi (q) = \varphi \cdot q$, we have 
- \begin{align}
- 	\left<J_R^{(k)}(p_q), w\right> = \left< p_q, T_{\phi_\varphi} (w_{Q^{(k)}_N} (q_0))   \right> =  \left<p_q, (T\varphi (w \circ \varphi^{-1}) )_{Q^{(k)}_N} (q) \right>, \notag \end{align}
+ \begin{equation*}
+   \left<J_R^{(k)}(p_q), w\right> = \left< p_q, T_{\phi_\varphi} (w_{Q^{(k)}_N} (q_0))   \right> =  \left<p_q, (T\varphi (w \circ \varphi^{-1}) )_{Q^{(k)}_N} (q) \right>,
+ \end{equation*}
  where we denoted the infinitesimal left action of $w$ on $Q^{(k)}_N$ by $w_{Q^{(k)}_N}$. The velocity corresponding (via the inverse of the Legendre transform) to $p_q$ can be written as $ T\Jet_z^k( (K * J_L^{(k)}(p_q)) \circ \varphi)$,
  and therefore one concludes that 
- \begin{align}
+ \begin{equation}
  	\left<J_R^{(k)}(p_q), w\right> = \left< J_L^{(k)}(p_q), T \varphi (w \circ \varphi^{-1}) \right>. \label{compare_2}
- \end{align}
+ \end{equation}
  This shows the commutativity of the right-hand part of the  diagram above (compare \eqref{compare_1} and \eqref{compare_2}).
   
   Again, the right legs of both dual pairs yield the conserved quantities.
@@ -1683,18 +1688,18 @@ and Hamiltonian mechanics as described in \cite{FOM,MandS,Weinstein1983}.
 
 A typical introduction to Poisson structures in mechanics
 begins by considering Hamilton's equations
-\begin{align*}
+\begin{equation*}
   \dot{q} = \pder{H}{p} \quad, \quad  \dot{p} = - \pder{H}{q}.
-\end{align*}
+\end{equation*}
 If we consider the two-form $dp \wedge dq$, then Hamilton's equations
 can be written as $(\dot{q},\dot{p}) \contract (dp \wedge dq) = dH(q,p)$.
 This is the starting point for symplectic geometry, which
 will be discussed in section~\ref{sec:Symplectic}.
 Alternatively, these equations can be written using the bilinear map $\{ \cdot , \cdot \}_{\rm can} : C^1( T^*Q) \times C^1(T^*Q) \to C^0(T^*Q)$
 given by
-\begin{align*}
+\begin{equation*}
   \{ F , G \}_{\rm can} = \pder{F}{q}\pder{G}{p} - \pder{G}{q} \pder{G}{p}.
-\end{align*}
+\end{equation*}
 In particular, we may write $\dot{q} = \{ q , H \}_{\rm can}$ and $\dot{p} = \{ p , H\}_{\rm can}$.
 The object $\{ \cdot , \cdot \}_{\rm can}$ is a special case of more general
 object known as a \emph{Poisson bracket} which will be introduced in
@@ -1765,29 +1770,29 @@ This yields the following notions
 \begin{defn}
   Let $G$ be a Lie group and let $\rho:G \to \Diff(S)$ be a group action on a symplectic manifold $(S,\omega)$.
   The group $G$ is said to \emph{act symplectically}
-  \begin{align*}
+  \begin{equation*}
     \omega( \rho( g ) \cdot v , \rho(g) \cdot w) = \omega(v,w)
-  \end{align*}
+  \end{equation*}
   for any $g \in G, v,w \in T_xS$ and $x \in S$.
   If $\mathfrak{g}$ is the Lie algebra of such a group,
   the \emph{momentum map}, $J:S \to \mathfrak{g}^*$,
   is defined by the property
-  \begin{align*}
+  \begin{equation*}
     d \langle J , \xi \rangle = \xi_S \contract \omega.
-  \end{align*}
+  \end{equation*}
 \end{defn}
 
 Alternatively, we can characterize a momentum map $J: S \to \mathfrak{g}^*$, as the unique map such that $X_{\langle J , \xi \rangle} = \xi_S$ for any $\xi \in \mathfrak{g}$.
 In the special case where $S = T^*Q$, a left/right action of $G$ on $Q$ can be lifted to a right/left symplectic action on $T^*Q$ given by
-\begin{align*}
+\begin{equation*}
   (q,p) \in T^*Q \mapsto (g^{-1} \cdot q , g^* p) \in T^*Q.
-\end{align*}
+\end{equation*}
 where $g^*p$ is the unique covector such that $\langle g^*p , v \rangle = \langle p , Tg \cdot v \rangle$.
 In this case the momentum map is characterized by the condition
-\begin{align}
+\begin{equation}
   \langle J(q,p) , \xi \rangle = \langle p , \xi \cdot q \rangle.
   \label{eq:cotangent_momap}
-\end{align}
+\end{equation}
 This is contained in Theorem 12.1.4 of \cite{MandS}.
 
 Finally, given two functions $f,h \in C^{\infty}(S)$ we can consider the function $\{ f,h\} = \omega( X_f, X_h)$.
@@ -1807,9 +1812,9 @@ We begin with the definition.
   $( C^{\infty}(P) , \{ \cdot , \cdot \} )$ is a Lie algebra
   and $\{ \cdot , h \}$ has the derivation property for any $h \in C^{\infty}(P)$.
   That is to say
-  \begin{align*}
+  \begin{equation*}
     \{ gf , h \} = \{ f , h \} \cdot g + \{ g , h \} \cdot f,
-  \end{align*}
+  \end{equation*}
   for any $f,g,h \in C^{\infty}(P)$.
   We call $\{ \cdot , \cdot \}$ a \emph{Poisson bracket},
   and we call the pair $(P, \{ \cdot , \cdot \})$ a Poisson manifold.
@@ -1828,11 +1833,11 @@ is the Lie--Poisson bracket.  Let $\mathfrak{g}$ be a Lie algebra
 and let $\mathfrak{g}^*$ denote it's dual.
 The \emph{Lie--Poisson bracket} on $\mathfrak{g}^*$ is given 
 by
-\begin{align}
+\begin{equation}
   \{ f , g \}_{\mathfrak{g}^*}( x ) = \pm
   \left \langle x , \left[ \pder{f}{x} , \pder{g}{x} \right] \right \rangle
   \label{eq:Lie-Poisson}
-\end{align}
+\end{equation}
 where $\langle \cdot , \cdot \rangle$ is the canonical pairing between
 dual-vectors and vectors, and $[ \cdot , \cdot ]$ is the Lie bracket
 on $\mathfrak{g}$.
@@ -1899,22 +1904,22 @@ sloppiness is usually harmless.
   Given a distribution $V \subset TS$, denote the fiber over 
   $x \in S$ by $V_x \subset T_x S$.
   The \emph{symplectic orthogonal} to $V$ is the distribution
-  \begin{align*}
+  \begin{equation*}
     V^\omega = \{ w \in TS \mid \omega( w , v ) = 0, \forall v \in V \}.
-  \end{align*}
+  \end{equation*}
   Let $\psi:S \to P_1$ be a Poisson map.
   The kernel of $\psi$ is the distribution
-  \begin{align*}
+  \begin{equation*}
     \kernel(\psi) = \{ v \in TS \mid T\psi \cdot v  = 0 \}.
-  \end{align*}
+  \end{equation*}
   If $J:S \to P_2$ is a Poisson map as well, and
-  \begin{align*}
+  \begin{equation*}
     \kernel(J) = \kernel(\psi)^\omega
-  \end{align*}
+  \end{equation*}
   we call the diagram
-  \begin{align*}
+  \begin{equation*}
     P_1 \stackrel{\psi}{\leftarrow} S \stackrel{J}{\to} P_2
-  \end{align*}
+  \end{equation*}
   a \emph{dual pair}.
 %  In the case that $S$ is a cotangent bundle we call $\psi$ or $J$
 %  \emph{Clebsch variables} \cite{MarsdenWeinstein1983}.
@@ -1937,20 +1942,20 @@ sloppiness is usually harmless.
     This means that $v$ is tangent to the level set of $J_1$ at $(q,p)(0)$.
     Moreover, $H = h \circ J_1$ is constant on such level sets.
     Thus we observe
-    \begin{align*}
+    \begin{equation*}
       0 = \langle dH((q,p)(0)) , v \rangle =
       \omega \left( (\dot{q},\dot{p}) , v \right).
-    \end{align*}
+    \end{equation*}
     As $v$ was an arbitrary element of $\kernel(J_1)$ over $(q,p)(0)$
     we see that $(\dot{q},\dot{p}) \in TS$ is contained
     in the symplectic orthogonal to $\kernel(J_1)$.
     Since $J_1$ and $J_2$ form a dual pair,
     this observation implies $(\dot{q},\dot{p}) \in \kernel(J_2)$.
     We may apply this argument at each time $t$ and observe
-    \begin{align*}
+    \begin{equation*}
       \frac{d}{dt} J_2( (q,p)(t)) = TJ_2 \cdot (\dot{q},\dot{p})(t)  
       = 0 \quad \forall t.
-    \end{align*}
+    \end{equation*}
   \end{proof}
   
   The next theorem will be used later for the purpose of identifying
@@ -1995,9 +2000,9 @@ sloppiness is usually harmless.
     Recall that $\omega = - d \theta$ where $\theta$ is the canonical one-form on $T^*Q$.
     Moreover, recall that $\theta$ is invariant under cotangent lifted group actions \cite[Theorem 3.2.12]{FOM}.
     Thus by Cartan's formula \cite[Theorem 2.4.13(iv)]{FOM}we can calculate
-    \begin{align*}
+    \begin{equation*}
     	0 = \pounds_{\rho_1(\xi_1)} [ \theta] = d \langle \theta_1 , \rho_1(\xi_1) \rangle + i_{\rho_1(\xi_1)}(d\theta) = d \langle \theta_1 , \rho_1(\xi_1) \rangle - i_{\rho_1(\xi_1)} \omega, 
-    \end{align*}
+    \end{equation*}
     where $i_{\rho_1(\xi_1)} \omega$ denotes contraction of a two-form with a vector-field.
     Finally we calculate
     \begin{align*}
@@ -2056,9 +2061,9 @@ The associated multi-index is just $[1,2,1]$.  This multi-index is equivalent to
 We say that it contains the elements $1$ and $2$.
 Because it contains `$1$' two times, we say that the multiplicity of $1$ is $2$.
 The multiset of $2$-fold partitions is $\Pi( [1,2,1],2)$, and consists of three multiset-partitions
-\begin{align*}
+\begin{equation*}
 	[ [1] , [2,1] ] , [[1,1] , [2] ] , [ [1, 2] , [1] ].
-\end{align*}
+\end{equation*}
 Note that the first and the third partition correspond to the same multiset.
 The cardinality of $\Pi( [1,2,1],2)$ is $3$, although it only has two distinct elements (one with a multiplicity of $1$, and another with a multiplicity of $2$).
 
@@ -2078,9 +2083,9 @@ Conversely, given any $p \in \Omega^1(\R^n)$ and distribution $\mu \in \mathcal{
 we may form the tensor product $p \otimes \mu$.
 The object $p\otimes \mu$ is identified as an element of $\mathfrak{X}(\R^n)^*$ through
 the pairing
-\begin{align*}
+\begin{equation*}
 	\langle p \otimes \mu , u \rangle :=  \int_{\R^n} \langle p(x) , u(x) \rangle \mu.
-\end{align*}
+\end{equation*}
 where $\langle p(x),u(x) \rangle$ is the function on $\R^n$ obtained by pairing the covector $p(x) \in T_x^*\R^n$ with the vector $u(x) \in T_x\R^n$.
 If we restrict ourselves to the case of divergence free vector-fields, we need to quotient
 the dual space appropriately.  In particular, we see that the annihilator of $\mathfrak{X}_{\rm div}(\R^n)$
@@ -2123,14 +2128,14 @@ Hamilton's equations are then given in short by
 \end{align}
 Where $\ad^*$ refers to the coadjoint operator on $\SL(n)$.
 More explicitly, equation~\eqref{eq:dHdp} is given by
-\begin{align*}
+\begin{equation*}
   \dot{q}_a^i = p_{b j} K^{i j}(q_a - q_b)
  -[\mu^{(1)}_b] \indices{_j^k} \partial_k K^{i j}(q_a - q_b)
-\end{align*}
+\end{equation*}
 equation~\eqref{eq:dHdq} is given by the sum
-\begin{align*}
+\begin{equation*}
   \dot{p}_{a i} = T^{00}_{a i} + T^{01}_{a i} + T^{11}_{a i}
-\end{align*}
+\end{equation*}
 where we define the three terms in this sum as
 \begin{align*}
   T^{00}_{a i} &= -p_{a k} p_{b j} \partial_{i} K^{k j}(q_a - q_b) \\
@@ -2141,17 +2146,17 @@ where we define the three terms in this sum as
 \end{align*}
 Next, we calculate the quantities $\xi = \partial H / \partial \mu$
 for $k=1,2$ of equation~\eqref{eq:dHdmu} to be
-\begin{align*}
-  [\xi_a ]\indices{^i_j} &=
+\begin{equation*}
+  [\xi_a ]\indices{^i_j} =
   p_{b k} \partial_j K^{i k}(q_a - q_b)
  -[\mu_b]\indices{_{l}^{k}} \partial_{j k} K^{i l}(q_a - q_b)
-\end{align*}
+\end{equation*}
 which allows us to compute $\dot{\mu}$ in equation~\eqref{eq:LiePoisson} as
-\begin{align*}
-  [\dot{\mu}_a ]\indices{_i^j} &=
+\begin{equation*}
+  [\dot{\mu}_a ]\indices{_i^j} =
   [\mu_a]\indices{_i^k} [\xi_a^{(1)}]\indices{^j_k}
  -[\mu_a]\indices{_k^j} [\xi_a^{(1)}]\indices{^k_i}
-\end{align*}
+\end{equation*}
 
 The dynamics in terms of the original variables $(q^{(0)},q^{(1)})$ with $q^{(1)} \in \SL(n)$ are obtained by integrating the reconstruction equation
 $
