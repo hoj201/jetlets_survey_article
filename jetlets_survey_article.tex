@@ -111,7 +111,7 @@ Each level in the hierarchy consists of particles
 with internal group variables, parametrized by
 a finite dimensional model of a diffeomorphism group,
 known as a jet group \cite[Chapter 4]{KMS99}.
-The jet groups lie at the foundations of certain representation theories of diffeomorphism groups (see \cite[Appendix 2]{VershikGelfandGraev1975} or \cite{Kirillov1981})\todo{I can't seem to find \cite{Kirillov1981} anywhere.  I think it is the proper citation for this sentence, but it seems weird to cite a paper I've only seen described in other papers.}.
+The jet groups lie at the foundations of certain representation theories of diffeomorphism groups (see \cite[Appendix 2]{VershikGelfandGraev1975} or \cite{Kirillov1981}).
 Hence, it seems natural to invoke these foundations in the context of fluids, where the configuration manifold is a diffeomorphism group.
 These particle-like solutions which ``carry'' jet groups paint an intuitive picture of a large scale diffeomorphism that advects particles,
 each of which carries its own local deformation of the fluid in a small region around it.
@@ -234,10 +234,15 @@ The Appendix is relatively extensive. A quick discussion of symplectic and Poiss
  and numerically integrates solutions in the first level of the hierarchy.
 
 \subsection{Notation}
-tangent bundle, cotangent bundle, vector field, contraction, Lie derivative,
-smooth, continuous functions, group actions, infinitesimal generators,
-dual spaces.  A group $G$, left multiplication $L_g$, right multi $R_g$, 
-left/right action $\rho(g,x)$ or $\rho(x,g)$, infinitesimal generator $\rho(\xi,x)$ or $\rho(x,\xi)$.
+%tangent bundle, cotangent bundle, vector field, contraction, Lie derivative,
+%smooth, continuous functions, group actions, infinitesimal generators,
+%dual spaces.  A group $G$, left multiplication $L_g$, right multi $R_g$, 
+%left/right action $\rho(g,x)$ or $\rho(x,g)$, infinitesimal generator $\rho(\xi,x)$ or $\rho(x,\xi)$.
+We will let $\mathfrak{X}(\R^n)$ denote the space $H^\infty$ vector fields,
+and we let $\mathfrak{X}_{\rm div}(\R^n)$
+denote the space of divergence free vector-fields resulting from the Hodge decomposition.
+We let $\Diff(\R^n)$ denote the space of $H^\infty$ diffeomorphisms of $\R^n$  (see \cite{MichorMumford2013})
+and we let $\SDiff(\R^n)$ denote the subgroup of volume preserving diffeomorphisms.
 
 Various different types of indices will be used throughout this paper.
 To distinguish between the types, we keep the following
@@ -249,10 +254,6 @@ conventions:
 \item superscript indices $(k)$ denote the order of jets in a
   coordinate-free representation.
 \end{itemize}
-
-\todo[inline]{Finish this section}
-
-
 
 \section{Main approach}
 \label{sec:approach}
@@ -947,20 +948,21 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
   We see that $D^2\varphi(0)$ is a tensor of rank $(1,2)$, which is
   symmetric in the lower indices.
   We call the space of such tensors $S^1_2$,
-  and we see that the space of second-order jets is $\R^n \times \SL(n) \times S^1_2$.
-  Finally, for $k \geq 2$ the space of $k^{\rm th}$ order jets is
+  and we see that the space of second-order jets is a sub-manifold $Q^{(2)}_1 \subset \R^n \times \SL(n) \times S^1_2$.
+  Finally, for $k \geq 2$ the space of $k^{\rm th}$ order jets is a sub-manifold
   \begin{align*}
-    Q_1^{(k)} = \R^n \times \SL(n) \times S^1_2 \times S^1_3 \times \cdots\times S^1_k
+    Q_1^{(k)} \subset \R^n \times \SL(n) \times S^1_2 \times S^1_3 \times \cdots\times S^1_k
   \end{align*}
   where $S^1_j$ is the vector space of $(1,j)$-tensors which
   have been symmetrized in the covariant indices.
   The space $Q_1^{(k)}$ is equipped with the fiber bundle
   projection $\pi^{(k)} : Q_1^{(k)} \to \R^n$,
   which projects onto the $\R^n$ component.
-  In fact, $Q_1^{(k)}$ will turn out to be a trivial principle bundle.
-  The fibers, $\SL(n) \times S^1_2 \times \cdots \times S^1_k$, have the group
-  structure of a jet group (see \cite[Chapter 4]{KMS99} for details on group multiplications in the context of $\Diff(\R^n)$ and
-  \cite{JacobsRatiuDesbrun2013} for the $\SDiff(M)$ case in the context of fluids).
+  In fact, $Q_1^{(k)}$ is a trivial principle bundle
+  where fibers, $\SL(n) \times S^1_2 \times \cdots \times S^1_k$
+  form a jet group \cite{JacobsRatiuDesbrun2013}.
+  The jet-group serves as a finite-dimensional model of the diffeomorphism group (see \cite[Chapter 4]{KMS99} for a description of the group multiplication),
+  and this motivates our interpretation of jetlets as models of self-similarity.
   We define the space for an $N$-tuple of $k$-jetlets by taking a product
   \begin{align*}
     Q^{(k)}_N = \{ (q_1,\dots, q_N) \in Q_1^{(k)} \times \dots \times Q_1^{(k)}
