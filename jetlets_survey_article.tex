@@ -56,16 +56,16 @@
 \maketitle
 
 \begin{abstract}
-  We review the role of dual pairs in mechanics before using them
+  We review the role of dual pairs in mechanics and use them
   to derive particle-like solutions to regularized incompressible
   fluid systems.
   These dual pairs result from the action of diffeomorphisms on point
   particles (essentially by moving the points).
-  We then augment our dual pairs by considering the action of diffeomorphism
+  We then augment our dual pairs by considering the action of diffeomorphisms
   on Taylor series, also known as \emph{jets}.
   The augmented dual pairs induce a hierarchy of particle-like solutions
   and conservation laws
-  with particles which carry a copy of jet groups.
+  with particles which carry a copy of a jet group.
   We call these augmented particles \emph{jetlets}.
   The jet groups serve as finite-dimensional models of the diffeomorphism
   group itself, and so the jetlet particles serve as a finite-dimensional
@@ -75,7 +75,7 @@
   shown to be a shadow of Kelvin's circulation theorem.
   Finally, we study the dynamics of infinite time particle mergers.
   We prove that two merging particles at the $0$th level in the hierarchy
-  yield dynamics which asymptotically that of a single particle in the $1$st level in the hierarchy.
+  yield dynamics which asymptotically approach that of a single particle in the $1$st level in the hierarchy.
   This merging behavior is then verified numerically
   as well as the exchange of angular momentum which must
   occur during a near collision of two particles.
@@ -88,14 +88,14 @@
 
 \section{Introduction}
 Arnold's geometric insight in \cite{Arnold1966}  has changed the way mathematicians look at ideal fluid dynamics, forever.  According to \cite{Arnold1966}, ideal incompressible fluid motion on a volume manifold $M$ is equivalent to geodesic motion on the Lie group of volume preserving diffeomorphisms ${\rm SDiff}(M)$ (i.e., the smooth invertible volume preserving maps of $M$ into itself, with smooth inverses).  The Riemannian metric is simply the fluid kinetic energy, which is the $L^2$-norm of the fluid's velocity field.
-This characterization of ideal fluid flow allowed Poisson geometers and geometric mechanicians to contribute there own perspective on ideal fluids and other PDEs with hydrodynamics background \cite{EbinMarsden1970,MarsdenWeinstein1983,Zeitlin1991,ArnoldKhesin1998,HolmMarsdenRatiu1998,FoiasHolmTiti2001}.
-As will be shown, such a perspective is particular fruitful for the purpose of reducing the infinite-dimensional fluid system
-to a finite-dimensional ordinary differential equation (e.g.\ point vortex solutions)
+This characterization of ideal fluid flow allowed Poisson geometers and geometric mechanicians to contribute their own perspective on ideal fluids and other PDEs with hydrodynamics background \cite{EbinMarsden1970,MarsdenWeinstein1983,Zeitlin1991,ArnoldKhesin1998,HolmMarsdenRatiu1998,FoiasHolmTiti2001}.
+As will be shown, such a perspective is particularly fruitful for the purpose of reducing the infinite-dimensional fluid system
+to a finite-dimensional ordinary differential equation (e.g.\ point vortex solutions).
 
 The dimension reduction that will be performed in this paper and the method which it proposes
 bears much semblance to the point vortex method \cite{Chorin1973}.
 In particular, \cite{MarsdenWeinstein1983} illustrated how the point vortex solutions and the conservation of circulation could be derived via a pair of Poisson maps known as a dual pair.
-One of these Poisson maps was the embedding map for a finite-dimensional manifold, into the infinite-dimensional space dual to the divergence free vector-fields.  In other words, the space of point vortices is merely an invariant manifold of ideal fluid motion.\footnote{This is not quite correct, as one must ignore the infinite self-energy terms of point vortices and then extend the space of admissible solutions to non-smooth velocity fields.  However, modulo this physically motivated caveat the statement holds.}
+One of these Poisson maps was the embedding map from a finite-dimensional manifold into the infinite-dimensional space dual to the divergence free vector-fields.  In other words, the space of point vortices is merely an invariant manifold of ideal fluid motion.\footnote{This is not quite correct, as one must ignore the infinite self-energy terms of point vortices and then extend the space of admissible solutions to non-smooth velocity fields.  However, modulo this physically motivated caveat the statement holds.}
 In this paper we will derive a hierarchy of different dual pairs, in order to obtain a class of finite-dimensionally parametrized solutions,
 each of which comes with a conservation law that shadows Kelvin's circulation theorem.
 As one could consider the point vortices to be the atoms of the point vortex method,
@@ -103,7 +103,7 @@ the atoms of these new solutions are particle-like objects which we call \emph{j
 
 It is notable that the zeroth level of the hierarchy is a classical particle-like solution which appears in many geodesic
 systems on diffeomorphism groups \cite{CamassaHolm1993,JoshiMiller2000,FringerHolm2001,MumfordMichor2013}.
-It is also notable, that unlike a point vortex, a jetlet is well-defined in dimensions greater than or equal to two.
+It is also notable that, unlike a point vortex, a jetlet is well-defined in dimensions greater than or equal to two.
 \subsection{Main contributions}
 In this article we aim to derive a hierarchy of particle-like
 solutions for a regularized model of ideal fluids described in  \cite{MumfordMichor2013} as motion on the group of volume preserving
@@ -140,9 +140,9 @@ After the introduction, in Section 2, we outline our strategy: The goal is to sh
 
 Section 3 contains a brief discussion of the standard dual pair example for the rigid body (i.e.\ the cotangent lift momentum maps for right and left actions, respectively)
 
-In Section 4 the main part of the paper starts. We first discuss briefly the Lie-Poisson approach to ideal fluids and Euler's equation. This is, basically, to set the scene for what follows. In Section 4.1 we discuss the Mumford-Michor model and mention its standard dual pair (in parallel with the rigid body, the two legs of the dual pair correspond to the cotangent lift momentum maps for right and left actions, respectively). 
+In Section 4 the main part of the paper starts. We first discuss briefly the Lie-Poisson approach to ideal fluids and Euler's equation. This is, basically, to set the scene for what follows. In Section 4.1 we discuss the Mumford-Michor model~\cite{MumfordMichor2013} and mention its standard dual pair (in parallel with the rigid body, the two legs of the dual pair correspond to the cotangent lift momentum maps for right and left actions, respectively).
 
-We emphasize that the conservation of $J_R$ here is equivalent to Kelvin's circulation theorem. Again, the dual pair viewpoint is extremely efficient. Once one has realized that there is a dual pair, one knows (from right-invariance) that the momentum map $J_L$ brings the standard Hamilton's equations on T$^*$Diff to (reduced) Lie-Poisson form, and that at the same time $J_R$  is conserved.
+We emphasize that the conservation of $J_R$ here is equivalent to Kelvin's circulation theorem. Again, the dual pair viewpoint is extremely efficient. Once one has realized that there is a dual pair, one knows (from right-invariance) that the momentum map $J_L$ brings the standard Hamilton's equations on T$^*$Diff to (reduced) Lie-Poisson form, and at the same time $J_R$ that is conserved.
 
 In Section 4.2 we introduce landmark solutions/zeroth order jetlets, and we discuss their `dual pair'. This is done in parallel with later sections. The left momentum map is the usual one, and the right momentum map is in fact trivial. So the `dual pair' is a little bit unnatural, but it still makes sense to present already the kind of thinking that will be employed in later parts of the paper. 
 %
@@ -154,7 +154,7 @@ By the way, we have taken care to keep the reader's intuition going. The discuss
 
 In Section 4.4 we describe a general level of jetlets. Again, once the relevant spaces and actions have been introduced (which is now quite intricate), one recognizes that the momentum maps are a dual pair by the usual argument. We give the form of the momentum maps explicitly just after Proposition 4.6. Again, the dual pair leads to analogous conclusions about dynamics. (It is canonically Hamiltonian, with $J_R$  conserved. $J_L$ maps the dynamics to the Lie-Poisson dynamics on the one-form densities.)
 
-In Section 4.5 we discuss in more detail the Kelvin circulation theorem. More precisely, we discuss the relationship between the 'standard' circulation theorem for the fluid and the conserved momentum maps $J_R$  at the various levels of jetlets. The main result is represented schematically and proven in detail (all that is required, basically, is the standard formula for cotangent lift momentum maps). What we show, in essence, is that the conserved jetlet momentum maps are `shadows' of the `full' right-momentum map of the fluid.\\
+In Section 4.5 we discuss in more detail the Kelvin circulation theorem. More precisely, we discuss the relationship between the `standard' circulation theorem for the fluid and the conserved momentum maps $J_R$  at the various levels of jetlets. The main result is represented schematically and proven in detail (all that is required, basically, is the standard formula for cotangent lift momentum maps). What we show, in essence, is that the conserved jetlet momentum maps are `shadows' of the `full' right-momentum map of the fluid.\\
 
 \todo[inline]{DDH: David says we could put in a bit more detail: The velocity fields corresponding to jetlet solutions are forced to lie in a certain subspace of the Lie algebra of vector fields. This implies that the corresponding elements of $T$Diff also lie in a certain subspace of the tangent bundle, and hence, by Legendre transform, that the momenta lie in a subspace of $T^*$Diff. If one applies the right-momentum map to this subspace, one gets the same as if one applies the jetlet right momentum map to the momentum on $T^*Q^N$ (the cotangent bundle of `Taylor expansions' up to certain order). Analogous statements hold about the left momentum maps.}
 
@@ -192,7 +192,7 @@ in the jet-particle collisions.
 
 
 
-The Appendix is relatively extensive. A quick discussion of symplectic and Poisson manifolds is followed by the definition of dual pairs. Then we prove Theorem A8 \ref{thm:dual_pairs} and Thm A9, which are the core results used in the main paper. In Appendix~\ref{sec:multi} we describe the index conventions used in the main texts (e.g., when calculating momentum maps for the general jetlet solutions). Appendix~\ref{sec:eom} provides information describing the equation of motion for 2-jets, but in reduced coordinates, which arise after reduction to eliminate the conserved quantities $J_R$.
+The Appendix is relatively extensive. A quick discussion of symplectic and Poisson manifolds is followed by the definition of dual pairs. Then we prove Theorem A8 \ref{thm:dual_pairs} and Thm A9, which are the core results used in the main paper. In Appendix~\ref{sec:multi} we describe the index conventions used in the main texts (e.g., when calculating momentum maps for the general jetlet solutions). Appendix~\ref{sec:eom} provides information describing the equations of motion for 2-jets, but in reduced coordinates, which arise after the reduction eliminating the conserved quantities $J_R$.
 \je{It says 2-jets, but the appendix contains 1-jets.}
 
 \subsection{Previous work}
@@ -200,7 +200,7 @@ The Appendix is relatively extensive. A quick discussion of symplectic and Poiss
 \emph{vortex methods} \cite{Chorin1973}, do not exhibit structures which express the nested character of the diffeomorphism group.
  One means of obtaining a Lagrangian model with a nested structure
  was recently presented in \cite{JacobsRatiuDesbrun2013}
- where a sequence of infinite-dimensional reductions by symmetry were
+ where a sequence of infinite-dimensional reductions by symmetry was
  executed, to produce a hierarchy of finite-dimensional systems from a
  regularized fluid model.
  The finite-dimensional systems were particle-like solutions
@@ -243,7 +243,7 @@ The Appendix is relatively extensive. A quick discussion of symplectic and Poiss
 %smooth, continuous functions, group actions, infinitesimal generators,
 %dual spaces.  A group $G$, left multiplication $L_g$, right multi $R_g$, 
 %left/right action $\rho(g,x)$ or $\rho(x,g)$, infinitesimal generator $\rho(\xi,x)$ or $\rho(x,\xi)$.
-We will let $\mathfrak{X}(\R^n)$ denote the space $H^\infty$ vector fields,
+We will let $\mathfrak{X}(\R^n)$ denote the space of $H^\infty$ vector fields,
 and we let $\mathfrak{X}_{\rm div}(\R^n)$
 denote the space of divergence free vector-fields resulting from the Hodge decomposition.
 We let $\Diff(\R^n)$ denote the space of $H^\infty$ diffeomorphisms of $\R^n$  (see \cite{MichorMumford2013})
