@@ -56,20 +56,20 @@
 \maketitle
 
 \begin{abstract}
-  We review the role of dual-pairs in mechanics before using them
-  to derive particle like solutions to regularized incompressible 
+  We review the role of dual pairs in mechanics before using them
+  to derive particle-like solutions to regularized incompressible
   fluid systems.
   These dual pairs result from the action of diffeomorphisms on point
   particles (essentially by moving the points).
-  We then augment our dual-pairs by considering the action of diffeomorphism
+  We then augment our dual pairs by considering the action of diffeomorphism
   on Taylor series, also known as \emph{jets}.
   The augmented dual pairs induce a hierarchy of particle-like solutions
   and conservation laws
-  with particles which carry a copy of jet-groups.
+  with particles which carry a copy of jet groups.
   We call these augmented particles \emph{jetlets}.
-  The jet-groups serve as finite-dimensional models of the diffeomorphism
-  group itself, and so the jetlet particles serve as a finite
-  dimensional model of the self-similarity exhibited by ideal
+  The jet groups serve as finite-dimensional models of the diffeomorphism
+  group itself, and so the jetlet particles serve as a finite-dimensional
+  model of the self-similarity exhibited by ideal
   incompressible fluids.
   The conservation law associated to jetlet solutions is then
   shown to be a shadow of Kelvin's circulation theorem.
@@ -82,7 +82,7 @@
   The resulting particle-like solutions suggest a new class
   of meshless methods which work in dimensions $n \geq 2$
   and which exhibit a shadow of Kelvin's circulation theorem.
-  More broadly, this provides one of the first finite dimensional models of
+  More broadly, this provides one of the first finite-dimensional models of
   self-similarity in ideal fluids.
 \end{abstract}
 
@@ -90,27 +90,27 @@
 Arnold's geometric insight in \cite{Arnold1966}  has changed the way mathematicians look at ideal fluid dynamics, forever.  According to \cite{Arnold1966}, ideal incompressible fluid motion on a volume manifold $M$ is equivalent to geodesic motion on the Lie group of volume preserving diffeomorphisms ${\rm SDiff}(M)$ (i.e., the smooth invertible volume preserving maps of $M$ into itself, with smooth inverses).  The Riemannian metric is simply the fluid kinetic energy, which is the $L^2$-norm of the fluid's velocity field.
 This characterization of ideal fluid flow allowed Poisson geometers and geometric mechanicians to contribute there own perspective on ideal fluids and other PDEs with hydrodynamics background \cite{EbinMarsden1970,MarsdenWeinstein1983,Zeitlin1991,ArnoldKhesin1998,HolmMarsdenRatiu1998,FoiasHolmTiti2001}.
 As will be shown, such a perspective is particular fruitful for the purpose of reducing the infinite-dimensional fluid system
-to a finite dimensional ordinary differential equation (e.g.\ point vortex solutions)
+to a finite-dimensional ordinary differential equation (e.g.\ point vortex solutions)
 
 The dimension reduction that will be performed in this paper and the method which it proposes
-bears much semblance to the point-vortex method \cite{Chorin1973}.
-In particular, \cite{MarsdenWeinstein1983} illustrated how the point-vortex solutions and the conservation of circulation could be derived via a pair of Poisson maps known as a dual-pair.
-One of these Poisson maps was the embedding map for a finite-dimensional manifold, into the infinite-dimensional space dual to the divergence free vector-fields.  In other words, the space of point-vortices is merely an invariant manifold of ideal fluid motion.\footnote{This is not quite correct, as one must ignore the infinite self-energy terms of point-vortices and then extend the space of admissible solutions to non-smooth velocity fields.  However, modulo this physically motivated caveat the statement holds.}
-In this paper we will derive a hierarchy of different dual pairs, in order to obtain a class of finite dimensionally parametrized solutions,
+bears much semblance to the point vortex method \cite{Chorin1973}.
+In particular, \cite{MarsdenWeinstein1983} illustrated how the point vortex solutions and the conservation of circulation could be derived via a pair of Poisson maps known as a dual pair.
+One of these Poisson maps was the embedding map for a finite-dimensional manifold, into the infinite-dimensional space dual to the divergence free vector-fields.  In other words, the space of point vortices is merely an invariant manifold of ideal fluid motion.\footnote{This is not quite correct, as one must ignore the infinite self-energy terms of point vortices and then extend the space of admissible solutions to non-smooth velocity fields.  However, modulo this physically motivated caveat the statement holds.}
+In this paper we will derive a hierarchy of different dual pairs, in order to obtain a class of finite-dimensionally parametrized solutions,
 each of which comes with a conservation law that shadows Kelvin's circulation theorem.
-As one could consider the point-vortices to be the atoms of the point-vortex method,
-the atoms of these new solutions are particle like objects which we call \emph{jetlets} (or $k$-\emph{jetlets} if we wish to emphasize the that we are considering the $k$th level of the hierarchy).
+As one could consider the point vortices to be the atoms of the point vortex method,
+the atoms of these new solutions are particle-like objects which we call \emph{jetlets} (or $k$-\emph{jetlets} if we wish to emphasize the that we are considering the $k$th level of the hierarchy).
 
 It is notable that the zeroth level of the hierarchy is a classical particle-like solution which appears in many geodesic
 systems on diffeomorphism groups \cite{CamassaHolm1993,JoshiMiller2000,FringerHolm2001,MumfordMichor2013}.
-It is also notable, that unlike a point-vortex, a jetlet is well-defined in dimensions greater than or equal to two.
+It is also notable, that unlike a point vortex, a jetlet is well-defined in dimensions greater than or equal to two.
 \subsection{Main contributions}
 In this article we aim to derive a hierarchy of particle-like
 solutions for a regularized model of ideal fluids described in  \cite{MumfordMichor2013} as motion on the group of volume preserving
 diffeomorphisms of $\R^n$, denoted $\SDiff(\R^n)$.
 Each level in the hierarchy consists of particles
 with internal group variables, parametrized by
-a finite dimensional model of a diffeomorphism group,
+a finite-dimensional model of a diffeomorphism group,
 known as a jet group \cite[Chapter 4]{KMS99}.
 The jet groups lie at the foundations of certain representation theories of diffeomorphism groups (see \cite[Appendix 2]{VershikGelfandGraev1975} or \cite{Kirillov1981}).
 Hence, it seems natural to invoke these foundations in the context of fluids, where the configuration manifold is a diffeomorphism group.
@@ -201,9 +201,9 @@ The Appendix is relatively extensive. A quick discussion of symplectic and Poiss
  One means of obtaining a Lagrangian model with a nested structure
  was recently presented in \cite{JacobsRatiuDesbrun2013}
  where a sequence of infinite-dimensional reductions by symmetry were
- executed, to produce a hierarchy of finite dimensional systems from a
+ executed, to produce a hierarchy of finite-dimensional systems from a
  regularized fluid model.
- The finite dimensional systems were particle-like solutions
+ The finite-dimensional systems were particle-like solutions
  in which each particle carries a model of the diffeomorphism group,
  known as jet groups.
  Thus \cite{JacobsRatiuDesbrun2013} derived a Lagrangian analog of 
@@ -969,7 +969,7 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
   In fact, $Q_1^{(k)}$ is a trivial principle bundle
   where fibers, $\SL(n) \times S^1_2 \times \cdots \times S^1_k$
   form a jet group \cite{JacobsRatiuDesbrun2013}.
-  The jet-group serves as a finite-dimensional model of the diffeomorphism group (see \cite[Chapter 4]{KMS99} for a description of the group multiplication),
+  The jet group serves as a finite-dimensional model of the diffeomorphism group (see \cite[Chapter 4]{KMS99} for a description of the group multiplication),
   and this motivates our interpretation of jetlets as models of self-similarity.
   We define the space for an $N$-tuple of $k$-jetlets by taking a product
   \begin{align*}
@@ -1653,11 +1653,11 @@ interacting weakly with a third jetlet particle.
 \end{figure}
 
 \section{Conclusion}
-  In this paper we derived a hierarchy of dual-pairs
+  In this paper we derived a hierarchy of dual pairs
   which induce pairs of particle-like solutions, called \emph{jetlets}, and conserved quantities
   that shadowed the conservation of circulation.
-  The jetlets had internal degrees of freedom given by a jet-group.
-  As the jet-group is a finite-dimensional model of the diffeomorphism
+  The jetlets had internal degrees of freedom given by a jet group.
+  As the jet group is a finite-dimensional model of the diffeomorphism
   group, we promoted the use of jetlets as a finite-dimensional model
   of self-similarity, wherein a ``large'' diffeomorphism advects a ``small''
   diffeomorphism.
@@ -1726,12 +1726,12 @@ We begin with the definition.
   Let $S$ be a manifold
   and let $\omega$ be a closed two-form on $S$ such that the map
   ``$v \in TS \mapsto \omega( v , \cdot ) \in T^*S$'' is weakly nondegenerate.\footnote{
-    A linear map $L:V \to V^*$ is \emph{weakly nondegenerate} if $L$ is injective.  If $V$ is finite dimensional, this simply means that $L$ is invertible.}
+    A linear map $L:V \to V^*$ is \emph{weakly nondegenerate} if $L$ is injective.  If $V$ is finite-dimensional, this simply means that $L$ is invertible.}
   We call $\omega$ a \emph{symplectic form}.
   We call the pair $(S,\omega)$ a \emph{symplectic manifold}.
 \end{defn}
 All of the expressions derived in this article will be formal, and we refer to \cite{GayBalmazVizman2012}
-for the functional analytic details of infinite dimensional symplectic manifolds.
+for the functional analytic details of infinite-dimensional symplectic manifolds.
 As a first example, consider the manifold $\R^2$
 with coordinates $(q,p)$.
 The two-form $dq \wedge dp$ is a symplectic form.
@@ -2041,11 +2041,11 @@ sloppiness is usually harmless.
 
 \section{Multi-indices}
 \label{sec:multi}
-A multi-set is nothing but a set with some notion of multiplicity \cite{Blizard1989}.
+A multiset is nothing but a set with some notion of multiplicity \cite{Blizard1989}.
 In this paper, a multi-index on $\R^n$ is a multiset of elements derived from the generating set $\{1,\dots,n\}$.
 Heuristically, a multi-index is just a ``bag of marbles'' each of which comes in $n$ ``colors''.
 Given two multi-indices $\alpha \in \bag^i(n)$ and $\beta \in \bag^j(n)$ one can create the
-multi-set union $\alpha \cup \beta \in \bag^{i+j}(n)$ by collecting the marbles of $\alpha$ and $\beta$ into a single bag.
+multiset union $\alpha \cup \beta \in \bag^{i+j}(n)$ by collecting the marbles of $\alpha$ and $\beta$ into a single bag.
 Given integers $b_1,\dots,b_j \in \R^n$, we can define the unique multi-index $\beta = [b_1,\dots,b_j] \in \bag^j(n)$
 obtained by collecting $b_1,\dots,b_j$ into a bag.
 Given these conventions, we can denote the partial differential operator $\partial_{b_1 \cdots b_n }$ by $\partial_\beta$.
