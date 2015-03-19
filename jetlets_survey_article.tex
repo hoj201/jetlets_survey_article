@@ -23,6 +23,7 @@
 \newcommand{\so}{\ensuremath{\mathfrak{so}}}
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
 \newcommand{\dx}{\ensuremath{\textrm{d}x}}
+\def\contract{\makebox[1.2em][c]{\mbox{\rule{.6em}{.01truein}\rule{.01truein}{.6em}}}}
 
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{prop}[thm]{Proposition}
@@ -797,7 +798,7 @@ Similar constructions will be crucial in later sections, when constructing the r
 
 \subsection{$1^{\rm st}$-order particle-like solutions}
 \label{sec:first_order}
-In this section we revisit the $1^{\rm st}$-order particle-like solutions of \cite{CotterHolmJacobsMeier2014} and discuss its dual pair, before extending the treatment to the higher levels of the hierarchy in the subsequent section. 
+In this section we revisit the $1^{\rm st}$-order particle-like solutions of \cite{CotterHolmJacobsMeier2014} and discuss their dual pair, before extending the treatment to the higher levels of the hierarchy in the subsequent section. 
   Let $\SL(n)$ denote the Lie group of $n\times n$ matrices
   with unit determinant.
   Let $q = (q^{(0)}, q^{(1)}) \in \R^n \times \SL(n)$ and consider the left
@@ -1691,7 +1692,7 @@ begins by considering Hamilton's equations
   \dot{q} = \pder{H}{p} \quad, \quad  \dot{p} = - \pder{H}{q}.
 \end{align*}
 If we consider the two-form $dp \wedge dq$, then Hamilton's equations
-can be written as $(\dot{q},\dot{p}) \lrcorner (dp \wedge dq) = dH(q,p)$.
+can be written as $(\dot{q},\dot{p}) \contract (dp \wedge dq) = dH(q,p)$.
 This is the starting point for symplectic geometry, which
 will be discussed in \S \ref{sec:Symplectic}.
 Alternatively, these equations can be written using the bilinear map $\{ \cdot , \cdot \}_{\rm can} : C^1( T^*Q) \times C^1(T^*Q) \to C^0(T^*Q)$
@@ -1754,13 +1755,13 @@ expressed in local coordinates by $dH(x) = \pder{H}{x^i} \dx^i$.
 The Hamiltonian vector field $X_H:S \to TS$ is the unique vector
 field defined by the condition
 $
-  X_H \lrcorner \omega = dH.
+  X_H \contract \omega = dH.
 $
-The symbol ``$\lrcorner$'' is the operation of contraction between
+The symbol ``$\contract$'' is the operation of contraction between
 the contravariant indices of $X_H$ and the first set of covariant
 indices of $\omega$.
 In Darboux coordinates, the Hamiltonian vector field induces the
-equations of motion $\dot{q}^i = \pder{H}{p_i}$, $\dot{p}_i = \pder{H}{q^i}$.
+equations of motion $\dot{q}^i = \pder{H}{p_i}$, $\dot{p}_i = -\pder{H}{q^i}$.
 
 
 An important aspect of study in Hamiltonian mechanics is that of symmetry.
@@ -1777,7 +1778,7 @@ This yields the following notions
   the \emph{momentum map}, $J:S \to \mathfrak{g}^*$,
   is defined by the property
   \begin{align*}
-    d \langle J , \xi \rangle = \xi_S \lrcorner \omega.
+    d \langle J , \xi \rangle = \xi_S \contract \omega.
   \end{align*}
 \end{defn}
 
@@ -1920,8 +1921,8 @@ sloppiness is usually harmless.
     P_1 \stackrel{\psi}{\leftarrow} S \stackrel{J}{\to} P_2
   \end{align*}
   a \emph{dual pair}.
-  In the case that $S$ is a cotangent bundle we call $\psi$ or $J$
-  \emph{Clebsch variables} \cite{MarsdenWeinstein1983}.
+%  In the case that $S$ is a cotangent bundle we call $\psi$ or $J$
+%  \emph{Clebsch variables} \cite{MarsdenWeinstein1983}.
 
   \begin{thm} \label{thm:dual_pairs}
     Let $J_1,J_2:S \to P_1,P_2$ form a dual pair.
