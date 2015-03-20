@@ -976,7 +976,7 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
   projection $\pi^{(k)} : Q_1^{(k)} \to \R^n$,
   which projects onto the $\R^n$ component.
   In fact, $Q_1^{(k)}$ is a trivial principle bundle
-  where fibers, $\SL(n) \times S^1_2 \times \cdots \times S^1_k$
+  where fibers, contained within $\SL(n) \times S^1_2 \times \cdots \times S^1_k$
   form a jet group \cite{JacobsRatiuDesbrun2013}.
   The jet group serves as a finite-dimensional model of the diffeomorphism group (see \cite[Chapter 4]{KMS99} for a description of the group multiplication),
   and this motivates our interpretation of jetlets as models of self-similarity.
@@ -1940,15 +1940,15 @@ sloppiness is usually harmless.
   \begin{thm} \label{thm:dual_pairs}
     Let $J_1,J_2:S \to P_1,P_2$ form a dual pair.
     Let $h \in C^2(P_1)$.
-    Let $(q,p)(t) \in S$ be a solution to Hamilton's equations
+    Let $x(t) \in S$ be a solution to Hamilton's equations
     with respect to the Hamiltonian $H = h \circ J_1$.
-    Then $J_1\left( (q,p)(t) \right) \in P_1$ is a solution
+    Then $J_1\left( x(t) \right) \in P_1$ is a solution
     to Hamilton's equations on $P_1$ with respect to $h$,
-    and $J_2( (q,p)(t))$ is constant in time.
+    and $J_2( x(t))$ is constant in time.
   \end{thm}
   \begin{proof}
     Use proposition \ref{prop:Poisson_dynamics} to show that
-    $x(t) = J_1 ((q,p)(t))$ is a solution to Hamilton's equations
+    $\mu(t) = J_1 (x(t))$ is a solution to Hamilton's equations
     with respect to $h$.
     To verify that $J_2( (q,p)(t) )$ is constant,
     let $v \in \kernel(J_1)$ be a vector over $(q,p)(0) \in S$.
