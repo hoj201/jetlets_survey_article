@@ -142,7 +142,7 @@ More specifically, we will accomplish the following:
 \end{enumerate}
 
 \subsection{Outline of the paper}
-After the introduction, in Section~\ref{sec:approach}, we outline our strategy: the goal is to show that jetlet models admit a dual pair at each level in the hierarchy. Once this has been done, Theorem \ref{thm:dual_pairs} (proven in the appendix) does the rest. Namely, the jetlets satisfy canonical Hamiltonian equations, and the right momentum map, $J_R$, is conserved by the flow.
+After the introduction, in Section~\ref{sec:approach}, we outline our strategy: the goal is to show that jetlet models admit a dual pair at each level in the hierarchy. Once this has been done, Theorem~\ref{thm:dual_pairs} (proven in the appendix) does the rest. Namely, the jetlets satisfy canonical Hamiltonian equations, and the right momentum map, $J_R$, is conserved by the flow.
 
 Section~\ref{sec:rigid_body} contains a brief discussion of the standard dual pair example for the rigid body (i.e.\ the cotangent lift momentum maps for right and left actions, respectively)
 
@@ -170,7 +170,7 @@ One should be careful to use proper terminology, since the dual to a subspace $W
 is a quotient space $V / W^\circ$ (not a subspace).}
 
 
-In section \ref{sec:Numerical experiments} we discuss explicit dynamical behavior of the
+In Section~\ref{sec:Numerical experiments} we discuss explicit dynamical behavior of the
 particle model, in particular we study `collisions' leading to mergers of jetlets.
 This makes an explicit connection between dynamics in the different
 levels of the jetlet hierarchy. It can potentially be useful when
@@ -189,7 +189,7 @@ the jetlet hierarchy by viewing all levels of the hierarchy as embedded
 in the larger space $\mathfrak{X}_{\rm div}(R^n)^*$, where levels form (part of) the
 boundaries of other levels (a bit like in a CW complex).
 
-In summary, the numerics section \ref{sec:Numerical experiments} shows first of all that it is feasible to implement this jetlet model numerically, also in dimensions higher than
+In summary, the numerics section~\ref{sec:Numerical experiments} shows first of all that it is feasible to implement this jetlet model numerically, also in dimensions higher than
 two. Further, we corroborate the analytical results and confirm the
 conserved quantities and jetlet particle merging behavior numerically.
 Several different experiments show that the merging/scattering behavior persists
@@ -274,7 +274,7 @@ In this section we describe our strategy for obtaining
 particle-like solutions to regularized fluid equations.
 Our main framework is that of Hamiltonian mechanics
 and symplectic geometry.
-In particular, our main hammer is Theorem \ref{thm:dual_pairs} (see page 
+In particular, our main hammer is Theorem~\ref{thm:dual_pairs} (see page
 \pageref{thm:dual_pairs} in the Appendix), which we repeat
 here for convenience.
   \begin{quote}
@@ -306,7 +306,7 @@ of a regularized model of an ideal incompressible fluid.
   In this section we review basic notions from classical mechanics
 by studying the motion of a rigid body whose center of mass rests
 at the origin.
-We will see a first application of Theorem \ref{thm:dual_pairs}
+We will see a first application of Theorem~\ref{thm:dual_pairs}
 in this context.
 The configuration of a rigid body is described by a
 rotation matrix $R \in \SO(3)$.
@@ -410,7 +410,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   \end{proof}
 
   Recall that $T^*\SO(3)$ is a symplectic manifold.
-  By Theorem \ref{thm:commuting_actions}
+  By Theorem~\ref{thm:commuting_actions}
   we can observe that $J_L$ and $J_R$ have symplectically
   orthogonal kernels and the diagram
   \begin{alignat*}{2}
@@ -428,7 +428,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   	\cite{MarsdenWeinstein1983} also referred to $J_R$ and $J_L$ as \emph{Clebsch variables},
 		however this terminology has changed over the past few decades.}
 
-  By Theorem \ref{thm:dual_pairs}, this dual pair expresses rigid
+  By Theorem~\ref{thm:dual_pairs}, this dual pair expresses rigid
   body dynamics and conserved quantities.
   Specifically, the right leg yields the reduced phase space where 
   the system evolves in time.
@@ -467,7 +467,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     Thus $J_R$ carries the canonical
     Poisson bracket on $T^* \SO(3)$, to the Lie--Poisson
     bracket on $\so(3)^*$.
-    By proposition \ref{prop:Nambu}, this is nothing but the
+    By Proposition~\ref{prop:Nambu}, this is nothing but the
     Nambu bracket upon identifying $\so(3)$ with $\mathbb{R}^3$.
     The same argument applies to $J_L$ using a left action.
   \end{proof}
@@ -477,9 +477,9 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   In particular, if $(R,P)(t)$ is a solution to Hamilton's equation,
   then $\Pi(t) = J_R( (R,P)(t))$ is a solution to Hamilton's equation
   with respect to the Nambu-bracket.
-  This is a result of Proposition \ref{prop:Poisson_dynamics}
+  This is a result of Proposition~\ref{prop:Poisson_dynamics}
   paired with the observation that $J_R$ is a Poisson map via
-  Proposition \ref{prop:SO3_to_Nambu}.
+  Proposition~\ref{prop:SO3_to_Nambu}.
 
 
 \section{Regularized fluids}
@@ -491,7 +491,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   denoted by $\mathfrak{X}(\mathbb{R}^n)$.
   Formally, the dual space to $\mathfrak{X}(\mathbb{R}^n)$ is a Poisson
   manifold when equipped with the Lie-Poisson bracket
-  (see \eqref{eq:Lie-Poisson} in Appendix \ref{sec:Poisson}).
+  (see \eqref{eq:Lie-Poisson} in Appendix~\ref{sec:Poisson}).
   We may consider the map
   $\psi: T^*R^n \to \mathfrak{X}(\mathbb{R}^n)^*$
   given implicitly by
@@ -504,7 +504,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   It is shown in \cite{HolmMarsden2005} that this map is Poisson.
   Furthermore, as the $n$-dimensional Camassa--Holm equation \cite{CamassaHolm1993} is a
   Hamiltonian equation on $\mathfrak{X}(\mathbb{R}^n)^*$,
-  Proposition \ref{prop:Poisson_dynamics} promises to express a 
+  Proposition~\ref{prop:Poisson_dynamics} promises to express a 
   certain subset
   of solutions by solving Hamiltonian equations for a finite number
   of particles.
@@ -586,7 +586,7 @@ Since we have not yet clarified the Poisson structures of the system, it may not
   Let us denote this function by $f_v$.
   Let $m(t)$ satisfy Hamilton's equations.
   By the definition of the Lie--Poisson bracket
-  (see \eqref{eq:Lie-Poisson} in Appendix \ref{sec:Poisson})
+  (see \eqref{eq:Lie-Poisson} in Appendix~\ref{sec:Poisson})
   we observe
   \begin{align*}
     \frac{d}{dt} f_v(m) &= \{ f_v , h \}(m) = \langle m , [ df_v(m) , dh(m) ] \rangle \\
@@ -645,7 +645,7 @@ momentum maps $J_L,J_R : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$. In
 \end{align*}
 For a mathematically rigorous treatment of this dual pair we refer to \cite{GayBalmazVizman2012}.
 
-By theorem \ref{thm:dual_pairs}, we can use this dual pair to derive dynamical properties of Hamiltonian equations defined on $\mathfrak{X}_{\rm div}(\R^n)^*$.
+By Theorem~\ref{thm:dual_pairs}, we can use this dual pair to derive dynamical properties of Hamiltonian equations defined on $\mathfrak{X}_{\rm div}(\R^n)^*$.
 The Hamiltonian for a fluid is written on the left instance of $\mathfrak{X}_{\rm div}(\R^n)^*$.
 One can (in principle) solve Hamilton's equations on $T^*\SDiff(\R^n)$
 with respect to the Hamiltonian $H = h \circ J_L$.
@@ -697,9 +697,9 @@ condition
 \begin{align*}
   \langle J_L^{(0)}( q , p) , u \rangle := \langle p , u(q) \rangle,
 \end{align*}
-for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$ (see \eqref{eq:cotangent_momap} in Appendix \ref{sec:Symplectic}); the superscript in $J_L^{(0)}$ serves as a reminder that we are considering the zeroth level in the hierarchy of particle-like solutions.
+for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$ (see \eqref{eq:cotangent_momap} in Appendix~\ref{sec:Symplectic}); the superscript in $J_L^{(0)}$ serves as a reminder that we are considering the zeroth level in the hierarchy of particle-like solutions.
 %We shall now write $J_L^{(0)} = J_L$ in anticipation of the
-%introduction of higher-order particles in section~\ref{sec:higher_order}.
+%introduction of higher-order particles in Section~\ref{sec:higher_order}.
 %On $\R^n$ we may identify the dual space of $\mathfrak{X}_{\rm div}(\R^n)$
 %with the space of closed $H^\infty$ one-forms by using the Euclidean volume form.
 %That is to say, any covector field \todo{JE: distribution?} $m = m_i \dx^i \in \mathfrak{X}_{\rm div}(\R^n)^*$
@@ -715,7 +715,7 @@ more explicitly as a measure-valued momentum map in terms of the Dirac-delta dis
 where $\delta_q$ is the Dirac-delta distribution on $\R^n$ centered at $q$.
 This identification holds modulo $dC^1(\R^n) \otimes d{\bf x}$ where $dC^1(\R^n)$
 is the space of $C^0$-exact one-forms and $d{\bf x}$ is the canonical volume from on $\R^n$
-(see Appendix \ref{sec:measure_valued_momap}).
+(see Appendix~\ref{sec:measure_valued_momap}).
 Since $J_L^{(0)}$ is a cotangent-lift momentum map, it is equivariant and therefore Poisson, again by \cite[Thm~12.4.9]{MandS}.
 % As the cotangent lifted action of $\SDiff(\R^n)$ is equivariant,
 % we observe that $J_L^{(0)}$ is Poisson, again by 
@@ -774,7 +774,7 @@ Once one has found a solution $(q(t), p(t))$ to Hamilton's equations on $T^*\mat
   \end{alignat*}
   is a dual pair. 
   This dual pair allows us to express conservation
-  laws and dynamics as a result of theorem \ref{thm:dual_pairs}.
+  laws and dynamics as a result of Theorem~\ref{thm:dual_pairs}.
    Namely, the left leg represents the space in which particle-like
   solutions to \eqref{eq:MMDiff} evolve,
   while the right leg represents a (trivial) conserved quantity. 
@@ -801,7 +801,7 @@ Similar constructions will be crucial in later sections, when constructing the r
   is a solution to \eqref{eq:MMDiff}.
 \end{prop}
 \begin{proof}
-	Note that $H = h_{p,\sigma} \circ J_L^{(0)}$ and apply theorems \ref{thm:dual_pairs} and  \ref{thm:commuting_actions}.
+	Note that $H = h_{p,\sigma} \circ J_L^{(0)}$ and apply Theorems~\ref{thm:dual_pairs} and~\ref{thm:commuting_actions}.
   See the remark after Proposition~\ref{prop:k-solutions} for more details on the kernel smoothness condition on $p$.
 \end{proof}
 
@@ -872,7 +872,7 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
  \begin{align}
 	 (q^{(0)}, q^{(1)}) \cdot \psi = \left( \left(q_1^{(0)}, q_1^{(1)} \cdot D\psi|_{z_1}\right), \ldots, \left(q_N^{(0)}, q_N^{(1)} \cdot D\psi|_{z_N}\right)\right). \label{1-rightaction}
 \end{align}
-In Proposition \ref{HL_action_prop} we will generalize this construction to define a right action for the higher levels in the hierarchy of particle-like solutions.
+In Proposition~\ref{HL_action_prop} we will generalize this construction to define a right action for the higher levels in the hierarchy of particle-like solutions.
   The action \eqref{1-rightaction} yields the cotangent-lift momentum map defined by the condition
   \begin{align*}
     \langle J_R^{(1)}(q,p) , u \rangle = p\indices{_a_i^j} q\indices{_a^i_k} \partial_j u^k(z_a)
@@ -889,7 +889,7 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
     clearly commute
     and lift to symplectic actions on $T^*Q_N^{(1)}$.
     Moreover, the action of $\SDiff(\R^n)$ is transitive on the level sets of $J_R^{(1)}$, since it is transitive overall.
-    By theorem \ref{thm:commuting_actions}, $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
+    By Theorem~\ref{thm:commuting_actions}, $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
   \end{proof}
 
   As before, the quantity $dh( J_L^{(1)}(q,p))$ is a legitimate vector field
@@ -911,14 +911,14 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
 	constant in time. 
   \end{prop}
   The proof of the above proposition is identical to that of
-  proposition~\ref{prop:0-solutions}. See again the remark following
+  Proposition~\ref{prop:0-solutions}. See again the remark following
   Proposition~\ref{prop:k-solutions} for more details on the kernel
   smoothness condition on $p$.
 
   As before, it is useful to interpret the trajectory $q(t)$ of the previous proposition in terms of the curve $\varphi_t \in  {\rm SDiff}(\mathbb{R}^n)$ obtained by integrating the time-dependent vector field $dh_{p, \sigma} J_L^{(1)}((q, p)(t)) = K_{p, \sigma} * J_L^{(1)}((q, p)(t))$. If one chooses $\varphi_0$ to be the identity or  any other element of ${\rm SDiff}(\mathbb{R}^n)$ that satisfies $\varphi_0 \cdot (q(0)) = q(0)$, then  $q(t) = \varphi_t \cdot  q(0)$. This implies in particular that the $q_a^{(0)}(t)$ are the trajectories of the particles as they are swept along by the fluid flow.
 
   Various vector fields for large kernel smoothness $p$
-  are depicted in figure \ref{fig:zoo}
+  are depicted in Figure~\ref{fig:zoo}
   for different initial values of the traceless matrix
   $\mu\indices{_i^j} = p\indices{_i^l} q\indices{^j_l}$.
 
@@ -987,7 +987,7 @@ In Proposition \ref{HL_action_prop} we will generalize this construction to defi
   \end{align*}
   We coordinatize $Q^{(k)}_N$ as follows.
   We will use Greek indices to represent spatial
-  multi-indices on $\R^n$ (see Appendix \ref{sec:multi} for our multi-index convention).
+  multi-indices on $\R^n$ (see Appendix~\ref{sec:multi} for our multi-index convention).
   A typical coordinate on $Q^{(k)}_N$ will therefore look
   like $q\indices{_a^i_\beta}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
   and $\beta$ is a multi-index on $\R^n$.
@@ -1136,7 +1136,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   \end{equation*}
   The action of $\SDiff(\R^n)$ is transitive on $Q_N^{(k)}$, and
   therefore transitive on the level sets of the momentum map $J_R^{(1)}$.
-  By theorem \ref{thm:commuting_actions}, $J_L^{(k)}$ and $J_R^{(k)}$ form a dual pair.
+  By Theorem~\ref{thm:commuting_actions}, $J_L^{(k)}$ and $J_R^{(k)}$ form a dual pair.
   This gives us the final result on jetlet parametrized solutions.
   The proof is identical to that given in Proposition~\ref{prop:0-solutions}.
   \begin{prop}\label{prop:k-solutions}
@@ -1155,7 +1155,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
 
   As before, an even richer family of velocity fields is generated by a single particle of this type.
   At order $k=2$ this yields four new varieties of velocity fields per particle.
-  Two examples of such velocity fields are depicted in figure \ref{fig:2_jet}.
+  Two examples of such velocity fields are depicted in Figure~\ref{fig:2_jet}.
   
   \begin{figure}[h!]
   	\centering
@@ -1285,7 +1285,7 @@ conservation of circulation, we see that conservation of $J_R^{(k)}$ in the jetl
 of the conservation of circulation.
 In other words, our particle models contain a model of Kelvin's circulation theorem within them (cf.~\cite[Theorem 5.5]{JacobsRatiuDesbrun2013}).
 
-As a side remark we mention that \eqref{compare_2} offers an alternative route to derive one momentum map once one has found the other. In contrast,  in the previous section we computed both $J_L^{(k)}$ and $J_R^{(k)}$ using the coordinate expressions, presented in the proof of proposition \ref{HL_action_prop},  for the respective actions on $Q^{(k)}_N$.
+As a side remark we mention that \eqref{compare_2} offers an alternative route to derive one momentum map once one has found the other. In contrast,  in the previous section we computed both $J_L^{(k)}$ and $J_R^{(k)}$ using the coordinate expressions, presented in the proof of Proposition~\ref{HL_action_prop}, for the respective actions on $Q^{(k)}_N$.
 
 
 \section{Particle mergers}
@@ -1604,7 +1604,7 @@ We have performed a number of numerical simulations\footnote{%
   \url{https://github.com/hoj201/incompressible_jet_particles}%
 } of these jetlet particles. These confirm that the conserved
 quantities are indeed preserved and that two $0$-jetlet particles
-merge as shown by the analysis in section~\ref{sec:collisions},
+merge as shown by the analysis in Section~\ref{sec:collisions},
 providing a sanity check for the formulas in the previous section and
 the numerical code. Moreover, the merging behavior shows to be stable
 under perturbations of initial conditions.
@@ -1692,8 +1692,8 @@ Future work includes:
 
 \section{Hamiltonian mechanics}
 \label{sec:Hamiltonian}
-The goal of this section is to prove theorems \ref{thm:dual_pairs}
-and \ref{thm:commuting_actions} (see page~\pageref{thm:dual_pairs}).
+The goal of this section is to prove Theorems~\ref{thm:dual_pairs}
+and~\ref{thm:commuting_actions} (see page~\pageref{thm:dual_pairs}).
 Those who understand and accept these theorems on a first reading
 should be able to skip this section without any consequence.
 Most of this section will be a crash course in Poisson geometry
@@ -1707,7 +1707,7 @@ begins by considering Hamilton's equations
 If we consider the two-form $dp \wedge dq$, then Hamilton's equations
 can be written as $(\dot{q},\dot{p}) \contract (dp \wedge dq) = dH(q,p)$.
 This is the starting point for symplectic geometry, which
-will be discussed in section~\ref{sec:Symplectic}.
+will be discussed in Section~\ref{sec:Symplectic}.
 Alternatively, these equations can be written using the bilinear map $\{ \cdot , \cdot \}_{\rm can} : C^1( T^*Q) \times C^1(T^*Q) \to C^0(T^*Q)$
 given by
 \begin{equation*}
@@ -1716,7 +1716,7 @@ given by
 In particular, we may write $\dot{q} = \{ q , H \}_{\rm can}$ and $\dot{p} = \{ p , H\}_{\rm can}$.
 The object $\{ \cdot , \cdot \}_{\rm can}$ is a special case of more general
 object known as a \emph{Poisson bracket} which will be introduced in
-section~\ref{sec:Poisson}.
+Section~\ref{sec:Poisson}.
 
 As a warning, symplectic geometry has developed greatly
 since its origins in mechanics, and
@@ -1906,7 +1906,7 @@ sloppiness is usually harmless.
 \end{prop}
 
   When the dimension of $P_2$ is larger than that of $P_1$,
-  Proposition \ref{prop:Poisson_dynamics} allows one to find solutions of
+  Proposition~\ref{prop:Poisson_dynamics} allows one to find solutions of
   Hamiltonian equations on $P_2$
   by solving lower dimensional Hamiltonian equations
   on $P_1$.
@@ -1947,7 +1947,7 @@ sloppiness is usually harmless.
     and $J_2( (q,p)(t))$ is constant in time.
   \end{thm}
   \begin{proof}
-    Use proposition \ref{prop:Poisson_dynamics} to show that
+    Use Proposition~\ref{prop:Poisson_dynamics} to show that
     $x(t) = J_1 ((q,p)(t))$ is a solution to Hamilton's equations
     with respect to $h$.
     To verify that $J_2( (q,p)(t) )$ is constant,
