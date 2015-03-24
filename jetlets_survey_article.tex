@@ -1332,7 +1332,7 @@ Hamiltonian is given by
 \begin{equation*}
   \begin{aligned}
   H &= \tilde{p}_i \big[ K^{ij}(0) - K^{ij}(\tilde{q}) \big] \tilde{p}_j
-     = \begin{pmatrix} p_r \\ \frac{p_\varphi}{r} \end{pmatrix}^T R_\phi^T
+     = \begin{pmatrix} p_r \\ \frac{p_\phi}{r} \end{pmatrix}^T R_\phi^T
        \big[ K(0) - K(R_\phi\cdot(r,0)) \big] R_\phi
        \begin{pmatrix} p_r \\ \frac{p_\phi}{r} \end{pmatrix}\\
     &= \begin{pmatrix} p_r \\ \frac{p_\phi}{r} \end{pmatrix}^T
@@ -1603,7 +1603,13 @@ states
     q_2 &= ( 3, 0), &      & p_2 = (-1.5, d),
   \end{alignedat}
 \end{equation}
-aimed at each other with an offset parameter $d$. Furthermore, we use
+aimed at each other with an offset parameter $d$.
+The initial state is given in center-of-mass polar-coordinates by
+\begin{align*}
+    r &= 6, \qquad p_r = -1.5, \\
+    \phi &= 0,\qquad        p_\phi = 6d,
+\end{align*}
+Furthermore, we use
 $\sigma = 1$ throughout our experiments. The experiments show that for
 $d = 0.27$ the two particles merge while spinning around each other,
 while for $d = 0.288$ they get close, but then emerge from their close
@@ -1611,7 +1617,6 @@ spinning state and scatter in opposite directions. This confirms the
 analytical value of $d = \sqrt{3/40} \approx 0.2739$ within reasonable
 precision, noting that this is the asymptotic value for particles
 starting close to each other.
-\dm{Jaap, here it might be useful to mention what $p_\varphi$ and $p_r$ are in this initial state.}
 
 We performed a number of more complex simulations, all of
 those being small perturbations of the basic experiment described
@@ -1655,18 +1660,15 @@ interacting weakly with a third jetlet particle.
   that shadow the conservation of circulation.
   The jetlets have internal degrees of freedom given by a jet group.
   As the jet group is a finite-dimensional model of the diffeomorphism
-  group, we promoted \dm{promoted sounds a bit business like. Maybe 'suggested'?} the use of jetlets as a finite-dimensional model
+  group, we suggested the use of jetlets as a finite-dimensional model
   of self-similarity, wherein a ``large'' diffeomorphism advects a ``small''
   diffeomorphism.
   We also studied the dynamics of mergers and provided a rigorous analysis showing that merging
   0-jetlets asymptotically approach 1-jetlets.
 
-Future work includes:
-\dm{suggest to replace the preceding sentence by:}
-
-\dm{The developments discussed in the present paper give rise to a number of promising directions for future research. These include:}
+The developments discussed in the present paper give rise to a number of promising directions for future research. These include:
 \begin{enumerate}
-	\item An investigation of the relationship between the presentation here \dm{replace 'the presentation here' by 'jetlets' ?} and the theory of point vortices and the vortex blob method.
+	\item An investigation of the relationship between jetlets and point vortices or vortex blobs.
 	\item Further investigation of the numerical implementation.
 		The use of parallelization and the fast multipole method would be particularly interesting to consider.
 	\item Finding a way to implement boundary conditions.
