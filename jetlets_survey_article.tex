@@ -73,7 +73,6 @@
   group itself, and so the jetlet particles serve as a finite-dimensional
   model of the self-similarity exhibited by ideal
   incompressible fluids.
-\je{The implication from diffeo/jet groups to self-similarity is not so clear to me.}
   The conservation law associated to jetlet solutions is 
   shown to be a shadow of Kelvin's circulation theorem.
   Finally, we study the dynamics of infinite time particle mergers.
@@ -89,14 +88,12 @@
   self-similarity in ideal fluids.
 \end{abstract}
 \dm{Do we need affiliations? Mine is: Department of Mathematics, Brunel University London, Uxbridge UB8 3PH, UK} 
-\dm{I'm not too bothered by it, but it might be nicer if we removed '$n \geq 2$  dimensions' from the title.}
 
 \section{Introduction}
-Arnold's geometric insight in \cite{Arnold1966}  has forever changed the way mathematicians look at ideal fluid dynamics.  According to \cite{Arnold1966}, ideal incompressible fluid motion on a volume manifold $M$ is equivalent to geodesic motion on the Lie group of volume preserving diffeomorphisms ${\rm SDiff}(M)$ (i.e., the smooth invertible volume preserving maps of $M$ into itself, with smooth inverses).
-\je{$M$ must be a Riemannian manifold to define kinetic energy. Maybe better to drop the adjective `volume' than replace it by `Riemannian' to prevent confusion with ${\rm SDiff}(M)$ as Riemmanian manifold.}
+Arnold's geometric insight in \cite{Arnold1966}  has forever changed the way mathematicians look at ideal fluid dynamics.  According to \cite{Arnold1966}, ideal incompressible fluid motion on an
+orientable Riemannian manifold $M$ is equivalent to geodesic motion on the Lie group of volume preserving diffeomorphisms ${\rm SDiff}(M)$ (i.e., the smooth invertible volume preserving maps of $M$ into itself, with smooth inverses).
 The Riemannian metric is simply the fluid kinetic energy, which is the $L^2$-norm of the fluid's velocity field.
-This characterization of ideal fluid flow allowed Poisson geometers and geometric mechanicians to contribute their own perspective on ideal fluids and other PDEs with hydrodynamics background \cite{EbinMarsden1970,MarsdenWeinstein1983,Zeitlin1991,ArnoldKhesin1998,HolmMarsdenRatiu1998,FoiasHolmTiti2001}.
-\je{I'd suggest to rephrase ``contribute their own perspective'' to something slightly stronger like ``a new perspective''.}
+This characterization of ideal fluid flow allowed Poisson geometers and geometric mechanicians to provide a new perspective on ideal fluids and other PDEs with hydrodynamics background \cite{EbinMarsden1970,MarsdenWeinstein1983,Zeitlin1991,ArnoldKhesin1998,HolmMarsdenRatiu1998,FoiasHolmTiti2001}.
 As will be shown, such a perspective is particularly fruitful for the purpose of reducing the infinite-dimensional fluid system
 to a finite-dimensional ordinary differential equation (e.g.\ point vortex solutions).
 
@@ -123,17 +120,13 @@ known as a jet group \cite[Chapter 4]{KMS99}.
 The jet groups lie at the foundations of certain representation theories of diffeomorphism groups (see \cite[Appendix 2]{VershikGelfandGraev1975} or \cite{Kirillov1981}).
 Hence, it seems natural to invoke these foundations in the context of fluids, where the configuration manifold is a diffeomorphism group.
 The particle-like solutions, which ``carry'' jet groups, paint an intuitive picture of a large scale diffeomorphism that advects particles,
-each of which carries its own local deformation of the fluid in a small region around it.
-At each higher level in the hierarchy, the deformation becomes more localized.
-\je{I think the ``more localized'' may be a bit too strong a statement, replace with ``detailed''?}
+each of which carries its own partial description of a local deformation of the fluid in a small region around it.
+At each higher level in the hierarchy, the description of the deformation becomes more detailed.
 Thus the jets of diffeomorphisms possess a natural sense of the ``self-similarity'' which is present in the diffeomorphism group itself.
  Models such as this are crucial to our understanding of fluids,
   both from a numerical perspective and from the perspective
   of fundamental mathematics.
 
-  Here we present a Lagrangian model that introduces jet groups to model aspects
-  of the self-similarity of ideal fluids. 
-  \dm{The preceding sentence doesn't fit properly. Remove it?}
  Specifically, we will accomplish the following:
 \begin{enumerate}
   \item We provide the first explicit Hamiltonian description of the full jet hierarchy of the particle-like solutions discovered in 
@@ -142,7 +135,7 @@ Thus the jets of diffeomorphisms possess a natural sense of the ``self-similarit
     each level in the hierarchy.
     Each of these conserved quantities will be related to the conservation
     of circulation.
-  \item We numerically compute some particle-like solutions at the zeroth and first levels in the hierarchy.  We will observe a form of cascade in which interactions of solutions at the $k$-th level tend asymptotically in time toward solutions at the $(k+1)^{\rm th}$ level.
+  \item We numerically compute some particle-like solutions at the zeroth and first levels in the hierarchy.  We will observe a form of cascade in which interactions of solutions at the $k$-th level tend asymptotically in time toward solutions at the $(k+1)$-th level.
 \end{enumerate}
 
 \subsection{Outline of the paper}
@@ -155,9 +148,7 @@ We also recall that the conservation of the right momentum map $J_R$ here is equ
 
 In Section~\ref{sec:zeroth_order} we introduce zeroth order jetlets, also called landmarks, and we discuss their dual pair. This is done in parallel with later sections. The left momentum map is the usual one, and the right momentum map is in fact trivial. So the `dual pair' is somewhat unnatural here, but it helps present already the kind of thinking that will be employed in the later parts of the paper. 
 %
-The proof of Proposition~\ref{prop:0-solutions} is an example of the efficiency of the approach. (The proof is half a line.)
-\je{This statement seems a bit disingenuous: MM spend a whole paper on the hard analysis, which we gloss over.}
-\dm{I agree. How about just removing "The proof... half a line.)"} 
+%The proof of Proposition~\ref{prop:0-solutions} is an example of the efficiency of the approach.
 
 In Section~\ref{sec:first_order} we consider 1st order jetlets. Everything here goes in parallel, except that one has to be more careful when introducing the relevant right and left actions. Once one has the definitions in place, it is not difficult to recognize that the cotangent lifts for the right and left actions lead to a dual pair of momentum maps (this is mainly because the group actions commute).  Proposition~\ref{prop:1-solutions} collects the results that follow immediately from the dual pair.
 
@@ -167,14 +158,6 @@ In Section~\ref{sec:higher_order} we describe jetlets at general levels. Again, 
 
 In Section~\ref{sec:Kelvin} we discuss in more detail the Kelvin circulation theorem. More precisely, we discuss the relationship between the `standard' circulation theorem for the fluid and the conserved momentum maps $J_R$  at the various levels of jetlets. The main result is represented schematically and proven in detail (all that is required, in essence, is the standard formula for cotangent lift momentum maps). Intuitively speaking, what we show is that the conserved jetlet momentum maps are `shadows' of the `full' right-momentum map of the fluid.\\
 
-\todo[inline]{DDH: David says we could put in a bit more detail: The velocity fields corresponding to jetlet solutions are forced to lie in a certain subspace of the Lie algebra of vector fields. This implies that the corresponding elements of $T$Diff also lie in a certain subspace of the tangent bundle, and hence, by Legendre transform, that the momenta lie in a subspace of $T^*$Diff. If one applies the right-momentum map to this subspace, one gets the same as if one applies the jetlet right momentum map to the momentum on $T^*Q^N$ (the cotangent bundle of `Taylor expansions' up to certain order). Analogous statements hold about the left momentum maps.}
-
-\hoj{Darryl suggests that David adds this as a remark in the final section.
-One should be careful to use proper terminology, since the dual to a subspace $W \subset V$
-is a quotient space $V / W^\circ$ (not a subspace).}
-\dm{Let's leave that for now in the interest of time.}
-
-******************
 In Section~\ref{sec:Numerical experiments} we discuss the explicit dynamical behavior of the
 particle model, in particular we study `collisions' leading to mergers of jetlets.
 This makes an explicit connection between dynamics in the different
@@ -222,16 +205,14 @@ The Appendix is relatively extensive. A quick discussion of symplectic and Poiss
  in \cite{HolmTronci2012}.
  However, the specifics of the regularized fluid model were not determined,
  and the analysis of \cite{JacobsRatiuDesbrun2013} was purely
- theoretical.
- \je{Replace ``theoretical'' by ``abstract''?}
+ formal.
 
  Later, a regularized version of the ideal fluid equations was presented by
  \cite{MumfordMichor2013}.
  This new partial differential equation was amenable to the theory presented in 
- \cite{JacobsRatiuDesbrun2013}, and gave a specific and easily
+ \cite{JacobsRatiuDesbrun2013}, and gave rise to a specific and easily
  implementable manifestation of the hierarchy of particle models
  described there.
- \je{Replace ``and gave a'' by ``and gave rise to a''?}
  In \cite{CotterHolmJacobsMeier2014} we numerically computed some
  of these particle-like solutions and observed cascade phenomena as
  an emergent behavior at the zeroth level in the hierarchy.
