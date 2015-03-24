@@ -77,8 +77,8 @@
   The conservation law associated to jetlet solutions is 
   shown to be a shadow of Kelvin's circulation theorem.
   Finally, we study the dynamics of infinite time particle mergers.
-  We prove that two merging particles at the $0$th level in the hierarchy
-  yield dynamics which asymptotically approach that of a single particle in the $1$st level in the hierarchy.
+  We prove that two merging particles at the zeroth level in the hierarchy
+  yield dynamics which asymptotically approach that of a single particle in the first level in the hierarchy.
   This merging behavior is then verified numerically
   as well as the exchange of angular momentum which must
   occur during a near collision of two particles.
@@ -107,7 +107,7 @@ One of these Poisson maps was the embedding map from a finite-dimensional manifo
 In this paper we will derive a hierarchy of different dual pairs, in order to obtain a class of finite-dimensionally parametrized solutions,
 each of which comes with a conservation law that shadows Kelvin's circulation theorem.
 Just as one can consider the point vortices to be the atoms of the point vortex method,
-the atoms of these new solutions are particle-like objects which we call \emph{jetlets} (or $k$-\emph{jetlets} if we wish to emphasize that we are considering the $k$th level of the hierarchy).
+the atoms of these new solutions are particle-like objects which we call \emph{jetlets} (or $k$-\emph{jetlets} if we wish to emphasize that we are considering the $k$-th level of the hierarchy).
 
 It is notable that the zeroth level of the hierarchy is a classical particle-like solution which appears in many geodesic
 systems on diffeomorphism groups \cite{CamassaHolm1993,JoshiMiller2000,FringerHolm2001,MumfordMichor2013}.
@@ -142,7 +142,7 @@ Thus the jets of diffeomorphisms possess a natural sense of the ``self-similarit
     each level in the hierarchy.
     Each of these conserved quantities will be related to the conservation
     of circulation.
-  \item We numerically compute some particle-like solutions at the zeroth and first levels in the hierarchy.  We will observe a form of cascade in which interactions of solutions at the $k^{\rm th}$ level tend asymptotically in time toward solutions at the $(k+1)^{\rm th}$ level.
+  \item We numerically compute some particle-like solutions at the zeroth and first levels in the hierarchy.  We will observe a form of cascade in which interactions of solutions at the $k$-th level tend asymptotically in time toward solutions at the $(k+1)^{\rm th}$ level.
 \end{enumerate}
 
 \subsection{Outline of the paper}
@@ -234,9 +234,9 @@ The Appendix is relatively extensive. A quick discussion of symplectic and Poiss
  \je{Replace ``and gave a'' by ``and gave rise to a''?}
  In \cite{CotterHolmJacobsMeier2014} we numerically computed some
  of these particle-like solutions and observed cascade phenomena as
- an emergent behavior at the $0$th level in the hierarchy.
+ an emergent behavior at the zeroth level in the hierarchy.
 
- It is notable that the $0$th level of the hierarchy has been studied
+ It is notable that the zeroth level of the hierarchy has been studied
  for a long time in the context of partial differential equations with hydrodynamic background.
  In particular, \cite{HoldenRaynaud2006} provide the first convergence proof of such a method in the context of the Camassa-Holm equation.
  This same idea was implemented for the $n$-dimensional Camassa-Holm
@@ -942,12 +942,12 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
 
   \subsection{Higher-order particles}
   \label{sec:higher_order}
-  In this section we will introduce a hierarchy of particle solutions whose $k^{\rm th}$ level includes the solutions at the $(k-1)^{\rm th}$ level.
+  In this section we will introduce a hierarchy of particle solutions whose $k$-th level includes the solutions at the $(k-1)^{\rm th}$ level.
   The $0^{\rm th}$-level in the hierarchy are the standard particle-like solutions,
   while the $1^{\rm st}$ level describes the particles with internal $\SL(n)$ variables
   discussed in the previous section.
-  The particles in the $k^{\rm th}$-level carry the coefficients of
-  $k^{\rm th}$-order Taylor expansions of diffeomorphisms,
+  The particles in the $k$-th level carry the coefficients of
+  $k$-th order Taylor expansions of diffeomorphisms,
   or \emph{jets}.
   Therefore, we call these particles \emph{$k$-jetlets}.
 
@@ -971,7 +971,7 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   symmetric in the lower indices.
   We call the space of such tensors $S^1_2$,
   and we see that the space of second-order jets is a sub-manifold $Q^{(2)}_1 \subset \R^n \times \SL(n) \times S^1_2$.
-  Finally, for $k \geq 2$ the space of $k^{\rm th}$ order jets is a sub-manifold
+  Finally, for $k \geq 2$ the space of $k$-th order jets is a sub-manifold
   \begin{align*}
     Q_1^{(k)} \subset \R^n \times \SL(n) \times S^1_2 \times S^1_3 \times \cdots\times S^1_k
   \end{align*}
@@ -1027,10 +1027,10 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
           \partial_{\gamma_k} \varphi_2^{j_k}
         \right),
     \end{align*}
-where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of a multi-index $\alpha$. We refer to Appendix~\ref{sec:multi} for the details of our index conventions and to \cite{ConstantineSavits1996,Jacobs2014b} for a
+where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a multi-index $\alpha$. We refer to Appendix~\ref{sec:multi} for the details of our index conventions and to \cite{ConstantineSavits1996,Jacobs2014b} for a
     precise description of the multivariate Fa\`a di Bruno formula.
     One can read off   from the expression that
-    a $k^{\rm th}$ order derivative only depends on $k^{\rm th}$
+    a $k$-th order derivative only depends on $k$-th 
     and lower order
     partial derivatives of $\varphi_1$ and $\varphi_2$.
         A left $\SDiff(\R^n)$ action is induced on $Q_1^{(k)}$ by
@@ -1155,7 +1155,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k^{\rm th}$-order partitions of 
   Remark that $K_{p,\sigma}$ has smoothness $C^{2p-n-1}$ by considering
   that the Fourier representations of its derivatives are integrable,
   while we need $K_{p,\sigma} \in C^{2k+1}$ to allow composition with
-  $k$th derivatives of delta distributions on each side and still
+  $k$-th derivatives of delta distributions on each side and still
   obtain a $C^1$ Hamiltonian.
 
   As before, an even richer family of velocity fields is generated by a single particle of this type.
@@ -2074,7 +2074,7 @@ Moreover, the notion of equivalence of mixed partials is expressed by the equiva
 $\partial_\alpha \partial_\beta = \partial_{\alpha \cup \beta} = \partial_\beta \partial_\alpha$.
 The cardinality of the multi-index $\beta$ is denoted $|\beta|$ and is given by the number of marbles in the bag.
 Thus the order of the partial differential operator $\partial_{\beta}$ is $|\beta|$.
-We denote the space of $k$th order partitions of a multi-index by $\Pi(\alpha,k)$.
+We denote the space of $k$-th order partitions of a multi-index by $\Pi(\alpha,k)$.
 Rather than define all this formally, we will compute an example and refer to \cite{Jacobs2014b} for the formal definitions.
 
 We can consider the integers $1$ $2$ and $1$, and the partial differential operator $\partial_{121}$.
