@@ -1207,12 +1207,9 @@ and Kelvin's circulation theorem is demonstrated by a heuristic
 argument~\cite[Ch~1, Thm~5.5]{ArnoldKhesin1998}, which goes as follows. 
 Consider a given closed curve $\gamma_0\colon S^1 \to \R^n$ and a family
 of vector fields $w_\varepsilon$ such that $w_\varepsilon(\gamma(s)) = \gamma'(s)$
-and such that the limit $w = \lim_{\varepsilon \to 0} w_\varepsilon$ is the discontinuous map
+and such that the (weak in $L^2$) limit $w = \lim_{\varepsilon \to 0} w_\varepsilon$ is the generalized function
 \begin{equation*}
-  w(x) = \begin{cases}
-    \gamma'_0(s) & \text{if $x = \gamma_0(s)$, for some $s$}\\
-    0          & \text{else.}
-  \end{cases}
+  w(x) =  \gamma'_0(s) \otimes \delta(x-\gamma_0(s))
 \end{equation*}
 Assuming $\epsilon$ is small and writing 
 $p_\varphi = \langle \dot{\varphi} , \,\cdot\, \rangle_{L^2}$, we find
