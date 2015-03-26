@@ -45,7 +45,6 @@
 \title[Dual pairs and jetlet methods for ideal fluids]%
 {Dual pairs and jetlet methods for ideal incompressible fluid models in $n \geq 2$ dimensions}
 
-% \author{C.~J. Cotter, J. Eldering, D.~D. Holm, H.~O. Jacobs, D.~M. Meier}
 %\author{C.~J. Cotter, J. Eldering, D.~D. Holm, H.~O. Jacobs, D.~M. Meier}
 \usepackage[foot]{amsaddr}
 \author{C.~J. Cotter$^1$, J. Eldering$^1$, D.~D. Holm$^1$, H.~O. Jacobs$^{1,*}$,}
@@ -90,7 +89,7 @@
 
 \section{Introduction}
 Arnold's geometric insight in \cite{Arnold1966}  has forever changed the way mathematicians look at ideal fluid dynamics.  According to \cite{Arnold1966}, ideal incompressible fluid motion on an
-orientable Riemannian manifold $M$ is equivalent to geodesic motion on the Lie group of volume preserving diffeomorphisms ${\rm SDiff}(M)$ (i.e., the smooth invertible volume preserving maps of $M$ into itself, with smooth inverses).
+orientable Riemannian manifold $M$ is equivalent to geodesic motion on the Lie group of volume preserving diffeomorphisms $\SDiff(M)$ (i.e., the smooth invertible volume preserving maps of $M$ into itself, with smooth inverses).
 The Riemannian metric is simply the fluid kinetic energy, which is the $L^2$-norm of the fluid's velocity field.
 This characterization of ideal fluid flow allowed Poisson geometers and geometric mechanicians to provide a new perspective on ideal fluids and other PDEs with hydrodynamics background \cite{EbinMarsden1970,MarsdenWeinstein1983,Zeitlin1991,ArnoldKhesin1998,HolmMarsdenRatiu1998,FoiasHolmTiti2001}.
 As will be shown, such a perspective is particularly fruitful for the purpose of reducing the infinite-dimensional fluid system
@@ -153,7 +152,7 @@ In Section~\ref{sec:first_order} we consider 1st order jetlets. Everything here 
 
 Throughout the paper we have taken care to explain the intuition behind the more abstract concepts. The discussion just after Proposition 4.5 is an example of that. There, we discuss the relationship between the jetlet solutions on the diffeomorphism group and the resulting trajectory on the space of Taylor jets. 
 
-In Section~\ref{sec:higher_order} we describe jetlets at general levels. Again, once the relevant spaces and actions have been introduced (which is now quite an intricate endeavour), one recognizes that the momentum maps are a dual pair by the usual arguments. We give the form of the momentum maps explicitly just after Proposition~\ref{HL_action_prop}. Again, the dual pair leads to analogous conclusions about dynamics. Namely, it is canonically Hamiltonian, with $J_R$  conserved; $J_L$ maps the dynamics to the Lie-Poisson dynamics on the one-form densities.
+In Section~\ref{sec:higher_order} we describe jetlets at general levels. Again, once the relevant spaces and actions have been introduced (which is now quite an intricate endeavor), one recognizes that the momentum maps are a dual pair by the usual arguments. We give the form of the momentum maps explicitly just after Proposition~\ref{HL_action_prop}. Again, the dual pair leads to analogous conclusions about dynamics. Namely, it is canonically Hamiltonian, with $J_R$  conserved; $J_L$ maps the dynamics to the Lie-Poisson dynamics on the one-form densities.
 
 In Section~\ref{sec:Kelvin} we discuss in more detail the Kelvin circulation theorem. More precisely, we discuss the relationship between the `standard' circulation theorem for the fluid and the conserved momentum maps $J_R$  at the various levels of jetlets. The main result is represented schematically and proven in detail (all that is required, in essence, is the standard formula for cotangent lift momentum maps). Intuitively speaking, what we show is that the conserved jetlet momentum maps are `shadows' of the `full' right-momentum map of the fluid.\\
 
@@ -745,7 +744,7 @@ the kernel, $K$.
 	(\emph{right})  Streamline plot of the induced 3 dimensional velocity field. }
 	\label{fig:zero_jetlet}
 \end{figure}
-Once one has found a solution $(q(t), p(t))$ to Hamilton's equations on $T^*\mathbb{R}^n$ and thus also a solution to Hamilton's equations on $\mathfrak{X}_{\rm div}(\mathbb{R}^n)^*$, one can proceed to integrate the corresponding time-dependent vector field to obtain the fluid motion $\varphi_t$ in $\rm{SDiff}(\mathbb{R}^n)$. It is natural (but not mandatory) to choose the initial map $\varphi_0$ to be the identity or at least to be a diffeomorphism that satisfies $\varphi_0(q_a(0))= q_a(0)$ for all $a$.
+Once one has found a solution $(q(t), p(t))$ to Hamilton's equations on $T^*\mathbb{R}^n$ and thus also a solution to Hamilton's equations on $\mathfrak{X}_{\rm div}(\mathbb{R}^n)^*$, one can proceed to integrate the corresponding time-dependent vector field to obtain the fluid motion $\varphi_t$ in $\SDiff(\mathbb{R}^n)$. It is natural (but not mandatory) to choose the initial map $\varphi_0$ to be the identity or at least to be a diffeomorphism that satisfies $\varphi_0(q_a(0))= q_a(0)$ for all $a$.
   If this choice is made, one can interpret the curve $q(t) = (q_1(t), \ldots, q_N(t))$ in $Q_N^{(0)}$ as the locations of particles as they are swept along by the fluid flow, that is, $q_a(t) = \varphi_t(q_a(0))$ for all $a = 1, \ldots, N$. 
   
   We see that $J_L^{(0)}$ is injective, and thus has a trivial kernel. As a result, the symplectic orthogonal to the kernel of $J_L^{(0)}$  is the full tangent bundle $T(T^*Q_N^{(0)})$. Hence, if we define the (trivial) map $J_R^{(0)}: T^*Q^{(0)}_N \to \mathfrak{X}_{\rm div}(\mathbb{R}^n)^*$ by $J_R^{(0)} \equiv 0$, it follows that the diagram
@@ -765,13 +764,13 @@ Once one has found a solution $(q(t), p(t))$ to Hamilton's equations on $T^*\mat
   while the right leg represents a (trivial) conserved quantity. 
     
   In order to make contact with the later parts of the paper, it is useful to remark that $J_R^{(0)}$ can formally be understood as the cotangent lift momentum map associated with a certain (trivial) group action.
-  To that end, we fix a designated point $z = (z_1, \ldots, z_N) \in Q_N^{(0)}$ and take an arbitrary element $ q= (q_1, \ldots, q_N) \in Q_N^{(0)}$ to represent the set of all $\varphi \in {\rm SDiff}(\mathbb{R}^n)$ that satisfy $\varphi \cdot z  = q$.
+  To that end, we fix a designated point $z = (z_1, \ldots, z_N) \in Q_N^{(0)}$ and take an arbitrary element $ q= (q_1, \ldots, q_N) \in Q_N^{(0)}$ to represent the set of all $\varphi \in \SDiff(\mathbb{R}^n)$ that satisfy $\varphi \cdot z  = q$.
   That is, $\varphi(z_a) = q_a$ for all $a$.
   This means in particular that the specification of $(q_1, \ldots, q_N)$ fixes the $0^{\rm th}$ order Taylor expansion (at the locations $z_a$) of the corresponding set of diffeomorphisms. With this in mind, let us define the isotropy group
 \begin{align}
-{\rm iso}(z)  = \{ \psi \in {\rm SDiff}(\mathbb{R}^n) | \psi(z_a) = z_a \mbox{ for all } a\} \label{isotropy_group}
+\iso(z)  = \{ \psi \in \SDiff(\mathbb{R}^n) | \psi(z_a) = z_a \mbox{ for all } a\} \label{isotropy_group}
 \end{align}
-and a (trivial) right action on $Q_N^{(0)}$ where $\psi \in {\rm iso}(z)$ maps an element $(\varphi(z_1), \ldots, \varphi(z_N))$ to $( \varphi \circ \psi (z_1), \ldots, \varphi \circ \psi(z_N))$.
+and a (trivial) right action on $Q_N^{(0)}$ where $\psi \in \iso(z)$ maps an element $(\varphi(z_1), \ldots, \varphi(z_N))$ to $( \varphi \circ \psi (z_1), \ldots, \varphi \circ \psi(z_N))$.
 Similar constructions will be crucial in later sections, when constructing the right leg of a dual pair for the higher levels in the hierarchy of particle-like solutions.
 
   In summary we find:
@@ -849,7 +848,7 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
     = p\indices{_a_i} \dx^i \otimes \delta_{q_a}
      -p\indices{_a_i^j} q\indices{_a^k_j} \dx^i \otimes \partial_k \delta_{q_a}
   \end{align*}
-  Next, we construct a dual momentum map associated with a right action on $Q_N^{(1)}$. Analogous to the previous section  it is useful at this stage to write elements of $Q_N^{(1)}$ in the form $ \varphi \cdot z = (\varphi (z_1, {\mathbf{1}}), \ldots, \varphi \cdot (z_N , \mathbf{1}))$, $\varphi \in {\rm SDiff}(\mathbb{R}^n)$, for some designated element $ z=( (z_1, \mathbf{1}), \ldots, (z_N, \mathbf{1}))$. Clearly, every element of $Q_N^{(1)}$ can be written in this form for some  $\varphi \in {\rm SDiff}(\mathbb{R}^n)$. Indeed, with this convention the specification of an element in $Q_N^{(1)}$ fixes the $1^{\rm st}$ order Taylor expansion of $\varphi$ at the locations $z_a$, $a = 1, \ldots, N$. With this in mind, let us recall the isotropy group ${\rm iso}(z)$ defined earlier in \eqref{isotropy_group}, which leaves these locations invariant, and define a right action on  $Q_N^{(1)}$ given by 
+  Next, we construct a dual momentum map associated with a right action on $Q_N^{(1)}$. Analogous to the previous section  it is useful at this stage to write elements of $Q_N^{(1)}$ in the form $ \varphi \cdot z = (\varphi (z_1, {\mathbf{1}}), \ldots, \varphi \cdot (z_N , \mathbf{1}))$, $\varphi \in \SDiff(\mathbb{R}^n)$, for some designated element $ z=( (z_1, \mathbf{1}), \ldots, (z_N, \mathbf{1}))$. Clearly, every element of $Q_N^{(1)}$ can be written in this form for some  $\varphi \in \SDiff(\mathbb{R}^n)$. Indeed, with this convention the specification of an element in $Q_N^{(1)}$ fixes the $1^{\rm st}$ order Taylor expansion of $\varphi$ at the locations $z_a$, $a = 1, \ldots, N$. With this in mind, let us recall the isotropy group $\iso(z)$ defined earlier in \eqref{isotropy_group}, which leaves these locations invariant, and define a right action on  $Q_N^{(1)}$ given by 
 \begin{align}
 	 (\varphi \cdot z) \cdot \psi  = (\varphi \circ \psi) \cdot z. \notag
 	 \end{align}
@@ -900,7 +899,7 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   Proposition~\ref{prop:k-solutions} for more details on the kernel
   smoothness condition on $p$.
 
-  As before, it is useful to interpret the trajectory $q(t)$ of the previous proposition in terms of the curve $\varphi_t \in  {\rm SDiff}(\mathbb{R}^n)$ obtained by integrating the time-dependent vector field $dh_{p, \sigma} J_L^{(1)}((q, p)(t)) = K_{p, \sigma} * J_L^{(1)}((q, p)(t))$. If one chooses $\varphi_0$ to be the identity or  any other element of ${\rm SDiff}(\mathbb{R}^n)$ that satisfies $\varphi_0 \cdot (q(0)) = q(0)$, then  $q(t) = \varphi_t \cdot  q(0)$. This implies in particular that the $q_a^{(0)}(t)$ are the trajectories of the particles as they are swept along by the fluid flow.
+  As before, it is useful to interpret the trajectory $q(t)$ of the previous proposition in terms of the curve $\varphi_t \in  \SDiff(\mathbb{R}^n)$ obtained by integrating the time-dependent vector field $dh_{p, \sigma} J_L^{(1)}((q, p)(t)) = K_{p, \sigma} * J_L^{(1)}((q, p)(t))$. If one chooses $\varphi_0$ to be the identity or  any other element of $\SDiff(\mathbb{R}^n)$ that satisfies $\varphi_0 \cdot (q(0)) = q(0)$, then  $q(t) = \varphi_t \cdot  q(0)$. This implies in particular that the $q_a^{(0)}(t)$ are the trajectories of the particles as they are swept along by the fluid flow.
 
   Various vector fields for large kernel smoothness $p$
   are depicted in Figure~\ref{fig:zoo}
@@ -950,8 +949,8 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   We see that $D^2\varphi(0)$ is a tensor of rank $(1,2)$, which is
   symmetric in the lower indices.
   We call the space of such tensors $S^1_2$,
-  and we see that the space of second-order jets is a sub-manifold $Q^{(2)}_1 \subset \R^n \times \SL(n) \times S^1_2$.
-  Finally, for $k \geq 2$ the space of $k$-th order jets is a sub-manifold
+  and we see that the space of second-order jets is a submanifold $Q^{(2)}_1 \subset \R^n \times \SL(n) \times S^1_2$.
+  Finally, for $k \geq 2$ the space of $k$-th order jets is a submanifold
   \begin{align*}
     Q_1^{(k)} \subset \R^n \times \SL(n) \times S^1_2 \times S^1_3 \times \cdots\times S^1_k
   \end{align*}
@@ -979,7 +978,7 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   This coordinate is used to model the partial derivative of the $i^{\rm th}$ coordinate
   of a diffeomorphism at some point $z_a \in \R^n$, i.e.\ $\partial_\beta \varphi^i(z_a)$.
   % This is the primary motivation for this notational convention.
-  For the statement of the next proposition, recall that the definition  of ${\rm iso}(z)$ was given earlier in \eqref{isotropy_group}. Note also that we write $\Jet^k_x: \SDiff(\R^n) \to Q_1^{(k)}$ for
+  For the statement of the next proposition, recall that the definition  of $\iso(z)$ was given earlier in \eqref{isotropy_group}. Note also that we write $\Jet^k_x: \SDiff(\R^n) \to Q_1^{(k)}$ for
     the function which evaluates the spatial derivatives
     of a diffeomorphism up to order $k$ at the location $x \in \R^n$. In the subsequent sections we will also use the obvious generalization to multiple locations $z_1, \ldots, z_N \in \R^n$, which we will denote by $\Jet^k_z : \SDiff(\R^n) \to Q_N^{(k)}$.  
 
@@ -1692,7 +1691,7 @@ The developments discussed in the present paper give rise to a number of promisi
 		In such scenarios, the kernel is no longer invariant under rigid transformations
 		and we must consider a general kernel $K:M \times M \to \mathbb{R}^{n \times n}$
 		where $M \subset \mathbb{R}^n$ is an $n$-manifold with boundary.
-        \item An analysis of convergence to Euler equations when $\sigma \to 0$ for the case where the power of the Helmholtz operator, $p$, goes to infinity.  The advantage of the $p=\infty$ case, is that the limiting kernel can be written in terms of elementary functions \cite{MicheliGlaunes2014}.
+        \item An analysis of convergence to Euler equations when $\sigma \to 0$ for the case where the power of the Helmholtz operator, $p$, goes to infinity.  The advantage of the $p=\infty$ case is that the limiting kernel can be written in terms of elementary functions \cite{MicheliGlaunes2014}.
 \end{enumerate}
 
 \section{Acknowledgements}
