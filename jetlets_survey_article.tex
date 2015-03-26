@@ -5,9 +5,10 @@
 \usepackage{mathrsfs}
 \usepackage{graphicx}
 \usepackage{tikz}
-\usetikzlibrary{arrows}
-\usetikzlibrary{matrix}
-\usetikzlibrary{cd}
+%\usetikzlibrary{arrows}
+%\usetikzlibrary{matrix}
+%\usetikzlibrary{cd}
+\usepackage[all,cmtip]{xy}
 \usepackage{todonotes}
 \usepackage{hyperref}
 \usepackage{url}
@@ -50,9 +51,14 @@
 \title[Dual pairs and jetlet methods for ideal fluids]%
 {Dual pairs and jetlet methods for ideal incompressible fluid models in $n \geq 2$ dimensions}
 
-\author{C.~J. Cotter, J. Eldering, D.~D. Holm, H.~O. Jacobs, D.~M. Meier}
-
-
+% \author{C.~J. Cotter, J. Eldering, D.~D. Holm, H.~O. Jacobs, D.~M. Meier}
+%\author{C.~J. Cotter, J. Eldering, D.~D. Holm, H.~O. Jacobs, D.~M. Meier}
+\usepackage[foot]{amsaddr}
+\author{C.~J. Cotter$^1$, J. Eldering$^1$, D.~M. Holm$^1$, H.~O. Jacobs$^{1,*}$,}
+\address{$^1$ Department of Mathematics, Imperial College London, London SW7 2AZ}
+\author{D.~D. Meier$^2$}
+\address{$^2$ Department of Mathematics, Brunel University London, Uxbridge UB8 3PH, UK}
+\address{$^*$ Corresponding author (\href{mailto:h.jacobs@ic.ac.uk}{h.jacobs@ic.ac.uk})}
 \begin{document}
 
 \maketitle
@@ -87,7 +93,7 @@
   More broadly, this provides one of the first finite-dimensional models of
   self-similarity in ideal fluids.
 \end{abstract}
-\dm{Do we need affiliations? Mine is: Department of Mathematics, Brunel University London, Uxbridge UB8 3PH, UK} 
+%\dm{Do we need affiliations? Mine is: Department of Mathematics, Brunel University London, Uxbridge UB8 3PH, UK} 
 
 \section{Introduction}
 Arnold's geometric insight in \cite{Arnold1966}  has forever changed the way mathematicians look at ideal fluid dynamics.  According to \cite{Arnold1966}, ideal incompressible fluid motion on an
@@ -1230,13 +1236,21 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
  consider the element $i(p,q) \in T^*\SDiff(\R^n)$ given by $\langle i(q,p) , v_\varphi \rangle = \langle p , v_\varphi( \varphi^{-1} \cdot q) \rangle$
  \cite[(2.2.4)]{HRS}.
  The commutativity of the following diagram uniquely defines the jetlet solutions:
-  \begin{equation}
- \begin{tikzcd}
-   \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l,"J_\text{spatial}"] T^*\SDiff(\R^n) \ar[r,"J_\text{conv}"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
-   & T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
-   & T^*Q^{(k)}_N \uar{i} \ar[uur,"J_R^{(k)}"',bend right = 30] \ar[uul,"J_L^{(k)}",bend left = 30] &
- \end{tikzcd}
-\end{equation}
+% \begin{equation}
+%  \begin{tikzcd}
+%    \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l,"J_\text{spatial}"] T^*\SDiff(\R^n) \ar[r,"J_\text{conv}"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
+%    & T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
+%    & T^*Q^{(k)}_N \uar{i} \ar[uur,"J_R^{(k)}"',bend right = 30] \ar[uul,"J_L^{(k)}",bend left = 30] &
+%  \end{tikzcd}
+% \end{equation}
+\begin{displaymath}
+\xymatrix{
+\mathfrak{X}_{\rm div}(\R^n)^* & \ar[l]_{J_{\rm spatial}} T^*\SDiff(\R^n) \ar[d]^{\pi} \ar[r]^{J_{\rm conv}} &  \mathfrak{iso}(z)^* \\
+& T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
+& T^*Q^{(k)}_N \ar[u]^i \ar@/_2pc/[uur]_{J_R^{(k)}} \ar@/^2pc/[uul]^{J_L^{(k)}} &
+}
+\end{displaymath}
+
   Namely, for the left-hand part of the diagram recall that we have shown in the previous section that a jetlet solution has a velocity vector in $T \SDiff(\R^n)$ of the form
   \begin{equation*}
     v_{\varphi} = (K * J_L^{(k)}(p_q)) \circ \varphi
@@ -1569,15 +1583,24 @@ We have not pursued in detail the question of which topology on
 $\mathfrak{X}_{\rm div}(\R^n)^*$ to use for this more abstract
 characterization.
 
-\begin{equation}\label{eq:embedding}
-  \begin{tikzcd}
-    \hspace{-4em}
-    T^*Q_N^{(k)} \ar[to=1-2,hook, "J_L"] & \mathfrak{X}_{\rm div}(\R^n)^* \\[-1.2em]
-    T^*Q_1^{(1)} \ar[to=1-2,hook,start anchor={[yshift=-0.4em]north east},end anchor={[yshift=-0.5em]west}] \\
-    T^*Q_2^{(0)} \ar[to=1-2,hook,start anchor=north east,end anchor={[yshift=-1.0em]west}]
-                 \ar[u,"\partial"] &
-  \end{tikzcd}
+% \begin{equation}\label{eq:embedding}
+%   \begin{tikzcd}
+%     \hspace{-4em}
+%     T^*Q_N^{(k)} \ar[to=1-2,hook, "J_L"] & \mathfrak{X}_{\rm div}(\R^n)^* \\[-1.2em]
+%     T^*Q_1^{(1)} \ar[to=1-2,hook,start anchor={[yshift=-0.4em]north east},end anchor={[yshift=-0.5em]west}] \\
+%     T^*Q_2^{(0)} \ar[to=1-2,hook,start anchor=north east,end anchor={[yshift=-1.0em]west}]
+%                  \ar[u,"\partial"] &
+%   \end{tikzcd}
+% \end{equation}
+
+\begin{equation} \label{eq:embedding}
+   \xymatrix{
+     T^*Q_N^{(k)} \ar[r]^{J_L} & \mathfrak{X}_{\rm div}(\R^n)^* \\
+     T^*Q_1^{(1)} \ar[ur] \ar@{.>}[u] \\
+     T^*Q_2^{(0)} \ar[uur] \ar[u]^{\partial}
+   }
 \end{equation}
+
 
 \section{Numerical experiments}
 \label{sec:Numerical experiments}
@@ -1676,10 +1699,11 @@ The developments discussed in the present paper give rise to a number of promisi
 		In such scenarios, the kernel is no longer invariant under rigid transformations
 		and we must consider a general kernel $K:M \times M \to \mathbb{R}^{n \times n}$
 		where $M \subset \mathbb{R}^n$ is an $n$-manifold with boundary.
+        \item An analysis of convergence to Euler equations when $\sigma \to 0$ for the case where the power of the Helmholtz operator, $p$, goes to infinity.  The advantage of the $p=\infty$ case, is that the limiting kernel can be written in terms of elementary functions \cite{MicheliGlaunes2014}.
 \end{enumerate}
-\je{Add: analysis of convergence to Euler equations when $\sigma \to 0$?}
 
-\dm{Do we need acknowledgments?}
+\section{Acknowledgements}
+JE, DDH, HOJ and DMM are grateful for partial support by the European Research Council Advanced Grant 267382 FCCA.
 
 \appendix
 
