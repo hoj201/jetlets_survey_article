@@ -148,7 +148,7 @@ In Section~\ref{sec:zeroth_order} we introduce zeroth order jetlets, also called
 %
 %The proof of Proposition~\ref{prop:0-solutions} is an example of the efficiency of the approach.
 
-In Section~\ref{sec:first_order} we consider 1st order jetlets. Everything here goes in parallel, except that one has to be more careful when introducing the relevant right and left actions. Once one has the definitions in place, it is not difficult to recognize that the cotangent lifts for the right and left actions lead to a dual pair of momentum maps (this is mainly because the group actions commute).  Proposition~\ref{prop:1-solutions} collects the results that follow immediately from the dual pair.
+In Section~\ref{sec:first_order} we consider first order jetlets. Everything here goes in parallel, except that one has to be more careful when introducing the relevant right and left actions. Once one has the definitions in place, it is not difficult to recognize that the cotangent lifts for the right and left actions lead to a dual pair of momentum maps (this is mainly because the group actions commute).  Proposition~\ref{prop:1-solutions} collects the results that follow immediately from the dual pair.
 
 Throughout the paper we have taken care to explain the intuition behind the more abstract concepts. The discussion just after Proposition 4.5 is an example of that. There, we discuss the relationship between the jetlet solutions on the diffeomorphism group and the resulting trajectory on the space of Taylor jets. 
 
@@ -683,7 +683,7 @@ condition
 \end{align*}
 for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$ (see \eqref{eq:cotangent_momap} in Appendix~\ref{sec:Symplectic}); the superscript in $J_L^{(0)}$ serves as a reminder that we are considering the zeroth level in the hierarchy of particle-like solutions.
 %We shall now write $J_L^{(0)} = J_L$ in anticipation of the
-%introduction of higher-order particles in Section~\ref{sec:higher_order}.
+%introduction of higher order particles in Section~\ref{sec:higher_order}.
 %On $\R^n$ we may identify the dual space of $\mathfrak{X}_{\rm div}(\R^n)$
 %with the space of closed $H^\infty$ one-forms by using the Euclidean volume form.
 %That is to say, any covector field \todo{JE: distribution?} $m = m_i \dx^i \in \mathfrak{X}_{\rm div}(\R^n)^*$
@@ -713,7 +713,7 @@ We will index the particles with $a,b,c,\dots$ and Cartesian coordinate
 directions in $\R^n$ with indices $i,j,k,\dots$
 Thus each $q \in Q_N^{(0)}$ can be decomposed
 into $N$ particles as $(q_1,\dots,q_N)$, where each $q_a \in \R^n$
-and the $i^{\rm th}$ coordinate of the $a^{\rm th}$ particle
+and the $i$-th coordinate of the $a$-th particle
 is denoted by $q\indices{_a^i}$.
 
 The group $\SDiff(\R^n)$ acts on $Q_N^{(0)}$ by the diagonal action.
@@ -766,7 +766,7 @@ Once one has found a solution $(q(t), p(t))$ to Hamilton's equations on $T^*\mat
   In order to make contact with the later parts of the paper, it is useful to remark that $J_R^{(0)}$ can formally be understood as the cotangent lift momentum map associated with a certain (trivial) group action.
   To that end, we fix a designated point $z = (z_1, \ldots, z_N) \in Q_N^{(0)}$ and take an arbitrary element $ q= (q_1, \ldots, q_N) \in Q_N^{(0)}$ to represent the set of all $\varphi \in \SDiff(\mathbb{R}^n)$ that satisfy $\varphi \cdot z  = q$.
   That is, $\varphi(z_a) = q_a$ for all $a$.
-  This means in particular that the specification of $(q_1, \ldots, q_N)$ fixes the $0^{\rm th}$ order Taylor expansion (at the locations $z_a$) of the corresponding set of diffeomorphisms. With this in mind, let us define the isotropy group
+  This means in particular that the specification of $(q_1, \ldots, q_N)$ fixes the zeroth order Taylor expansion (at the locations $z_a$) of the corresponding set of diffeomorphisms. With this in mind, let us define the isotropy group
 \begin{align}
 \iso(z)  = \{ \psi \in \SDiff(\mathbb{R}^n) | \psi(z_a) = z_a \mbox{ for all } a\} \label{isotropy_group}
 \end{align}
@@ -789,9 +789,9 @@ Similar constructions will be crucial in later sections, when constructing the r
   See the remark after Proposition~\ref{prop:k-solutions} for more details on the kernel smoothness condition on $p$.
 \end{proof}
 
-\subsection{$1^{\rm st}$-order particle-like solutions}
+\subsection{First order particle-like solutions}
 \label{sec:first_order}
-In this section we revisit the $1^{\rm st}$-order particle-like solutions of \cite{CotterHolmJacobsMeier2014} and discuss their dual pair, before extending the treatment to the higher levels of the hierarchy in the subsequent section. 
+In this section we revisit the first order particle-like solutions of \cite{CotterHolmJacobsMeier2014} and discuss their dual pair, before extending the treatment to the higher levels of the hierarchy in the subsequent section. 
   Let $\SL(n)$ denote the Lie group of $n\times n$ matrices
   with unit determinant.
   Let $q = (q^{(0)}, q^{(1)}) \in \R^n \times \SL(n)$ and consider the left
@@ -833,9 +833,9 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
       \end{array} \right\}.
   \end{align*}
   For convenience it is nice to choose coordinates at this point.
-  If we let $q_a$ denote the position of the $a^{\rm th}$ particle,
-  $q\indices{_a^i}$ denote the $i^{\rm th}$ component of this position,
-  and let $q\indices{_a^i_j}$ denote the $(i,j)$ entry of the $a^{\rm th}$
+  If we let $q_a$ denote the position of the $a$-th particle,
+  $q\indices{_a^i}$ denote the $i$-th component of this position,
+  and let $q\indices{_a^i_j}$ denote the $(i,j)$ entry of the $a$-th
   matrix then the resulting momentum map is defined by the condition
   \begin{align*}
     \langle J_L^{(1)}(q,p) , u \rangle
@@ -848,7 +848,7 @@ In this section we revisit the $1^{\rm st}$-order particle-like solutions of \ci
     = p\indices{_a_i} \dx^i \otimes \delta_{q_a}
      -p\indices{_a_i^j} q\indices{_a^k_j} \dx^i \otimes \partial_k \delta_{q_a}
   \end{align*}
-  Next, we construct a dual momentum map associated with a right action on $Q_N^{(1)}$. Analogous to the previous section  it is useful at this stage to write elements of $Q_N^{(1)}$ in the form $ \varphi \cdot z = (\varphi (z_1, {\mathbf{1}}), \ldots, \varphi \cdot (z_N , \mathbf{1}))$, $\varphi \in \SDiff(\mathbb{R}^n)$, for some designated element $ z=( (z_1, \mathbf{1}), \ldots, (z_N, \mathbf{1}))$. Clearly, every element of $Q_N^{(1)}$ can be written in this form for some  $\varphi \in \SDiff(\mathbb{R}^n)$. Indeed, with this convention the specification of an element in $Q_N^{(1)}$ fixes the $1^{\rm st}$ order Taylor expansion of $\varphi$ at the locations $z_a$, $a = 1, \ldots, N$. With this in mind, let us recall the isotropy group $\iso(z)$ defined earlier in \eqref{isotropy_group}, which leaves these locations invariant, and define a right action on  $Q_N^{(1)}$ given by 
+  Next, we construct a dual momentum map associated with a right action on $Q_N^{(1)}$. Analogous to the previous section  it is useful at this stage to write elements of $Q_N^{(1)}$ in the form $ \varphi \cdot z = (\varphi (z_1, {\mathbf{1}}), \ldots, \varphi \cdot (z_N , \mathbf{1}))$, $\varphi \in \SDiff(\mathbb{R}^n)$, for some designated element $ z=( (z_1, \mathbf{1}), \ldots, (z_N, \mathbf{1}))$. Clearly, every element of $Q_N^{(1)}$ can be written in this form for some  $\varphi \in \SDiff(\mathbb{R}^n)$. Indeed, with this convention the specification of an element in $Q_N^{(1)}$ fixes the first order Taylor expansion of $\varphi$ at the locations $z_a$, $a = 1, \ldots, N$. With this in mind, let us recall the isotropy group $\iso(z)$ defined earlier in \eqref{isotropy_group}, which leaves these locations invariant, and define a right action on  $Q_N^{(1)}$ given by 
 \begin{align}
 	 (\varphi \cdot z) \cdot \psi  = (\varphi \circ \psi) \cdot z. \notag
 	 \end{align}
@@ -914,16 +914,16 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
         \\
         \includegraphics[width=0.4\textwidth]{stretch_3D.png}
         \includegraphics[width=0.4\textwidth]{shear_3D.png}
-        \caption{(\emph{top}) Quiver plots of 2D vector fields induced by $1^{\rm st}$ order jetlets. 
-        (\emph{bottom})   Stream-line plots of 3D vector fields induced by $1^{\rm st}$ order jetlets.}
+        \caption{(\emph{top}) Quiver plots of 2D vector fields induced by first order jetlets. 
+        (\emph{bottom})   Stream-line plots of 3D vector fields induced by first order jetlets.}
         \label{fig:zoo}
   \end{figure}
 
-  \subsection{Higher-order particles}
+  \subsection{Higher order particles}
   \label{sec:higher_order}
-  In this section we will introduce a hierarchy of particle solutions whose $k$-th level includes the solutions at the $(k-1)^{\rm th}$ level.
-  The $0^{\rm th}$-level in the hierarchy are the standard particle-like solutions,
-  while the $1^{\rm st}$ level describes the particles with internal $\SL(n)$ variables
+  In this section we will introduce a hierarchy of particle solutions whose $k$-th level includes the solutions at the $(k-1)$-th level.
+  The zeroth level in the hierarchy are the standard particle-like solutions,
+  while the first level describes the particles with internal $\SL(n)$ variables
   discussed in the previous section.
   The particles in the $k$-th level carry the coefficients of
   $k$-th order Taylor expansions of diffeomorphisms,
@@ -931,16 +931,16 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   Therefore, we call these particles \emph{$k$-jetlets}.
 
   Let $\varphi \in \SDiff(\R^n)$.
-  The zeroth-order Taylor expansion of $\varphi$ about $0$
+  The zeroth order Taylor expansion of $\varphi$ about $0$
   is $\varphi(0)$, and the collection of such Taylor
   expansions is all of $\R^n$.
-  The $1^{\rm st}$-order Taylor expansion of $\varphi$ about $0$ is
+  The first order Taylor expansion of $\varphi$ about $0$ is
   \begin{align*}
     \varphi^i( x) = \varphi^i(0) + \partial_j \varphi^i(0) x^j + o( \|x\|).
   \end{align*}
   The tuple of coefficients $(\varphi(0) , D\varphi(0) ) \in \R^n \times \SL(n)$ is
-  called the $1^{\rm st}$-order jet of $\varphi$ evaluated at $0$.
-  Going further, the second-order Taylor expansion of $\varphi$ about $0$
+  called the first order jet of $\varphi$ evaluated at $0$.
+  Going further, the second order Taylor expansion of $\varphi$ about $0$
   is
   \begin{align*}
     \varphi^i(x) = \varphi^i(0) + \partial_j \varphi^i(0) x^j + 
@@ -949,7 +949,7 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   We see that $D^2\varphi(0)$ is a tensor of rank $(1,2)$, which is
   symmetric in the lower indices.
   We call the space of such tensors $S^1_2$,
-  and we see that the space of second-order jets is a submanifold $Q^{(2)}_1 \subset \R^n \times \SL(n) \times S^1_2$.
+  and we see that the space of second order jets is a submanifold $Q^{(2)}_1 \subset \R^n \times \SL(n) \times S^1_2$.
   Finally, for $k \geq 2$ the space of $k$-th order jets is a submanifold
   \begin{align*}
     Q_1^{(k)} \subset \R^n \times \SL(n) \times S^1_2 \times S^1_3 \times \cdots\times S^1_k
@@ -975,7 +975,7 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   A typical coordinate on $Q^{(k)}_N$ will therefore look
   like $q\indices{_a^i_\beta}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
   and $\beta$ is a multi-index on $\R^n$.
-  This coordinate is used to model the partial derivative of the $i^{\rm th}$ coordinate
+  This coordinate is used to model the partial derivative of the $i$-th coordinate
   of a diffeomorphism at some point $z_a \in \R^n$, i.e.\ $\partial_\beta \varphi^i(z_a)$.
   % This is the primary motivation for this notational convention.
   For the statement of the next proposition, recall that the definition  of $\iso(z)$ was given earlier in \eqref{isotropy_group}. Note also that we write $\Jet^k_x: \SDiff(\R^n) \to Q_1^{(k)}$ for
