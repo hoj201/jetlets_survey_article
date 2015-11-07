@@ -20,6 +20,7 @@
 \newcommand{\so}{\ensuremath{\mathfrak{so}}}
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
 \newcommand{\dx}{\ensuremath{\textrm{d}x}}
+\newcommand{\dz}{\ensuremath{\textrm{d}z}}
 \def\contract{\makebox[1.2em][c]{\mbox{\rule{.6em}
 {.01truein}\rule{.01truein}{.6em}}}}
 
@@ -866,7 +867,7 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   \end{align*}
   In terms of the Dirac delta functional we may write this as the measure-valued momentum map
   \begin{align*}
-    J_R^{(1)}(q,p) = - p\indices{_a_i^j} q\indices{_a^i_k} \dx^k \otimes \partial_j \delta_{z_a}
+    J_R^{(1)}(q,p) = - p\indices{_a_i^j} q\indices{_a^i_k} \dz^k \otimes \partial_j \delta_{z_a}
   \end{align*}
   \begin{prop}
     The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
@@ -1119,7 +1120,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 				}
 			}
 			p\indices{_a_i^\alpha} q\indices{_a^i_{[j_1 \cdots j_\ell]}}
-      \sum_{m=1}^\ell (-1)^{|\gamma_m|}\left( \prod_{n \neq m}  \delta_{\gamma_n}^{[b_n]} \right) \otimes \partial_{\gamma_m}\delta_{z_a}
+      \sum_{m=1}^\ell (-1)^{|\gamma_m|}\left( \prod_{n \neq m}  \delta_{\gamma_n}^{[b_n]} \right) \dz^{j_m} \otimes \partial_{\gamma_m}\delta_{z_a}.
   \end{equation*}
   The action of $\SDiff(\R^n)$ is transitive on $Q_N^{(k)}$, and
   therefore transitive on the level sets of the momentum map $J_R^{(1)}$.
