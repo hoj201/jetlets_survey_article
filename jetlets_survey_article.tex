@@ -1094,7 +1094,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
   where $w \in \mathfrak{X}_{\rm div}(\R^n)$ is such that $w(z) = 0$ (this describes the Lie algebra of $\iso(z)$),
   and $\delta_\alpha^\beta$ is the natural generalization of the Kronecker-delta symbol to multi-indices.
   We can write these momentum maps explicitly, using the Dirac delta distribution, as
-  \begin{multline*}
+  \begin{multline}\label{eq:JLk}
     J_L^{(k)}(q,p) =
     \sum_{a=1}^N \Bigg(
     p_{am} \dx^m \otimes \delta_{q^{(0)}_a} \\
@@ -1108,9 +1108,9 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
       q\indices{_a^{j_1}_{\gamma_1}} \cdots q\indices{_a^{j_\ell}_{\gamma_\ell}}
       \partial_{j_1 \cdots j_\ell} \delta_{q^{(0)}_a}
       \Bigg)
-  \end{multline*}
+  \end{multline}
   and
-  \begin{equation*}
+  \begin{equation}\label{eq:JRk}
     J_R^{(k)}(q,p) = \sum_{a=1}^{N}
     \sum_{\substack{ |\alpha| \leq k \\ 1 \leq \ell \leq |\alpha| }} \;
 		\sum_{
@@ -1121,9 +1121,56 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 			}
 			p\indices{_a_i^\alpha} q\indices{_a^i_{[j_1 \cdots j_\ell]}}
       \sum_{m=1}^\ell (-1)^{|\gamma_m|}\left( \prod_{n \neq m}  \delta_{\gamma_n}^{[b_n]} \right) \dz^{j_m} \otimes \partial_{\gamma_m}\delta_{z_a}.
+  \end{equation}
+
+  To see that these are dual pairs, we first check the conditions of
+  Lemma~\ref{lem:transitive-action}. Note that $\SDiff(\R^n)$ acts
+  transitively on $Q^{(k)}$. Although $\SDiff(\R^n)$ does not act
+  freely, its action on $Q^{(k)}$ factors through the jet groupoid,
+  which does act freely on $Q^{(k)}$. Since also the cotangent-lifted
+  action of $\SDiff(\R^n)$ is uniquely determined by its jet at the
+  base point $q \in Q^{(k)}$, the proof of
+  lemma~\ref{lem:transitive-action} goes through. Secondly, the
+  cotangent-lifted action preserves level sets of $J_R^{(k)}$. Let
+  $\varphi \in \SDiff(\R^n)$ and $(q,p) \in T^* Q^{(k)}$, then we have
+  \begin{align*}
+    \langle J_R^{(k)}\big(\varphi\cdot(q,p)\big), w \rangle
+    &= \langle p \cdot T_{\varphi \cdot q} \Jet^k(\varphi^{-1}) ,
+               T_z(\Jet^k(\varphi) \circ q) \cdot w \rangle \\
+    &= \langle p , T_{\varphi \cdot q} \Jet^k(\varphi^{-1}) \cdot
+               T_q \Jet^k(\varphi) \cdot T_z q \cdot w \rangle \\
+    &= \langle p , T_q \big(\Jet^k(\varphi^{-1}) \circ \Jet^k(\varphi)\big) \cdot
+                   T_z q \cdot w \rangle \\
+    &= \langle p , T_q \big(\Jet^k(\textrm{id}) \circ \Jet^k(\varphi)\big) \cdot
+                   T_z q \cdot w \rangle \\
+    &= \langle p , T_z q \cdot w \rangle
+     = \langle J_R^{(k)}(q,p), w \rangle.
+  \end{align*}
+  Finally, $(J_R^{(k)})^{-1}(m)$ is a section of $T^* Q^{(k)}$ when
+  non-empty. Let $(q,p) \in \big(J_R^{(k)}\big)^{-1}(m)$ and let
+  $\varphi \in \SDiff(\R^n)$ such that $q = \Jet^{k}_z(\varphi)$. Then
+  $\varphi^{-1} \cdot (q,p) = (\Jet^k_z(\rm{id}),\pi)$ for some $\pi$.
+  Since the identity jet $\bar{q} := \Jet^k_z(\rm{id})$ satisfies
+  $\bar{q}\indices{_a^i_j} = \delta^i_j$ and
+  $\bar{q}\indices{_a^i_{[j_1 \cdots j_\ell]}} = 0$ for $l > 1$, we
+  find that~\eqref{eq:JRk} reduces to
+  \begin{equation*}
+    J_R^{(k)}(\bar{q},\pi) = \sum_{a=1}^N
+    \sum_{|\alpha| \leq k}
+			\pi\indices{_a_i^\alpha} (-1)^{|\alpha|} \dz^i \otimes \partial_\alpha \delta_{z_a}.
   \end{equation*}
-  The action of $\SDiff(\R^n)$ is transitive on $Q_N^{(k)}$, and
-  therefore transitive on the level sets of the momentum map $J_R^{(1)}$.
+  Since the points $z_a$ are distinct and
+  $\pi\indices{_a_i^j} \in \mathfrak{sl}(n)^*$, this mapping
+  $J_R^{(k)}(\bar{q},\,\cdot\,)$ is clearly injective into
+  $\mathfrak{X}_{\rm div}(\R^n)^*$. By invariance of $J_R^{(k)}$ under
+  the action of $\SDiff(\R^n)$ it follows that
+  $\pi \in T^*_{\bar{q}} Q^{(k)}$ is the unique element such that
+  $J_R^{(k)}(\bar{q},\pi) = m$, and since $\SDiff(\R^n)$ acts by
+  fiber-preserving diffeomorphisms on $T^* Q^{(k)}$, it follows that
+  $(J_R^{(k)})^{-1}(m)$ is a section of $T^* Q^{(k)}$.
+
+  Thus Lemma~\ref{lem:transitive-action} implies that $\SDiff(\R^n)$
+  acts transitively on the level sets of the momentum map $J_R^{(k)}$.
   By Theorem~\ref{thm:commuting_actions}, $J_L^{(k)}$ and $J_R^{(k)}$ form a dual pair.
   This gives us the final result on jetlet parametrized solutions.
   The proof is identical to that given in Proposition~\ref{prop:0-solutions}.
@@ -2060,6 +2107,30 @@ sloppiness is usually harmless.
   % before moving to the more sophisticated case
   % of fluids.
 
+\begin{lem}\label{lem:transitive-action}
+  Let $G_1, G_2$ act on the manifold $Q$. Let $\rho_1^*$ denote the
+  cotangent-lifted action associated to $G_1$ and
+  $J_2\colon T^*Q \to \mathfrak{g}_2^*$ the momentum map defined by
+  the cotangent-lifted action of $G_2$. Assume that the following
+  hold:
+  \begin{enumerate}
+  \item $G_1$ acts transitively and freely on $Q$;
+  \item the cotangent-lifted action $\rho_1^*$ preserves level sets of $J_2$;
+  \item for any $\mu \in \mathfrak{g}_2^*$ such that $J_2^{-1}(\mu)$
+    is non-empty, $J_2^{-1}(\mu)$ is a section of $T^* Q$.
+  \end{enumerate}
+  Then the action $\rho_1^*$ is transitive on level sets of $J_2$.
+\end{lem}
+
+\begin{proof}
+  Let $(q,p), (q',p') \in J_2^{-1}(\mu)$ where $(q,p) \neq (q',p')$.
+  Since $J_2^{-1}(\mu)$ is a section of $T^* Q$, this implies that
+  $q \neq q'$. Now $G_1$ acts transitively and freely on $Q$, so there
+  exists a unique $g \in G_1$ such that $q' = g \cdot q$. Since
+  $\rho_1^*$ preserves $J_2^{-1}(\mu)$, we find that
+  $g \cdot (q,p) \in J_2^{-1}(\mu) \cap T_{q'}^* Q$, which implies
+  that $g \cdot (q,p) = (q',p')$ must hold.
+\end{proof}
 
 
 \section{Multi-indices}
