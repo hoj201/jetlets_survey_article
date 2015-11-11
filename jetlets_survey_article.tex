@@ -1127,7 +1127,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
   Lemma~\ref{lem:transitive-action}. Note that $\SDiff(\R^n)$ acts
   transitively on $Q^{(k)}_N$. Although $\SDiff(\R^n)$ does not act
   freely, its action on $Q^{(k)}_N$ factors through the jet groupoid,
-  which does act freely on $Q^{(k)}_N$. Since also the cotangent-lifted
+  which does act freely on $Q^{(k)}_N$.\todo{We might be able to drop this sentence.  See the todonote under~\ref{lem:transitive-action}} Since also the cotangent-lifted
   action of $\SDiff(\R^n)$ is uniquely determined by its jet at the
   base point $q \in Q^{(k)}_N$, the proof of
   lemma~\ref{lem:transitive-action} goes through. Secondly, the
@@ -1153,8 +1153,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
     \sum_{|\alpha| \leq k}
 			\pi\indices{_a_i^\alpha} (-1)^{|\alpha|} \dz^i \otimes \partial_\alpha \delta_{z_a}.
   \end{equation*}
-  Since the points $z_a$ are distinct and
-  $\pi\indices{_a_i^j} \in \mathfrak{sl}(n)^*$, this mapping
+  Since the points $z_a$ are distinct this mapping
   $J_R^{(k)}(\bar{q},\,\cdot\,)$ is clearly injective into
   $\mathfrak{X}_{\rm div}(\R^n)^*$. By invariance of $J_R^{(k)}$ under
   the action of $\SDiff(\R^n)$ it follows that
@@ -2125,6 +2124,10 @@ sloppiness is usually harmless.
   $g \cdot (q,p) \in J_2^{-1}(\mu) \cap T_{q'}^* Q$, which implies
   that $g \cdot (q,p) = (q',p')$ must hold.
 \end{proof}
+
+\todo[inline]{I think we can drop the requirement that $G_{1}$ act freely.
+It doesn't appear necessary that the element $g$ in the proof be unique.
+This would help in the main text where $G_{1} = \SDiff$, which does not act freely on $T^* Q^{(k)}$}
 
 
 \section{Multi-indices}
