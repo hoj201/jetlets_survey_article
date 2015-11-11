@@ -824,10 +824,10 @@ In this section we revisit the first order particle-like solutions of \cite{Cott
   \end{proof}
   As before, this action can be lifted to the cotangent bundle $T^*(\R^n \times \SL(n))$.  Specifically, 
   the action of the diffeomorphism $\varphi^{-1}$ is given by
-  \begin{align*}
-    & (T\varphi)^* \cdot ( q^{(0)} , q^{(1)}  , p^{(0)} , p^{(1)} ) \\
-    &\quad = \big( \varphi^{-1}(q^{(0)})  , [D\varphi|_{q^{(0)}}]^{-1} \cdot q^{(1)} , D\varphi|_{q^{(0)}}^* \cdot p^{(0)} , D\varphi|_{q^{(0)}}^* \cdot p^{(1)} \big).
-  \end{align*}
+  \begin{equation}\label{eq:SDiff_cotangent_action_Q1}
+    (T\varphi)^* \cdot ( q^{(0)} , q^{(1)}  , p^{(0)} , p^{(1)} ) \\
+    = \big( \varphi^{-1}(q^{(0)})  , [D\varphi|_{q^{(0)}}]^{-1} \cdot q^{(1)} , D\varphi|_{q^{(0)}}^* \cdot p^{(0)} , D\varphi|_{q^{(0)}}^* \cdot p^{(1)} \big).
+  \end{equation}
   Also as before, we can generalize this construction to the space of
   $N > 1$ particles by considering the space
   \begin{align*}
@@ -867,18 +867,50 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
     \langle J_R^{(1)}(q,p) , u \rangle = p\indices{_a_i^j} q\indices{_a^i_k} \partial_j u^k(z_a)
   \end{align*}
   In terms of the Dirac delta functional we may write this as the measure-valued momentum map
-  \begin{align*}
+  \begin{equation}\label{eq:JR1}
     J_R^{(1)}(q,p) = - p\indices{_a_i^j} q\indices{_a^i_k} \dz^k \otimes \partial_j \delta_{z_a}
-  \end{align*}
-  \begin{prop}
+  \end{equation}
+  \begin{prop}\label{prop:J1-dual-pair}
     The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
   \end{prop}
   \begin{proof}
-    The actions of $\iso(z)$ and $\SDiff(\R^n)$ on $Q_N^{(1)}$
-    clearly commute
-    and lift to symplectic actions on $T^*Q_N^{(1)}$.
-    Moreover, the action of $\SDiff(\R^n)$ is transitive on the level sets of $J_R^{(1)}$, since it is transitive overall.
-    By Theorem~\ref{thm:commuting_actions}, $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
+  We first check the conditions of Lemma~\ref{lem:transitive-action}.
+  Note that $\SDiff(\R^n)$ acts transitively on $Q^{(1)}_N$ since it
+  acts transitively on representatives $\psi \in \SDiff(\R^n)$ of
+  elements $q$ (i.e.\ $q^{(0)}_a = \psi(z_a)$ and
+  $q^{(1)}_a = D\psi|_{z_a}$, or, $q = \Jet^1_z(\psi)$). Secondly, the
+  cotangent-lifted action preserves level sets of $J_R^{(k)}$.
+  From~\eqref{eq:SDiff_cotangent_action_Q1} we see that $\varphi \in
+  \SDiff(\R^n)$ acts on the first level of $(q,p) \in T^* Q^{(1)}_N$ as
+  \begin{align*}
+    (\varphi\cdot q)\indices{_a^i_j} &= (D\varphi|_{q^{(0)}_a})\indices{^i_k}\,q\indices{_a^k_j}, \\
+    (\varphi\cdot p)\indices{_a_i^j} &= p\indices{_a_k^j}(D\varphi^{-1}|_{\varphi\cdot q^{(0)}_a})\indices{^k_i}.
+  \end{align*}
+  The explicit calculation
+  \begin{align*}
+    J_R^{(1)}(\varphi\cdot(q,p))
+    &= - p\indices{_a_l^j} (D\varphi^{-1}|_{\varphi\cdot q^{(0)}_a})\indices{^l_i} \,
+         (D\varphi|_{q^{(0)}_a})\indices{^i_m}\, q\indices{_a^m_k}
+         \dz^k \otimes \partial_j \delta_{z_a} \\
+    &= - p\indices{_a_l^j} \, \delta^l_m \, q\indices{_a^m_k}
+         \dz^k \otimes \partial_j \delta_{z_a} = J_R^{(1)}(q,p)
+  \end{align*}
+  shows that~\eqref{eq:JR1} is preserved under the cotangent-lifted
+  action of $\SDiff(\R^n)$. Finally, $(J_R^{(1)})^{-1}(m)$ is a
+  section of $T^* Q^{(1)}_N$ when non-empty. Let
+  $(q,p) \in \big(J_R^{(1)}\big)^{-1}(m)$. Note that for fixed $q$,
+  since $q_a^{(1)} \in \SL(n)$ is a linear isomorphism, the map
+  $p \mapsto J_R^{(1)}(q,p)$ is an injection and hence
+  $(J_R^{(1)})^{-1}(m) \cap T^*_q Q$ contains a unique element. Since
+  $\SDiff(\R^n)$ acts transitively on the base $Q^{(1)}_N$ and acts by
+  fiber-preserving diffeomorphisms on $T^* Q^{(1)}_N$, it follows that
+  $(J_R^{(1)})^{-1}(m)$ is a section of $T^* Q^{(1)}_N$.
+
+  Thus Lemma~\ref{lem:transitive-action} implies that $\SDiff(\R^n)$
+  acts transitively on the level sets of the momentum map $J_R^{(1)}$.
+  The actions of $\iso(z)$ and $\SDiff(\R^n)$ clearly commute so
+  Theorem~\ref{thm:commuting_actions} implies that $J_L^{(1)}$ and
+  $J_R^{(1)}$ form a dual pair.
   \end{proof}
 
   As before, the quantity $dh( J_L^{(1)}(q,p))$ is a legitimate vector field
