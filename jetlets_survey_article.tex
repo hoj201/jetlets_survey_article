@@ -1156,13 +1156,15 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
       \sum_{m=1}^\ell (-1)^{|\gamma_m|}\left( \prod_{n \neq m}  \delta_{\gamma_n}^{[b_n]} \right) \dz^{j_m} \otimes \partial_{\gamma_m}\delta_{z_a}.
   \end{equation}
 
-  To see that these are dual pairs, we first check the conditions of
-  Lemma~\ref{lem:transitive-action}. Note that $\SDiff(\R^n)$ acts
+  To see that these are dual pairs, we simply generalize the proof of
+  Proposition~\ref{prop:J1-dual-pair}. We first check the conditions
+  of Lemma~\ref{lem:transitive-action}. Note that $\SDiff(\R^n)$ acts
   transitively on $Q^{(k)}_N$ since it acts transitively on
   representatives $\psi \in \SDiff(\R^n)$ of elements
-  $q = \Jet^k_z(\psi) \in Q^{(k)}_N$. Secondly, the
-  cotangent-lifted action preserves level sets of $J_R^{(k)}$. Let
-  $\varphi \in \SDiff(\R^n)$ and $(q,p) \in T^* Q^{(k)}_N$, then we have
+  $q = \Jet^k_z(\psi) \in Q^{(k)}_N$. Secondly, the cotangent-lifted
+  action preserves level sets of $J_R^{(k)}$. Let
+  $\varphi \in \SDiff(\R^n)$ and $(q,p) \in T^* Q^{(k)}_N$, then we
+  have
   \begin{align*}
     \langle J_R^{(k)}\big(\varphi\cdot(q,p)\big), w \rangle
     &= \langle T^{*} \varphi \cdot (q,p) , ( \varphi^{-1} \cdot q ) \cdot w \rangle \\
@@ -1193,10 +1195,10 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
   $(J_R^{(k)})^{-1}(m)$ is a section of $T^* Q^{(k)}_N$.
 
   Thus Lemma~\ref{lem:transitive-action} implies that $\SDiff(\R^n)$
-  acts transitively on the level sets of the momentum map $J_R^{(k)}$.
-  By Theorem~\ref{thm:commuting_actions}, $J_L^{(k)}$ and $J_R^{(k)}$ form a dual pair.
-  This gives us the final result on jetlet parametrized solutions.
-  The proof is identical to that given in Proposition~\ref{prop:0-solutions}.
+  acts transitively on the level sets of the momentum map $J_R^{(k)}$
+  and by Theorem~\ref{thm:commuting_actions}, $J_L^{(k)}$ and
+  $J_R^{(k)}$ form a dual pair. This gives us the final result on
+  jetlet parametrized solutions.
   \begin{prop}\label{prop:k-solutions}
     Let $p \ge \frac{n}{2} + k + 1$ and $\sigma > 0$.
     Then $H^{(k)} = h_{p,\sigma} \circ J_L^{(k)}$ is $C^1$.
