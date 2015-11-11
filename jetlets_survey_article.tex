@@ -1125,12 +1125,9 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 
   To see that these are dual pairs, we first check the conditions of
   Lemma~\ref{lem:transitive-action}. Note that $\SDiff(\R^n)$ acts
-  transitively on $Q^{(k)}_N$. Although $\SDiff(\R^n)$ does not act
-  freely, its action on $Q^{(k)}_N$ factors through the jet groupoid,
-  which does act freely on $Q^{(k)}_N$.\todo{We might be able to drop this sentence.  See the todonote under~\ref{lem:transitive-action}} Since also the cotangent-lifted
-  action of $\SDiff(\R^n)$ is uniquely determined by its jet at the
-  base point $q \in Q^{(k)}_N$, the proof of
-  lemma~\ref{lem:transitive-action} goes through. Secondly, the
+  transitively on $Q^{(k)}_N$ since it acts transitively on
+  representatives $\psi \in \SDiff(\R^n)$ of elements
+  $q = \Jet^k_z(\psi) \in Q^{(k)}_N$. Secondly, the
   cotangent-lifted action preserves level sets of $J_R^{(k)}$. Let
   $\varphi \in \SDiff(\R^n)$ and $(q,p) \in T^* Q^{(k)}_N$, then we have
   \begin{align*}
@@ -2020,10 +2017,10 @@ sloppiness is usually harmless.
       = 0 \quad \forall t.
     \end{equation*}
   \end{proof}
-  
-  The next theorem will be used later for the purpose of identifying
-  dual pairs.
-  
+
+  The next theorem and lemma will be used later for the purpose of
+  identifying dual pairs.
+
   \begin{thm}[Example 2.2 of \cite{GayBalmazVizman2012}] \label{thm:commuting_actions}
     Denote by $\omega$ the canonical symplectic form on the cotangent bundle $T^*Q$ of some manifold $Q$.
     Let $G_1,G_2$ act on $Q$
@@ -2107,7 +2104,7 @@ sloppiness is usually harmless.
   the cotangent-lifted action of $G_2$. Assume that the following
   hold:
   \begin{enumerate}
-  \item $G_1$ acts transitively and freely on $Q$;
+  \item $G_1$ acts transitively on $Q$;
   \item the cotangent-lifted action $\rho_1^*$ preserves level sets of $J_2$;
   \item for any $\mu \in \mathfrak{g}_2^*$ such that $J_2^{-1}(\mu)$
     is non-empty, $J_2^{-1}(\mu)$ is a section of $T^* Q$.
@@ -2118,16 +2115,13 @@ sloppiness is usually harmless.
 \begin{proof}
   Let $(q,p), (q',p') \in J_2^{-1}(\mu)$ where $(q,p) \neq (q',p')$.
   Since $J_2^{-1}(\mu)$ is a section of $T^* Q$, this implies that
-  $q \neq q'$. Now $G_1$ acts transitively and freely on $Q$, so there
-  exists a unique $g \in G_1$ such that $q' = g \cdot q$. Since
-  $\rho_1^*$ preserves $J_2^{-1}(\mu)$, we find that
-  $g \cdot (q,p) \in J_2^{-1}(\mu) \cap T_{q'}^* Q$, which implies
-  that $g \cdot (q,p) = (q',p')$ must hold.
+  $q \neq q'$. Now $G_1$ acts transitively on $Q$, so there exists a
+  $g \in G_1$ such that $q' = g \cdot q$. Since $\rho_1^*$ preserves
+  $J_2^{-1}(\mu)$, we find that
+  $g \cdot (q,p) \in J_2^{-1}(\mu) \cap T_{q'}^* Q$. Since
+  $J_2^{-1}(\mu)$ is a section, this implies that
+  $g \cdot (q,p) = (q',p')$ must hold.
 \end{proof}
-
-\todo[inline]{I think we can drop the requirement that $G_{1}$ act freely.
-It doesn't appear necessary that the element $g$ in the proof be unique.
-This would help in the main text where $G_{1} = \SDiff$, which does not act freely on $T^* Q^{(k)}$}
 
 
 \section{Multi-indices}
