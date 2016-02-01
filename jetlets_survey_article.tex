@@ -1112,6 +1112,9 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 			\right)
   \end{equation*}
   for arbitrary divergence free vector fields $u \in \mathfrak{X}_{\rm div}(\R^n)$.
+  Equivalently, we may define $J_L^(k)$
+  as the unique map such that $\langle J_L^(k)(q,p) , u \rangle = \langle (q,p) , \Jet_z^{(k)}( u \circ \varphi) \rangle$ for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$.
+  
   The right action of $\iso(z)$ yields the momentum map $J_R^{(k)}$ defined implicitly by the relation
   \begin{equation*}
     \langle J_R^{(k)}(q,p) , w \rangle = \sum_{a=1}^N
@@ -1127,7 +1130,11 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
   \end{equation*}
   where $w \in \mathfrak{X}_{\rm div}(\R^n)$ is such that $w(z) = 0$ (this describes the Lie algebra of $\iso(z)$),
   and $\delta_\alpha^\beta$ is the natural generalization of the Kronecker-delta symbol to multi-indices.
-  We can write these momentum maps explicitly, using the Dirac delta distribution, as
+  Equivalently, we may define $J_R^(k)$
+  as the unique map such that $\langle J_R^(k)(q,p) , w \rangle = \langle (q,p) , \Jet_z^{(k)}( T\varphi \circ w) \rangle$ for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$.
+  
+  
+  We can write $J_L^{(k)}$ and $J_R^{(k)}$ explicitly, using the Dirac delta distribution, as
   \begin{multline}\label{eq:JLk}
     J_L^{(k)}(q,p) =
     \sum_{a=1}^N \Bigg(
@@ -1323,28 +1330,28 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
 }
 \end{displaymath}
 
-  Namely, for the left-hand part of the diagram recall that we have shown in the previous section that a jetlet solution has a velocity vector in $T \SDiff(\R^n)$ of the form
+For the left side of the diagram, note that the statement $\pi(p_\varphi) = i(p_q)$ for some $p_\varphi \in T^* \SDiff(\mathbb{R}^n)$ and $p_q \in T^*Q_N^{(k)}$ is equivalent to the statement that $\langle p_\varphi , w \circ \varphi \rangle = \langle p_q , \Jet^{(k)}_z ( w \circ \varphi) \rangle$.
+From the definitions of $J_\text{spatial}$ and $J_L^{(k)}$ we find 
   \begin{equation*}
-    v_{\varphi} = (K * J_L^{(k)}(p_q)) \circ \varphi
+  \left< J_\text{spatial}(p_\varphi), w\right> = \left< p_\varphi, w \circ \varphi \right> = \langle p_q , \Jet^{(k)}_z ( w \circ \varphi) \rangle = \left< J_L^{(k)}(p_q), w \right>
   \end{equation*}
-  for some $p_q \in T^*_q Q^{(k)}_N$, where $q = \Jet^k_z(\varphi)$. From this it follows that the corresponding Legendre momentum $p_\varphi$ satisfies, for all $ w \in \mathfrak{X}_{\rm div}(\R^n)$,
-  \begin{equation*}
-  \left< J_\text{spatial}(p_\varphi), w\right> = \left< p_\varphi, w \circ \varphi \right> = \left< J_L^{(k)}(p_q), w \right>,
-  \end{equation*}
-  which shows commutativity of the left-hand part of the diagram. As for the right-hand part, we again use the special form of $p_\varphi$ to conclude that, for all $ w \in \mathfrak{iso}(z) \subset \mathfrak{X}_{\rm div}(\R^n)$,
- \begin{equation}
- 	\left<J_\text{conv}(p_\varphi), w\right> = \left<p_\varphi, T\varphi  (w) \right> = \left<J_L^{(k)}(p_q),  T\varphi (w \circ \varphi^{-1}) \right>. \label{compare_1}
- \end{equation}
- On the other hand, if we write $\phi_\varphi: Q^{(k)}_N \to Q^{(k)}_N$ for the left action $\phi_\varphi (q) = \varphi \cdot q$, we have 
- \begin{equation*}
-   \left<J_R^{(k)}(p_q), w\right> = \left< p_q, T_{\phi_\varphi} (w_{Q^{(k)}_N} (q_0))   \right> =  \left<p_q, (T\varphi (w \circ \varphi^{-1}) )_{Q^{(k)}_N} (q) \right>,
- \end{equation*}
- where we denoted the infinitesimal left action of $w$ on $Q^{(k)}_N$ by $w_{Q^{(k)}_N}$. The velocity corresponding (via the inverse of the Legendre transform) to $p_q$ can be written as $ T\Jet_z^k( (K * J_L^{(k)}(p_q)) \circ \varphi)$,
- and therefore one concludes that 
- \begin{equation}
- 	\left<J_R^{(k)}(p_q), w\right> = \left< J_L^{(k)}(p_q), T \varphi (w \circ \varphi^{-1}) \right>. \label{compare_2}
- \end{equation}
- This shows the commutativity of the right-hand part of the  diagram above (compare \eqref{compare_1} and \eqref{compare_2}).
+  when $\pi(p_\varphi) = i(p_q)$.
+  This verifies the left half of the diagram. The right hand side can be verified in the same manner.
+  
+% As for the right-hand part, we again use the special form of $p_\varphi$ to conclude that, for all $ w \in \mathfrak{iso}(z) \subset \mathfrak{X}_{\rm div}(\R^n)$,
+% \begin{equation}
+% 	\left<J_\text{conv}(p_\varphi), w\right> = \left<p_\varphi, T\varphi  (w) \right> = \left<J_L^{(k)}(p_q),  T\varphi (w \circ \varphi^{-1}) \right>. \label{compare_1}
+% \end{equation}
+% On the other hand, if we write $\phi_\varphi: Q^{(k)}_N \to Q^{(k)}_N$ for the left action $\phi_\varphi (q) = \varphi \cdot q$, we have 
+% \begin{equation*}
+%   \left<J_R^{(k)}(p_q), w\right> = \left< p_q, T_{\phi_\varphi} (w_{Q^{(k)}_N} (q_0))   \right> =  \left<p_q, (T\varphi (w \circ \varphi^{-1}) )_{Q^{(k)}_N} (q) \right>,
+% \end{equation*}
+% where we denoted the infinitesimal left action of $w$ on $Q^{(k)}_N$ by $w_{Q^{(k)}_N}$. The velocity corresponding (via the inverse of the Legendre transform) to $p_q$ can be written as $ T\Jet_z^k( (K * J_L^{(k)}(p_q)) \circ \varphi)$,
+% and therefore one concludes that 
+% \begin{equation}
+% 	\left<J_R^{(k)}(p_q), w\right> = \left< J_L^{(k)}(p_q), T \varphi (w \circ \varphi^{-1}) \right>. \label{compare_2}
+% \end{equation}
+% This shows the commutativity of the right-hand part of the  diagram above (compare \eqref{compare_1} and \eqref{compare_2}).
   
   Again, the right legs of both dual pairs yield the conserved quantities.
 From the diagram it is clear that the conservation of $J_R^{(k)}$ exhibited in
@@ -1355,7 +1362,7 @@ conservation of circulation, we see that conservation of $J_R^{(k)}$ in the jetl
 of the conservation of circulation.
 In other words, our particle models contain a model of Kelvin's circulation theorem within them (cf.~\cite[Theorem 5.5]{JacobsRatiuDesbrun2013}).
 
-As a side remark we mention that \eqref{compare_2} offers an alternative route to derive one momentum map once one has found the other. In contrast,  in the previous section we computed both $J_L^{(k)}$ and $J_R^{(k)}$ using the coordinate expressions, presented in the proof of Proposition~\ref{HL_action_prop}, for the respective actions on $Q^{(k)}_N$.
+%As a side remark we mention that \eqref{compare_2} offers an alternative route to derive one momentum map once one has found the other. In contrast,  in the previous section we computed both $J_L^{(k)}$ and $J_R^{(k)}$ using the coordinate expressions, presented in the proof of Proposition~\ref{HL_action_prop}, for the respective actions on $Q^{(k)}_N$.
 
 
 \section{Particle mergers}
