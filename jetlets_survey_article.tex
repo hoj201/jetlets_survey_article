@@ -850,8 +850,8 @@ In this section we revisit the first order particle-like solutions of \cite{Cott
   In terms of the Dirac-delta functional, we can write $J_L^{(1)}$ as the measure-valued momentum map
   \begin{align*}
     J_L^{(1)}(q, p)
-    = p\indices{_a_i} \dx^i \otimes \delta_{q_a}
-     -p\indices{_a_i^j} q\indices{_a^k_j} \dx^i \otimes \partial_k \delta_{q_a}
+    = p\indices{_a_i} \dx^i \otimes \delta_{q_a^{(0)}}
+     -p\indices{_a_i^j} q\indices{_a^k_j} \dx^i \otimes \partial_k \delta_{q_a^{(0)}}
   \end{align*}
   Next, we construct a dual momentum map associated with a right action on $Q_N^{(1)}$. Analogous to the previous section  it is useful at this stage to write elements of $Q_N^{(1)}$ in the form $ \varphi \cdot z = (\varphi (z_1, {\mathbf{1}}), \ldots, \varphi \cdot (z_N , \mathbf{1}))$, $\varphi \in \SDiff(\mathbb{R}^n)$, for some designated element $ z=( (z_1, \mathbf{1}), \ldots, (z_N, \mathbf{1}))$. Clearly, every element of $Q_N^{(1)}$ can be written in this form for some  $\varphi \in \SDiff(\mathbb{R}^n)$. Indeed, with this convention the specification of an element in $Q_N^{(1)}$ fixes the first order Taylor expansion of $\varphi$ at the locations $z_a$, $a = 1, \ldots, N$. With this in mind, let us recall the isotropy group $\iso(z)$ defined earlier in \eqref{isotropy_group}, which leaves these locations invariant, and define a right action on  $Q_N^{(1)}$ given by 
 \begin{align}
@@ -1263,7 +1263,7 @@ In the case of Euler's fluid equations, the equivalence between the above conser
 and Kelvin's circulation theorem is demonstrated by a heuristic
 argument~\cite[Ch~1, Thm~5.5]{ArnoldKhesin1998}, which goes as follows. 
 Consider a given closed curve $\gamma_0\colon S^1 \to \R^n$ and a family
-of vector fields $w_\varepsilon$ such that $w_\varepsilon(\gamma(s)) = \gamma'(s)$
+of vector fields $w_\varepsilon$ such that $w_\varepsilon(\gamma_0(s)) = \gamma'_0(s)$
 and such that the (weak in $L^2$) limit $w = \lim_{\varepsilon \to 0} w_\varepsilon$ is the generalized function
 \begin{equation*}
   w(x) =  \gamma'_0(s) \otimes \delta(x-\gamma_0(s))
@@ -1278,7 +1278,7 @@ $p_\varphi = \langle \dot{\varphi} , \,\cdot\, \rangle_{L^2}$, we find
   &= \oint \langle u(\gamma(s,t)) , \partial_s \gamma(s,t) \rangle_{\mathbb{R}^n} \,\textrm{d} s,
 \end{align*}
 where $u = \dot{\varphi}\circ\varphi^{-1}$ is the usual Euler
-representation of the fluid flow. 
+representation of the fluid flow and $\gamma(s,t) := \varphi_t(\gamma_0(s))$. 
 Therefore, conservation of $J_{\rm conv}$ leads to conservation of circulation.
 
 A more rigorous correspondence is developed in \cite{HolmMarsdenRatiu1998}.
@@ -1302,8 +1302,8 @@ In light of this discussion, it is natural to consider \eqref{eq:abstract-circul
 $\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid \Jet^{k}_z( \psi) = \Jet^k_z (\rm{id}) \}$, where we wrote $\rm{id}$ for the identity mapping and $z$ is shorthand for $z_1, \ldots, z_N \in \mathbb{R}^n$.
 Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the corresponding quotient map is given by $\Jet_z^k$.  
  The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$ in the sense that
- for any $(p,q) \in T^*Q^{(k)}_N$ and any $v_\varphi \in T_\varphi \SDiff(\mathbb{R}^n)$ with $\Jet_z^k(\varphi) = q$ we can
- consider the element $i(p,q) \in T^*\SDiff(\R^n)$ given by $\langle i(q,p) , v_\varphi \rangle = \langle p , v_\varphi( \varphi^{-1} \cdot q) \rangle$
+ for any $(q,p) \in T^*Q^{(k)}_N$ and any $v_\varphi \in T_\varphi \SDiff(\mathbb{R}^n)$ with $\Jet_z^k(\varphi) = q$ we can
+ consider the element $i(q,p) \in T^*\SDiff(\R^n)$ given by $\langle i(q,p) , v_\varphi \rangle = \langle p , v_\varphi( \varphi^{-1} \cdot q) \rangle$
  \cite[(2.2.4)]{HRS}.
  The commutativity of the following diagram uniquely defines the jetlet solutions:
 % \begin{equation}
@@ -1798,7 +1798,7 @@ will be discussed in Section~\ref{sec:Symplectic}.
 Alternatively, these equations can be written using the bilinear map $\{ \cdot , \cdot \}_{\rm can} : C^1( T^*Q) \times C^1(T^*Q) \to C^0(T^*Q)$
 given by
 \begin{equation*}
-  \{ F , G \}_{\rm can} = \pder{F}{q}\pder{G}{p} - \pder{G}{q} \pder{G}{p}.
+  \{ F , G \}_{\rm can} = \pder{F}{q}\pder{G}{p} - \pder{G}{q} \pder{F}{p}.
 \end{equation*}
 In particular, we may write $\dot{q} = \{ q , H \}_{\rm can}$ and $\dot{p} = \{ p , H\}_{\rm can}$.
 The object $\{ \cdot , \cdot \}_{\rm can}$ is a special case of more general
@@ -1977,7 +1977,7 @@ sloppiness is usually harmless.
   Let $(P_1, \{ \cdot , \cdot \}_1)$ and $(P_2, \{ \cdot , \cdot \}_2)$
   be Poisson manifolds.
   A map $\psi:P_1 \to P_2$ is called a
-  \emph{Poisson map} if $\{ f \circ \psi , g \circ \psi \}_1 = \{ f , g \}_2$  for any $f,g \in C^{\infty}(P_2)$.
+  \emph{Poisson map} if $\{ f \circ \psi , g \circ \psi \}_1 = \{ f , g \}_2 \circ \psi$  for any $f,g \in C^{\infty}(P_2)$.
 \end{defn}
 
 
@@ -2065,7 +2065,8 @@ sloppiness is usually harmless.
     Let
     $\rho_i: G_i \times T^*Q \to T^*Q$ for $i=1,2$, denote the cotangent lifted actions
     and let $J_1: T^*Q \to \mathfrak{g}_1^*$ and $J_2: T^*Q \to \mathfrak{g}_2^*$ denote the momentum maps given by \eqref{eq:cotangent_momap}. 
-    Moreover, assume $G_1$ acts transitively on the level sets of $J_2$.
+    Moreover, assume $G_1$ is infinitesimally transitive on the level sets of $J_2$
+    in the sense that $\kernel(J_2) \subset \mathfrak{g}_1 \cdot T^*Q$.
     Then the momentum maps form the dual pair
     $
       \mathfrak{g}^*_1
@@ -2104,7 +2105,7 @@ sloppiness is usually harmless.
     Finally we calculate
     \begin{align*}
     	\omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) &=  -\langle d \langle \theta, \rho_1(\xi_1) \rangle ,  \rho_2(\xi_2) \rangle \\
-      &= -\lie_{\rho_2(\xi_2) }[ \langle \theta,\rho_1(\xi_1) \rangle] = - \langle \lie_{\rho_1(\xi_2)}[\theta] , \rho_1(\xi_1) \rangle - \langle \theta , [\rho_2(\xi_2), \rho_1(\xi_1) ] \rangle.
+      &= -\lie_{\rho_2(\xi_2) }[ \langle \theta,\rho_1(\xi_1) \rangle] = - \langle \lie_{\rho_2(\xi_2)}[\theta] , \rho_1(\xi_1) \rangle - \langle \theta , [\rho_2(\xi_2), \rho_1(\xi_1) ] \rangle.
     \end{align*}
     The first term in the last line vanishes because $\theta$ is invariant under the flow of $\rho_2(\xi_2)$.
     The second term in the last line vanishes because the actions of $G_1$ and $G_2$ commute.
@@ -2123,7 +2124,7 @@ sloppiness is usually harmless.
 %    We have proven that $\rho_1(\mathfrak{g}_1 , S)$ and $\rho_2(S,\mathfrak{g}_2)$ are
 %    symplectically orthogonal.
     Now note that
-    $\langle TJ_2 ( \rho_1(\xi_1, x)), \xi_2 \rangle = \omega( \rho_1(\xi_1, x) ,\rho_2(x, \xi_2 )) = 0$.
+    $\langle TJ_2 ( \rho_1(\xi_1, x)), \xi_2 \rangle = - \omega( \rho_1(\xi_1, x) ,\rho_2( \xi_2,x )) = 0$.
     Thus $\rho_1(\xi_1 , x) \in \kernel( J_2)$, hence
     $\rho_1(\mathfrak{g}_1 ,T^*Q) \subset \kernel(J_2)$.
     But since $G_1$ acts transitively on the level sets of $J_2$, we see
@@ -2188,7 +2189,7 @@ The multiset of $2$-fold partitions is $\Pi( [1,2,1],2)$, and consists of three 
 Note that the first and the third partition correspond to the same multiset.
 The cardinality of $\Pi( [1,2,1],2)$ is $3$, although it only has two distinct elements (one with a multiplicity of $1$, and another with a multiplicity of $2$).
 
-\section{The dual space of $\mathfrak{X}_{\rm div}(\R^n)$}
+\section{The dual space to divergence free vector-fields}
 \label{sec:measure_valued_momap}
 In this section we will provide a terse and incomplete
 characterization of the dual space of divergence free
@@ -2210,14 +2211,14 @@ the pairing
 where $\langle p(x),u(x) \rangle$ is the function on $\R^n$ obtained by pairing the covector $p(x) \in T_x^*\R^n$ with the vector $u(x) \in T_x\R^n$.
 If we restrict ourselves to the case of divergence free vector-fields, we need to quotient
 the dual space appropriately.  In particular, we see that the annihilator of $\mathfrak{X}_{\rm div}(\R^n)$
-as a subspace of $\mathfrak{X}(\R^n)$ is
+as a subspace of $\mathfrak{X}(\R^n)^*$ is
 \begin{align*}
 	(\mathfrak{X}_{\rm div}(\R^n) )^\circ := \{ m \in \mathfrak{X}(\R^n)^* \mid \langle m , u \rangle = 0 , \forall u \in \mathfrak{X}_{\rm div}(\R^n) \}\\
-		:= {\rm closure}\{ p \otimes \dx \in \mathfrak{X}(\R^n) \mid p \text{ is a closed one-form} \}.
+		:= {\rm closure}\{ p \otimes \dx \in \mathfrak{X}(\R^n)^* \mid p \text{ is a closed one-form} \}.
 \end{align*}
 where $\dx$ is the canonical volume form on $\R^n$ and
 we have used the fact that the gradient fields and the harmonic vector fields are $L^2$-orthogonal to the divergence free vector fields.
-The dual space $\mathfrak{X}_{\rm div}(\R^n)^*$ is identical to the quotient space $\mathfrak{X}(\R^n) / (\mathfrak{X}_{\rm div}(\R^n))^\circ$.
+The dual space $\mathfrak{X}_{\rm div}(\R^n)^*$ is identical to the quotient space $\mathfrak{X}(\R^n)^* / (\mathfrak{X}_{\rm div}(\R^n))^\circ$.
 In other words, we may view a $m \in \mathfrak{X}_{\rm div}(\R^n)^*$ as an object of the form $p \otimes \mu$ modulo $\mathfrak{X}_{\rm div}(\R^n)^\circ$.
 In the text we will typically not mention $\mathfrak{X}_{\rm div}(\R^n)^\circ$ explicitly, and simply identify $m$ with $p \otimes \mu$.
 This is a harmless identification as long as we do not pair it with a non-divergence free vector-field.
