@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\Norm}[1]{\big\lVert#1\big\rVert}
+\setlength{\textwidth}{490pt}
+\setlength{\textheight}{60\baselineskip}
+%\addtolength{\textheight}{\topskip}
+\setlength{\oddsidemargin}{-0.9cm}
+\setlength{\topmargin}{-1.5cm}
+
+\usepackage{color,bm}
+\pagestyle{empty}
+
+
+\def\Q{\mathbb{Q} } 
+\def\R{\mathbb{R} } 
+\def\Z{\mathbb{Z} } 
+\def\nbd{neighborhood } 
+\def\nbds{neighborhoods } 
+\def\R{\mathbb{R} } 
+\def\iff{if and only if } 
+
+\usepackage{todonotes}
+
+\begin{document}
+
+
+
+
+
+
+\section{Clarifications}
+
+\subsection{Transitivity}
+We agreed with the reviewer's claim that the transitivity arguments being used were a problem.  Reviewer 2 specifically pointed to p.29 line 20, p.13 line 33-34, and
+p.16 line 56-57.
+The reason reviewer 2 was having trouble here was identified by reviewer 3.  He/she found the claims to be false.  Fortunately, this was not critical to the propositions and lemmas in which these claims were used.  A corrected version of these proofs now appears in the paper.  We found that all that was required for the propositions to hold was that certain group actions be transitive on level sets of momentum map, which we had by assumption. We did not require transitivity on T*Q as a whole (which we did not have, and should never have utilized to begin with).  Nice job reviewers!
+
+\subsection{Differentiability}
+It's not obvious to me that how differentiability are related. Please state the relation. 
+For instance, 
+\\
+p.14 line 41(Proposition 4.5) Though the function $h$ in Theorem A.8 is required of class $C^2$, 
+the Hamiltonian $H^{(0)}$ in Proposition 4.5 whose proof use Theorem A.8 is of class $C^1$.  
+
+\todo[inline]{We still need to address this}
+
+
+\subsection{p.17 line 52}
+ Here we used the phrase ``By the general principles discussed earlier".
+ Reviewer 2 requested we be less vague here.  We've replaced this hand-waving phrase with a reference to the main theorem used in the text (Theorem A.8).  We've also written the correspondence between momentum maps in this section and those in the statement of Theorem A.8.
+
+\subsection{p.19 line 4}
+He we use the phrase ``recall that we have shown in the previous section...". 
+Reviewer 2 objected to our hand-waving here.
+Upon further inspection, the use of the equation which followed this section was not needed, and so this sentence was removed as well.
+
+This section of the text was related to verifying the commutativity of a diagram.  We have replaced the original explanation with a more precise and succint one.
+
+\subsection{Jet merger calculations}
+The following calculations are not obvious. Please clarity. 
+\\
+p.21 line 60. In (20), the equation ``$\dot{r} = \cdots = 1/4 p_r^2 + \cdots$ " is not obvious. 
+\\
+p.22 line 42. It's not clear how to derive the equation from (17). 
+\\
+
+\section{Typos}
+Reviewer 2 found the following typos:
+\begin{itemize}
+ \item p.12 line 57. I think that ``$\delta_{q_a}$" should be ``$\delta_{q_a^{(0)}}$". 
+\item p.18 line 4. ``$\gamma(s)$" should be ``$\gamma_0(s)$". 
+\item p.18 line 46,47. ``$(p, q)$'' should be ``$(q, p)$". 
+\item p.22 line 46. I think that a sign is opposite: ``$+ 1/2$" should be ``$-1/2$".\todo{we need to address this} 
+\item p.24 line 18,19. ``$6$" should be ``$3$". \todo{We need to address this}
+\item p.26 line 7. the third ``$G$" should be ``$F$".  
+\item p.28 line 17. ``$\{f, g \}_2$''' should be ``$\{f, g \}_2 \circ \psi$''. 
+\item p.29 line 40. ``$\rho_1(\xi_2)$'' should be ``$\rho_2(\xi_2)$''. 
+\item p.29 line 46. The sign of omega should be opposite and ``$(x, \xi_2)$'' 
+should be ``$(\xi_2, x)$''. 
+\\
+\item p.29 line 48,51,56. 
+``$\mathfrak{X}(\mathbb{R}^n)$'' should be 
+``$\mathfrak{X}(\mathbb{R}^n)^*$''. 
+\end{itemize}
+
+We agreed with these findings and changed them in the revised manuscript.
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
