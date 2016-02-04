@@ -101,7 +101,7 @@ to a finite-dimensional ordinary differential equation (e.g.\ point vortex solut
 The dimension reduction that will be performed in this paper and the method which it proposes
 bears much semblance to the point vortex method \cite{Chorin1973}.
 In particular, \cite{MarsdenWeinstein1983} illustrated how the point vortex solutions and the conservation of circulation could be derived via a pair of Poisson maps known as a dual pair.
-One of these Poisson maps was the embedding map from a finite-dimensional manifold into the infinite-dimensional space dual to the divergence free vector-fields.  In other words, the space of point vortices is merely an invariant manifold of ideal fluid motion.\footnote{This is not quite correct, as one must ignore the infinite self-energy terms of point vortices and then extend the space of admissible solutions to non-smooth velocity fields.  However, modulo this physically motivated caveat the statement holds.}
+One of these Poisson maps was the embedding map from a finite-dimensional manifold into the infinite-dimensional space dual to the divergence free vector fields.  In other words, the space of point vortices is merely an invariant manifold of ideal fluid motion.\footnote{This is not quite correct, as one must ignore the infinite self-energy terms of point vortices and then extend the space of admissible solutions to non-smooth velocity fields.  However, modulo this physically motivated caveat the statement holds.}
 In this paper we will derive a hierarchy of different dual pairs, in order to obtain a class of finite-dimensionally parametrized solutions,
 each of which comes with a conservation law that shadows Kelvin's circulation theorem.
 Just as one can consider the point vortices to be the atoms of the point vortex method,
@@ -241,7 +241,7 @@ Finally, appendix~\ref{sec:eom} provides information describing the equations of
 %left/right action $\rho(g,x)$ or $\rho(x,g)$, infinitesimal generator $\rho(\xi,x)$ or $\rho(x,\xi)$.
 We will let $\mathfrak{X}(\R^n)$ denote the space of $H^\infty$ vector fields,
 and we let $\mathfrak{X}_{\rm div}(\R^n)$
-denote the space of divergence free vector-fields resulting from the Hodge decomposition.
+denote the space of divergence free vector fields resulting from the Hodge decomposition.
 We let $\Diff(\R^n)$ denote the space of $H^\infty$ diffeomorphisms of $\R^n$  (see \cite{MichorMumford2013})
 and we let $\SDiff(\R^n)$ denote the subgroup of volume preserving diffeomorphisms.
 
@@ -282,7 +282,7 @@ We will leverage this theorem in the following way.
 We will find a dual pair, $J_1,J_2: S \to \mathfrak{g}^*$, where
 \begin{enumerate}
 \item $S$ is the space of particle locations and momenta (and, for the higher orders of the hierarchy, internal group variables),
-\item $\mathfrak{g}$ is the space of vector-fields,
+\item $\mathfrak{g}$ is the space of vector fields,
 \item and $h$ is the Hamiltonian of a regularized model of ideal fluid (i.e.\ a kinetic energy).
 \end{enumerate}
 Theorem~\ref{thm:dual_pairs} applied to the dual pair $J_1,J_2$
@@ -317,7 +317,7 @@ There are canonical coordinates on $T^*\SO(3)$ given by $(R,P)$
 where $P$ is such that $R^TP $ is a $3 \times 3$ anti-symmetric
 matrix\footnote{%
   We use the pairing $\langle P, v \rangle = \tr(P^T v)$ for
-  $P \in T^*_R SO(3)$ and $v \in T_R SO(3)$. More generally, the pairing $\langle \cdot , \cdot \rangle$ will always refer to the natural pairing between a vector-space and its dual in this paper.}.
+  $P \in T^*_R SO(3)$ and $v \in T_R SO(3)$. More generally, the pairing $\langle \cdot , \cdot \rangle$ will always refer to the natural pairing between a vector space and its dual in this paper.}.
 The angular momentum in the body frame is the
 unique vector $\Pi \in \mathbb{R}^3 \cong \so(3)^*$ such that
 \begin{align*}
@@ -546,7 +546,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
 %  Enforcing that all maps be $H^\infty$ ensures sufficient decay
 %  properties at infinity for differential geometric techniques to be
 %  applied.  In particular, $\mathfrak{X}_{\rm div}(M)$ becomes
-%  a Frechet vector-space, and
+%  a Frechet vector space, and
 %  $\SDiff(\R^n)$ inherits a well defined exponential map for all time.
 %  Exponential charts make $\SDiff(\R^n)$ into a  Frech\'et manifold
 %  \cite{MichorMumford2013}.
@@ -2124,7 +2124,7 @@ sloppiness is usually harmless.
     \begin{equation*}
       0 = \lie_{\rho_1(\xi_1)} [ \theta] = d \langle \theta_1 , \rho_1(\xi_1) \rangle + i_{\rho_1(\xi_1)}(d\theta) = d \langle \theta_1 , \rho_1(\xi_1) \rangle - i_{\rho_1(\xi_1)} \omega, 
     \end{equation*}
-    where $i_{\rho_1(\xi_1)} \omega$ denotes contraction of a two-form with a vector-field.
+    where $i_{\rho_1(\xi_1)} \omega$ denotes contraction of a two-form with a vector field.
     Finally we calculate
     \begin{align*}
     	\omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) &=  -\langle d \langle \theta, \rho_1(\xi_1) \rangle ,  \rho_2(\xi_2) \rangle \\
@@ -2212,7 +2212,7 @@ The multiset of $2$-fold partitions is $\Pi( [1,2,1],2)$, and consists of three 
 Note that the first and the third partition correspond to the same multiset.
 The cardinality of $\Pi( [1,2,1],2)$ is $3$, although it only has two distinct elements (one with a multiplicity of $1$, and another with a multiplicity of $2$).
 
-\section{The dual space to divergence free vector-fields}
+\section{The dual space to divergence free vector fields}
 \label{sec:measure_valued_momap}
 In this section we will provide a terse and incomplete
 characterization of the dual space of divergence free
@@ -2232,7 +2232,7 @@ the pairing
 	\langle p \otimes \mu , u \rangle :=  \int_{\R^n} \langle p(x) , u(x) \rangle \mu.
 \end{equation*}
 where $\langle p(x),u(x) \rangle$ is the function on $\R^n$ obtained by pairing the covector $p(x) \in T_x^*\R^n$ with the vector $u(x) \in T_x\R^n$.
-If we restrict ourselves to the case of divergence free vector-fields, we need to quotient
+If we restrict ourselves to the case of divergence free vector fields, we need to quotient
 the dual space appropriately.  In particular, we see that the annihilator of $\mathfrak{X}_{\rm div}(\R^n)$
 as a subspace of $\mathfrak{X}(\R^n)^*$ is
 \begin{align*}
@@ -2244,7 +2244,7 @@ we have used the fact that the gradient fields and the harmonic vector fields ar
 The dual space $\mathfrak{X}_{\rm div}(\R^n)^*$ is identical to the quotient space $\mathfrak{X}(\R^n)^* / (\mathfrak{X}_{\rm div}(\R^n))^\circ$.
 In other words, we may view a $m \in \mathfrak{X}_{\rm div}(\R^n)^*$ as an object of the form $p \otimes \mu$ modulo $\mathfrak{X}_{\rm div}(\R^n)^\circ$.
 In the text we will typically not mention $\mathfrak{X}_{\rm div}(\R^n)^\circ$ explicitly, and simply identify $m$ with $p \otimes \mu$.
-This is a harmless identification as long as we do not pair it with a non-divergence free vector-field.
+This is a harmless identification as long as we do not pair it with a non-divergence free vector field.
 
 \section{Equations of motion for 1-jetlets}
 \label{sec:eom}
