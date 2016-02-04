@@ -176,7 +176,7 @@ convergence to a 1-jetlet state without explicitly considering the dynamics.
 Finally, we suggest a more algebraic interpretation of mergers in
 the jetlet hierarchy by viewing all levels of the hierarchy as embedded
 in the larger space $\mathfrak{X}_{\rm div}(\mathbb{R}^n)^*$, where levels form (part of) the
-boundaries of other levels (a bit like in a CW complex).
+boundaries of other levels (a bit like in a CW-complex).
 
 In summary, the numerics section~\ref{sec:Numerical experiments} shows first of all that it is feasible to implement this jetlet model numerically, also in dimensions higher than
 two. Further, we corroborate the analytical results and confirm the
@@ -224,7 +224,7 @@ Finally, appendix~\ref{sec:eom} provides information describing the equations of
  In particular, \cite{HoldenRaynaud2006} provide the first convergence proof of such a method in the context of the Camassa-Holm equation.
  This same idea was implemented for the $n$-dimensional Camassa-Holm
  equation in \cite{ChertockDuToitMarsden2012}.
- In the context of image-registration algorithms, the need to obtain 
+ In the context of image registration algorithms, the need to obtain
  compressible diffeomorphisms motivated the use of particle methods
  in a similar framework \cite{JoshiMiller2000}.
  These methods, designed for a wide array of PDEs are studied analytically
@@ -294,10 +294,10 @@ of a regularized model of an ideal incompressible fluid.
 %Before getting to the body of the paper, we should mention issues which are not addressed in this article.
 %Namely, existence and uniqueness of solutions to infinite dimensional Hamiltonian systems.
 %The configuration manifold for fluids and fluid models is (a subgroup) of the volume-preserving diffeomorphisms, $\SDiff(M)$.
-%Any characterization of a cotangent-bundle, ``$T^{*}\SDiff(M)$'', would be as an infinite-dimensional symplectic manifold with a weak symplectic form \cite{MandS}.
-%As a result, the weak-form of Hamilton's equations will not (generically) define a vector-field because the symplectic form induces an injection rather than a bijection between 
-%tangent and cotangent fibers.  In order to find a vector-field, the differential of the Hamiltonian must be in the range of this injection.
-%Furthermore, even if the differential of the Hamiltonian is in the right space, it is not apriori clear that the resulting vector-field is smooth enough for solutions to exist.
+%Any characterization of a cotangent bundle, ``$T^{*}\SDiff(M)$'', would be as an infinite-dimensional symplectic manifold with a weak symplectic form \cite{MandS}.
+%As a result, the weak form of Hamilton's equations will not (generically) define a vector field because the symplectic form induces an injection rather than a bijection between
+%tangent and cotangent fibers.  In order to find a vector field, the differential of the Hamiltonian must be in the range of this injection.
+%Furthermore, even if the differential of the Hamiltonian is in the right space, it is not a priori clear that the resulting vector field is smooth enough for solutions to exist.
 %Such a requirement places further constraints on the space of admissible Hamiltonians.
 %These are non-trivial issue which must be addressed separately.
 %Throughout this article, it will be assumed that any Hamiltonians in question yield equations of motion which admit unique solutions locally in time.
@@ -478,7 +478,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   by solving canonical Hamiltonian equations with respect to $H(R,P)$.
   In particular, if $(R,P)(t)$ is a solution to Hamilton's equation,
   then $\Pi(t) = J_R( (R,P)(t))$ is a solution to Hamilton's equation
-  with respect to the Nambu-bracket.
+  with respect to the Nambu bracket.
   This is a result of Proposition~\ref{prop:Poisson_dynamics}
   paired with the observation that $J_R$ is a Poisson map via
   Proposition~\ref{prop:SO3_to_Nambu}.
@@ -489,7 +489,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   Euler's equations of motion for incompressible fluids can be seen as
   Hamiltonian equations on the (dual) space of divergence
   free vector fields \cite{Arnold1966}.
-  Consider the Lie-algebra of vector fields on $\mathbb{R}^n$, 
+  Consider the Lie algebra of vector fields on $\mathbb{R}^n$,
   denoted by $\mathfrak{X}(\mathbb{R}^n)$.
   Formally, the dual space to $\mathfrak{X}(\mathbb{R}^n)$ is a Poisson
   manifold when equipped with the Lie-Poisson bracket
@@ -879,7 +879,7 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   \begin{align*}
     \langle J_R^{(1)}(q,p) , u \rangle = p\indices{_a_i^j} q\indices{_a^i_k} \partial_j u^k(z_a)
   \end{align*}
-  In terms of the Dirac delta functional we may write this as the measure-valued momentum map
+  In terms of the Dirac-delta functional we may write this as the measure-valued momentum map
   \begin{equation}\label{eq:JR1}
     J_R^{(1)}(q,p) = - p\indices{_a_i^j} q\indices{_a^i_k} \dz^k \otimes \partial_j \delta_{z_a}
   \end{equation}
@@ -966,7 +966,7 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
         \includegraphics[width=0.4\textwidth]{stretch_3D.png}
         \includegraphics[width=0.4\textwidth]{shear_3D.png}
         \caption{(\emph{top}) Quiver plots of 2D vector fields induced by first order jetlets. 
-        (\emph{bottom})   Stream-line plots of 3D vector fields induced by first order jetlets.}
+        (\emph{bottom})   Streamline plots of 3D vector fields induced by first order jetlets.}
         \label{fig:zoo}
   \end{figure}
 
@@ -1147,7 +1147,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
   as the unique map such that $\langle J_R^{(k)}(q,p) , w \rangle = \langle (q,p) , \Jet_z^{(k)}( T\varphi \circ w) \rangle$ for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$.
   
   
-  We can write $J_L^{(k)}$ and $J_R^{(k)}$ explicitly, using the Dirac delta distribution, as
+  We can write $J_L^{(k)}$ and $J_R^{(k)}$ explicitly, using the Dirac-delta distribution, as
   \begin{multline}\label{eq:JLk}
     J_L^{(k)}(q,p) =
     \sum_{a=1}^N \Bigg(
