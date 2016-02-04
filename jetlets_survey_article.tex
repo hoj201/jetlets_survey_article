@@ -289,6 +289,19 @@ Theorem~\ref{thm:dual_pairs} applied to the dual pair $J_1,J_2$
 then yields particle-like solutions and conserved quantities to the equations of motion
 of a regularized model of an ideal incompressible fluid.
 
+%\subsection{Infinite dimensional subtleties}
+%\label{eq:Infinite dimension}
+%Before getting to the body of the paper, we should mention issues which are not addressed in this article.
+%Namely, existence and uniqueness of solutions to infinite dimensional Hamiltonian systems.
+%The configuration manifold for fluids and fluid models is (a subgroup) of the volume-preserving diffeomorphisms, $\SDiff(M)$.
+%Any characterization of a cotangent-bundle, ``$T^{*}\SDiff(M)$'', would be as an infinite-dimensional symplectic manifold with a weak symplectic form \cite{MandS}.
+%As a result, the weak-form of Hamilton's equations will not (generically) define a vector-field because the symplectic form induces an injection rather than a bijection between 
+%tangent and cotangent fibers.  In order to find a vector-field, the differential of the Hamiltonian must be in the range of this injection.
+%Furthermore, even if the differential of the Hamiltonian is in the right space, it is not apriori clear that the resulting vector-field is smooth enough for solutions to exist.
+%Such a requirement places further constraints on the space of admissible Hamiltonians.
+%These are non-trivial issue which must be addressed separately.
+%Throughout this article, it will be assumed that any Hamiltonians in question yield equations of motion which admit unique solutions locally in time.
+
 \section{Example: the rigid body}
 \label{sec:rigid_body}
   In this section we review basic notions from classical mechanics
@@ -1112,8 +1125,8 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 			\right)
   \end{equation*}
   for arbitrary divergence free vector fields $u \in \mathfrak{X}_{\rm div}(\R^n)$.
-  Equivalently, we may define $J_L^(k)$
-  as the unique map such that $\langle J_L^(k)(q,p) , u \rangle = \langle (q,p) , \Jet_z^{(k)}( u \circ \varphi) \rangle$ for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$.
+  Equivalently, we may define $J_L^{(k)}$
+  as the unique map such that $\langle J_L^{(k)}(q,p) , u \rangle = \langle (q,p) , \Jet_z^{(k)}( u \circ \varphi) \rangle$ for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$.
   
   The right action of $\iso(z)$ yields the momentum map $J_R^{(k)}$ defined implicitly by the relation
   \begin{equation*}
@@ -1130,8 +1143,8 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
   \end{equation*}
   where $w \in \mathfrak{X}_{\rm div}(\R^n)$ is such that $w(z) = 0$ (this describes the Lie algebra of $\iso(z)$),
   and $\delta_\alpha^\beta$ is the natural generalization of the Kronecker-delta symbol to multi-indices.
-  Equivalently, we may define $J_R^(k)$
-  as the unique map such that $\langle J_R^(k)(q,p) , w \rangle = \langle (q,p) , \Jet_z^{(k)}( T\varphi \circ w) \rangle$ for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$.
+  Equivalently, we may define $J_R^{(k)}$
+  as the unique map such that $\langle J_R^{(k)}(q,p) , w \rangle = \langle (q,p) , \Jet_z^{(k)}( T\varphi \circ w) \rangle$ for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$.
   
   
   We can write $J_L^{(k)}$ and $J_R^{(k)}$ explicitly, using the Dirac delta distribution, as
