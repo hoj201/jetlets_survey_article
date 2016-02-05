@@ -1559,16 +1559,19 @@ with $\phi(t) = \frac{3}{4} p_\phi\,t$. Our aim is to show that
 the factor in front of $\dx^i\,\partial_j \delta$, which we shall denote
 by $\tilde{\mu}\indices{_i^j}(t)$, corresponds to
 $\mu\indices{_i^j}(t)$ for a $1$-jetlet with position $q^{(0)} = 0$
-and momentum $p^{(0)} = 0$. For such a setup we have equations of
-motion
+and momentum $p^{(0)} = 0$. From here on, we use the Frobenius inner
+product to identify $\mathfrak{sl}(2)^* \cong \mathfrak{sl}(2)$, which
+for explicit matrices corresponds to taking the transpose.
+For such a setup we have equations of motion
 \begin{equation*}
   \dot{\mu}\indices{_i^j}
   = \mu\indices{_i^k} \partial_k u^j(0) - \partial_i u^k(0) \mu\indices{_k^j}
   = -\partial_{km} K^{jl}(0) \mu\indices{_l^m} \mu\indices{_i^k}
     +\partial_{im} K^{kl}(0) \mu\indices{_l^m} \mu\indices{_k^j},
 \end{equation*}
-or in short, $\dot{\mu} = [\mu,\xi]$ with $\xi\indices{^i_j} = \partial_j u^i(0) = \partial_{jk} K^{i l}(0) \mu\indices{_l^k}$. To
-ease calculations, let us choose the basis
+or in short, $\dot{\mu} = -\ad^*_\xi(\mu) = [\mu,\xi^T]$ with
+$\xi\indices{^i_j} = \partial_j u^i(0) = -\partial_{jk} K^{i l}(0) \mu\indices{_l^k}$.
+To ease calculations, let us choose the basis
 \begin{equation}\label{eq:basis-sl2}
   \omega = \begin{pmatrix}
     0 & -1 \\
@@ -1583,9 +1586,7 @@ ease calculations, let us choose the basis
     1 & 0
   \end{pmatrix}
 \end{equation}
-for $\mathfrak{sl}(2)^* \cong \mathfrak{sl}(2)$, where the
-identification is made through the Frobenius inner product, and note
-that these matrices have norm $\sqrt{2}$. We decompose
+and note that these matrices have norm $\sqrt{2}$. We decompose
 $\mu = j\,\omega + s\,\sigma + t\,\tau$ and the second derivative of
 the kernel as a tensor product,
 \begin{equation*}
