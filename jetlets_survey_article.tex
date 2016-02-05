@@ -349,9 +349,9 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   \end{align}
   This equation can be seen as a Hamiltonian equation on $\mathbb{R}^3$
   with respect to the non-canonical Poisson bracket
-  \begin{align}
-    \{ F , G \}_{\rm Nambu}(x)  = - x \cdot (\nabla F \times \nabla G) \label{eq:Nambu}
-  \end{align}
+  \begin{align*}
+    \{ F , G \}_{\rm Nambu}(x)  = - x \cdot (\nabla F \times \nabla G) %\label{eq:Nambu}
+  \end{align*}
   known as the \emph{Nambu bracket}.
   This is no coincidence. Let us first introduce the isomorphism of
   Lie algebras $(\R^3,\times)$ and $\so(3)$, given by the hat map
@@ -564,9 +564,9 @@ Since we have not yet clarified the Poisson structures of the system, it may not
   and given a function $h$, the Fr\'echet derivative $dh(m)$ is an element  of $\mathfrak{X}_{\rm div}(\R^n)^{**}$.
   In the event that $dh(m) \in \mathfrak{X}_{\rm div}(\R^n)$,
   Hamilton's equations are given by
-  \begin{align}
-    \dot{m} + \lie_u [m] = 0 \quad , \quad u = dh(m) \label{eq:LP}.
-  \end{align}
+  \begin{align*}
+    \dot{m} + \lie_u [m] = 0 \quad , \quad u = dh(m) %\label{eq:LP}.
+  \end{align*}
 \end{prop}
 \begin{proof}
   To each $v \in \mathfrak{X}_{\rm div}(\R^n)$
@@ -773,7 +773,7 @@ Once one has found a solution $(q(t), p(t))$ to Hamilton's equations on $T^*\mat
   That is, $\varphi(z_a) = q_a$ for all $a$.
   This means in particular that the specification of $(q_1, \ldots, q_N)$ fixes the zeroth order Taylor expansion (at the locations $z_a$) of the corresponding set of diffeomorphisms. With this in mind, let us define the isotropy group
 \begin{align}
-\iso(z)  = \{ \psi \in \SDiff(\mathbb{R}^n) | \psi(z_a) = z_a \mbox{ for all } a\} \label{isotropy_group}
+\iso(z)  = \{ \psi \in \SDiff(\mathbb{R}^n) | \psi(z_a) = z_a \mbox{ for all } a\} \label{eq:isotropy_group}
 \end{align}
 and a (trivial) right action on $Q_N^{(0)}$ where $\psi \in \iso(z)$ maps an element $(\varphi(z_1), \ldots, \varphi(z_N))$ to $( \varphi \circ \psi (z_1), \ldots, \varphi \circ \psi(z_N))$.
 Similar constructions will be crucial in later sections, when constructing the right leg of a dual pair for the higher levels in the hierarchy of particle-like solutions.
@@ -853,7 +853,7 @@ In this section we revisit the first order particle-like solutions of \cite{Cott
     = p\indices{_a_i} \dx^i \otimes \delta_{q_a^{(0)}}
      -p\indices{_a_i^j} q\indices{_a^k_j} \dx^i \otimes \partial_k \delta_{q_a^{(0)}}
   \end{align*}
-  Next, we construct a dual momentum map associated with a right action on $Q_N^{(1)}$. Analogous to the previous section  it is useful at this stage to write elements of $Q_N^{(1)}$ in the form $ \varphi \cdot z = (\varphi (z_1, {\mathbf{1}}), \ldots, \varphi \cdot (z_N , \mathbf{1}))$, $\varphi \in \SDiff(\mathbb{R}^n)$, for some designated element $ z=( (z_1, \mathbf{1}), \ldots, (z_N, \mathbf{1}))$. Clearly, every element of $Q_N^{(1)}$ can be written in this form for some  $\varphi \in \SDiff(\mathbb{R}^n)$. Indeed, with this convention the specification of an element in $Q_N^{(1)}$ fixes the first order Taylor expansion of $\varphi$ at the locations $z_a$, $a = 1, \ldots, N$. With this in mind, let us recall the isotropy group $\iso(z)$ defined earlier in \eqref{isotropy_group}, which leaves these locations invariant, and define a right action on  $Q_N^{(1)}$ given by 
+  Next, we construct a dual momentum map associated with a right action on $Q_N^{(1)}$. Analogous to the previous section  it is useful at this stage to write elements of $Q_N^{(1)}$ in the form $ \varphi \cdot z = (\varphi (z_1, {\mathbf{1}}), \ldots, \varphi \cdot (z_N , \mathbf{1}))$, $\varphi \in \SDiff(\mathbb{R}^n)$, for some designated element $ z=( (z_1, \mathbf{1}), \ldots, (z_N, \mathbf{1}))$. Clearly, every element of $Q_N^{(1)}$ can be written in this form for some  $\varphi \in \SDiff(\mathbb{R}^n)$. Indeed, with this convention the specification of an element in $Q_N^{(1)}$ fixes the first order Taylor expansion of $\varphi$ at the locations $z_a$, $a = 1, \ldots, N$. With this in mind, let us recall the isotropy group $\iso(z)$ defined earlier in \eqref{eq:isotropy_group}, which leaves these locations invariant, and define a right action on  $Q_N^{(1)}$ given by 
 \begin{align}
 	 (\varphi \cdot z) \cdot \psi  = (\varphi \circ \psi) \cdot z. \notag
 	 \end{align}
@@ -1016,7 +1016,7 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   This coordinate is used to model the partial derivative of the $i$-th coordinate
   of a diffeomorphism at some point $z_a \in \R^n$, i.e.\ $\partial_\beta \varphi^i(z_a)$.
   % This is the primary motivation for this notational convention.
-  For the statement of the next proposition, recall that the definition  of $\iso(z)$ was given earlier in \eqref{isotropy_group}. Note also that we write $\Jet^k_x: \SDiff(\R^n) \to Q_1^{(k)}$ for
+  For the statement of the next proposition, recall that the definition  of $\iso(z)$ was given earlier in \eqref{eq:isotropy_group}. Note also that we write $\Jet^k_x: \SDiff(\R^n) \to Q_1^{(k)}$ for
     the function which evaluates the spatial derivatives
     of a diffeomorphism up to order $k$ at the location $x \in \R^n$. In the subsequent sections we will also use the obvious generalization to multiple locations $z_1, \ldots, z_N \in \R^n$, which we will denote by $\Jet^k_z : \SDiff(\R^n) \to Q_N^{(k)}$.  
 
@@ -1058,7 +1058,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
     only uses data in $q = \Jet^k_z(\psi)$ and nothing more.
     In local coordinates, this action takes the form
     \begin{align*}
-    (\varphi \cdot q)^i_\alpha =
+    (\varphi \cdot q)\indices{^i_\alpha} =
      \sum_{k=1}^{|\alpha|}
       \left(
         \sum_{
@@ -1135,7 +1135,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
   
   
   We can write $J_L^{(k)}$ and $J_R^{(k)}$ explicitly, using the Dirac-delta distribution, as
-  \begin{multline}\label{eq:JLk}
+  \begin{multline*}\label{eq:JLk}
     J_L^{(k)}(q,p) =
     \sum_{a=1}^N \Bigg(
     p_{am} \dx^m \otimes \delta_{q^{(0)}_a} \\
@@ -1149,7 +1149,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
       q\indices{_a^{j_1}_{\gamma_1}} \cdots q\indices{_a^{j_\ell}_{\gamma_\ell}}
       \partial_{j_1 \cdots j_\ell} \delta_{q^{(0)}_a}
       \Bigg)
-  \end{multline}
+  \end{multline*}
   and
   \begin{equation}\label{eq:JRk}
     J_R^{(k)}(q,p) = \sum_{a=1}^{N}
@@ -1242,9 +1242,9 @@ Let $\varphi_t \in \SDiff(\R^n)$ denote the flow-map
 produced by a solution to Euler's equation.
 Let $\gamma(s,t) = \varphi_t(\gamma_0(s))$ for some loop $\gamma_0(s)$.
 Kelvin's circulation theorem states that the circulation
-\begin{equation}\label{eq:Kelvin-circulation}
+\begin{equation*}\label{eq:Kelvin-circulation}
   \Gamma(t) = \oint u( \gamma(s,t) )  \cdot \partial_s \gamma(s,t) ds
-\end{equation}
+\end{equation*}
 is constant in time.
 %\dm{In the interest of time I will not add an additional remark here for now. Maybe later, when we revise the paper.}
 It was shown in \cite{Arnold1966} that this conservation law
@@ -1380,9 +1380,9 @@ momentum. We identify the asymptotics of the merged state as the
 dynamics of a single $1$-jetlet particle.
 
 We start with the Hamiltonian $H^{(0)}$ for two $0$-jetlet particles,
-\begin{equation}\label{eq:H-two-0jetlets}
+\begin{equation*}\label{eq:H-two-0jetlets}
   H = \frac{1}{2} \sum_{a,b=1}^2 p\indices{_a_i} K^{ij}(q_a - q_b) p\indices{_b_j}
-\end{equation}
+\end{equation*}
 on $T^* \R^{2n}$ with the canonical Poisson brackets.
 Translation symmetry allows us perform symplectic reduction. We switch
 to a center of mass frame by choosing new coordinates
@@ -1447,10 +1447,10 @@ Let us now choose the smooth kernel $K = K_{\infty,1}$ given
 (up to a scaling factor) by
 %
 {\newcommand{\e}{e^{-\rho}}
-\begin{equation}\label{eq:smooth-kernel}
+\begin{equation*}\label{eq:smooth-kernel}
   K^{ij}(x) = \Big(\e - \frac{1}{2\rho}\big(1 - \e\big)\Big)\delta^{ij}
     + \Big(\frac{1}{\rho}\big(1 - \e\big) - \e\Big)\frac{x^i x^j}{\|x\|^2},
-\end{equation}%
+\end{equation*}%
 }%
 where $\rho := \frac{\|x\|^2}{2}$. Note that
 $K^{ij}(0) = \frac{1}{2} \delta^{ij}$ and $\partial_k K^{ij}(0) = 0$.
@@ -1498,11 +1498,11 @@ trajectory is indeed a solution of the Hamiltonian vector field for a
 $1$-jetlet.
 
 To analyze the asymptotic behavior, we expand $H$ around $\rho = 0$:
-\begin{equation}
+\begin{equation*}
   H = \frac{p_r^2      }{4} \rho
      +\frac{p_\phi^2}{8}\big(3 - \frac{5}{3}\rho\big)
      +\mathcal{O}(\rho^2).
-\end{equation}
+\end{equation*}
 Since $H$ and $p_\phi^2$ are preserved, we can solve for $p_r$ in
 terms of $r$, and we find
 \begin{align*}
@@ -1513,11 +1513,11 @@ terms of $r$, and we find
 We write $\zeta := \sqrt{8H - 3 p_\phi^2}$ and thus obtain
 asymptotically $p_r = \frac{\zeta}{r} + \mathcal{O}(1)$. Further, we
 have dynamics
-\begin{equation}
+\begin{equation*}
   \dot{r} = \frac{\partial H}{\partial p_r} = \frac{1}{4}p_r\,r^2 + \mathcal{O}(r^4), \qquad
   \dot{\phi} = \frac{\partial H}{\partial p_\phi}
                  = \frac{3}{4}p_\phi + \mathcal{O}(r^2)
-\end{equation}
+\end{equation*}
 and reconstruct
 \begin{alignat*}{2}
   \bar{q}   &= 0,& \qquad
@@ -1559,7 +1559,7 @@ For such a setup we have equations of motion
 or in short, $\dot{\mu} = -\ad^*_\xi(\mu) = [\mu,\xi^T]$ with
 $\xi\indices{^i_j} = \partial_j u^i(0) = -\partial_{jk} K^{i l}(0) \mu\indices{_l^k}$.
 To ease calculations, let us choose the basis
-\begin{equation}\label{eq:basis-sl2}
+\begin{equation*}\label{eq:basis-sl2}
   \omega = \begin{pmatrix}
     0 & -1 \\
     1 & 0
@@ -1572,7 +1572,7 @@ To ease calculations, let us choose the basis
     0 & 1 \\
     1 & 0
   \end{pmatrix}
-\end{equation}
+\end{equation*}
 and note that these matrices have norm $\sqrt{2}$. We decompose
 $\mu = j\,\omega + s\,\sigma + t\,\tau$ and the second derivative of
 the kernel as a tensor product. A calculation verified by symbolic
@@ -1637,10 +1637,10 @@ $\mathfrak{X}_{\rm div}(\R^n)^*$ under the momentum map $J_L$.
 Consider a merging pair of $0$-jetlets, described by a curve
 $x_0(t) \in T^*Q_2^{(0)}$. As the particles approach each other,
 $x_0(t)$ approaches the boundary of $T^*Q_2^{(0)}$ given by
-\begin{equation}\label{eq:boundary}
+\begin{equation*}\label{eq:boundary}
   \partial\big( T^*Q_2^{(0)} \big)
   = \{ (q_1,p_1,q_2,p_2) \in T^* \R^n \times T^* \R^n \mid q_1 = q_2 \}.
-\end{equation}
+\end{equation*}
 On the other hand, the image curve
 $y_0(t) = J_L(x_0(t)) \in \mathfrak{X}_{\rm div}(\R^n)^*$ consists of
 two covector-valued delta distributions at $q_1,q_2$, and in the limit
