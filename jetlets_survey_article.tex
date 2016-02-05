@@ -1588,14 +1588,22 @@ To ease calculations, let us choose the basis
 \end{equation}
 and note that these matrices have norm $\sqrt{2}$. We decompose
 $\mu = j\,\omega + s\,\sigma + t\,\tau$ and the second derivative of
-the kernel as a tensor product,
+the kernel as a tensor product. A calculation verified by symbolic
+computer algebra software shows that
 \begin{equation*}
   \partial_{ij} K^{kl}(0)
+  = \frac{1}{4} \left(\begin{array}{rr}
+     -\begin{pmatrix} 1 & 0 \\ 0 & 3 \end{pmatrix} &
+      \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \\[2.5ex]
+      \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} &
+     -\begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}
+    \end{array}\right)
   =-\frac{1}{2} \omega_i^k \omega_j^l
    -\frac{1}{4} \big( \sigma_i^k \sigma_j^l + \tau_i^k \tau_j^l \big).
 \end{equation*}
-With these decompositions we find that $\xi$ as a function of $\mu$
-can be written as
+where the indices $i,j$ and $k,l$ label the outer and inner matrix
+elements respectively. With these decompositions we find that $\xi$ as
+a function of $\mu$ can be written as
 \begin{equation*}
   \xi = j\,\omega + \frac{1}{2}(s\,\sigma + t\,\tau).
 \end{equation*}
