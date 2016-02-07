@@ -1,0 +1,185 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{MMO{\etalchar{+}}07}
+
+\bibitem[AK98]{ArnoldKhesin1998}
+V.~I. Arnold and B.~A. Khesin, \emph{Topological methods in hydrodynamics},
+  Applied Mathematical Sciences, vol. 125, Springer-Verlag, 1998.
+
+\bibitem[AM08]{FOM}
+R.~Abraham and J.~E. Marsden, \emph{Foundations of {M}echanics}, 2nd ed.,
+  American Mathematical Society, 2008, 2nd edition.
+
+\bibitem[Arn66]{Arnold1966}
+V.~I. Arnold, \emph{Sur la g\'{e}om\'{e}trie diff\'{e}rentielle des groupes de
+  {L}ie de dimension infinie et ses applications \`{a} l'hydrodynamique des
+  fluides parfaits}, Ann. I. Fourier \textbf{16} (1966), 316--361.
+
+\bibitem[Bli89]{Blizard1989}
+W.~D. Blizard, \emph{Multiset theory}, Notre Dame J. Form. L. \textbf{30}
+  (1989), no.~1, 36--66.
+
+\bibitem[CDTM12]{ChertockDuToitMarsden2012}
+A.~Chertock, P.~Du~Toit, and J.~E. Marsden, \emph{Integration of the {EPD}iff
+  equation by particle methods}, ESAIM Math. Model. Numer. Anal. \textbf{46}
+  (2012), no.~3, 515--534.
+
+\bibitem[CH93]{CamassaHolm1993}
+R.~Camassa and D.~D. Holm, \emph{An integrable shallow water equation with
+  peaked solitons}, Phys. Rev. Lett. \textbf{71} (1993), no.~11, 1661--1664.
+
+\bibitem[CHJM14]{CotterHolmJacobsMeier2014}
+C.~J. Cotter, D.~D. Holm, H.~O. Jacobs, and D.~M. Meier, \emph{A jetlet
+  hierarchy for ideal fluid dynamics}, J. Phys. A \textbf{47} (2014), no.~35,
+  352001.
+
+\bibitem[Cho73]{Chorin1973}
+A.~Chorin, \emph{A numerical study of slightly viscous flow}, J. Fluid. Mech.
+  \textbf{57} (1973), 785--796.
+
+\bibitem[CS96]{ConstantineSavits1996}
+G.~M. Constantine and T.~H. Savits, \emph{A multivariate {F}a\`a di {B}runo
+  formula with applications}, Trans. Amer. Math. Soc. \textbf{348} (1996),
+  no.~2, 503--520.
+
+\bibitem[DJR13]{JacobsRatiuDesbrun2013}
+M.~Desbrun, H.~O. Jacobs, and T.~S. Ratiu, \emph{On the coupling between an
+  ideal fluid and immersed particles}, Physica D \textbf{265} (2013), 40--56.
+
+\bibitem[EM70]{EbinMarsden1970}
+D~G Ebin and J~E Marsden, \emph{Groups of diffeomorphisms and the motion of an
+  incompressible fluid}, The Annals of Mathematics \textbf{92} (1970),
+  102--163.
+
+\bibitem[FH01]{FringerHolm2001}
+Oliver~B. Fringer and Darryl~D. Holm, \emph{Integrable vs. nonintegrable
+  geodesic soliton behavior}, Physica D: Nonlinear Phenomena \textbf{150}
+  (2001), no.~3--4, 237 -- 263.
+
+\bibitem[FHT01]{FoiasHolmTiti2001}
+C.~Foias, D.~D. Holm, and E.~S. Titi, \emph{The navier--stokes-alpha model of
+  fluid turbulence}, Physica D: Nonlinear Phenomena \textbf{152--153} (2001),
+  no.~0, 505 -- 519.
+
+\bibitem[GBV12]{GayBalmazVizman2012}
+F.~Gay-Balmaz and C.~Vizman, \emph{Dual pairs in fluid dynamics}, Ann. Glob.
+  Anal. Geom. \textbf{41} (2012), no.~1, 1--24.
+
+\bibitem[GM77]{Monaghan1977}
+R.~A. Gingold and J.~J. Monaghan, \emph{{Smoothed particle hydrodynamics:
+  Theory and application to non-spherical stars}}, Mon. Not. R. Astron. Soc.
+  \textbf{181} (1977), 375--389.
+
+\bibitem[HM05]{HolmMarsden2005}
+D.~D. Holm and J.~E. Marsden, \emph{Momentum maps and measure-valued solutions
+  (peakons, filaments, and sheets) for the {EPD}iff equation}, The breadth of
+  symplectic and {P}oisson geometry, Progr. Math., vol. 232, Birkh\"auser
+  Boston, Boston, MA, 2005, pp.~203--235.
+
+\bibitem[HMR98]{HolmMarsdenRatiu1998}
+D.~D. Holm, J.~E. Marsden, and T.~S. Ratiu, \emph{Euler-{P}oincar\'e models of
+  ideal fluids with nonlinear dispersion}, Phys. Rev. Lett. \textbf{349}
+  (1998), 4173--4177.
+
+\bibitem[Hol11]{HolmBook2}
+D.~D. Holm, \emph{Geometric mechanics part {II}: Rotating, translating and
+  rolling}, 2nd ed., Imperial College Press, 2011.
+
+\bibitem[HR06]{HoldenRaynaud2006}
+H.~Holden and X.~Raynaud, \emph{A convergent numerical scheme for the
+  {C}amassa--{H}olm equation based on multipeakons}, Discrete Contin. Dyn.
+  Syst. \textbf{14} (2006), no.~3, 505--523.
+
+\bibitem[HT12]{HolmTronci2012}
+D.~D. Holm and C.~Tronci, \emph{Multiscale turbulence models based on convected
+  fluid microstructure}, J. Math. Phys. \textbf{53} (2012), no.~11, 115614.
+
+\bibitem[Jac14]{Jacobs2014b}
+H.~O. Jacobs, \emph{How to stare at the higher-order n-dimensional chain rule
+  without losing your marbles}, arXiv:1410.3493, 2014.
+
+\bibitem[JM00]{JoshiMiller2000}
+S.~C. Joshi and M.~I. Miller, \emph{Landmark matching via large deformation
+  diffeomorphisms}, {IEEE} Trans. Image Process. \textbf{9} (2000), no.~8,
+  1357--1370.
+
+\bibitem[Kir81]{Kirillov1981}
+A.~Kirillov, \emph{Unitary representations of the group of diffeomorphisms and
+  of some of its subgroups}, Selecta Mathematica Sovietica \textbf{1} (1981),
+  no.~1, 351--372.
+
+\bibitem[KMS99]{KMS99}
+I.~{Kol\'{a}\u{r}}, P.~W. {Michor}, and J.~{Slov\'{a}k}, \emph{Natural
+  operations in differential geometry}, Springer Verlag, 1999.
+
+\bibitem[Luc77]{Lucy1977}
+B.~L. Lucy, \emph{A numerical approach to testing the fission hypothesis},
+  Astron. J. \textbf{82} (1977), 1013--1924.
+
+\bibitem[MG14]{MicheliGlaunes2014}
+M.~{Micheli} and J.~A. {Glaun{\`e}s}, \emph{Matrix-valued kernels for shape
+  deformation analysis}, Geometry, Imaging, and Computing \textbf{1} (2014),
+  no.~1, 57--39.
+
+\bibitem[MM13a]{MichorMumford2013}
+Peter~W. Michor and David Mumford, \emph{A zoo of diffeomorphism groups on
+  {$\Bbb{R}^n$}}, Ann. Global Anal. Geom. \textbf{44} (2013), no.~4, 529--540.
+  \MR{3132089}
+
+\bibitem[MM13b]{MumfordMichor2013}
+D.~Mumford and P.~W. Michor, \emph{On {E}uler's equation and `{EPDiff}'}, J.
+  Geom. Mech. \textbf{5} (2013), no.~3, 319--344.
+
+\bibitem[MMO{\etalchar{+}}07]{HRS}
+J.~E. Marsden, G.~Misiolek, J.~P. Ortega, M.~Perlmutter, and T.~S. Ratiu,
+  \emph{Hamiltonian reduction by stages}, Lecture Notes in Mathematics, vol.
+  1913, Springer, 2007.
+
+\bibitem[MR99]{MandS}
+J.~E. Marsden and T.~S. Ratiu, \emph{Introduction to mechanics and symmetry},
+  2nd ed., Texts in Applied Mathematics, vol.~17, Springer, 1999.
+
+\bibitem[MW83]{MarsdenWeinstein1983}
+J.~E. Marsden and A.~Weinstein, \emph{Coadjoint orbits, vortices, and clebsch
+  variables for incompressible fluids}, Physica D \textbf{7} (1983), no.~1--3,
+  305--323.
+
+\bibitem[PPT12]{Palmer2012}
+Kenneth~J. Palmer, Sergei~Yu. Pilyugin, and Sergey~B. Tikhomirov,
+  \emph{Lipschitz shadowing and structural stability of flows}, J. Differential
+  Equations \textbf{252} (2012), no.~2, 1723--1747. \MR{2853558}
+
+\bibitem[Rib14]{Ribeiro2014}
+R.~Ribeiro, \emph{Hyperbolicity and types of shadowing for {$C^1$} generic
+  vector fields}, Discrete Contin. Dyn. Syst. \textbf{34} (2014), no.~7,
+  2963--2982.
+
+\bibitem[SNDP13]{Sommer2013}
+S.~Sommer, M.~Nielsen, S.~Darkner, and X.~Pennec, \emph{Higher-order momentum
+  distributions and locally affine {LDDMM} registration}, SIAM J. Imaging Sci.
+  \textbf{6} (2013), no.~1, 341--367.
+
+\bibitem[TY05]{TrouveYounes2005}
+A.~Trouv\'e and L.~Younes, \emph{Local geometry of deformable templates}, SIAM
+  J. Math. Anal. \textbf{37} (2005), no.~1, 17--59.
+
+\bibitem[VGG75]{VershikGelfandGraev1975}
+A~M Vershik, I~M Gel'fand, and M~I Graev, \emph{Representations of the group of
+  diffeomorphisms}, Russian Mathematical Surveys \textbf{30} (1975), no.~6, 1.
+
+\bibitem[Wei83]{Weinstein1983}
+A.~Weinstein, \emph{The local structure of {P}oisson manifolds}, J.
+  Differential Geom. \textbf{18} (1983), no.~3, 523--557.
+
+\bibitem[Zei91]{Zeitlin1991}
+V.~Zeitlin, \emph{{Finite-mode analogs of 2-D ideal hydrodynamics: Co-adjoint
+  orbits and local canonical structure}}, Physica D \textbf{49} (1991),
+  353--362.
+
+\end{thebibliography}
