@@ -1161,7 +1161,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 				}
 			}
 			p\indices{_a_i^\alpha} q\indices{_a^i_{[j_1 \cdots j_\ell]}}
-      \sum_{m=1}^\ell (-1)^{|\gamma_m|}\left( \prod_{n \neq m}  \delta_{\gamma_n}^{[b_n]} \right) \dz^{j_m} \otimes \partial_{\gamma_m}\delta_{z_a}.
+      \sum_{m=1}^\ell (-1)^{|\gamma_m|}\left( \prod_{n \neq m}  \delta_{\gamma_n}^{[j_n]} \right) \dz^{j_m} \otimes \partial_{\gamma_m}\delta_{z_a}.
   \end{equation}
 
   To see that these are dual pairs, we simply generalize the proof of
@@ -2150,7 +2150,7 @@ sloppiness is usually harmless.
     $\langle TJ_2 ( \rho_1(\xi_1, x)), \xi_2 \rangle = - \omega( \rho_1(\xi_1, x) ,\rho_2( \xi_2,x )) = 0$.
     Thus $\rho_1(\xi_1 , x) \in \kernel( J_2)$, hence
     $\rho_1(\mathfrak{g}_1 ,T^*Q) \subset \kernel(J_2)$.
-    But since $G_1$ acts transitively on the level sets of $J_2$, we see
+    But since $G_1$ acts infinitesimally transitively on the level sets of $J_2$, we see
     that $\rho_1(\mathfrak{g}_1, T^*Q) = \kernel( J_2)$.
   \end{proof}
   % With these foundations established, we proceed
@@ -2159,24 +2159,24 @@ sloppiness is usually harmless.
   % of fluids.
 
 \begin{lem}\label{lem:transitive-action}
-  Let $G_1, G_2$ act on the manifold $Q$. Let $\rho_1^*$ denote the
+  Let $G_1, G_2$ act on the manifold $Q$. Let $\rho_1$ denote the
   cotangent-lifted action associated to $G_1$ and
   $J_2\colon T^*Q \to \mathfrak{g}_2^*$ the momentum map defined by
   the cotangent-lifted action of $G_2$. Assume that the following
   hold:
   \begin{enumerate}
   \item $G_1$ acts transitively on $Q$;
-  \item the cotangent-lifted action $\rho_1^*$ preserves level sets of $J_2$;
+  \item the cotangent-lifted action $\rho_1$ preserves level sets of $J_2$;
   \item for any $\mu$ in the range of $J_2$, the level set $J_2^{-1}(\mu)$ is a section of $T^* Q$.
   \end{enumerate}
-  Then the action $\rho_1^*$ is transitive on level sets of $J_2$.
+  Then the action $\rho_1$ is transitive on level sets of $J_2$.
 \end{lem}
 
 \begin{proof}
   Let $(q,p), (q',p') \in J_2^{-1}(\mu)$ where $(q,p) \neq (q',p')$.
   Since $J_2^{-1}(\mu)$ is a section of $T^* Q$, this implies that
   $q \neq q'$. Now $G_1$ acts transitively on $Q$, so there exists a
-  $g \in G_1$ such that $q' = g \cdot q$. Since $\rho_1^*$ preserves
+  $g \in G_1$ such that $q' = g^{-1} \cdot q$. Since $\rho_1$ preserves
   $J_2^{-1}(\mu)$, we find that
   $g \cdot (q,p) \in J_2^{-1}(\mu) \cap T_{q'}^* Q$. Since
   $J_2^{-1}(\mu)$ is a section, this implies that
