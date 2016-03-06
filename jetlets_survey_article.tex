@@ -1310,9 +1310,9 @@ relabeling symmetry for any $\SDiff(\R^n)$ invariant Lagrangian.
 In light of this discussion, it is natural to consider \eqref{eq:abstract-circulation} as the  fundamental conservation law. The main goal in the remainder of this section is to show that the jet-particle solutions satisfy conservation laws that are `shadows' of this fundamental law in the sense that they are associated with a \emph{partial} relabeling symmetry. To see this, it is useful to define the $k$-th order isotropy group,
 $\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid \Jet^{k}_z( \psi) = \Jet^k_z (\rm{id}) \}$, where we wrote $\rm{id}$ for the identity mapping and $z$ is shorthand for $z_1, \ldots, z_N \in \mathbb{R}^n$.
 Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the corresponding quotient map is given by $\Jet_z^k$.  
- The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$ in the sense that
+ The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$, where the quotient is by the cotangent-lifted action, in the sense that
  for any $(q,p) \in T^*Q^{(k)}_N$ and any $v_\varphi \in T_\varphi \SDiff(\mathbb{R}^n)$ with $\Jet_z^k(\varphi) = q$ we can
- consider the element $i(q,p) \in T^*\SDiff(\R^n)$ given by $\langle i(q,p) , v_\varphi \rangle = \langle p , v_\varphi( \varphi^{-1} \cdot q) \rangle$
+ consider the element $i(q,p) \in T^*\SDiff(\R^n) / \iso^{(k)}(z)$ given by $\langle i(q,p) , v_\varphi \rangle = \langle p , v_\varphi( \varphi^{-1} \cdot q) \rangle$
  \cite[(2.2.4)]{HRS}.
  The commutativity of the following diagram uniquely defines the jetlet solutions:
 % \begin{equation}
@@ -1324,7 +1324,7 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
 % \end{equation}
 \begin{displaymath}
 \xymatrix{
-\mathfrak{X}_{\rm div}(\R^n)^* & \ar[l]_{J_{\rm spatial}} T^*\SDiff(\R^n) \ar[d]^{\pi} \ar[r]^{J_{\rm conv}} &  \mathfrak{iso}(z)^* \\
+\mathfrak{X}_{\rm div}(\R^n)^* & \ar[l]_{J_{\rm spatial}} T^*\SDiff(\R^n) \ar[d]^{\pi} \ar[r]^{J_{\rm conv}} &  \mathfrak{iso}^{(k)}(z)^* \\
 & T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
 & T^*Q^{(k)}_N \ar[u]^i \ar@/_2pc/[uur]_{J_R^{(k)}} \ar@/^2pc/[uul]^{J_L^{(k)}} &
 }
