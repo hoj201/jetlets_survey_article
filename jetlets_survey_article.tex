@@ -873,13 +873,48 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   \begin{prop}\label{prop:J1-dual-pair}
     The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
   \end{prop}
+  
+  \todo[inline]{I think this is false, and I agree with the reviewer.  We need to consider a weaker case, perhaps $\kernel(J_{1}) \subset \kernel(J_{2})^{\omega}$ or something}
+  
   \begin{proof}
-  We first check the conditions of Lemma~\ref{lem:transitive-action}.
   Note that $\SDiff(\R^n)$ acts transitively on $Q^{(1)}_N$ since it
   acts transitively on representatives $\psi \in \SDiff(\R^n)$ of
   elements $q$ (i.e.\ $q^{(0)}_a = \psi(z_a)$ and
-  $q^{(1)}_a = D\psi|_{z_a}$, or, $q = \Jet^1_z(\psi)$). Secondly, the
-  cotangent-lifted action preserves level sets of $J_R^{(k)}$.
+  $q^{(1)}_a = D\psi|_{z_a}$, or, $q = \Jet^1_z(\psi)$).
+  Secondly, we can observe that the right action of $\iso(z)$ commutes with the
+  left action of $\SDiff(\R^{n})$ on $Q^{(1)}$.
+  Therefore, Lemma A.9 \todo{hyperlink this} would allow us to complete the proof
+  if only we could show that $G_{1}$ is infinitesimally transitive with respect to $J_{2}$.
+  In other words, we must verify that for any $(q,p) \in T^{*}Q$ and
+  any $w \in T_{(q,p)} T^* Q$ such that $TJ_{R}^{(1)} \cdot w = 0$
+  there exists a $u \in \mathfrak{X}_{\rm div}(\R^{n})$
+  such that $u \cdot (q,p) = w$.
+  To check this, note that
+  \begin{align*}
+  	J_{R}^{(1)}(q,p) = - p\indices{_{am}^{j}} q \indices{_{a}^{m}_{k}} dz^{k} \otimes  \partial_{j} \delta_{z_{a}}
+  \end{align*}
+    By representing this as tuple of matrices (where $jk$th compenent of the $a$th matrix is the coefficient of $dz^{k} \otimes \partial_{j} \delta_{z_{a}}$) then the above formula may be simply written as
+    \begin{align*}
+    	J_{R}^{(1)}(q,p) = -[p^{(1)}]^{T} [q^{(1)}]
+    \end{align*}
+  If we let $w = (q,p,\delta q , \delta p) \in TT^{*}Q$ then
+  \begin{align*}
+  	0=TJ_{R}^{(1)} \cdot w = - [ \delta p^{(1)} ]^{T} [q^{(1)}] - [p^{(1)} ]^{T} [\delta q^{(1)} ]
+  \end{align*}
+  if and only if
+  \begin{align}
+  	[\delta p^{(1)} ]^{T} = - [p^{(1)}]^{T} [\delta q^{(1)}] [q^{(1)}]^{-1}. \label{eq:transitivity constraint}
+  \end{align}
+  
+  Thus we must prove that there exists a vector-field $u$ such that $u \cdot (q,p)$ satisfies \eqref{eq:transitivity constraint}.
+  We can observe that in matrix notation, the cotangent lifted action is given by
+  \begin{align*}
+  	u \cdot (q,p) = ( q^{(0)} , q^{(1)} , p^{(0)} , p^{(1)} , -u(q^{(0)}) , -Du(q^{(0)}) \cdot q^{(1)} , Du(q^{(0)})^{T} p^{(0)} , Du(q^{(0)})^{T} p^{(1)})
+  \end{align*}
+  We see that $u(q^{0})$ and $Du(q^{(0)})$ may be chosen as arbitrary elements of $\R^{n}$ and $\SL(n)$ respectively.
+  Thus
+  
+  Secondly, the cotangent-lifted action preserves level sets of $J_R^{(k)}$.
   From~\eqref{eq:SDiff_cotangent_action_Q1} we see that $\varphi \in
   \SDiff(\R^n)$ acts on the first level of $(q,p) \in T^* Q^{(1)}_N$ as
   \begin{align*}
@@ -2043,6 +2078,10 @@ sloppiness is usually harmless.
   a \emph{dual pair}.
 %  In the case that $S$ is a cotangent bundle we call $\psi$ or $J$
 %  \emph{Clebsch variables} \cite{MarsdenWeinstein1983}.
+
+\todo[inline]{
+ I think we only need to consider the case $\kernel(J_{1}) \subset \kernel(J_{2})$.
+In fact, our ``dual pairs'' are not dual pairs, although our conservation theorem apparently does not require this.}
 
   \begin{thm} \label{thm:dual_pairs}
     Let $J_1,J_2:S \to P_1,P_2$ form a dual pair.
