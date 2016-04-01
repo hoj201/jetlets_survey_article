@@ -870,84 +870,11 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   \begin{equation}\label{eq:JR1}
     J_R^{(1)}(q,p) = - p\indices{_a_i^j} q\indices{_a^i_k} \dz^k \otimes \partial_j \delta_{z_a}
   \end{equation}
+  
   \begin{prop}\label{prop:J1-dual-pair}
-    The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
+    The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a weak dual pair.
   \end{prop}
-  
-  \todo[inline]{I think this is false, and I agree with the reviewer.  We need to consider a weaker case, perhaps $\kernel(J_{1}) \subset \kernel(J_{2})^{\omega}$ or something}
-  
-  \begin{proof}
-  Note that $\SDiff(\R^n)$ acts transitively on $Q^{(1)}_N$ since it
-  acts transitively on representatives $\psi \in \SDiff(\R^n)$ of
-  elements $q$ (i.e.\ $q^{(0)}_a = \psi(z_a)$ and
-  $q^{(1)}_a = D\psi|_{z_a}$, or, $q = \Jet^1_z(\psi)$).
-  Secondly, we can observe that the right action of $\iso(z)$ commutes with the
-  left action of $\SDiff(\R^{n})$ on $Q^{(1)}$.
-  Therefore, Lemma A.9 \todo{hyperlink this} would allow us to complete the proof
-  if only we could show that $G_{1}$ is infinitesimally transitive with respect to $J_{2}$.
-  In other words, we must verify that for any $(q,p) \in T^{*}Q$ and
-  any $w \in T_{(q,p)} T^* Q$ such that $TJ_{R}^{(1)} \cdot w = 0$
-  there exists a $u \in \mathfrak{X}_{\rm div}(\R^{n})$
-  such that $u \cdot (q,p) = w$.
-  To check this, note that
-  \begin{align*}
-  	J_{R}^{(1)}(q,p) = - p\indices{_{am}^{j}} q \indices{_{a}^{m}_{k}} dz^{k} \otimes  \partial_{j} \delta_{z_{a}}
-  \end{align*}
-    By representing this as tuple of matrices (where $jk$th compenent of the $a$th matrix is the coefficient of $dz^{k} \otimes \partial_{j} \delta_{z_{a}}$) then the above formula may be simply written as
-    \begin{align*}
-    	J_{R}^{(1)}(q,p) = -[p^{(1)}]^{T} [q^{(1)}]
-    \end{align*}
-  If we let $w = (q,p,\delta q , \delta p) \in TT^{*}Q$ then
-  \begin{align*}
-  	0=TJ_{R}^{(1)} \cdot w = - [ \delta p^{(1)} ]^{T} [q^{(1)}] - [p^{(1)} ]^{T} [\delta q^{(1)} ]
-  \end{align*}
-  if and only if
-  \begin{align}
-  	[\delta p^{(1)} ]^{T} = - [p^{(1)}]^{T} [\delta q^{(1)}] [q^{(1)}]^{-1}. \label{eq:transitivity constraint}
-  \end{align}
-  
-  Thus we must prove that there exists a vector-field $u$ such that $u \cdot (q,p)$ satisfies \eqref{eq:transitivity constraint}.
-  We can observe that in matrix notation, the cotangent lifted action is given by
-  \begin{align*}
-  	u \cdot (q,p) = ( q^{(0)} , q^{(1)} , p^{(0)} , p^{(1)} , -u(q^{(0)}) , -Du(q^{(0)}) \cdot q^{(1)} , Du(q^{(0)})^{T} p^{(0)} , Du(q^{(0)})^{T} p^{(1)})
-  \end{align*}
-  We see that $u(q^{0})$ and $Du(q^{(0)})$ may be chosen as arbitrary elements of $\R^{n}$ and $\SL(n)$ respectively.
-  Thus
-  
-  Secondly, the cotangent-lifted action preserves level sets of $J_R^{(k)}$.
-  From~\eqref{eq:SDiff_cotangent_action_Q1} we see that $\varphi \in
-  \SDiff(\R^n)$ acts on the first level of $(q,p) \in T^* Q^{(1)}_N$ as
-  \begin{align*}
-    (\varphi\cdot q)\indices{_a^i_j} &= (D\varphi|_{q^{(0)}_a})\indices{^i_k}\,q\indices{_a^k_j}, \\
-    (\varphi\cdot p)\indices{_a_i^j} &= p\indices{_a_k^j}(D\varphi^{-1}|_{\varphi\cdot q^{(0)}_a})\indices{^k_i}.
-  \end{align*}
-  The explicit calculation
-  \begin{align*}
-    J_R^{(1)}(\varphi\cdot(q,p))
-    &= - p\indices{_a_l^j} (D\varphi^{-1}|_{\varphi\cdot q^{(0)}_a})\indices{^l_i} \,
-         (D\varphi|_{q^{(0)}_a})\indices{^i_m}\, q\indices{_a^m_k}
-         \dz^k \otimes \partial_j \delta_{z_a} \\
-    &= - p\indices{_a_l^j} \, \delta^l_m \, q\indices{_a^m_k}
-         \dz^k \otimes \partial_j \delta_{z_a} = J_R^{(1)}(q,p)
-  \end{align*}
-  shows that~\eqref{eq:JR1} is preserved under the cotangent-lifted
-  action of $\SDiff(\R^n)$. Finally, we must show that
-  $(J_R^{(1)})^{-1}(m)$ is a
-  section of $T^* Q^{(1)}_N$ for any $m$ in the range of $J_{R}^{(1)}$. Let
-  $(q,p) \in \big(J_R^{(1)}\big)^{-1}(m)$. Note that for fixed $q$,
-  since $q_a^{(1)} \in \SL(n)$ is a linear isomorphism, the map
-  $p \mapsto J_R^{(1)}(q,p)$ is an injection and hence
-  $(J_R^{(1)})^{-1}(m) \cap T^*_q Q$ contains a unique element. Since
-  $\SDiff(\R^n)$ acts transitively on the base $Q^{(1)}_N$ and acts by
-  fiber-preserving diffeomorphisms on $T^* Q^{(1)}_N$, it follows that
-  $(J_R^{(1)})^{-1}(m)$ is a section of $T^* Q^{(1)}_N$.
-
-  Thus Lemma~\ref{lem:transitive-action} implies that $\SDiff(\R^n)$
-  acts transitively on the level sets of the momentum map $J_R^{(1)}$.
-  The actions of $\iso(z)$ and $\SDiff(\R^n)$ clearly commute so
-  Theorem~\ref{thm:commuting_actions} implies that $J_L^{(1)}$ and
-  $J_R^{(1)}$ form a dual pair.
-  \end{proof}
+   We will postpone the proof, as this is a special case of a proposition which comes later in the paper (Proposition \ref{prop:k dual pairs}).
 
   As before, the quantity $dh( J_L^{(1)}(q,p))$ is a legitimate vector field
   if $K_{p,\sigma}$ is sufficiently smooth.  Moreover, when the Hamiltonian
@@ -1199,49 +1126,41 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
       \sum_{m=1}^\ell (-1)^{|\gamma_m|}\left( \prod_{n \neq m}  \delta_{\gamma_n}^{[j_n]} \right) \dz^{j_m} \otimes \partial_{\gamma_m}\delta_{z_a}.
   \end{equation}
 
-  To see that these are dual pairs, we simply generalize the proof of
-  Proposition~\ref{prop:J1-dual-pair}. We first check the conditions
-  of Lemma~\ref{lem:transitive-action}. Note that $\SDiff(\R^n)$ acts
-  transitively on $Q^{(k)}_N$ because groups always act transitively on equivalence classes, and $Q^{(k)}_{N} := \SDiff(\R^{n}) / \iso^{(k)}(z)$.
-  Secondly, the cotangent-lifted
-  action preserves level sets of $J_R^{(k)}$. To see this, let
-  $\varphi \in \SDiff(\R^n)$ and $(q,p) \in T^* Q^{(k)}_N$, then we
-  have
-  \begin{align*}
-    \langle J_R^{(k)}\big(\varphi\cdot(q,p)\big), w \rangle
-    &= \langle T^{*} \varphi \cdot (q,p) , ( \varphi^{-1} \cdot q ) \cdot w \rangle \\
-    &= \langle T^{*} \varphi \cdot (q,p) ,  T\varphi^{-1} \cdot (q \cdot w) \rangle \\
-    &= \langle (q,p) , T \varphi \cdot T\varphi^{-1} (q \cdot w) \rangle \\
-    &= \langle (q,p) , q \cdot w \rangle = \langle J_{R}^{(k)}(q,p) , w \rangle,
-  \end{align*}
-  where we used on the second line that the actions commute.
-  Finally, we must show that $(J_R^{(k)})^{-1}(m)$ is a section of $T^* Q^{(k)}_N$
-  for any $m$ in the range of $J_{R}^{(k)}$.
-  Let $(q,p) \in \big(J_R^{(k)}\big)^{-1}(m)$ and let
-  $\psi \in \SDiff(\R^n)$ such that $q = \Jet^{k}_z(\psi)$. Then
-  $T^{*}\psi \cdot (q,p) = (\Jet^k_z(\rm{id}),\pi)$ for some $\pi$.
-  Since the identity jet $\bar{q} := \Jet^k_z(\rm{id})$ satisfies
-  $\bar{q}\indices{_a^i_j} = \delta^i_j$ and
-  $\bar{q}\indices{_a^i_{[j_1 \cdots j_\ell]}} = 0$ for $l > 1$, we
-  find that~\eqref{eq:JRk} reduces to
-  \begin{equation*}
-    J_R^{(k)}(\bar{q},\pi) = \sum_{a=1}^N
-    \sum_{|\alpha| \leq k}
-			\pi\indices{_a_i^\alpha} (-1)^{|\alpha|} \dz^i \otimes \partial_\alpha \delta_{z_a}.
-  \end{equation*}
-  Since the points $z_a$ are distinct this mapping
-  $J_R^{(k)}(\bar{q},\,\cdot\,)$ is clearly injective into
-  $\mathfrak{X}_{\rm div}(\R^n)^*$. By invariance of $J_R^{(k)}$ under
-  the action of $\SDiff(\R^n)$ it follows that
-  $\pi \in T^*_{\bar{q}} Q^{(k)}_N$ is the unique element such that
-  $J_R^{(k)}(\bar{q},\pi) = m$, and since $\SDiff(\R^n)$ acts by
-  fiber-preserving diffeomorphisms on $T^* Q^{(k)}_N$, it follows that
-  $(J_R^{(k)})^{-1}(m)$ is a section of $T^* Q^{(k)}_N$.
-
-  Thus Lemma~\ref{lem:transitive-action} implies that $\SDiff(\R^n)$
-  acts transitively on the level sets of the momentum map $J_R^{(k)}$
-  and by Theorem~\ref{thm:commuting_actions}, $J_L^{(k)}$ and
-  $J_R^{(k)}$ form a dual pair. This gives us the final result on
+  \begin{prop} \label{prop:k dual pairs}
+  	The maps $J_L^{(k)}$ and $J_R^{(k)}$ form a weak dual pair.
+  \end{prop}
+  \begin{proof}
+  	Let us check that $J_L^{(k)}$ is invariant under the right action of $\iso(z)$.
+	For notational clarity, let us denote this right action by $\rho : Q^{(k)} \times \iso(z) \to Q^{(k)}$.
+	Then the tangent lift of this action can be denoted by $D\rho: TQ^{(k)} \times \iso(z) \to TQ^{(k)}$.
+	The cotangent lifted action is a left action, $D\rho^* : \iso(z) \times T^*Q^{(k)} \to T^*Q^{(k)}$, defined implicitly by the constraint
+	\begin{align}
+		\langle D\rho^*( \psi , (q,p) ) , D\rho( (q,v) , \psi) \rangle = \langle (q,p) , (q,v) \rangle \label{eq:dual action}
+	\end{align}
+	for all $(q,p) \in T^*Q^{(k)}$ and $(q,v) \in TQ^{(k)}$.
+	In particular, one can verify that $D\rho^*( \psi , (q,p) )$ is a co-vector over the point $\tilde{q} = \rho( q , \psi^{-1}) \in T^*Q^{(k)}$.
+	By the definition of $J_L$ we observe
+	\begin{align*}
+		\langle J_L( D\rho^*( \psi , (q,p) ) ) , u \rangle = \langle  D\rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \bar{\varphi} ) \rangle 
+	\end{align*}
+	where $\bar{\varphi} \in \SDiff(\R^n)$ is any diffeomorphism such that $\Jet_z^{(k)}( \bar{\varphi} ) = \rho( q , \psi^{-1} )$.
+	If we let $\varphi$ be such that $\Jet^{(k)}_z( \varphi ) = q$ then we may choose $\bar{\varphi} = \varphi \circ \psi^{-1}$.
+	Thus we get
+	\begin{align*}
+			\langle J_L( (q,p) \cdot \psi ) , u \rangle = \langle  D\rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \varphi \circ \psi^{-1} ) \rangle 
+	\end{align*}
+	By \eqref{eq:dual action} we see
+	\begin{align*}
+		\langle J_L( (q,p) \cdot \psi ) , u \rangle &=  \langle  D\rho^*( \psi^{-1} , D\rho^*( \psi ,  (q,p) ) ) ,  D\rho( \Jet^{(k)}_z ( u \circ \varphi \circ \psi^{-1} ) , \psi^{-1} ) \rangle \\
+			&= \langle (q,p) , \Jet^{(k)}( u \circ \varphi) \rangle \\
+			&= \langle J_L(q,p) , u \rangle
+	\end{align*}
+	Thus, we see that $J_L$ is invariant under the right action of $\iso(z)$ on $Q^{(k)}$.
+	By Corollary 2.6 of \cite{GayBalmazVizman2012} the proposition follows.
+  \end{proof}
+  
+  In the case of $k=1$ we obtain the weak dual pair of the previous section and Proposition \ref{prop:J1-dual-pair} is a corollary of Proposition \ref{prop:k dual pairs}.
+  Proposition \ref{prop:k dual pairs} gives us the final result on
   jetlet parametrized solutions.
   \begin{prop}\label{prop:k-solutions}
     Let $p \ge \frac{n}{2} + k + 1$ and $\sigma > 0$.
