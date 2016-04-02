@@ -268,7 +268,7 @@ here for convenience.
   \begin{quote}
     {\bf Theorem \ref{thm:dual_pairs}}
     Let $P_1$ and $P_2$ be Poisson manifolds and let $S$ be
-    a symplectic manifold.  Let $J_1,J_2:S \to P_1,P_2$ form a dual pair 
+    a symplectic manifold.  Let $J_1,J_2:S \to P_1,P_2$ form a weak dual pair 
     (see definition on page \pageref{thm:dual_pairs}).
     Let $h \in C^1(P_1)$.
     If $(q,p)(t) \in S$ is a solution to Hamilton's equations
@@ -624,7 +624,7 @@ clutter.
 Next, we discuss a dual pair for this system.
 The group $\SDiff(\R^n)$ acts on itself from the left and from the right.
 These actions can be lifted to $T^* \SDiff(\R^n)$, and yield
-momentum maps $J_L,J_R : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$. In particular these maps form the dual pair
+momentum maps $J_L,J_R : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$. In particular these maps form the weak dual pair
 \begin{align*}
   \mathfrak{X}_{\rm div}(\R^n)^*
   \stackrel{J_L}{\longmapsfrom}
@@ -632,9 +632,9 @@ momentum maps $J_L,J_R : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$. In
   \stackrel{J_R}{\longmapsto}
   \mathfrak{X}_{\rm div}(\R^n)^*.
 \end{align*}
-For a mathematically rigorous treatment of this dual pair we refer to \cite{GayBalmazVizman2012}.
+For a mathematically rigorous treatment of this weak dual pair we refer to \cite{GayBalmazVizman2012}.
 
-By Theorem~\ref{thm:dual_pairs}, we can use this dual pair to derive dynamical properties of Hamiltonian equations defined on $\mathfrak{X}_{\rm div}(\R^n)^*$.
+By Theorem~\ref{thm:dual_pairs}, we can use this weak dual pair to derive dynamical properties of Hamiltonian equations defined on $\mathfrak{X}_{\rm div}(\R^n)^*$.
 The Hamiltonian for a fluid is written on the left instance of $\mathfrak{X}_{\rm div}(\R^n)^*$.
 One can (in principle) solve Hamilton's equations on $T^*\SDiff(\R^n)$
 with respect to the Hamiltonian $H = h \circ J_L$.
@@ -645,12 +645,12 @@ The right leg yields conserved quantities associated to the particle relabeling 
 It was found in \cite{Arnold1966} that these conserved momenta are identical
 to the law of conservation of circulation, a.k.a. \emph{Kelvin's circulation theorem}.
 
-Unfortunately, this dual pair does not help us in solving \eqref{eq:MMDiff}
+Unfortunately, this weak dual pair does not help us in solving \eqref{eq:MMDiff}
 since solving Hamilton's equations on $T^*\SDiff(\R^n)$ is no less difficult
 than solving Hamilton's equations on $\mathfrak{X}_{\rm div}(\R^n)^*$.
-In the next section we will derive a dual pair wherein the symplectic
+In the next section we will derive a weak dual pair wherein the symplectic
 manifold is more reasonable.
-This will yield the particle-like solutions described in \cite{MumfordMichor2013}. In the later parts of the paper we will generalize the treatment to obtain a  dual pair for each level in the hierarchy of particle-like solutions.
+This will yield the particle-like solutions described in \cite{MumfordMichor2013}. In the later parts of the paper we will generalize the treatment to obtain a weak dual pair for each level in the hierarchy of particle-like solutions.
 
 \subsection{Particle-like solutions}
 \label{sec:zeroth_order}
@@ -761,8 +761,8 @@ Once one has found a solution $(q(t), p(t))$ to Hamilton's equations on $T^*\mat
     \;\;(q,p)
     &&\stackrel{J_R^{(0)} }{\longmapsto} 0
   \end{alignat*}
-  is a dual pair. 
-  This dual pair allows us to express conservation
+  is a weak dual pair. 
+  This weak dual pair allows us to express conservation
   laws and dynamics as a result of Theorem~\ref{thm:dual_pairs}.
    Namely, the left leg represents the space in which particle-like
   solutions to \eqref{eq:MMDiff} evolve,
@@ -1988,22 +1988,18 @@ sloppiness is usually harmless.
   \end{equation*}
   If $J:S \to P_2$ is a Poisson map as well, and
   \begin{equation*}
-    \kernel(J) = \kernel(\psi)^\omega
+    \kernel(J)^\omega \subset \kernel(\psi)^\omega \quad , \quad \kernel(\psi)^\omega \subset \kernel(J)^\omega
   \end{equation*}
   we call the diagram
   \begin{equation*}
     P_1 \stackrel{\psi}{\longleftarrow} S \stackrel{J}{\longrightarrow} P_2
   \end{equation*}
-  a \emph{dual pair}.
+  a \emph{weak dual pair} (see \cite{GayBalmazVizman2012}).
 %  In the case that $S$ is a cotangent bundle we call $\psi$ or $J$
 %  \emph{Clebsch variables} \cite{MarsdenWeinstein1983}.
 
-\todo[inline]{
- I think we only need to consider the case $\kernel(J_{1}) \subset \kernel(J_{2})$.
-In fact, our ``dual pairs'' are not dual pairs, although our conservation theorem apparently does not require this.}
-
   \begin{thm} \label{thm:dual_pairs}
-    Let $J_1,J_2:S \to P_1,P_2$ form a dual pair.
+    Let $J_1,J_2:S \to P_1,P_2$ form a weak dual pair.
     Let $h \in C^1(P_1)$.
     Let $x(t) \in S$ be a solution to Hamilton's equations
     with respect to the Hamiltonian $H = h \circ J_1$.
@@ -2025,14 +2021,12 @@ In fact, our ``dual pairs'' are not dual pairs, although our conservation theore
       \omega \left( \dot{x} , v \right).
     \end{equation*}
     As $v$ was an arbitrary element of $\kernel(J_1)$ over $x(0)$
-    we see that $\dot{x} \in TS$ is contained
-    in the symplectic orthogonal to $\kernel(J_1)$.
-    Since $J_1$ and $J_2$ form a dual pair,
-    this observation implies $\dot{x} \in \kernel(J_2)$.
-    We may apply this argument at each time $t$ and observe
+    we see that $\dot{x} \in \kernel(J_1)^\omega$.
+    As $J_1$ and $J_2$ form a weak dual pair, this implies $\dot{x}  \in \kernel(J_2)$.
+    Thus we have found
     \begin{equation*}
       \frac{d}{dt} J_2( x(t)) = TJ_2 \cdot \dot{x}(t)  
-      = 0 \quad \forall t.
+      = 0.
     \end{equation*}
   \end{proof}
 
