@@ -1975,20 +1975,21 @@ sloppiness is usually harmless.
   In this section we review the notion of dual pairs
   \cite{MarsdenWeinstein1983,Weinstein1983,GayBalmazVizman2012}.
   Let $(S,\omega)$ be a symplectic manifold.
-  Given a distribution $V \subset TS$, denote the fiber over 
+  Given a distribution $V \subset TS$, denote the fiber over
   $x \in S$ by $V_x \subset T_x S$.
   The \emph{symplectic orthogonal} to $V$ is the distribution
   \begin{equation*}
     V^\omega = \{ w \in TS \mid \omega( w , v ) = 0, \forall v \in V \}.
   \end{equation*}
-  Let $\psi:S \to P_1$ be a Poisson map.
-  The kernel of $\psi$ is the distribution
+  Let $J_1\colon S \to P_1$ be a Poisson map.
+  The kernel of $J_1$ is the distribution
   \begin{equation*}
-    \kernel(\psi) = \{ v \in TS \mid T\psi \cdot v  = 0 \}.
+    \kernel(J_1) = \{ v \in TS \mid TJ_1 \cdot v  = 0 \}.
   \end{equation*}
-  If $J:S \to P_2$ is a Poisson map as well, and
+  If $J_2\colon S \to P_2$ is a Poisson map as well, and
   \begin{equation*}
-    \kernel(J)^\omega \subset \kernel(\psi)^\omega \quad , \quad \kernel(\psi)^\omega \subset \kernel(J)^\omega
+    \kernel(J_2)^\omega \subset \kernel(J_1) \quad , \quad
+    \kernel(J_1)^\omega \subset \kernel(J_2)
   \end{equation*}
   we call the diagram
   \begin{equation*}
