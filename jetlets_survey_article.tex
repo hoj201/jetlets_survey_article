@@ -1761,8 +1761,7 @@ JE, DDH, HOJ and DMM are grateful for partial support by the European Research C
 
 \section{Hamiltonian mechanics}
 \label{sec:Hamiltonian}
-The goal of this section is to prove Theorems~\ref{thm:dual_pairs}
-and~\ref{thm:commuting_actions} (see page~\pageref{thm:dual_pairs}).
+The goal of this section is to prove Theorem~\ref{thm:dual_pairs} (see page~\pageref{thm:dual_pairs}).
 Those who understand and accept these theorems on a first reading
 should be able to skip this section without any consequence.
 Most of this section will be a crash course in Poisson geometry
@@ -2039,111 +2038,6 @@ sloppiness is usually harmless.
       = 0.
     \end{equation*}
   \end{proof}
-
-  The next theorem and lemma will be used later for the purpose of
-  identifying dual pairs.
-	\todo[inline]{hoj:  I think we can remove this theorem, and the remainder of this subsection.}
-  \begin{thm}[Example 2.2 of \cite{GayBalmazVizman2012}] \label{thm:commuting_actions}
-    Denote by $\omega$ the canonical symplectic form on the cotangent bundle $T^*Q$ of some manifold $Q$.
-    Let $G_1,G_2$ act on $Q$
-    by commuting group actions.\footnote{That is, acting first by $G_1$ and second by $G_2$ is identical to acting first by $G_2$ then second by $G_1$.}
-    Let
-    $\rho_i: G_i \times T^*Q \to T^*Q$ for $i=1,2$, denote the cotangent lifted actions
-    and let $J_1: T^*Q \to \mathfrak{g}_1^*$ and $J_2: T^*Q \to \mathfrak{g}_2^*$ denote the momentum maps given by \eqref{eq:cotangent_momap}. 
-    Moreover, assume $G_1$ is infinitesimally transitive on the level sets of $J_2$
-    in the sense that $\kernel(J_2) \subset \mathfrak{g}_1 \cdot T^*Q$.
-    Then the momentum maps form the dual pair
-    $
-      \mathfrak{g}^*_1
-      \stackrel{J_1}{\longleftarrow}
-      T^*Q
-      \stackrel{J_2}{\longrightarrow}
-      \mathfrak{g}_2^*.
-    $
-  \end{thm}
-  \begin{proof}
-    Let us first show that $\kernel(J_1) = [\rho_1(\mathfrak{g}_1 , T^*Q )]^\omega$.
-    Recall that on account of the definition of momentum maps we have 
-    $d \langle J_1 , \xi_1 \rangle = i_{\rho_1(\xi_1)} \omega$, 
-    where $\rho_1(\xi_1)$ is the infinitesimal generator of
-    $\xi_1 \in \mathfrak{g}_1$.
-    Let $v \in [\rho_1(\mathfrak{g}_1,T^*Q)]^\omega$.
-    We observe that 
-    $d \langle J_1 , \xi_1 \rangle (v) = \omega( \rho_1(\xi_1, x ), v ) = 0$.
-    However $d\langle J_1 , \xi_1 \rangle (v) = \langle TJ_1(v) , \xi_1 \rangle$.
-    Thus $v \in \kernel(J_1)$.
-    The previous steps may be reversed, and
-    the converse follows immediately.
-    We find
-    $\kernel(J_1) = [\rho_1(\mathfrak{g}_1,T^*Q)]^\omega$.
-    Of course the same argument applies to $J_2$.
-
-    We now show that $\kernel(J_2) = \rho_1(\mathfrak{g}_1,T^*Q)$.
-    Again, let $\xi_1 \in \mathfrak{g}_1, \xi_2 \in \mathfrak{g}_2$.
-    Recall that $\omega = - d \theta$ where $\theta$ is the canonical one-form on $T^*Q$.
-    Moreover, recall that $\theta$ is invariant under cotangent lifted group actions \cite[Theorem 3.2.12]{FOM}.
-    Thus by Cartan's formula \cite[Theorem 2.4.13(iv)]{FOM} we can calculate
-    \begin{equation*}
-      0 = \lie_{\rho_1(\xi_1)} [ \theta] = d \langle \theta_1 , \rho_1(\xi_1) \rangle + i_{\rho_1(\xi_1)}(d\theta) = d \langle \theta_1 , \rho_1(\xi_1) \rangle - i_{\rho_1(\xi_1)} \omega, 
-    \end{equation*}
-    where $i_{\rho_1(\xi_1)} \omega$ denotes contraction of a two-form with a vector field.
-    Finally we calculate
-    \begin{align*}
-    	\omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) &=  -\langle d \langle \theta, \rho_1(\xi_1) \rangle ,  \rho_2(\xi_2) \rangle \\
-      &= -\lie_{\rho_2(\xi_2) }[ \langle \theta,\rho_1(\xi_1) \rangle] = - \langle \lie_{\rho_2(\xi_2)}[\theta] , \rho_1(\xi_1) \rangle - \langle \theta , [\rho_2(\xi_2), \rho_1(\xi_1) ] \rangle.
-    \end{align*}
-    The first term in the last line vanishes because $\theta$ is invariant under the flow of $\rho_2(\xi_2)$.
-    The second term in the last line vanishes because the actions of $G_1$ and $G_2$ commute.
-    Thus $\omega(\rho_1(\xi_1) , \rho_2(\xi_2) ) = 0$,
-    and we have proven symplectic orthogonality.
-%    First note that $\rho_1(\xi_1) = X_{ \langle J_1 , \xi_1 \rangle}$,
-%    and the same calculation applies to $\xi_2$.
-%    Thus we observe by using Corollary~\ref{cor:Lie_hom} that
-%    \begin{align*}
-%      X_{ \omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) }
-%      &= - [X_{ \langle J_1,\xi_1\rangle} , X_{\langle J_2,\xi_2\rangle} ] \\
-%      &= - [\rho_1(\xi_1) , \rho_2(\xi_2)] = 0.
-%    \end{align*}
-%    The final equality
-%    derives from the fact that the actions of $G_1$ and $G_2$ commute.
-%    We have proven that $\rho_1(\mathfrak{g}_1 , S)$ and $\rho_2(S,\mathfrak{g}_2)$ are
-%    symplectically orthogonal.
-    Now note that
-    $\langle TJ_2 ( \rho_1(\xi_1, x)), \xi_2 \rangle = - \omega( \rho_1(\xi_1, x) ,\rho_2( \xi_2,x )) = 0$.
-    Thus $\rho_1(\xi_1 , x) \in \kernel( J_2)$, hence
-    $\rho_1(\mathfrak{g}_1 ,T^*Q) \subset \kernel(J_2)$.
-    But since $G_1$ acts infinitesimally transitively on the level sets of $J_2$, we see
-    that $\rho_1(\mathfrak{g}_1, T^*Q) = \kernel( J_2)$.
-  \end{proof}
-  % With these foundations established, we proceed
-  % to discuss a simple example of Poisson mechanics
-  % before moving to the more sophisticated case
-  % of fluids.
-
-\begin{lem}\label{lem:transitive-action}
-  Let $G_1, G_2$ act on the manifold $Q$. Let $\rho_1$ denote the
-  cotangent-lifted action associated to $G_1$ and
-  $J_2\colon T^*Q \to \mathfrak{g}_2^*$ the momentum map defined by
-  the cotangent-lifted action of $G_2$. Assume that the following
-  hold:
-  \begin{enumerate}
-  \item $G_1$ acts transitively on $Q$;
-  \item the cotangent-lifted action $\rho_1$ preserves level sets of $J_2$;
-  \item for any $\mu$ in the range of $J_2$, the level set $J_2^{-1}(\mu)$ is a section of $T^* Q$.
-  \end{enumerate}
-  Then the action $\rho_1$ is transitive on level sets of $J_2$.
-\end{lem}
-
-\begin{proof}
-  Let $(q,p), (q',p') \in J_2^{-1}(\mu)$ where $(q,p) \neq (q',p')$.
-  Since $J_2^{-1}(\mu)$ is a section of $T^* Q$, this implies that
-  $q \neq q'$. Now $G_1$ acts transitively on $Q$, so there exists a
-  $g \in G_1$ such that $q' = g^{-1} \cdot q$. Since $\rho_1$ preserves
-  $J_2^{-1}(\mu)$, we find that
-  $g \cdot (q,p) \in J_2^{-1}(\mu) \cap T_{q'}^* Q$. Since
-  $J_2^{-1}(\mu)$ is a section, this implies that
-  $g \cdot (q,p) = (q',p')$ must hold.
-\end{proof}
 
 
 \section{Multi-indices}
