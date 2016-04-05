@@ -1132,26 +1132,35 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
   \begin{proof}
   	Let us check that $J_L^{(k)}$ is invariant under the right action of $\iso(z)$.
 	For notational clarity, let us denote this right action by $\rho : Q^{(k)} \times \iso(z) \to Q^{(k)}$.
-	Then the tangent lift of this action can be denoted by $D\rho: TQ^{(k)} \times \iso(z) \to TQ^{(k)}$.
-	The cotangent lifted action is a left action, $D\rho^* : \iso(z) \times T^*Q^{(k)} \to T^*Q^{(k)}$, defined implicitly by the constraint
+	Explicitly, any element $q \in Q^{(k)}$ is expressible as the $k$-jet of some diffeomorphism $\varphi$,
+	and $\rho( q , \psi) = \Jet_z^{(k)}( \varphi \circ \psi)$.
+	
+	Similarly, any element of the tangent fiber $T_\varphi \SDiff(\R^n)$ may be written as a composition $u \circ \varphi$ for some $u \in \mathfrak{X}_{\rm div}(\R^n)$.
+	Elements of $TQ^{(k)}$ are of the form $\Jet_z^{(k)}( u \circ \varphi)$ for $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $\varphi \in \SDiff(\R^n)$.
+	Given this representation, the tangent lift of the action $\rho$, also denoted $\rho: TQ^{(k)} \times \iso(z) \to TQ^{(k)}$, is given by
 	\begin{align}
-		\langle D\rho^*( \psi , (q,p) ) , D\rho( (q,v) , \psi) \rangle = \langle (q,p) , (q,v) \rangle \label{eq:dual action}
+		\rho( (q,v)  , \psi ) = \Jet_z^{(k)}( u \circ \varphi \circ \psi ) \label{eq:tangent action}
+	\end{align}
+	for $(q,v) \in TQ^{(k)}$ and where $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $\varphi \in \SDiff( \R^n)$ are arbitrary up to the constraint $(q,v) = \Jet_{z}^{(k)}( u \circ \varphi)$.
+	The cotangent lifted action is a left action, $\rho^* : \iso(z) \times T^*Q^{(k)} \to T^*Q^{(k)}$, defined implicitly by the constraint
+	\begin{align}
+		\langle \rho^*( \psi , (q,p) ) , \rho( (q,v) , \psi^{-1} ) \rangle = \langle (q,p) , (q,v) \rangle \label{eq:dual action}
 	\end{align}
 	for all $(q,p) \in T^*Q^{(k)}$ and $(q,v) \in TQ^{(k)}$.
-	In particular, one can verify that $D\rho^*( \psi , (q,p) )$ is a co-vector over the point $\tilde{q} = \rho( q , \psi^{-1}) \in T^*Q^{(k)}$.
+	In particular, one can verify that $\rho^*( \psi , (q,p) )$ is a co-vector over the point $\tilde{q} = \rho( q , \psi^{-1}) \in T^*Q^{(k)}$.
 	By the definition of $J_L$ we observe
 	\begin{align*}
-		\langle J_L( D\rho^*( \psi , (q,p) ) ) , u \rangle = \langle  D\rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \bar{\varphi} ) \rangle 
+		\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle = \langle  \rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \bar{\varphi} ) \rangle 
 	\end{align*}
 	where $\bar{\varphi} \in \SDiff(\R^n)$ is any diffeomorphism such that $\Jet_z^{(k)}( \bar{\varphi} ) = \rho( q , \psi^{-1} )$.
 	If we let $\varphi$ be such that $\Jet^{(k)}_z( \varphi ) = q$ then we may choose $\bar{\varphi} = \varphi \circ \psi^{-1}$.
 	Thus we get
 	\begin{align*}
-			\langle J_L( (q,p) \cdot \psi ) , u \rangle = \langle  D\rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \varphi \circ \psi^{-1} ) \rangle 
+			\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle = \langle  \rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \varphi \circ \psi^{-1} ) \rangle 
 	\end{align*}
-	By \eqref{eq:dual action} we see
+	By \eqref{eq:dual action} and \eqref{eq:tangent action} we see
 	\begin{align*}
-		\langle J_L( (q,p) \cdot \psi ) , u \rangle &=  \langle  D\rho^*( \psi^{-1} , D\rho^*( \psi ,  (q,p) ) ) ,  D\rho( \Jet^{(k)}_z ( u \circ \varphi \circ \psi^{-1} ) , \psi^{-1} ) \rangle \\
+		\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle &=  \langle  \rho^*( \psi ,  (q,p) )  ,  \rho( \Jet^{(k)}(u \circ \varphi) , \psi^{-1} ) \rangle \\
 			&= \langle (q,p) , \Jet^{(k)}( u \circ \varphi) \rangle \\
 			&= \langle J_L(q,p) , u \rangle
 	\end{align*}
@@ -1971,9 +1980,10 @@ sloppiness is usually harmless.
   Hamiltonian equations on $P_2$
   by solving lower dimensional Hamiltonian equations
   on $P_1$.
-  \subsection{Dual pairs}
-  In this section we review the notion of dual pairs
-  \cite{MarsdenWeinstein1983,Weinstein1983,GayBalmazVizman2012}.
+  \subsection{Weak dual pairs}
+  In this section we review the notion of weak dual pairs
+  \cite{GayBalmazVizman2012}.
+  This is a relaxation of the more prevalently invoked notion of a dual pair \cite{MarsdenWeinstein1983,Weinstein1983}.
   Let $(S,\omega)$ be a symplectic manifold.
   Given a distribution $V \subset TS$, denote the fiber over
   $x \in S$ by $V_x \subset T_x S$.
