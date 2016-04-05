@@ -791,7 +791,7 @@ Similar constructions will be crucial in later sections, when constructing the r
 \end{prop}
 \begin{proof}
 	Note that $H = h_{p,\sigma} \circ J_L^{(0)}$ and apply Theorems~\ref{thm:dual_pairs} and~\ref{thm:commuting_actions}.
-  See the remark after Proposition~\ref{prop:k-solutions} for more details on the kernel smoothness condition on $p$.
+  See the remark after Theorem~\ref{thm:k-solutions} for more details on the kernel smoothness condition on $p$.
 \end{proof}
 
 \subsection{First order particle-like solutions}
@@ -896,7 +896,7 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   \end{prop}
   The proof of the above proposition is identical to that of
   Proposition~\ref{prop:0-solutions}. See again the remark following
-  Proposition~\ref{prop:k-solutions} for more details on the kernel
+  Theorem~\ref{thm:k-solutions} for more details on the kernel
   smoothness condition on $p$.
 
   As before, it is useful to interpret the trajectory $q(t)$ of the previous proposition in terms of the curve $\varphi_t \in  \SDiff(\mathbb{R}^n)$ obtained by integrating the time-dependent vector field $dh_{p, \sigma} J_L^{(1)}((q, p)(t)) = K_{p, \sigma} * J_L^{(1)}((q, p)(t))$. If one chooses $\varphi_0$ to be the identity or  any other element of $\SDiff(\mathbb{R}^n)$ that satisfies $\varphi_0 \cdot (q(0)) = q(0)$, then  $q(t) = \varphi_t \cdot  q(0)$. This implies in particular that the $q_a^{(0)}(t)$ are the trajectories of the particles as they are swept along by the fluid flow.
@@ -1171,14 +1171,14 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
   In the case of $k=1$ we obtain the weak dual pair of the previous section and Proposition \ref{prop:J1-dual-pair} is a corollary of Proposition \ref{prop:k dual pairs}.
   Proposition \ref{prop:k dual pairs} gives us the final result on
   jetlet parametrized solutions.
-  \begin{prop}\label{prop:k-solutions}
+  \begin{thm}\label{thm:k-solutions}
     Let $p \ge \frac{n}{2} + k + 1$ and $\sigma > 0$.
     Then $H^{(k)} = h_{p,\sigma} \circ J_L^{(k)}$ is $C^1$.
     Let $x(t)$ be a solution to Hamilton's equations on
     $T^*Q^{(k)}_N$, then $J_L^{(k)}( x(t))$ is a solution to Hamilton's
     equations on $\mathfrak{X}_{\rm div}(\R^n)^*$
     and $J_R^{(k)}( x(t))$ is constant in time.
-  \end{prop}
+  \end{thm}
   Remark that $K_{p,\sigma}$ has smoothness $C^{2p-n-1}$ by considering
   that the Fourier representations of its derivatives are integrable,
   while we need $K_{p,\sigma} \in C^{2k+1}$ to allow composition with
