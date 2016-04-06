@@ -1148,26 +1148,27 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 		\rho( (q,v)  , \psi ) = \Jet_z^{(k)}( u \circ \varphi \circ \psi ) \label{eq:tangent action}
 	\end{align}
 	for $(q,v) \in TQ^{(k)}$ and where $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $\varphi \in \SDiff( \R^n)$ are arbitrary up to the constraint $(q,v) = \Jet_{z}^{(k)}( u \circ \varphi)$.
-	The cotangent lifted action is a left action, $\rho^* : \iso(z) \times T^*Q^{(k)} \to T^*Q^{(k)}$, defined implicitly by the constraint
+	The cotangent lifted action is a left action, $\rho^* : \iso(z) \times T^*Q^{(k)} \to T^*Q^{(k)}$, defined implicitly by the condition
 	\begin{align}
 		\langle \rho^*( \psi , (q,p) ) , \rho( (q,v) , \psi^{-1} ) \rangle = \langle (q,p) , (q,v) \rangle \label{eq:dual action}
 	\end{align}
 	for all $(q,p) \in T^*Q^{(k)}$ and $(q,v) \in TQ^{(k)}$.
 	This action is equivalent to the one defined in the discussion preceding \cite[Corollary 4.2.11]{FOM}.
-	In particular, one can verify that $\rho^*( \psi , (q,p) )$ is a covector over the point $\tilde{q} = \rho( q , \psi^{-1})$.
+	In particular, $\rho^*( \psi , (q,p) )$ is a covector over the point $\tilde{q} = \rho( q , \psi^{-1})$.
 	By the definition of $J_L$ we observe
 	\begin{align*}
 		\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle = \langle  \rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \bar{\varphi} ) \rangle 
 	\end{align*}
 	where $\bar{\varphi} \in \SDiff(\R^n)$ is any diffeomorphism such that $\Jet_z^{(k)}( \bar{\varphi} ) = \rho( q , \psi^{-1} )$.
-	If we let $\varphi$ be such that $\Jet^{(k)}_z( \varphi ) = q$ then we may choose $\bar{\varphi} = \varphi \circ \psi^{-1}$.
+	If we let $\varphi$ be such that $\Jet^{(k)}_z( \varphi ) = q$ then we can simply choose $\bar{\varphi} = \varphi \circ \psi^{-1}$.
 	Thus we get
 	\begin{align*}
 			\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle &= \langle  \rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \varphi \circ \psi^{-1} ) \rangle \\
-			&\stackrel{\text{by \eqref{eq:tangent action}}}{=}  \langle  \rho^*( \psi ,  (q,p) )  ,  \rho( \Jet^{(k)}(u \circ \varphi) , \psi^{-1} ) \rangle \\
-			&\stackrel{\text{by \eqref{eq:dual action}}}{=}  \langle (q,p) , \Jet^{(k)}( u \circ \varphi) \rangle \\
+			&= \langle  \rho^*( \psi ,  (q,p) )  ,  \rho( \Jet^{(k)}(u \circ \varphi) , \psi^{-1} ) \rangle \\
+			&= \langle (q,p) , \Jet^{(k)}( u \circ \varphi) \rangle \\
 			&= \langle J_L(q,p) , u \rangle
 	\end{align*}
+	using~\eqref{eq:tangent action} and~\eqref{eq:dual action} in the second and third equality.
 	Thus, we see that $J_L$ is invariant under the right action of $\iso(z)$ on $Q^{(k)}$ and the result follows.
   \end{proof}
   
