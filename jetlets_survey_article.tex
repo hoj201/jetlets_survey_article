@@ -160,7 +160,7 @@ Throughout the paper we have taken care to explain the intuition behind the more
 
 In Section~\ref{sec:higher_order} we describe jetlets at general levels. Again, once the relevant spaces and actions have been introduced (which is now quite an intricate endeavor), one recognizes that the momentum maps are a dual pair by the usual arguments. We give the form of the momentum maps explicitly just after Proposition~\ref{HL_action_prop}. Again, the dual pair leads to analogous conclusions about dynamics. Namely, it is canonically Hamiltonian, with $J_R$  conserved; $J_L$ maps the dynamics to the Lie-Poisson dynamics on the one-form densities.
 
-In Section~\ref{sec:Kelvin} we discuss in more detail the Kelvin circulation theorem. More precisely, we discuss the relationship between the `standard' circulation theorem for the fluid and the conserved momentum maps $J_R$  at the various levels of jetlets. The main result is represented schematically and proven in detail (all that is required, in essence, is the standard formula for cotangent lift momentum maps). Intuitively speaking, what we show is that the conserved jetlet momentum maps are `shadows' of the `full' right-momentum map of the fluid.\\
+In Section~\ref{sec:Kelvin} we discuss in more detail the Kelvin circulation theorem. More precisely, we discuss the relationship between the `standard' circulation theorem for the fluid and the conserved momentum maps $J_R$  at the various levels of jetlets. The main result is represented schematically and proven in detail (all that is required, in essence, is the standard formula for cotangent lift momentum maps). Intuitively speaking, what we show is that the conserved jetlet momentum maps are `shadows' of the `full' right momentum map of the fluid.\\
 
 In Section~\ref{sec:Numerical experiments} we discuss the explicit dynamical behavior of the
 particle model, in particular we study `collisions' leading to mergers of jetlets.
@@ -709,7 +709,7 @@ where $\delta_q$ is the Dirac-delta distribution on $\R^n$ centered at $q$.
 This identification holds modulo $dC^1(\R^n) \otimes d{\bf x}$ where $dC^1(\R^n)$
 is the space of $C^0$-exact one-forms and $d{\bf x}$ is the canonical volume from on $\R^n$
 (see Appendix~\ref{sec:measure_valued_momap}).
-Since $J_L^{(0)}$ is a cotangent-lift momentum map, it is equivariant and therefore Poisson, again by \cite[Thm~12.4.9]{MandS}.
+Since $J_L^{(0)}$ is a cotangent lift momentum map, it is equivariant and therefore Poisson, again by \cite[Thm~12.4.9]{MandS}.
 % As the cotangent lifted action of $\SDiff(\R^n)$ is equivariant,
 % we observe that $J_L^{(0)}$ is Poisson, again by 
 
@@ -866,7 +866,7 @@ In this section we revisit the first order particle-like solutions of \cite{Cott
 	 (q^{(0)}, q^{(1)}) \cdot \psi = \left( \left(q_1^{(0)}, q_1^{(1)} \cdot D\psi|_{z_1}\right), \ldots, \left(q_N^{(0)}, q_N^{(1)} \cdot D\psi|_{z_N}\right)\right). \label{1-rightaction}
 \end{align}
 In Proposition~\ref{HL_action_prop} we will generalize this construction to define a right action for the higher levels in the hierarchy of particle-like solutions.
-  The action \eqref{1-rightaction} yields the cotangent-lift momentum map defined by the condition
+  The action \eqref{1-rightaction} yields the cotangent lift momentum map defined by the condition
   \begin{align*}
     \langle J_R^{(1)}(q,p) , u \rangle = p\indices{_a_i^j} q\indices{_a^i_k} \partial_j u^k(z_a)
   \end{align*}
@@ -1154,7 +1154,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 	\end{align}
 	for all $(q,p) \in T^*Q^{(k)}$ and $(q,v) \in TQ^{(k)}$.
 	This action is equivalent to the one defined in the discussion preceding \cite[Corollary 4.2.11]{FOM}.
-	In particular, one can verify that $\rho^*( \psi , (q,p) )$ is a co-vector over the point $\tilde{q} = \rho( q , \psi^{-1})$.
+	In particular, one can verify that $\rho^*( \psi , (q,p) )$ is a covector over the point $\tilde{q} = \rho( q , \psi^{-1})$.
 	By the definition of $J_L$ we observe
 	\begin{align*}
 		\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle = \langle  \rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \bar{\varphi} ) \rangle 
@@ -1276,7 +1276,7 @@ relabeling symmetry for any $\SDiff(\R^n)$ invariant Lagrangian.
 In light of this discussion, it is natural to consider \eqref{eq:abstract-circulation} as the  fundamental conservation law. The main goal in the remainder of this section is to show that the jet-particle solutions satisfy conservation laws that are `shadows' of this fundamental law in the sense that they are associated with a \emph{partial} relabeling symmetry. To see this, it is useful to define the $k$-th order isotropy group,
 $\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid \Jet^{k}_z( \psi) = \Jet^k_z (\rm{id}) \}$, where we wrote $\rm{id}$ for the identity mapping and $z$ is shorthand for $z_1, \ldots, z_N \in \mathbb{R}^n$.
 Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the corresponding quotient map is given by $\Jet_z^k$.  
- The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$, where the quotient is by the cotangent-lifted action, in the sense that
+ The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$, where the quotient is by the cotangent lifted action, in the sense that
  for any $(q,p) \in T^*Q^{(k)}_N$ and any $v_\varphi \in T_\varphi \SDiff(\mathbb{R}^n)$ with $\Jet_z^k(\varphi) = q$ we can
  consider the element $i(q,p) \in T^*\SDiff(\R^n) / \iso^{(k)}(z)$ given by $\langle i(q,p) , v_\varphi \rangle = \langle p , v_\varphi( \varphi^{-1} \cdot q) \rangle$
  \cite[(2.2.4)]{HRS}.
@@ -1683,7 +1683,7 @@ states
   \end{alignedat}
 \end{equation}
 aimed at each other with an offset parameter $d$.
-The initial state is given in center-of-mass polar-coordinates,
+The initial state is given in center of mass polar coordinates,
 see~\eqref{eq:CoM-coords} and~\eqref{eq:polar-coords}, by
 \begin{align*}
     r    &= 6, \qquad p_r    = -1.5, \\
@@ -1980,7 +1980,7 @@ sloppiness is usually harmless.
   When the dimension of $P_2$ is larger than that of $P_1$,
   Proposition~\ref{prop:Poisson_dynamics} allows one to find solutions of
   Hamiltonian equations on $P_2$
-  by solving lower dimensional Hamiltonian equations
+  by solving lower-dimensional Hamiltonian equations
   on $P_1$.
   \subsection{Weak dual pairs}
   In this section we review the notion of weak dual pairs
