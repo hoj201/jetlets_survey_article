@@ -1,6 +1,8 @@
 *.aux
 *.log
 *.blg
+*.out
+*.synctex.gz
 jetlets_survey_article.pdf
 jetlets_survey_article.bbl
 comment.pdf
