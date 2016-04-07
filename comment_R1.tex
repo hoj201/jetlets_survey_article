@@ -24,6 +24,7 @@
 \DeclareMathOperator{\SDiff}{SDiff}
 \DeclareMathOperator{\Jet}{Jet}
 \DeclareMathOperator{\iso}{iso}
+\DeclareMathOperator{\kernel}{kernel}
 
 \usepackage{todonotes}
 
@@ -33,6 +34,27 @@
 
 \subsection{Proof of dual pair in Proposition 4.4}
 
+Reviewer 3 pointed out that there was still a problem with our proof
+that $J_L^{(k)}$ and $J_R^{(k)}$ form a dual pair.
+
+We agree with the reviewer's observation and after closer inspection
+we are convinced that $J_L^{(k)}$ and $J_R^{(k)}$ indeed do not form
+dual pair for $k \ge 1$, although they do for $k = 0$. However, for
+$k \ge 1$ they still form a weak dual pair, as defined and extensively
+studied in the paper ``Dual pairs in fluid dynamics'' (2012) by
+Gay-Balmaz and Vizman. This weakened definition only requires
+\begin{equation*}
+  \kernel(J_L^{(k)})^\omega \subset \kernel(J_R^{(k)}), \qquad
+  \kernel(J_R^{(k)})^\omega \subset \kernel(J_L^{(k)}),
+\end{equation*}
+instead of strict equalities and is sufficient to prove Theorem~A.9
+without modification (Theorem A.8 in the original version).
+
+We have replaced `dual pair' by `weak dual pair' in appropriate places
+with some remarks and modified our proofs. This actually simplified
+the proofs, since we need only prove that the left and right actions
+of $\SDiff(\R^n)$ and $\iso(z)$ commute to use Corollary~2.6 from the
+Gay-Balmaz and Vizman paper.
 
 \subsection{Reviewer 2 comments on Section 4.5}
 
@@ -84,13 +106,13 @@ specified the text position we assumed was meant.
   We assume the reviewer refers to the use of ``$\rho_1^*$'' in
   Lemma~A.10 and its proof. We think this is technically correct, but
   confusing and inconsistent with previously established notation that
-  ``$\rho_1$'' is the cotangent-lifted action, so we changed all
-  instances of ``$\rho_1^*$'' into ``$\rho_1$''.
+  ``$\rho_1$'' is the cotangent-lifted action.
 \item p.69 line 34 (line 56). ``$q' = g \cdot q$'' should be ``$q' = g^{-1} \cdot q$''.
 \end{itemize}
 
 \noindent
-We agreed with these findings and changed them in the revised manuscript.
-
+We agreed with these findings. The first we changed in the revised
+manuscript, while the others are not relevant anymore since we removed
+Theorem~A.9 and Lemma~A.10 following the issue pointed out by reviewer 3.
 
 \end{document}
