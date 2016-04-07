@@ -58,12 +58,12 @@
 \begin{document}
 
 \begin{abstract}
-  We review the role of weak dual pairs in mechanics and use them
+  We review the role of dual pairs in mechanics and use them
   to derive particle-like solutions to regularized incompressible
   fluid systems.
-  These weak dual pairs result from the action of diffeomorphisms on point
-  particles (essentially by moving the points).
-  We then augment our weak dual pairs by considering the action of diffeomorphisms
+  In our case we have a weak dual pair resulting from the action of
+  diffeomorphisms on point particles (essentially by moving the points).
+  We then augment our weak dual pair by considering the action of diffeomorphisms
   on Taylor series, also known as \emph{jets}.
   The augmented weak dual pairs induce a hierarchy of particle-like solutions
   and conservation laws
@@ -143,7 +143,7 @@ Thus the jets of diffeomorphisms possess a natural sense of the ``self-similarit
 \end{enumerate}
 
 \subsection{Outline of the paper}
-After the introduction, in Section~\ref{sec:approach}, we outline our strategy: The first goal is to show that jetlet models admit a dual pair at each level in the hierarchy. Once this has been done, Theorem~\ref{thm:dual_pairs} (proven in the appendix) does the rest. Namely, the jetlets satisfy canonical Hamiltonian equations, and the right momentum map is conserved by the flow.
+After the introduction, in Section~\ref{sec:approach}, we outline our strategy: The first goal is to show that jetlet models admit a weak dual pair at each level in the hierarchy. Once this has been done, Theorem~\ref{thm:dual_pairs} (proven in the appendix) does the rest. Namely, the jetlets satisfy canonical Hamiltonian equations, and the right momentum map is conserved by the flow.
 
 Section~\ref{sec:rigid_body} contains a brief discussion of the standard dual pair for the example of the  rigid body.
 
@@ -154,11 +154,12 @@ In Section~\ref{sec:zeroth_order} we introduce zeroth order jetlets, also called
 %
 %The proof of Proposition~\ref{prop:0-solutions} is an example of the efficiency of the approach.
 
-In Section~\ref{sec:first_order} we consider first order jetlets. Everything here goes in parallel, except that one has to be more careful when introducing the relevant right and left actions. Once one has the definitions in place, it is not difficult to recognize that the cotangent lifts for the right and left actions lead to a dual pair of momentum maps (this is mainly because the group actions commute).  Proposition~\ref{prop:1-solutions} collects the results that follow immediately from the dual pair.
+In Section~\ref{sec:first_order} we consider first order jetlets. Everything here goes in parallel, except that one has to be more careful when introducing the relevant right and left actions. Once one has the definitions in place, it is not difficult to recognize that the cotangent lifts for the right and left actions lead to, now, a \emph{weak} dual pair of momentum maps.
+We have to add `weak' here since the transitivity of the left action on level sets of right momentum is lost, but a weak dual pair is retained, essentially because the group actions still commute, see Definition~\ref{def:weak_dual_pair}.  Proposition~\ref{prop:1-solutions} collects the results that follow immediately from the weak dual pair.
 
 Throughout the paper we have taken care to explain the intuition behind the more abstract concepts. The discussion just after Proposition~\ref{prop:1-solutions} is an example of that. There, we discuss the relationship between the jetlet solutions on the diffeomorphism group and the resulting trajectory on the space of Taylor jets.
 
-In Section~\ref{sec:higher_order} we describe jetlets at general levels. Again, once the relevant spaces and actions have been introduced (which is now quite an intricate endeavor), one recognizes that the momentum maps are a dual pair by the usual arguments. We give the form of the momentum maps explicitly just after Proposition~\ref{HL_action_prop}. Again, the dual pair leads to analogous conclusions about dynamics. Namely, it is canonically Hamiltonian, with $J_R$  conserved; $J_L$ maps the dynamics to the Lie-Poisson dynamics on the one-form densities.
+In Section~\ref{sec:higher_order} we describe jetlets at general levels. Again, once the relevant spaces and actions have been introduced (which is now quite an intricate endeavor), one recognizes that the momentum maps are a weak dual pair by the usual arguments. We give the form of the momentum maps explicitly just after Proposition~\ref{HL_action_prop}. Again, the weak dual pair leads to analogous conclusions about dynamics. Namely, it is canonically Hamiltonian, with $J_R$  conserved; $J_L$ maps the dynamics to the Lie-Poisson dynamics on the one-form densities.
 
 In Section~\ref{sec:Kelvin} we discuss in more detail the Kelvin circulation theorem. More precisely, we discuss the relationship between the `standard' circulation theorem for the fluid and the conserved momentum maps $J_R$  at the various levels of jetlets. The main result is represented schematically and proven in detail (all that is required, in essence, is the standard formula for cotangent lift momentum maps). Intuitively speaking, what we show is that the conserved jetlet momentum maps are `shadows' of the `full' right momentum map of the fluid.\\
 
@@ -191,7 +192,7 @@ in the jet-particle collisions.
 
 
 
-The Appendix is relatively extensive. A quick discussion of symplectic and Poisson manifolds is followed by the definition of dual pairs. Then we prove Theorem~\ref{thm:dual_pairs} and Theorem~\ref{thm:commuting_actions}, which are the core results used in the paper. In Appendix~\ref{sec:multi} we describe the index conventions used in the main texts (e.g., when calculating momentum maps for the general jetlet solutions), while Appendix~\ref{sec:measure_valued_momap} briefly discusses the more abstract point of how the dual space of vector fields can be viewed as tensor product of 1-forms and distributions.
+The Appendix is relatively extensive. A quick discussion of symplectic and Poisson manifolds is followed by the definition of weak dual pairs. Then we prove Theorem~\ref{thm:dual_pairs}, which is the core result used in the paper. In Appendix~\ref{sec:multi} we describe the index conventions used in the main texts (e.g., when calculating momentum maps for the general jetlet solutions), while Appendix~\ref{sec:measure_valued_momap} briefly discusses the more abstract point of how the dual space of vector fields can be viewed as tensor product of 1-forms and distributions.
 Finally, appendix~\ref{sec:eom} provides information describing the equations of motion for 1-jets, but in reduced coordinates, which arise after the reduction eliminating the conserved quantities $J_R$.
 
 \subsection{Previous work}
@@ -282,13 +283,13 @@ here for convenience.
   \end{quote}
 
 We will leverage this theorem in the following way.
-We will find a dual pair, $J_1,J_2: S \to \mathfrak{g}^*$, where
+We will find a (weak) dual pair, $J_1,J_2: S \to \mathfrak{g}^*$, where
 \begin{enumerate}
 \item $S$ is the space of particle locations and momenta (and, for the higher orders of the hierarchy, internal group variables),
 \item $\mathfrak{g}$ is the space of vector fields,
 \item and $h$ is the Hamiltonian of a regularized model of ideal fluid (i.e.\ a kinetic energy).
 \end{enumerate}
-Theorem~\ref{thm:dual_pairs} applied to the dual pair $J_1,J_2$
+Theorem~\ref{thm:dual_pairs} applied to the (weak) dual pair $J_1,J_2$
 then yields particle-like solutions and conserved quantities to the equations of motion
 of a regularized model of an ideal incompressible fluid.
 
@@ -625,7 +626,7 @@ as a model for ideal fluids \cite[Theorems 2 and 3]{MumfordMichor2013}. From now
 parameters $p,\sigma$ and shorten $K = K_{p,\sigma}$ to prevent index
 clutter.
 
-Next, we discuss a dual pair for this system.
+Next, we discuss a \todo{weak?} dual pair for this system.
 The group $\SDiff(\R^n)$ acts on itself from the left and from the right.
 These actions can be lifted to $T^* \SDiff(\R^n)$, and yield
 momentum maps $J_L,J_R : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$. In particular these maps form the weak dual pair
@@ -765,13 +766,13 @@ Once one has found a solution $(q(t), p(t))$ to Hamilton's equations on $T^*\mat
     \;\;(q,p)
     &&\stackrel{J_R^{(0)} }{\longmapsto} 0
   \end{alignat*}
-  is a weak dual pair. 
-  This weak dual pair allows us to express conservation
+  is a (proper) dual pair.
+  This dual pair allows us to express conservation
   laws and dynamics as a result of Theorem~\ref{thm:dual_pairs}.
-   Namely, the left leg represents the space in which particle-like
+  Namely, the left leg represents the space in which particle-like
   solutions to \eqref{eq:MMDiff} evolve,
-  while the right leg represents a (trivial) conserved quantity. 
-    
+  while the right leg represents a (trivial) conserved quantity.
+
   In order to make contact with the later parts of the paper, it is useful to remark that $J_R^{(0)}$ can formally be understood as the cotangent lift momentum map associated with a certain (trivial) group action.
   To that end, we fix a designated point $z = (z_1, \ldots, z_N) \in Q_N^{(0)}$ and take an arbitrary element $ q= (q_1, \ldots, q_N) \in Q_N^{(0)}$ to represent the set of all $\varphi \in \SDiff(\mathbb{R}^n)$ that satisfy $\varphi \cdot z  = q$.
   That is, $\varphi(z_a) = q_a$ for all $a$.
@@ -780,7 +781,8 @@ Once one has found a solution $(q(t), p(t))$ to Hamilton's equations on $T^*\mat
 \iso(z)  = \{ \psi \in \SDiff(\mathbb{R}^n) | \psi(z_a) = z_a \mbox{ for all } a\} \label{eq:isotropy_group}
 \end{align}
 and a (trivial) right action on $Q_N^{(0)}$ where $\psi \in \iso(z)$ maps an element $(\varphi(z_1), \ldots, \varphi(z_N))$ to $( \varphi \circ \psi (z_1), \ldots, \varphi \circ \psi(z_N))$.
-Similar constructions will be crucial in later sections, when constructing the right leg of a weak dual pair for the higher levels in the hierarchy of particle-like solutions.
+Similar constructions will be crucial in later sections, when
+constructing the right leg of an --- in this case weak --- dual pair for the higher levels in the hierarchy of particle-like solutions.
 
   In summary we find:
   \begin{prop}[\S7 of \cite{MumfordMichor2013}] \label{prop:0-solutions}
@@ -1320,7 +1322,7 @@ From the definitions of $J_\text{spatial}$ and $J_L^{(k)}$ we find
 % \end{equation}
 % This shows the commutativity of the right-hand part of the  diagram above (compare \eqref{compare_1} and \eqref{compare_2}).
   
-  Again, the right legs of both weak dual pairs yield the conserved quantities.
+  Again, the right legs of both \todo{both weak?} weak dual pairs yield the conserved quantities.
 From the diagram it is clear that the conservation of $J_R^{(k)}$ exhibited in
 our particle models is a shadow of the conservation of $J_\text{conv}$ in~\eqref{eq:abstract-circulation}.
 Since $J_\text{conv}$ corresponds by Noether's theorem to the (large)
