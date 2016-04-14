@@ -322,7 +322,7 @@ Denoting this map from $(R,P)$ to $\Pi$ by $J_R$,
 the Hamiltonian can be written as a function
 of $\Pi$.  In particular, the reduced Hamiltonian is
 \begin{align*}
-  h(\Pi) = \frac{1}{2}\Pi \cdot \mathbb{I}^{-1} \cdot \Pi
+  h(\Pi) = \frac{1}{2}\Pi \cdot \mathbb{I}^{-1} \cdot \Pi,
 \end{align*}
 where $\mathbb{I}$ is a non-degenerate $3\times 3$ symmetric matrix
 known as the moment of inertia matrix.
@@ -570,7 +570,7 @@ Since we have not yet clarified the Poisson structures of the system, it may not
   In the event that $dh(m) \in \mathfrak{X}_{\rm div}(\R^n)$,
   Hamilton's equations are given by
   \begin{align*}
-    \dot{m} + \lie_u [m] = 0 \quad , \quad u = dh(m) %\label{eq:LP}.
+    \dot{m} + \lie_u [m] = 0 \quad , \quad u = dh(m). %\label{eq:LP}.
   \end{align*}
 \end{prop}
 \begin{proof}
@@ -584,7 +584,7 @@ Since we have not yet clarified the Poisson structures of the system, it may not
   we observe
   \begin{align*}
     \frac{d}{dt} f_v(m) &= \{ f_v , h \}(m) = \langle m , [ df_v(m) , dh(m) ] \rangle \\
-    &= \langle m , \lie_{dh(m)}[ df_v(m) ] \rangle
+    &= \langle m , \lie_{dh(m)}[ df_v(m) ]. \rangle
   \end{align*}
   However $df_v = v$ and so
   the last line can be equated with  $-\langle \lie_{dh(m)}[m] , v \rangle$.
@@ -603,7 +603,7 @@ Since we have not yet clarified the Poisson structures of the system, it may not
 \label{sec:MME}
 Consider the Hamiltonian
 \begin{align*}
-  h_{p,\sigma}(m) = \frac{1}{2} \langle m , K_{p,\sigma} * m \rangle_{L^2}
+  h_{p,\sigma}(m) = \frac{1}{2} \langle m , K_{p,\sigma} * m, \rangle_{L^2}
 \end{align*}
 where $K_{p,\sigma}:\R^n \to \mathbb{R}^{n \times n}$ is the matrix
 valued Green's kernel defined by the property
@@ -681,7 +681,7 @@ That is to say,
 \begin{align*}
   (q, p) \in T^*\R^n \cong \R^n \times \R^n
   \stackrel{ \varphi \in \SDiff(\R^n) }{\longmapsto}
-  \big(\varphi^{-1}(q) , (\partial_i\varphi^j(q) p_j) e^i \big)
+  \big(\varphi^{-1}(q) , (\partial_i\varphi^j(q) p_j) e^i \big),
 \end{align*}
 where $\{e^i\}$ forms the dual basis to $\{\partial_i\}$ at $\varphi^{-1}(q)$.
 The momentum map
@@ -704,11 +704,11 @@ for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$ (see \eqref
 We see that $J_L^{(0)}(q,p)$ is an evaluation operator, and we can write it 
 more explicitly as a measure-valued momentum map in terms of the Dirac-delta distribution as
 \begin{align*}
-  J_L^{(0)}( q , p ) = p \otimes \delta_q
+  J_L^{(0)}( q , p ) = p \otimes \delta_q,
 \end{align*}
 where $\delta_q$ is the Dirac-delta distribution on $\R^n$ centered at $q$.
 This identification holds modulo $dC^1(\R^n) \otimes d{\bf x}$ where $dC^1(\R^n)$
-is the space of $C^0$-exact one-forms and $d{\bf x}$ is the canonical volume from on $\R^n$
+is the space of $C^0$-exact one-forms and $d{\bf x}$ is the canonical volume form on $\R^n$
 (see Appendix~\ref{sec:measure_valued_momap}).
 Since $J_L^{(0)}$ is a cotangent lift momentum map, it is equivariant and therefore Poisson, again by \cite[Thm~12.4.9]{MandS}.
 % As the cotangent lifted action of $\SDiff(\R^n)$ is equivariant,
@@ -857,7 +857,7 @@ In this section we revisit the first order particle-like solutions of \cite{Cott
   \begin{align*}
     J_L^{(1)}(q, p)
     = p\indices{_a_i} \dx^i \otimes \delta_{q_a^{(0)}}
-     -p\indices{_a_i^j} q\indices{_a^k_j} \dx^i \otimes \partial_k \delta_{q_a^{(0)}}
+     -p\indices{_a_i^j} q\indices{_a^k_j} \dx^i \otimes \partial_k \delta_{q_a^{(0)}}.
   \end{align*}
   Next, we construct a dual momentum map associated with a right action on $Q_N^{(1)}$. Analogous to the previous section  it is useful at this stage to write elements of $Q_N^{(1)}$ in the form $ \varphi \cdot z = (\varphi (z_1, {\mathbf{1}}), \ldots, \varphi \cdot (z_N , \mathbf{1}))$, $\varphi \in \SDiff(\mathbb{R}^n)$, for some designated element $ z=( (z_1, \mathbf{1}), \ldots, (z_N, \mathbf{1}))$. Clearly, every element of $Q_N^{(1)}$ can be written in this form for some  $\varphi \in \SDiff(\mathbb{R}^n)$. Indeed, with this convention the specification of an element in $Q_N^{(1)}$ fixes the first order Taylor expansion of $\varphi$ at the locations $z_a$, $a = 1, \ldots, N$. With this in mind, let us recall the isotropy group $\iso(z)$ defined earlier in \eqref{eq:isotropy_group}, which leaves these locations invariant, and define a right action on  $Q_N^{(1)}$ given by 
 \begin{align}
@@ -870,7 +870,7 @@ In this section we revisit the first order particle-like solutions of \cite{Cott
 In Proposition~\ref{HL_action_prop} we will generalize this construction to define a right action for the higher levels in the hierarchy of particle-like solutions.
   The action \eqref{1-rightaction} yields the cotangent lift momentum map defined by the condition
   \begin{align*}
-    \langle J_R^{(1)}(q,p) , u \rangle = p\indices{_a_i^j} q\indices{_a^i_k} \partial_j u^k(z_a)
+    \langle J_R^{(1)}(q,p) , u \rangle = p\indices{_a_i^j} q\indices{_a^i_k} \partial_j u^k(z_a).
   \end{align*}
   In terms of the Dirac-delta functional we may write this as the measure-valued momentum map
   \begin{equation}\label{eq:JR1}
@@ -958,7 +958,7 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   and we see that the space of second order jets is a submanifold $Q^{(2)}_1 \subset \R^n \times \SL(n) \times S^1_2$.
   Finally, for $k \geq 2$ the space of $k$-th order jets is a submanifold
   \begin{align*}
-    Q_1^{(k)} \subset \R^n \times \SL(n) \times S^1_2 \times S^1_3 \times \cdots\times S^1_k
+    Q_1^{(k)} \subset \R^n \times \SL(n) \times S^1_2 \times S^1_3 \times \cdots\times S^1_k,
   \end{align*}
   where $S^1_j$ is the vector space of $(1,j)$-tensors which
   have been symmetrized in the covariant indices.
@@ -1094,13 +1094,17 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 				}
 			}
 			p\indices{_a_i^\alpha} q\indices{_a^{i}_{[j_1 \cdots j_\ell]}}
-      \sum_{m=1}^\ell  \partial_{\gamma_m} w^{j_m}(z_a) \left( \prod_{n \neq m}  \delta_{\gamma_n}^{[j_n]} \right)
+      \sum_{m=1}^\ell  \partial_{\gamma_m} w^{j_m}(z_a) \left( \prod_{n \neq m}  \delta_{\gamma_n}^{[j_n]} \right),
   \end{equation*}
   where $w \in \mathfrak{X}_{\rm div}(\R^n)$ is such that $w(z) = 0$ (this describes the Lie algebra of $\iso(z)$),
   and $\delta_\alpha^\beta$ is the natural generalization of the Kronecker-delta symbol to multi-indices.
   Equivalently, we may define $J_R^{(k)}$
-  as the unique map such that $\langle J_R^{(k)}(q,p) , w \rangle = \langle (q,p) , \Jet_z^{(k)}( T\varphi \circ w) \rangle$ for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$.
-  
+  as the unique map such that
+  \todo{DM: I replaced notation $T\varphi \circ w$ by $T\varphi.w$ to make the meaning clearer. Ok?} 
+ \begin{align}
+  \langle J_R^{(k)}(q,p) , w \rangle = \langle (q,p) , \Jet_z^{(k)}( T\varphi.w) \rangle, \label{Moma_right}
+   \end{align} 
+  for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$. Here, we wrote $T\varphi.w$ for the function obtained by applying the differential of $\varphi$ to $w$.   
   
   We can write $J_L^{(k)}$ and $J_R^{(k)}$ explicitly, using the Dirac-delta distribution, as
   \begin{multline*}\label{eq:JLk}
@@ -1136,10 +1140,10 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
   	The maps $J_L^{(k)}$ and $J_R^{(k)}$ form a weak dual pair.
   \end{prop}
   \begin{proof}
-  	By \cite[Corollary 2.6]{GayBalmazVizman2012} we need only show that $J_L$ and $J_R$ are equivariant, and that $J_L$ is invariant under the right action of $\iso(z)$.
+  	 The result is a direct application of \cite[Corollary 2.8]{GayBalmazVizman2012}. To make the exposition more self-contained, we provide some details. By \cite[Corollary 2.6]{GayBalmazVizman2012} we need only show that $J_L$ and $J_R$ are equivariant, and that $J_L$ is invariant under the right action of $\iso(z)$.
 	Equivariance follows from the fact that $J_R$ and $J_L$ are derived from cotangent lifted group actions \cite[Corollary 4.2.11]{FOM}.
-	So we need only illustrate that $J_L$ is (right) $\iso(z)$ invariant.
-	For notational clarity, let us denote this right action by $\rho : Q^{(k)} \times \iso(z) \to Q^{(k)}$.
+	So we need only illustrate that $J_L$ is (right) $\iso(z)$ invariant. This can be seen as a consequence of the commutativity of the left and right actions on $Q^{(k)}$.  
+	For notational clarity, let us denote this right action by $\rho : Q^{(k)} \times \iso(z) \to Q^{(k)}$. 
 	Explicitly, any element $q \in Q^{(k)}$ is expressible as the $k$-jet of some diffeomorphism $\varphi$,
 	and $\rho( q , \psi) = \Jet_z^{(k)}( \varphi \circ \psi)$.
 	
@@ -1159,16 +1163,16 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 	In particular, $\rho^*( \psi , (q,p) )$ is a covector over the point $\tilde{q} = \rho( q , \psi^{-1})$.
 	By the definition of $J_L$ we observe
 	\begin{align*}
-		\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle = \langle  \rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \bar{\varphi} ) \rangle 
+		\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle = \langle  \rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \bar{\varphi} ) \rangle, 
 	\end{align*}
 	where $\bar{\varphi} \in \SDiff(\R^n)$ is any diffeomorphism such that $\Jet_z^{(k)}( \bar{\varphi} ) = \rho( q , \psi^{-1} )$.
 	If we let $\varphi$ be such that $\Jet^{(k)}_z( \varphi ) = q$ then we can simply choose $\bar{\varphi} = \varphi \circ \psi^{-1}$.
 	Thus we get
 	\begin{align*}
 			\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle &= \langle  \rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \varphi \circ \psi^{-1} ) \rangle \\
-			&= \langle  \rho^*( \psi ,  (q,p) )  ,  \rho( \Jet^{(k)}(u \circ \varphi) , \psi^{-1} ) \rangle \\
-			&= \langle (q,p) , \Jet^{(k)}( u \circ \varphi) \rangle \\
-			&= \langle J_L(q,p) , u \rangle
+			&= \langle  \rho^*( \psi ,  (q,p) )  ,  \rho( \Jet_z^{(k)}(u \circ \varphi) , \psi^{-1} ) \rangle \\
+			&= \langle (q,p) , \Jet_z^{(k)}( u \circ \varphi) \rangle \\
+			&= \langle J_L(q,p) , u \rangle, 
 	\end{align*}
 	using~\eqref{eq:tangent action} and~\eqref{eq:dual action} in the second and third equality.
 	Thus, we see that $J_L$ is invariant under the right action of $\iso(z)$ on $Q^{(k)}$ and the result follows.
@@ -1244,7 +1248,7 @@ Consider a given closed curve $\gamma_0\colon S^1 \to \R^n$ and a family
 of vector fields $w_\varepsilon$ such that $w_\varepsilon(\gamma_0(s)) = \gamma'_0(s)$
 and such that the (weak in $L^2$) limit $w = \lim_{\varepsilon \to 0} w_\varepsilon$ is the generalized function
 \begin{equation*}
-  w(x) =  \gamma'_0(s) \otimes \delta(x-\gamma_0(s))
+  w(x) =  \gamma'_0(s) \otimes \delta(x-\gamma_0(s)).
 \end{equation*}
 Assuming $\epsilon$ is small and writing 
 $p_\varphi = \langle \dot{\varphi} , \,\cdot\, \rangle_{L^2}$, we find
@@ -1265,7 +1269,7 @@ where $\mu$ is the volume form on $\R^n$.
 For any smooth curve $\gamma:S^1 \to \R^n$ we may consider the current
 $\mathscr{K}(\gamma) \in \mathfrak{X}_{\rm div}(\R^n)^{**}$ defined by
 \begin{equation*}
-	\langle \mathscr{K}(\gamma) , m \rangle = \int_{\gamma} \tilde{m}
+	\langle \mathscr{K}(\gamma) , m \rangle = \int_{\gamma} \tilde{m}.
 \end{equation*}
 By Theorem 6.2 of \cite{HolmMarsdenRatiu1998}, if $\gamma_t(s) = \varphi_t(\gamma_0(s))$ and $m = \tilde{m} \otimes \mu$ satisfies
 the ideal incompressible fluid equation (perhaps regularized), then the circulation
@@ -1279,11 +1283,36 @@ relabeling symmetry for any $\SDiff(\R^n)$ invariant Lagrangian.
 In light of this discussion, it is natural to consider \eqref{eq:abstract-circulation} as the  fundamental conservation law. The main goal in the remainder of this section is to show that the jet-particle solutions satisfy conservation laws that are `shadows' of this fundamental law in the sense that they are associated with a \emph{partial} relabeling symmetry. To see this, it is useful to define the $k$-th order isotropy group,
 $\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid \Jet^{k}_z( \psi) = \Jet^k_z (\rm{id}) \}$, where we wrote $\rm{id}$ for the identity mapping and $z$ is shorthand for $z_1, \ldots, z_N \in \mathbb{R}^n$.
 Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the corresponding quotient map is given by $\Jet_z^k$.  
- The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$, where the quotient is by the cotangent lifted action, in the sense that
- for any $(q,p) \in T^*Q^{(k)}_N$ and any $v_\varphi \in T_\varphi \SDiff(\mathbb{R}^n)$ with $\Jet_z^k(\varphi) = q$ we can
- consider the element $i(q,p) \in T^*\SDiff(\R^n) / \iso^{(k)}(z)$ given by $\langle i(q,p) , v_\varphi \rangle = \langle p , v_\varphi( \varphi^{-1} \cdot q) \rangle$
- \cite[(2.2.4)]{HRS}.
- The commutativity of the following diagram uniquely defines the jetlet solutions:
+ Let us also introduce the right action $R: \SDiff(\R^n) \times \SDiff(\R^n) \to \SDiff(\R^n)$ given by right composition of functions and write $R_\varphi = R(\cdot , \varphi)$, so that $R_\varphi \psi = \psi \circ \varphi$. We also introduce the cotangent lifted action $TR^*$ by means of the defining relation
+ \begin{align}
+ 	\langle TR^*_{\psi^{-1}}p_\varphi, v_\varphi \circ \psi \rangle = \langle p_\varphi, v_\varphi\rangle
+ \end{align}
+ for arbitrary $p_\varphi \in T^*\SDiff(\R^n)$ and $v_\varphi \in T\SDiff(\R^n)$.
+
+ The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$, where the quotient is by the cotangent lifted action. More precisely, for any $(p,q) \in T^*Q^{(k)}_N$ we can construct the corresponding element $i(p, q) \in T^*\SDiff(\R^n) / \iso^{(k)}(z)$ in the following way: Take any $\varphi$ such that $\Jet_z^k(\varphi) = q$ and find $\iota(p, q) \in T^*\SDiff(\R^n)$ that satisfies, for all $v_\varphi \in T_\varphi \SDiff(\mathbb{R}^n)$, 
+ \begin{align}
+ \langle \iota(q,p) , v_\varphi \rangle = \langle p , v_\varphi( \varphi^{-1} \cdot q) \rangle, 
+ \end{align}
+ cf. \cite[(2.2.4)]{HRS}. Then set $i(p, q) = [\iota(p, q)]$. 
+ 
+ To see that $i(p, q)$ is well defined, note that if $\psi = \varphi \circ \rho$ for $\rho \in \iso^{(k)}(z)$, then for any $v_\psi \in T_\psi \SDiff(\R^n)$
+ \begin{align} \langle TR^*_{\rho^{-1}} \iota(p, q), v_{\psi}\rangle = \langle \iota(p, q), v_{\psi} \circ \rho^{-1}\rangle 
+ = \langle p, v_{\psi} (\rho^{-1} \circ (\psi \circ \rho^{-1})^{-1}  \cdot q)\rangle =  \langle p, v_{\psi} ( \psi^{-1} \cdot q) \rangle. \notag
+ \end{align}
+ Since $[TR^*_{\rho^{-1}} \iota(p, q)] = [\iota(p, q)]$, we conclude that $i(q, p)$ is well defined.
+ 
+ 
+ We claim that
+ \begin{align}
+ 	i(q, p) = [TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)], \label{i_explicit}
+ \end{align}
+ where $\varphi$ is such that $\Jet_z^k(\varphi) = q$. This follows since for any $v_{\varphi} \in T_{\varphi}\SDiff(\R^n)$
+ \begin{align}
+ 	\langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), v_{\varphi}\rangle = \langle  J_L^{(k)}(q, p), v_\varphi \circ \varphi^{-1}\rangle = \langle p, v_\varphi (\varphi^{-1} \cdot q)\rangle.
+ \end{align}
+ 
+ 
+With these preliminary remarks in mind, we can now show the commutativity of the following diagram:
 % \begin{equation}
 %  \begin{tikzcd}
 %    \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l,"J_\text{spatial}"] T^*\SDiff(\R^n) \ar[r,"J_\text{conv}"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
@@ -1291,21 +1320,48 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
 %    & T^*Q^{(k)}_N \uar{i} \ar[uur,"J_R^{(k)}"',bend right = 30] \ar[uul,"J_L^{(k)}",bend left = 30] &
 %  \end{tikzcd}
 % \end{equation}
+%\begin{displaymath}
+%\xymatrix{
+%\mathfrak{X}_{\rm div}(\R^n)^* & \ar[l]_{J_{\rm spatial}} T^*\SDiff(\R^n) \ar[d]^{\pi} \ar[r]^{J_{\rm conv}} &  \mathfrak{iso}^{(k)}(z)^* \\
+%& T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
+%& T^*Q^{(k)}_N \ar[u]^i \ar@/_2pc/[uur]_{J_R^{(k)}} \ar@/^2pc/[uul]^{J_L^{(k)}} &
+%}
+%\end{displaymath}
+
+
 \begin{displaymath}
 \xymatrix{
-\mathfrak{X}_{\rm div}(\R^n)^* & \ar[l]_{J_{\rm spatial}} T^*\SDiff(\R^n) \ar[d]^{\pi} \ar[r]^{J_{\rm conv}} &  \mathfrak{iso}^{(k)}(z)^* \\
-& T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
-& T^*Q^{(k)}_N \ar[u]^i \ar@/_2pc/[uur]_{J_R^{(k)}} \ar@/^2pc/[uul]^{J_L^{(k)}} &
+\mathfrak{X}_{\rm div}(\R^n)^* &  \ar[l]_-{J_{\rm spatial}} T^*\SDiff(\R^n) / \iso^{(k)}(z)  \ar[r]^-{J_{\rm conv}}  & \mathfrak{iso}^{(k)}(z)^* \\
+& T^*Q^{(k)}_N \ar[u]^i \ar[ur]_{J_R^{(k)}} \ar[ul]^{J_L^{(k)}} &
 }
 \end{displaymath}
 
-For the left side of the diagram, note that the statement $\pi(p_\varphi) = i(p_q)$ for some $p_\varphi \in T^* \SDiff(\mathbb{R}^n)$ and $p_q \in T^*Q_N^{(k)}$ is equivalent to the statement that $\langle p_\varphi , w \circ \varphi \rangle = \langle p_q , \Jet^{(k)}_z ( w \circ \varphi) \rangle$.
-From the definitions of $J_\text{spatial}$ and $J_L^{(k)}$ we find 
-  \begin{equation*}
-  \left< J_\text{spatial}(p_\varphi), w\right> = \left< p_\varphi, w \circ \varphi \right> = \langle p_q , \Jet^{(k)}_z ( w \circ \varphi) \rangle = \left< J_L^{(k)}(p_q), w \right>
-  \end{equation*}
-  when $\pi(p_\varphi) = i(p_q)$.
-  This verifies the left half of the diagram. The right hand side can be verified in the same manner.
+
+Here, \todo{Do we need the superscript $k$ at the top right corner of the diagram?} $J_{\rm spatial}$ and $J_{\rm conv}$ are defined in the natural manner through their actions on representatives of the equivalence classes. For the left side of the diagram, we let $(p,q) \in T^*Q^{(k)}_N$ and $\varphi$ such that $\Jet_z^k(\varphi) = q$. Then we obtain from \eqref{i_explicit} that for any $w \in \mathfrak{X}_{\rm div}(\R^n)$
+\begin{align}
+	&\langle J_\text{spatial}( i(p, q)), w\rangle = \langle J_\text{spatial}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle \\
+	\quad&= \langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), w \circ \varphi \rangle
+	 = \langle J_L^{(k)}(q, p), w \rangle,
+\end{align}
+as required. Note that this also shows that $J_{\rm spatial}$ is well defined on $T^*\SDiff(\R^n) / \iso^{(k)}(z)$. 
+
+For the right leg, note that 
+\begin{align}
+	&\langle J_\text{conv}( i(p, q)), w\rangle = \langle J_\text{conv}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle \\
+	&= \langle  TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), T\varphi. w \rangle = \langle  J_L^{(k)}(q, p)), (T\varphi. w) \circ \varphi^{-1}\rangle \\
+	&= \langle (p, q),  \Jet_z^k(T\varphi. w)\rangle = \langle  J^{(k)}_R(p, q), w\rangle,
+\end{align}
+where we used \eqref{Moma_right} in the final step. In particular, $J_{\rm conv}$ is well defined on $T^*\SDiff(\R^n) / \iso^{(k)}(z)$.
+
+%
+%
+% note that the statement $\pi(p_\varphi) = i(p_q)$ for some $p_\varphi \in T^* \SDiff(\mathbb{R}^n)$ and $p_q \in T^*Q_N^{(k)}$ is equivalent to the statement that $\langle p_\varphi , w \circ \varphi \rangle = \langle p_q , \Jet^{(k)}_z ( w \circ \varphi) \rangle$.
+%From the definitions of $J_\text{spatial}$ and $J_L^{(k)}$ we find 
+%  \begin{equation*}
+%  \left< J_\text{spatial}(p_\varphi), w\right> = \left< p_\varphi, w \circ \varphi \right> = \langle p_q , \Jet^{(k)}_z ( w \circ \varphi) \rangle = \left< J_L^{(k)}(p_q), w \right>
+%  \end{equation*}
+%  when $\pi(p_\varphi) = i(p_q)$.
+%  This verifies the left half of the diagram. The right hand side can be verified in the same manner.
   
 % As for the right-hand part, we again use the special form of $p_\varphi$ to conclude that, for all $ w \in \mathfrak{iso}(z) \subset \mathfrak{X}_{\rm div}(\R^n)$,
 % \begin{equation}
@@ -1555,7 +1611,7 @@ computer algebra software shows that
      -\begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}
     \end{array}\right)
   =-\frac{1}{2} \omega_i^k \omega_j^l
-   -\frac{1}{4} \big( \sigma_i^k \sigma_j^l + \tau_i^k \tau_j^l \big).
+   -\frac{1}{4} \big( \sigma_i^k \sigma_j^l + \tau_i^k \tau_j^l \big),
 \end{equation*}
 where the indices $i,j$ and $k,l$ label the outer and inner matrix
 elements respectively. With these decompositions we find that $\xi$ as
@@ -1594,7 +1650,7 @@ time yields
   \dot{\tilde{\mu}}
   = -\dot{\phi}\,\ad_\omega(\tilde{\mu})
   = -\frac{3}{4} p_\phi [\omega,\tilde{\mu}]
-  = -\frac{3}{2} j [\omega,\tilde{\mu}]
+  = -\frac{3}{2} j [\omega,\tilde{\mu}], 
 \end{equation*}
 and comparing to~\eqref{eq:mu-dynamics} we find that the asymptotic
 solution of the two merging $0$-jetlets matches that of a $1$-jetlet
@@ -1924,7 +1980,7 @@ The \emph{Lie--Poisson bracket} on $\mathfrak{g}^*$ is given
 by
 \begin{equation}
   \{ f , g \}_{\mathfrak{g}^*}( x ) = \pm
-  \left \langle x , \left[ \pder{f}{x} , \pder{g}{x} \right] \right \rangle
+  \left \langle x , \left[ \pder{f}{x} , \pder{g}{x} \right] \right \rangle, 
   \label{eq:Lie-Poisson}
 \end{equation}
 where $\langle \cdot , \cdot \rangle$ is the canonical pairing between
