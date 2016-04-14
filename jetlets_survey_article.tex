@@ -1308,7 +1308,7 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
  \end{align}
  where $\varphi$ is such that $\Jet_z^k(\varphi) = q$. This follows since for any $v_{\varphi} \in T_{\varphi}\SDiff(\R^n)$
  \begin{align}
- 	\langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), v_{\varphi}\rangle = \langle  J_L^{(k)}(q, p), v_\varphi \circ \varphi^{-1}\rangle = \langle p, v_\varphi (\varphi^{-1} \cdot q)\rangle.
+ 	\langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), v_{\varphi}\rangle = \langle  J_L^{(k)}(q, p), v_\varphi \circ \varphi^{-1}\rangle = \langle p, v_\varphi (\varphi^{-1} \cdot q)\rangle. \notag
  \end{align}
  
  
@@ -1339,17 +1339,17 @@ With these preliminary remarks in mind, we can now show the commutativity of the
 
 Here, \todo{Do we need the superscript $k$ at the top right corner of the diagram?} $J_{\rm spatial}$ and $J_{\rm conv}$ are defined in the natural manner through their actions on representatives of the equivalence classes. For the left side of the diagram, we let $(p,q) \in T^*Q^{(k)}_N$ and $\varphi$ such that $\Jet_z^k(\varphi) = q$. Then we obtain from \eqref{i_explicit} that for any $w \in \mathfrak{X}_{\rm div}(\R^n)$
 \begin{align}
-	&\langle J_\text{spatial}( i(p, q)), w\rangle = \langle J_\text{spatial}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle \\
-	\quad&= \langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), w \circ \varphi \rangle
-	 = \langle J_L^{(k)}(q, p), w \rangle,
+	&\langle J_\text{spatial}( i(p, q)), w\rangle = \langle J_\text{spatial}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle  \notag \\
+	\quad&= \langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), w \circ \varphi \rangle \notag
+	 = \langle J_L^{(k)}(q, p), w \rangle, \notag
 \end{align}
 as required. Note that this also shows that $J_{\rm spatial}$ is well defined on $T^*\SDiff(\R^n) / \iso^{(k)}(z)$. 
 
 For the right leg, note that 
 \begin{align}
-	&\langle J_\text{conv}( i(p, q)), w\rangle = \langle J_\text{conv}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle \\
-	&= \langle  TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), T\varphi. w \rangle = \langle  J_L^{(k)}(q, p)), (T\varphi. w) \circ \varphi^{-1}\rangle \\
-	&= \langle (p, q),  \Jet_z^k(T\varphi. w)\rangle = \langle  J^{(k)}_R(p, q), w\rangle,
+	&\langle J_\text{conv}( i(p, q)), w\rangle = \langle J_\text{conv}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle \notag \\
+	&= \langle  TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), T\varphi. w \rangle = \langle  J_L^{(k)}(q, p)), (T\varphi. w) \circ \varphi^{-1}\rangle \notag \\
+	&= \langle (p, q),  \Jet_z^k(T\varphi. w)\rangle = \langle  J^{(k)}_R(p, q), w\rangle, \notag
 \end{align}
 where we used \eqref{Moma_right} in the final step. In particular, $J_{\rm conv}$ is well defined on $T^*\SDiff(\R^n) / \iso^{(k)}(z)$.
 
@@ -2045,7 +2045,7 @@ sloppiness is usually harmless.
   \subsection{Weak dual pairs}
   In this section we review the notion of weak dual pairs
   \cite{GayBalmazVizman2012}.
-  This is a relaxation of the more prevalently invoked notion of a dual pair \cite{MarsdenWeinstein1983,Weinstein1983}.
+  This is a relaxation of the more frequently invoked notion of a dual pair \cite{MarsdenWeinstein1983,Weinstein1983}.
   Let $(S,\omega)$ be a symplectic manifold.
   Given a distribution $V \subset TS$, denote the fiber over
   $x \in S$ by $V_x \subset T_x S$.
