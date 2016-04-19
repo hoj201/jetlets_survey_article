@@ -570,7 +570,7 @@ Since we have not yet clarified the Poisson structures of the system, it may not
   In the event that $dh(m) \in \mathfrak{X}_{\rm div}(\R^n)$,
   Hamilton's equations are given by
   \begin{align*}
-    \dot{m} + \lie_u [m] = 0 \quad , \quad u = dh(m). %\label{eq:LP}.
+    \dot{m} + \lie_u [m] = 0 \quad , \quad u = dh(m). %\label{eq:LP}
   \end{align*}
 \end{prop}
 \begin{proof}
@@ -584,7 +584,7 @@ Since we have not yet clarified the Poisson structures of the system, it may not
   we observe
   \begin{align*}
     \frac{d}{dt} f_v(m) &= \{ f_v , h \}(m) = \langle m , [ df_v(m) , dh(m) ] \rangle \\
-    &= \langle m , \lie_{dh(m)}[ df_v(m) ]. \rangle
+    &= \langle m , \lie_{dh(m)}[ df_v(m) ] \rangle.
   \end{align*}
   However $df_v = v$ and so
   the last line can be equated with  $-\langle \lie_{dh(m)}[m] , v \rangle$.
@@ -603,7 +603,7 @@ Since we have not yet clarified the Poisson structures of the system, it may not
 \label{sec:MME}
 Consider the Hamiltonian
 \begin{align*}
-  h_{p,\sigma}(m) = \frac{1}{2} \langle m , K_{p,\sigma} * m, \rangle_{L^2}
+  h_{p,\sigma}(m) = \frac{1}{2} \langle m , K_{p,\sigma} * m \rangle_{L^2},
 \end{align*}
 where $K_{p,\sigma}:\R^n \to \mathbb{R}^{n \times n}$ is the matrix
 valued Green's kernel defined by the property
@@ -1100,11 +1100,10 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
   and $\delta_\alpha^\beta$ is the natural generalization of the Kronecker-delta symbol to multi-indices.
   Equivalently, we may define $J_R^{(k)}$
   as the unique map such that
-  \todo{DM: I replaced notation $T\varphi \circ w$ by $T\varphi.w$ to make the meaning clearer. Ok?} 
  \begin{align}
-  \langle J_R^{(k)}(q,p) , w \rangle = \langle (q,p) , \Jet_z^{(k)}( T\varphi.w) \rangle, \label{Moma_right}
-   \end{align} 
-  for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$. Here, we wrote $T\varphi.w$ for the function obtained by applying the differential of $\varphi$ to $w$.   
+  \langle J_R^{(k)}(q,p) , w \rangle = \langle (q,p) , \Jet_z^{(k)}( T\varphi \cdot w) \rangle, \label{Moma_right}
+   \end{align}
+  for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$. Here, we wrote $T\varphi \cdot w$ for the function obtained by applying the differential of $\varphi$ to $w$.
   
   We can write $J_L^{(k)}$ and $J_R^{(k)}$ explicitly, using the Dirac-delta distribution, as
   \begin{multline*}\label{eq:JLk}
