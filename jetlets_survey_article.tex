@@ -1313,13 +1313,14 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
  
 With these preliminary remarks in mind, we can now show the commutativity of the following diagram:
 \begin{displaymath}
-\xymatrix{
-\mathfrak{X}_{\rm div}(\R^n)^* & \ar[l]_{J_{\rm spatial}} T^*\SDiff(\R^n) \ar[d]^{\pi} \ar[r]^{J_{\rm conv}} &  \mathfrak{iso}(z)^* \\
-& T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
-& T^*Q^{(k)}_N \ar[u]^i \ar@/_2pc/[uur]_{J_R^{(k)}} \ar@/^2pc/[uul]^{J_L^{(k)}} &
+\xymatrix@R=3em@C=5em{
+& \ar@/_1.5pc/[dl]_{J_{\rm spatial}} S \subset T^*\SDiff(\R^n) \ar[d]^{\pi} \ar@/^1.5pc/[dr]^{J_{\rm conv}} & \\
+\mathfrak{X}_{\rm div}(\R^n)^* & \ar[l]_-{[J_{\rm spatial}]} i(T^*Q^{(k)}_N) \subset \SDiff(\R^n) / \iso^{(k)}(z) \ar[r]^-{[J_{\rm conv}]} & \mathfrak{iso}(z)^* \\
+& T^*Q^{(k)}_N \ar[u]^i \ar@/_1.5pc/[ur]_{J_R^{(k)}} \ar@/^1.5pc/[ul]^{J_L^{(k)}} &
 }
 \end{displaymath}
-Here, $J_{\rm spatial}$ and $J_{\rm conv}$ are defined in the natural manner through their actions on representatives of the equivalence classes. For the left side of the diagram, we let $(p,q) \in T^*Q^{(k)}_N$ and $\varphi$ such that $\Jet_z^k(\varphi) = q$. Then we obtain from \eqref{i_explicit} that for any $w \in \mathfrak{X}_{\rm div}(\R^n)$
+Here, $S = (\pi^{-1} \circ i)\bigl(T^*Q^{(k)}_N\bigr)$ and $J_{\rm spatial}$ and $J_{\rm conv}$ are defined in the natural manner through the left and right actions of $\SDiff(\R^n)$ and $\iso(z)$.
+For the left side of the diagram, we let $(p,q) \in T^*Q^{(k)}_N$ and $\varphi$ such that $\Jet_z^k(\varphi) = q$. Then we obtain from \eqref{i_explicit} that for any $w \in \mathfrak{X}_{\rm div}(\R^n)$
 \begin{align}
 	&\langle J_\text{spatial}( i(p, q)), w\rangle = \langle J_\text{spatial}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle  \notag \\
 	\quad&= \langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), w \circ \varphi \rangle \notag
