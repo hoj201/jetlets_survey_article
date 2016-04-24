@@ -23,14 +23,15 @@
 
 
 %  MATH OPERATORS
-\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\SDiff}{SDiff}
+\DeclareMathOperator{\iso}{iso}
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\SO}{SO}
 \DeclareMathOperator{\ad}{ad}
 \DeclareMathOperator{\Ad}{Ad}
 
 %  TITLE, AUTHOR, DATE
-\title{Some notes on $J^{-1}(0)$ ant $T^*Q$}
+\title{Some notes on $J^{-1}(0)$ and $T^*Q$}
 \author{Henry O. Jacobs}
 \date{\today}
 
@@ -39,26 +40,29 @@
 
 \maketitle
 
-We can write $J^{-1}(0)$ as as set
+Let $G := \SDiff(\mathbb{R}^n)$, $H := \iso(z) < G$, $J$ the cotangent
+lift momentum map of the right action of $H$ on $G$ and
+$\pi\colon G \to Q := G/H$. We can write $J^{-1}(0)$ as a set
 \begin{align*}
 	J^{-1}(0) = \{ p_g \in T^*G \mid \langle p_g , g \cdot w \rangle = 0 \quad \forall w \in \mathfrak{h} \}
 \end{align*}
 Then $J^{-1}(0) / H$ is
 \begin{align*}
-	J^{-1}(0) / H = \{ [ p_g ]_H \mid  \langle p_g , g \cdot w \rangle = 0 \quad \forall w \in \mathfrak{h} \}.
+	J^{-1}(0) / H = \{ [p_g] \in T^*G/H \mid  \langle p_g , g \cdot w \rangle = 0 \quad \forall w \in \mathfrak{h} \},
 \end{align*}
+where brackets denote the equivalence classes in $T^*G/H$ and $TG/H$.
 
 Similarly, we see that $i(T^*Q)$ is the set
 \begin{align*}
-	i(T^*Q) = \{ [p_g]_H \mid  \langle [p_g] , [v_g] \rangle = \langle p_q , T_g\pi(v_g) \rangle  \text{ for some } p_q \in T^*Q\}
+	i(T^*Q) = \{ [p_g] \in T^*G/H \mid \exists p_q \in T^*Q\colon \forall v_g \in T_g G\colon \langle [p_g] , [v_g] \rangle = \langle p_q , T_g\pi(v_g) \rangle \}
 \end{align*}
 Note that the kernel of $T_g\pi$ is the set $\{ g \cdot w \mid w \in \mathfrak{h}\}$.
 Moreover, $T_g \pi$ is linearly surjective.
-This tells us that the constraint 
+This tells us that the constraint
 \begin{align*}
 	\langle [p_g] , [v_g] \rangle = \langle p_q , T_g\pi(v_g) \rangle \text{ for some } p_q \in T^*Q
 \end{align*}
-is equivalent to the constraint 
+is equivalent to the constraint
 \begin{align*}
 	\langle [p_g], [g \cdot w] \rangle = 0 \quad \forall w \in \mathfrak{h}
 \end{align*}
