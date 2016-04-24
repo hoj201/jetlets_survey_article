@@ -1282,33 +1282,36 @@ relabeling symmetry for any $\SDiff(\R^n)$ invariant Lagrangian.
 In light of this discussion, it is natural to consider \eqref{eq:abstract-circulation} as the  fundamental conservation law. The main goal in the remainder of this section is to show that the jet-particle solutions satisfy conservation laws that are `shadows' of this fundamental law in the sense that they are associated with a \emph{partial} relabeling symmetry. To see this, it is useful to define the $k$-th order isotropy group,
 $\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid \Jet^{k}_z( \psi) = \Jet^k_z (\rm{id}) \}$, where we wrote $\rm{id}$ for the identity mapping and $z$ is shorthand for $z_1, \ldots, z_N \in \mathbb{R}^n$.
 Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the corresponding quotient map is given by $\Jet_z^k$.
- Let us also introduce the right action $R: \SDiff(\R^n) \times \SDiff(\R^n) \to \SDiff(\R^n)$ given by right composition of functions and write $R_\varphi = R(\cdot , \varphi)$, so that $R_\varphi \psi = \psi \circ \varphi$. We also introduce the cotangent lifted action $TR^*$ by means of the defining relation
+ Let us also introduce the right action $R\colon \SDiff(\R^n) \times \iso(z) \to \SDiff(\R^n)$ given by right composition of functions and write $R_\psi = R(\cdot , \psi)$, so that $R_\psi \varphi = \varphi \circ \psi$. We also introduce the cotangent lifted action $TR^*$ by means of the defining relation
  \begin{equation}
  	\langle TR^*_{\psi^{-1}}p_\varphi, v_\varphi \circ \psi \rangle = \langle p_\varphi, v_\varphi\rangle
  \end{equation}
- for arbitrary $p_\varphi \in T^*\SDiff(\R^n)$ and $v_\varphi \in T\SDiff(\R^n)$.
+ for arbitrary $p_\varphi \in T_\varphi^*\SDiff(\R^n)$ and $v_\varphi \in T_\varphi\SDiff(\R^n)$.
 
- The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$, where the quotient is by the cotangent lifted action. More precisely, for any $(p,q) \in T^*Q^{(k)}_N$ we can construct the corresponding element $i(p, q) \in T^*\SDiff(\R^n) / \iso^{(k)}(z)$ in the following way: Take any $\varphi$ such that $\Jet_z^k(\varphi) = q$ and find $\iota(p, q) \in T^*\SDiff(\R^n)$ that satisfies, for all $v_\varphi \in T_\varphi \SDiff(\mathbb{R}^n)$,
+ The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$, where the quotient is by the cotangent lifted action. More precisely, for any $(q,p) \in T^*Q^{(k)}_N$ we can construct the corresponding element $i(q,p) \in T^*\SDiff(\R^n) / \iso^{(k)}(z)$ in the following way: take any $\varphi$ such that $\Jet_z^k(\varphi) = q$ and find $\iota_\varphi(q,p) \in T_\varphi^*\SDiff(\R^n)$ that satisfies, for all $v_\varphi \in T_\varphi \SDiff(\mathbb{R}^n)$,
  \begin{equation}
-   \langle \iota(q,p) , v_\varphi \rangle = \langle p , v_\varphi( \varphi^{-1} \cdot q) \rangle,
+   \langle \iota_\varphi(q,p) , v_\varphi \rangle = \langle p , (v_\varphi \circ \varphi^{-1}) \cdot q) \rangle,
  \end{equation}
- cf.~\cite[(2.2.4)]{HRS}. Then set $i(p, q) = [\iota(p, q)]$.
+ cf.~\cite[(2.2.4)]{HRS} and note that $v_\varphi \circ \varphi^{-1} \in \mathfrak{X}_{\rm div}(\R^n)$ has a natural infinitesimal action on the jet $q$.
+ Then set $i(q,p) = [\iota_\varphi(q,p)]$.
 
- To see that $i(p, q)$ is well defined, note that if $\psi = \varphi \circ \rho$ for $\rho \in \iso^{(k)}(z)$, then for any $v_\psi \in T_\psi \SDiff(\R^n)$
- \begin{equation*}
-   \langle TR^*_{\rho^{-1}} \iota(p, q), v_{\psi}\rangle = \langle \iota(p, q), v_{\psi} \circ \rho^{-1}\rangle
- = \langle p, v_{\psi} (\rho^{-1} \circ (\psi \circ \rho^{-1})^{-1}  \cdot q)\rangle =  \langle p, v_{\psi} ( \psi^{-1} \cdot q) \rangle.
- \end{equation*}
- Since $[TR^*_{\rho^{-1}} \iota(p, q)] = [\iota(p, q)]$, we conclude that $i(q, p)$ is well defined.
- 
- 
+ To see that $i(p, q)$ is well defined, note that if $\varphi' = \varphi \circ \psi$ for $\psi \in \iso^{(k)}(z)$, then for any $v_{\varphi'} \in T_{\varphi'} \SDiff(\R^n)$ we have
+ \begin{multline*}
+   \langle TR^*_{\psi^{-1}} \iota_\varphi(q,p), v_{\varphi'} \rangle
+ = \langle \iota_\varphi(q,p), v_{\varphi'} \circ \psi^{-1} \rangle\\
+ = \langle p, (v_{\varphi'} \circ \psi^{-1} \circ \varphi^{-1}) \cdot q) \rangle
+ = \langle p, (v_{\varphi'} \circ {\varphi'}^{-1}) \cdot q) \rangle
+ = \langle \iota_{\varphi'}(q,p), v_{\varphi'} \rangle.
+ \end{multline*}
+ Since $[TR^*_{\psi^{-1}} \iota_\varphi(q,p)] = [\iota_{\varphi'}(q,p)]$, we conclude that $i(q,p)$ is well defined.
+
  We claim that
  \begin{equation}
  	i(q, p) = [TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)], \label{i_explicit}
  \end{equation}
  where $\varphi$ is such that $\Jet_z^k(\varphi) = q$. This follows since for any $v_{\varphi} \in T_{\varphi}\SDiff(\R^n)$
  \begin{equation*}
- 	\langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), v_{\varphi}\rangle = \langle  J_L^{(k)}(q, p), v_\varphi \circ \varphi^{-1}\rangle = \langle p, v_\varphi (\varphi^{-1} \cdot q)\rangle.
+	\langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), v_{\varphi}\rangle = \langle  J_L^{(k)}(q, p), v_\varphi \circ \varphi^{-1}\rangle = \langle p, (v_\varphi \circ \varphi^{-1}) \cdot q)\rangle.
  \end{equation*}
  
  
