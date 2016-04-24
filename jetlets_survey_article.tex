@@ -1295,7 +1295,7 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
  cf.~\cite[(2.2.4)]{HRS} and note that $v_\varphi \circ \varphi^{-1} \in \mathfrak{X}_{\rm div}(\R^n)$ has a natural infinitesimal action on the jet $q$.
  Then set $i(q,p) = [\iota_\varphi(q,p)]$.
 
- To see that $i(p, q)$ is well defined, note that if $\varphi' = \varphi \circ \psi$ for $\psi \in \iso^{(k)}(z)$, then for any $v_{\varphi'} \in T_{\varphi'} \SDiff(\R^n)$ we have
+ To see that $i(q,p)$ is well defined, note that if $\varphi' = \varphi \circ \psi$ for $\psi \in \iso^{(k)}(z)$, then for any $v_{\varphi'} \in T_{\varphi'} \SDiff(\R^n)$ we have
  \begin{multline*}
    \langle TR^*_{\psi^{-1}} \iota_\varphi(q,p), v_{\varphi'} \rangle
  = \langle \iota_\varphi(q,p), v_{\varphi'} \circ \psi^{-1} \rangle\\
@@ -1324,9 +1324,9 @@ With these preliminary remarks in mind, we can now show the commutativity of the
 }
 \end{displaymath}
 Here, $S = (\pi^{-1} \circ i)\bigl(T^*Q^{(k)}_N\bigr)$ and $J_{\rm spatial}$ and $J_{\rm conv}$ are defined in the natural manner through the left and right actions of $\SDiff(\R^n)$ and $\iso(z)$.
-For the left side of the diagram, we let $(p,q) \in T^*Q^{(k)}_N$ and $\varphi$ such that $\Jet_z^k(\varphi) = q$. Then we obtain from \eqref{i_explicit} that for any $w \in \mathfrak{X}_{\rm div}(\R^n)$
+For the left side of the diagram, we let $(q,p) \in T^*Q^{(k)}_N$ and $\varphi$ such that $\Jet_z^k(\varphi) = q$. Then we obtain from \eqref{i_explicit} that for any $w \in \mathfrak{X}_{\rm div}(\R^n)$
 \begin{align}
-	&\langle J_\text{spatial}( i(p, q)), w\rangle = \langle J_\text{spatial}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle  \notag \\
+	&\langle J_\text{spatial}( i(q,p)), w\rangle = \langle J_\text{spatial}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle  \notag \\
 	\quad&= \langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), w \circ \varphi \rangle \notag
 	 = \langle J_L^{(k)}(q, p), w \rangle, \notag
 \end{align}
@@ -1334,9 +1334,9 @@ as required. Note that this also shows that $J_{\rm spatial}$ is well defined on
 
 For the right leg, note that 
 \begin{align}
-	&\langle J_\text{conv}( i(p, q)), w\rangle = \langle J_\text{conv}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle \notag \\
+	&\langle J_\text{conv}( i(q,p)), w\rangle = \langle J_\text{conv}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle \notag \\
 	&= \langle  TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), T\varphi \cdot w \rangle = \langle  J_L^{(k)}(q, p)), (T\varphi \cdot w) \circ \varphi^{-1}\rangle \notag \\
-	&= \langle (p, q),  \Jet_z^k(T\varphi \cdot w)\rangle = \langle  J^{(k)}_R(p, q), w\rangle, \notag
+	&= \langle (q,p),  \Jet_z^k(T\varphi \cdot w)\rangle = \langle  J^{(k)}_R(q,p), w\rangle, \notag
 \end{align}
 where we used \eqref{Moma_right} in the final step. In particular, $J_{\rm conv}$ is well defined on $T^*\SDiff(\R^n) / \iso^{(k)}(z)$.
 
