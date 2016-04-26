@@ -68,6 +68,51 @@ is equivalent to the constraint
 \end{align*}
 This the sets $J^{-1}(0) / H $ and $i(T^*Q)$ are identical.
 
+\vspace{1cm}
+
+\noindent {\bf DM:} I agree with this mostly. Except did you mean $H$ is $\iso^{(k)}(z)$? A different way of seeing it is to construct explicitly the inverse of the map $i$. Recall
+\begin{align}
+	i(p, q) = [ TR^*_{\varphi^{-1}} J_L(p, q)].
+\end{align}
+The inverse is the map $\kappa$ that takes $[p_\varphi] \in J^{-1}(0)/\iso^{(k)}(z)$ and maps it to the (unique) element $(p, q)$ satisfying
+\begin{align}
+	\langle p, u.q\rangle = \langle TR^*_\varphi p_\varphi, u \rangle,
+\end{align}
+for all $u \in \mathfrak{X}_{\rm div}(\mathbb{R}^n)$. (When $u$ is in the Lie algebra of $\iso^{(k)}(z)$, then this turns into $0 = 0$ and is therefore not relevant in defining $p$. This is obvious on the left hand side, and on the right hand side we have $\langle TR^*_\varphi p_\varphi, u \rangle = \langle p_\varphi, u \circ \varphi\rangle = \langle J(p_\varphi), u\rangle = 0$.)
+
+To see that $\kappa \circ i$ is the identity on $T^*Q$, note that $\kappa(i(p, q)) = \kappa( [ TR^*_{\varphi^{-1}} J_L(p, q)])$, hence by the definition of $\kappa$
+\begin{align}
+	\langle \kappa(i(p, q)), u.q \rangle = \langle J_L(p, q), u\rangle = \langle p, u.q\rangle
+\end{align}
+for any $u \in \mathfrak{X}_{\rm div}(\mathbb{R}^n)$ and therefore $p = \kappa(i(p, q))$. 
+
+To see that $i \circ \kappa$ is the identity on $J^{-1}(0)/\iso^{(k)}(z)$, take $[p_\varphi] \in J^{-1}(0)/\iso^{(k)}(z)$, and let $q = {\rm Jet}^{(k)}_z(\varphi)$. Then we have by definition of $\kappa$ that for all $u \in \mathfrak{X}_{\rm div}(\mathbb{R}^n)$
+\begin{align}
+	\langle \kappa([p_\varphi]), u.q\rangle = \langle TR^*_\varphi p_\varphi, u\rangle.
+\end{align}
+The left hand side is also equal to
+\begin{align}
+	\langle J_L( \kappa([p_\varphi])), u\rangle.
+\end{align}
+Hence, 
+\begin{align}
+	J_L( \kappa([p_\varphi])) = TR^*_\varphi p_\varphi,
+\end{align}
+and therefore, using the explicit expression for $i$,
+\begin{align}
+	i(\kappa([p_\varphi])) = [ TR^*_{\varphi^{-1}} J_L( \kappa([p_\varphi])) ] = [p_\varphi].
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
 
 \bibliographystyle{amsalpha}
 \bibliography{hoj.bib}
