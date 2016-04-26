@@ -74,11 +74,17 @@ This the sets $J^{-1}(0) / H $ and $i(T^*Q)$ are identical.
 \begin{align}
 	i(p, q) = [ TR^*_{\varphi^{-1}} J_L(p, q)].
 \end{align}
-The inverse is the map $\kappa$ that takes $[p_\varphi] \in J^{-1}(0)/\iso^{(k)}(z)$ and maps it to the (unique) element $(p, q)$ satisfying
+The inverse is the map $\kappa$ that takes $[p_\varphi] \in J^{-1}(0)/\iso^{(k)}(z)$ and maps it to the (unique) element $\kappa([p_\varphi])$ satisfying
 \begin{align}
-	\langle p, u.q\rangle = \langle TR^*_\varphi p_\varphi, u \rangle,
+	\langle \kappa([p_\varphi]), u.q\rangle = \langle TR^*_\varphi p_\varphi, u \rangle, \label{eqn}
 \end{align}
-for all $u \in \mathfrak{X}_{\rm div}(\mathbb{R}^n)$. (When $u$ is in the Lie algebra of $\iso^{(k)}(z)$, then this turns into $0 = 0$ and is therefore not relevant in defining $p$. This is obvious on the left hand side, and on the right hand side we have $\langle TR^*_\varphi p_\varphi, u \rangle = \langle p_\varphi, u \circ \varphi\rangle = \langle J(p_\varphi), u\rangle = 0$.)
+for all $u \in \mathfrak{X}_{\rm div}(\mathbb{R}^n)$, where $q = {\rm Jet}^{(k)}_z(\varphi)$. Notice that this is well-defined. Namely, if $u.q = w.q$, then there exists a $\nu$ in the Lie algebra of $\iso^{(k)}(z)$ such that $w = u+  (T\varphi \cdot \nu) \circ \varphi^{-1}$. Therefore, on the right hand side of \eqref{eqn} we have
+\begin{align*}
+	\langle TR^*_\varphi p_\varphi, w \rangle &= \langle TR^*_\varphi p_\varphi, u+  (T\varphi \cdot \nu) \circ \varphi^{-1} \rangle \\
+	&=  \langle TR^*_\varphi p_\varphi, u\rangle + \langle p_\varphi, T\varphi \cdot \nu\rangle \\
+	&=  \langle TR^*_\varphi p_\varphi, u\rangle + \langle J(p_\varphi), \nu\rangle \\
+	&= \langle TR^*_\varphi p_\varphi, u\rangle.
+\end{align*}
 
 To see that $\kappa \circ i$ is the identity on $T^*Q$, note that $\kappa(i(p, q)) = \kappa( [ TR^*_{\varphi^{-1}} J_L(p, q)])$, hence by the definition of $\kappa$
 \begin{align}
