@@ -1809,112 +1809,7 @@ We are indebted to the anonymous referees for very carefully refereeing our arti
 JE, DDH, HOJ and DMM are grateful for partial support by the European Research Council Advanced Grant 267382 FCCA.
 
 \appendix
-\section{Diagrammatic overview}
-We present here a diagrammatic representation of some of the spaces used in the present paper. We begin by recalling a number of general results that hold for finite-dimensional Lie groups, before we indicate their relevance to the developments in the main text. 
 
-
-\begin{figure}[h]
-\begin{center}
-\begin{overpic}[scale = 0.7]{pic1.eps}
-\put(4, 6){\includegraphics[scale = 0.13]{arrow.eps}}
-\put(6.5, 8){$\phi$}
-\put(65, 2.5){\includegraphics[scale = 0.13]{arrow_skew.eps}}
-\put(67, 5){$\psi$}
-\put(61, 42){$G$}
-\put(42, 33) {$g$}
-\put(18, 27.9) {$e$}
-\put(17, 40) {${\tiny \updownarrow} G_{q_0}$ }
-\put(17, 4) {$q_0$ }
-\put(35, 4) {$q = \Pi(q) = \phi_g(q_0)$ }
-\put(25, 8) {$\Pi$ }
-\put(-3, 1) {$Q$ }
-\put(96.5, 22) {$K$ }
-\end{overpic}
-\end{center}
-%\includegraphics[scale=0.175,bb=0 0 100 100]{flows2.pdf}
-%\footnotesize
-\caption{
-\label{fig_diagram_1}
-The $G$ action on $Q$ induces a projection $\Pi$. The group $K$ also acts on $G$, and we assume that the two actions commute.
-}
-\end{figure}
-
-\begin{itemize}
-\item
-Let a Lie group $G$ act on a manifold $Q$ by the action $\phi: G \times Q \to Q$, which we also write as $\phi_g(\cdot) = \phi(g, \cdot)$. If we fix a particular value $q_0 \in Q$, we can construct a mapping $\Pi: G \to Q$ given by $\Pi(g) = \phi_g(q_0)$. Let us assume that the action is transitive, so that $\Pi$ is surjective. We denote by $G_{q_0}$ the isotropy subgroup leaving $q_0$ invariant, that is, 
-\begin{equation}
-  G_{q_0} = \{ g \in G | \phi_g(q_0) = q_0\}. \notag
-\end{equation}
-Note that $\Pi^{-1}(q) = g G_{q_0}$ if $\Pi(g) = q$, and hence we can identify $Q$  with $G/G_{q_0}$. Consider a further group, $K$, which also acts on $Q$ with group action $\psi: G \times Q \to Q$, and assume that $\psi$ and $\phi$ commute. This situation arises naturally when $K$ is a subgroup of $G$ and, in turn,  $G_{q_0}$ is a normal subgroup of $K$. In that case one can define
-\begin{equation}
-  \psi_k(q) = \Pi( g k) = \phi_{gk}(q_0), \label{right_ac_general}
-\end{equation}
-for any $g$ that satisfies $\Pi(g) = q$. Note that $\phi$ and $\psi$ commute, since
-\begin{align}
-  \phi_s(\psi_k (q)) = \phi_s(\phi_{gk}(q_0)) = \phi_{sgk}(q_0) = \psi_k(\phi_s (q)). \notag
-\end{align}
-We refer to Figure \ref{fig_diagram_1} for a representation of the relevant spaces and maps.
-\item The actions $\phi$ and $\psi$ can be lifted to actions $T^*\phi$ and $T^*\psi$ on the cotangent bundle $T^*Q$ in the usual manner (see Figure \ref{fig_diagram_2}). These cotangent lifted actions induce equivariant momentum maps $J_1: T^*Q \to \mathfrak{g}^*$ and $J_2:T^*Q \to \mathfrak{k}^*$, where $\mathfrak{g}^*$ and $\mathfrak{k}^*$ are the duals of the Lie algebras of $G$ and $K$. Due to their equivariance, $J_1$ and $J_2$ are Poisson maps (where the duals of the Lie algebras are equipped with appropriate Lie--Poisson brackets). Since the actions $\phi$ and $\psi$ commute, the action $T^*\psi$ leaves level sets of $J_1$ invariant, and vice versa. This implies that $J_1$ and $J_2$ are a weak dual pair, and if moreover $T^*\psi$ is transitive on the level sets of $J_1$ and vice versa, then $J_1$ and $J_2$ are a proper dual pair (see \cite[Corollary~2.6]{GayBalmazVizman2012}. 
-%
-\item Let $\mathcal{H}:T^*G \to \mathbb{R}$ be a right-invariant Hamiltonian. This means that $\mathcal{H}$ is invariant with respect to the  cotangent lift $TR^*$ of the multiplication from the right of $G$ by itself\todo{Is this not a left action?  The right action on $G$ lifts to a left action on $T^*G$ in my book, but sometimes there are conventions that differ.  For better or worse, I tend to follow Weinstein-esque conventions. --- DM: I agree this can lead to confusion about conventions, but ultimately here it's irrelevant. I have made an attempt at making it clear}. In particular, the reduced Hamiltonian $h:\mathfrak{g}^* \to \mathbb{R}$ satisfies $\mathcal{H}(\alpha_g) = h \circ TR_g^*(\alpha_g)$ for any $\alpha_g \in T^*G$, and the reduced dynamics in $\mathfrak{g}^*$ are of Lie--Poisson type. The momentum map $J_1$ can be used to induce the so-called \emph{collective Hamiltonian} $H = h\circ J_1$ on $T^*Q$. Note that $T^*Q$ is a symplectic manifold, and that the symplectic (canonical) dynamics with respect to the collective Hamiltonian are mapped by (the Poisson map) $J_1$ to the reduced dynamics on $\mathfrak{g}^*$. Moreover, $J_2$ is conserved under the dynamics on $T^*Q$. The conservation law follows from Noether's theorem because $J_1$, and hence $H$, are left invariant by $T^*\psi$ (see Theorem \ref{see thm:dual_pairs}).  Note that the elements of $T^*Q$ play the role of Clebsch variables in the sense of \cite{MarsdenWeinstein1983}. 
-%
-\item The appeal of Clebsch variables is their symplectic nature. The symmetry of $H$ with respect to $T^*\psi$ implies that reduced dynamics on $T^*G/H$ can be constructed by symplectic reduction. Note however that the resulting quotient manifold is not symplectic in general. 
-%
-\item 
-%for the following see Lee Thm 23 showing that the isotropy group is closed, the proof of Thm 9.22 showing that the action of a closed Lie subgroup is proper and free; thus Thm 2.2.2 of Hamiltonian Reduction by Stages book applies.
-Note also that there is a symplectic diffeomorphism between $T^*Q$ and $J^{-1}(0)/G_{q_0}$, where $J$ here is the momentum map associated with the cotangent lift of the action (from the right) of $G_{q_0}$ on $G$, see \cite[Theorem~2.2.2]{HRS}. 
-\end{itemize}
-\begin{figure}[h]
-\begin{center}
-\begin{overpic}[scale = 0.6]{pic2_mod.eps}
-\put(45, 28){\includegraphics[scale = 0.13]{arrow.eps}}
-\put(46, 30){$T^*\phi$}
-\put(84, 28){\includegraphics[scale = 0.13]{arrow.eps}}
-\put(85, 30){$T^*\psi$}
-\put(57, 49){$G$}
-\put(44, 41.2) {$e$}
-\put(43.3, 47) {${\tiny \updownarrow} G_{q_0}$ }
-\put(97, 23.5) {$T^*Q$ }
-\put(96.5, 49) {$K$ }
-\put(27, 40){\includegraphics[scale = 0.13]{arrow_left.eps}}
-\put(17, 49) {$T^*G$ }
-\put(3, 25) {$\mathcal{H}$ }
-\put(16, 24.5) {$H = h \circ J_1$ }
-\put(22, 12) {$h $ }
-\put(7, 7) {$\mathbb{R} $ }
-\put(52.5, 7) {$\mathfrak{g}^*$ }
-\put(96.5, 7) {$\mathfrak{k}^*$ }
-\put(49.5, 17) {$J_1$ }
-\put(85.5, 17) {$J_2$ }
-\put(22, 2.5) {$TR^* $ }
-\end{overpic}
-\end{center}
-%\includegraphics[scale=0.175,bb=0 0 100 100]{flows2.pdf}
-%\footnotesize
-\caption{The cotangent lifted actions induce momentum maps $J_1$ and $J_2$. The Hamiltonian $\mathcal{H}$, assumed to be right-invariant, is also shown, along with the reduced Hamiltonian $H$ and the collective Hamiltonian $H = h \circ J_1$. 
-\label{fig_diagram_2} 
- }
-\end{figure}
-
-%
-In translating the above facts to the case of interest in the present paper, one encounters technical subtleties to do with the infinite-dimensionality of $\SDiff(\R^n)$. Nevertheless, precise parallels can be recognized, as we will discuss now.
-\begin{itemize}
-\item Let $G = \SDiff(\R^n)$, and let $Q= Q_1^{(k)}$ be the space of single-particle $k$-jetlets (the extension to $N$ particles follows in a straightforward manner). We fix the point $q_0 = (z, \mathbf{1}, 0, \ldots, 0) \in Q_1^{(k)}$ corresponding to the Taylor expansion of the identity in $\SDiff(\R^n)$ evaluated at $z \in \R^n$ (cf. Section \ref{sec:higher_order}). We let the projection $\Pi$ be given by ${\rm Jet}_z^{(k)}$, and hence the left action of an element $\varphi \in \SDiff(\R^n)$ on $q \in Q$ is $\phi_\varphi(q) = {\rm Jet}_z^{(k)}(\varphi \circ \rho)$, for any $\rho$ such that ${\rm Jet}_z^{(k)}(\rho) = q$. The role of the isotropy subgroup $G_{q_0}$ is played by ${\rm iso}^{(k)}_z$. Let $K = {\rm iso}(z)$, and note that ${\rm iso}^{(k)}(z)$ is a normal subgroup of ${\rm iso}(z)$ (\cite[Proposition 4.1]{JacobsRatiuDesbrun2013}). Hence, we can define a right action of ${\rm iso}(z)$ on $Q_1^{(k)}$ given by \eqref{right_ac_general}, namely
-  \begin{equation}
-    \psi_\rho(q) = {\rm Jet}_z^{(k)}(\varphi \circ \rho), \notag
-  \end{equation}
-for any $\varphi$ such that ${\rm Jet}_z^{(k)}(\varphi) = q$. 
-\item The cotangent lift of the left and right actions on $Q$ lead to the momentum maps $J_L^{(k)}$ and $J_R^{(k)}$, explicitly computed in Section  \ref{sec:higher_order} and shown to be a weak dual pair in Proposition \ref{prop:k dual pairs}. 
-\item  In Theorem \ref{thm:k-solutions} we showed that the canonical Hamiltonian equations on $T^*{Q_1}^{(k)}$ associated with the collective Hamiltonian $H^{(k)} = h_{p, \sigma} \circ J_L^{(k)}$ lead to trajectories that are mapped, by $J_L^{(k)}$, to solutions of Hamilton's equations on $\mathfrak{X}_{\rm div}(\R^n)^*$. Moreover, we showed that $J_R^{(k)}$ is a constant of motion.
-\item We briefly visit further symplectic reduction in Appendix \ref{sec:eom}. For more on this topic we refer to \cite{JacobsRatiuDesbrun2013, CotterHolmJacobsMeier2014}.
-\item In Section \ref{sec:Kelvin} we constructed the mapping $i:T^*Q_1^{(k)} \to T^*\SDiff(\R^n)/{\rm iso}^{(k)}_z$ given by \eqref{i_explicit}, namely, 
-\begin{align}
- 	i(q, p) = [TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)]. \notag
- \end{align}
-One can show explicitly that $TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)$ is mapped to zero by the momentum map associated with the cotangent lift of the right action of $\iso^{(k)}_z$ on $\SDiff(\R^n)$, as suggested by \cite[Theorem~2.2.2]{HRS}. 
-\end{itemize}
-%%%%%%%%%%%%%%%%%%%
-%%%%%%%
 \section{Hamiltonian mechanics}
 \label{sec:Hamiltonian}
 The goal of this section is to prove Theorem~\ref{thm:dual_pairs} (see page~\pageref{thm:dual_pairs}).
@@ -2196,6 +2091,109 @@ sloppiness is usually harmless.
     \end{equation*}
   \end{proof}
 
+\section{Diagrammatic overview}
+We present here a diagrammatic representation of some of the spaces used in the present paper. We begin by recalling a number of general results that hold for finite-dimensional Lie groups, before we indicate their relevance to the developments in the main text.
+
+\begin{figure}[h]
+\begin{center}
+\begin{overpic}[scale = 0.7]{pic1.eps}
+\put(4, 6){\includegraphics[scale = 0.13]{arrow.eps}}
+\put(6.5, 8){$\phi$}
+\put(65, 2.5){\includegraphics[scale = 0.13]{arrow_skew.eps}}
+\put(67, 5){$\psi$}
+\put(61, 42){$G$}
+\put(42, 33) {$g$}
+\put(18, 27.9) {$e$}
+\put(17, 40) {${\tiny \updownarrow} G_{q_0}$ }
+\put(17, 4) {$q_0$ }
+\put(35, 4) {$q = \Pi(q) = \phi_g(q_0)$ }
+\put(25, 8) {$\Pi$ }
+\put(-3, 1) {$Q$ }
+\put(96.5, 22) {$K$ }
+\end{overpic}
+\end{center}
+%\includegraphics[scale=0.175,bb=0 0 100 100]{flows2.pdf}
+%\footnotesize
+\caption{
+\label{fig_diagram_1}
+The $G$ action on $Q$ induces a projection $\Pi$. The group $K$ also acts on $G$, and we assume that the two actions commute.
+}
+\end{figure}
+
+\begin{itemize}
+\item
+Let a Lie group $G$ act on a manifold $Q$ by the action $\phi: G \times Q \to Q$, which we also write as $\phi_g(\cdot) = \phi(g, \cdot)$. If we fix a particular value $q_0 \in Q$, we can construct a mapping $\Pi: G \to Q$ given by $\Pi(g) = \phi_g(q_0)$. Let us assume that the action is transitive, so that $\Pi$ is surjective. We denote by $G_{q_0}$ the isotropy subgroup leaving $q_0$ invariant, that is,
+\begin{equation}
+  G_{q_0} = \{ g \in G | \phi_g(q_0) = q_0\}. \notag
+\end{equation}
+Note that $\Pi^{-1}(q) = g G_{q_0}$ if $\Pi(g) = q$, and hence we can identify $Q$  with $G/G_{q_0}$. Consider a further group, $K$, which also acts on $Q$ with group action $\psi: G \times Q \to Q$, and assume that $\psi$ and $\phi$ commute. This situation arises naturally when $K$ is a subgroup of $G$ and, in turn,  $G_{q_0}$ is a normal subgroup of $K$. In that case one can define
+\begin{equation}
+  \psi_k(q) = \Pi( g k) = \phi_{gk}(q_0), \label{right_ac_general}
+\end{equation}
+for any $g$ that satisfies $\Pi(g) = q$. Note that $\phi$ and $\psi$ commute, since
+\begin{align}
+  \phi_s(\psi_k (q)) = \phi_s(\phi_{gk}(q_0)) = \phi_{sgk}(q_0) = \psi_k(\phi_s (q)). \notag
+\end{align}
+We refer to Figure \ref{fig_diagram_1} for a representation of the relevant spaces and maps.
+\item The actions $\phi$ and $\psi$ can be lifted to actions $T^*\phi$ and $T^*\psi$ on the cotangent bundle $T^*Q$ in the usual manner (see Figure \ref{fig_diagram_2}). These cotangent lifted actions induce equivariant momentum maps $J_1: T^*Q \to \mathfrak{g}^*$ and $J_2:T^*Q \to \mathfrak{k}^*$, where $\mathfrak{g}^*$ and $\mathfrak{k}^*$ are the duals of the Lie algebras of $G$ and $K$. Due to their equivariance, $J_1$ and $J_2$ are Poisson maps (where the duals of the Lie algebras are equipped with appropriate Lie--Poisson brackets). Since the actions $\phi$ and $\psi$ commute, the action $T^*\psi$ leaves level sets of $J_1$ invariant, and vice versa. This implies that $J_1$ and $J_2$ are a weak dual pair, and if moreover $T^*\psi$ is transitive on the level sets of $J_1$ and vice versa, then $J_1$ and $J_2$ are a proper dual pair (see \cite[Corollary~2.6]{GayBalmazVizman2012}.
+%
+\item Let $\mathcal{H}:T^*G \to \mathbb{R}$ be a right-invariant Hamiltonian. This means that $\mathcal{H}$ is invariant with respect to the  cotangent lift $TR^*$ of the multiplication from the right of $G$ by itself\todo{Is this not a left action?  The right action on $G$ lifts to a left action on $T^*G$ in my book, but sometimes there are conventions that differ.  For better or worse, I tend to follow Weinstein-esque conventions. --- DM: I agree this can lead to confusion about conventions, but ultimately here it's irrelevant. I have made an attempt at making it clear}. In particular, the reduced Hamiltonian $h:\mathfrak{g}^* \to \mathbb{R}$ satisfies $\mathcal{H}(\alpha_g) = h \circ TR_g^*(\alpha_g)$ for any $\alpha_g \in T^*G$, and the reduced dynamics in $\mathfrak{g}^*$ are of Lie--Poisson type. The momentum map $J_1$ can be used to induce the so-called \emph{collective Hamiltonian} $H = h\circ J_1$ on $T^*Q$. Note that $T^*Q$ is a symplectic manifold, and that the symplectic (canonical) dynamics with respect to the collective Hamiltonian are mapped by (the Poisson map) $J_1$ to the reduced dynamics on $\mathfrak{g}^*$. Moreover, $J_2$ is conserved under the dynamics on $T^*Q$. The conservation law follows from Noether's theorem because $J_1$, and hence $H$, are left invariant by $T^*\psi$ (see Theorem \ref{see thm:dual_pairs}).  Note that the elements of $T^*Q$ play the role of Clebsch variables in the sense of \cite{MarsdenWeinstein1983}.
+%
+\item The appeal of Clebsch variables is their symplectic nature. The symmetry of $H$ with respect to $T^*\psi$ implies that reduced dynamics on $T^*G/H$ can be constructed by symplectic reduction. Note however that the resulting quotient manifold is not symplectic in general.
+%
+\item
+%for the following see Lee Thm 23 showing that the isotropy group is closed, the proof of Thm 9.22 showing that the action of a closed Lie subgroup is proper and free; thus Thm 2.2.2 of Hamiltonian Reduction by Stages book applies.
+Note also that there is a symplectic diffeomorphism between $T^*Q$ and $J^{-1}(0)/G_{q_0}$, where $J$ here is the momentum map associated with the cotangent lift of the action (from the right) of $G_{q_0}$ on $G$, see \cite[Theorem~2.2.2]{HRS}.
+\end{itemize}
+\begin{figure}[h]
+\begin{center}
+\begin{overpic}[scale = 0.6]{pic2_mod.eps}
+\put(45, 28){\includegraphics[scale = 0.13]{arrow.eps}}
+\put(46, 30){$T^*\phi$}
+\put(84, 28){\includegraphics[scale = 0.13]{arrow.eps}}
+\put(85, 30){$T^*\psi$}
+\put(57, 49){$G$}
+\put(44, 41.2) {$e$}
+\put(43.3, 47) {${\tiny \updownarrow} G_{q_0}$ }
+\put(97, 23.5) {$T^*Q$ }
+\put(96.5, 49) {$K$ }
+\put(27, 40){\includegraphics[scale = 0.13]{arrow_left.eps}}
+\put(17, 49) {$T^*G$ }
+\put(3, 25) {$\mathcal{H}$ }
+\put(16, 24.5) {$H = h \circ J_1$ }
+\put(22, 12) {$h $ }
+\put(7, 7) {$\mathbb{R} $ }
+\put(52.5, 7) {$\mathfrak{g}^*$ }
+\put(96.5, 7) {$\mathfrak{k}^*$ }
+\put(49.5, 17) {$J_1$ }
+\put(85.5, 17) {$J_2$ }
+\put(22, 2.5) {$TR^* $ }
+\end{overpic}
+\end{center}
+%\includegraphics[scale=0.175,bb=0 0 100 100]{flows2.pdf}
+%\footnotesize
+\caption{The cotangent lifted actions induce momentum maps $J_1$ and $J_2$. The Hamiltonian $\mathcal{H}$, assumed to be right-invariant, is also shown, along with the reduced Hamiltonian $H$ and the collective Hamiltonian $H = h \circ J_1$.
+\label{fig_diagram_2}
+ }
+\end{figure}
+
+%
+In translating the above facts to the case of interest in the present paper, one encounters technical subtleties to do with the infinite-dimensionality of $\SDiff(\R^n)$. Nevertheless, precise parallels can be recognized, as we will discuss now.
+\begin{itemize}
+\item Let $G = \SDiff(\R^n)$, and let $Q= Q_1^{(k)}$ be the space of single-particle $k$-jetlets (the extension to $N$ particles follows in a straightforward manner). We fix the point $q_0 = (z, \mathbf{1}, 0, \ldots, 0) \in Q_1^{(k)}$ corresponding to the Taylor expansion of the identity in $\SDiff(\R^n)$ evaluated at $z \in \R^n$ (cf. Section \ref{sec:higher_order}). We let the projection $\Pi$ be given by ${\rm Jet}_z^{(k)}$, and hence the left action of an element $\varphi \in \SDiff(\R^n)$ on $q \in Q$ is $\phi_\varphi(q) = {\rm Jet}_z^{(k)}(\varphi \circ \rho)$, for any $\rho$ such that ${\rm Jet}_z^{(k)}(\rho) = q$. The role of the isotropy subgroup $G_{q_0}$ is played by ${\rm iso}^{(k)}_z$. Let $K = {\rm iso}(z)$, and note that ${\rm iso}^{(k)}(z)$ is a normal subgroup of ${\rm iso}(z)$ (\cite[Proposition 4.1]{JacobsRatiuDesbrun2013}). Hence, we can define a right action of ${\rm iso}(z)$ on $Q_1^{(k)}$ given by \eqref{right_ac_general}, namely
+  \begin{equation}
+    \psi_\rho(q) = {\rm Jet}_z^{(k)}(\varphi \circ \rho), \notag
+  \end{equation}
+for any $\varphi$ such that ${\rm Jet}_z^{(k)}(\varphi) = q$.
+\item The cotangent lift of the left and right actions on $Q$ lead to the momentum maps $J_L^{(k)}$ and $J_R^{(k)}$, explicitly computed in Section  \ref{sec:higher_order} and shown to be a weak dual pair in Proposition \ref{prop:k dual pairs}.
+\item  In Theorem \ref{thm:k-solutions} we showed that the canonical Hamiltonian equations on $T^*{Q_1}^{(k)}$ associated with the collective Hamiltonian $H^{(k)} = h_{p, \sigma} \circ J_L^{(k)}$ lead to trajectories that are mapped, by $J_L^{(k)}$, to solutions of Hamilton's equations on $\mathfrak{X}_{\rm div}(\R^n)^*$. Moreover, we showed that $J_R^{(k)}$ is a constant of motion.
+\item We briefly visit further symplectic reduction in Appendix \ref{sec:eom}. For more on this topic we refer to \cite{JacobsRatiuDesbrun2013, CotterHolmJacobsMeier2014}.
+\item In Section \ref{sec:Kelvin} we constructed the mapping $i:T^*Q_1^{(k)} \to T^*\SDiff(\R^n)/{\rm iso}^{(k)}_z$ given by \eqref{i_explicit}, namely,
+\begin{align}
+ 	i(q, p) = [TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)]. \notag
+ \end{align}
+One can show explicitly that $TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)$ is mapped to zero by the momentum map associated with the cotangent lift of the right action of $\iso^{(k)}_z$ on $\SDiff(\R^n)$, as suggested by \cite[Theorem~2.2.2]{HRS}.
+\end{itemize}
 
 \section{Multi-indices}
 \label{sec:multi}
