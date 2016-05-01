@@ -1318,8 +1318,8 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
 With these preliminary remarks in mind, we can now show the commutativity of the following diagram:
 \begin{displaymath}
 \xymatrix@R=3em@C=5em{
-& \ar@/_1.5pc/[dl]_{J_{\rm spatial}} S \subset T^*\SDiff(\R^n) \ar[d]^{\pi} \ar@/^1.5pc/[dr]^{J_{\rm conv}} & \\
-\mathfrak{X}_{\rm div}(\R^n)^* & \ar[l]_-{[J_{\rm spatial}]} i(T^*Q^{(k)}_N) \subset T^*\SDiff(\R^n) / \iso^{(k)}(z) \ar[r]^-{[J_{\rm conv}]} & \mathfrak{iso}(z)^* \\
+& \ar@/_1.5pc/[dl]_{J_{\rm spatial}} S \subset T^*\SDiff(\R^n) \ar[d]^{\pi} \ar@/^1.5pc/[dr]^{ \left. J_{\rm conv} \right|_S} & \\
+\mathfrak{X}_{\rm div}(\R^n)^* & \ar[l]_-{[J_{\rm spatial}]} i(T^*Q^{(k)}_N) \subset T^*\SDiff(\R^n) / \iso^{(k)}(z) \ar[r]^-{[\left. J_{\rm conv}\right|_{S} ]} & \mathfrak{iso}(z)^* \\
 & T^*Q^{(k)}_N \ar[u]^i \ar@/_1.5pc/[ur]_{J_R^{(k)}} \ar@/^1.5pc/[ul]^{J_L^{(k)}} &
 }
 \end{displaymath}
@@ -1338,7 +1338,8 @@ For the right leg, note that
 	&= \langle  TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), T\varphi \cdot w \rangle = \langle  J_L^{(k)}(q, p)), (T\varphi \cdot w) \circ \varphi^{-1}\rangle \notag \\
 	&= \langle (q,p),  \Jet_z^k(T\varphi \cdot w)\rangle = \langle  J^{(k)}_R(q,p), w\rangle, \notag
 \end{align}
-where we used \eqref{Moma_right} in the final step. In particular, $J_{\rm conv}$ is well defined on $i(T^*Q^{(k)}_N)$.
+where we used \eqref{Moma_right} in the final step. In particular, the restricted momentum map $\left. J_{\rm conv} \right|_S$ is invariant under the right action of $\SDiff(\R^n)$,
+and can therefore descend to a map, $[\left. J_{\rm conv} \right|_S ]$ defined on $i(T^*Q^{(k)}_N)$.
 
 %
 %
