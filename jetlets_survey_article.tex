@@ -860,13 +860,13 @@ In this section we revisit the first order particle-like solutions of \cite{Cott
      -p\indices{_a_i^j} q\indices{_a^k_j} \dx^i \otimes \partial_k \delta_{q_a^{(0)}}.
   \end{align*}
   Next, we construct a dual momentum map associated with a right action on $Q_N^{(1)}$. Analogous to the previous section  it is useful at this stage to write elements of $Q_N^{(1)}$ in the form $ \varphi \cdot z = (\varphi (z_1, {\mathbf{1}}), \ldots, \varphi \cdot (z_N , \mathbf{1}))$, $\varphi \in \SDiff(\mathbb{R}^n)$, for some designated element $ z=( (z_1, \mathbf{1}), \ldots, (z_N, \mathbf{1}))$. Clearly, every element of $Q_N^{(1)}$ can be written in this form for some  $\varphi \in \SDiff(\mathbb{R}^n)$. Indeed, with this convention the specification of an element in $Q_N^{(1)}$ fixes the first order Taylor expansion of $\varphi$ at the locations $z_a$, $a = 1, \ldots, N$. With this in mind, let us recall the isotropy group $\iso(z)$ defined earlier in \eqref{eq:isotropy_group}, which leaves these locations invariant, and define a right action on  $Q_N^{(1)}$ given by 
-\begin{align}
-	 (\varphi \cdot z) \cdot \psi  = (\varphi \circ \psi) \cdot z. \notag
-	 \end{align}
-	 That is, 
- \begin{align}
+\begin{equation*}
+	 (\varphi \cdot z) \cdot \psi  = (\varphi \circ \psi) \cdot z.
+\end{equation*}
+That is,
+\begin{equation}
 	 (q^{(0)}, q^{(1)}) \cdot \psi = \left( \left(q_1^{(0)}, q_1^{(1)} \cdot D\psi|_{z_1}\right), \ldots, \left(q_N^{(0)}, q_N^{(1)} \cdot D\psi|_{z_N}\right)\right). \label{1-rightaction}
-\end{align}
+\end{equation}
 In Proposition~\ref{HL_action_prop} we will generalize this construction to define a right action for the higher levels in the hierarchy of particle-like solutions.
   The action \eqref{1-rightaction} yields the cotangent lift momentum map defined by the condition
   \begin{align*}
@@ -1331,19 +1331,19 @@ With these preliminary remarks in mind, we can now show the commutativity of the
 \end{displaymath}
 Here, $S = (\pi^{-1} \circ i)\bigl(T^*Q^{(k)}_N\bigr)$ and $J_{\rm spatial}$ and $J_{\rm conv}$ are defined in the natural manner through the left and right actions of $\SDiff(\R^n)$ and $\iso(z)$.
 For the left side of the diagram, we let $(q,p) \in T^*Q^{(k)}_N$ and $\varphi$ such that $\Jet_z^k(\varphi) = q$. Then we obtain from \eqref{i_explicit} that for any $w \in \mathfrak{X}_{\rm div}(\R^n)$
-\begin{align}
-	&\langle [J_\text{spatial}](i(q,p)), w\rangle = \langle J_\text{spatial}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle  \notag \\
-	\quad&= \langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), w \circ \varphi \rangle \notag
-	 = \langle J_L^{(k)}(q, p), w \rangle, \notag
-\end{align}
+\begin{align*}
+	&\langle [J_\text{spatial}](i(q,p)), w\rangle = \langle J_\text{spatial}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle \\
+	\quad&= \langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), w \circ \varphi \rangle
+	 = \langle J_L^{(k)}(q, p), w \rangle,
+\end{align*}
 as required. Note that this also shows that $J_{\rm spatial}$ is well defined on $T^*\SDiff(\R^n) / \iso^{(k)}(z)$. 
 
 For the right leg, note that 
-\begin{align}
-	&\langle [J_\text{conv}](i(q,p)), w\rangle = \langle J_\text{conv}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle \notag \\
-	&= \langle  TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), T\varphi \cdot w \rangle = \langle  J_L^{(k)}(q, p), (T\varphi \cdot w) \circ \varphi^{-1} \rangle \notag \\
-	&= \langle (q,p),  \Jet_z^k(T\varphi \cdot w)\rangle = \langle  J^{(k)}_R(q,p), w\rangle, \notag
-\end{align}
+\begin{align*}
+	&\langle [J_\text{conv}](i(q,p)), w\rangle = \langle J_\text{conv}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle \\
+	&= \langle  TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), T\varphi \cdot w \rangle = \langle  J_L^{(k)}(q, p), (T\varphi \cdot w) \circ \varphi^{-1} \rangle \\
+	&= \langle (q,p),  \Jet_z^k(T\varphi \cdot w)\rangle = \langle  J^{(k)}_R(q,p), w\rangle,
+\end{align*}
 where we used \eqref{Moma_right} in the final step. In particular, the restricted momentum map $\left. J_{\rm conv} \right|_S$ is invariant under the right action of $\SDiff(\R^n)$,
 and can therefore descend to a map, $[\left. J_{\rm conv} \right|_S ]$ defined on $i(T^*Q^{(k)}_N)$.
 
@@ -2133,17 +2133,17 @@ The $G$ action on $Q$ induces a projection $\Pi$. The group $K$ also acts on $G$
 \begin{itemize}
 \item
 Let a Lie group $G$ act on a manifold $Q$ by the action $\phi: G \times Q \to Q$, which we also write as $\phi_g(\cdot) = \phi(g, \cdot)$. If we fix a particular value $q_0 \in Q$, we can construct a mapping $\Pi: G \to Q$ given by $\Pi(g) = \phi_g(q_0)$. Let us assume that the action is transitive, so that $\Pi$ is surjective. We denote by $G_{q_0}$ the isotropy subgroup leaving $q_0$ invariant, that is,
-\begin{equation}
-  G_{q_0} = \{ g \in G | \phi_g(q_0) = q_0\}. \notag
-\end{equation}
+\begin{equation*}
+  G_{q_0} = \{ g \in G | \phi_g(q_0) = q_0\}.
+\end{equation*}
 Note that $\Pi^{-1}(q) = g G_{q_0}$ if $\Pi(g) = q$, and hence we can identify $Q$  with $G/G_{q_0}$. Consider a further group, $K$, which also acts on $Q$ with group action $\psi: K \times Q \to Q$, and assume that $\psi$ and $\phi$ commute. This situation arises naturally when $K$ is a subgroup of $G$ and, in turn,  $G_{q_0}$ is a normal subgroup of $K$. In that case one can define
 \begin{equation}
   \psi_k(q) = \Pi( g k) = \phi_{gk}(q_0), \label{right_ac_general}
 \end{equation}
 for any $g$ that satisfies $\Pi(g) = q$. Note that $\phi$ and $\psi$ commute, since
-\begin{align}
-  \phi_s(\psi_k (q)) = \phi_s(\phi_{gk}(q_0)) = \phi_{sgk}(q_0) = \psi_k(\phi_s (q)). \notag
-\end{align}
+\begin{equation*}
+  \phi_s(\psi_k (q)) = \phi_s(\phi_{gk}(q_0)) = \phi_{sgk}(q_0) = \psi_k(\phi_s (q)).
+\end{equation*}
 We refer to Figure \ref{fig_diagram_1} for a representation of the relevant spaces and maps.
 \item The actions $\phi$ and $\psi$ can be lifted to actions $T^*\phi$ and $T^*\psi$ on the cotangent bundle $T^*Q$ in the usual manner (see Figure \ref{fig_diagram_2}). These cotangent lifted actions induce equivariant momentum maps $J_1: T^*Q \to \mathfrak{g}^*$ and $J_2:T^*Q \to \mathfrak{k}^*$, where $\mathfrak{g}^*$ and $\mathfrak{k}^*$ are the duals of the Lie algebras of $G$ and $K$. Due to their equivariance, $J_1$ and $J_2$ are Poisson maps (where the duals of the Lie algebras are equipped with appropriate Lie--Poisson brackets). Since the actions $\phi$ and $\psi$ commute, the action $T^*\psi$ leaves level sets of $J_1$ invariant, and vice versa. This implies that $J_1$ and $J_2$ are a weak dual pair, and if moreover $T^*\psi$ is transitive on the level sets of $J_1$ and vice versa, then $J_1$ and $J_2$ are a proper dual pair, see~\cite[Corollary~2.6]{GayBalmazVizman2012}.
 %
@@ -2191,17 +2191,17 @@ Note also that there is a symplectic diffeomorphism between $T^*Q$ and $J^{-1}(0
 In translating the above facts to the case of interest in the present paper, one encounters technical subtleties to do with the infinite-dimensionality of $\SDiff(\R^n)$. Nevertheless, precise parallels can be recognized, as we will discuss now.
 \begin{itemize}
 \item Let $G = \SDiff(\R^n)$, and let $Q= Q_1^{(k)}$ be the space of single-particle $k$-jetlets (the extension to $N$ particles follows in a straightforward manner). We fix the point $q_0 = (z, \mathbf{1}, 0, \ldots, 0) \in Q_1^{(k)}$ corresponding to the Taylor expansion of the identity in $\SDiff(\R^n)$ evaluated at $z \in \R^n$ (cf. Section \ref{sec:higher_order}). We let the projection $\Pi$ be given by ${\rm Jet}_z^{(k)}$, and hence the left action of an element $\varphi \in \SDiff(\R^n)$ on $q \in Q$ is $\phi_\varphi(q) = {\rm Jet}_z^{(k)}(\varphi \circ \rho)$, for any $\rho$ such that ${\rm Jet}_z^{(k)}(\rho) = q$. The role of the isotropy subgroup $G_{q_0}$ is played by ${\rm iso}^{(k)}_z$. Let $K = {\rm iso}(z)$, and note that ${\rm iso}^{(k)}(z)$ is a normal subgroup of ${\rm iso}(z)$ (\cite[Proposition 4.1]{JacobsRatiuDesbrun2013}). Hence, we can define a right action of ${\rm iso}(z)$ on $Q_1^{(k)}$ given by \eqref{right_ac_general}, namely
-  \begin{equation}
-    \psi_\rho(q) = {\rm Jet}_z^{(k)}(\varphi \circ \rho), \notag
-  \end{equation}
+  \begin{equation*}
+    \psi_\rho(q) = {\rm Jet}_z^{(k)}(\varphi \circ \rho),
+  \end{equation*}
 for any $\varphi$ such that ${\rm Jet}_z^{(k)}(\varphi) = q$.
 \item The cotangent lift of the left and right actions on $Q$ lead to the momentum maps $J_L^{(k)}$ and $J_R^{(k)}$, explicitly computed in Section  \ref{sec:higher_order} and shown to be a weak dual pair in Proposition \ref{prop:k dual pairs}.
 \item  In Theorem \ref{thm:k-solutions} we showed that the canonical Hamiltonian equations on $T^*{Q_1}^{(k)}$ associated with the collective Hamiltonian $H^{(k)} = h_{p, \sigma} \circ J_L^{(k)}$ lead to trajectories that are mapped, by $J_L^{(k)}$, to solutions of Hamilton's equations on $\mathfrak{X}_{\rm div}(\R^n)^*$. Moreover, we showed that $J_R^{(k)}$ is a constant of motion.
 \item We briefly visit further symplectic reduction in Appendix \ref{sec:eom}. For more on this topic we refer to \cite{JacobsRatiuDesbrun2013, CotterHolmJacobsMeier2014}.
 \item In Section \ref{sec:Kelvin} we constructed the mapping $i:T^*Q_1^{(k)} \to T^*\SDiff(\R^n)/{\rm iso}^{(k)}_z$ given by \eqref{i_explicit}, namely,
-\begin{align}
- 	i(q, p) = [TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)]. \notag
- \end{align}
+\begin{equation*}
+ 	i(q, p) = [TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)].
+ \end{equation*}
 One can show explicitly that $TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)$ is mapped to zero by the momentum map associated with the cotangent lift of the right action of $\iso^{(k)}_z$ on $\SDiff(\R^n)$, as suggested by \cite[Theorem~2.2.2]{HRS}.
 \end{itemize}
 
