@@ -1289,13 +1289,13 @@ In light of this discussion, it is natural to consider \eqref{eq:abstract-circul
 $\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid \Jet^{k}_z( \psi) = \Jet^k_z (\rm{id}) \}$, where we wrote $\rm{id}$ for the identity mapping and $z$ is shorthand for $z_1, \ldots, z_N \in \mathbb{R}^n$.
 Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the corresponding quotient map is given by $\Jet_z^k$.
  Let us also introduce the right action $R\colon \SDiff(\R^n) \times \iso(z) \to \SDiff(\R^n)$ given by right composition of functions and write $R_\psi = R(\cdot , \psi)$, so that $R_\psi \varphi = \varphi \circ \psi$. We also introduce the cotangent lifted right action $TR^*$ by means of the defining relation
- \begin{equation}
+ \begin{equation}\label{eq:cotangent-action}
  	\langle TR^*_{\psi^{-1}}p_\varphi, v_\varphi \circ \psi \rangle = \langle p_\varphi, v_\varphi\rangle
  \end{equation}
  for arbitrary $p_\varphi \in T_\varphi^*\SDiff(\R^n)$ and $v_\varphi \in T_\varphi\SDiff(\R^n)$.
 
  The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$, where the quotient is by the cotangent lifted action. More precisely, for any $(q,p) \in T^*Q^{(k)}_N$ we can construct the corresponding element $i(q,p) \in T^*\SDiff(\R^n) / \iso^{(k)}(z)$ in the following way: take any $\varphi$ such that $\Jet_z^k(\varphi) = q$ and find $\iota_\varphi(q,p) \in T_\varphi^*\SDiff(\R^n)$ that satisfies, for all $v_\varphi \in T_\varphi \SDiff(\mathbb{R}^n)$,
- \begin{equation}
+ \begin{equation}\label{eq:iota-map}
    \langle \iota_\varphi(q,p) , v_\varphi \rangle = \langle p , (v_\varphi \circ \varphi^{-1}) \cdot q \rangle,
  \end{equation}
  cf.~\cite[(2.2.4)]{HRS} and note that $v_\varphi \circ \varphi^{-1} \in \mathfrak{X}_{\rm div}(\R^n)$ has a natural infinitesimal action on the jet $q$.
@@ -1307,8 +1307,9 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
  = \langle \iota_\varphi(q,p), v_{\varphi'} \circ \psi^{-1} \rangle\\
  = \langle p, (v_{\varphi'} \circ \psi^{-1} \circ \varphi^{-1}) \cdot q \rangle
  = \langle p, (v_{\varphi'} \circ {\varphi'}^{-1}) \cdot q \rangle
- = \langle \iota_{\varphi'}(q,p), v_{\varphi'} \rangle.
+ = \langle \iota_{\varphi'}(q,p), v_{\varphi'} \rangle
  \end{multline*}
+ using~\eqref{eq:cotangent-action} and~\eqref{eq:iota-map} in the first and second equalities.
  Since $[TR^*_{\psi^{-1}} \iota_\varphi(q,p)] = [\iota_{\varphi'}(q,p)]$, we conclude that $i(q,p)$ is well defined.
 
  We claim that
