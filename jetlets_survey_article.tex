@@ -157,7 +157,7 @@ In Section~\ref{sec:zeroth_order} we introduce zeroth order jetlets, also called
 In Section~\ref{sec:first_order} we consider first order jetlets. Everything here goes in parallel, except that one has to be more careful when introducing the relevant right and left actions. Once one has the definitions in place, it is not difficult to recognize that the cotangent lifts for the right and left actions lead to, now, a \emph{weak} dual pair of momentum maps.
 We have to add `weak' here since the transitivity of the left action on level sets of right momentum is lost, but a weak dual pair is retained, essentially because the group actions still commute, see Definition~\ref{def:weak_dual_pair}.  Proposition~\ref{prop:1-solutions} collects the results that follow immediately from the weak dual pair.
 
-Throughout the paper we have taken care to explain the intuition behind the more abstract concepts. The discussion just after Proposition~\ref{prop:1-solutions} is an example of that. There, we discuss the relationship between the jetlet solutions on the diffeomorphism group and the resulting trajectory on the space of Taylor jets.
+Throughout the paper we have taken care to explain the intuition behind the more abstract concepts. The discussion just after Proposition~\ref{prop:1-solutions} is an example of this. There, we discuss the relationship between the jetlet solutions on the diffeomorphism group and the resulting trajectory on the space of Taylor jets.
 
 In Section~\ref{sec:higher_order} we describe jetlets at general levels. Again, once the relevant spaces and actions have been introduced (which is now quite an intricate endeavor), one recognizes that the momentum maps are a weak dual pair by the usual arguments. We give the form of the momentum maps explicitly just after Proposition~\ref{HL_action_prop}. Again, the weak dual pair leads to analogous conclusions about dynamics. Namely, it is canonically Hamiltonian, with $J_R$  conserved; $J_L$ maps the dynamics to the Lie-Poisson dynamics on the one-form densities.
 
@@ -192,7 +192,7 @@ in the jet-particle collisions.
 
 
 
-The Appendix is relatively extensive. A quick discussion of symplectic and Poisson manifolds is followed by the definition of weak dual pairs. Then we prove Theorem~\ref{thm:dual_pairs}, which is the core result used in the paper. Appendix \ref{app:diagramatic} presents an overview over the spaces used in the paper and relates them to some general results of reduction theory, see in particular Figures \ref{fig_diagram_1} and \ref{fig_diagram_2}. 
+We provide a detailed appendix. In Appendix A, a brief discussion of symplectic and Poisson manifolds is followed by the definition of weak dual pairs. Then we prove Theorem~\ref{thm:dual_pairs}, which is the core result used in the paper. Appendix \ref{app:diagramatic} presents an overview over the spaces used in the paper and relates them to some general results of reduction theory, see in particular Figures \ref{fig_diagram_1} and \ref{fig_diagram_2}. 
  In Appendix~\ref{sec:multi} we describe the index conventions used in the main texts (e.g., when calculating momentum maps for the general jetlet solutions), while Appendix~\ref{sec:measure_valued_momap} briefly discusses the more abstract point of how the dual space of vector fields can be viewed as tensor product of 1-forms and distributions.
 Finally, appendix~\ref{sec:eom} provides information describing the equations of motion for 1-jets, but in reduced coordinates, which arise after the reduction eliminating the conserved quantities $J_R$.
 
@@ -224,8 +224,7 @@ Finally, appendix~\ref{sec:eom} provides information describing the equations of
  of these particle-like solutions and observed cascade phenomena as
  an emergent behavior at the zeroth level in the hierarchy.
 
- It is notable that the zeroth level of the hierarchy has been studied
- for a long time in the context of partial differential equations with hydrodynamic background.
+ It is notable that the zeroth level of the hierarchy has been studied in the context of partial differential equations with hydrodynamic background.
  In particular, \cite{HoldenRaynaud2006} provide the first convergence proof of such a method in the context of the Camassa-Holm equation.
  This same idea was implemented for the $n$-dimensional Camassa-Holm
  equation in \cite{ChertockDuToitMarsden2012}.
@@ -263,7 +262,7 @@ conventions:
 
 \section{Main approach}
 \label{sec:approach}
-In this section we describe our strategy for obtaining
+Let us begin by describing our strategy for obtaining
 particle-like solutions to regularized fluid equations.
 Our main framework is that of Hamiltonian mechanics
 and symplectic geometry.
@@ -1352,7 +1351,7 @@ For the right leg, note that
 	&= \langle (q,p),  \Jet_z^k(T\varphi \cdot w)\rangle = \langle  J^{(k)}_R(q,p), w\rangle.
 \end{align*}
 Here we used~\eqref{i_explicit}, the definition of $J_\text{conv}$,
-and~\eqref{eq:cotangent-action} in the first three equalities
+and~\eqref{eq:cotangent-action}, respectively, in the first three equalities
 and~\eqref{Moma_right} in the final step. Again we see that $[J_\text{conv}]$ is well-defined since it does not
 depend on $\varphi$. More explicitly, for another representative
 $\varphi' = \varphi \circ \psi$ with $\psi \in \iso^{(k)}(z)$ we see
@@ -1370,8 +1369,8 @@ of the conservation of circulation.
 In other words, our particle models contain a model of Kelvin's circulation theorem within them (cf.~\cite[Theorem 5.5]{JacobsRatiuDesbrun2013}).
 
 This diagram also provides some insight into the relationship between the developments in this paper and classical Marsden-Weinstein reduction theory \cite{MarsdenWeinstein1974}.
-In particular, if we let $J_{\rm conv}^{(k)}: T^*\SDiff(\R^n) \to \mathfrak{iso}^{(k)}(z)^*$ be the momentum map associated to the cotangent lift of the right action of $\iso^{(k)}(z)$ on $\SDiff(\R^n)$,
-then one can show that $i\bigl(T^*Q^{(k)}_N\bigr) = (J_{\rm conv}^{(k)})^{-1}(0) / \iso^{(k)}(z)$.  For more details on the connections between general reduction theory and the results of the present paper, see Appendix \ref{app:diagramatic}.
+For instance, letting $J_{\rm conv}^{(k)}: T^*\SDiff(\R^n) \to \mathfrak{iso}^{(k)}(z)^*$ be the momentum map associated to the cotangent lift of the right action of $\iso^{(k)}(z)$ on $\SDiff(\R^n)$,
+ one can show that $i\bigl(T^*Q^{(k)}_N\bigr) = (J_{\rm conv}^{(k)})^{-1}(0) / \iso^{(k)}(z)$.  For more details on the connections between general reduction theory and the results of the present paper, see Appendix \ref{app:diagramatic}.
 
 
 \section{Particle mergers}
@@ -2175,7 +2174,7 @@ Note also that there is a symplectic diffeomorphism between $T^*Q$ and $J^{-1}(0
 \end{figure}
 
 %
-In translating the above facts to the case of interest in the present paper, one encounters technical subtleties to do with the infinite-dimensionality of $\SDiff(\R^n)$. Nevertheless, bullet-by-bullet parallels can be recognized between the developments in the main text of the paper and the general results above, as we will discuss now. For simplicity, we restrict ourselves in what follows to the case of single particles (the extension to $N$ particles can be done in a straightforward manner).
+In translating the above facts to the case of interest in the present paper, one encounters technical subtleties to do with the infinite-dimensionality of $\SDiff(\R^n)$. Nevertheless, bullet-by-bullet parallels can be recognized between the developments in the main text of the paper and the general results above, as we will discuss now. For simplicity, we restrict ourselves in what follows to the case of a single particle, the extension to $N$ particles being straightforward.
 \begin{itemize}
 \item Let $G = \SDiff(\R^n)$, and let $Q= Q_1^{(k)}$ be the space of single-particle $k$-jetlets. We fix the point $q_0 = (z, \mathbf{1}, 0, \ldots, 0) \in Q_1^{(k)}$ corresponding to the Taylor expansion of the identity in $\SDiff(\R^n)$ evaluated at $z \in \R^n$ (cf. Section \ref{sec:higher_order}). We let the projection $\Pi$ be given by ${\rm Jet}_z^{(k)}$, and hence the left action of an element $\varphi \in \SDiff(\R^n)$ on $q \in Q$ is $\phi_\varphi(q) = {\rm Jet}_z^{(k)}(\varphi \circ \rho)$, for any $\rho$ such that ${\rm Jet}_z^{(k)}(\rho) = q$. The role of the isotropy subgroup $G_{q_0}$ is played by ${\rm iso}^{(k)}_z$. Let $K = {\rm iso}(z)$, and note that ${\rm iso}^{(k)}(z)$ is a normal subgroup of ${\rm iso}(z)$ (\cite[Proposition 4.1]{JacobsRatiuDesbrun2013}). Hence, we can define a right action of ${\rm iso}(z)$ on $Q_1^{(k)}$ given by \eqref{right_ac_general}, namely
   \begin{equation*}
@@ -2195,7 +2194,7 @@ then one can show that $i\bigl(T^*Q^{(k)}_1\bigr) = (J_{\rm conv}^{(k)})^{-1}(0)
 
 \section{Multi-indices}
 \label{sec:multi}
-A multiset is nothing but a set with some notion of multiplicity \cite{Blizard1989}.
+A multiset is a set with some notion of multiplicity \cite{Blizard1989}.
 In this paper, a multi-index on $\R^n$ is a multiset of elements derived from the generating set $\{1,\dots,n\}$.
 Heuristically, a multi-index is just a ``bag of marbles'' each of which comes in $n$ ``colors''.
 Given two multi-indices $\alpha \in \bag^i(n)$ and $\beta \in \bag^j(n)$ one can create the
