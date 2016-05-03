@@ -1340,16 +1340,24 @@ For the left side of the diagram, we let $(q,p) \in T^*Q^{(k)}_N$ and $\varphi$ 
 	\quad&= \langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), w \circ \varphi \rangle
 	 = \langle J_L^{(k)}(q, p), w \rangle,
 \end{align*}
-as required. Note that this also shows that $J_{\rm spatial}$ is well defined on $T^*\SDiff(\R^n) / \iso^{(k)}(z)$. 
+as required. This also shows that $[J_{\rm spatial}]$ is well defined
+on $T^*\SDiff(\R^n) / \iso^{(k)}(z)$ since the final expression does
+not depend on the choice of representative $\varphi$ for $q$.
 
 For the right leg, note that 
 \begin{align*}
 	&\langle [J_\text{conv}](i(q,p)), w\rangle = \langle J_\text{conv}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle \\
 	&= \langle  TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), T\varphi \cdot w \rangle = \langle  J_L^{(k)}(q, p), (T\varphi \cdot w) \circ \varphi^{-1} \rangle \\
-	&= \langle (q,p),  \Jet_z^k(T\varphi \cdot w)\rangle = \langle  J^{(k)}_R(q,p), w\rangle,
+	&= \langle (q,p),  \Jet_z^k(T\varphi \cdot w)\rangle = \langle  J^{(k)}_R(q,p), w\rangle.
 \end{align*}
-where we used \eqref{Moma_right} in the final step. In particular, the restricted momentum map $\left. J_{\rm conv} \right|_S$ is invariant under the right action of $\iso^{(k)}(z)$,
-and can therefore descend to a map, $[\left. J_{\rm conv} \right|_S ]$ defined on $i(T^*Q^{(k)}_N)$.
+Here we used~\eqref{i_explicit}, the definition of $J_\text{conv}$,
+and~\eqref{eq:cotangent-action} in the first three equalities
+and~\eqref{Moma_right} in the final step. Again we see that $[J_\text{conv}]$ is well-defined since it does not
+depend on $\varphi$. More explicitly, for another representative
+$\varphi' = \varphi \circ \psi$ with $\psi \in \iso^{(k)}(z)$ we see
+that $\psi$ get projected out by (the tangent map of) $\pi = \Jet_z^k$.
+That is, the restricted momentum map $J_\text{conv}|_S$ is invariant under the right action of $\iso^{(k)}(z)$
+and therefore descends to a map $[J_\text{conv}|_S ]$ defined on $i\bigl(T^*Q^{(k)}_N\bigr)$.
 
 Again, the right legs of both weak dual pairs yield the conserved quantities.
 From the diagram it is clear that the conservation of $J_R^{(k)}$ exhibited in
@@ -1362,7 +1370,7 @@ In other words, our particle models contain a model of Kelvin's circulation theo
 
 This diagram provides insight into the relationship between the reductions in this paper and that of classical Marsden-Weinstein reduction \cite{MarsdenWeinstein1974}.
 In particular, if we let $J_{\rm conv}^{(k)}: T^*\SDiff(\R^n) \to \mathfrak{iso}^{(k)}(z)^*$ be the momentum map associated to the cotangent lift of the right action of $\iso^{(k)}(z)$ on $\SDiff(\R^n)$,
-then the submanifold $i(T^*Q) = (J_{\rm conv}^{(k)})^{-1}(0) / \iso^{(k)}(z)$.  For more details see Appendix \ref{app:diagramatic}.
+then the submanifold $i\bigl(T^*Q^{(k)}_N\bigr) = (J_{\rm conv}^{(k)})^{-1}(0) / \iso^{(k)}(z)$.  For more details see Appendix \ref{app:diagramatic}.
 
 
 \section{Particle mergers}
