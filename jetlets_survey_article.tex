@@ -192,7 +192,8 @@ in the jet-particle collisions.
 
 
 
-The Appendix is relatively extensive. A quick discussion of symplectic and Poisson manifolds is followed by the definition of weak dual pairs. Then we prove Theorem~\ref{thm:dual_pairs}, which is the core result used in the paper. In Appendix~\ref{sec:multi} we describe the index conventions used in the main texts (e.g., when calculating momentum maps for the general jetlet solutions), while Appendix~\ref{sec:measure_valued_momap} briefly discusses the more abstract point of how the dual space of vector fields can be viewed as tensor product of 1-forms and distributions.
+The Appendix is relatively extensive. A quick discussion of symplectic and Poisson manifolds is followed by the definition of weak dual pairs. Then we prove Theorem~\ref{thm:dual_pairs}, which is the core result used in the paper. Appendix \ref{app:diagramatic} presents an overview over the spaces used in the paper and relates them to some general results of reduction theory, see in particular Figures \ref{fig_diagram_1} and \ref{fig_diagram_2}. 
+ In Appendix~\ref{sec:multi} we describe the index conventions used in the main texts (e.g., when calculating momentum maps for the general jetlet solutions), while Appendix~\ref{sec:measure_valued_momap} briefly discusses the more abstract point of how the dual space of vector fields can be viewed as tensor product of 1-forms and distributions.
 Finally, appendix~\ref{sec:eom} provides information describing the equations of motion for 1-jets, but in reduced coordinates, which arise after the reduction eliminating the conserved quantities $J_R$.
 
 \subsection{Previous work}
@@ -1299,17 +1300,17 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
 
  The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$, where the quotient is by the cotangent lifted action. More precisely, for any $(q,p) \in T^*Q^{(k)}_N$ we can construct the corresponding element $i(q,p) \in T^*\SDiff(\R^n) / \iso^{(k)}(z)$ in the following way: take any $\varphi$ such that $\Jet_z^k(\varphi) = q$ and find $\iota_\varphi(q,p) \in T_\varphi^*\SDiff(\R^n)$ that satisfies, for all $v_\varphi \in T_\varphi \SDiff(\mathbb{R}^n)$,
  \begin{equation}\label{eq:iota-map}
-   \langle \iota_\varphi(q,p) , v_\varphi \rangle = \langle p , (v_\varphi \circ \varphi^{-1}) \cdot q \rangle,
+   \langle \iota_\varphi(q,p) , v_\varphi \rangle = \langle (q, p) , (v_\varphi \circ \varphi^{-1}) \cdot q \rangle,
  \end{equation}
- cf.~\cite[(2.2.4)]{HRS} and note that $v_\varphi \circ \varphi^{-1} \in \mathfrak{X}_{\rm div}(\R^n)$ has a natural infinitesimal action on the jet $q$.
+ cf.~\cite[(2.2.4)]{HRS}, where we denote by $(v_\varphi \circ \varphi^{-1}) \cdot q$ the infinitesimal action from the left of $v_\varphi \circ \varphi^{-1} \in \mathfrak{X}_{\rm div}(\R^n)$ on $q$.
  Then set $i(q,p) = [\iota_\varphi(q,p)]$.
 
  To see that $i(q,p)$ is well defined, note that if $\varphi' = \varphi \circ \psi$ for $\psi \in \iso^{(k)}(z)$, then for any $v_{\varphi'} \in T_{\varphi'} \SDiff(\R^n)$ we have
  \begin{multline*}
    \langle TR^*_{\psi^{-1}} \iota_\varphi(q,p), v_{\varphi'} \rangle
  = \langle \iota_\varphi(q,p), v_{\varphi'} \circ \psi^{-1} \rangle\\
- = \langle p, (v_{\varphi'} \circ \psi^{-1} \circ \varphi^{-1}) \cdot q \rangle
- = \langle p, (v_{\varphi'} \circ {\varphi'}^{-1}) \cdot q \rangle
+ = \langle (q, p), (v_{\varphi'} \circ \psi^{-1} \circ \varphi^{-1}) \cdot q \rangle
+ = \langle (q, p), (v_{\varphi'} \circ {\varphi'}^{-1}) \cdot q \rangle
  = \langle \iota_{\varphi'}(q,p), v_{\varphi'} \rangle
  \end{multline*}
  using~\eqref{eq:cotangent-action} and~\eqref{eq:iota-map} in the first and second equalities.
@@ -1321,7 +1322,7 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
  \end{equation}
  where $\varphi$ is such that $\Jet_z^k(\varphi) = q$. This follows since for any $v_{\varphi} \in T_{\varphi}\SDiff(\R^n)$
  \begin{equation*}
-	\langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), v_{\varphi}\rangle = \langle  J_L^{(k)}(q, p), v_\varphi \circ \varphi^{-1}\rangle = \langle p, (v_\varphi \circ \varphi^{-1}) \cdot q \rangle.
+	\langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), v_{\varphi}\rangle = \langle  J_L^{(k)}(q, p), v_\varphi \circ \varphi^{-1}\rangle = \langle (q, p), (v_\varphi \circ \varphi^{-1}) \cdot q \rangle.
  \end{equation*}
  
  
@@ -1334,7 +1335,7 @@ With these preliminary remarks in mind, we can now show the commutativity of the
 }
 \end{displaymath}
 Here, $S = (\pi^{-1} \circ i)\bigl(T^*Q^{(k)}_N\bigr)$ and $J_{\rm spatial}$ and $J_{\rm conv}$ are defined in the natural manner through the left and right actions of $\SDiff(\R^n)$ and $\iso(z)$.
-For the left side of the diagram, we let $(q,p) \in T^*Q^{(k)}_N$ and $\varphi$ such that $\Jet_z^k(\varphi) = q$. Then we obtain from \eqref{i_explicit} that for any $w \in \mathfrak{X}_{\rm div}(\R^n)$
+To verify the left side of the diagram, we let $(q,p) \in T^*Q^{(k)}_N$ and $\varphi$ such that $\Jet_z^k(\varphi) = q$. Then we obtain from \eqref{i_explicit} that for any $w \in \mathfrak{X}_{\rm div}(\R^n)$
 \begin{align*}
 	&\langle [J_\text{spatial}](i(q,p)), w\rangle = \langle J_\text{spatial}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle \\
 	\quad&= \langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), w \circ \varphi \rangle
@@ -1355,11 +1356,11 @@ and~\eqref{eq:cotangent-action} in the first three equalities
 and~\eqref{Moma_right} in the final step. Again we see that $[J_\text{conv}]$ is well-defined since it does not
 depend on $\varphi$. More explicitly, for another representative
 $\varphi' = \varphi \circ \psi$ with $\psi \in \iso^{(k)}(z)$ we see
-that $\psi$ get projected out by (the tangent map of) $\pi = \Jet_z^k$.
+that $\psi$ gets projected out by (the tangent map of) $\pi = \Jet_z^k$.
 That is, the restricted momentum map $J_\text{conv}|_S$ is invariant under the right action of $\iso^{(k)}(z)$
 and therefore descends to a map $[J_\text{conv}|_S ]$ defined on $i\bigl(T^*Q^{(k)}_N\bigr)$.
 
-Again, the right legs of both weak dual pairs yield the conserved quantities.
+The right legs of both weak dual pairs yield the conserved quantities.
 From the diagram it is clear that the conservation of $J_R^{(k)}$ exhibited in
 our particle models is a shadow of the conservation of $J_\text{conv}$ in~\eqref{eq:abstract-circulation}.
 Since $J_\text{conv}$ corresponds by Noether's theorem to the (large)
@@ -1368,9 +1369,9 @@ conservation of circulation, we see that conservation of $J_R^{(k)}$ in the jetl
 of the conservation of circulation.
 In other words, our particle models contain a model of Kelvin's circulation theorem within them (cf.~\cite[Theorem 5.5]{JacobsRatiuDesbrun2013}).
 
-This diagram provides insight into the relationship between the reductions in this paper and that of classical Marsden-Weinstein reduction \cite{MarsdenWeinstein1974}.
+This diagram also provides some insight into the relationship between the developments in this paper and classical Marsden-Weinstein reduction theory \cite{MarsdenWeinstein1974}.
 In particular, if we let $J_{\rm conv}^{(k)}: T^*\SDiff(\R^n) \to \mathfrak{iso}^{(k)}(z)^*$ be the momentum map associated to the cotangent lift of the right action of $\iso^{(k)}(z)$ on $\SDiff(\R^n)$,
-then the submanifold $i\bigl(T^*Q^{(k)}_N\bigr) = (J_{\rm conv}^{(k)})^{-1}(0) / \iso^{(k)}(z)$.  For more details see Appendix \ref{app:diagramatic}.
+then one can show that $i\bigl(T^*Q^{(k)}_N\bigr) = (J_{\rm conv}^{(k)})^{-1}(0) / \iso^{(k)}(z)$.  For more details on the connections between general reduction theory and the results of the present paper, see Appendix \ref{app:diagramatic}.
 
 
 \section{Particle mergers}
@@ -2133,7 +2134,7 @@ for any $g$ that satisfies $\Pi(g) = q$. Note that $\phi$ and $\psi$ commute, si
 We refer to Figure \ref{fig_diagram_1} for a representation of the relevant spaces and maps.
 \item The actions $\phi$ and $\psi$ can be lifted to actions $T^*\phi$ and $T^*\psi$ on the cotangent bundle $T^*Q$ in the usual manner (see Figure \ref{fig_diagram_2}). These cotangent lifted actions induce equivariant momentum maps $J_1: T^*Q \to \mathfrak{g}^*$ and $J_2:T^*Q \to \mathfrak{k}^*$, where $\mathfrak{g}^*$ and $\mathfrak{k}^*$ are the duals of the Lie algebras of $G$ and $K$. Due to their equivariance, $J_1$ and $J_2$ are Poisson maps (where the duals of the Lie algebras are equipped with appropriate Lie--Poisson brackets). Since the actions $\phi$ and $\psi$ commute, the action $T^*\psi$ leaves level sets of $J_1$ invariant, and vice versa. This implies that $J_1$ and $J_2$ are a weak dual pair, and if moreover $T^*\psi$ is transitive on the level sets of $J_1$ and vice versa, then $J_1$ and $J_2$ are a proper dual pair, see~\cite[Corollary~2.6]{GayBalmazVizman2012}.
 %
-\item Let $\mathcal{H}:T^*G \to \mathbb{R}$ be a right-invariant Hamiltonian. This means that $\mathcal{H}$ is invariant with respect to the  cotangent lift $TR^*$ of the multiplication from the right of $G$ by itself. In particular, the reduced Hamiltonian $h:\mathfrak{g}^* \to \mathbb{R}$ satisfies $\mathcal{H}(\alpha_g) = h \circ TR_g^*(\alpha_g)$ for any $\alpha_g \in T^*G$, and the reduced dynamics in $\mathfrak{g}^*$ are of Lie--Poisson type. The momentum map $J_1$ can be used to induce the so-called \emph{collective Hamiltonian} $H = h\circ J_1$ on $T^*Q$. Note that $T^*Q$ is a symplectic manifold, and that the symplectic (canonical) dynamics with respect to the collective Hamiltonian are mapped by (the Poisson map) $J_1$ to the reduced dynamics on $\mathfrak{g}^*$. Moreover, $J_2$ is conserved under the dynamics on $T^*Q$. The conservation law follows from Noether's theorem because $J_1$, and hence $H$, are left invariant by $T^*\psi$ (see Theorem \ref{thm:dual_pairs}).  Note that the elements of $T^*Q$ play the role of Clebsch variables in the sense of \cite{MarsdenWeinstein1983}.
+\item Let $\mathcal{H}:T^*G \to \mathbb{R}$ be a right-invariant Hamiltonian. This means that $\mathcal{H}$ is invariant with respect to the  cotangent lift $TR^*$ of the multiplication from the right of $G$ by itself. In particular, the reduced Hamiltonian $h:\mathfrak{g}^* \to \mathbb{R}$ satisfies $\mathcal{H}(\alpha_g) = h \circ TR_g^*(\alpha_g)$ for any $\alpha_g \in T^*G$, and the reduced dynamics in $\mathfrak{g}^*$ are of Lie--Poisson type. The momentum map $J_1$ can be used to induce the so-called \emph{collective Hamiltonian} $H = h\circ J_1$ on $T^*Q$. Note that $T^*Q$ is a symplectic manifold, and that the symplectic (canonical) dynamics with respect to the collective Hamiltonian are mapped by (the Poisson map) $J_1$ to the reduced dynamics on $\mathfrak{g}^*$. Moreover, $J_2$ is conserved under the dynamics on $T^*Q$. The conservation law follows from Noether's theorem because $J_1$, and hence $H$, are left invariant by $T^*\psi$ (see Theorem \ref{thm:dual_pairs}).  Note that the elements of $T^*Q$ play the role of symplectic variables (or Clebsch variables in the sense of \cite{MarsdenWeinstein1983}).
 %
 \item The appeal of Clebsch variables is their symplectic nature. The symmetry of $H$ with respect to $T^*\psi$ implies that reduced dynamics on $T^*G/H$ can be constructed by symplectic reduction. Note however that the resulting quotient manifold is not symplectic in general.
 %
@@ -2174,9 +2175,9 @@ Note also that there is a symplectic diffeomorphism between $T^*Q$ and $J^{-1}(0
 \end{figure}
 
 %
-In translating the above facts to the case of interest in the present paper, one encounters technical subtleties to do with the infinite-dimensionality of $\SDiff(\R^n)$. Nevertheless, precise parallels can be recognized, as we will discuss now.
+In translating the above facts to the case of interest in the present paper, one encounters technical subtleties to do with the infinite-dimensionality of $\SDiff(\R^n)$. Nevertheless, bullet-by-bullet parallels can be recognized between the developments in the main text of the paper and the general results above, as we will discuss now. For simplicity, we restrict ourselves in what follows to the case of single particles (the extension to $N$ particles can be done in a straightforward manner).
 \begin{itemize}
-\item Let $G = \SDiff(\R^n)$, and let $Q= Q_1^{(k)}$ be the space of single-particle $k$-jetlets (the extension to $N$ particles follows in a straightforward manner). We fix the point $q_0 = (z, \mathbf{1}, 0, \ldots, 0) \in Q_1^{(k)}$ corresponding to the Taylor expansion of the identity in $\SDiff(\R^n)$ evaluated at $z \in \R^n$ (cf. Section \ref{sec:higher_order}). We let the projection $\Pi$ be given by ${\rm Jet}_z^{(k)}$, and hence the left action of an element $\varphi \in \SDiff(\R^n)$ on $q \in Q$ is $\phi_\varphi(q) = {\rm Jet}_z^{(k)}(\varphi \circ \rho)$, for any $\rho$ such that ${\rm Jet}_z^{(k)}(\rho) = q$. The role of the isotropy subgroup $G_{q_0}$ is played by ${\rm iso}^{(k)}_z$. Let $K = {\rm iso}(z)$, and note that ${\rm iso}^{(k)}(z)$ is a normal subgroup of ${\rm iso}(z)$ (\cite[Proposition 4.1]{JacobsRatiuDesbrun2013}). Hence, we can define a right action of ${\rm iso}(z)$ on $Q_1^{(k)}$ given by \eqref{right_ac_general}, namely
+\item Let $G = \SDiff(\R^n)$, and let $Q= Q_1^{(k)}$ be the space of single-particle $k$-jetlets. We fix the point $q_0 = (z, \mathbf{1}, 0, \ldots, 0) \in Q_1^{(k)}$ corresponding to the Taylor expansion of the identity in $\SDiff(\R^n)$ evaluated at $z \in \R^n$ (cf. Section \ref{sec:higher_order}). We let the projection $\Pi$ be given by ${\rm Jet}_z^{(k)}$, and hence the left action of an element $\varphi \in \SDiff(\R^n)$ on $q \in Q$ is $\phi_\varphi(q) = {\rm Jet}_z^{(k)}(\varphi \circ \rho)$, for any $\rho$ such that ${\rm Jet}_z^{(k)}(\rho) = q$. The role of the isotropy subgroup $G_{q_0}$ is played by ${\rm iso}^{(k)}_z$. Let $K = {\rm iso}(z)$, and note that ${\rm iso}^{(k)}(z)$ is a normal subgroup of ${\rm iso}(z)$ (\cite[Proposition 4.1]{JacobsRatiuDesbrun2013}). Hence, we can define a right action of ${\rm iso}(z)$ on $Q_1^{(k)}$ given by \eqref{right_ac_general}, namely
   \begin{equation*}
     \psi_\rho(q) = {\rm Jet}_z^{(k)}(\varphi \circ \rho),
   \end{equation*}
@@ -2188,7 +2189,8 @@ for any $\varphi$ such that ${\rm Jet}_z^{(k)}(\varphi) = q$.
 \begin{equation*}
  	i(q, p) = [TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)].
  \end{equation*}
-One can show explicitly that $TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)$ is mapped to zero by the momentum map associated with the cotangent lift of the right action of $\iso^{(k)}_z$ on $\SDiff(\R^n)$, as suggested by \cite[Theorem~2.2.2]{HRS}.
+As we briefly mentioned towards the end of that section, if we denote by $J_{\rm conv}^{(k)}: T^*\SDiff(\R^n) \to \mathfrak{iso}^{(k)}(z)^*$ the momentum map associated to the cotangent lift of the right action of $\iso^{(k)}(z)$ on $\SDiff(\R^n)$,
+then one can show that $i\bigl(T^*Q^{(k)}_1\bigr) = (J_{\rm conv}^{(k)})^{-1}(0) / \iso^{(k)}(z)$, as suggested by \cite[Theorem~2.2.2]{HRS}.
 \end{itemize}
 
 \section{Multi-indices}
