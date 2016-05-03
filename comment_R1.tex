@@ -66,6 +66,15 @@ circulation theorem''. Below the comments and our responses.
   $\pi(p_\varphi)) = i(p_q)$ for some $p_\varphi \in T^*\SDiff(\R^n)$
   and \ldots $\Jet_z^{(k)}(w \circ \varphi)\rangle$.''.
   The equivalence is not obvious to me. Please clarify.
+  
+We've added greater detail to this section on the whole.
+In fact, we suspect this request of the reviewer is indicative of an over-arching lack of clarity for the entire section on Kelvin's circulation theorem.
+We've addressed this deficiency in the paper by stating the maps involved more explicitly.
+
+In direct response to the reviewers question though, the following should help clarify things.
+Recall $\pi: T^*\SDiff(\R^n) \to T^*\SDiff(\R^n) / \iso^{(k)}(z)$ is the quotient map, so $\pi$ is surjective by construction.
+Also recall $i: T^*Q \to T^*\SDiff(\R^n) / \iso^{(k)}(z)$.
+Therefore, for any $(q,p) \in T^*Q$ there must exists a $p_\varphi \in T^* \SDiff(\R^n)$ such that $\pi( \pi_\varphi) = i(q,p)$.
 
 \item p.58 line 43 and line 53. it's not obvious the definition of
   $T^*\SDiff(\R^n)/\iso^{(k)}(z)$.
@@ -73,7 +82,8 @@ circulation theorem''. Below the comments and our responses.
   ``$T^*\SDiff(\R^n)/\iso^{(k)}(z)$''
   be ``$T^*\SDiff(\R^n)/\mathfrak{iso}^{(k)}(z)$''?
 
-  The quotient is by the cotangent-lifted (right) action of
+  $T^*SDiff(\R^n) / \iso^{(k)}(z)$ refers to the quotient of $T^*\SDiff(\R^n)$
+  by the cotangent-lifted (right) action of
   $\iso^{(k)}(z)$. We have clarified this in the text.
 
 \item p.58 line 49. In this context, it's not obvious to me whether
@@ -81,7 +91,13 @@ circulation theorem''. Below the comments and our responses.
   $\iso(z)$. Please describe the definition.
 
   It is the dual of $\mathfrak{iso}(z)$.
-  {\color{red} TODO: Explain this referring to new text.}
+  Here $J_{\rm conv}$ refers to the action of $\iso(z)$ on $T^* \SDiff(\R^n)$.
+  Perhaps the reviewer brought up this question because we doing a reduction by the normal subgroup $\iso^{(k)}(z) \trianglelefteq \iso(z)$, \emph{not} a reduction by $\iso(z)$.
+  More generally, the reviewer has brought to light that these deliberate choices were too subtle, and could be confused with typos.
+  We've decided to unfold the details that were largely implicit and perhaps hidden in a terse commutative diagram.
+  Even the statement of the commutative diagram was not obvious.
+  What we found helped was to add two additional maps, so that the diagram was now broken into commutative triangles, which have a more pedestrian interpretation.
+  Moreover,tThe diagram is now explained and its commutativity is verified with greater detail in text.
 
 \item p.58 line 43. In this context, it's not obvious that ``we can
   consider the element $i(q, p) \in T^*\SDiff(\R^n)$ \ldots (2.2.4)].''.
