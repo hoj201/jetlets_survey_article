@@ -1,37 +1,37 @@
 \documentclass[12pt]{amsart}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL jetlets_survey_article-oldtmp-24701.tex   Sun Feb  7 00:53:53 2016
-%DIF ADD jetlets_survey_article.tex                Sat Feb  6 22:34:08 2016
+%DIF DEL jetlets_survey_article-oldtmp-16608.tex   Wed May  4 12:09:09 2016
+%DIF ADD jetlets_survey_article.tex                Wed May  4 11:45:40 2016
 \usepackage[margin=1in]{geometry}
 \usepackage{amssymb}
 \usepackage{stmaryrd}
 \usepackage{mathrsfs}
-\usepackage{graphicx}
+%DIF 6c6
+%DIF < \usepackage{graphicx}
+%DIF -------
+\usepackage{graphicx, overpic} %DIF > 
+%DIF -------
 \usepackage[all,cmtip]{xy}
 \usepackage{url}
 \usepackage{tensor}
 
-%DIF 11c11
-%DIF < % \usepackage{todonotes}
+\usepackage{todonotes}
+%DIF 12c12
+%DIF < % \newcommand{\hoj}[1]{\todo[inline,color=blue!20]{HOJ: #1}}
 %DIF -------
-\usepackage{todonotes} %DIF > 
+ \newcommand{\hoj}[1]{\todo[inline,color=blue!20]{HOJ: #1}} %DIF > 
 %DIF -------
-% \newcommand{\hoj}[1]{\todo[inline,color=blue!20]{HOJ: #1}}
 % \newcommand{\cjc}[1]{\todo[inline,color=red!20]{CJC:  #1}}
 % \newcommand{\je}[1]{\todo[inline,color=green!20]{JE:  #1}}
 % \newcommand{\dm}[1]{\todo[inline,color=yellow!20]{DM:  #1}}
 
-%DIF 17a17-18
-\usepackage{hyperref} %DIF > 
- %DIF > 
-%DIF -------
+\usepackage{hyperref}
+
 \newcommand{\pder}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
 \newcommand{\so}{\ensuremath{\mathfrak{so}}}
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
 \newcommand{\dx}{\ensuremath{\textrm{d}x}}
-%DIF 21a23
-\newcommand{\dz}{\ensuremath{\textrm{d}z}} %DIF > 
-%DIF -------
+\newcommand{\dz}{\ensuremath{\textrm{d}z}}
 \def\contract{\makebox[1.2em][c]{\mbox{\rule{.6em}
 {.01truein}\rule{.01truein}{.6em}}}}
 
@@ -56,16 +56,22 @@
 
 % Where to load the figures from (relative path):
 \graphicspath{{./images/}}
-\title[Dual pairs and jetlet methods for ideal fluids]%
-{Dual pairs and jetlet methods for ideal incompressible fluid models in $n \geq 2$ dimensions}
-
-%DIF 48d51
-%DIF < % \author{C.~J. Cotter, J. Eldering, D.~D. Holm, H.~O. Jacobs, D.~M. Meier}
+%DIF 48-49c48-49
+%DIF < \title[Dual pairs and jetlet methods for ideal fluids]%
+%DIF < {Dual pairs and jetlet methods for ideal incompressible fluid models in $n \geq 2$ dimensions}
 %DIF -------
+\title[Weak dual pairs and jetlet methods for ideal fluids]% %DIF > 
+{Weak dual pairs and jetlet methods for ideal incompressible fluid models in $n \geq 2$ dimensions} %DIF > 
+%DIF -------
+
 %\author{C.~J. Cotter, J. Eldering, D.~D. Holm, H.~O. Jacobs, D.~M. Meier}
 \usepackage[foot]{amsaddr}
 \author{C.~J. Cotter$^1$, J. Eldering$^1$, D.~D. Holm$^1$, H.~O. Jacobs$^{1,*}$,}
-\address{$^1$ Department of Mathematics, Imperial College London, London SW7 2AZ}
+%DIF 54c54
+%DIF < \address{$^1$ Department of Mathematics, Imperial College London, London SW7 2AZ}
+%DIF -------
+\address{$^1$ Department of Mathematics, Imperial College London, London SW7 2AZ, UK} %DIF > 
+%DIF -------
 \author{D.~M. Meier$^2$}
 \address{$^2$ Department of Mathematics, Brunel University London, Uxbridge UB8 3PH, UK}
 \address{$^*$ Corresponding author (h.jacobs@ic.ac.uk)}
@@ -100,11 +106,11 @@
   We review the role of dual pairs in mechanics and use them
   to derive particle-like solutions to regularized incompressible
   fluid systems.
-  These dual pairs result from the action of diffeomorphisms on point
-  particles (essentially by moving the points).
-  We then augment our dual pairs by considering the action of diffeomorphisms
+  \DIFdelbegin \DIFdel{These dual pairs result }\DIFdelend \DIFaddbegin \DIFadd{In our case we have a dual pair resulting }\DIFaddend from the action of
+  diffeomorphisms on point particles (essentially by moving the points).
+  We then augment our dual \DIFdelbegin \DIFdel{pairs }\DIFdelend \DIFaddbegin \DIFadd{pair }\DIFaddend by considering the action of diffeomorphisms
   on Taylor series, also known as \emph{jets}.
-  The augmented dual pairs induce a hierarchy of particle-like solutions
+  The augmented \DIFaddbegin \emph{\DIFadd{weak}} \DIFaddend dual pairs induce a hierarchy of particle-like solutions
   and conservation laws
   with particles carrying a copy of a jet group.
   We call these augmented particles \emph{jetlets}.
@@ -140,8 +146,14 @@ to a finite-dimensional ordinary differential equation (e.g.\ point vortex solut
 The dimension reduction that will be performed in this paper and the method which it proposes
 bears much semblance to the point vortex method \cite{Chorin1973}.
 In particular, \cite{MarsdenWeinstein1983} illustrated how the point vortex solutions and the conservation of circulation could be derived via a pair of Poisson maps known as a dual pair.
-One of these Poisson maps was the embedding map from a finite-dimensional manifold into the infinite-dimensional space dual to the divergence free \DIFdelbegin \DIFdel{vector-fields}\DIFdelend \DIFaddbegin \DIFadd{vector fields}\DIFaddend .  In other words, the space of point vortices is merely an invariant manifold of ideal fluid motion.\footnote{This is not quite correct, as one must ignore the infinite self-energy terms of point vortices and then extend the space of admissible solutions to non-smooth velocity fields.  However, modulo this physically motivated caveat the statement holds.}
-In this paper we will derive a hierarchy of different dual pairs, in order to obtain a class of finite-dimensionally parametrized solutions,
+One of these Poisson maps was the embedding map from a finite-dimensional manifold into the infinite-dimensional space dual to the divergence free vector fields.
+In other words, the space of point vortices is merely an invariant manifold of ideal fluid motion.\footnote{This is not quite correct, as one must ignore the infinite self-energy terms of point vortices and then extend the space of admissible solutions to non-smooth velocity fields.  However, modulo this physically motivated caveat the statement holds.}
+\DIFaddbegin \DIFadd{It was later realized that the use of dual pairs related to fluid applications was problematic and needed to be relaxed.
+This lead to the notion of weak dual pairs \mbox{%DIFAUXCMD
+\cite{GayBalmazVizman2012}
+}%DIFAUXCMD
+.
+}\DIFaddend In this paper we will derive a hierarchy of different \DIFaddbegin \DIFadd{weak }\DIFaddend dual pairs, in order to obtain a class of finite-dimensionally parametrized solutions,
 each of which comes with a conservation law that shadows Kelvin's circulation theorem.
 Just as one can consider the point vortices to be the atoms of the point vortex method,
 the atoms of these new solutions are particle-like objects which we call \emph{jetlets} (or $k$-\emph{jetlets} if we wish to emphasize that we are considering the $k$-th level of the hierarchy).
@@ -179,7 +191,7 @@ Thus the jets of diffeomorphisms possess a natural sense of the ``self-similarit
 \end{enumerate}
 
 \subsection{Outline of the paper}
-After the introduction, in Section~\ref{sec:approach}, we outline our strategy: The first goal is to show that jetlet models admit a dual pair at each level in the hierarchy. Once this has been done, Theorem~\ref{thm:dual_pairs} (proven in the appendix) does the rest. Namely, the jetlets satisfy canonical Hamiltonian equations, and the right momentum map is conserved by the flow.
+After the introduction, in Section~\ref{sec:approach}, we outline our strategy: The first goal is to show that jetlet models admit a \DIFaddbegin \DIFadd{weak }\DIFaddend dual pair at each level in the hierarchy. Once this has been done, Theorem~\ref{thm:dual_pairs} (proven in the appendix) does the rest. Namely, the jetlets satisfy canonical Hamiltonian equations, and the right momentum map is conserved by the flow.
 
 Section~\ref{sec:rigid_body} contains a brief discussion of the standard dual pair for the example of the  rigid body.
 
@@ -190,13 +202,14 @@ In Section~\ref{sec:zeroth_order} we introduce zeroth order jetlets, also called
 %
 %The proof of Proposition~\ref{prop:0-solutions} is an example of the efficiency of the approach.
 
-In Section~\ref{sec:first_order} we consider \DIFdelbegin \DIFdel{1st }\DIFdelend \DIFaddbegin \DIFadd{first }\DIFaddend order jetlets. Everything here goes in parallel, except that one has to be more careful when introducing the relevant right and left actions. Once one has the definitions in place, it is not difficult to recognize that the cotangent lifts for the right and left actions lead to a dual pair of momentum maps (this is mainly because the group actions commute).  Proposition~\ref{prop:1-solutions} collects the results that follow immediately from the dual pair.
+In Section~\ref{sec:first_order} we consider first order jetlets. Everything here goes in parallel, except that one has to be more careful when introducing the relevant right and left actions. Once one has the definitions in place, it is not difficult to recognize that the cotangent lifts for the right and left actions lead to\DIFdelbegin \DIFdel{a }\DIFdelend \DIFaddbegin \DIFadd{, now, a }\emph{\DIFadd{weak}} \DIFaddend dual pair of momentum maps\DIFdelbegin \DIFdel{(this is mainly }\DIFdelend \DIFaddbegin \DIFadd{.
+We have to add `weak' here since the transitivity of the left action on level sets of right momentum is lost, but a weak dual pair is retained, essentially }\DIFaddend because the group actions \DIFdelbegin \DIFdel{commute)}\DIFdelend \DIFaddbegin \DIFadd{still commute, see Definition~\ref{def:weak_dual_pair}}\DIFaddend .  Proposition~\ref{prop:1-solutions} collects the results that follow immediately from the \DIFaddbegin \DIFadd{weak }\DIFaddend dual pair.
 
-Throughout the paper we have taken care to explain the intuition behind the more abstract concepts. The discussion just after Proposition~\ref{prop:1-solutions} is an example of that. There, we discuss the relationship between the jetlet solutions on the diffeomorphism group and the resulting trajectory on the space of Taylor jets.
+Throughout the paper we have taken care to explain the intuition behind the more abstract concepts. The discussion just after Proposition~\ref{prop:1-solutions} is an example of \DIFdelbegin \DIFdel{that}\DIFdelend \DIFaddbegin \DIFadd{this}\DIFaddend . There, we discuss the relationship between the jetlet solutions on the diffeomorphism group and the resulting trajectory on the space of Taylor jets.
 
-In Section~\ref{sec:higher_order} we describe jetlets at general levels. Again, once the relevant spaces and actions have been introduced (which is now quite an intricate \DIFdelbegin \DIFdel{endeavour}\DIFdelend \DIFaddbegin \DIFadd{endeavor}\DIFaddend ), one recognizes that the momentum maps are a dual pair by the usual arguments. We give the form of the momentum maps explicitly just after Proposition~\ref{HL_action_prop}. Again, the dual pair leads to analogous conclusions about dynamics. Namely, it is canonically Hamiltonian, with $J_R$  conserved; $J_L$ maps the dynamics to the Lie-Poisson dynamics on the one-form densities.
+In Section~\ref{sec:higher_order} we describe jetlets at general levels. Again, once the relevant spaces and actions have been introduced (which is now quite an intricate endeavor), one recognizes that the momentum maps are a \DIFaddbegin \DIFadd{weak }\DIFaddend dual pair by the usual arguments. We give the form of the momentum maps explicitly just after Proposition~\ref{HL_action_prop}. Again, the \DIFaddbegin \DIFadd{weak }\DIFaddend dual pair leads to analogous conclusions about dynamics. Namely, it is canonically Hamiltonian, with $J_R$  conserved; $J_L$ maps the dynamics to the Lie-Poisson dynamics on the one-form densities.
 
-In Section~\ref{sec:Kelvin} we discuss in more detail the Kelvin circulation theorem. More precisely, we discuss the relationship between the `standard' circulation theorem for the fluid and the conserved momentum maps $J_R$  at the various levels of jetlets. The main result is represented schematically and proven in detail (all that is required, in essence, is the standard formula for cotangent lift momentum maps). Intuitively speaking, what we show is that the conserved jetlet momentum maps are `shadows' of the `full' right-momentum map of the fluid.\\
+In Section~\ref{sec:Kelvin} we discuss in more detail the Kelvin circulation theorem. More precisely, we discuss the relationship between the `standard' circulation theorem for the fluid and the conserved momentum maps $J_R$  at the various levels of jetlets. The main result is represented schematically and proven in detail (all that is required, in essence, is the standard formula for cotangent lift momentum maps). Intuitively speaking, what we show is that the conserved jetlet momentum maps are `shadows' of the `full' \DIFdelbegin \DIFdel{right-momentum }\DIFdelend \DIFaddbegin \DIFadd{right momentum }\DIFaddend map of the fluid.\\
 
 In Section~\ref{sec:Numerical experiments} we discuss the explicit dynamical behavior of the
 particle model, in particular we study `collisions' leading to mergers of jetlets.
@@ -215,7 +228,7 @@ convergence to a 1-jetlet state without explicitly considering the dynamics.
 Finally, we suggest a more algebraic interpretation of mergers in
 the jetlet hierarchy by viewing all levels of the hierarchy as embedded
 in the larger space $\mathfrak{X}_{\rm div}(\mathbb{R}^n)^*$, where levels form (part of) the
-boundaries of other levels (a bit like in a \DIFdelbegin \DIFdel{CW complex}\DIFdelend \DIFaddbegin \DIFadd{CW-complex}\DIFaddend ).
+boundaries of other levels (a bit like in a CW-complex).
 
 In summary, the numerics section~\ref{sec:Numerical experiments} shows first of all that it is feasible to implement this jetlet model numerically, also in dimensions higher than
 two. Further, we corroborate the analytical results and confirm the
@@ -227,8 +240,9 @@ in the jet-particle collisions.
 
 
 
-The Appendix is relatively extensive. A quick discussion of symplectic and Poisson manifolds is followed by the definition of dual pairs. Then we prove Theorem~\ref{thm:dual_pairs} and Theorem~\ref{thm:commuting_actions}, which are the core results used in the paper. In Appendix~\ref{sec:multi} we describe the index conventions used in the main texts (e.g., when calculating momentum maps for the general jetlet solutions)\DIFdelbegin \DIFdel{. Appendix~}\DIFdelend \DIFaddbegin \DIFadd{, while Appendix~\ref{sec:measure_valued_momap} briefly discusses the more abstract point of how the dual space of vector fields can be viewed as tensor product of 1-forms and distributions.
-Finally, appendix~}\DIFaddend \ref{sec:eom} provides information describing the equations of motion for 1-jets, but in reduced coordinates, which arise after the reduction eliminating the conserved quantities $J_R$.
+\DIFdelbegin \DIFdel{The Appendix is relatively extensive. A quick }\DIFdelend \DIFaddbegin \DIFadd{We provide a detailed appendix. In Appendix A, a brief }\DIFaddend discussion of symplectic and Poisson manifolds is followed by the definition of \DIFaddbegin \DIFadd{weak }\DIFaddend dual pairs. Then we prove Theorem~\ref{thm:dual_pairs}\DIFdelbegin \DIFdel{and Theorem~\ref{thm:commuting_actions}, which are the core results }\DIFdelend \DIFaddbegin \DIFadd{, which is the core result used in the paper. Appendix \ref{app:diagramatic} presents an overview over the spaces }\DIFaddend used in the paper \DIFaddbegin \DIFadd{and relates them to some general results of reduction theory, see in particular Figures \ref{fig_diagram_1} and \ref{fig_diagram_2}}\DIFaddend . 
+ In Appendix~\ref{sec:multi} we describe the index conventions used in the main texts (e.g., when calculating momentum maps for the general jetlet solutions), while Appendix~\ref{sec:measure_valued_momap} briefly discusses the more abstract point of how the dual space of vector fields can be viewed as tensor product of 1-forms and distributions.
+Finally, appendix~\ref{sec:eom} provides information describing the equations of motion for 1-jets, but in reduced coordinates, which arise after the reduction eliminating the conserved quantities $J_R$.
 
 \subsection{Previous work}
   Lagrangian models of ideal fluids such as \emph{smooth particle hydrodynamics} \cite{Monaghan1977,Lucy1977} and
@@ -258,12 +272,11 @@ Finally, appendix~}\DIFaddend \ref{sec:eom} provides information describing the 
  of these particle-like solutions and observed cascade phenomena as
  an emergent behavior at the zeroth level in the hierarchy.
 
- It is notable that the zeroth level of the hierarchy has been studied
- for a long time in the context of partial differential equations with hydrodynamic background.
+ It is notable that the zeroth level of the hierarchy has been studied \DIFdelbegin \DIFdel{for a long time }\DIFdelend in the context of partial differential equations with hydrodynamic background.
  In particular, \cite{HoldenRaynaud2006} provide the first convergence proof of such a method in the context of the Camassa-Holm equation.
  This same idea was implemented for the $n$-dimensional Camassa-Holm
  equation in \cite{ChertockDuToitMarsden2012}.
- In the context of \DIFdelbegin \DIFdel{image-registration }\DIFdelend \DIFaddbegin \DIFadd{image registration }\DIFaddend algorithms, the need to obtain
+ In the context of image registration algorithms, the need to obtain
  compressible diffeomorphisms motivated the use of particle methods
  in a similar framework \cite{JoshiMiller2000}.
  These methods, designed for a wide array of PDEs are studied analytically
@@ -280,7 +293,7 @@ Finally, appendix~}\DIFaddend \ref{sec:eom} provides information describing the 
 %left/right action $\rho(g,x)$ or $\rho(x,g)$, infinitesimal generator $\rho(\xi,x)$ or $\rho(x,\xi)$.
 We will let $\mathfrak{X}(\R^n)$ denote the space of $H^\infty$ vector fields,
 and we let $\mathfrak{X}_{\rm div}(\R^n)$
-denote the space of divergence free \DIFdelbegin \DIFdel{vector-fields }\DIFdelend \DIFaddbegin \DIFadd{vector fields }\DIFaddend resulting from the Hodge decomposition.
+denote the space of divergence free vector fields resulting from the Hodge decomposition.
 We let $\Diff(\R^n)$ denote the space of $H^\infty$ diffeomorphisms of $\R^n$  (see \cite{MichorMumford2013})
 and we let $\SDiff(\R^n)$ denote the subgroup of volume preserving diffeomorphisms.
 
@@ -297,7 +310,7 @@ conventions:
 
 \section{Main approach}
 \label{sec:approach}
-In this section we describe our strategy for obtaining
+\DIFdelbegin \DIFdel{In this section we describe }\DIFdelend \DIFaddbegin \DIFadd{Let us begin by describing }\DIFaddend our strategy for obtaining
 particle-like solutions to regularized fluid equations.
 Our main framework is that of Hamiltonian mechanics
 and symplectic geometry.
@@ -307,9 +320,10 @@ here for convenience.
   \begin{quote}
     {\bf Theorem \ref{thm:dual_pairs}}
     Let $P_1$ and $P_2$ be Poisson manifolds and let $S$ be
-    a symplectic manifold.  Let $J_1,J_2:S \to P_1,P_2$ form a dual pair 
-    (see definition on page \pageref{thm:dual_pairs}).
-    Let \DIFdelbegin \DIFdel{$h \in C^2(P_1)$}\DIFdelend \DIFaddbegin \DIFadd{$h \in C^1(P_1)$}\DIFaddend .
+    a symplectic manifold.  Let $J_1,J_2:S \to P_1,P_2$ form a \DIFdelbegin \DIFdel{dual pair 
+    (see definition on page \pageref{thm:dual_pairs})}\DIFdelend \DIFaddbegin \DIFadd{weak dual pair,
+    see Definition~\ref{def:weak_dual_pair}}\DIFaddend .
+    Let $h \in C^1(P_1)$.
     If $(q,p)(t) \in S$ is a solution to Hamilton's equations
     with respect to the Hamiltonian $H = h \circ J_1$,
     then $J_1\left( (q,p)(t) \right) \in P_1$ is a solution
@@ -318,13 +332,13 @@ here for convenience.
   \end{quote}
 
 We will leverage this theorem in the following way.
-We will find a dual pair, $J_1,J_2: S \to \mathfrak{g}^*$, where
+We will find a \DIFaddbegin \DIFadd{(weak) }\DIFaddend dual pair, $J_1,J_2: S \to \mathfrak{g}^*$, where
 \begin{enumerate}
 \item $S$ is the space of particle locations and momenta (and, for the higher orders of the hierarchy, internal group variables),
-\item $\mathfrak{g}$ is the space of \DIFdelbegin \DIFdel{vector-fields}\DIFdelend \DIFaddbegin \DIFadd{vector fields}\DIFaddend ,
+\item $\mathfrak{g}$ is the space of vector fields,
 \item and $h$ is the Hamiltonian of a regularized model of ideal fluid (i.e.\ a kinetic energy).
 \end{enumerate}
-Theorem~\ref{thm:dual_pairs} applied to the dual pair $J_1,J_2$
+Theorem~\ref{thm:dual_pairs} applied to the \DIFaddbegin \DIFadd{(weak) }\DIFaddend dual pair $J_1,J_2$
 then yields particle-like solutions and conserved quantities to the equations of motion
 of a regularized model of an ideal incompressible fluid.
 
@@ -343,7 +357,7 @@ There are canonical coordinates on $T^*\SO(3)$ given by $(R,P)$
 where $P$ is such that $R^TP $ is a $3 \times 3$ anti-symmetric
 matrix\footnote{%
   We use the pairing $\langle P, v \rangle = \tr(P^T v)$ for
-  $P \in T^*_R SO(3)$ and $v \in T_R SO(3)$. More generally, the pairing $\langle \cdot , \cdot \rangle$ will always refer to the natural pairing between a \DIFdelbegin \DIFdel{vector-space }\DIFdelend \DIFaddbegin \DIFadd{vector space }\DIFaddend and its dual in this paper.}.
+  $P \in T^*_R SO(3)$ and $v \in T_R SO(3)$. More generally, the pairing $\langle \cdot , \cdot \rangle$ will always refer to the natural pairing between a vector space and its dual in this paper.}.
 The angular momentum in the body frame is the
 unique vector $\Pi \in \mathbb{R}^3 \cong \so(3)^*$ such that
 \begin{align*}
@@ -357,8 +371,8 @@ Denoting this map from $(R,P)$ to $\Pi$ by $J_R$,
 the Hamiltonian can be written as a function
 of $\Pi$.  In particular, the reduced Hamiltonian is
 \begin{align*}
-  h(\Pi) = \frac{1}{2}\Pi \cdot \mathbb{I}^{-1} \cdot \Pi
-\end{align*}
+  h(\Pi) = \frac{1}{2}\Pi \cdot \mathbb{I}^{-1} \cdot \Pi\DIFaddbegin \DIFadd{,
+}\DIFaddend \end{align*}
 where $\mathbb{I}$ is a non-degenerate $3\times 3$ symmetric matrix
 known as the moment of inertia matrix.
 The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
@@ -389,7 +403,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   This equation can be seen as a Hamiltonian equation on $\mathbb{R}^3$
   with respect to the non-canonical Poisson bracket
   \begin{align*}
-    \{ F , G \}_{\rm Nambu}(x)  = - x \cdot (\nabla F \times \nabla G)
+    \{ F , G \}_{\rm Nambu}(x)  = - x \cdot (\nabla F \times \nabla G) %\label{eq:Nambu}
   \end{align*}
   known as the \emph{Nambu bracket}.
   This is no coincidence. Let us first introduce the isomorphism of
@@ -436,11 +450,17 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
     \end{align*}
   \end{proof}
 
-  Recall that $T^*\SO(3)$ is a symplectic manifold. \DIFdelbegin \DIFdel{By }\DIFdelend \DIFaddbegin \DIFadd{It is now easy to
-  check that the conditions of Lemma~\ref{lem:transitive-action} and
-  }\DIFaddend Theorem~\ref{thm:commuting_actions} \DIFaddbegin \DIFadd{hold, from which
-  }\DIFaddend we can observe that $J_L$ and $J_R$ have symplectically
-  orthogonal kernels and the diagram
+  Recall that $T^*\SO(3)$ is a symplectic manifold. \DIFdelbegin \DIFdel{It is now easy to
+  check that the conditions of
+  Lemma~\ref{lem:transitive-action} and Theorem~\ref{thm:commuting_actions} hold, from which
+  we can observe }\DIFdelend \DIFaddbegin \DIFadd{The momentum maps
+  $J_L,J_R$ arise canonically from the left and right action of
+  $\SO(3)$ on $T^* \SO(3)$. Since the actions commute and it can also
+  be checked }\DIFaddend that $J_L$ and $J_R$ have symplectically orthogonal
+  kernels\DIFdelbegin \DIFdel{and }\DIFdelend \DIFaddbegin \DIFadd{, it follows from~\mbox{%DIFAUXCMD
+\cite[Corollary~2.6]{GayBalmazVizman2012}
+}%DIFAUXCMD
+that }\DIFaddend the diagram
   \begin{alignat*}{2}
     \so(3)^* \stackrel{J_L}{\longleftarrow}&
     \,T^* \SO(3)
@@ -504,7 +524,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   by solving canonical Hamiltonian equations with respect to $H(R,P)$.
   In particular, if $(R,P)(t)$ is a solution to Hamilton's equation,
   then $\Pi(t) = J_R( (R,P)(t))$ is a solution to Hamilton's equation
-  with respect to the \DIFdelbegin \DIFdel{Nambu-bracket}\DIFdelend \DIFaddbegin \DIFadd{Nambu bracket}\DIFaddend .
+  with respect to the Nambu bracket.
   This is a result of Proposition~\ref{prop:Poisson_dynamics}
   paired with the observation that $J_R$ is a Poisson map via
   Proposition~\ref{prop:SO3_to_Nambu}.
@@ -515,7 +535,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   Euler's equations of motion for incompressible fluids can be seen as
   Hamiltonian equations on the (dual) space of divergence
   free vector fields \cite{Arnold1966}.
-  Consider the \DIFdelbegin \DIFdel{Lie-algebra }\DIFdelend \DIFaddbegin \DIFadd{Lie algebra }\DIFaddend of vector fields on $\mathbb{R}^n$,
+  Consider the Lie algebra of vector fields on $\mathbb{R}^n$,
   denoted by $\mathfrak{X}(\mathbb{R}^n)$.
   Formally, the dual space to $\mathfrak{X}(\mathbb{R}^n)$ is a Poisson
   manifold when equipped with the Lie-Poisson bracket
@@ -572,8 +592,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
 %  Enforcing that all maps be $H^\infty$ ensures sufficient decay
 %  properties at infinity for differential geometric techniques to be
 %  applied.  In particular, $\mathfrak{X}_{\rm div}(M)$ becomes
-%DIF <   a Frechet vector-space, and
-%DIF >   a Frechet vector space, and
+%  a Frechet vector space, and
 %  $\SDiff(\R^n)$ inherits a well defined exponential map for all time.
 %  Exponential charts make $\SDiff(\R^n)$ into a  Frech\'et manifold
 %  \cite{MichorMumford2013}.
@@ -605,9 +624,10 @@ Since we have not yet clarified the Poisson structures of the system, it may not
   In the event that $dh(m) \in \mathfrak{X}_{\rm div}(\R^n)$,
   Hamilton's equations are given by
   \begin{align*}
-      \dot{m} + \lie_u[m] = 0 \quad , \quad u = dh(m)
-  \end{align*}
-  \end{prop}
+    \dot{m} + \lie_u [m] = 0 \quad , \quad u = dh(m)%DIF < \label{eq:LP}.
+  \DIFaddbegin \DIFadd{. %DIF > \label{eq:LP}
+  }\DIFaddend \end{align*}
+\end{prop}
 \begin{proof}
   To each $v \in \mathfrak{X}_{\rm div}(\R^n)$
   we can associate a linear function on $\mathfrak{X}_{\rm div}(\R^n)^*$
@@ -619,8 +639,8 @@ Since we have not yet clarified the Poisson structures of the system, it may not
   we observe
   \begin{align*}
     \frac{d}{dt} f_v(m) &= \{ f_v , h \}(m) = \langle m , [ df_v(m) , dh(m) ] \rangle \\
-    &= \langle m , \lie_{dh(m)}[ df_v(m) ] \rangle
-  \end{align*}
+    &= \langle m , \lie_{dh(m)}[ df_v(m) ] \rangle\DIFaddbegin \DIFadd{.
+  }\DIFaddend \end{align*}
   However $df_v = v$ and so
   the last line can be equated with  $-\langle \lie_{dh(m)}[m] , v \rangle$.
   Additionally, we know that $\frac{d}{dt} f_v(m) = \langle \dot{m} , v \rangle$ since $v$ is constant in time.
@@ -638,8 +658,8 @@ Since we have not yet clarified the Poisson structures of the system, it may not
 \label{sec:MME}
 Consider the Hamiltonian
 \begin{align*}
-  h_{p,\sigma}(m) = \frac{1}{2} \langle m , K_{p,\sigma} * m \rangle_{L^2}
-\end{align*}
+  h_{p,\sigma}(m) = \frac{1}{2} \langle m , K_{p,\sigma} * m \rangle_{L^2}\DIFaddbegin \DIFadd{,
+}\DIFaddend \end{align*}
 where $K_{p,\sigma}:\R^n \to \mathbb{R}^{n \times n}$ is the matrix
 valued Green's kernel defined by the property
 \begin{align*}
@@ -664,7 +684,7 @@ clutter.
 Next, we discuss a dual pair for this system.
 The group $\SDiff(\R^n)$ acts on itself from the left and from the right.
 These actions can be lifted to $T^* \SDiff(\R^n)$, and yield
-momentum maps $J_L,J_R : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$. In particular these maps form the dual pair
+momentum maps \DIFdelbegin \DIFdel{$J_L,J_R : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$}\DIFdelend \DIFaddbegin \DIFadd{$J_L,J_R\colon T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$}\DIFaddend . In particular these maps form the dual pair
 \begin{align*}
   \mathfrak{X}_{\rm div}(\R^n)^*
   \stackrel{J_L}{\longmapsfrom}
@@ -672,7 +692,7 @@ momentum maps $J_L,J_R : T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$. In
   \stackrel{J_R}{\longmapsto}
   \mathfrak{X}_{\rm div}(\R^n)^*.
 \end{align*}
-For a mathematically rigorous treatment of this dual pair we refer to \cite{GayBalmazVizman2012}.
+For a mathematically rigorous treatment of this dual pair we refer to\DIFaddbegin \DIFadd{~}\DIFaddend \cite{GayBalmazVizman2012}.
 
 By Theorem~\ref{thm:dual_pairs}, we can use this dual pair to derive dynamical properties of Hamiltonian equations defined on $\mathfrak{X}_{\rm div}(\R^n)^*$.
 The Hamiltonian for a fluid is written on the left instance of $\mathfrak{X}_{\rm div}(\R^n)^*$.
@@ -685,12 +705,12 @@ The right leg yields conserved quantities associated to the particle relabeling 
 It was found in \cite{Arnold1966} that these conserved momenta are identical
 to the law of conservation of circulation, a.k.a. \emph{Kelvin's circulation theorem}.
 
-Unfortunately, this dual pair does not help us in solving \eqref{eq:MMDiff}
+Unfortunately, this dual pair does not help us in solving\DIFaddbegin \DIFadd{~}\DIFaddend \eqref{eq:MMDiff}
 since solving Hamilton's equations on $T^*\SDiff(\R^n)$ is no less difficult
 than solving Hamilton's equations on $\mathfrak{X}_{\rm div}(\R^n)^*$.
 In the next section we will derive a dual pair wherein the symplectic
 manifold is more reasonable.
-This will yield the particle-like solutions described in \cite{MumfordMichor2013}. In the later parts of the paper we will generalize the treatment to obtain a  dual pair for each level in the hierarchy of particle-like solutions.
+This will yield the particle-like solutions described in \cite{MumfordMichor2013}. In the later parts of the paper we will generalize the treatment to obtain a \DIFaddbegin \emph{\DIFadd{weak}} \DIFaddend dual pair for each level in the hierarchy of particle-like solutions.
 
 \subsection{Particle-like solutions}
 \label{sec:zeroth_order}
@@ -716,8 +736,8 @@ That is to say,
 \begin{align*}
   (q, p) \in T^*\R^n \cong \R^n \times \R^n
   \stackrel{ \varphi \in \SDiff(\R^n) }{\longmapsto}
-  \big(\varphi^{-1}(q) , (\partial_i\varphi^j(q) p_j) e^i \big)
-\end{align*}
+  \big(\varphi^{-1}(q) , (\partial_i\varphi^j(q) p_j) e^i \big)\DIFaddbegin \DIFadd{,
+}\DIFaddend \end{align*}
 where $\{e^i\}$ forms the dual basis to $\{\partial_i\}$ at $\varphi^{-1}(q)$.
 The momentum map
 $J^{(0)}_L : T^*\R^n \to \mathfrak{X}_{\rm div}(\R^n)^*$
@@ -728,8 +748,7 @@ condition
 \end{align*}
 for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$ (see \eqref{eq:cotangent_momap} in Appendix~\ref{sec:Symplectic}); the superscript in $J_L^{(0)}$ serves as a reminder that we are considering the zeroth level in the hierarchy of particle-like solutions.
 %We shall now write $J_L^{(0)} = J_L$ in anticipation of the
-%DIF < introduction of higher-order particles in Section~\ref{sec:higher_order}.
-%DIF > introduction of higher order particles in Section~\ref{sec:higher_order}.
+%introduction of higher order particles in Section~\ref{sec:higher_order}.
 %On $\R^n$ we may identify the dual space of $\mathfrak{X}_{\rm div}(\R^n)$
 %with the space of closed $H^\infty$ one-forms by using the Euclidean volume form.
 %That is to say, any covector field \todo{JE: distribution?} $m = m_i \dx^i \in \mathfrak{X}_{\rm div}(\R^n)^*$
@@ -740,13 +759,13 @@ for all $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $(q,p) \in T^*\R^n$ (see \eqref
 We see that $J_L^{(0)}(q,p)$ is an evaluation operator, and we can write it 
 more explicitly as a measure-valued momentum map in terms of the Dirac-delta distribution as
 \begin{align*}
-  J_L^{(0)}( q , p ) = p \otimes \delta_q
-\end{align*}
+  J_L^{(0)}( q , p ) = p \otimes \delta_q\DIFaddbegin \DIFadd{,
+}\DIFaddend \end{align*}
 where $\delta_q$ is the Dirac-delta distribution on $\R^n$ centered at $q$.
 This identification holds modulo $dC^1(\R^n) \otimes d{\bf x}$ where $dC^1(\R^n)$
-is the space of $C^0$-exact one-forms and $d{\bf x}$ is the canonical volume from on $\R^n$
+is the space of $C^0$-exact one-forms and $d{\bf x}$ is the canonical volume \DIFdelbegin \DIFdel{from }\DIFdelend \DIFaddbegin \DIFadd{form }\DIFaddend on $\R^n$
 (see Appendix~\ref{sec:measure_valued_momap}).
-Since $J_L^{(0)}$ is a cotangent-lift momentum map, it is equivariant and therefore Poisson, again by \cite[Thm~12.4.9]{MandS}.
+Since $J_L^{(0)}$ is a \DIFdelbegin \DIFdel{cotangent-lift }\DIFdelend \DIFaddbegin \DIFadd{cotangent lift }\DIFaddend momentum map, it is equivariant and therefore Poisson, again by \cite[Thm~12.4.9]{MandS}.
 % As the cotangent lifted action of $\SDiff(\R^n)$ is equivariant,
 % we observe that $J_L^{(0)}$ is Poisson, again by 
 
@@ -759,7 +778,7 @@ We will index the particles with $a,b,c,\dots$ and Cartesian coordinate
 directions in $\R^n$ with indices $i,j,k,\dots$
 Thus each $q \in Q_N^{(0)}$ can be decomposed
 into $N$ particles as $(q_1,\dots,q_N)$, where each $q_a \in \R^n$
-and the \DIFdelbegin \DIFdel{$i^{\rm th}$ }\DIFdelend \DIFaddbegin \DIFadd{$i$-th }\DIFaddend coordinate of the \DIFdelbegin \DIFdel{$a^{\rm th}$ }\DIFdelend \DIFaddbegin \DIFadd{$a$-th }\DIFaddend particle
+and the $i$-th coordinate of the $a$-th particle
 is denoted by $q\indices{_a^i}$.
 
 The group $\SDiff(\R^n)$ acts on $Q_N^{(0)}$ by the diagonal action.
@@ -802,23 +821,23 @@ Once one has found a solution $(q(t), p(t))$ to Hamilton's equations on $T^*\mat
     \;\;(q,p)
     &&\stackrel{J_R^{(0)} }{\longmapsto} 0
   \end{alignat*}
-  is a dual pair. 
+  is a \DIFaddbegin \DIFadd{(proper) }\DIFaddend dual pair.
   This dual pair allows us to express conservation
   laws and dynamics as a result of Theorem~\ref{thm:dual_pairs}.
-   Namely, the left leg represents the space in which particle-like
+  Namely, the left leg represents the space in which particle-like
   solutions to \eqref{eq:MMDiff} evolve,
-  while the right leg represents a (trivial) conserved quantity. 
+  while the right leg represents a (trivial) conserved quantity.
 
   In order to make contact with the later parts of the paper, it is useful to remark that $J_R^{(0)}$ can formally be understood as the cotangent lift momentum map associated with a certain (trivial) group action.
   To that end, we fix a designated point $z = (z_1, \ldots, z_N) \in Q_N^{(0)}$ and take an arbitrary element $ q= (q_1, \ldots, q_N) \in Q_N^{(0)}$ to represent the set of all $\varphi \in \SDiff(\mathbb{R}^n)$ that satisfy $\varphi \cdot z  = q$.
   That is, $\varphi(z_a) = q_a$ for all $a$.
-  This means in particular that the specification of $(q_1, \ldots, q_N)$ fixes the \DIFdelbegin \DIFdel{$0^{\rm th}$ }\DIFdelend \DIFaddbegin \DIFadd{zeroth }\DIFaddend order Taylor expansion (at the locations $z_a$) of the corresponding set of diffeomorphisms. With this in mind, let us define the isotropy group
+  This means in particular that the specification of $(q_1, \ldots, q_N)$ fixes the zeroth order Taylor expansion (at the locations $z_a$) of the corresponding set of diffeomorphisms. With this in mind, let us define the isotropy group
 \begin{align}
-  \iso(z)  = \{ \psi \in \SDiff(\mathbb{R}^n) | \psi(z_a) = z_a \mbox{ for all } a\}
-  \label{eq:isotropy_group}
+\iso(z)  = \{ \psi \in \SDiff(\mathbb{R}^n) | \psi(z_a) = z_a \mbox{ for all } a\} \label{eq:isotropy_group}
 \end{align}
 and a (trivial) right action on $Q_N^{(0)}$ where $\psi \in \iso(z)$ maps an element $(\varphi(z_1), \ldots, \varphi(z_N))$ to $( \varphi \circ \psi (z_1), \ldots, \varphi \circ \psi(z_N))$.
-Similar constructions will be crucial in later sections, when constructing the right leg of a dual pair for the higher levels in the hierarchy of particle-like solutions.
+Similar constructions will be crucial in later sections, when
+constructing the right leg of \DIFdelbegin \DIFdel{a }\DIFdelend \DIFaddbegin \DIFadd{an --- in this case weak --- }\DIFaddend dual pair for the higher levels in the hierarchy of particle-like solutions.
 
   In summary we find:
   \begin{prop}[\S7 of \cite{MumfordMichor2013}] \label{prop:0-solutions}
@@ -832,13 +851,13 @@ Similar constructions will be crucial in later sections, when constructing the r
   is a solution to \eqref{eq:MMDiff}.
 \end{prop}
 \begin{proof}
-	Note that $H = h_{p,\sigma} \circ J_L^{(0)}$ and apply Theorems~\ref{thm:dual_pairs} and~\ref{thm:commuting_actions}.
-  See the remark after Proposition~\ref{prop:k-solutions} for more details on the kernel smoothness condition on $p$.
+	Note that $H = h_{p,\sigma} \circ J_L^{(0)}$ and apply \DIFdelbegin \DIFdel{Theorems~\ref{thm:dual_pairs}and~\ref{thm:commuting_actions}}\DIFdelend \DIFaddbegin \DIFadd{Theorem~\ref{thm:dual_pairs}}\DIFaddend .
+  See the remark after \DIFdelbegin \DIFdel{Proposition~\ref{prop:k-solutions} }\DIFdelend \DIFaddbegin \DIFadd{Theorem~\ref{thm:k-solutions} }\DIFaddend for more details on the kernel smoothness condition on $p$.
 \end{proof}
 
-\subsection{\DIFdelbegin \DIFdel{$1^{\rm st}$-order }\DIFdelend \DIFaddbegin \DIFadd{First order }\DIFaddend particle-like solutions}
+\subsection{First order particle-like solutions}
 \label{sec:first_order}
-In this section we revisit the \DIFdelbegin \DIFdel{$1^{\rm st}$-order }\DIFdelend \DIFaddbegin \DIFadd{first order }\DIFaddend particle-like solutions of \cite{CotterHolmJacobsMeier2014} and discuss their dual pair, before extending the treatment to the higher levels of the hierarchy in the subsequent section. 
+In this section we revisit the first order particle-like solutions of \cite{CotterHolmJacobsMeier2014} and discuss their \DIFaddbegin \DIFadd{weak }\DIFaddend dual pair, before extending the treatment to the higher levels of the hierarchy in the subsequent section. 
   Let $\SL(n)$ denote the Lie group of $n\times n$ matrices
   with unit determinant.
   Let $q = (q^{(0)}, q^{(1)}) \in \R^n \times \SL(n)$ and consider the left
@@ -867,7 +886,7 @@ In this section we revisit the \DIFdelbegin \DIFdel{$1^{\rm st}$-order }\DIFdele
   As before, this action can be lifted to the cotangent bundle $T^*(\R^n \times \SL(n))$.  Specifically, 
   the action of the diffeomorphism $\varphi^{-1}$ is given by
   \begin{equation}\label{eq:SDiff_cotangent_action_Q1}
-    (T\varphi)^* \cdot ( q^{(0)} , q^{(1)}  , p^{(0)} , p^{(1)} )\\
+    (T\varphi)^* \cdot ( q^{(0)} , q^{(1)}  , p^{(0)} , p^{(1)} ) \\
     = \big( \varphi^{-1}(q^{(0)})  , [D\varphi|_{q^{(0)}}]^{-1} \cdot q^{(1)} , D\varphi|_{q^{(0)}}^* \cdot p^{(0)} , D\varphi|_{q^{(0)}}^* \cdot p^{(1)} \big).
   \end{equation}
   Also as before, we can generalize this construction to the space of
@@ -880,11 +899,10 @@ In this section we revisit the \DIFdelbegin \DIFdel{$1^{\rm st}$-order }\DIFdele
       \end{array} \right\}.
   \end{align*}
   For convenience it is nice to choose coordinates at this point.
-  If we let $q_a$ denote the position of the \DIFdelbegin \DIFdel{$a^{\rm th}$ }\DIFdelend \DIFaddbegin \DIFadd{$a$-th }\DIFaddend particle,
-  $q\indices{_a^i}$ denote the \DIFdelbegin \DIFdel{$i^{\rm th}$ }\DIFdelend \DIFaddbegin \DIFadd{$i$-th }\DIFaddend component of this position,
-  and let $q\indices{_a^i_j}$ denote the $(i,j)$ entry of the \DIFdelbegin \DIFdel{$a^{\rm th}$
-  }\DIFdelend \DIFaddbegin \DIFadd{$a$-th
-  }\DIFaddend matrix then the resulting momentum map is defined by the condition
+  If we let $q_a$ denote the position of the $a$-th particle,
+  $q\indices{_a^i}$ denote the $i$-th component of this position,
+  and let $q\indices{_a^i_j}$ denote the $(i,j)$ entry of the $a$-th
+  matrix then the resulting momentum map is defined by the condition
   \begin{align*}
     \langle J_L^{(1)}(q,p) , u \rangle
     = p\indices{_a_i} u^i(q^{(0)}_a) + p\indices{_a_i^j} \partial_k u^i(q^{(0)}_a) q\indices{_a^k_j}
@@ -893,64 +911,69 @@ In this section we revisit the \DIFdelbegin \DIFdel{$1^{\rm st}$-order }\DIFdele
   In terms of the Dirac-delta functional, we can write $J_L^{(1)}$ as the measure-valued momentum map
   \begin{align*}
     J_L^{(1)}(q, p)
-    = p\indices{_a_i} \dx^i \otimes \delta\DIFdelbegin \DIFdel{_{q_a}
-     }\DIFdelend \DIFaddbegin \DIFadd{_{q_a^{(0)}}
-     }\DIFaddend -p\indices{_a_i^j} q\indices{_a^k_j} \dx^i \otimes \partial_k \delta\DIFdelbegin \DIFdel{_{q_a}
-  }\DIFdelend \DIFaddbegin \DIFadd{_{q_a^{(0)}}
+    = p\indices{_a_i} \dx^i \otimes \delta_{q_a^{(0)}}
+     -p\indices{_a_i^j} q\indices{_a^k_j} \dx^i \otimes \partial_k \delta_{q_a^{(0)}}\DIFaddbegin \DIFadd{.
   }\DIFaddend \end{align*}
-
-  Next, we construct a dual momentum map associated with a right action on $Q_N^{(1)}$. Analogous to the previous section  it is useful at this stage to write elements of $Q_N^{(1)}$ in the form $ \varphi \cdot z = (\varphi (z_1, {\mathbf{1}}), \ldots, \varphi \cdot (z_N , \mathbf{1}))$, $\varphi \in \SDiff(\mathbb{R}^n)$, for some designated element $ z=( (z_1, \mathbf{1}), \ldots, (z_N, \mathbf{1}))$.
-  Clearly, every element of $Q_N^{(1)}$ can be written in this form for some $\varphi \in \SDiff(\mathbb{R}^n)$. Indeed, with this convention the specification of an element in $Q_N^{(1)}$ fixes the \DIFdelbegin \DIFdel{$1^{\rm st}$ }\DIFdelend \DIFaddbegin \DIFadd{first }\DIFaddend order Taylor expansion of $\varphi$ at the locations $z_a$, $a = 1, \ldots, N$. With this in mind, let us recall the isotropy group $\iso(z)$ defined earlier in \eqref{eq:isotropy_group}, which leaves these locations invariant, and define a right action on  $Q_N^{(1)}$ given by 
-\begin{align}
+  Next, we construct a dual momentum map associated with a right action on $Q_N^{(1)}$. Analogous to the previous section  it is useful at this stage to write elements of $Q_N^{(1)}$ in the form $ \varphi \cdot z = (\varphi (z_1, {\mathbf{1}}), \ldots, \varphi \cdot (z_N , \mathbf{1}))$, $\varphi \in \SDiff(\mathbb{R}^n)$, for some designated element $ z=( (z_1, \mathbf{1}), \ldots, (z_N, \mathbf{1}))$. Clearly, every element of $Q_N^{(1)}$ can be written in this form for some  $\varphi \in \SDiff(\mathbb{R}^n)$. Indeed, with this convention the specification of an element in $Q_N^{(1)}$ fixes the first order Taylor expansion of $\varphi$ at the locations $z_a$, $a = 1, \ldots, N$. With this in mind, let us recall the isotropy group $\iso(z)$ defined earlier in \eqref{eq:isotropy_group}, which leaves these locations invariant, and define a right action on  $Q_N^{(1)}$ given by 
+\DIFdelbegin \begin{align*}\DIFdel{
 	 (\varphi \cdot z) \cdot \psi  = (\varphi \circ \psi) \cdot z. \notag
-	 \end{align}
-	 That is, 
- \begin{align}
+	 }\end{align*}
+	 %DIFAUXCMD
+\DIFdelend \DIFaddbegin \begin{equation*}\DIFadd{
+	 (\varphi \cdot z) \cdot \psi  = (\varphi \circ \psi) \cdot z.
+}\end{equation*}
+\DIFaddend That is,
+\DIFdelbegin \begin{align*}\DIFdel{
 	 (q^{(0)}, q^{(1)}) \cdot \psi = \left( \left(q_1^{(0)}, q_1^{(1)} \cdot D\psi|_{z_1}\right), \ldots, \left(q_N^{(0)}, q_N^{(1)} \cdot D\psi|_{z_N}\right)\right). \label{1-rightaction}
-\end{align}
-In Proposition~\ref{HL_action_prop} we will generalize this construction to define a right action for the higher levels in the hierarchy of particle-like solutions.
-  The action \eqref{1-rightaction} yields the cotangent-lift momentum map defined by the condition
+}\end{align*}
+%DIFAUXCMD
+\DIFdelend \DIFaddbegin \begin{equation}\DIFadd{
+	 (q^{(0)}, q^{(1)}) \cdot \psi = \left( \left(q_1^{(0)}, q_1^{(1)} \cdot D\psi|_{z_1}\right), \ldots, \left(q_N^{(0)}, q_N^{(1)} \cdot D\psi|_{z_N}\right)\right). \label{1-rightaction}
+}\end{equation}
+\DIFaddend In Proposition~\ref{HL_action_prop} we will generalize this construction to define a right action for the higher levels in the hierarchy of particle-like solutions.
+  The action \eqref{1-rightaction} yields the \DIFdelbegin \DIFdel{cotangent-lift }\DIFdelend \DIFaddbegin \DIFadd{cotangent lift }\DIFaddend momentum map defined by the condition
   \begin{align*}
-    \langle J_R^{(1)}(q,p) , u \rangle = p\indices{_a_i^j} q\indices{_a^i_k} \partial_j u^k(z_a)
-  \end{align*}
-  In terms of the \DIFdelbegin \DIFdel{Dirac delta }\DIFdelend \DIFaddbegin \DIFadd{Dirac-delta }\DIFaddend functional we may write this as the measure-valued momentum map
+    \langle J_R^{(1)}(q,p) , u \rangle = p\indices{_a_i^j} q\indices{_a^i_k} \partial_j u^k(z_a)\DIFaddbegin \DIFadd{.
+  }\DIFaddend \end{align*}
+  In terms of the Dirac-delta functional we may write this as the measure-valued momentum map
   \begin{equation}\label{eq:JR1}
-    J_R^{(1)}(q,p) = - p\indices{_a_i^j} q\indices{_a^i_k} \DIFdelbegin \DIFdel{\dx}\DIFdelend \DIFaddbegin \DIFadd{\dz}\DIFaddend ^k \otimes \partial_j \delta_{z_a}
+    J_R^{(1)}(q,p) = - p\indices{_a_i^j} q\indices{_a^i_k} \dz^k \otimes \partial_j \delta_{z_a}
   \end{equation}
-  \DIFaddend \begin{prop}\DIFaddbegin \label{prop:J1-dual-pair}
-    \DIFaddend The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a dual pair.
+  \DIFaddbegin 
+
+  \DIFaddend \begin{prop}\label{prop:J1-dual-pair}
+    The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a \DIFaddbegin \DIFadd{weak }\DIFaddend dual pair.
   \end{prop}
-  \begin{proof}
-  \DIFdelbegin \DIFdel{The actions of $\iso(z)$ and }\DIFdelend \DIFaddbegin \DIFadd{We first check the conditions of Lemma~\ref{lem:transitive-action}.
-  Note that }\DIFaddend $\SDiff(\R^n)$ \DIFdelbegin \DIFdel{on $Q_N^{(1)}$
-    clearly commute
-    and lift to symplectic actions on $T^*Q_N^{(1)}$.Moreover, the
-  action }\DIFdelend \DIFaddbegin \DIFadd{acts transitively on $Q^{(1)}_N$ since it
+   \DIFdelbegin %DIFDELCMD < \begin{proof}
+%DIFDELCMD <   %%%
+\DIFdel{We first check the conditions of Lemma~\ref{lem:transitive-action}.
+  Note that $\SDiff(\R^n)$ acts transitively on $Q^{(1)}_N$ since it
   acts transitively on representatives $\psi \in \SDiff(\R^n)$ of
-  elements $q$ (i.e.}\ \DIFadd{$q^{(0)}_a = \psi(z_a)$ and
+  elements $q$ (i.e.}%DIFDELCMD < \ %%%
+\DIFdel{$q^{(0)}_a = \psi(z_a)$ and
   $q^{(1)}_a = D\psi|_{z_a}$, or, $q = \Jet^1_z(\psi)$). Secondly, the
   cotangent-lifted action preserves level sets of $J_R^{(k)}$.
-  From~}\eqref{eq:SDiff_cotangent_action_Q1} \DIFadd{we see that $\varphi \in
-  \SDiff(\R^n)$ acts on the first level }\DIFaddend of \DIFaddbegin \DIFadd{$(q,p) \in T^* Q^{(1)}_N$ as
-  }\begin{align*}\DIFadd{
-    (\varphi\cdot q)\indices{_a^i_j} }&\DIFadd{= (D\varphi|_{q^{(0)}_a})\indices{^i_k}\,q\indices{_a^k_j}, }\\
-    \DIFadd{(\varphi\cdot p)\indices{_a_i^j} }&\DIFadd{= p\indices{_a_k^j}(D\varphi^{-1}|_{\varphi\cdot q^{(0)}_a})\indices{^k_i}.
+  From~}%DIFDELCMD < \eqref{eq:SDiff_cotangent_action_Q1} %%%
+\DIFdel{we see that $\varphi \in
+  \SDiff(\R^n)$ acts on the first level of $(q,p) \in T^* Q^{(1)}_N$ as }\begin{align*}\DIFdel{
+    (\varphi\cdot q)\indices{_a^i_j} }&\DIFdel{= (D\varphi|_{q^{(0)}_a})\indices{^i_k}\,q\indices{_a^k_j}, }\\
+    \DIFdel{(\varphi\cdot p)\indices{_a_i^j} }&\DIFdel{= p\indices{_a_k^j}(D\varphi^{-1}|_{\varphi\cdot q^{(0)}_a})\indices{^k_i}.
   }\end{align*}
-  \DIFadd{The explicit calculation
-  }\begin{align*}\DIFadd{
+  %DIFAUXCMD
+\DIFdel{The explicit calculation
+  }\begin{align*}\DIFdel{
     J_R^{(1)}(\varphi\cdot(q,p))
-    }&\DIFadd{= - p\indices{_a_l^j} (D\varphi^{-1}|_{\varphi\cdot q^{(0)}_a})\indices{^l_i} \,
+    }&\DIFdel{= - p\indices{_a_l^j} (D\varphi^{-1}|_{\varphi\cdot q^{(0)}_a})\indices{^l_i} \,
          (D\varphi|_{q^{(0)}_a})\indices{^i_m}\, q\indices{_a^m_k}
          \dz^k \otimes \partial_j \delta_{z_a} }\\
-    &\DIFadd{= - p\indices{_a_l^j} \, \delta^l_m \, q\indices{_a^m_k}
+    &\DIFdel{= - p\indices{_a_l^j} \, \delta^l_m \, q\indices{_a^m_k}
          \dz^k \otimes \partial_j \delta_{z_a} = J_R^{(1)}(q,p)
   }\end{align*}
-  \DIFadd{shows that~}\eqref{eq:JR1} \DIFadd{is preserved under the cotangent-lifted
-  action of }\DIFaddend $\SDiff(\R^n)$\DIFdelbegin \DIFdel{is transitive on the level sets of $J_R^{(1)}$,
-  since it is transitive overall.
-By }\DIFdelend \DIFaddbegin \DIFadd{. Finally, we must show that
-  $(J_R^{(1)})^{-1}(m)$ is a
-  section of $T^* Q^{(1)}_N$ for any $m$ in the range of $J_{R}^{(1)}$. Let
+  %DIFAUXCMD
+\DIFdel{shows that~}%DIFDELCMD < \eqref{eq:JR1} %%%
+\DIFdel{is preserved under the cotangent-lifted
+  action of $\SDiff(\R^n)$. Finally, we must show that
+  $(J_R^{(1)})^{-1}(m)$ is a section of $T^* Q^{(1)}_N$ for any $m$ in the range of $J_{R}^{(1)}$. Let
   $(q,p) \in \big(J_R^{(1)}\big)^{-1}(m)$. Note that for fixed $q$,
   since $q_a^{(1)} \in \SL(n)$ is a linear isomorphism, the map
   $p \mapsto J_R^{(1)}(q,p)$ is an injection and hence
@@ -958,14 +981,18 @@ By }\DIFdelend \DIFaddbegin \DIFadd{. Finally, we must show that
   $\SDiff(\R^n)$ acts transitively on the base $Q^{(1)}_N$ and acts by
   fiber-preserving diffeomorphisms on $T^* Q^{(1)}_N$, it follows that
   $(J_R^{(1)})^{-1}(m)$ is a section of $T^* Q^{(1)}_N$.
-}
+}%DIFDELCMD < 
 
-  \DIFadd{Thus Lemma~\ref{lem:transitive-action} implies that $\SDiff(\R^n)$
+%DIFDELCMD <   %%%
+\DIFdel{Thus Lemma~\ref{lem:transitive-action} implies that $\SDiff(\R^n)$
   acts transitively on the level sets of the momentum map $J_R^{(1)}$.
   The actions of $\iso(z)$ and $\SDiff(\R^n)$ clearly commute so
-  }\DIFaddend Theorem~\ref{thm:commuting_actions} \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{implies that }\DIFaddend $J_L^{(1)}$ and
+  Theorem~\ref{thm:commuting_actions} implies that $J_L^{(1)}$ and
   $J_R^{(1)}$ form a dual pair.
-  \end{proof}
+}%DIFDELCMD < \end{proof}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{We will postpone the proof, as this is a special case of a proposition which comes later in the paper (Proposition \ref{prop:k dual pairs}).
+}\DIFaddend 
 
   As before, the quantity $dh( J_L^{(1)}(q,p))$ is a legitimate vector field
   if $K_{p,\sigma}$ is sufficiently smooth.  Moreover, when the Hamiltonian
@@ -987,7 +1014,7 @@ By }\DIFdelend \DIFaddbegin \DIFadd{. Finally, we must show that
   \end{prop}
   The proof of the above proposition is identical to that of
   Proposition~\ref{prop:0-solutions}. See again the remark following
-  Proposition~\ref{prop:k-solutions} for more details on the kernel
+  \DIFdelbegin \DIFdel{Proposition~\ref{prop:k-solutions} }\DIFdelend \DIFaddbegin \DIFadd{Theorem~\ref{thm:k-solutions} }\DIFaddend for more details on the kernel
   smoothness condition on $p$.
 
   As before, it is useful to interpret the trajectory $q(t)$ of the previous proposition in terms of the curve $\varphi_t \in  \SDiff(\mathbb{R}^n)$ obtained by integrating the time-dependent vector field $dh_{p, \sigma} J_L^{(1)}((q, p)(t)) = K_{p, \sigma} * J_L^{(1)}((q, p)(t))$. If one chooses $\varphi_0$ to be the identity or  any other element of $\SDiff(\mathbb{R}^n)$ that satisfies $\varphi_0 \cdot (q(0)) = q(0)$, then  $q(t) = \varphi_t \cdot  q(0)$. This implies in particular that the $q_a^{(0)}(t)$ are the trajectories of the particles as they are swept along by the fluid flow.
@@ -1005,16 +1032,16 @@ By }\DIFdelend \DIFaddbegin \DIFadd{. Finally, we must show that
         \\
         \includegraphics[width=0.4\textwidth]{stretch_3D.png}
         \includegraphics[width=0.4\textwidth]{shear_3D.png}
-        \caption{(\emph{top}) Quiver plots of 2D vector fields induced by \DIFdelbeginFL \DIFdelFL{$1^{\rm st}$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{first }\DIFaddendFL order jetlets. 
-        (\emph{bottom})   \DIFdelbeginFL \DIFdelFL{Stream-line }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Streamline }\DIFaddendFL plots of 3D vector fields induced by \DIFdelbeginFL \DIFdelFL{$1^{\rm st}$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{first }\DIFaddendFL order jetlets.}
+        \caption{(\emph{top}) Quiver plots of 2D vector fields induced by first order jetlets. 
+        (\emph{bottom})   Streamline plots of 3D vector fields induced by first order jetlets.}
         \label{fig:zoo}
   \end{figure}
 
-  \subsection{\DIFdelbegin \DIFdel{Higher-order }\DIFdelend \DIFaddbegin \DIFadd{Higher order }\DIFaddend particles}
+  \subsection{Higher order particles}
   \label{sec:higher_order}
-  In this section we will introduce a hierarchy of particle solutions whose $k$-th level includes the solutions at the \DIFdelbegin \DIFdel{$(k-1)^{\rm th}$ }\DIFdelend \DIFaddbegin \DIFadd{$(k-1)$-th }\DIFaddend level.
-  The \DIFdelbegin \DIFdel{$0^{\rm th}$-level }\DIFdelend \DIFaddbegin \DIFadd{zeroth level }\DIFaddend in the hierarchy are the standard particle-like solutions,
-  while the \DIFdelbegin \DIFdel{$1^{\rm st}$ }\DIFdelend \DIFaddbegin \DIFadd{first }\DIFaddend level describes the particles with internal $\SL(n)$ variables
+  In this section we will introduce a hierarchy of particle solutions whose $k$-th level includes the solutions at the $(k-1)$-th level.
+  The zeroth level in the hierarchy are the standard particle-like solutions,
+  while the first level describes the particles with internal $\SL(n)$ variables
   discussed in the previous section.
   The particles in the $k$-th level carry the coefficients of
   $k$-th order Taylor expansions of diffeomorphisms,
@@ -1022,16 +1049,16 @@ By }\DIFdelend \DIFaddbegin \DIFadd{. Finally, we must show that
   Therefore, we call these particles \emph{$k$-jetlets}.
 
   Let $\varphi \in \SDiff(\R^n)$.
-  The \DIFdelbegin \DIFdel{zeroth-order }\DIFdelend \DIFaddbegin \DIFadd{zeroth order }\DIFaddend Taylor expansion of $\varphi$ about $0$
+  The zeroth order Taylor expansion of $\varphi$ about $0$
   is $\varphi(0)$, and the collection of such Taylor
   expansions is all of $\R^n$.
-  The \DIFdelbegin \DIFdel{$1^{\rm st}$-order }\DIFdelend \DIFaddbegin \DIFadd{first order }\DIFaddend Taylor expansion of $\varphi$ about $0$ is
+  The first order Taylor expansion of $\varphi$ about $0$ is
   \begin{align*}
     \varphi^i( x) = \varphi^i(0) + \partial_j \varphi^i(0) x^j + o( \|x\|).
   \end{align*}
   The tuple of coefficients $(\varphi(0) , D\varphi(0) ) \in \R^n \times \SL(n)$ is
-  called the \DIFdelbegin \DIFdel{$1^{\rm st}$-order }\DIFdelend \DIFaddbegin \DIFadd{first order }\DIFaddend jet of $\varphi$ evaluated at $0$.
-  Going further, the \DIFdelbegin \DIFdel{second-order }\DIFdelend \DIFaddbegin \DIFadd{second order }\DIFaddend Taylor expansion of $\varphi$ about $0$
+  called the first order jet of $\varphi$ evaluated at $0$.
+  Going further, the second order Taylor expansion of $\varphi$ about $0$
   is
   \begin{align*}
     \varphi^i(x) = \varphi^i(0) + \partial_j \varphi^i(0) x^j + 
@@ -1040,12 +1067,11 @@ By }\DIFdelend \DIFaddbegin \DIFadd{. Finally, we must show that
   We see that $D^2\varphi(0)$ is a tensor of rank $(1,2)$, which is
   symmetric in the lower indices.
   We call the space of such tensors $S^1_2$,
-  and we see that the space of \DIFdelbegin \DIFdel{second-order }\DIFdelend \DIFaddbegin \DIFadd{second order }\DIFaddend jets is a \DIFdelbegin \DIFdel{sub-manifold }\DIFdelend \DIFaddbegin \DIFadd{submanifold }\DIFaddend $Q^{(2)}_1 \subset \R^n \times \SL(n) \times S^1_2$.
-  Finally, for $k \geq 2$ the space of $k$-th order jets is a \DIFdelbegin \DIFdel{sub-manifold
-  }\DIFdelend \DIFaddbegin \DIFadd{submanifold
-  }\DIFaddend \begin{align*}
-    Q_1^{(k)} \subset \R^n \times \SL(n) \times S^1_2 \times S^1_3 \times \cdots\times S^1_k
-  \end{align*}
+  and we see that the space of second order jets is a submanifold $Q^{(2)}_1 \subset \R^n \times \SL(n) \times S^1_2$.
+  Finally, for $k \geq 2$ the space of $k$-th order jets is a submanifold
+  \begin{align*}
+    Q_1^{(k)} \subset \R^n \times \SL(n) \times S^1_2 \times S^1_3 \times \cdots\times S^1_k\DIFaddbegin \DIFadd{,
+  }\DIFaddend \end{align*}
   where $S^1_j$ is the vector space of $(1,j)$-tensors which
   have been symmetrized in the covariant indices.
   The space $Q_1^{(k)}$ is equipped with the fiber bundle
@@ -1067,7 +1093,7 @@ By }\DIFdelend \DIFaddbegin \DIFadd{. Finally, we must show that
   A typical coordinate on $Q^{(k)}_N$ will therefore look
   like $q\indices{_a^i_\beta}$ where $a \in \{1,\dots,N\}$, $i \in \{ 1 , \dots, n \}$
   and $\beta$ is a multi-index on $\R^n$.
-  This coordinate is used to model the partial derivative of the \DIFdelbegin \DIFdel{$i^{\rm th}$ }\DIFdelend \DIFaddbegin \DIFadd{$i$-th }\DIFaddend coordinate
+  This coordinate is used to model the partial derivative of the $i$-th coordinate
   of a diffeomorphism at some point $z_a \in \R^n$, i.e.\ $\partial_\beta \varphi^i(z_a)$.
   % This is the primary motivation for this notational convention.
   For the statement of the next proposition, recall that the definition  of $\iso(z)$ was given earlier in \eqref{eq:isotropy_group}. Note also that we write $\Jet^k_x: \SDiff(\R^n) \to Q_1^{(k)}$ for
@@ -1166,11 +1192,13 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 			\right)
   \end{equation*}
   for arbitrary divergence free vector fields $u \in \mathfrak{X}_{\rm div}(\R^n)$.
-  \DIFaddbegin \DIFadd{Equivalently, we may define $J_L^{(k)}$
-  as the unique map such that $\langle J_L^{(k)}(q,p) , u \rangle = \langle (q,p) , \Jet_z^{(k)}( u \circ \varphi) \rangle$ for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$.
-  }
+  Equivalently, we may define $J_L^{(k)}$ as the unique map such that
+  \DIFdelbegin \DIFdel{$\langle J_L^{(k)}(q,p) , u \rangle = \langle (q,p) , \Jet_z^{(k)}( u \circ \varphi) \rangle$ }\DIFdelend \DIFaddbegin \begin{equation}\DIFadd{\label{eq:moma_left}
+    \langle J_L^{(k)}(q,p) , u \rangle = \langle (q,p) , \Jet_z^{(k)}( u \circ \varphi) \rangle
+  }\end{equation}
+  \DIFaddend for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$.
 
-  \DIFaddend The right action of $\iso(z)$ yields the momentum map $J_R^{(k)}$ defined implicitly by the relation
+  The right action of $\iso(z)$ yields the momentum map $J_R^{(k)}$ defined implicitly by the relation
   \begin{equation*}
     \langle J_R^{(k)}(q,p) , w \rangle = \sum_{a=1}^N
     \sum_{\substack{ |\alpha| \leq k \\ 1 \leq \ell \leq |\alpha| }} \;
@@ -1181,18 +1209,21 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 				}
 			}
 			p\indices{_a_i^\alpha} q\indices{_a^{i}_{[j_1 \cdots j_\ell]}}
-      \sum_{m=1}^\ell  \partial_{\gamma_m} w^{j_m}(z_a) \left( \prod_{n \neq m}  \delta_{\gamma_n}^{[j_n]} \right)
-  \end{equation*}
+      \sum_{m=1}^\ell  \partial_{\gamma_m} w^{j_m}(z_a) \left( \prod_{n \neq m}  \delta_{\gamma_n}^{[j_n]} \right)\DIFaddbegin \DIFadd{,
+  }\DIFaddend \end{equation*}
   where $w \in \mathfrak{X}_{\rm div}(\R^n)$ is such that $w(z) = 0$ (this describes the Lie algebra of $\iso(z)$),
   and $\delta_\alpha^\beta$ is the natural generalization of the Kronecker-delta symbol to multi-indices.
-  \DIFaddbegin \DIFadd{Equivalently, we may define $J_R^{(k)}$
-  as the unique map such that $\langle J_R^{(k)}(q,p) , w \rangle = \langle (q,p) , \Jet_z^{(k)}( T\varphi \circ w) \rangle$ for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$.
-  }
+  Equivalently, we may define $J_R^{(k)}$
+  as the unique map such that
+ \DIFdelbegin \DIFdel{$\langle J_R^{(k)}(q,p) , w \rangle = \langle (q,p) , \Jet_z^{(k)}( T\varphi \circ w) \rangle$ }\DIFdelend \DIFaddbegin \begin{align}\DIFadd{
+  \langle J_R^{(k)}(q,p) , w \rangle = \langle (q,p) , \Jet_z^{(k)}( T\varphi \cdot w) \rangle, \label{Moma_right}
+   }\end{align}
+  \DIFaddend for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$. \DIFaddbegin \DIFadd{Here, we wrote $T\varphi \cdot w$ for the function obtained by applying the differential of $\varphi$ to $w$.
+  }\DIFaddend 
 
-  
-  \DIFaddend We can write \DIFdelbegin \DIFdel{these momentum maps }\DIFdelend \DIFaddbegin \DIFadd{$J_L^{(k)}$ and $J_R^{(k)}$ }\DIFaddend explicitly, using the \DIFdelbegin \DIFdel{Dirac delta }\DIFdelend \DIFaddbegin \DIFadd{Dirac-delta }\DIFaddend distribution, as
-  \begin{multline*}\DIFaddbegin \label{eq:JLk}
-    \DIFaddend J_L^{(k)}(q,p) =
+  We can write $J_L^{(k)}$ and $J_R^{(k)}$ explicitly, using the Dirac-delta distribution, as
+  \begin{multline*}\label{eq:JLk}
+    J_L^{(k)}(q,p) =
     \sum_{a=1}^N \Bigg(
     p_{am} \dx^m \otimes \delta_{q^{(0)}_a} \\
   + \sum_{\substack{ |\alpha| \leq k \\ 1 \leq \ell \leq |\alpha| }}
@@ -1207,7 +1238,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
       \Bigg)
   \end{multline*}
   and
-  \DIFaddbegin \begin{equation}\DIFadd{\label{eq:JRk}
+  \begin{equation}\label{eq:JRk}
     J_R^{(k)}(q,p) = \sum_{a=1}^{N}
     \sum_{\substack{ |\alpha| \leq k \\ 1 \leq \ell \leq |\alpha| }} \;
 		\sum_{
@@ -1217,78 +1248,121 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 				}
 			}
 			p\indices{_a_i^\alpha} q\indices{_a^i_{[j_1 \cdots j_\ell]}}
-      \sum_{m=1}^\ell (-1)^{|\gamma_m|}\left( \prod_{n \neq m}  \delta_{\gamma_n}^{[b_n]} \right) \dz^{j_m} \otimes \partial_{\gamma_m}\delta_{z_a}.
-  }\end{equation}
+      \sum_{m=1}^\ell (-1)^{|\gamma_m|}\left( \prod_{n \neq m}  \delta_{\gamma_n}\DIFdelbegin \DIFdel{^{[b_n]} }\DIFdelend \DIFaddbegin \DIFadd{^{[j_n]} }\DIFaddend \right) \dz^{j_m} \otimes \partial_{\gamma_m}\delta_{z_a}.
+  \end{equation}
 
-  \DIFadd{To see that these are dual pairs, we simply generalize the proof of
-  Proposition~\ref{prop:J1-dual-pair}. We first check the conditions
+  \DIFdelbegin \DIFdel{To see that these are dual pairs, we simply generalize the proof of Proposition~\ref{prop:J1-dual-pair}. We first check the conditions
   of Lemma~\ref{lem:transitive-action}. Note that $\SDiff(\R^n)$ acts
   transitively on $Q^{(k)}_N$ because groups always act transitively on equivalence classes, and $Q^{(k)}_{N} := \SDiff(\R^{n}) / \iso^{(k)}(z)$.
   Secondly, the cotangent-lifted
-  action preserves level sets of $J_R^{(k)}$. To see this, let
-  $\varphi \in \SDiff(\R^n)$ and $(q,p) \in T^* Q^{(k)}_N$, then we
+  action preserves level sets of $J_R^{(k)}$.
+	To see this, let
+  $\varphi \in \SDiff(\R^n)$ }\DIFdelend \DIFaddbegin \begin{prop} \label{prop:k dual pairs}
+  	\DIFadd{The maps $J_L^{(k)}$ }\DIFaddend and \DIFdelbegin \DIFdel{$(q,p) \in T^* Q^{(k)}_N$, then we
   have
-  }\begin{align*}\DIFadd{
+  }\begin{align*}\DIFdel{
     \langle J_R^{(k)}\big(\varphi\cdot(q,p)\big), w \rangle
-    }&\DIFadd{= \langle T^{*} \varphi \cdot (q,p) , ( \varphi^{-1} \cdot q ) \cdot w \rangle }\\
-    &\DIFadd{= \langle T^{*} \varphi \cdot (q,p) ,  T\varphi^{-1} \cdot (q \cdot w) \rangle }\\
-    &\DIFadd{= \langle (q,p) , T \varphi \cdot T\varphi^{-1} (q \cdot w) \rangle }\\
-    &\DIFadd{= \langle (q,p) , q \cdot w \rangle = \langle J_{R}^{(k)}(q,p) , w \rangle,
+    }&\DIFdel{= \langle T^{*} \varphi \cdot (q,p) , ( \varphi^{-1} \cdot q ) \cdot w \rangle }\\
+    &\DIFdel{= \langle T^{*} \varphi \cdot (q,p) ,  T\varphi^{-1} \cdot (q \cdot w) \rangle }\\
+    &\DIFdel{= \langle (q,p) , T \varphi \cdot T\varphi^{-1} (q \cdot w) \rangle }\\
+    &\DIFdel{= \langle (q,p) , q \cdot w \rangle = \langle J_{R}^{(k)}(q,p) , w \rangle,
   }\end{align*}
-  \DIFadd{where we used on the second line that the actions commute.
-  Finally, we must show that $(J_R^{(k)})^{-1}(m)$ is a section of $T^* Q^{(k)}_N$
+  %DIFAUXCMD
+\DIFdel{where we used on the second line that the actions commute.
+	Finally, we must show that $(J_R^{(k)})^{-1}(m)$ is a section of $T^* Q^{(k)}_N$
   for any $m$ in the range of $J_{R}^{(k)}$.
   Let $(q,p) \in \big(J_R^{(k)}\big)^{-1}(m)$ and let
-  $\psi \in \SDiff(\R^n)$ such that $q = \Jet^{k}_z(\psi)$. Then
+  $\psi \in \SDiff(\R^n)$ such that $q = \Jet^{k}_z(\psi)$. 
+	Then
   $T^{*}\psi \cdot (q,p) = (\Jet^k_z(\rm{id}),\pi)$ for some $\pi$.
-  Since the identity jet $\bar{q} := \Jet^k_z(\rm{id})$ satisfies
-  $\bar{q}\indices{_a^i_j} = \delta^i_j$ and
-  $\bar{q}\indices{_a^i_{[j_1 \cdots j_\ell]}} = 0$ for $l > 1$, we
-  find that~}\eqref{eq:JRk} \DIFadd{reduces to
-  }\DIFaddend \begin{equation*}
-    J_R^{(k)}(\DIFdelbegin \DIFdel{q}\DIFdelend \DIFaddbegin \bar{q}\DIFaddend ,\DIFdelbegin \DIFdel{p}\DIFdelend \DIFaddbegin \DIFadd{\pi}\DIFaddend ) = \sum_{a=1}\DIFdelbegin \DIFdel{^{N}
-    \sum_{\substack{ |\alpha| \leq k \\ 1 \leq \ell \leq |\alpha| }} }%DIFDELCMD < \;
-%DIFDELCMD < 		%%%
-\DIFdelend \DIFaddbegin \DIFadd{^N
-    }\DIFaddend \sum\DIFdelbegin \DIFdel{_{
-			\substack{
-				j_1,\dots,j_\ell \in \{1,\dots,n\} \\
-				[\gamma_1,\dots,\gamma_\ell] \in \Pi(\alpha,\ell)
-				}
-			}
-			p}\DIFdelend \DIFaddbegin \DIFadd{_{|\alpha| \leq k}
-			\pi}\DIFaddend \indices{_a_i^\alpha} \DIFdelbegin \DIFdel{q}%DIFDELCMD < \indices{_a^i_{[j_1 \cdots j_\ell]}}
-%DIFDELCMD <       %%%
-\DIFdel{\sum_{m=1}^\ell }\DIFdelend (-1)\DIFdelbegin \DIFdel{^{|\gamma_m|}}%DIFDELCMD < \left( %%%
-\DIFdel{\prod_{n \neq m}  \delta_{\gamma_n}^{[b_n]} }%DIFDELCMD < \right) %%%
-\DIFdelend \DIFaddbegin \DIFadd{^{|\alpha|} }\dz\DIFadd{^i }\DIFaddend \otimes \partial\DIFdelbegin \DIFdel{_{\gamma_m}}\DIFdelend \DIFaddbegin \DIFadd{_\alpha }\DIFaddend \delta_{z_a}\DIFaddbegin \DIFadd{.
-  }\DIFaddend \end{equation*}
-  \DIFdelbegin \DIFdel{The }\DIFdelend \DIFaddbegin \DIFadd{Since the points $z_a$ are distinct this mapping
+	Since the identity jet $\bar{q} := \Jet^k_z(\rm{id})$ satisfies
+  $\bar{q}\indices{_a^i_j} = \delta^i_j$ and $\bar{q}\indices{_a^i_{[j_1 \cdots j_\ell]}} = 0$ for $l > 1$, we
+  find that~}%DIFDELCMD < \eqref{eq:JRk} %%%
+\DIFdel{reduces to }\begin{displaymath}\DIFdel{
+    J_R^{(k)}(\bar{q},\pi) = \sum_{a=1}^N
+    \sum_{|\alpha| \leq k}
+			\pi\indices{_a_i^\alpha} (-1)^{|\alpha|} \dz^i \otimes \partial_\alpha \delta_{z_a}.
+  }\end{displaymath}
+  %DIFAUXCMD
+\DIFdel{Since the points $z_a$ are distinct this mapping
   $J_R^{(k)}(\bar{q},\,\cdot\,)$ is clearly injective into
-  $\mathfrak{X}_{\rm div}(\R^n)^*$. By invariance of $J_R^{(k)}$ under
-  the }\DIFaddend action of $\SDiff(\R^n)$ \DIFdelbegin \DIFdel{is transitive on $Q_N^{(k)}$, and therefore transitive }\DIFdelend \DIFaddbegin \DIFadd{it follows that
-  $\pi \in T^*_{\bar{q}} Q^{(k)}_N$ is the unique element such that
-  $J_R^{(k)}(\bar{q},\pi) = m$, and since $\SDiff(\R^n)$ acts by
-  fiber-preserving diffeomorphisms on $T^* Q^{(k)}_N$, it follows that
-  $(J_R^{(k)})^{-1}(m)$ is a section of $T^* Q^{(k)}_N$.
-}
+  $\mathfrak{X}_{\rm div}(\R^n)^*$.
+	By invariance of }\DIFdelend $J_R^{(k)}$ \DIFdelbegin \DIFdel{under
+  the action of $\SDiff(\R^n)$ it follows that
+  $\pi \in T^*_{\bar{q}} Q^{(k)}_N$ is the unique element such that $J_R^{(k)}(\bar{q},\pi) = m$}\DIFdelend \DIFaddbegin \DIFadd{form a weak dual pair.
+  }\end{prop}
+  \begin{proof}
+  	 \DIFadd{The result is a direct application of \mbox{%DIFAUXCMD
+\cite[Corollary 2.8]{GayBalmazVizman2012}
+}%DIFAUXCMD
+. To make the exposition more self-contained, we provide some details. By \mbox{%DIFAUXCMD
+\cite[Corollary 2.6]{GayBalmazVizman2012}
+}%DIFAUXCMD
+we need only show that $J_L$ and $J_R$ are equivariant, and that $J_L$ is invariant under the right action of $\iso(z)$.
+	Equivariance follows from the fact that $J_R$ and $J_L$ are derived from cotangent lifted group actions \mbox{%DIFAUXCMD
+\cite[Corollary 4.2.11]{FOM}
+}%DIFAUXCMD
+.
+	So we need only illustrate that $J_L$ is (right) $\iso(z)$ invariant. This can be seen as a consequence of the commutativity of the left and right actions on $Q^{(k)}$.  
+	For notational clarity, let us denote this right action by $\rho : Q^{(k)} \times \iso(z) \to Q^{(k)}$. 
+	Explicitly, any element $q \in Q^{(k)}$ is expressible as the $k$-jet of some diffeomorphism $\varphi$}\DIFaddend ,
+	and \DIFdelbegin \DIFdel{since $\SDiff(\R^n)$ acts by
+  fiber-preserving diffeomorphisms on $T^* Q^{(k)}_N$, it follows that $(J_R^{(k)})^{-1}(m)$ is a section of $T^* Q^{(k)}_N$.
+  }\DIFdelend \DIFaddbegin \DIFadd{$\rho( q , \psi) = \Jet_z^{(k)}( \varphi \circ \psi)$.
+	}\DIFaddend 
 
-  \DIFadd{Thus Lemma~\ref{lem:transitive-action} implies that $\SDiff(\R^n)$
-  acts transitively }\DIFaddend on the level sets of the momentum map \DIFdelbegin \DIFdel{$J_R^{(1)}$.
-  By }\DIFdelend \DIFaddbegin \DIFadd{$J_R^{(k)}$
-  and by }\DIFaddend Theorem~\ref{thm:commuting_actions}, $J_L^{(k)}$ and
-  $J_R^{(k)}$ form a dual pair. This gives us the final result on
+	\DIFdelbegin \DIFdel{Thus Lemma~\ref{lem:transitive-action} implies that $\SDiff(\R^n)$
+  acts transitively on the level sets of the momentum map $J_R^{(k)}$
+  and by Theorem~\ref{thm:commuting_actions}, $J_L^{(k)}$ }\DIFdelend \DIFaddbegin \DIFadd{Similarly, any element of the tangent fiber $T_\varphi \SDiff(\R^n)$ may be written as a composition $u \circ \varphi$ for some $u \in \mathfrak{X}_{\rm div}(\R^n)$.
+	Elements of $TQ^{(k)}$ are of the form $\Jet_z^{(k)}( u \circ \varphi)$ for $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $\varphi \in \SDiff(\R^n)$.
+	Given this representation, the tangent lift of the action $\rho$, also denoted $\rho: TQ^{(k)} \times \iso(z) \to TQ^{(k)}$, is given by
+	}\begin{align}\DIFadd{
+		\rho( (q,v)  , \psi ) = \Jet_z^{(k)}( u \circ \varphi \circ \psi ) \label{eq:tangent action}
+	}\end{align}
+	\DIFadd{for $(q,v) \in TQ^{(k)}$ and where $u \in \mathfrak{X}_{\rm div}(\R^n)$ }\DIFaddend and \DIFdelbegin \DIFdel{$J_R^{(k)}$ form a dual pair . This }\DIFdelend \DIFaddbegin \DIFadd{$\varphi \in \SDiff( \R^n)$ are arbitrary up to the constraint $(q,v) = \Jet_{z}^{(k)}( u \circ \varphi)$.
+	The cotangent lifted action is a left action, $\rho^* : \iso(z) \times T^*Q^{(k)} \to T^*Q^{(k)}$, defined implicitly by the condition
+	}\begin{align}\DIFadd{
+		\langle \rho^*( \psi , (q,p) ) , \rho( (q,v) , \psi^{-1} ) \rangle = \langle (q,p) , (q,v) \rangle \label{eq:dual action}
+	}\end{align}
+	\DIFadd{for all $(q,p) \in T^*Q^{(k)}$ and $(q,v) \in TQ^{(k)}$.
+	This action is equivalent to the one defined in the discussion preceding \mbox{%DIFAUXCMD
+\cite[Corollary 4.2.11]{FOM}
+}%DIFAUXCMD
+.
+	In particular, $\rho^*( \psi , (q,p) )$ is a covector over the point $\tilde{q} = \rho( q , \psi^{-1})$.
+	By the definition of $J_L$ we observe
+	}\begin{align*}\DIFadd{
+		\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle = \langle  \rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \bar{\varphi} ) \rangle, 
+	}\end{align*}
+	\DIFadd{where $\bar{\varphi} \in \SDiff(\R^n)$ is any diffeomorphism such that $\Jet_z^{(k)}( \bar{\varphi} ) = \rho( q , \psi^{-1} )$.
+	If we let $\varphi$ be such that $\Jet^{(k)}_z( \varphi ) = q$ then we can simply choose $\bar{\varphi} = \varphi \circ \psi^{-1}$.
+	Thus we get
+	}\begin{align*}\DIFadd{
+			\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle }&\DIFadd{= \langle  \rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \varphi \circ \psi^{-1} ) \rangle }\\
+			&\DIFadd{= \langle  \rho^*( \psi ,  (q,p) )  ,  \rho( \Jet_z^{(k)}(u \circ \varphi) , \psi^{-1} ) \rangle }\\
+			&\DIFadd{= \langle (q,p) , \Jet_z^{(k)}( u \circ \varphi) \rangle }\\
+			&\DIFadd{= \langle J_L(q,p) , u \rangle, 
+	}\end{align*}
+	\DIFadd{using~}\eqref{eq:tangent action} \DIFadd{and~}\eqref{eq:dual action} \DIFadd{in the second and third equality.
+	Thus, we see that $J_L$ is invariant under the right action of $\iso(z)$ on $Q^{(k)}$ and the result follows.
+  }\end{proof}
+
+  \DIFadd{In the case of $k=1$ we obtain the weak dual pair of the previous section and Proposition \ref{prop:J1-dual-pair} is a corollary of Proposition \ref{prop:k dual pairs}.
+  Proposition \ref{prop:k dual pairs} }\DIFaddend gives us the final result on
   jetlet parametrized solutions.
-  \DIFdelbegin \DIFdel{The proof is identical to that given in Proposition~\ref{prop:0-solutions}.
-  }\DIFdelend \begin{prop}\label{prop:k-solutions}
-    Let $p \ge \frac{n}{2} + k + 1$ and $\sigma > 0$.
+  \DIFdelbegin %DIFDELCMD < \begin{prop}\label{prop:k-solutions}
+%DIFDELCMD <     %%%
+\DIFdelend \DIFaddbegin \begin{thm}\label{thm:k-solutions}
+    \DIFaddend Let $p \ge \frac{n}{2} + k + 1$ and $\sigma > 0$.
     Then $H^{(k)} = h_{p,\sigma} \circ J_L^{(k)}$ is $C^1$.
     Let $x(t)$ be a solution to Hamilton's equations on
     $T^*Q^{(k)}_N$, then $J_L^{(k)}( x(t))$ is a solution to Hamilton's
     equations on $\mathfrak{X}_{\rm div}(\R^n)^*$
     and $J_R^{(k)}( x(t))$ is constant in time.
-  \end{prop}
-  Remark that $K_{p,\sigma}$ has smoothness $C^{2p-n-1}$ by considering
+  \DIFdelbegin %DIFDELCMD < \end{prop}
+%DIFDELCMD <   %%%
+\DIFdelend \DIFaddbegin \end{thm}
+  \DIFaddend Remark that $K_{p,\sigma}$ has smoothness $C^{2p-n-1}$ by considering
   that the Fourier representations of its derivatives are integrable,
   while we need $K_{p,\sigma} \in C^{2k+1}$ to allow composition with
   $k$-th derivatives of delta distributions on each side and still
@@ -1325,42 +1399,48 @@ In particular, circulation is one of the conserved momenta
 associated to the particle relabeling symmetry of fluids.
 More specifically,
 recall that $h_0$ is the Hamiltonian for Euler's equations,
-and this Hamiltonian is $\SDiff(\R^n)$ invariant. Moreover, we have a dual pair
+and this Hamiltonian is $\SDiff(\R^n)$ invariant. Moreover, we have a
+\DIFaddbegin \DIFadd{weak}\footnote{%DIF > 
+  \DIFadd{With $\SDiff(\R^n)$ as right action this would be a proper dual
+  pair, but $\iso(z) \subset \SDiff(\R^n)$ does not act transitively
+  on the level sets of $J_\text{spatial}$, hence the dual pair is weak.
+}} \DIFaddend dual pair
 $J_\text{spatial}: T^*\SDiff(\R^n) \to \mathfrak{X}_{\rm div}(\R^n)^*$
 and $J_\text{conv}: T^*\SDiff(\R^n) \to \mathfrak{iso}(z)^*$ of
 spatial and convective momentum maps induced by
 the left action of $\SDiff(\R^n)$ and the right action of
 $\iso(z) \subset \SDiff(\R^n)$ on $\SDiff(\R^n)$ itself.
-By \DIFdelbegin \DIFdel{the general principles discussed earlier, the }\DIFdelend \DIFaddbegin \DIFadd{applying Theorem \ref{thm:dual_pairs} with $J_1 = J_\text{conv}$ and $J_2 = J_\text{spatial}$ we know that Hamiltonian }\DIFaddend dynamics on $T^*\SDiff(\R^n)$ 
-\DIFdelbegin \DIFdel{exhibits }\DIFdelend \DIFaddbegin \DIFadd{with respect to a Hamiltonian of the form $h \circ J_1$ will
-exhibit }\DIFaddend the constant of motion
+By applying Theorem\DIFdelbegin \DIFdel{\ref{thm:dual_pairs} with $J_1 = J_\text{conv}$ and $J_2 = J_\text{spatial}$ }\DIFdelend \DIFaddbegin \DIFadd{~\ref{thm:dual_pairs} with $J_1 = J_\text{spatial}$
+and $J_2 = J_\text{conv}$ }\DIFaddend we know that Hamiltonian dynamics on
+$T^*\SDiff(\R^n)$ with respect to a Hamiltonian of the form
+$h \circ J_1$ will exhibit the constant of motion
 \begin{equation}\label{eq:abstract-circulation}
   \langle J_\text{conv}(\varphi,p_\varphi) , w \rangle
   = \langle p_\varphi , T\varphi \cdot w \rangle
+  \DIFaddbegin \qquad \DIFadd{\text{for all } w \in \mathfrak{iso}(z)}\DIFaddend
 \end{equation}
-for all $w \in \mathfrak{X}_{\rm div}(\R^n)$.  
-This instance of Noether's theorem applies to regularized models as well as to the non-regularized case of Euler's.
+\DIFdelbegin\DIFdel{for all $w \in \mathfrak{X}_{\rm div}(\R^n)$.}\DIFdelend
+This instance of Noether's theorem applies to regularized models as well as to the non-regularized case of Euler's \DIFaddbegin \DIFadd{fluid equations}\DIFaddend .
 In the case of Euler's fluid equations, the equivalence between the above conservation law
 and Kelvin's circulation theorem is demonstrated by a heuristic
 argument~\cite[Ch~1, Thm~5.5]{ArnoldKhesin1998}, which goes as follows. 
 Consider a given closed curve $\gamma_0\colon S^1 \to \R^n$ and a family
-of vector fields $w_\varepsilon$ such that \DIFdelbegin \DIFdel{$w_\varepsilon(\gamma(s)) = \gamma'(s)$
-}\DIFdelend \DIFaddbegin \DIFadd{$w_\varepsilon(\gamma_0(s)) = \gamma'_0(s)$
-}\DIFaddend and such that the (weak in $L^2$) limit $w = \lim_{\varepsilon \to 0} w_\varepsilon$ is the generalized function
+of vector fields $w_\varepsilon$ such that $w_\varepsilon(\gamma_0(s)) = \gamma'_0(s)$
+and such that the (weak in $L^2$) limit $w = \lim_{\varepsilon \to 0} w_\varepsilon$ is the generalized function
 \begin{equation*}
-  w(x) =  \gamma'_0(s) \otimes \delta(x-\gamma_0(s))
-\end{equation*}
-Assuming $\epsilon$ is small and writing 
+  w(x) =  \gamma'_0(s) \otimes \delta(x-\gamma_0(s))\DIFaddbegin \DIFadd{.
+}\DIFaddend \end{equation*}
+Assuming \DIFdelbegin \DIFdel{$\epsilon$ }\DIFdelend \DIFaddbegin \DIFadd{$\varepsilon$ }\DIFaddend is small and writing
 $p_\varphi = \langle \dot{\varphi} , \,\cdot\, \rangle_{L^2}$, we find
 \begin{align*}
   \langle J_\text{conv}(\varphi,p_\varphi) , w_\varepsilon \rangle
   &= \langle \dot{\varphi} , T\varphi \cdot w_\varepsilon \rangle_{L^2}\\
-  &= \int_{\mathbb{R}^n} \langle \dot{\varphi}(x) , \textrm{D}\varphi(x)\cdot w_\epsilon(x) \rangle_{\mathbb{R}^n} \,\textrm{d} x \\
+  &= \int_{\mathbb{R}^n} \langle \dot{\varphi}(x) , \textrm{D}\varphi(x)\cdot w\DIFdelbegin \DIFdel{_\epsilon}\DIFdelend \DIFaddbegin \DIFadd{_\varepsilon}\DIFaddend (x) \rangle_{\mathbb{R}^n} \,\textrm{d} x \\
   &\approx \oint \langle \dot{\varphi}(\gamma_0(s)) , \textrm{D}\varphi(\gamma_0(s))\cdot \gamma_0'(s) \rangle_{\mathbb{R}^n} \,\textrm{d} s \\
   &= \oint \langle u(\gamma(s,t)) , \partial_s \gamma(s,t) \rangle_{\mathbb{R}^n} \,\textrm{d} s,
 \end{align*}
 where $u = \dot{\varphi}\circ\varphi^{-1}$ is the usual Euler
-representation of the fluid flow \DIFaddbegin \DIFadd{and $\gamma(s,t) := \varphi_t(\gamma_0(s))$}\DIFaddend . 
+representation of the fluid flow and $\gamma(s,t) := \varphi_t(\gamma_0(s))$. 
 Therefore, conservation of $J_{\rm conv}$ leads to conservation of circulation.
 
 A more rigorous correspondence is developed in \cite{HolmMarsdenRatiu1998}.
@@ -1369,8 +1449,8 @@ where $\mu$ is the volume form on $\R^n$.
 For any smooth curve $\gamma:S^1 \to \R^n$ we may consider the current
 $\mathscr{K}(\gamma) \in \mathfrak{X}_{\rm div}(\R^n)^{**}$ defined by
 \begin{equation*}
-	\langle \mathscr{K}(\gamma) , m \rangle = \int_{\gamma} \tilde{m}
-\end{equation*}
+	\langle \mathscr{K}(\gamma) , m \rangle = \int_{\gamma} \tilde{m}\DIFaddbegin \DIFadd{.
+}\DIFaddend \end{equation*}
 By Theorem 6.2 of \cite{HolmMarsdenRatiu1998}, if $\gamma_t(s) = \varphi_t(\gamma_0(s))$ and $m = \tilde{m} \otimes \mu$ satisfies
 the ideal incompressible fluid equation (perhaps regularized), then the circulation
 \begin{equation*}
@@ -1382,80 +1462,131 @@ relabeling symmetry for any $\SDiff(\R^n)$ invariant Lagrangian.
 
 In light of this discussion, it is natural to consider \eqref{eq:abstract-circulation} as the  fundamental conservation law. The main goal in the remainder of this section is to show that the jet-particle solutions satisfy conservation laws that are `shadows' of this fundamental law in the sense that they are associated with a \emph{partial} relabeling symmetry. To see this, it is useful to define the $k$-th order isotropy group,
 $\iso^{(k)}(z) = \{ \psi \in \SDiff(\R^n) \mid \Jet^{k}_z( \psi) = \Jet^k_z (\rm{id}) \}$, where we wrote $\rm{id}$ for the identity mapping and $z$ is shorthand for $z_1, \ldots, z_N \in \mathbb{R}^n$.
-Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the corresponding quotient map is given by $\Jet_z^k$.  
- The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$ in the sense that
- for any \DIFdelbegin \DIFdel{$(p,q) \in T^*Q^{(k)}_N$ }\DIFdelend \DIFaddbegin \DIFadd{$(q,p) \in T^*Q^{(k)}_N$ }\DIFaddend and any $v_\varphi \in T_\varphi \SDiff(\mathbb{R}^n)$ with $\Jet_z^k(\varphi) = q$ we can
- consider the element \DIFdelbegin \DIFdel{$i(p,q) \in T^*\SDiff(\R^n)$ }\DIFdelend \DIFaddbegin \DIFadd{$i(q,p) \in T^*\SDiff(\R^n)$ }\DIFaddend given by $\langle i(q,p) , v_\varphi \rangle = \langle p , v_\varphi( \varphi^{-1} \cdot q) \rangle$
- \cite[(2.2.4)]{HRS}.
- The commutativity of the following diagram uniquely defines the jetlet solutions:
-% \begin{equation}
-%  \begin{tikzcd}
-%    \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l,"J_\text{spatial}"] T^*\SDiff(\R^n) \ar[r,"J_\text{conv}"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
-%    & T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
-%    & T^*Q^{(k)}_N \uar{i} \ar[uur,"J_R^{(k)}"',bend right = 30] \ar[uul,"J_L^{(k)}",bend left = 30] &
-%  \end{tikzcd}
-% \end{equation}
-\begin{displaymath}
+Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the corresponding quotient map is given by $\Jet_z^k$.
+ \DIFaddbegin \DIFadd{Let us also introduce the right action $R\colon \SDiff(\R^n) \times \iso(z) \to \SDiff(\R^n)$ given by right composition of functions and write $R_\psi = R(\cdot , \psi)$, so that $R_\psi \varphi = \varphi \circ \psi$. We also introduce the cotangent lifted right action $TR^*$ by means of the defining relation
+ }\begin{equation}\DIFadd{\label{eq:cotangent-action}
+ 	\langle TR^*_{\psi^{-1}}p_\varphi, v_\varphi \circ \psi \rangle = \langle p_\varphi, v_\varphi\rangle
+ }\end{equation}
+ \DIFadd{for arbitrary $p_\varphi \in T_\varphi^*\SDiff(\R^n)$ and $v_\varphi \in T_\varphi\SDiff(\R^n)$.
+}
+
+ \DIFaddend The space $T^*Q^{(k)}_N$ naturally embeds into $T^*\SDiff(\R^n) / \iso^{(k)}(z)$\DIFdelbegin \DIFdel{in the sense that
+ }\DIFdelend \DIFaddbegin \DIFadd{, where the quotient is by the cotangent lifted action. More precisely, }\DIFaddend for any $(q,p) \in T^*Q^{(k)}_N$ \DIFdelbegin \DIFdel{and any }\DIFdelend \DIFaddbegin \DIFadd{we can construct the corresponding element $i(q,p) \in T^*\SDiff(\R^n) / \iso^{(k)}(z)$ in the following way: take any $\varphi$ such that $\Jet_z^k(\varphi) = q$ and find $\iota_\varphi(q,p) \in T_\varphi^*\SDiff(\R^n)$ that satisfies, for all }\DIFaddend $v_\varphi \in T_\varphi \SDiff(\mathbb{R}^n)$\DIFdelbegin \DIFdel{with $\Jet_z^k(\varphi) = q$ we can consider the element $i(q,p) \in T^*\SDiff(\R^n)$ given by $\langle i(q,p) , v_\varphi \rangle = \langle p , v_\varphi( \varphi^{-1} \cdot q) \rangle$
+ \mbox{%DIFAUXCMD
+\cite[(2.2.4)]{HRS}
+}%DIFAUXCMD
+.
+ The commutativity of the following diagram uniquely defines the jetlet solutions: %DIF <  \begin{equation}
+%DIF <   \begin{tikzcd}
+%DIF <     \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l,"J_\text{spatial}"] T^*\SDiff(\R^n) \ar[r,"J_\text{conv}"] \ar[d,"\pi"] & \mathfrak{iso}(z)^* \\
+%DIF <     & T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
+%DIF <     & T^*Q^{(k)}_N \uar{i} \ar[uur,"J_R^{(k)}"',bend right = 30] \ar[uul,"J_L^{(k)}",bend left = 30] &
+%DIF <   \end{tikzcd}
+%DIF <  \end{equation}
+}\begin{displaymath}\DIFdel{
 \xymatrix{
 \mathfrak{X}_{\rm div}(\R^n)^* & \ar[l]_{J_{\rm spatial}} T^*\SDiff(\R^n) \ar[d]^{\pi} \ar[r]^{J_{\rm conv}} &  \mathfrak{iso}(z)^* \\
 & T^*\SDiff(\R^n) / \iso^{(k)}(z) & \\
 & T^*Q^{(k)}_N \ar[u]^i \ar@/_2pc/[uur]_{J_R^{(k)}} \ar@/^2pc/[uul]^{J_L^{(k)}} &
 }
-\end{displaymath}
+}\end{displaymath}
+%DIFAUXCMD
+\DIFdelend \DIFaddbegin \DIFadd{,
+ }\begin{equation}\DIFadd{\label{eq:iota-map}
+   \langle \iota_\varphi(q,p) , v_\varphi \rangle = \langle (q, p) , (v_\varphi \circ \varphi^{-1}) \cdot q \rangle,
+ }\end{equation}
+ \DIFadd{cf.~\mbox{%DIFAUXCMD
+\cite[(2.2.4)]{HRS}
+}%DIFAUXCMD
+, where we denote by $(v_\varphi \circ \varphi^{-1}) \cdot q$ the infinitesimal action from the left of $v_\varphi \circ \varphi^{-1} \in \mathfrak{X}_{\rm div}(\R^n)$ on $q$.
+ Then set $i(q,p) = [\iota_\varphi(q,p)]$.
+}\DIFaddend 
 
-\DIFdelbegin \DIFdel{Namely, for the left-hand part }\DIFdelend \DIFaddbegin \DIFadd{For the left side }\DIFaddend of the diagram\DIFdelbegin \DIFdel{recall that we have shown in the previous section that a jetlet solution has a velocity vector in $T \SDiff(\R^n)$ of the form
-  }\begin{displaymath}\DIFdel{
-    v_{\varphi} = (K * J_L^{(k)}(p_q)) \circ \varphi
-  }\end{displaymath}
-  %DIFAUXCMD
-\DIFdel{for some $p_q \in T^*_q Q^{(k)}_N$, where $q = \Jet^k_z(\varphi)$. From this it follows that the corresponding Legendre momentum $p_\varphi$ satisfies, for all $ w \in \mathfrak{X}_{\rm div}(\R^n)$}\DIFdelend , \DIFdelbegin \begin{displaymath}\DIFdel{
-  \left< J_\text{spatial}(p_\varphi), w\right> = \left< p_\varphi, w \circ \varphi \right> = \left< J_L^{(k)}(p_q), w \right>,
-  }\end{displaymath}
-  %DIFAUXCMD
-\DIFdel{which shows commutativity of the left-hand part of the diagram.
-As for the right-hand part, we again use the special form of $p_\varphi$ to conclude that, for all $ w \in \mathfrak{iso}(z) \subset \mathfrak{X}_{\rm div}(\R^n)$,
- }\begin{displaymath}\DIFdel{
- 	\left<J_\text{conv}(p_\varphi), w\right> = \left<p_\varphi, T\varphi  (w) \right> = \left<J_L^{(k)}(p_q),  T\varphi (w \circ \varphi^{-1}) \right>. \label{compare_1}
- }\end{displaymath}
- %DIFAUXCMD
-\DIFdel{On the other hand, if we write $\phi_\varphi: Q^{(k)}_N \to Q^{(k)}_N$ for the left action $\phi_\varphi (q) = \varphi \cdot q$, we have 
- }\begin{displaymath}\DIFdel{
-   \left<J_R^{(k)}(p_q), w\right> = \left< p_q, T_{\phi_\varphi} (w_{Q^{(k)}_N} (q_0))   \right> =  \left<p_q, (T\varphi (w \circ \varphi^{-1}) )_{Q^{(k)}_N} (q) \right>,
- }\end{displaymath}
- %DIFAUXCMD
-\DIFdel{where we denoted the infinitesimal left action of $w$ on $Q^{(k)}_N$ by $w_{Q^{(k)}_N}$. The velocity corresponding (via the inverse of the Legendre transform) to $p_q$ can be written as $ T\Jet_z^k( (K * J_L^{(k)}(p_q)) \circ \varphi)$,
- and therefore one concludes that 
- }\begin{displaymath}\DIFdel{
- 	\left<J_R^{(k)}(p_q), w\right> = \left< J_L^{(k)}(p_q), T \varphi (w \circ \varphi^{-1}) \right>. \label{compare_2}
- }\end{displaymath}
- %DIFAUXCMD
-\DIFdel{This shows the commutativity of the right-hand part of the diagram above (compare }%DIFDELCMD < \eqref{compare_1} %%%
-\DIFdelend \DIFaddbegin \DIFadd{note that the statement $\pi(p_\varphi) = i(p_q)$ for some $p_\varphi \in T^* \SDiff(\mathbb{R}^n)$ }\DIFaddend and \DIFdelbegin %DIFDELCMD < \eqref{compare_2}%%%
-\DIFdel{)}\DIFdelend \DIFaddbegin \DIFadd{$p_q \in T^*Q_N^{(k)}$ is equivalent to the statement that $\langle p_\varphi , w \circ \varphi \rangle = \langle p_q , \Jet^{(k)}_z ( w \circ \varphi) \rangle$.
+ \DIFdelbegin \DIFdel{For the left side of the diagram}\DIFdelend \DIFaddbegin \DIFadd{To see that $i(q,p)$ is well defined}\DIFaddend , note that \DIFdelbegin \DIFdel{the statement $\pi(p_\varphi) = i(p_q)$ for some $p_\varphi \in T^* \SDiff(\mathbb{R}^n)$ and$p_q \in T^*Q_N^{(k)}$ is equivalent to the statement that $\langle p_\varphi , w \circ \varphi \rangle = \langle p_q , \Jet^{(k)}_z ( w \circ \varphi) \rangle$.
 From the definitions of $J_\text{spatial}$ and $J_L^{(k)}$ we find 
-  }\begin{equation*}\DIFadd{
+  }\begin{displaymath}\DIFdel{
   \left< J_\text{spatial}(p_\varphi), w\right> = \left< p_\varphi, w \circ \varphi \right> = \langle p_q , \Jet^{(k)}_z ( w \circ \varphi) \rangle = \left< J_L^{(k)}(p_q), w \right>
-  }\end{equation*}
-  \DIFadd{when $\pi(p_\varphi) = i(p_q)$.
-  This verifies the left half of the diagram. The right hand side can be verified in the same manner}\DIFaddend .
+  }\end{displaymath}
+  %DIFAUXCMD
+\DIFdel{when $\pi(p_\varphi) = i(p_q)$.
+This verifies the left half }\DIFdelend \DIFaddbegin \DIFadd{if $\varphi' = \varphi \circ \psi$ for $\psi \in \iso^{(k)}(z)$, then for any $v_{\varphi'} \in T_{\varphi'} \SDiff(\R^n)$ we have}
+\begin{multline*}\DIFadd{
+   \langle TR^*_{\psi^{-1}} \iota_\varphi(q,p), v_{\varphi'} \rangle
+ = \langle \iota_\varphi(q,p), v_{\varphi'} \circ \psi^{-1} \rangle} \\
+\DIFadd{
+ = \langle (q, p), (v_{\varphi'} \circ \psi^{-1} \circ \varphi^{-1}) \cdot q \rangle
+ = \langle (q, p), (v_{\varphi'} \circ \varphi'^{-1}) \cdot q \rangle
+ = \langle \iota_{\varphi'}(q,p), v_{\varphi'} \rangle}
+\end{multline*}
+ \DIFadd{using~}\eqref{eq:cotangent-action} \DIFadd{and~}\eqref{eq:iota-map} \DIFadd{in the first and second equalities.
+ Since $[TR^*_{\psi^{-1}} \iota_\varphi(q,p)] = [\iota_{\varphi'}(q,p)]$, we conclude that $i(q,p)$ is well defined.
+}
 
-%DIF >  As for the right-hand part, we again use the special form of $p_\varphi$ to conclude that, for all $ w \in \mathfrak{iso}(z) \subset \mathfrak{X}_{\rm div}(\R^n)$,
-%DIF >  \begin{equation}
-%DIF >  	\left<J_\text{conv}(p_\varphi), w\right> = \left<p_\varphi, T\varphi  (w) \right> = \left<J_L^{(k)}(p_q),  T\varphi (w \circ \varphi^{-1}) \right>. \label{compare_1}
-%DIF >  \end{equation}
-%DIF >  On the other hand, if we write $\phi_\varphi: Q^{(k)}_N \to Q^{(k)}_N$ for the left action $\phi_\varphi (q) = \varphi \cdot q$, we have 
-%DIF >  \begin{equation*}
-%DIF >    \left<J_R^{(k)}(p_q), w\right> = \left< p_q, T_{\phi_\varphi} (w_{Q^{(k)}_N} (q_0))   \right> =  \left<p_q, (T\varphi (w \circ \varphi^{-1}) )_{Q^{(k)}_N} (q) \right>,
-%DIF >  \end{equation*}
-%DIF >  where we denoted the infinitesimal left action of $w$ on $Q^{(k)}_N$ by $w_{Q^{(k)}_N}$. The velocity corresponding (via the inverse of the Legendre transform) to $p_q$ can be written as $ T\Jet_z^k( (K * J_L^{(k)}(p_q)) \circ \varphi)$,
-%DIF >  and therefore one concludes that 
-%DIF >  \begin{equation}
-%DIF >  	\left<J_R^{(k)}(p_q), w\right> = \left< J_L^{(k)}(p_q), T \varphi (w \circ \varphi^{-1}) \right>. \label{compare_2}
-%DIF >  \end{equation}
-%DIF >  This shows the commutativity of the right-hand part of the  diagram above (compare \eqref{compare_1} and \eqref{compare_2}).
-  \DIFaddbegin 
+ \DIFadd{We claim that
+ }\begin{equation}\DIFadd{
+ 	i(q, p) = }[\DIFadd{TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)}]\DIFadd{, \label{i_explicit}
+ }\end{equation}
+ \DIFadd{where $\varphi$ is such that $\Jet_z^k(\varphi) = q$. This follows since for any $v_{\varphi} \in T_{\varphi}\SDiff(\R^n)$
+ }\begin{equation*}\DIFadd{
+	\langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), v_{\varphi}\rangle = \langle  J_L^{(k)}(q, p), v_\varphi \circ \varphi^{-1}\rangle = \langle (q, p), (v_\varphi \circ \varphi^{-1}) \cdot q \rangle.
+ }\end{equation*}
 
-  \DIFaddend Again, the right legs of both dual pairs yield the conserved quantities.
+ 
+\DIFadd{With these preliminary remarks in mind, we can now show the commutativity of the following diagram:}
+\begin{displaymath}\DIFadd{
+\xymatrix@R=3em@C=5em{
+& \ar@/_1.5pc/[dl]_{J_{\rm spatial}} S \subset T^*\SDiff(\R^n) \ar[d]^{\pi} \ar@/^1.5pc/[dr]^{ \left. J_{\rm conv} \right|_S} & \\
+\mathfrak{X}_{\rm div}(\R^n)^* & \ar[l]_-{[J_{\rm spatial}]} i(T^*Q^{(k)}_N) \subset T^*\SDiff(\R^n) / \iso^{(k)}(z) \ar[r]^-{[\left. J_{\rm conv}\right|_{S} ]} & \mathfrak{iso}(z)^* \\
+& T^*Q^{(k)}_N \ar[u]^i \ar@/_1.5pc/[ur]_{J_R^{(k)}} \ar@/^1.5pc/[ul]^{J_L^{(k)}} &
+}
+}
+\end{displaymath}
+\DIFadd{Here, $S = (\pi^{-1} \circ i)\bigl(T^*Q^{(k)}_N\bigr)$ and $J_{\rm spatial}$ and $J_{\rm conv}$ are defined in the natural manner through the left and right actions of $\SDiff(\R^n)$ and $\iso(z)$.
+To verify the left side }\DIFaddend of the diagram\DIFaddbegin \DIFadd{, we let $(q,p) \in T^*Q^{(k)}_N$ and $\varphi$ such that $\Jet_z^k(\varphi) = q$. Then we obtain from }\eqref{i_explicit} \DIFadd{that for any $w \in \mathfrak{X}_{\rm div}(\R^n)$}
+\begin{align*}
+	&\DIFadd{\langle [J_\text{spatial}](i(q,p)), w\rangle = \langle J_\text{spatial}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle} \\
+	\quad&\DIFadd{= \langle TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), w \circ \varphi \rangle
+	 = \langle J_L^{(k)}(q, p), w \rangle,}
+\end{align*}
+\DIFadd{as required. This also shows that $[J_{\rm spatial}]$ is well defined
+on $T^*\SDiff(\R^n) / \iso^{(k)}(z)$ since the final expression does
+not depend on the choice of representative $\varphi$ for $q$}\DIFaddend .
+\DIFdelbegin \DIFdel{The right hand side can be verified in the same manner. }\DIFdelend 
+
+%DIF <  As for the right-hand part, we again use the special form of $p_\varphi$ to conclude that, for all $ w \in \mathfrak{iso}(z) \subset \mathfrak{X}_{\rm div}(\R^n)$,
+%DIF <  \begin{equation}
+%DIF <  	\left<J_\text{conv}(p_\varphi), w\right> = \left<p_\varphi, T\varphi  (w) \right> = \left<J_L^{(k)}(p_q),  T\varphi (w \circ \varphi^{-1}) \right>. \label{compare_1}
+%DIF <  \end{equation}
+%DIF <  On the other hand, if we write $\phi_\varphi: Q^{(k)}_N \to Q^{(k)}_N$ for the left action $\phi_\varphi (q) = \varphi \cdot q$, we have 
+%DIF <  \begin{equation*}
+%DIF <    \left<J_R^{(k)}(p_q), w\right> = \left< p_q, T_{\phi_\varphi} (w_{Q^{(k)}_N} (q_0))   \right> =  \left<p_q, (T\varphi (w \circ \varphi^{-1}) )_{Q^{(k)}_N} (q) \right>,
+%DIF <  \end{equation*}
+%DIF <  where we denoted the infinitesimal left action of $w$ on $Q^{(k)}_N$ by $w_{Q^{(k)}_N}$. The velocity corresponding (via the inverse of the Legendre transform) to $p_q$ can be written as $ T\Jet_z^k( (K * J_L^{(k)}(p_q)) \circ \varphi)$,
+%DIF <  and therefore one concludes that 
+%DIF <  \begin{equation}
+%DIF <  	\left<J_R^{(k)}(p_q), w\right> = \left< J_L^{(k)}(p_q), T \varphi (w \circ \varphi^{-1}) \right>. \label{compare_2}
+%DIF <  \end{equation}
+%DIF <  This shows the commutativity of the right-hand part of the  diagram above (compare \eqref{compare_1} and \eqref{compare_2}).
+  \DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD <   %%%
+\DIFdel{Again , the right }\DIFdelend \DIFaddbegin \DIFadd{For the right leg, note that 
+}\begin{align*}
+	&\DIFadd{\langle [J_\text{conv}](i(q,p)), w\rangle = \langle J_\text{conv}( TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)), w\rangle} \\
+	&\DIFadd{= \langle  TR^*_{\varphi^{-1}} J_L^{(k)}(q, p), T\varphi \cdot w \rangle = \langle  J_L^{(k)}(q, p), (T\varphi \cdot w) \circ \varphi^{-1} \rangle} \\
+	&\DIFadd{= \langle (q,p),  \Jet_z^k(T\varphi \cdot w)\rangle = \langle  J^{(k)}_R(q,p), w\rangle.}
+\end{align*}
+\DIFadd{Here we used~}\eqref{i_explicit}\DIFadd{, the definition of $J_\text{conv}$,
+and~}\eqref{eq:cotangent-action}\DIFadd{, respectively, in the first three equalities
+and~}\eqref{Moma_right} \DIFadd{in the final step. Again we see that $[J_\text{conv}]$ is well-defined since it does not
+depend on $\varphi$. More explicitly, for another representative
+$\varphi' = \varphi \circ \psi$ with $\psi \in \iso^{(k)}(z)$ we see
+that $\psi$ gets projected out by (the tangent map of) $\pi = \Jet_z^k$.
+That is, the restricted momentum map $J_\text{conv}|_S$ is invariant under the right action of $\iso^{(k)}(z)$
+and therefore descends to a map $[J_\text{conv}|_S ]$ defined on $i\bigl(T^*Q^{(k)}_N\bigr)$.
+}
+
+\DIFadd{The right }\DIFaddend legs of both \DIFaddbegin \DIFadd{weak }\DIFaddend dual pairs yield the conserved quantities.
 From the diagram it is clear that the conservation of $J_R^{(k)}$ exhibited in
 our particle models is a shadow of the conservation of $J_\text{conv}$ in~\eqref{eq:abstract-circulation}.
 Since $J_\text{conv}$ corresponds by Noether's theorem to the (large)
@@ -1464,9 +1595,14 @@ conservation of circulation, we see that conservation of $J_R^{(k)}$ in the jetl
 of the conservation of circulation.
 In other words, our particle models contain a model of Kelvin's circulation theorem within them (cf.~\cite[Theorem 5.5]{JacobsRatiuDesbrun2013}).
 
-\DIFdelbegin \DIFdel{As a side remark we mention that }%DIFDELCMD < \eqref{compare_2} %%%
-\DIFdel{offers an alternative route to derive one momentum map once one has found the other. In contrast,  in the previous section we computed both $J_L^{(k)}$ and $J_R^{(k)}$ using the coordinate expressions, presented in the proof of Proposition~\ref{HL_action_prop}, for the respective actions on $Q^{(k)}_N$.
-}\DIFdelend %DIF > As a side remark we mention that \eqref{compare_2} offers an alternative route to derive one momentum map once one has found the other. In contrast,  in the previous section we computed both $J_L^{(k)}$ and $J_R^{(k)}$ using the coordinate expressions, presented in the proof of Proposition~\ref{HL_action_prop}, for the respective actions on $Q^{(k)}_N$.
+%DIF < As a side remark we mention that \eqref{compare_2} offers an alternative route to derive one momentum map once one has found the other. In contrast,  in the previous section we computed both $J_L^{(k)}$ and $J_R^{(k)}$ using the coordinate expressions, presented in the proof of Proposition~\ref{HL_action_prop}, for the respective actions on $Q^{(k)}_N$.
+\DIFaddbegin \DIFadd{This diagram also provides some insight into the relationship between the developments in this paper and classical Marsden-Weinstein reduction theory \mbox{%DIFAUXCMD
+\cite{MarsdenWeinstein1974}
+}%DIFAUXCMD
+.
+For instance, letting $J_{\rm conv}^{(k)}: T^*\SDiff(\R^n) \to \mathfrak{iso}^{(k)}(z)^*$ be the momentum map associated to the cotangent lift of the right action of $\iso^{(k)}(z)$ on $\SDiff(\R^n)$,
+ one can show that $i\bigl(T^*Q^{(k)}_N\bigr) = (J_{\rm conv}^{(k)})^{-1}(0) / \iso^{(k)}(z)$.  For more details on the connections between general reduction theory and the results of the present paper, see Appendix \ref{app:diagramatic}.
+}\DIFaddend 
 
 
 \section{Particle mergers}
@@ -1554,7 +1690,7 @@ Let us now choose the smooth kernel $K = K_{\infty,1}$ given
 \begin{equation*}\label{eq:smooth-kernel}
   K^{ij}(x) = \Big(\e - \frac{1}{2\rho}\big(1 - \e\big)\Big)\delta^{ij}
     + \Big(\frac{1}{\rho}\big(1 - \e\big) - \e\Big)\frac{x^i x^j}{\|x\|^2},
-\end{equation*}
+\end{equation*}%
 }%
 where $\rho := \frac{\|x\|^2}{2}$. Note that
 $K^{ij}(0) = \frac{1}{2} \delta^{ij}$ and $\partial_k K^{ij}(0) = 0$.
@@ -1617,8 +1753,8 @@ terms of $r$, and we find
 We write $\zeta := \sqrt{8H - 3 p_\phi^2}$ and thus obtain
 asymptotically $p_r = \frac{\zeta}{r} + \mathcal{O}(1)$. Further, we
 have dynamics
-\DIFaddbegin \begin{equation*}
-  \dot{r} = \frac{\partial H}{\partial p_r} = \frac{1}{4}p_r\,\DIFadd{r}^2 + \mathcal{O}(r^4), \qquad
+\begin{equation*}
+  \dot{r} = \frac{\partial H}{\partial p_r} = \frac{1}{4}p_r\,r^2 + \mathcal{O}(r^4), \qquad
   \dot{\phi} = \frac{\partial H}{\partial p_\phi}
                  = \frac{3}{4}p_\phi + \mathcal{O}(r^2)
 \end{equation*}
@@ -1650,22 +1786,19 @@ with $\phi(t) = \frac{3}{4} p_\phi\,t$. Our aim is to show that
 the factor in front of $\dx^i\,\partial_j \delta$, which we shall denote
 by $\tilde{\mu}\indices{_i^j}(t)$, corresponds to
 $\mu\indices{_i^j}(t)$ for a $1$-jetlet with position $q^{(0)} = 0$
-and momentum $p^{(0)} = 0$. \DIFaddbegin \DIFadd{From here on, we use the Frobenius inner
+and momentum $p^{(0)} = 0$. From here on, we use the Frobenius inner
 product to identify $\mathfrak{sl}(2)^* \cong \mathfrak{sl}(2)$, which
 for explicit matrices corresponds to taking the transpose.
-}\DIFaddend For such a setup we have equations of motion
+For such a setup we have equations of motion
 \begin{equation*}
   \dot{\mu}\indices{_i^j}
   = \mu\indices{_i^k} \partial_k u^j(0) - \partial_i u^k(0) \mu\indices{_k^j}
   = -\partial_{km} K^{jl}(0) \mu\indices{_l^m} \mu\indices{_i^k}
     +\partial_{im} K^{kl}(0) \mu\indices{_l^m} \mu\indices{_k^j},
 \end{equation*}
-or in short, \DIFdelbegin \DIFdel{$\dot{\mu} = [\mu,\xi]$ with
-$\xi\indices{^i_j} = \partial_j u^i(0) = \partial_{jk} K^{i l}(0) \mu\indices{_l^k}$}\DIFdelend \DIFaddbegin \DIFadd{$\dot{\mu} = -\ad^*_\xi(\mu) = [\mu,\xi^T]$ with
-$\xi\indices{^i_j} = \partial_j u^i(0) = -\partial_{jk} K^{i l}(0) \mu\indices{_l^k}$}\DIFaddend .
+or in short, $\dot{\mu} = -\ad^*_\xi(\mu) = [\mu,\xi^T]$ with
+$\xi\indices{^i_j} = \partial_j u^i(0) = -\partial_{jk} K^{i l}(0) \mu\indices{_l^k}$.
 To ease calculations, let us choose the basis
-\DIFdel{for $\mathfrak{sl}(2)^* \cong \mathfrak{sl}(2)$, where the
-identification is made through the Frobenius inner product, }\DIFdelend
 \begin{equation*}\label{eq:basis-sl2}
   \omega = \begin{pmatrix}
     0 & -1 \\
@@ -1682,33 +1815,33 @@ identification is made through the Frobenius inner product, }\DIFdelend
 \end{equation*}
 and note that these matrices have norm $\sqrt{2}$. We decompose
 $\mu = j\,\omega + s\,\sigma + t\,\tau$ and the second derivative of
-the kernel as a tensor product\DIFdelbegin \DIFdel{,
-}\DIFdelend \DIFaddbegin \DIFadd{. A calculation verified by symbolic
+the kernel as a tensor product. A calculation verified by symbolic
 computer algebra software shows that
-}\DIFaddend \begin{equation*}
+\begin{equation*}
   \partial_{ij} K^{kl}(0)
-  = \DIFaddbegin \DIFadd{\frac{1}{4} \left(\begin{array}{rr}
+  = \frac{1}{4} \left(\begin{array}{rr}
      -\begin{pmatrix} 1 & 0 \\ 0 & 3 \end{pmatrix} &
       \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \\[2.5ex]
       \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} &
      -\begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}
-    \end{array}\right)}
-  \DIFadd{=-}\DIFaddend \frac{1}{2} \omega_i^k \omega_j^l
-   -\frac{1}{4} \big( \sigma_i^k \sigma_j^l + \tau_i^k \tau_j^l \big).
-\end{equation*}
-\DIFaddbegin \DIFadd{where the indices $i,j$ and $k,l$ label the outer and inner matrix
-elements respectively. }\DIFaddend With these decompositions we find that $\xi$ as
+    \end{array}\right)
+  =-\frac{1}{2} \omega_i^k \omega_j^l
+   -\frac{1}{4} \big( \sigma_i^k \sigma_j^l + \tau_i^k \tau_j^l \big)\DIFdelbegin \DIFdel{.
+}\DIFdelend \DIFaddbegin \DIFadd{,
+}\DIFaddend \end{equation*}
+where the indices $i,j$ and $k,l$ label the outer and inner matrix
+elements respectively. With these decompositions we find that $\xi$ as
 a function of $\mu$ can be written as
 \begin{equation*}
-  \xi = \DIFdelbegin \DIFdel{-j}\DIFdelend \DIFaddbegin \DIFadd{j}\DIFaddend \,\omega + \frac{1}{2}(s\,\sigma + t\,\tau).
+  \xi = j\,\omega + \frac{1}{2}(s\,\sigma + t\,\tau).
 \end{equation*}
 Using the commutation relations $[\omega,\sigma] = 2\tau$,
 $[\omega,\tau] = -2\sigma$, $[\sigma,\tau] = -2\omega$, it then
 follows that
 \begin{equation}\label{eq:mu-dynamics}
   \dot{\mu}
-  = \DIFaddbegin [\DIFadd{\mu , \xi^T}]
-  \DIFadd{= }\DIFaddend \big[j\,\omega+s\,\sigma+t\,\tau \,,\, -j\,\omega + \frac{1}{2}(s\,\sigma + t\,\tau)\big]
+  = [\mu , \xi^T]
+  = \big[j\,\omega+s\,\sigma+t\,\tau \,,\, -j\,\omega + \frac{1}{2}(s\,\sigma + t\,\tau)\big]
   = -3j\big(-t\,\sigma + s\,\tau\big)
   = -\frac{3}{2}j\,[\omega,\mu].
 \end{equation}
@@ -1733,8 +1866,8 @@ time yields
   \dot{\tilde{\mu}}
   = -\dot{\phi}\,\ad_\omega(\tilde{\mu})
   = -\frac{3}{4} p_\phi [\omega,\tilde{\mu}]
-  = -\frac{3}{2} j [\omega,\tilde{\mu}]
-\end{equation*}
+  = -\frac{3}{2} j [\omega,\tilde{\mu}]\DIFaddbegin \DIFadd{, 
+}\DIFaddend \end{equation*}
 and comparing to~\eqref{eq:mu-dynamics} we find that the asymptotic
 solution of the two merging $0$-jetlets matches that of a $1$-jetlet
 with the same angular (and linear) momentum.
@@ -1773,13 +1906,7 @@ $y_1(t)$ of a $1$-jetlet, basically\footnote{%
   existence of a solution curve $y_1(t) \in J_L(T^*Q_1^{(1)})$ that
   $\tilde{y}_0(t)$ is asymptotic to; that would require the `limit
   shadowing property', which is closely related to hyperbolic
-  properties of the dynamics~\DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
-\cite{Ribeiro2014}
-}%DIFAUXCMD
-}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
-\cite{Palmer2012,Ribeiro2014}
-}%DIFAUXCMD
-}\DIFaddend .%
+  properties of the dynamics~\cite{Palmer2012,Ribeiro2014}.%
 } boils down to the question whether the vector field of the dynamics
 on $\mathfrak{X}_{\rm div}(\R^n)^*$ is continuous.
 We have not pursued in detail the question of which topology on
@@ -1831,14 +1958,12 @@ states
   \end{alignedat}
 \end{equation}
 aimed at each other with an offset parameter $d$.
-The initial state is given in center-of-mass polar-coordinates\DIFdelbegin \DIFdel{by
-}\DIFdelend \DIFaddbegin \DIFadd{,
-see~}\eqref{eq:CoM-coords} \DIFadd{and~}\eqref{eq:polar-coords}\DIFadd{, by
-}\DIFaddend \begin{align*}
+The initial state is given in \DIFdelbegin \DIFdel{center-of-mass polar-coordinates}\DIFdelend \DIFaddbegin \DIFadd{center of mass polar coordinates}\DIFaddend ,
+see~\eqref{eq:CoM-coords} and~\eqref{eq:polar-coords}, by
+\begin{align*}
     r    &= 6, \qquad p_r    = -1.5, \\
-    \phi &= 0, \qquad p_\phi = 6d\DIFdelbegin \DIFdel{,
-}\DIFdelend \DIFaddbegin \DIFadd{.
-}\DIFaddend \end{align*}
+    \phi &= 0, \qquad p_\phi = 6d.
+\end{align*}
 Furthermore, we use
 $\sigma = 1$ throughout our experiments. The experiments show that for
 $d = 0.27$ the two particles merge while spinning around each other,
@@ -1885,7 +2010,7 @@ interacting weakly with a third jetlet particle.
 \end{figure}
 
 \section{Conclusion}
-  In this paper we derived a hierarchy of dual pairs
+  In this paper we derived a hierarchy of \DIFaddbegin \DIFadd{weak }\DIFaddend dual pairs
   which induce a family of particle-like solutions, called \emph{jetlets}, and conserved quantities
   that shadow the conservation of circulation.
   The jetlets have internal degrees of freedom given by a jet group.
@@ -1905,18 +2030,18 @@ The developments discussed in the present paper give rise to a number of promisi
 		In such scenarios, the kernel is no longer invariant under rigid transformations
 		and we must consider a general kernel $K:M \times M \to \mathbb{R}^{n \times n}$
 		where $M \subset \mathbb{R}^n$ is an $n$-manifold with boundary.
-        \item An analysis of convergence to Euler equations when $\sigma \to 0$ for the case where the power of the Helmholtz operator, $p$, goes to infinity.  The advantage of the $p=\infty$ case \DIFdelbegin \DIFdel{, }\DIFdelend is that the limiting kernel can be written in terms of elementary functions \cite{MicheliGlaunes2014}.
+        \item An analysis of convergence to Euler equations when $\sigma \to 0$ for the case where the power of the Helmholtz operator, $p$, goes to infinity.  The advantage of the $p=\infty$ case is that the limiting kernel can be written in terms of elementary functions \cite{MicheliGlaunes2014}.
 \end{enumerate}
 
 \section{Acknowledgements}
-JE, DDH, HOJ and DMM are grateful for partial support by the European Research Council Advanced Grant 267382 FCCA.
+\DIFaddbegin \DIFadd{We are indebted to the anonymous referees for very carefully refereeing our article, including catching a problem with our initial use of dual pairs.
+}\DIFaddend JE, DDH, HOJ and DMM are grateful for partial support by the European Research Council Advanced Grant 267382 FCCA.
 
 \appendix
 
 \section{Hamiltonian mechanics}
 \label{sec:Hamiltonian}
-The goal of this section is to prove Theorems~\ref{thm:dual_pairs}
-and~\ref{thm:commuting_actions} (see page~\pageref{thm:dual_pairs}).
+The goal of this section is to prove \DIFdelbegin \DIFdel{Theorems~\ref{thm:dual_pairs} and~\ref{thm:commuting_actions} }\DIFdelend \DIFaddbegin \DIFadd{Theorem~\ref{thm:dual_pairs} }\DIFaddend (see page~\pageref{thm:dual_pairs}).
 Those who understand and accept these theorems on a first reading
 should be able to skip this section without any consequence.
 Most of this section will be a crash course in Poisson geometry
@@ -1934,8 +2059,7 @@ will be discussed in Section~\ref{sec:Symplectic}.
 Alternatively, these equations can be written using the bilinear map $\{ \cdot , \cdot \}_{\rm can} : C^1( T^*Q) \times C^1(T^*Q) \to C^0(T^*Q)$
 given by
 \begin{equation*}
-  \{ F , G \}_{\rm can} = \pder{F}{q}\pder{G}{p} - \pder{G}{q} \DIFdelbegin \DIFdel{\pder{G}{p}}
-\DIFdelend \DIFaddbegin \DIFadd{\pder{F}{p}}\DIFaddend .
+  \{ F , G \}_{\rm can} = \pder{F}{q}\pder{G}{p} - \pder{G}{q} \pder{F}{p}.
 \end{equation*}
 In particular, we may write $\dot{q} = \{ q , H \}_{\rm can}$ and $\dot{p} = \{ p , H\}_{\rm can}$.
 The object $\{ \cdot , \cdot \}_{\rm can}$ is a special case of more general
@@ -2006,8 +2130,8 @@ This yields the following notions
 
 \begin{defn}
   Let $G$ be a Lie group and let $\rho:G \to \Diff(S)$ be a group action on a symplectic manifold $(S,\omega)$.
-  The group $G$ is said to \emph{act symplectically} \DIFaddbegin \DIFadd{if
-  }\DIFaddend \begin{equation*}
+  The group $G$ is said to \emph{act symplectically} if
+  \begin{equation*}
     \omega( \rho( g ) \cdot v , \rho(g) \cdot w) = \omega(v,w)
   \end{equation*}
   for any $g \in G, v,w \in T_xS$ and $x \in S$.
@@ -2067,13 +2191,13 @@ bracket}.
 The second most important example of a Poisson bracket,
 after the canonical Poisson bracket,
 is the Lie--Poisson bracket.  Let $\mathfrak{g}$ be a Lie algebra
-and let $\mathfrak{g}^*$ denote \DIFdelbegin \DIFdel{it's }\DIFdelend \DIFaddbegin \DIFadd{its }\DIFaddend dual.
+and let $\mathfrak{g}^*$ denote its dual.
 The \emph{Lie--Poisson bracket} on $\mathfrak{g}^*$ is given 
 by
 \begin{equation}
   \{ f , g \}_{\mathfrak{g}^*}( x ) = \pm
-  \left \langle x , \left[ \pder{f}{x} , \pder{g}{x} \right] \right \rangle
-  \label{eq:Lie-Poisson}
+  \left \langle x , \left[ \pder{f}{x} , \pder{g}{x} \right] \right \rangle\DIFaddbegin \DIFadd{, 
+  }\DIFaddend \label{eq:Lie-Poisson}
 \end{equation}
 where $\langle \cdot , \cdot \rangle$ is the canonical pairing between
 dual-vectors and vectors, and $[ \cdot , \cdot ]$ is the Lie bracket
@@ -2114,60 +2238,79 @@ sloppiness is usually harmless.
   Let $(P_1, \{ \cdot , \cdot \}_1)$ and $(P_2, \{ \cdot , \cdot \}_2)$
   be Poisson manifolds.
   A map $\psi:P_1 \to P_2$ is called a
-  \emph{Poisson map} if \DIFdelbegin \DIFdel{$\{ f \circ \psi , g \circ \psi \}_1 = \{ f , g \}_2$  }\DIFdelend \DIFaddbegin \DIFadd{$\{ f \circ \psi , g \circ \psi \}_1 = \{ f , g \}_2 \circ \psi$  }\DIFaddend for any $f,g \in C^{\infty}(P_2)$.
+  \emph{Poisson map} if $\{ f \circ \psi , g \circ \psi \}_1 = \{ f , g \}_2 \circ \psi$  for any $f,g \in C^{\infty}(P_2)$.
 \end{defn}
 
 
 \begin{prop}[Lemma 1.2 of \cite{Weinstein1983} or Proposition 10.3.2 of \cite{MandS}] \label{prop:Poisson_dynamics}
   Let $\psi:P_1 \to P_2$ be a Poisson map.
-  Let \DIFdelbegin \DIFdel{$h_2 \in C^2(P_2)$}\DIFdelend \DIFaddbegin \DIFadd{$h_2 \in C^1(P_2)$}\DIFaddend .
+  Let $h_2 \in C^1(P_2)$.
   If $x(t) \in P_1$ is a solution to Hamilton's equations with respect
-  to \DIFdelbegin \DIFdel{$h_1 = h_2 \circ \psi \in C^2(P_1)$}\DIFdelend \DIFaddbegin \DIFadd{$h_1 = h_2 \circ \psi \in C^1(P_1)$}\DIFaddend , then $y(t) = \psi(x(t)) \in P_2$ is a solution
+  to $h_1 = h_2 \circ \psi \in C^1(P_1)$, then $y(t) = \psi(x(t)) \in P_2$ is a solution
   to Hamilton's equations with respect to $h_2$.
 \end{prop}
 
-  \DIFaddbegin \DIFadd{Remark that unlike in~\mbox{%DIFAUXCMD
-\cite{MandS}
-}%DIFAUXCMD
-, we only require $C^1$~smoothness
+  Remark that unlike in~\cite{MandS}, we only require $C^1$~smoothness
   since we do not use existence and uniqueness of solutions.
-}
 
-  \DIFaddend When the dimension of $P_2$ is larger than that of $P_1$,
+  When the dimension of $P_2$ is larger than that of $P_1$,
   Proposition~\ref{prop:Poisson_dynamics} allows one to find solutions of
   Hamiltonian equations on $P_2$
-  by solving lower dimensional Hamiltonian equations
+  by solving \DIFdelbegin \DIFdel{lower dimensional }\DIFdelend \DIFaddbegin \DIFadd{lower-dimensional }\DIFaddend Hamiltonian equations
   on $P_1$.
-  \subsection{Dual pairs}
-  In this section we review the notion of dual pairs
-  \cite{MarsdenWeinstein1983,Weinstein1983,GayBalmazVizman2012}.
+  \subsection{\DIFdelbegin \DIFdel{Dual }\DIFdelend \DIFaddbegin \DIFadd{Weak dual }\DIFaddend pairs}
+  In this section we review the notion of \DIFdelbegin \DIFdel{dual pairs
+  \mbox{%DIFAUXCMD
+\cite{MarsdenWeinstein1983,Weinstein1983,GayBalmazVizman2012}
+}%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{weak dual pairs
+  \mbox{%DIFAUXCMD
+\cite{GayBalmazVizman2012}
+}%DIFAUXCMD
+.
+  This is a relaxation of the more frequently invoked notion of a dual pair \mbox{%DIFAUXCMD
+\cite{MarsdenWeinstein1983,Weinstein1983}
+}%DIFAUXCMD
+}\DIFaddend .
   Let $(S,\omega)$ be a symplectic manifold.
-  Given a distribution $V \subset TS$, denote the fiber over 
+  Given a distribution $V \subset TS$, denote the fiber over
   $x \in S$ by $V_x \subset T_x S$.
   The \emph{symplectic orthogonal} to $V$ is the distribution
   \begin{equation*}
     V^\omega = \{ w \in TS \mid \omega( w , v ) = 0, \forall v \in V \}.
   \end{equation*}
-  Let $\psi:S \to P_1$ be a Poisson map.
-  The kernel of $\psi$ is the distribution
+  \DIFdelbegin \DIFdel{Let $\psi:S \to P_1$ }\DIFdelend \DIFaddbegin \begin{defn}[Weak dual pair \mbox{%DIFAUXCMD
+\cite{GayBalmazVizman2012}
+}%DIFAUXCMD
+]\label{def:weak_dual_pair}
+  \DIFadd{Let $J_1\colon S \to P_1$ }\DIFaddend be a Poisson map.
+  The kernel of \DIFdelbegin \DIFdel{$\psi$ }\DIFdelend \DIFaddbegin \DIFadd{$J_1$ }\DIFaddend is the distribution
   \begin{equation*}
-    \kernel(\psi) = \{ v \in TS \mid T\psi \cdot v  = 0 \}.
+    \kernel(\DIFdelbegin \DIFdel{\psi}\DIFdelend \DIFaddbegin \DIFadd{J_1}\DIFaddend ) = \{ v \in TS \mid \DIFdelbegin \DIFdel{T\psi }\DIFdelend \DIFaddbegin \DIFadd{TJ_1 }\DIFaddend \cdot v  = 0 \}.
   \end{equation*}
-  If $J:S \to P_2$ is a Poisson map as well, and
+  If \DIFdelbegin \DIFdel{$J:S \to P_2$ }\DIFdelend \DIFaddbegin \DIFadd{$J_2\colon S \to P_2$ }\DIFaddend is a Poisson map as well, and
   \begin{equation*}
-    \kernel(J) = \kernel(\psi)^\omega
-  \end{equation*}
+    \kernel(J\DIFaddbegin \DIFadd{_2}\DIFaddend )\DIFdelbegin \DIFdel{= }\DIFdelend \DIFaddbegin \DIFadd{^\omega \subset }\DIFaddend \kernel(\DIFdelbegin \DIFdel{\psi}\DIFdelend \DIFaddbegin \DIFadd{J_1) }\quad \DIFadd{, }\quad
+    \DIFadd{\kernel(J_1}\DIFaddend )^\omega \DIFaddbegin \DIFadd{\subset \kernel(J_2)
+  }\DIFaddend \end{equation*}
   we call the diagram
   \begin{equation*}
-    P_1 \stackrel{\psi}{\longleftarrow} S \stackrel{J}{\longrightarrow} P_2
+    P_1 \DIFdelbegin %DIFDELCMD < \stackrel{\psi}{\longleftarrow} %%%
+\DIFdelend \DIFaddbegin \stackrel{J_1}{\longleftarrow} \DIFaddend S \DIFdelbegin %DIFDELCMD < \stackrel{J}{\longrightarrow} %%%
+\DIFdelend \DIFaddbegin \stackrel{J_2}{\longrightarrow} \DIFaddend P_2
   \end{equation*}
-  a \emph{dual pair}.
-%  In the case that $S$ is a cotangent bundle we call $\psi$ or $J$
-%  \emph{Clebsch variables} \cite{MarsdenWeinstein1983}.
+  a \emph{\DIFaddbegin \DIFadd{weak }\DIFaddend dual pair\DIFdelbegin %DIFDELCMD < }%%%
+\DIFdel{.
+%DIF <   In the case that $S$ is a cotangent bundle we call $\psi$ or $J$
+%DIF <   \emph{Clebsch variables} \cite{MarsdenWeinstein1983}.
+}\DIFdelend \DIFaddbegin }\DIFadd{.
+  }\end{defn}
+  \DIFadd{We would have a proper dual pair if the kernel inclusions were replaced by equalities.
+}\DIFaddend 
 
   \begin{thm} \label{thm:dual_pairs}
-    Let $J_1,J_2:S \to P_1,P_2$ form a dual pair.
-    Let \DIFdelbegin \DIFdel{$h \in C^2(P_1)$}\DIFdelend \DIFaddbegin \DIFadd{$h \in C^1(P_1)$}\DIFaddend .
+    Let $J_1,J_2:S \to P_1,P_2$ form a \DIFaddbegin \DIFadd{weak }\DIFaddend dual pair.
+    Let $h \in C^1(P_1)$.
     Let $x(t) \in S$ be a solution to Hamilton's equations
     with respect to the Hamiltonian $H = h \circ J_1$.
     Then $J_1\left( x(t) \right) \in P_1$ is a solution
@@ -2188,126 +2331,254 @@ sloppiness is usually harmless.
       \omega \left( \dot{x} , v \right).
     \end{equation*}
     As $v$ was an arbitrary element of $\kernel(J_1)$ over $x(0)$
-    we see that $\dot{x} \in TS$ is contained
+    we see that \DIFdelbegin \DIFdel{$\dot{x} \in TS$ is contained
     in the symplectic orthogonal to $\kernel(J_1)$.
-    Since $J_1$ and $J_2$ form a dual pair,
-    this observation implies $\dot{x} \in \kernel(J_2)$.
-    We may apply this argument at each time $t$ and observe
-    \begin{equation*}
+    Since }\DIFdelend \DIFaddbegin \DIFadd{$\dot{x} \in \kernel(J_1)^\omega$.
+    As }\DIFaddend $J_1$ and $J_2$ form a \DIFaddbegin \DIFadd{weak }\DIFaddend dual pair, this \DIFdelbegin \DIFdel{observation }\DIFdelend implies $\dot{x}  \in \kernel(J_2)$.
+    \DIFdelbegin \DIFdel{We may apply this argument at each time $t$ and observe
+    }\DIFdelend \DIFaddbegin \DIFadd{Thus we have found
+    }\DIFaddend \begin{equation*}
       \frac{d}{dt} J_2( x(t)) = TJ_2 \cdot \dot{x}(t)  
-      = 0 \quad \forall t.
-    \end{equation*}
+      = \DIFdelbegin \DIFdel{0 }%DIFDELCMD < \quad %%%
+\DIFdel{\forall t.
+    }\DIFdelend \DIFaddbegin \DIFadd{0.
+    }\DIFaddend \end{equation*}
   \end{proof}
 
-  The next theorem \DIFaddbegin \DIFadd{and lemma }\DIFaddend will be used later for the purpose of
-  identifying dual pairs.
+\DIFdelbegin \DIFdel{The next theorem and lemma will be used later for the purpose of
+  identifying dual pairs. }\DIFdelend \DIFaddbegin \section{\DIFadd{Diagrammatic overview}} \label{app:diagramatic}
+\DIFadd{We present here a diagrammatic representation of some of the spaces used in the present paper. We begin by recalling a number of general results that hold for finite-dimensional Lie groups, before we indicate their relevance to the developments in the main text.
+}\DIFaddend 
 
-  \begin{thm}[Example 2.2 of \cite{GayBalmazVizman2012}] \label{thm:commuting_actions}
-    Denote by $\omega$ the canonical symplectic form on the cotangent bundle $T^*Q$ of some manifold $Q$.
-    Let $G_1,G_2$ act on $Q$
-    by commuting group actions.\footnote{That is, acting first by $G_1$ and second by $G_2$ is identical to acting first by $G_2$ then second by $G_1$.}
-    Let
-    $\rho_i: G_i \times T^*Q \to T^*Q$ for $i=1,2$, denote the cotangent lifted actions
-    and let $J_1: T^*Q \to \mathfrak{g}_1^*$ and $J_2: T^*Q \to \mathfrak{g}_2^*$ denote the momentum maps given by \eqref{eq:cotangent_momap}. 
-    Moreover, assume $G_1$ \DIFdelbegin \DIFdel{acts transitively }\DIFdelend \DIFaddbegin \DIFadd{is infinitesimally transitive }\DIFaddend on the level sets of $J_2$
-    \DIFaddbegin \DIFadd{in the sense that $\kernel(J_2) \subset \mathfrak{g}_1 \cdot T^*Q$}\DIFaddend .
-    Then the momentum maps form the dual pair
-    $
+\DIFdelbegin %DIFDELCMD < \begin{thm}[Example 2.2 of \cite{GayBalmazVizman2012}] \label{thm:commuting_actions}
+%DIFDELCMD <     %%%
+\DIFdel{Denote by $\omega$ the canonical symplectic form on the cotangent bundle $T^*Q$ of some manifold $Q$.
+Let $G_1,G_2$ act on }\DIFdelend \DIFaddbegin \begin{figure}[h]
+\begin{center}
+\begin{overpic}[scale = 0.7]{pic1.eps}
+\put(4, 6){\includegraphics[scale = 0.13]{arrow.eps}}
+\put(6.5, 8){$\phi$}
+\put(65, 2.5){\includegraphics[scale = 0.13]{arrow_skew.eps}}
+\put(67, 5){$\psi$}
+\put(61, 42){$G$}
+\put(42, 33) {\DIFaddFL{$g$}}
+\put(18, 27.9) {\DIFaddFL{$e$}}
+\put(17, 40) {\DIFaddFL{${\tiny \updownarrow} G_{q_0}$ }}
+\put(17, 4) {\DIFaddFL{$q_0$ }}
+\put(35, 4) {\DIFaddFL{$q = \Pi(q) = \phi_g(q_0)$ }}
+\put(25, 8) {\DIFaddFL{$\Pi$ }}
+\put(-3, 1) {\DIFaddFL{$Q$ }}
+\put(96.5, 22) {\DIFaddFL{$K$ }}
+\end{overpic}
+\end{center}
+%DIF > \includegraphics[scale=0.175,bb=0 0 100 100]{flows2.pdf}
+%DIF > \footnotesize
+\caption{\DIFaddFL{
+\label{fig_diagram_1}
+The $G$ action on $Q$ induces a projection $\Pi$. The group $K$ also acts on $G$, and we assume that the two actions commute.
+}}
+\end{figure}
+
+\begin{itemize}
+\item
+\DIFadd{Let a Lie group $G$ act on a manifold }\DIFaddend $Q$ by \DIFdelbegin \DIFdel{commuting group actions. }\footnote{\DIFdel{That is, acting first by $G_1$ and second by $G_2$ is identical to acting first by $G_2$ then second by $G_1$.}}
+    %DIFAUXCMD
+\addtocounter{footnote}{-1}%DIFAUXCMD
+\DIFdel{Let $\rho_i: G_i \times T^*Q \to T^*Q$ for $i=1,2$, denote the cotangent lifted actions
+    and let $J_1: T^*Q \to \mathfrak{g}_1^*$ and $J_2: T^*Q \to \mathfrak{g}_2^*$ denote the momentum maps }\DIFdelend \DIFaddbegin \DIFadd{the action $\phi: G \times Q \to Q$, which we also write as $\phi_g(\cdot) = \phi( g, \cdot )$. If we fix a particular value $q_0 \in Q$, we can construct a mapping $\Pi: G \to Q$ }\DIFaddend given by \DIFdelbegin %DIFDELCMD < \eqref{eq:cotangent_momap}%%%
+\DIFdel{. Moreover, assume $G_1$ is infinitesimally }\DIFdelend \DIFaddbegin \DIFadd{$\Pi(g) = \phi_g(q_0)$. Let us assume that the action is transitive, so that $\Pi$ is surjective. We denote by $G_{q_0}$ the isotropy subgroup leaving $q_0$ invariant, that is,
+}\begin{equation*}\DIFadd{
+  G_{q_0} := \{ g \in G | \phi_g(q_0) = q_0\}.
+}\end{equation*}
+\DIFadd{Note that $\Pi^{-1}(q) =g  G_{q_0}$ 
+for any $g \in G$ such that $\Pi(g) = q$, and hence we can identify $Q$  with $G/G_{q_0}$. Suppose a further Lie group, $K$, also acts on $Q$ with group action $\psi: Q \times K \to Q$, which commutes with $\phi$. This situation arises naturally, for instance, when $K$ is a subgroup of $G$ and, in turn,  $G_{q_0}$ is a normal subgroup of $K$. In that case, one can define the action $\psi$ as
+}\begin{equation}\DIFadd{
+  \psi_k(q) := \Pi( g k) = \phi_{gk}(q_0), \label{right_ac_general}
+}\end{equation}
+\DIFadd{and check that $\phi$ and $\psi$ indeed commute:
+}\begin{equation*}\DIFadd{
+  \phi_s(\psi_k (q)) = \phi_s(\phi_{gk}(q_0)) = \phi_{sgk}(q_0) = \psi_k(\phi_s (q)).
+}\end{equation*}
+\DIFadd{We refer to Figure \ref{fig_diagram_1} for a representation of the relevant spaces and maps.
+}\item \DIFadd{The actions $\phi$ and $\psi$ on $Q$ can be lifted to actions $\Phi$ and $\Psi$ on the cotangent bundle $T^*Q$ in the usual manner (see Figure \ref{fig_diagram_2}). These cotangent lifted actions induce equivariant momentum maps $J_1: T^*Q \to \mathfrak{g}^*$ and $J_2:T^*Q \to \mathfrak{k}^*$, where $\mathfrak{g}^*$ and $\mathfrak{k}^*$ are the duals of the Lie algebras of $G$ and $K$. Due to their equivariance, $J_1$ and $J_2$ are Poisson maps (where the duals of the Lie algebras are equipped with appropriate Lie--Poisson brackets). Since the actions $\phi$ and $\psi$ commute, the action $\Psi$ leaves level sets of $J_1$ invariant, and vice versa. This implies that $J_1$ and $J_2$ are a weak dual pair, and if moreover $\Psi$ is }\DIFaddend transitive on the level sets of \DIFaddbegin \DIFadd{$J_1$ and vice versa, then $J_1$ and }\DIFaddend $J_2$ \DIFdelbegin \DIFdel{in the sense that $\kernel(J_2) \subset \mathfrak{g}_1 \cdot T^*Q$.
+    Then the momentum maps form the dual pair$
       \mathfrak{g}^*_1
       \stackrel{J_1}{\longleftarrow}
       T^*Q
       \stackrel{J_2}{\longrightarrow}
       \mathfrak{g}_2^*.
     $
-  \end{thm}
-  \begin{proof}
-    Let us first show that $\kernel(J_1) = [\rho_1(\mathfrak{g}_1 , T^*Q )]^\omega$.
-    Recall that on account of the definition of momentum maps we have 
+  }%DIFDELCMD < \end{thm}
+%DIFDELCMD <   \begin{proof}
+%DIFDELCMD <     %%%
+\DIFdel{Let us first show that $\kernel(J_1) = [\rho_1(\mathfrak{g}_1 , T^*Q )]^\omega$. Recall that on account of the  definition of momentum maps we have 
     $d \langle J_1 , \xi_1 \rangle = i_{\rho_1(\xi_1)} \omega$, 
-    where $\rho_1(\xi_1)$ is the infinitesimal generator of
-    $\xi_1 \in \mathfrak{g}_1$.
+    where $\rho_1(\xi_1)$ is the infinitesimal generator of $\xi_1 \in \mathfrak{g}_1$.
     Let $v \in [\rho_1(\mathfrak{g}_1,T^*Q)]^\omega$.
     We observe that 
     $d \langle J_1 , \xi_1 \rangle (v) = \omega( \rho_1(\xi_1, x ), v ) = 0$.
     However $d\langle J_1 , \xi_1 \rangle (v) = \langle TJ_1(v) , \xi_1 \rangle$.
-    Thus $v \in \kernel(J_1)$.
-    The previous steps may be reversed, and
-    the converse follows immediately.
+    Thus $v \in \kernel(J_1)$. The previous steps may be reversed}\DIFdelend \DIFaddbegin \DIFadd{are a proper dual pair, see~\mbox{%DIFAUXCMD
+\cite[Corollary~2.6]{GayBalmazVizman2012}
+}%DIFAUXCMD
+.
+%DIF > 
+}\item \DIFadd{Let $\mathcal{H}:T^*G \to \mathbb{R}$ be a right-invariant Hamiltonian. This means that $\mathcal{H}$ is invariant with respect to the  cotangent lift $TR^*$ of the multiplication from the right of $G$ by itself. In particular, the reduced Hamiltonian $h:\mathfrak{g}^* \to \mathbb{R}$ satisfies $\mathcal{H}(\alpha_g) = h \circ TR_g^*(\alpha_g)$ for any $\alpha_g \in T^*G$}\DIFaddend , and the \DIFdelbegin \DIFdel{converse follows immediately.
     We find
-    $\kernel(J_1) = [\rho_1(\mathfrak{g}_1,T^*Q)]^\omega$.
-    Of course the same argument applies to $J_2$.
+    $\kernel(J_1) = [\rho_1(\mathfrak{g}_1,T^*Q)]^\omega$. Of course the same argument applies to $J_2$. }%DIFDELCMD < 
 
-    We now show that $\kernel(J_2) = \rho_1(\mathfrak{g}_1,T^*Q)$.
+%DIFDELCMD <     %%%
+\DIFdel{We now show that $\kernel(J_2) = \rho_1(\mathfrak{g}_1,T^*Q)$.
     Again, let $\xi_1 \in \mathfrak{g}_1, \xi_2 \in \mathfrak{g}_2$.
-    Recall that $\omega = - d \theta$ where $\theta$ is the canonical one-form on $T^*Q$.
-    Moreover, recall that $\theta$ is invariant under cotangent lifted group actions \cite[Theorem 3.2.12]{FOM}.
-    Thus by Cartan's formula \cite[Theorem 2.4.13(iv)]{FOM} we can calculate
-    \begin{equation*}
-      0 = \lie_{\rho_1(\xi_1)} [ \theta] = d \langle \theta_1 , \rho_1(\xi_1) \rangle + i_{\rho_1(\xi_1)}(d\theta) = d \langle \theta_1 , \rho_1(\xi_1) \rangle - i_{\rho_1(\xi_1)} \omega, 
-    \end{equation*}
-    where $i_{\rho_1(\xi_1)} \omega$ denotes contraction of a two-form with a \DIFdelbegin \DIFdel{vector-field}\DIFdelend \DIFaddbegin \DIFadd{vector field}\DIFaddend .
-    Finally we calculate
-    \begin{align*}
-    	\omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) &=  -\langle d \langle \theta, \rho_1(\xi_1) \rangle ,  \rho_2(\xi_2) \rangle \\
-      &= -\lie_{\rho_2(\xi_2) }[ \langle \theta,\rho_1(\xi_1) \rangle] = - \langle \lie\DIFdelbegin \DIFdel{_{\rho_1(\xi_2)}[\theta] }\DIFdelend \DIFaddbegin \DIFadd{_{\rho_2(\xi_2)}[\theta] }\DIFaddend , \rho_1(\xi_1) \rangle - \langle \theta , [\rho_2(\xi_2), \rho_1(\xi_1) ] \rangle.
-    \end{align*}
-    The first term in the last line vanishes because $\theta$ is invariant under the flow of $\rho_2(\xi_2)$.
-    The second term in the last line vanishes because the actions of $G_1$ and $G_2$ commute.
-    Thus $\omega(\rho_1(\xi_1) , \rho_2(\xi_2) ) = 0$,
-    and we have proven symplectic orthogonality.
-%    First note that $\rho_1(\xi_1) = X_{ \langle J_1 , \xi_1 \rangle}$,
-%    and the same calculation applies to $\xi_2$.
-%    Thus we observe by using Corollary~\ref{cor:Lie_hom} that
-%    \begin{align*}
-%      X_{ \omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) }
-%      &= - [X_{ \langle J_1,\xi_1\rangle} , X_{\langle J_2,\xi_2\rangle} ] \\
-%      &= - [\rho_1(\xi_1) , \rho_2(\xi_2)] = 0.
-%    \end{align*}
-%    The final equality
-%    derives from the fact that the actions of $G_1$ and $G_2$ commute.
-%    We have proven that $\rho_1(\mathfrak{g}_1 , S)$ and $\rho_2(S,\mathfrak{g}_2)$ are
-%    symplectically orthogonal.
+    Recall that $\omega = - d \theta$ where $\theta$ is the canonical one-form on }\DIFdelend \DIFaddbegin \DIFadd{reduced dynamics in $\mathfrak{g}^*$ are of Lie--Poisson type. The momentum map $J_1$ can be used to induce the so-called }\emph{\DIFadd{collective Hamiltonian}} \DIFadd{$H = h\circ J_1$ on $T^*Q$. Note that }\DIFaddend $T^*Q$ \DIFaddbegin \DIFadd{is a symplectic manifold, and that the symplectic (canonical) dynamics with respect to the collective Hamiltonian are mapped by (the Poisson map) $J_1$ to the reduced dynamics on $\mathfrak{g}^*$}\DIFaddend . Moreover, \DIFdelbegin \DIFdel{recall that $\theta$ is invariant under cotangent lifted group actions \mbox{%DIFAUXCMD
+\cite[Theorem 3.2.12]{FOM}
+}%DIFAUXCMD
+. Thus by Cartan's formula \mbox{%DIFAUXCMD
+\cite[Theorem 2.4.13(iv)]{FOM}
+}%DIFAUXCMD
+we can calculate
+    }\begin{displaymath}\DIFdel{
+      0 = \lie_{\rho_1(\xi_1)} }[ \DIFdel{\theta}] \DIFdel{= d \langle \theta_1 , \rho_1(\xi_1) \rangle + i_{\rho_1(\xi_1)}(d\theta) = d \langle \theta_1 , \rho_1(\xi_1) \rangle - i_{\rho_1(\xi_1)} \omega, 
+    }\end{displaymath}
+    %DIFAUXCMD
+\DIFdel{where $i_{\rho_1(\xi_1)} \omega$ denotes contraction of a two-form with a vector field.
+Finally we calculate
+    }\begin{align*}\DIFdel{
+    	\omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) }&\DIFdel{=  -\langle d \langle \theta, \rho_1(\xi_1) \rangle ,  \rho_2(\xi_2) \rangle }\\
+      &\DIFdel{= -\lie_{\rho_2(\xi_2) }[ \langle \theta,\rho_1(\xi_1) \rangle] = - \langle \lie_{\rho_2(\xi_2)}[\theta] , \rho_1(\xi_1) \rangle - \langle \theta , }[\DIFdel{\rho_2(\xi_2), \rho_1(\xi_1) }] \DIFdel{\rangle.
+    }\end{align*}
+    %DIFAUXCMD
+\DIFdel{The first term in the last line vanishes because $\theta$ is invariant under the flow of $\rho_2(\xi_2)$.
+The second term in the last line vanishes because the actions of $G_1$ and $G_2$ commute. Thus $\omega(\rho_1(\xi_1) , \rho_2(\xi_2) ) = 0$, and we have proven symplectic orthogonality.
+%DIF <     First note that $\rho_1(\xi_1) = X_{ \langle J_1 , \xi_1 \rangle}$,
+%DIF <     and the same calculation applies to $\xi_2$.
+%DIF <     Thus we observe by using Corollary~\ref{cor:Lie_hom} that
+%DIF <     \begin{align*}
+%DIF <       X_{ \omega( \rho_1(\xi_1) , \rho_2(\xi_2) ) }
+%DIF <       &= - [X_{ \langle J_1,\xi_1\rangle} , X_{\langle J_2,\xi_2\rangle} ] \\
+%DIF <       &= - [\rho_1(\xi_1) , \rho_2(\xi_2)] = 0.
+%DIF <     \end{align*}
+%DIF <     The final equality
+%DIF <     derives from the fact that the actions of $G_1$ and $G_2$ commute.
+%DIF <     We have proven that $\rho_1(\mathfrak{g}_1 , S)$ and $\rho_2(S,\mathfrak{g}_2)$ are
+%DIF <     symplectically orthogonal.
     Now note that
-    \DIFdelbegin \DIFdel{$\langle TJ_2 ( \rho_1(\xi_1, x)), \xi_2 \rangle = \omega( \rho_1(\xi_1, x) ,\rho_2(x, \xi_2 )) = 0$}\DIFdelend \DIFaddbegin \DIFadd{$\langle TJ_2 ( \rho_1(\xi_1, x)), \xi_2 \rangle = - \omega( \rho_1(\xi_1, x) ,\rho_2( \xi_2,x )) = 0$}\DIFaddend .
-    Thus $\rho_1(\xi_1 , x) \in \kernel( J_2)$, hence
+    $\langle TJ_2 ( \rho_1(\xi_1, x)), \xi_2 \rangle = - \omega( \rho_1(\xi_1, x) ,\rho_2( \xi_2,x )) = 0$. Thus $\rho_1(\xi_1 , x) \in \kernel( J_2)$, hence
     $\rho_1(\mathfrak{g}_1 ,T^*Q) \subset \kernel(J_2)$.
     But since $G_1$ acts transitively on the level sets of $J_2$, we see
     that $\rho_1(\mathfrak{g}_1, T^*Q) = \kernel( J_2)$.
-  \end{proof}
-  % With these foundations established, we proceed
-  % to discuss a simple example of Poisson mechanics
-  % before moving to the more sophisticated case
-  % of fluids.
+}%DIFDELCMD < \end{proof}
+%DIFDELCMD <   %%%
+%DIF <  With these foundations established, we proceed
+  %DIF <  to discuss a simple example of Poisson mechanics
+  %DIF <  before moving to the more sophisticated case
+  %DIF <  of fluids.
+%DIFDELCMD < 
 
-\DIFaddbegin \begin{lem}\label{lem:transitive-action}
-  \DIFadd{Let $G_1, G_2$ act on the manifold $Q$. Let $\rho_1^*$ denote the
-  cotangent-lifted action associated to $G_1$ and
+%DIFDELCMD < \begin{lem}\label{lem:transitive-action}
+%DIFDELCMD <   %%%
+\DIFdel{Let $G_1, G_2$ act on the manifold $Q$. Let $\rho_1^*$ denote the cotangent-lifted action associated to $G_1$ and
   $J_2\colon T^*Q \to \mathfrak{g}_2^*$ the momentum map defined by
   the cotangent-lifted action of $G_2$. Assume that the following
   hold:
-  }\begin{enumerate}
-  \item \DIFadd{$G_1$ acts transitively on $Q$;
-  }\item \DIFadd{the cotangent-lifted action $\rho_1^*$ preserves level sets of $J_2$;
-  }\item \DIFadd{for any $\mu$ in the range of $J_2$, the level set $J_2^{-1}(\mu)$ is a section of $T^* Q$.
-  }\end{enumerate}
-  \DIFadd{Then the action $\rho_1^*$ is transitive on level sets of $J_2$.
-}\end{lem}
+  }%DIFDELCMD < \begin{enumerate}
+%DIFDELCMD <   %%%
+\DIFdelend \DIFaddbegin \DIFadd{$J_2$ is conserved under the dynamics on $T^*Q$. The conservation law follows from Noether's theorem because $J_1$, and hence $H$, are left invariant by $\Psi$ (see Theorem \ref{thm:dual_pairs}).  Note that the elements of $T^*Q$ play the role of symplectic variables (or Clebsch variables in the sense of \mbox{%DIFAUXCMD
+\cite{MarsdenWeinstein1983}
+}%DIFAUXCMD
+).
+%DIF > 
+}\item \DIFadd{The appeal of Clebsch variables is their symplectic nature. The symmetry of $H$ with respect to $\Psi$ implies that reduced dynamics on $T^*G/H$ can be constructed by symplectic reduction. Note however that the resulting quotient manifold is not symplectic in general.
+%DIF > 
+}\DIFaddend \item
+\DIFdelbegin \DIFdel{$G_1$ acts transitively on $Q$;
+  }%DIFDELCMD < \item %%%
+\DIFdel{the cotangent-lifted action $\rho_1^*$ preserves level sets of $J_2$;
+  }%DIFDELCMD < \item %%%
+\DIFdel{for any $\mu$ in the range of $J_2$, the level set $J_2^{-1}(\mu)$ is a section of $T^* Q$. }%DIFDELCMD < \end{enumerate}
+%DIFDELCMD <   %%%
+\DIFdel{Then the action $\rho_1^*$ is transitive on level sets of }\DIFdelend %DIF > for the following see Lee Thm 23 showing that the isotropy group is closed, the proof of Thm 9.22 showing that the action of a closed Lie subgroup is proper and free; thus Thm 2.2.2 of Hamiltonian Reduction by Stages book applies.
+\DIFaddbegin \DIFadd{Note also that there is a symplectic diffeomorphism between $T^*Q$ and $J^{-1}(0)/G_{q_0}$, where $J$ here is the momentum map associated with the cotangent lift of the action (from the right) of $G_{q_0}$ on $G$, see \mbox{%DIFAUXCMD
+\cite[Theorem~2.2.2]{HRS}
+}%DIFAUXCMD
+.
+}\end{itemize}
+\begin{figure}[h]
+\begin{center}
+\begin{overpic}[scale = 0.6]{pic2_mod.eps}
+\put(45, 28){\includegraphics[scale = 0.13]{arrow.eps}}
+\put(47.8, 30){$\Phi$}
+\put(84, 28){\includegraphics[scale = 0.13]{arrow.eps}}
+\put(86.8, 30){$\Psi$}
+\put(57, 49){$G$}
+\put(44, 41.2) {\DIFaddFL{$e$}}
+\put(43.3, 47) {\DIFaddFL{${\tiny \updownarrow} G_{q_0}$ }}
+\put(97, 23.5) {\DIFaddFL{$T^*Q$ }}
+\put(96.5, 49) {\DIFaddFL{$K$ }}
+\put(27, 40){\includegraphics[scale = 0.13]{arrow_left.eps}}
+\put(17, 49) {\DIFaddFL{$T^*G$ }}
+\put(3, 25) {\DIFaddFL{$\mathcal{H}$ }}
+\put(16, 24.5) {\DIFaddFL{$H = h \circ J_1$ }}
+\put(22, 12) {\DIFaddFL{$h $ }}
+\put(7, 7) {\DIFaddFL{$\mathbb{R} $ }}
+\put(52.5, 7) {\DIFaddFL{$\mathfrak{g}^*$ }}
+\put(96.5, 7) {\DIFaddFL{$\mathfrak{k}^*$ }}
+\put(49.5, 17) {\DIFaddFL{$J_1$ }}
+\put(85.5, 17) {\DIFaddendFL $J_2$ \DIFdelbeginFL \DIFdelFL{.
+}%DIFDELCMD < \end{lem}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL }
+\put(22, 2.5) {\DIFaddFL{$TR^* $ }}
+\end{overpic}
+\end{center}
+%DIF > \includegraphics[scale=0.175,bb=0 0 100 100]{flows2.pdf}
+%DIF > \footnotesize
+\caption{\DIFaddFL{The cotangent lifted actions induce momentum maps $J_1$ and $J_2$. The Hamiltonian $\mathcal{H}$, assumed to be right-invariant, is also shown, along with the reduced Hamiltonian $H$ and the collective Hamiltonian $H = h \circ J_1$.
+}\label{fig_diagram_2}
+ }
+\end{figure}
+\DIFaddend 
 
-\begin{proof}
-  \DIFadd{Let $(q,p), (q',p') \in J_2^{-1}(\mu)$ where $(q,p) \neq (q',p')$.
-  Since $J_2^{-1}(\mu)$ is a section of $T^* Q$, this implies that
-  $q \neq q'$. Now $G_1$ acts transitively on $Q$, so there exists a
-  $g \in G_1$ such that $q' = g \cdot q$. Since $\rho_1^*$ preserves
-  $J_2^{-1}(\mu)$, we find that
-  $g \cdot (q,p) \in J_2^{-1}(\mu) \cap T_{q'}^* Q$. Since
-  $J_2^{-1}(\mu)$ is a section, this implies that
-  $g \cdot (q,p) = (q',p')$ must hold.
-}\end{proof}
+\DIFdelbegin %DIFDELCMD < \begin{proof}
+%DIFDELCMD <   %%%
+\DIFdelend %DIF > 
+\DIFaddbegin \DIFadd{In translating the above facts to the case of interest in the present paper, one encounters technical subtleties to do with the infinite-dimensionality of $\SDiff(\R^n)$. Nevertheless, bullet-by-bullet parallels can be recognized between the developments in the main text of the paper and the general results above, as we will discuss now. For simplicity, we restrict ourselves in what follows to the case of a single particle, the extension to $N$ particles being straightforward.
+}\begin{itemize}
+\item \DIFadd{Let $G = \SDiff(\R^n)$, and let $Q= Q_1^{(k)}$ be the space of single-particle $k$-jetlets. We fix the point $q_0 = (z, \mathbf{1}, 0, \ldots, 0) \in Q_1^{(k)}$ corresponding to the Taylor expansion of the identity in $\SDiff(\R^n)$ evaluated at $z \in \R^n$ (cf. Section \ref{sec:higher_order}). We let the projection $\Pi$ be given by ${\rm Jet}_z^{(k)}$, and hence the left action of an element $\varphi \in \SDiff(\R^n)$ on $q \in Q$ is $\phi_\varphi(q) = {\rm Jet}_z^{(k)}(\varphi \circ \rho)$, for any $\rho$ such that ${\rm Jet}_z^{(k)}(\rho) = q$. The role of the isotropy subgroup $G_{q_0}$ is played by ${\rm iso}^{(k)}_z$. }\DIFaddend Let \DIFdelbegin \DIFdel{$(q,p), (q',p') \in J_2^{-1}(\mu)$ where $(q,p) \neq (q',p')$. Since $J_2^{-1}(\mu)$ is a section of $T^* Q$, this implies that $q \neq q'$.
+Now $G_1$ acts transitively }\DIFdelend \DIFaddbegin \DIFadd{$K = {\rm iso}(z)$, and note that ${\rm iso}^{(k)}(z)$ is a normal subgroup of ${\rm iso}(z)$ (\mbox{%DIFAUXCMD
+\cite[Proposition 4.1]{JacobsRatiuDesbrun2013}
+}%DIFAUXCMD
+). Hence, we can define a right action of ${\rm iso}(z)$ }\DIFaddend on \DIFdelbegin \DIFdel{$Q$, so there exists a $g \in G_1$ }\DIFdelend \DIFaddbegin \DIFadd{$Q_1^{(k)}$ given by }\eqref{right_ac_general}\DIFadd{, namely
+  }\begin{equation*}\DIFadd{
+    \psi_\rho(q) = }{\DIFadd{\rm Jet}}\DIFadd{_z^{(k)}(\varphi \circ \rho),
+  }\end{equation*}
+\DIFadd{for any $\varphi$ }\DIFaddend such that \DIFdelbegin \DIFdel{$q' = g \cdot q$. Since $\rho_1^*$ preserves
+  $J_2^{-1}(\mu)$, we find that $g \cdot (q,p) \in J_2^{-1}(\mu) \cap T_{q'}^* Q$. Since
+  $J_2^{-1}(\mu)$ is a section, this implies that $g \cdot (q,p) = (q',p')$ must hold.
+}%DIFDELCMD < \end{proof}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{${\rm Jet}_z^{(k)}(\varphi) = q$.
+}\item \DIFadd{The cotangent lift of the left and right actions on $Q$ lead to the momentum maps $J_L^{(k)}$ and $J_R^{(k)}$, explicitly computed in Section  \ref{sec:higher_order} and shown to be a weak dual pair in Proposition \ref{prop:k dual pairs}.
+}\item  \DIFadd{In Theorem \ref{thm:k-solutions} we showed that the canonical Hamiltonian equations on $T^*{Q_1}^{(k)}$ associated with the collective Hamiltonian $H^{(k)} = h_{p, \sigma} \circ J_L^{(k)}$ lead to trajectories that are mapped, by $J_L^{(k)}$, to solutions of Hamilton's equations on $\mathfrak{X}_{\rm div}(\R^n)^*$. Moreover, we showed that $J_R^{(k)}$ is a constant of motion.
+}\item \DIFadd{We briefly visit further symplectic reduction in Appendix \ref{sec:eom}. For more on this topic we refer to \mbox{%DIFAUXCMD
+\cite{JacobsRatiuDesbrun2013, CotterHolmJacobsMeier2014}
+}%DIFAUXCMD
+.
+}\item \DIFadd{In Section \ref{sec:Kelvin} we constructed the mapping $i:T^*Q_1^{(k)} \to T^*\SDiff(\R^n)/{\rm iso}^{(k)}_z$ given by }\eqref{i_explicit}\DIFadd{, namely,
+}\begin{equation*}\DIFadd{
+ 	i(q, p) = }[\DIFadd{TR^*_{\varphi^{-1}} J_L^{(k)}(q, p)}]\DIFadd{.
+ }\end{equation*}
+\DIFadd{As we briefly mentioned towards the end of that section, if we denote by $J_{\rm conv}^{(k)}: T^*\SDiff(\R^n) \to \mathfrak{iso}^{(k)}(z)^*$ the momentum map associated to the cotangent lift of the right action of $\iso^{(k)}(z)$ on $\SDiff(\R^n)$,
+then one can show that $i\bigl(T^*Q^{(k)}_1\bigr) = (J_{\rm conv}^{(k)})^{-1}(0) / \iso^{(k)}(z)$, as suggested by \mbox{%DIFAUXCMD
+\cite[Theorem~2.2.2]{HRS}
+}%DIFAUXCMD
+.
+}\end{itemize}
+\DIFaddend 
 
-
-\DIFaddend \section{Multi-indices}
+\section{Multi-indices}
 \label{sec:multi}
-A multiset is nothing but a set with some notion of multiplicity \cite{Blizard1989}.
+A multiset is \DIFdelbegin \DIFdel{nothing but }\DIFdelend a set with some notion of multiplicity \cite{Blizard1989}.
 In this paper, a multi-index on $\R^n$ is a multiset of elements derived from the generating set $\{1,\dots,n\}$.
 Heuristically, a multi-index is just a ``bag of marbles'' each of which comes in $n$ ``colors''.
 Given two multi-indices $\alpha \in \bag^i(n)$ and $\beta \in \bag^j(n)$ one can create the
@@ -2333,15 +2604,15 @@ The multiset of $2$-fold partitions is $\Pi( [1,2,1],2)$, and consists of three 
 Note that the first and the third partition correspond to the same multiset.
 The cardinality of $\Pi( [1,2,1],2)$ is $3$, although it only has two distinct elements (one with a multiplicity of $1$, and another with a multiplicity of $2$).
 
-\section{The dual space \DIFdelbegin \DIFdel{of $\mathfrak{X}_{\rm div}(\R^n)$}\DIFdelend \DIFaddbegin \DIFadd{to divergence free vector fields}\DIFaddend }
+\section{The dual space to divergence free vector fields}
 \label{sec:measure_valued_momap}
 In this section we will provide a terse and incomplete
-\DIFdelbegin \DIFdel{characterizations }\DIFdelend \DIFaddbegin \DIFadd{characterization }\DIFaddend of the dual space of divergence free
+characterization of the dual space of divergence free
 vector fields.  First let us characterize the dual space of the space of all vector fields (with ``proper'' decay).
 Let $\mathfrak{X}(\R^n)$ be the space of vector fields which decay at infinity
 in such a way that $\mathfrak{X}(\R^n)$ is Fr\'echet.
 Viewing $\mathfrak{X}(\R^n)$ as a subspace of functions from $\R^n$ to $\R^n$
-we can view \DIFdelbegin \DIFdel{it's }\DIFdelend \DIFaddbegin \DIFadd{its }\DIFaddend dual as a space of distributions.
+we can view its dual as a space of distributions.
 That is to say, given any $m \in \mathfrak{X}(\R^n)^*$ we may write $m$ as a tensor
 product $p \otimes \mu$ where $\mu$ is a distribution (perhaps a measure)
 on $\R^n$ and $p$ is a covector field (i.e.\ a one-form).
@@ -2353,20 +2624,19 @@ the pairing
 	\langle p \otimes \mu , u \rangle :=  \int_{\R^n} \langle p(x) , u(x) \rangle \mu.
 \end{equation*}
 where $\langle p(x),u(x) \rangle$ is the function on $\R^n$ obtained by pairing the covector $p(x) \in T_x^*\R^n$ with the vector $u(x) \in T_x\R^n$.
-If we restrict ourselves to the case of divergence free \DIFdelbegin \DIFdel{vector-fields}\DIFdelend \DIFaddbegin \DIFadd{vector fields}\DIFaddend , we need to quotient
+If we restrict ourselves to the case of divergence free vector fields, we need to quotient
 the dual space appropriately.  In particular, we see that the annihilator of $\mathfrak{X}_{\rm div}(\R^n)$
-as a subspace of \DIFdelbegin \DIFdel{$\mathfrak{X}(\R^n)$ is
-}\DIFdelend \DIFaddbegin \DIFadd{$\mathfrak{X}(\R^n)^*$ is
-}\DIFaddend \begin{align*}
+as a subspace of $\mathfrak{X}(\R^n)^*$ is
+\begin{align*}
 	(\mathfrak{X}_{\rm div}(\R^n) )^\circ := \{ m \in \mathfrak{X}(\R^n)^* \mid \langle m , u \rangle = 0 , \forall u \in \mathfrak{X}_{\rm div}(\R^n) \}\\
-		:= {\rm closure}\{ p \otimes \dx \in \mathfrak{X}(\R^n)\DIFaddbegin \DIFadd{^* }\DIFaddend \mid p \text{ is a closed one-form} \}.
+		:= {\rm closure}\{ p \otimes \dx \in \mathfrak{X}(\R^n)^* \mid p \text{ is a closed one-form} \}.
 \end{align*}
 where $\dx$ is the canonical volume form on $\R^n$ and
 we have used the fact that the gradient fields and the harmonic vector fields are $L^2$-orthogonal to the divergence free vector fields.
-The dual space $\mathfrak{X}_{\rm div}(\R^n)^*$ is identical to the quotient space \DIFdelbegin \DIFdel{$\mathfrak{X}(\R^n) / (\mathfrak{X}_{\rm div}(\R^n))^\circ$}\DIFdelend \DIFaddbegin \DIFadd{$\mathfrak{X}(\R^n)^* / (\mathfrak{X}_{\rm div}(\R^n))^\circ$}\DIFaddend .
+The dual space $\mathfrak{X}_{\rm div}(\R^n)^*$ is identical to the quotient space $\mathfrak{X}(\R^n)^* / (\mathfrak{X}_{\rm div}(\R^n))^\circ$.
 In other words, we may view a $m \in \mathfrak{X}_{\rm div}(\R^n)^*$ as an object of the form $p \otimes \mu$ modulo $\mathfrak{X}_{\rm div}(\R^n)^\circ$.
 In the text we will typically not mention $\mathfrak{X}_{\rm div}(\R^n)^\circ$ explicitly, and simply identify $m$ with $p \otimes \mu$.
-This is a harmless identification as long as we do not pair it with a non-divergence free \DIFdelbegin \DIFdel{vector-field}\DIFdelend \DIFaddbegin \DIFadd{vector field}\DIFaddend .
+This is a harmless identification as long as we do not pair it with a non-divergence free vector field.
 
 \section{Equations of motion for 1-jetlets}
 \label{sec:eom}
@@ -2435,3 +2705,8 @@ $.
 \bibliography{hoj_2014}
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
