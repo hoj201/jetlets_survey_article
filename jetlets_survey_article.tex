@@ -1082,7 +1082,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
   for arbitrary divergence free vector fields $u \in \mathfrak{X}_{\rm div}(\R^n)$.
   Equivalently, we may define $J_L^{(k)}$ as the unique map such that
   \begin{equation}\label{eq:moma_left}
-    \langle J_L^{(k)}(q,p) , u \rangle = \langle (q,p) , \Jet_z^{(k)}( u \circ \varphi) \rangle
+    \langle J_L^{(k)}(q,p) , u \rangle = \langle (q,p) , \Jet_z^{k}( u \circ \varphi) \rangle
   \end{equation}
   for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$.
 
@@ -1104,7 +1104,7 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
   Equivalently, we may define $J_R^{(k)}$
   as the unique map such that
  \begin{align}
-  \langle J_R^{(k)}(q,p) , w \rangle = \langle (q,p) , \Jet_z^{(k)}( T\varphi \cdot w) \rangle, \label{Moma_right}
+  \langle J_R^{(k)}(q,p) , w \rangle = \langle (q,p) , \Jet_z^{k}( T\varphi \cdot w) \rangle, \label{Moma_right}
    \end{align}
   for any $\varphi \in \SDiff(\R^n)$ whose $k$-jet is given by $q$ for any $(q,p) \in T^*Q^{(k)}_N$. Here, we wrote $T\varphi \cdot w$ for the function obtained by applying the differential of $\varphi$ to $w$.
   
@@ -1147,15 +1147,15 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 	So we need only illustrate that $J_L$ is (right) $\iso(z)$ invariant. This can be seen as a consequence of the commutativity of the left and right actions on $Q^{(k)}$.  
 	For notational clarity, let us denote this right action by $\rho : Q^{(k)} \times \iso(z) \to Q^{(k)}$. 
 	Explicitly, any element $q \in Q^{(k)}$ is expressible as the $k$-jet of some diffeomorphism $\varphi$,
-	and $\rho( q , \psi) = \Jet_z^{(k)}( \varphi \circ \psi)$.
+	and $\rho( q , \psi) = \Jet_z^{k}( \varphi \circ \psi)$.
 	
 	Similarly, any element of the tangent fiber $T_\varphi \SDiff(\R^n)$ may be written as a composition $u \circ \varphi$ for some $u \in \mathfrak{X}_{\rm div}(\R^n)$.
-	Elements of $TQ^{(k)}$ are of the form $\Jet_z^{(k)}( u \circ \varphi)$ for $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $\varphi \in \SDiff(\R^n)$.
+	Elements of $TQ^{(k)}$ are of the form $\Jet_z^{k}( u \circ \varphi)$ for $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $\varphi \in \SDiff(\R^n)$.
 	Given this representation, the tangent lift of the action $\rho$, also denoted $\rho: TQ^{(k)} \times \iso(z) \to TQ^{(k)}$, is given by
 	\begin{align}
-		\rho( (q,v)  , \psi ) = \Jet_z^{(k)}( u \circ \varphi \circ \psi ) \label{eq:tangent action}
+		\rho( (q,v)  , \psi ) = \Jet_z^{k}( u \circ \varphi \circ \psi ) \label{eq:tangent action}
 	\end{align}
-	for $(q,v) \in TQ^{(k)}$ and where $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $\varphi \in \SDiff( \R^n)$ are arbitrary up to the constraint $(q,v) = \Jet_{z}^{(k)}( u \circ \varphi)$.
+	for $(q,v) \in TQ^{(k)}$ and where $u \in \mathfrak{X}_{\rm div}(\R^n)$ and $\varphi \in \SDiff( \R^n)$ are arbitrary up to the constraint $(q,v) = \Jet_z^k( u \circ \varphi)$.
 	The cotangent lifted action is a left action, $\rho^* : \iso(z) \times T^*Q^{(k)} \to T^*Q^{(k)}$, defined implicitly by the condition
 	\begin{align}
 		\langle \rho^*( \psi , (q,p) ) , \rho( (q,v) , \psi^{-1} ) \rangle = \langle (q,p) , (q,v) \rangle \label{eq:dual action}
@@ -1165,15 +1165,15 @@ where we wrote $\Pi(\alpha, k)$ for the set of $k$-th order partitions of a mult
 	In particular, $\rho^*( \psi , (q,p) )$ is a covector over the point $\tilde{q} = \rho( q , \psi^{-1})$.
 	By the definition of $J_L$ we observe
 	\begin{align*}
-		\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle = \langle  \rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \bar{\varphi} ) \rangle, 
+		\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle = \langle  \rho^*( \psi ,  (q,p) ) , \Jet^{k}_z ( u \circ \bar{\varphi} ) \rangle, 
 	\end{align*}
-	where $\bar{\varphi} \in \SDiff(\R^n)$ is any diffeomorphism such that $\Jet_z^{(k)}( \bar{\varphi} ) = \rho( q , \psi^{-1} )$.
-	If we let $\varphi$ be such that $\Jet^{(k)}_z( \varphi ) = q$ then we can simply choose $\bar{\varphi} = \varphi \circ \psi^{-1}$.
+	where $\bar{\varphi} \in \SDiff(\R^n)$ is any diffeomorphism such that $\Jet_z^{k}( \bar{\varphi} ) = \rho( q , \psi^{-1} )$.
+	If we let $\varphi$ be such that $\Jet^k_z( \varphi ) = q$ then we can simply choose $\bar{\varphi} = \varphi \circ \psi^{-1}$.
 	Thus we get
 	\begin{align*}
-			\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle &= \langle  \rho^*( \psi ,  (q,p) ) , \Jet^{(k)}_z ( u \circ \varphi \circ \psi^{-1} ) \rangle \\
-			&= \langle  \rho^*( \psi ,  (q,p) )  ,  \rho( \Jet_z^{(k)}(u \circ \varphi) , \psi^{-1} ) \rangle \\
-			&= \langle (q,p) , \Jet_z^{(k)}( u \circ \varphi) \rangle \\
+			\langle J_L( \rho^*( \psi , (q,p) ) ) , u \rangle &= \langle  \rho^*( \psi ,  (q,p) ) , \Jet^k_z ( u \circ \varphi \circ \psi^{-1} ) \rangle \\
+			&= \langle  \rho^*( \psi ,  (q,p) )  ,  \rho( \Jet_z^{k}(u \circ \varphi) , \psi^{-1} ) \rangle \\
+			&= \langle (q,p) , \Jet_z^{k}( u \circ \varphi) \rangle \\
 			&= \langle J_L(q,p) , u \rangle, 
 	\end{align*}
 	using~\eqref{eq:tangent action} and~\eqref{eq:dual action} in the second and third equality.
