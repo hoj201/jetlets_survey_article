@@ -104,7 +104,7 @@ In particular, \cite{MarsdenWeinstein1983} illustrated how the point vortex solu
 One of these Poisson maps was the embedding map from a finite-dimensional manifold into the infinite-dimensional space dual to the divergence free vector fields.
 In other words, the space of point vortices is merely an invariant manifold of ideal fluid motion.\footnote{This is not quite correct, as one must ignore the infinite self-energy terms of point vortices and then extend the space of admissible solutions to non-smooth velocity fields.  However, modulo this physically motivated caveat the statement holds.}
 It was later realized that the use of dual pairs related to fluid applications was problematic and needed to be relaxed.
-This lead to the notion of weak dual pairs \cite{GayBalmazVizman2012}.
+This led to the notion of weak dual pairs \cite{GayBalmazVizman2012}.
 In this paper we will derive a hierarchy of different weak dual pairs, in order to obtain a class of finite-dimensionally parametrized solutions,
 each of which comes with a conservation law that shadows Kelvin's circulation theorem.
 Just as one can consider the point vortices to be the atoms of the point vortex method,
@@ -155,13 +155,13 @@ In Section~\ref{sec:zeroth_order} we introduce zeroth order jetlets, also called
 %The proof of Proposition~\ref{prop:0-solutions} is an example of the efficiency of the approach.
 
 In Section~\ref{sec:first_order} we consider first order jetlets. Everything here goes in parallel, except that one has to be more careful when introducing the relevant right and left actions. Once one has the definitions in place, it is not difficult to recognize that the cotangent lifts for the right and left actions lead to, now, a \emph{weak} dual pair of momentum maps.
-We have to add `weak' here since the transitivity of the left action on level sets of right momentum is lost, but a weak dual pair is retained, essentially because the group actions still commute, see Definition~\ref{def:weak_dual_pair}.  Proposition~\ref{prop:1-solutions} collects the results that follow immediately from the weak dual pair.
+We have to add `weak' here since the transitivity of the left action on level sets of the right momentum map is lost, but a weak dual pair is retained, essentially because the group actions still commute, see Definition~\ref{def:weak_dual_pair}.  Proposition~\ref{prop:1-solutions} collects the results that follow immediately as a consequence of the weak dual pair.
 
 Throughout the paper we have taken care to explain the intuition behind the more abstract concepts. The discussion just after Proposition~\ref{prop:1-solutions} is an example of this. There, we discuss the relationship between the jetlet solutions on the diffeomorphism group and the resulting trajectory on the space of Taylor jets.
 
 In Section~\ref{sec:higher_order} we describe jetlets at general levels. Again, once the relevant spaces and actions have been introduced (which is now quite an intricate endeavor), one recognizes that the momentum maps are a weak dual pair by the usual arguments. We give the form of the momentum maps explicitly just after Proposition~\ref{HL_action_prop}. Again, the weak dual pair leads to analogous conclusions about dynamics. Namely, it is canonically Hamiltonian, with $J_R$  conserved; $J_L$ maps the dynamics to the Lie-Poisson dynamics on the one-form densities.
 
-In Section~\ref{sec:Kelvin} we discuss in more detail the Kelvin circulation theorem. More precisely, we discuss the relationship between the `standard' circulation theorem for the fluid and the conserved momentum maps $J_R$  at the various levels of jetlets. The main result is represented schematically and proven in detail (all that is required, in essence, is the standard formula for cotangent lift momentum maps). Intuitively speaking, what we show is that the conserved jetlet momentum maps are `shadows' of the `full' right momentum map of the fluid.
+In Section~\ref{sec:Kelvin} we discuss in more detail Kelvin's circulation theorem. More precisely, we discuss the relationship between the `standard' circulation theorem for the fluid and the conserved momentum maps $J_R$  at the various levels of jetlets. The main result is represented schematically and proven in detail (all that is required, in essence, is the standard formula for cotangent lift momentum maps). Intuitively speaking, what we show is that the conserved jetlet momentum maps are `shadows' of the `full' right momentum map of the fluid.
 
 In Section~\ref{sec:collisions} we discuss the explicit dynamical behavior of the
 particle model, in particular we study `collisions' leading to mergers of jetlets.
@@ -192,8 +192,8 @@ in the jet-particle collisions.
 
 
 
-We provide a detailed appendix. In Appendix A, a brief discussion of symplectic and Poisson manifolds is followed by the definition of weak dual pairs. Then we prove Theorem~\ref{thm:dual_pairs}, which is the core result used in the paper. Appendix \ref{app:diagramatic} presents an overview over the spaces used in the paper and relates them to some general results of reduction theory, see in particular Figures \ref{fig_diagram_1} and \ref{fig_diagram_2}. 
- In Appendix~\ref{sec:multi} we describe the index conventions used in the main texts (e.g., when calculating momentum maps for the general jetlet solutions), while Appendix~\ref{sec:measure_valued_momap} briefly discusses the more abstract point of how the dual space of vector fields can be viewed as tensor product of 1-forms and distributions.
+We provide a detailed appendix. In Appendix~\ref{sec:Hamiltonian}, a brief discussion of symplectic and Poisson manifolds is followed by the definition of weak dual pairs. Then we prove Theorem~\ref{thm:dual_pairs}, which is the core result used in the paper. Appendix \ref{app:diagramatic} presents an overview over the spaces used in the paper and relates them to some general results of reduction theory, see in particular Figures \ref{fig_diagram_1} and \ref{fig_diagram_2}. 
+ In Appendix~\ref{sec:multi} we describe the index conventions used in the main text (e.g., when calculating momentum maps for the general jetlet solutions), while Appendix~\ref{sec:measure_valued_momap} briefly discusses the more abstract point of how the dual space of vector fields can be viewed as tensor product of 1-forms and distributions.
 Finally, Appendix~\ref{sec:eom} provides information describing the equations of motion for 1-jets, but in reduced coordinates, which arise after the reduction that eliminates the conserved quantities, $J_R$.
 
 \subsection{Previous work}
@@ -231,7 +231,7 @@ Finally, Appendix~\ref{sec:eom} provides information describing the equations of
  In the context of image registration algorithms, the need to obtain
  compressible diffeomorphisms motivated the use of particle methods
  in a similar framework \cite{JoshiMiller2000}.
- These methods, designed for a wide array of PDEs are studied analytically
+ These methods, designed for a wide array of PDEs, are studied analytically
  in \cite{TrouveYounes2005}, which also contains a proof of well-posedness
  for a range of PDEs.
  Finally, in the context of image registration, \cite{Sommer2013} 
@@ -358,7 +358,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   \end{align*}
   known as the \emph{Nambu bracket}.
   This is no coincidence. Let us first introduce the isomorphism of
-  Lie algebras $(\R^3,\times)$ and $\so(3)$, given by the hat map
+  Lie algebras $(\R^3,\times)$ and $\so(3)$, given by the so-called hat map
   \begin{equation}\label{eq:hat-map}
     x \in \R^3 \mapsto
     \hat{x} = 
@@ -370,7 +370,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   \end{equation}
   \begin{prop}[see {\cite[\S 2.5]{HolmBook2}}] \label{prop:Nambu}
     The Nambu bracket on $\mathbb{R}^3$
-    is identified to the Lie--Poisson bracket on $\so(3)^*$
+    is identified with the Lie--Poisson bracket on $\so(3)^*$
     through the hat map isomorphism~\eqref{eq:hat-map}
     in the sense that $\{ f,g\}_{\rm Nambu}( x) = \{ \hat{f} , \hat{g} \}_{\rm LP}( \hat{x})$
     where $f,g \in C^1(\mathbb{R}^3)$ and 
@@ -385,7 +385,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
         \right \rangle,
     \end{align*}
     for arbitrary functions $\hat{f},\hat{g} \in C^1(\so(3)^*)$.
-    There exists functions $f,g \in C^1(\mathbb{R}^3)$ related to $\hat{F},\hat{G}$ through the hat map.
+    There exist functions $f,g \in C^1(\mathbb{R}^3)$ related to $\hat{F},\hat{G}$ through the hat map.
     One can observe that $d\hat{f}(\hat{\Pi}) \in \so(3)$ is 
     related to $\nabla f(\Pi)$ through the relation $\widehat{ \nabla f(\Pi)} = d\hat{f}( \hat{\Pi})$.
     We see that the commutator bracket satisfies
@@ -403,9 +403,9 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
 
   Recall that $T^*\SO(3)$ is a symplectic manifold. The momentum maps
   $J_L,J_R$ arise canonically from the left and right action of
-  $\SO(3)$ on $T^* \SO(3)$. Since the actions commute and it can also
+  $\SO(3)$ on $T^* \SO(3)$. The actions commute and it can also
   be checked that $J_L$ and $J_R$ have symplectically orthogonal
-  kernels, it follows from~\cite[Corollary~2.6]{GayBalmazVizman2012}
+  kernels, hence it follows from~\cite[Corollary~2.6]{GayBalmazVizman2012}
   that the diagram
   \begin{alignat*}{2}
     \so(3)^* \stackrel{J_L}{\longleftarrow}&
@@ -427,11 +427,11 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   Specifically, the right leg yields the reduced phase space where 
   the system evolves in time.
   The left leg yields the conserved quantities of the rigid body
-  associated to the left action of $\SO(3)$ on itself.
+  associated with the left action of $\SO(3)$ on itself.
   The most important aspect of these maps is that they are both Poisson
   maps, i.e.\ they carry the canonical Poisson bracket on $T^* \SO(3)$
   to the Nambu bracket on $\so(3)^* \cong (\mathbb{R}^3,\times)$,
-  as the following Proposition shows.
+  as the following proposition shows.
 
   \begin{prop}[remark 2.5.11 \cite{HolmBook2}] \label{prop:SO3_to_Nambu}
     Let $\{ \cdot , \cdot \}_{\rm can}$ denote the canonical Poisson bracket
@@ -455,8 +455,8 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
       = \langle P , R \cdot \hat{\Omega} \rangle.
     \end{align*}
     This tells us that $J_R$ is the momentum map associated
-    to the cotangent lift of the right action of $\SO(3)$ on itself.
-    Cotangent lifts of group actions are always equivariant
+    with the cotangent lift of the right action of $\SO(3)$ on itself.
+    Such momentum maps are always equivariant
     and thus yield Poisson maps (Theorem 12.4.1 \cite{MandS}).
     Thus $J_R$ carries the canonical
     Poisson bracket on $T^* \SO(3)$, to the Lie--Poisson
@@ -506,7 +506,7 @@ The unreduced Hamiltonian is $H(R,P) = h(J_R(R,P))$.
   Camassa--Holm equation.
   In this section we explore analogous constructions for
   an incompressible and regularized version of the
-  Camassa--Holm equation discovered in \cite{MumfordMichor2013}.
+  Camassa--Holm equation, discovered in \cite{MumfordMichor2013}.
 
 %  \subsection{The group of $H^\infty$-diffeomorphisms}
 %  Let $H^k( \R^n ; \R^n)$ denote the space of
@@ -646,9 +646,9 @@ with respect to the Hamiltonian $H = h \circ J_L$.
 This yields the \emph{material} or \emph{Lagrangian} coordinate perspective
 of fluid mechanics one encounters in a first course on continuum
 mechanics.
-The right leg yields conserved quantities associated to the particle relabeling symmetry of the fluid.
+The right leg yields conserved quantities associated with the particle relabeling symmetry of the fluid.
 It was found in \cite{Arnold1966} that these conserved momenta are identical
-to the law of conservation of circulation, a.k.a. \emph{Kelvin's circulation theorem}.
+to the law of conservation of circulation, that is, \emph{Kelvin's circulation theorem}.
 
 Unfortunately, this dual pair does not help us in solving~\eqref{eq:MMDiff}
 since solving Hamilton's equations on $T^*\SDiff(\R^n)$ is no less difficult
@@ -710,7 +710,7 @@ where $\delta_q$ is the Dirac-delta distribution on $\R^n$ centered at $q$.
 This identification holds modulo $dC^1(\R^n) \otimes d{\bf x}$ where $dC^1(\R^n)$
 is the space of $C^0$-exact one-forms and $d{\bf x}$ is the canonical volume form on $\R^n$
 (see Appendix~\ref{sec:measure_valued_momap}).
-Since $J_L^{(0)}$ is a cotangent lift momentum map, it is equivariant and therefore Poisson, again by \cite[Thm~12.4.9]{MandS}.
+Since $J_L^{(0)}$ is a cotangent lift momentum map, it is equivariant and therefore Poisson, again by \cite[Theorem~12.4.9]{MandS}.
 % As the cotangent lifted action of $\SDiff(\R^n)$ is equivariant,
 % we observe that $J_L^{(0)}$ is Poisson, again by 
 
@@ -816,7 +816,7 @@ In this section we revisit the first order particle-like solutions of \cite{Cott
     The action of $\SDiff(M)$ on $\R \times \SL(n)$ in \eqref{eq:first_order_action} is a group action.
   \end{prop}
   \begin{proof}
-    As $\varphi \in \SDiff(\R^n)$, it follows that $D\varphi |_{q^{(0)}} \in \SL(n)$.
+    Since $\varphi \in \SDiff(\R^n)$, it follows that $D\varphi |_{q^{(0)}} \in \SL(n)$.
     Therefore $D\varphi |_{q^{(0)}} \cdot q^{(1)} \in \SL(n)$.
     Secondly, if $\varphi_1,\varphi_2 \in \SDiff(\R^n)$ we observe that
     \begin{align*}
@@ -880,7 +880,7 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   \begin{prop}\label{prop:J1-dual-pair}
     The momentum maps $J_L^{(1)}$ and $J_R^{(1)}$ form a weak dual pair.
   \end{prop}
-   We will postpone the proof, as this is a special case of a proposition which comes later in the paper (Proposition \ref{prop:k dual pairs}).
+   We postpone the proof, as this is a special case of a proposition which comes later in the paper (Proposition \ref{prop:k dual pairs}).
 
   As before, the quantity $dh( J_L^{(1)}(q,p))$ is a legitimate vector field
   if $K_{p,\sigma}$ is sufficiently smooth.  Moreover, when the Hamiltonian
@@ -897,7 +897,7 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
   \end{align*}
   If $(q,p)(t) \in T^*Q_N^{(1)}$ is a solution to Hamilton's equations with respect to
 	$H^{(1)}$, then $J_L^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)^*$ is
-	a solution of \eqref{eq:MMDiff} and $J_R^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)^*$ is
+	a solution of \eqref{eq:MMDiff}, and $J_R^{(1)}( (q,p)(t)) \in \mathfrak{X}_{\rm div}(\R^n)^*$ is
 	constant in time. 
   \end{prop}
   The proof of the above proposition is identical to that of
@@ -927,8 +927,8 @@ In Proposition~\ref{HL_action_prop} we will generalize this construction to defi
 
   \subsection{Higher order particles}
   \label{sec:higher_order}
-  In this section we will introduce a hierarchy of particle solutions whose $k$-th level includes the solutions at the $(k-1)$-th level.
-  The zeroth level in the hierarchy are the standard particle-like solutions,
+  In this section we will introduce a hierarchy of particle-like solutions whose $k$-th level includes the solutions at the $(k-1)$-th level.
+  The zeroth level in the hierarchy consists of the standard particle-like solutions,
   while the first level describes the particles with internal $\SL(n)$ variables
   discussed in the previous section.
   The particles in the $k$-th level carry the coefficients of
@@ -1225,7 +1225,7 @@ is constant in time.
 It was shown in \cite{Arnold1966} that this conservation law
 is an instance of Noether's theorem.
 In particular, circulation is one of the conserved momenta
-associated to the particle relabeling symmetry of fluids.
+associated with the particle relabeling symmetry of fluids.
 More specifically,
 recall that $h_0$ is the Hamiltonian for Euler's equations,
 and this Hamiltonian is $\SDiff(\R^n)$ invariant. Moreover, we have a
@@ -1251,7 +1251,7 @@ $h \circ J_1$ will exhibit the constant of motion
 This instance of Noether's theorem applies to regularized models as well as to the non-regularized case of Euler's fluid equations.
 In the case of Euler's fluid equations, the equivalence between the above conservation law
 and Kelvin's circulation theorem is demonstrated by a heuristic
-argument~\cite[Ch~1, Thm~5.5]{ArnoldKhesin1998}, which goes as follows. 
+argument~\cite[Chapter~1, Theorem~5.5]{ArnoldKhesin1998}, which goes as follows. 
 Consider a given closed curve $\gamma_0\colon S^1 \to \R^n$ and a family
 of vector fields $w_\varepsilon$ such that $w_\varepsilon(\gamma_0(s)) = \gamma'_0(s)$
 and such that the (weak in $L^2$) limit $w = \lim_{\varepsilon \to 0} w_\varepsilon$ is the generalized function
@@ -1301,7 +1301,7 @@ Then we see that $Q^{(k)}_N = \SDiff(\R^n) / \iso^{(k)}(z)$, and the correspondi
  \begin{equation}\label{eq:iota-map}
    \langle \iota_\varphi(q,p) , v_\varphi \rangle = \langle (q, p) , (v_\varphi \circ \varphi^{-1}) \cdot q \rangle,
  \end{equation}
- cf.~\cite[(2.2.4)]{HRS}, where we denote by $(v_\varphi \circ \varphi^{-1}) \cdot q$ the infinitesimal action from the left of $v_\varphi \circ \varphi^{-1} \in \mathfrak{X}_{\rm div}(\R^n)$ on $q$.
+ cf.~\cite[Equation~(2.2.4)]{HRS}, where we denote by $(v_\varphi \circ \varphi^{-1}) \cdot q$ the infinitesimal action from the left of $v_\varphi \circ \varphi^{-1} \in \mathfrak{X}_{\rm div}(\R^n)$ on $q$.
  Then set $i(q,p) = [\iota_\varphi(q,p)]$.
 
  To see that $i(q,p)$ is well defined, note that if $\varphi' = \varphi \circ \psi$ for $\psi \in \iso^{(k)}(z)$, then for any $v_{\varphi'} \in T_{\varphi'} \SDiff(\R^n)$ we have
@@ -1351,7 +1351,7 @@ For the right leg, note that
 	&= \langle (q,p),  \Jet_z^k(T\varphi \cdot w)\rangle = \langle  J^{(k)}_R(q,p), w\rangle.
 \end{align*}
 Here we used~\eqref{i_explicit}, the definition of $J_\text{conv}$,
-and~\eqref{eq:cotangent-action}, respectively, in the first three equalities
+and~\eqref{eq:cotangent-action}, respectively, in the first three equalities,
 and~\eqref{Moma_right} in the final step. Again we see that $[J_\text{conv}]$ is well-defined since it does not
 depend on $\varphi$. More explicitly, for another representative
 $\varphi' = \varphi \circ \psi$ with $\psi \in \iso^{(k)}(z)$ we see
@@ -1833,7 +1833,7 @@ The object $\{ \cdot , \cdot \}_{\rm can}$ is a special case of more general
 object known as a \emph{Poisson bracket} which will be introduced in
 Section~\ref{sec:Poisson}.
 
-As a warning, symplectic geometry has developed greatly
+A word of warning: symplectic geometry has developed greatly
 since its origins in mechanics, and
 has branched into an independent subfield of pure mathematics.
 Many notions were revised and optimized in the $1970$'s and $1980$'s for
@@ -1858,7 +1858,7 @@ We begin with the definition.
   We call $\omega$ a \emph{symplectic form}.
   We call the pair $(S,\omega)$ a \emph{symplectic manifold}.
 \end{defn}
-All of the expressions derived in this article will be formal, and we refer to \cite{GayBalmazVizman2012}
+All of the expressions derived in this article are formal, and we refer to \cite{GayBalmazVizman2012}
 for the functional analytic details of infinite-dimensional symplectic manifolds.
 As a first example, consider the manifold $\R^2$
 with coordinates $(q,p)$.
@@ -1874,7 +1874,7 @@ and denoted $\omega_{\rm can}$ \cite[Theorem 3.2.10]{FOM}.
 In fact, given any symplectic manifold $(S,\omega)$, the dimension of $S$
 is even, and there exist local coordinates $(q^1,\dots,q^n,p_1,\dots,p_n)$
 such that $\omega \stackrel{locally}{=} dp_i \wedge dq^i$.
-This is known as \emph{Darboux's theorem} and we call these type of
+This is known as \emph{Darboux's theorem} and we call this type of
 coordinates \emph{Darboux coordinates}\cite[Theorem 3.2.2]{FOM}.
 
 Given a function $H:S \to \mathbb{R}$,
@@ -1893,7 +1893,7 @@ equations of motion $\dot{q}^i = \pder{H}{p_i}$, $\dot{p}_i = -\pder{H}{q^i}$.
 
 
 An important aspect of study in Hamiltonian mechanics is that of symmetry.
-This yields the following notions
+This yields the following notions.
 
 \begin{defn}
   Let $G$ be a Lie group and let $\rho:G \to \Diff(S)$ be a group action on a symplectic manifold $(S,\omega)$.
@@ -1948,7 +1948,7 @@ We begin with the definition.
   and we call the pair $(P, \{ \cdot , \cdot \})$ a Poisson manifold.
 \end{defn}
 
-The first most important example of a Poisson bracket is
+The most important example of a Poisson bracket is
 that of a Poisson bracket on a symplectic manifold $(S,\omega)$.
 Here the Poisson bracket is $\{ f , g \} = \omega( X_f , X_g )$.
 When $S$ is a cotangent bundle, and $\omega$ is the canonical
@@ -2077,9 +2077,9 @@ sloppiness is usually harmless.
       0 = \langle dH(x(0)) , v \rangle =
       \omega \left( \dot{x} , v \right).
     \end{equation*}
-    As $v$ was an arbitrary element of $\kernel(J_1)$ over $x(0)$
+    Since $v$ was an arbitrary element of $\kernel(J_1)$ over $x(0)$
     we see that $\dot{x} \in \kernel(J_1)^\omega$.
-    As $J_1$ and $J_2$ form a weak dual pair, this implies $\dot{x}  \in \kernel(J_2)$.
+    Since $J_1$ and $J_2$ form a weak dual pair, this implies $\dot{x}  \in \kernel(J_2)$.
     Thus we have found
     \begin{equation*}
       \frac{d}{dt} J_2( x(t)) = TJ_2 \cdot \dot{x}(t)  
@@ -2208,7 +2208,7 @@ $\partial_\alpha \partial_\beta = \partial_{\alpha \cup \beta} = \partial_\beta 
 The cardinality of the multi-index $\beta$ is denoted $|\beta|$ and is given by the number of marbles in the bag.
 Thus the order of the partial differential operator $\partial_{\beta}$ is $|\beta|$.
 We denote the space of $k$-th order partitions of a multi-index by $\Pi(\alpha,k)$.
-Rather than define all this formally, we will compute an example and refer to \cite{Jacobs2014b} for the formal definitions.
+Rather than defining all this formally, we will compute an example and refer to \cite{Jacobs2014b} for the formal definitions.
 
 We can consider the integers $1$ $2$ and $1$, and the partial differential operator $\partial_{121}$.
 The associated multi-index is just $[1,2,1]$.  This multi-index is equivalent to the multi-index $[1,1,2]$ and $[2,1,1]$.
@@ -2270,7 +2270,7 @@ The Hamiltonian in these coordinates is
   \frac{1}{2} p_{a i} p_{b j} K^{i j}(q_a - q_b) - p_{a i}
   [\mu_b]\indices{_{j}^{k}} \partial_k K^{i j}(q_a - q_b) \\
 & -\frac{1}{2} [\mu_a^{(1)}]\indices{_{i}^l}
-  [\mu_b^{(1)}]\indices{_j^k} \partial_{l k} K^{i j}(q_a - q_b)
+  [\mu_b^{(1)}]\indices{_j^k} \partial_{l k} K^{i j}(q_a - q_b),
 \end{align*}
 where $K^{i j}(x) = \delta^{i j} e^{- \| x \|^2 / 2 \sigma^2}$.
 Hamilton's equations are then given in short by
@@ -2278,9 +2278,9 @@ Hamilton's equations are then given in short by
   \dot{q} &=  \frac{\partial H}{\partial p} \label{eq:dHdp} \\
   \dot{p} &= -\frac{\partial H}{\partial q} \label{eq:dHdq} \\
   \xi     &=  \frac{\partial H}{\partial \mu} \label{eq:dHdmu} \\
-  \dot{\mu} &= - \ad^*_{ \xi } ( \mu ) . \label{eq:LiePoisson}
+  \dot{\mu} &= - \ad^*_{ \xi } ( \mu ) \label{eq:LiePoisson}
 \end{align}
-Where $\ad^*$ refers to the coadjoint operator on $\SL(n)$.
+where $\ad^*$ refers to the coadjoint operator on $\SL(n)$.
 More explicitly, equation~\eqref{eq:dHdp} is given by
 \begin{equation*}
   \dot{q}_a^i = p_{b j} K^{i j}(q_a - q_b)
@@ -2288,7 +2288,7 @@ More explicitly, equation~\eqref{eq:dHdp} is given by
 \end{equation*}
 equation~\eqref{eq:dHdq} is given by the sum
 \begin{equation*}
-  \dot{p}_{a i} = T^{00}_{a i} + T^{01}_{a i} + T^{11}_{a i}
+  \dot{p}_{a i} = T^{00}_{a i} + T^{01}_{a i} + T^{11}_{a i},
 \end{equation*}
 where we define the three terms in this sum as
 \begin{align*}
@@ -2296,23 +2296,23 @@ where we define the three terms in this sum as
   T^{01}_{a i} &= (p_{a l}[\mu_b^{(1)}]\indices{_j^k}
                   -p_{b l}[\mu_a^{(1)}]\indices{_j^k}) \partial_{k i} K^{l j}(q_a - q_b) \\
   T^{11}_{a i} &= [\mu_a^{(1)}] \indices{_m^l} [\mu_b^{(1)}]\indices{_j^k}
-                  \partial_{l k i} K^{m j}(q_a - q_b) \\
+                  \partial_{l k i} K^{m j}(q_a - q_b). \\
 \end{align*}
 Next, we calculate the quantities $\xi = \partial H / \partial \mu$
 for $k=1,2$ of equation~\eqref{eq:dHdmu} to be
 \begin{equation*}
   [\xi_a ]\indices{^i_j} =
   p_{b k} \partial_j K^{i k}(q_a - q_b)
- -[\mu_b]\indices{_{l}^{k}} \partial_{j k} K^{i l}(q_a - q_b)
+ -[\mu_b]\indices{_{l}^{k}} \partial_{j k} K^{i l}(q_a - q_b),
 \end{equation*}
 which allows us to compute $\dot{\mu}$ in equation~\eqref{eq:LiePoisson} as
 \begin{equation*}
   [\dot{\mu}_a ]\indices{_i^j} =
   [\mu_a]\indices{_i^k} [\xi_a^{(1)}]\indices{^j_k}
- -[\mu_a]\indices{_k^j} [\xi_a^{(1)}]\indices{^k_i}
+ -[\mu_a]\indices{_k^j} [\xi_a^{(1)}]\indices{^k_i}.
 \end{equation*}
 
-The dynamics in terms of the original variables $(q^{(0)},q^{(1)})$ with $q^{(1)} \in \SL(n)$ are obtained by integrating the reconstruction equation
+The dynamics in terms of the original variables $(q^{(0)},q^{(1)})$ with $q^{(1)} \in \SL(n)$ are obtained by integrating the reconstruction equations
 $
   [\dot{q}^{(1)}]\indices{^i_j} =
   [\xi]\indices{^i_k} [q^{(1)}]\indices{^k_j}
